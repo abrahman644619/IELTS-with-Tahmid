@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Reading Test 1</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:#fff;line-height:1.45;font-size:16px;color:#222}.header{background:#fff;padding:12px 20px;border-bottom:1px solid #e0e0e0;display:flex;justify-content:space-between;align-items:center;position:fixed;top:0;left:0;right:0;z-index:100;height:60px}.timer-container{display:flex;align-items:center;color:#333;font-size:16px;font-weight:500}.timer-controls{display:flex;align-items:center;gap:8px;margin-left:15px}.timer-controls button{background:#f0f0f0;border:1px solid #ccc;border-radius:50%;padding:0;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;transition:background-color .2s}.timer-controls button:hover{background:#e0e0e0}.timer-controls button svg{width:20px;height:20px;fill:#333}.gift-text{font-family:"Arial Black",Arial,sans-serif;color:navy;font-weight:bold;font-size:16px;white-space:nowrap}.main-container{margin-top:60px;display:flex;flex-direction:column;background:#fff;height:calc(100vh - 60px)}.part-header{background:#f1f2ec;padding:15px 20px;border:1px solid #e0e0e0;text-align:left;margin:10px 20px;border-radius:5px}.part-header p:first-child{margin-bottom:5px}.hidden{display:none!important}.panels-container{display:flex;flex:1;overflow:hidden}.passage-panel{flex:1;padding:20px 20px 100px;overflow-y:auto;min-width:200px}.questions-panel{flex:1;padding:20px 20px 100px;overflow-y:auto;min-width:200px;border-left:1px solid #e0e0e0}.resizer{width:10px;cursor:col-resize;background-color:#f0f0f0;background-image:url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="30" viewBox="0 0 10 30"><path d="M4 11h2v2H4zM4 15h2v2H4zM4 19h2v2H4z" fill="%23888"/></svg>');background-repeat:no-repeat;background-position:center;flex-shrink:0}.reading-passage h4{font-size:21px;font-weight:bold;margin:5px 0 10px;text-align:center}.reading-passage .subheading{text-align:center;font-size:17px;font-style:italic;margin-bottom:16px}.reading-passage p{margin-bottom:1.15em}.passage-label{font-weight:bold;margin-right:10px}.question-set h3{font-size:18px;margin:18px 0 10px}.instruction-line{margin-bottom:10px;color:#333}.question-block,.question-row{border-radius:5px;transition:background-color .2s,outline .2s}.question-block{margin-bottom:30px;padding:8px 0}.question-row{display:flex;align-items:flex-start;gap:10px;margin:10px 0;padding:8px 5px}.question-row.active-row,.question-block.active-row{outline:2px solid #4a90e2;outline-offset:2px;background:#f6fbff}.question-row.correct,.question-block.correct{background:#e9f7ef}.question-row.incorrect,.question-block.incorrect{background:#f8d7da}.question-number-box{border:2px solid #ccc;padding:2px 8px;margin-right:2px;border-radius:3px;font-weight:bold;display:inline-block;min-width:34px;text-align:center}.prompt-text{flex:1;padding-top:3px}.answer-input,.select-answer{border:1px solid #888;border-radius:4px;background:#fff;padding:4px 6px;font-size:15px;transition:border-color .3s,box-shadow .3s,background-color .3s}.answer-input{height:30px;min-width:190px;text-align:center;margin:0 4px}.answer-input.active-input,.select-answer.active-input{border-color:#4a90e2;box-shadow:0 0 3px 1px rgba(74,144,226,.5)}.answer-input.correct,.select-answer.correct{border-color:#28a745;background:#e9f7ef}.answer-input.incorrect,.select-answer.incorrect{border-color:#dc3545;background:#f8d7da;color:#721c24}.select-answer{min-width:92px}.radio-option{display:block;margin:8px 0 8px 44px;cursor:pointer;padding:5px;border-radius:4px}.radio-option input{margin-right:10px;transform:scale(1.15)}.radio-option.correct-answer-highlight{background:#d4edda!important;border:1px solid #c3e6cb}.radio-option.incorrect-choice{background:#f8d7da;border:1px solid #f5c6cb}.option-list-box{margin:14px 0;padding:12px 14px;background:#f8f9fa;border:1px solid #ddd;border-radius:5px;line-height:1.8}.option-list-box .option-item{display:block;margin-bottom:4px}.summary-completion-text{line-height:2.25;font-size:16px;margin-top:10px}.summary-completion-text .answer-input{width:160px}.mcq-options{margin-top:8px}.correct-answer-display{display:inline-block;font-weight:bold;color:#28a745;margin-left:10px;font-size:14px}.correct-answer-display .correct-answer-highlight{background:#d4edda;border:1px solid #c3e6cb;border-radius:4px;padding:3px 5px;color:#155724}.nav-row{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:0;display:flex;align-items:center;height:80px;z-index:100;border-top:1px solid #e0e0e0}.footer__questionWrapper___1tZ46{display:flex;align-items:center;margin-right:20px}.footer__questionNo___3WNct{background:none;border:none;padding:10px 15px;font-size:16px;font-weight:600;color:#333;cursor:pointer;display:flex;align-items:center;gap:5px;transition:background-color .2s}.footer__questionNo___3WNct:hover{background:#f8f9fa}.sectionNr{font-weight:bold}.attemptedCount{font-size:14px;color:#666;margin-left:5px;font-weight:400}.footer__subquestionWrapper___9GgoP{display:none;gap:2px;margin-left:10px}.footer__questionWrapper___1tZ46.selected .footer__subquestionWrapper___9GgoP{display:flex}.footer__questionWrapper___1tZ46.selected .attemptedCount{display:none}.subQuestion{width:32px;height:32px;border:1px solid #ccc;background:#fff;color:#333;font-size:14px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;border-radius:2px}.subQuestion:hover{background:#f0f0f0;border-color:#999}.subQuestion.active{background:#4a90e2;color:#fff;border-color:#4a90e2}.subQuestion.answered{background:#e9ecef;border-color:#ddd}.subQuestion.correct{background:#28a745;color:#fff;border-color:#28a745}.subQuestion.incorrect{background:#dc3545;color:#fff;border-color:#dc3545}.subQuestion.unanswered-after-submit{background:#ffc107;color:#333;border-color:#ffc107}.footer__deliverButton___3FM07{margin-left:auto;margin-right:20px;background:#f0f0f0;color:#333;border:1px solid #ccc;padding:12px 20px;border-radius:4px;font-size:16px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background-color .2s,border-color .2s;min-width:170px;justify-content:center}.footer__deliverButton___3FM07:hover{background:#e0e0e0;border-color:#bbb}.footer__deliverButton___3FM07:disabled{background:#e9ecef;color:#6c757d;cursor:not-allowed;border-color:#ddd}.fa-check::before{content:"✓"}.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:2000;display:flex;justify-content:center;align-items:center}.modal-content{background:#fff;padding:25px;border-radius:8px;width:92%;max-width:780px;max-height:86vh;display:flex;flex-direction:column;position:relative}.modal-close-btn{position:absolute;top:10px;right:15px;background:none;border:none;font-size:28px;cursor:pointer;color:#888}.modal-content h2{text-align:center;margin-bottom:15px;color:#333}.results-summary{display:flex;justify-content:space-around;margin-bottom:14px;font-size:18px;font-weight:bold;text-align:center;border-bottom:1px solid #eee;padding-bottom:15px}.performance-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px;text-align:center}.performance-summary div{border:1px solid #e5e5e5;border-radius:6px;padding:8px;background:#fafafa;font-weight:600}.results-details-container{overflow-y:auto;padding-right:8px}.review-header,.result-row{display:grid;grid-template-columns:45px 1fr 1fr 95px;gap:15px;padding:8px 5px;font-size:14px}.review-header{font-weight:bold;border-bottom:2px solid #ddd;background:#f8f9fa}.result-row{border-bottom:1px solid #f0f0f0}.result-row.incorrect{background:#f8d7da}.result-row.correct-row{background:#e9f7ef}.result-row.unanswered-row{background:#fff3cd}.result-row .q-num{font-weight:bold}.result-row .correct-ans{color:#155724;font-weight:500}.context-menu{position:absolute;background:#fff;border:1px solid #ccc;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:1000;display:none;min-width:140px}.context-menu-item{padding:12px 16px;cursor:pointer;font-size:15px;border-bottom:1px solid #f0f0f0}.context-menu-item:hover{background:#f8f9fa}.highlight{background:#ff0}.comment-highlight{background:#90ee90;position:relative;cursor:help}.comment-tooltip{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:8px 12px;border-radius:4px;font-size:13px;white-space:nowrap;z-index:1000;opacity:0;pointer-events:none;transition:opacity .3s}.comment-highlight:hover .comment-tooltip{opacity:1}.note-table{border-collapse:collapse;margin:12px 0;width:100%;font-size:15px}.note-table td{border:1px solid #888;padding:7px}.note-table td:first-child{font-weight:bold;width:120px}@media(max-width:900px){.panels-container{flex-direction:column}.passage-panel,.questions-panel{min-height:45vh;width:100%!important;flex-basis:auto!important;border-left:none}.questions-panel{border-top:1px solid #e0e0e0}.resizer{display:none}.nav-row{overflow-x:auto;height:95px;align-items:flex-start;padding-top:5px}.footer__questionWrapper___1tZ46{flex-shrink:0;margin-right:5px;align-items:flex-start}.footer__subquestionWrapper___9GgoP{flex-wrap:wrap;max-width:410px}.footer__deliverButton___3FM07{min-width:135px;margin-right:8px;padding:10px 12px;font-size:14px}.passage-panel,.questions-panel{padding-bottom:115px}.attemptedCount{display:none}}@media(max-width:560px){.header{padding:8px 10px;height:64px}.main-container{margin-top:64px;height:calc(100vh - 64px)}.gift-text{font-size:12px;max-width:145px;white-space:normal;text-align:right}.timer-controls{gap:4px;margin-left:8px}.timer-controls button{width:28px;height:28px}.part-header{margin:8px 10px;padding:10px}.passage-panel,.questions-panel{padding:12px 12px 110px}.question-row{flex-direction:column;gap:6px}.radio-option{margin-left:10px}.footer__questionNo___3WNct{padding:8px 10px;font-size:14px}.subQuestion{width:28px;height:28px;font-size:13px}.results-summary,.performance-summary{grid-template-columns:1fr 1fr}.review-header,.result-row{grid-template-columns:35px 1fr}.review-header span:nth-child(3),.review-header span:nth-child(4),.result-row .correct-ans,.result-row .status{grid-column:2}.modal-content{width:96%;padding:18px}.answer-input{width:100%;min-width:0}.summary-completion-text .answer-input{width:120px}}
+</style>
+</head>
+<body>
+<div class="header">
+    <div class="timer-container">
+        <span class="timer-display">60:00</span>
+        <div class="timer-controls">
+            <button id="timer-toggle-btn" title="Start / Pause / Resume Timer"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0V0z" fill="none"/><path id="timer-toggle-icon" d="M8 5v14l11-7L8 5z"/></svg></button>
+            <button id="timer-reset-btn" title="Reset Timer"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg></button>
+        </div>
+    </div>
+    <div class="gift-text">A Gift from Abidur Rahman Tahmid</div>
+</div>
+
+<div class="main-container" id="main-container">
+    <div id="passage-header-container">
+        <div id="part-header-1" class="part-header"><p><strong>Part 1</strong></p><p>Read the text and answer questions 1-13.</p></div>
+        <div id="part-header-2" class="part-header hidden"><p><strong>Part 2</strong></p><p>Read the text and answer questions 14-26.</p></div>
+        <div id="part-header-3" class="part-header hidden"><p><strong>Part 3</strong></p><p>Read the text and answer questions 27-40.</p></div>
+    </div>
+
+    <div class="panels-container">
+        <div class="passage-panel" id="passage-panel">
+            <div id="passage-text-1" class="reading-passage">
+                <h4>Andrea Palladio: Italian architect</h4>
+                <p class="subheading">A new exhibition celebrates Palladio’s architecture 500 years on</p>
+                <p><span class="passage-label">A.</span>Vicenza is a pleasant, prosperous city in the Veneto, 60km west of Venice. Its grand families settled and farmed the area from the 16th century. But its principal claim to fame is Andrea Palladio, who is such an influential architect that a neoclassical style is known as Palladian. The city is a permanent exhibition of some of his finest buildings, and as he was born, in Padua, to be precise, 500 years ago, the International Centre for the Study of Palladio's Architecture has an excellent excuse for mounting <em>la grande mostra</em>, the big show.</p>
+                <p><span class="passage-label">B.</span>The exhibition has the special advantage of being held in one of Palladio's buildings, Palazzo Barbaran da Porto. Its bold facade is a mixture of rustication and decoration set between two rows of elegant columns. On the second floor the pediments are alternately curved or pointed, a Palladian trademark. The harmonious proportions of the atrium at the entrance lead through to a dramatic interior of fine fireplaces and painted ceilings. Palladio's design is simple, clear and not over-crowded. The show has been organised on the same principles, according to Howard Burns, the architectural historian who co-curated it.</p>
+                <p><span class="passage-label">C.</span>Palladio's father was a miller who settled in Vicenza, where the young Andrea was apprenticed to a skilled stonemason. How did a humble miller's son become a world renowned architect? The answer in the exhibition is that, as a young man, Palladio excelled at carving decorative stonework on columns, doorways and fireplaces. He was plainly intelligent, and lucky enough to come across a rich patron, Gian Giorgio Trissino, a landowner and scholar, who organised his education, taking him to Rome in the 1540s, where he studied the masterpieces of classical Roman and Greek architecture and the work of other influential architects of the time, such as Donato Bramante and Raphael.</p>
+                <p><span class="passage-label">D.</span>Burns argues that social mobility was also important. Entrepreneurs, prosperous from agriculture in the Veneto, commissioned the promising local architect to design their country villas and their urban mansions. In Venice the aristocracy were anxious to co-opt talented artists, and Palladio was given the chance to design the buildings that have made him famous, the churches of San Giorgio Maggiore and the Redentore, both easy to admire because they can be seen from the city's historical centre across a stretch of water.</p>
+                <p><span class="passage-label">E.</span>He tried his hand at bridges. His unbuilt version of the Rialto Bridge was decorated with the large pediment and columns of a temple, and, after a fire at the Ducal Palace, he offered an alternative design which bears an uncanny resemblance to the Banqueting House in Whitehall in London. Since it was designed by Inigo Jones, Palladio's first foreign disciple, this is not as surprising as it sounds.</p>
+                <p><span class="passage-label">F.</span>Jones, who visited Italy in 1614, bought a trunk full of the master's architectural drawings; they passed through the hands of the Dukes of Burlington and Devonshire before settling at the Royal Institute of British Architects in 1894. Many are now on display at Palazzo Barbaran. What they show is how Palladio drew on the buildings of ancient Rome as models. The major theme of both his rural and urban building was temple architecture, with a strong pointed pediment supported by columns and approached by wide steps.</p>
+                <p><span class="passage-label">G.</span>Palladio's work for rich landowners alienates unreconstructed critics on the Italian left, but among the papers in the show are designs for cheap housing in Venice. In the wider world, Palladio's reputation has been nurtured by a text he wrote and illustrated, <em>Quattro Libri dell' Architettura</em>. His influence spread to St Petersburg and to Charlottesville in Virginia, where Thomas Jefferson commissioned a Palladian villa he called Monticello.</p>
+                <p><span class="passage-label">H.</span>Vicenza's show contains detailed models of the major buildings and is leavened by portraits of Palladio's teachers and clients by Titian, Veronese and Tintoretto; the paintings of his Venetian buildings are all by Canaletto, no less. This is an uncompromising exhibition; many of the drawings are small and faint, and there are no sideshows for children, but the impact of harmonious lines and satisfying proportions is to impart in a viewer a feeling of benevolent calm. Palladio is history's most therapeutic architect.</p>
+                <p><span class="passage-label">I.</span><em>Palladio, 500 Anni: La Grande Mostra</em> is at Palazzo Barbaran da Porto, Vicenza, until January 6th 2009. The exhibition continues at the Royal Academy of Arts, London, from January 31st to April 13th, and travels afterwards to Barcelona and Madrid.</p>
+            </div>
+
+            <div id="passage-text-2" class="reading-passage hidden">
+                <h4>The future never dies?</h4>
+                <p class="subheading">The prospects for humanity and for the world as a whole are somewhere between glorious and dire. It is hard to be much more precise.</p>
+                <p><span class="passage-label">A.</span>By ‘glorious’ I mean that our descendants, all who are born on to this Earth, could live very comfortably and securely, and could continue to do so for as long as the Earth can support life, which should be for a very long time indeed. We should at least be thinking in terms of the next million years. Furthermore, our descendants could continue to enjoy the company of other species, establishing a much better relationship with them than we have now. Other animals need not live in constant fear of us. Many of those fellow species now seem bound to become extinct, but a significant proportion could and should continue to live alongside us. Such a future may seem ideal, and so it is. Yet I do not believe it is fanciful. There is nothing in the physical fabric of the Earth or in our own biology to suggest that this is not possible.</p>
+                <p><span class="passage-label">B.</span>‘Dire’ means that we human beings could be in deep trouble within the next few centuries, living but also dying in large numbers in political terror and from starvation, while huge numbers of our fellow creatures would simply disappear, leaving only the ones that we find convenient, chickens, cattle, or that we can't shake off, like flies and mice. I'm taking it to be self-evident that glory is preferable.</p>
+                <p><span class="passage-label">C.</span>Our future is not entirely in our own hands because the Earth has its own rules, is part of the solar system and is neither stable nor innately safe. Other planets in the solar system are quite beyond habitation, because their temperature is far too high or too low to be endured, and ours, too, in principle could tip either way. Even relatively unspectacular changes in the atmosphere could do the trick. The core of the Earth is hot, which in many ways is good for living creatures, but every now and again, the molten rock bursts through volcanoes on the surface. Among the biggest volcanic eruptions in recent memory was Mount St Helens, in the USA, which threw out a cubic kilometre of ash, fortunately in an area where very few people live. In 1815, Tambora, in present-day Indonesia, expelled so much ash into the upper atmosphere that climatic effects seriously harmed food production around the world for season after season. Entire civilisations have been destroyed by volcanoes.</p>
+                <p><span class="passage-label">D.</span>Yet nothing we have so far experienced shows what volcanoes can really do. Yellowstone National Park in the USA occupies the caldera, the crater formed when a volcano collapses, of an exceedingly ancient volcano of extraordinary magnitude. Modern surveys show that its centre is now rising. Sometime in the next 200 million years, Yellowstone could erupt again, and when it does, the whole world will be transformed. Yellowstone could erupt tomorrow. But there's a very good chance that it will give us another million years, and that surely is enough to be going on with. It seems sensible to assume that this will be the case.</p>
+                <p><span class="passage-label">E.</span>The universe at large is dangerous, too: in particular, we share the sky with vast numbers of asteroids, and every now and again, they come into our planet's atmosphere. An asteroid the size of a small island, hitting the Earth at 15,000 kilometres an hour, a relatively modest speed by the standards of heavenly bodies, would strike the ocean bed like a rock in a puddle, send a tidal wave around the world as high as a small mountain and as fast as a jumbo jet, and propel us into an ice age that could last for centuries. There are plans to head off such disasters, including rockets to push approaching asteroids into new trajectories, but in truth it's down to luck.</p>
+                <p><span class="passage-label">F.</span>On the other hand, the archaeological and the fossil evidence shows that no truly devastating asteroid has struck since the one that seems to have accounted for the extinction of the dinosaurs 65 million years ago. So again, there seems no immediate reason for despair. The Earth is indeed an uncertain place, in an uncertain universe, but with average luck, it should do us well enough. If the world does become inhospitable in the next few thousand or million years, then it will probably be our own fault. In short, despite the underlying uncertainty, our own future and that of our fellow creatures is very much in our own hands.</p>
+                <p><span class="passage-label">G.</span>Given average luck on the geological and the cosmic scale, the difference between glory and disaster will be made, and is being made, by politics. Certain kinds of political systems and strategies would predispose us to long-term survival, and indeed to comfort and security and the pleasure of being alive, while others would take us more and more frenetically towards collapse. The broad point is, though, that we need to look at ourselves, humanity, and at the world in general in a quite new light. Our material problems are fundamentally those of biology. We need to think, and we need our politicians to think, biologically. Do that, and take the ideas seriously, and we are in with a chance. Ignore biology and we and our fellow creatures haven't a hope.</p>
+            </div>
+
+            <div id="passage-text-3" class="reading-passage hidden">
+                <h4>Pottery production in ancient Akrotiri</h4>
+                <p><span class="passage-label">A.</span>Excavations at the site of prehistoric Akrotiri, on the coast of the Aegean Sea, have revealed much about the technical aspects of pottery manufacture, indisputably one of the basic industries of this Greek city. However, considerably less is known about the socio-economic context and the way production was organised.</p>
+                <p><span class="passage-label">B.</span>The bulk of pottery found at Akrotiri is locally made, and dates from the late fifteenth century BC. It clearly fulfilled a vast range of the settlement’s requirements: more than fifty different types of pots can be distinguished. The pottery found includes a wide variety of functional types like storage jars, smaller containers, pouring vessels, cooking pots, drinking vessels and so on, which all relate to specific activities and which would have been made and distributed with those activities in mind. Given the large number of shapes produced and the relatively high degree of standardisation, it has generally been assumed that most, if not all, of Akrotiri pottery was produced by specialised craftsmen in a non-domestic context. Unfortunately neither the potters’ workshops nor kilns have been found within the excavated area. The reason may be that the ceramic workshops were located on the periphery of the site, which has not yet been excavated. In any event, the ubiquity of the pottery, and the consistent repetition of the same types in different sizes, suggest production on an industrial scale.</p>
+                <p><span class="passage-label">C.</span>The Akrotirian potters seem to have responded to pressures beyond their households, namely to the increasing complexity of regional distribution and exchange systems. We can imagine them as full-time craftsmen working permanently in a high production-rate craft such as pottery manufacture, and supporting themselves entirely from the proceeds of their craft. In view of the above, one can begin to speak in terms of mass-produced pottery and the existence of organised workshops of craftsmen during the period 1550–1500 BC. Yet, how pottery production was organised at Akrotiri remains an open question, as there is no real documentary evidence. Our entire knowledge comes from the ceramic material itself, and the tentative conclusions which can be drawn from it.</p>
+                <p><span class="passage-label">D.</span>The invention of units of quantity and of a numerical system to count them was of capital importance for an exchange-geared society such as that of Akrotiri. In spite of the absence of any written records, the archaeological evidence reveals that concepts of measurements, both of weight and number, had been formulated. Standard measures may already have been in operation, such as those evidenced by a graduated series of lead weights, made in disc form, found at the site. The existence of units of capacity in Late Bronze Age times is also evidenced, by the notation of units of a liquid measure for wine on excavated containers.</p>
+                <p><span class="passage-label">E.</span>It must be recognised that the function of pottery vessels plays a very important role in determining their characteristics. The intended function affects the choice of clay, the production technique, and the shape and the size of the pots. For example, large storage jars, pithoi, would be needed to store commodities, whereas smaller containers would be used for transport. In fact, the length of a man’s arm limits the size of a smaller pot to a capacity of about twenty litres; that is also the maximum a man can comfortably carry.</p>
+                <p><span class="passage-label">F.</span>The various sizes of container would thus represent standard quantities of a commodity, which is a fundamental element in the function of exchange. Akrotirian merchants handling a commodity such as wine would have been able to determine easily the amount of wine they were transporting from the number of containers they carried in their ships, since the capacity of each container was known to be 14–18 litres. We could draw a parallel here with the current practice in Greece of selling oil in 17 kilogram tins.</p>
+                <p><span class="passage-label">G.</span>We may therefore assume that the shape, capacity, and, sometimes decoration of vessels are indicative of the commodity contained by them. Since individual transactions would normally involve different quantities of a given commodity, a range of ‘standardised’ types of vessel would be needed to meet traders’ requirements.</p>
+                <p><span class="passage-label">H.</span>In trying to reconstruct systems of capacity by measuring the volume of excavated pottery, a rather generous range of tolerances must be allowed. It seems possible that the potters of that time had specific sizes of vessel in mind, and tried to reproduce them using a specific type and amount of clay. However, it would be quite difficult for them to achieve the exact size required every time, without any mechanical means of regulating symmetry and wall thickness, and some potters would be more skilled than others. In addition, variations in the repetition of types and size may also occur because of unforeseen circumstances during the throwing process. For instance, instead of destroying the entire pot if the clay in the rim contained a piece of grit, a potter might produce a smaller pot by simply cutting off the rim. Even where there is no noticeable external difference between pots meant to contain the same quantity of a commodity, differences in their capacity can actually reach one or two litres. In one case the deviation from the required size appears to be as much as 10–20 percent.</p>
+                <p><span class="passage-label">I.</span>The establishment of regular trade routes within the Aegean led to increased movement of goods; consequently a regular exchange of local, luxury and surplus goods, including metals, would have become feasible as a result of the advances in transport technology. The increased demand for standardised exchanges, inextricably linked to commercial transactions, might have been one of the main factors which led to the standardisation of pottery production. Thus, the whole network of ceramic production and exchange would have depended on specific regional economic conditions, and would reflect the socio-economic structure of prehistoric Akrotiri.</p>
+            </div>
+        </div>
+        <div class="resizer" id="resizer"></div>
+        <div class="questions-panel" id="questions-panel">
+            <div id="questions-part-1" class="questions-container">
+                <div class="question-set">
+                    <h3>Questions 1-7</h3>
+                    <p class="instruction-line">Do the following statements agree with the information given in Reading Passage 1?</p>
+                    <table class="note-table"><tr><td>TRUE</td><td>if the statement agrees with the information</td></tr><tr><td>FALSE</td><td>if the statement contradicts the information</td></tr><tr><td>NOT GIVEN</td><td>if there is no information on this</td></tr></table>
+                    <div class="question-block" data-q-start="1"> <div class="question-row"><span class="question-number-box">1</span><span class="prompt-text">The building where the exhibition is staged has been newly renovated.</span></div><label class="radio-option"><input type="radio" name="q1" value="TRUE">TRUE</label><label class="radio-option"><input type="radio" name="q1" value="FALSE">FALSE</label><label class="radio-option"><input type="radio" name="q1" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="2"> <div class="question-row"><span class="question-number-box">2</span><span class="prompt-text">Palazzo Barbaran da Porto typically represents Palladio’s design.</span></div><label class="radio-option"><input type="radio" name="q2" value="TRUE">TRUE</label><label class="radio-option"><input type="radio" name="q2" value="FALSE">FALSE</label><label class="radio-option"><input type="radio" name="q2" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="3"> <div class="question-row"><span class="question-number-box">3</span><span class="prompt-text">Palladio’s father worked as an architect.</span></div><label class="radio-option"><input type="radio" name="q3" value="TRUE">TRUE</label><label class="radio-option"><input type="radio" name="q3" value="FALSE">FALSE</label><label class="radio-option"><input type="radio" name="q3" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="4"> <div class="question-row"><span class="question-number-box">4</span><span class="prompt-text">Palladio’s family refused to pay for his architectural studies.</span></div><label class="radio-option"><input type="radio" name="q4" value="TRUE">TRUE</label><label class="radio-option"><input type="radio" name="q4" value="FALSE">FALSE</label><label class="radio-option"><input type="radio" name="q4" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="5"> <div class="question-row"><span class="question-number-box">5</span><span class="prompt-text">Palladio’s alternative design for the Ducal Palace in Venice was based on an English building.</span></div><label class="radio-option"><input type="radio" name="q5" value="TRUE">TRUE</label><label class="radio-option"><input type="radio" name="q5" value="FALSE">FALSE</label><label class="radio-option"><input type="radio" name="q5" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="6"> <div class="question-row"><span class="question-number-box">6</span><span class="prompt-text">Palladio designed for both wealthy and poor people.</span></div><label class="radio-option"><input type="radio" name="q6" value="TRUE">TRUE</label><label class="radio-option"><input type="radio" name="q6" value="FALSE">FALSE</label><label class="radio-option"><input type="radio" name="q6" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="7"> <div class="question-row"><span class="question-number-box">7</span><span class="prompt-text">The exhibition includes paintings of people by famous artists.</span></div><label class="radio-option"><input type="radio" name="q7" value="TRUE">TRUE</label><label class="radio-option"><input type="radio" name="q7" value="FALSE">FALSE</label><label class="radio-option"><input type="radio" name="q7" value="NOT GIVEN">NOT GIVEN</label></div>
+                </div>
+                <div class="question-set">
+                    <h3>Questions 8-13</h3>
+                    <p class="instruction-line">Answer the questions below. Choose <strong>NO MORE THAN THREE WORDS</strong> from the passage for each answer.</p>
+                    <div class="question-row" data-q-start="8"><span class="question-number-box">8</span><span class="prompt-text">What job was Palladio training for before he became an architect?</span><input id="q8" class="answer-input" type="text" autocomplete="off"></div>
+                    <div class="question-row" data-q-start="9"><span class="question-number-box">9</span><span class="prompt-text">Who arranged Palladio's architectural studies?</span><input id="q9" class="answer-input" type="text" autocomplete="off"></div>
+                    <div class="question-row" data-q-start="10"><span class="question-number-box">10</span><span class="prompt-text">Who was the first non-Italian architect influenced by Palladio?</span><input id="q10" class="answer-input" type="text" autocomplete="off"></div>
+                    <div class="question-row" data-q-start="11"><span class="question-number-box">11</span><span class="prompt-text">What type of Ancient Roman buildings most heavily influenced Palladio's work?</span><input id="q11" class="answer-input" type="text" autocomplete="off"></div>
+                    <div class="question-row" data-q-start="12"><span class="question-number-box">12</span><span class="prompt-text">What did Palladio write that strengthened his reputation?</span><input id="q12" class="answer-input" type="text" autocomplete="off"></div>
+                    <div class="question-row" data-q-start="13"><span class="question-number-box">13</span><span class="prompt-text">In the writer's opinion, what feeling will visitors to the exhibition experience?</span><input id="q13" class="answer-input" type="text" autocomplete="off"></div>
+                </div>
+            </div>
+
+            <div id="questions-part-2" class="questions-container hidden">
+                <div class="question-set">
+                    <h3>Questions 14-19</h3>
+                    <p class="instruction-line">Do the following statements reflect the claims of the writer in Reading Passage 2?</p>
+                    <table class="note-table"><tr><td>YES</td><td>if the statement is true</td></tr><tr><td>NO</td><td>if the statement is false</td></tr><tr><td>NOT GIVEN</td><td>if the information is not given in the passage</td></tr></table>
+                    <div class="question-block" data-q-start="14"><div class="question-row"><span class="question-number-box">14</span><span class="prompt-text">It seems predictable that some species will disappear.</span></div><label class="radio-option"><input type="radio" name="q14" value="YES">YES</label><label class="radio-option"><input type="radio" name="q14" value="NO">NO</label><label class="radio-option"><input type="radio" name="q14" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="15"><div class="question-row"><span class="question-number-box">15</span><span class="prompt-text">The nature of the Earth and human biology make it impossible for human beings to survive another million years.</span></div><label class="radio-option"><input type="radio" name="q15" value="YES">YES</label><label class="radio-option"><input type="radio" name="q15" value="NO">NO</label><label class="radio-option"><input type="radio" name="q15" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="16"><div class="question-row"><span class="question-number-box">16</span><span class="prompt-text">An eruption by Yellowstone is likely to be more destructive than previous volcanic eruptions.</span></div><label class="radio-option"><input type="radio" name="q16" value="YES">YES</label><label class="radio-option"><input type="radio" name="q16" value="NO">NO</label><label class="radio-option"><input type="radio" name="q16" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="17"><div class="question-row"><span class="question-number-box">17</span><span class="prompt-text">There is a greater chance of the Earth being hit by small asteroids than by large ones.</span></div><label class="radio-option"><input type="radio" name="q17" value="YES">YES</label><label class="radio-option"><input type="radio" name="q17" value="NO">NO</label><label class="radio-option"><input type="radio" name="q17" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="18"><div class="question-row"><span class="question-number-box">18</span><span class="prompt-text">If the world becomes uninhabitable, it is most likely to be as a result of a natural disaster.</span></div><label class="radio-option"><input type="radio" name="q18" value="YES">YES</label><label class="radio-option"><input type="radio" name="q18" value="NO">NO</label><label class="radio-option"><input type="radio" name="q18" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="19"><div class="question-row"><span class="question-number-box">19</span><span class="prompt-text">Politicians currently in power seem unlikely to change their way of thinking.</span></div><label class="radio-option"><input type="radio" name="q19" value="YES">YES</label><label class="radio-option"><input type="radio" name="q19" value="NO">NO</label><label class="radio-option"><input type="radio" name="q19" value="NOT GIVEN">NOT GIVEN</label></div>
+                </div>
+                <div class="question-set">
+                    <h3>Questions 20-25</h3>
+                    <p class="instruction-line">Complete the summary below. Choose <strong>NO MORE THAN TWO WORDS</strong> from the passage for each answer.</p>
+                    <div class="question-block summary-completion-text" data-q-start="20" data-q-end="25">
+                        <p>The Earth could become uninhabitable, like other planets, through a major change in the <input id="q20" class="answer-input" type="text" autocomplete="off">. Volcanic eruptions of <input id="q21" class="answer-input" type="text" autocomplete="off"> can lead to shortages of <input id="q22" class="answer-input" type="text" autocomplete="off"> to a wide area.</p>
+                        <p>An asteroid hitting the Earth could create a <input id="q23" class="answer-input" type="text" autocomplete="off"> that would result in a new <input id="q24" class="answer-input" type="text" autocomplete="off">. Plans are being made to use <input id="q25" class="answer-input" type="text" autocomplete="off"> to deflect asteroids heading for the Earth.</p>
+                    </div>
+                </div>
+                <div class="question-set">
+                    <h3>Question 26</h3>
+                    <p class="instruction-line">Choose the correct letter, A, B, C or D.</p>
+                    <div class="question-block" data-q-start="26"><div class="question-row"><span class="question-number-box">26</span><span class="prompt-text"><strong>What is the writer’s purpose in Reading Passage 2?</strong></span></div><div class="mcq-options"><label class="radio-option"><input type="radio" name="q26" value="A">A. to propose a new theory about the causes of natural disasters</label><label class="radio-option"><input type="radio" name="q26" value="B">B. to prove that generally held beliefs about the future are all mistaken</label><label class="radio-option"><input type="radio" name="q26" value="C">C. to present a range of opinions currently held by scientists</label><label class="radio-option"><input type="radio" name="q26" value="D">D. to argue the need for a general change in behaviour</label></div></div>
+                </div>
+            </div>
+
+            <div id="questions-part-3" class="questions-container hidden">
+                <div class="question-set">
+                    <h3>Questions 27-28</h3>
+                    <p class="instruction-line">Choose the correct letter, A, B, C or D.</p>
+                    <div class="question-block" data-q-start="27"><div class="question-row"><span class="question-number-box">27</span><span class="prompt-text"><strong>What does the writer say about items of pottery excavated at Akrotiri?</strong></span></div><label class="radio-option"><input type="radio" name="q27" value="A">A. There was very little duplication.</label><label class="radio-option"><input type="radio" name="q27" value="B">B. They would have met a big variety of needs.</label><label class="radio-option"><input type="radio" name="q27" value="C">C. Most of them had been imported from other places.</label><label class="radio-option"><input type="radio" name="q27" value="D">D. The intended purpose of each piece was unclear.</label></div>
+                    <div class="question-block" data-q-start="28"><div class="question-row"><span class="question-number-box">28</span><span class="prompt-text"><strong>The assumption that pottery from Akrotiri was produced by specialists is partly based on</strong></span></div><label class="radio-option"><input type="radio" name="q28" value="A">A. The discovery of kilns.</label><label class="radio-option"><input type="radio" name="q28" value="B">B. The central location of workshops.</label><label class="radio-option"><input type="radio" name="q28" value="C">C. The sophistication of decorative patterns.</label><label class="radio-option"><input type="radio" name="q28" value="D">D. The wide range of shapes represented.</label></div>
+                </div>
+                <div class="question-set">
+                    <h3>Questions 29-32</h3>
+                    <p class="instruction-line">Complete each sentence with the correct ending, A-F, below.</p>
+                    <div class="option-list-box"><span class="option-item"><strong>A.</strong> The discovery of a collection of metal discs.</span><span class="option-item"><strong>B.</strong> The size and type of the sailing ships in use.</span><span class="option-item"><strong>C.</strong> Variations in the exact shape and thickness of similar containers.</span><span class="option-item"><strong>D.</strong> The physical characteristics of workmen.</span><span class="option-item"><strong>E.</strong> Marks found on wine containers.</span><span class="option-item"><strong>F.</strong> The variety of commodities for which they would have been used.</span></div>
+                    <div class="question-row" data-q-start="29"><span class="question-number-box">29</span><span class="prompt-text">The assumption that standard units of weight were in use could be based on</span><select id="q29" class="select-answer"><option value="">Select</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option></select></div>
+                    <div class="question-row" data-q-start="30"><span class="question-number-box">30</span><span class="prompt-text">Evidence of the use of standard units of volume is provided by</span><select id="q30" class="select-answer"><option value="">Select</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option></select></div>
+                    <div class="question-row" data-q-start="31"><span class="question-number-box">31</span><span class="prompt-text">The size of certain types of containers would have been restricted by</span><select id="q31" class="select-answer"><option value="">Select</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option></select></div>
+                    <div class="question-row" data-q-start="32"><span class="question-number-box">32</span><span class="prompt-text">Attempts to identify the intended capacity of containers are complicated by</span><select id="q32" class="select-answer"><option value="">Select</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option></select></div>
+                </div>
+                <div class="question-set">
+                    <h3>Questions 33-38</h3>
+                    <p class="instruction-line">Do the following statements agree with the views of the writer in Reading Passage 3?</p>
+                    <table class="note-table"><tr><td>YES</td><td>if the statement agrees with the claims of the writer</td></tr><tr><td>NO</td><td>if the statement contradicts the claims of the writer</td></tr><tr><td>NOT GIVEN</td><td>if it is impossible to say what the writer thinks about this</td></tr></table>
+                    <div class="question-block" data-q-start="33"><div class="question-row"><span class="question-number-box">33</span><span class="prompt-text">There are plans to excavate new areas of the archaeological site in the near future.</span></div><label class="radio-option"><input type="radio" name="q33" value="YES">YES</label><label class="radio-option"><input type="radio" name="q33" value="NO">NO</label><label class="radio-option"><input type="radio" name="q33" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="34"><div class="question-row"><span class="question-number-box">34</span><span class="prompt-text">Some of the evidence concerning pottery production in ancient Akrotiri comes from written records.</span></div><label class="radio-option"><input type="radio" name="q34" value="YES">YES</label><label class="radio-option"><input type="radio" name="q34" value="NO">NO</label><label class="radio-option"><input type="radio" name="q34" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="35"><div class="question-row"><span class="question-number-box">35</span><span class="prompt-text">Pots for transporting liquids would have held no more than about 20 litres.</span></div><label class="radio-option"><input type="radio" name="q35" value="YES">YES</label><label class="radio-option"><input type="radio" name="q35" value="NO">NO</label><label class="radio-option"><input type="radio" name="q35" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="36"><div class="question-row"><span class="question-number-box">36</span><span class="prompt-text">It would have been hard for merchants to calculate how much wine was on their ships.</span></div><label class="radio-option"><input type="radio" name="q36" value="YES">YES</label><label class="radio-option"><input type="radio" name="q36" value="NO">NO</label><label class="radio-option"><input type="radio" name="q36" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="37"><div class="question-row"><span class="question-number-box">37</span><span class="prompt-text">The capacity of containers intended to hold the same amounts differed by up to 20 percent.</span></div><label class="radio-option"><input type="radio" name="q37" value="YES">YES</label><label class="radio-option"><input type="radio" name="q37" value="NO">NO</label><label class="radio-option"><input type="radio" name="q37" value="NOT GIVEN">NOT GIVEN</label></div>
+                    <div class="question-block" data-q-start="38"><div class="question-row"><span class="question-number-box">38</span><span class="prompt-text">Regular trading of goods around the Aegean would have led to the general standardisation of quantities.</span></div><label class="radio-option"><input type="radio" name="q38" value="YES">YES</label><label class="radio-option"><input type="radio" name="q38" value="NO">NO</label><label class="radio-option"><input type="radio" name="q38" value="NOT GIVEN">NOT GIVEN</label></div>
+                </div>
+                <div class="question-set">
+                    <h3>Questions 39-40</h3>
+                    <p class="instruction-line">Choose the correct letter, A, B, C or D.</p>
+                    <div class="question-block" data-q-start="39"><div class="question-row"><span class="question-number-box">39</span><span class="prompt-text"><strong>What does the writer say about the standardisation of container sizes?</strong></span></div><label class="radio-option"><input type="radio" name="q39" value="A">A. Containers which looked the same from the outside often varied in capacity.</label><label class="radio-option"><input type="radio" name="q39" value="B">B. The instruments used to control container size were unreliable.</label><label class="radio-option"><input type="radio" name="q39" value="C">C. The unsystematic use of different types of clay resulted in size variations.</label><label class="radio-option"><input type="radio" name="q39" value="D">D. Potters usually discarded containers which were of a non-standard size.</label></div>
+                    <div class="question-block" data-q-start="40"><div class="question-row"><span class="question-number-box">40</span><span class="prompt-text"><strong>What is probably the main purpose of Reading Passage 3?</strong></span></div><label class="radio-option"><input type="radio" name="q40" value="A">A. To evaluate the quality of pottery containers found in prehistoric Akrotiri.</label><label class="radio-option"><input type="radio" name="q40" value="B">B. To suggest how features of pottery production at Akrotiri reflected other developments in the region.</label><label class="radio-option"><input type="radio" name="q40" value="C">C. To outline the development of pottery-making skills in ancient Greece.</label><label class="radio-option"><input type="radio" name="q40" value="D">D. To describe methods for storing and transporting household goods in prehistoric societies.</label></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nav-row">
+    <div class="footer__questionWrapper___1tZ46 selected" data-part="1"><button class="footer__questionNo___3WNct" onclick="switchToPart(1)"><span class="section-prefix">Part</span><span class="sectionNr">1</span><span class="attemptedCount">0 of 13</span></button><div class="footer__subquestionWrapper___9GgoP" id="nav-part-1"></div></div>
+    <div class="footer__questionWrapper___1tZ46" data-part="2"><button class="footer__questionNo___3WNct" onclick="switchToPart(2)"><span class="section-prefix">Part</span><span class="sectionNr">2</span><span class="attemptedCount">0 of 13</span></button><div class="footer__subquestionWrapper___9GgoP" id="nav-part-2"></div></div>
+    <div class="footer__questionWrapper___1tZ46" data-part="3"><button class="footer__questionNo___3WNct" onclick="switchToPart(3)"><span class="section-prefix">Part</span><span class="sectionNr">3</span><span class="attemptedCount">0 of 14</span></button><div class="footer__subquestionWrapper___9GgoP" id="nav-part-3"></div></div>
+    <button class="footer__deliverButton___3FM07" id="deliver-button"><i class="fa fa-check"></i> SUBMIT</button>
+</div>
+
+<div id="results-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+        <button class="modal-close-btn" onclick="closeResultsModal()">&times;</button>
+        <h2>IELTS Reading Results</h2>
+        <div class="results-summary"><div>Score: <span id="results-score">0</span> / 40</div><div>Band: <span id="results-band">0.0 / 9.0</span></div></div>
+        <div class="performance-summary" id="performance-summary"></div>
+        <div class="results-details-container" id="results-details"></div>
+    </div>
+</div>
+
+<div id="context-menu" class="context-menu">
+    <div class="context-menu-item" id="menu-highlight" onclick="highlightText()">Highlight</div>
+    <div class="context-menu-item" id="menu-note" onclick="addNote()">Add note</div>
+    <div class="context-menu-item" id="menu-clear" onclick="clearHighlight()">Clear</div>
+    <div class="context-menu-item" onclick="clearAllHighlights()">Clear all</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    const correctAnswers = {
+        1:{accepted:['NOT GIVEN'],display:'NOT GIVEN'},2:{accepted:['TRUE'],display:'TRUE'},3:{accepted:['FALSE'],display:'FALSE'},4:{accepted:['NOT GIVEN'],display:'NOT GIVEN'},5:{accepted:['FALSE'],display:'FALSE'},6:{accepted:['TRUE'],display:'TRUE'},7:{accepted:['TRUE'],display:'TRUE'},
+        8:{accepted:['stonemason','a skilled stonemason','skilled stonemason'],display:'stonemason'},9:{accepted:['Gian Giorgio Trissino','Trissino'],display:'Gian Giorgio Trissino'},10:{accepted:['Inigo Jones'],display:'Inigo Jones'},11:{accepted:['temple','temple architecture'],display:'temple'},12:{accepted:["Quattro Libri dell Architettura","Quattro Libri dell' Architettura","Quattro Libri dell’ Architettura"],display:"Quattro Libri dell' Architettura"},13:{accepted:['benevolent calm','a feeling of benevolent calm'],display:'benevolent calm'},
+        14:{accepted:['YES'],display:'YES'},15:{accepted:['NO'],display:'NO'},16:{accepted:['YES'],display:'YES'},17:{accepted:['NOT GIVEN'],display:'NOT GIVEN'},18:{accepted:['NO'],display:'NO'},19:{accepted:['NOT GIVEN'],display:'NOT GIVEN'},
+        20:{accepted:['temperature'],display:'temperature'},21:{accepted:['molten rock','rock ash','rock/ash','rock','ash','molten rock ash','molten rock/ash'],display:'(molten) rock / ash'},22:{accepted:['food'],display:'food'},23:{accepted:['tidal wave'],display:'tidal wave'},24:{accepted:['ice age'],display:'ice age'},25:{accepted:['rockets'],display:'rockets'},26:{accepted:['D'],display:'D'},
+        27:{accepted:['B'],display:'B'},28:{accepted:['D'],display:'D'},29:{accepted:['A'],display:'A'},30:{accepted:['E'],display:'E'},31:{accepted:['D'],display:'D'},32:{accepted:['C'],display:'C'},33:{accepted:['NOT GIVEN'],display:'NOT GIVEN'},34:{accepted:['NO'],display:'NO'},35:{accepted:['YES'],display:'YES'},36:{accepted:['NO'],display:'NO'},37:{accepted:['YES'],display:'YES'},38:{accepted:['YES'],display:'YES'},39:{accepted:['A'],display:'A'},40:{accepted:['B'],display:'B'}
+    };
+    let currentPassage = 1;
+    let currentQuestion = 1;
+    let submitted = false;
+    const passagePanel = document.getElementById('passage-panel');
+    const questionsPanel = document.getElementById('questions-panel');
+    const resizer = document.getElementById('resizer');
+    const deliverButton = document.getElementById('deliver-button');
+    const timerDisplay = document.querySelector('.timer-display');
+    const timerToggleButton = document.getElementById('timer-toggle-btn');
+    const timerResetButton = document.getElementById('timer-reset-btn');
+    const timerToggleIcon = document.getElementById('timer-toggle-icon');
+    const contextMenu = document.getElementById('context-menu');
+    let selectedRange = null;
+    let timeRemaining = 60 * 60;
+    let timerInterval = null;
+    let timerRunning = false;
+
+    function normalizeAnswer(answer){
+        return String(answer || '')
+            .toLowerCase()
+            .replace(/[’‘]/g,"'")
+            .replace(/&/g,' and ')
+            .replace(/[^a-z0-9]+/g,' ')
+            .replace(/\s+/g,' ')
+            .trim();
+    }
+
+    function rangeForPart(part){ return part === 1 ? [1,13] : part === 2 ? [14,26] : [27,40]; }
+    function partForQuestion(q){ return q <= 13 ? 1 : q <= 26 ? 2 : 3; }
+
+    function buildNav(){
+        for(let part=1; part<=3; part++){
+            const [start,end] = rangeForPart(part);
+            const nav = document.getElementById(`nav-part-${part}`);
+            for(let q=start; q<=end; q++){
+                const btn = document.createElement('button');
+                btn.className = 'subQuestion';
+                btn.type = 'button';
+                btn.dataset.navQ = q;
+                btn.textContent = q;
+                btn.addEventListener('click', () => goToQuestion(q));
+                nav.appendChild(btn);
+            }
+        }
+    }
+
+    function updateTimerDisplay(){
+        const minutes = Math.floor(timeRemaining / 60);
+        const seconds = timeRemaining % 60;
+        timerDisplay.textContent = `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
+    }
+    function setTimerIcon(paused){
+        timerToggleIcon.setAttribute('d', paused ? 'M8 5v14l11-7L8 5z' : 'M6 19h4V5H6v14zm8-14v14h4V5h-4z');
+    }
+    function startTimer(){
+        if(timerRunning || submitted) return;
+        timerRunning = true; setTimerIcon(false);
+        timerInterval = setInterval(() => {
+            if(timeRemaining > 0){ timeRemaining--; updateTimerDisplay(); }
+            else { clearInterval(timerInterval); timerRunning = false; checkAnswers(); }
+        },1000);
+    }
+    function pauseTimer(){ clearInterval(timerInterval); timerRunning = false; setTimerIcon(true); }
+    function toggleTimer(){ timerRunning ? pauseTimer() : startTimer(); }
+    function resetTimer(){ pauseTimer(); timeRemaining = 60 * 60; updateTimerDisplay(); if(!submitted) startTimer(); }
+
+    window.switchToPart = function(part){
+        currentPassage = part;
+        document.querySelectorAll('.reading-passage').forEach(p => p.classList.add('hidden'));
+        document.getElementById(`passage-text-${part}`).classList.remove('hidden');
+        document.querySelectorAll('.questions-container').forEach(q => q.classList.add('hidden'));
+        document.getElementById(`questions-part-${part}`).classList.remove('hidden');
+        document.querySelectorAll('.part-header').forEach(h => h.classList.add('hidden'));
+        document.getElementById(`part-header-${part}`).classList.remove('hidden');
+        document.querySelectorAll('.footer__questionWrapper___1tZ46').forEach(w => w.classList.remove('selected'));
+        document.querySelector(`.footer__questionWrapper___1tZ46[data-part="${part}"]`).classList.add('selected');
+        const [start,end] = rangeForPart(part);
+        if(currentQuestion < start || currentQuestion > end) currentQuestion = start;
+        passagePanel.scrollTop = 0;
+        updateNavigation();
+    };
+
+    window.goToQuestion = function(q){
+        q = parseInt(q,10);
+        const part = partForQuestion(q);
+        if(currentPassage !== part) switchToPart(part);
+        currentQuestion = q;
+        updateNavigation();
+        const target = document.getElementById(`q${q}`) || document.querySelector(`[data-q-start="${q}"]`);
+        if(target){
+            target.scrollIntoView({behavior:'smooth',block:'center'});
+            if(['INPUT','SELECT','TEXTAREA'].includes(target.tagName) && !target.disabled){ setTimeout(()=>target.focus({preventScroll:true}),300); }
+        }
+    };
+
+    function getUserAnswer(q){
+        const input = document.getElementById(`q${q}`);
+        if(input) return input.value || '';
+        const checked = document.querySelector(`input[name="q${q}"]:checked`);
+        return checked ? checked.value : '';
+    }
+    function getUserAnswerDisplay(q){ return (getUserAnswer(q) || '').trim(); }
+    function isQuestionAnswered(q){ return getUserAnswer(q).trim() !== ''; }
+    function isCorrect(q){
+        const user = normalizeAnswer(getUserAnswer(q));
+        return correctAnswers[q].accepted.some(ans => normalizeAnswer(ans) === user);
+    }
+
+    function updateAllIndicators(){
+        for(let part=1; part<=3; part++){
+            const [start,end] = rangeForPart(part);
+            let count = 0;
+            for(let q=start; q<=end; q++) if(isQuestionAnswered(q)) count++;
+            const countSpan = document.querySelector(`.footer__questionWrapper___1tZ46[data-part="${part}"] .attemptedCount`);
+            if(countSpan) countSpan.textContent = `${count} of ${end - start + 1}`;
+        }
+        document.querySelectorAll('.subQuestion').forEach(btn => {
+            const q = parseInt(btn.dataset.navQ,10);
+            btn.classList.toggle('answered', isQuestionAnswered(q));
+        });
+    }
+
+    function updateNavigation(){
+        document.querySelectorAll('.subQuestion').forEach(btn => btn.classList.toggle('active', parseInt(btn.dataset.navQ,10) === currentQuestion));
+        document.querySelectorAll('.active-row').forEach(el => el.classList.remove('active-row'));
+        let active = document.querySelector(`[data-q-start="${currentQuestion}"]`);
+        if(!active){
+            const input = document.getElementById(`q${currentQuestion}`);
+            active = input ? input.closest('.question-block') : null;
+        }
+        if(active) active.classList.add('active-row');
+        document.querySelectorAll('.answer-input,.select-answer').forEach(el => el.classList.toggle('active-input', el.id === `q${currentQuestion}`));
+        updateAllIndicators();
+    }
+
+    function getBand(score){
+        if(score>=39) return '9.0'; if(score>=37) return '8.5'; if(score>=35) return '8.0'; if(score>=33) return '7.5'; if(score>=30) return '7.0'; if(score>=27) return '6.5'; if(score>=23) return '6.0'; if(score>=19) return '5.5'; if(score>=15) return '5.0'; if(score>=13) return '4.5'; if(score>=10) return '4.0'; if(score>=8) return '3.5'; if(score>=6) return '3.0'; if(score>=4) return '2.5'; return '2.0';
+    }
+
+    function clearPreviousMarks(){
+        document.querySelectorAll('.correct,.incorrect,.correct-answer-highlight,.incorrect-choice,.unanswered-after-submit,.correct-row,.unanswered-row').forEach(el => el.classList.remove('correct','incorrect','correct-answer-highlight','incorrect-choice','unanswered-after-submit','correct-row','unanswered-row'));
+        document.querySelectorAll('.correct-answer-display').forEach(el => el.remove());
+    }
+    function addCorrectAnswerDisplay(anchor, text){
+        const span = document.createElement('span'); span.className = 'correct-answer-display';
+        span.innerHTML = `➜ <span class="correct-answer-highlight">${text}</span>`;
+        anchor.insertAdjacentElement('afterend', span);
+    }
+    function markQuestion(q, correct, answered){
+        const input = document.getElementById(`q${q}`);
+        const block = document.querySelector(`[data-q-start="${q}"]`) || (input ? input.closest('.question-block') : null);
+        if(input){
+            input.classList.add(correct ? 'correct' : 'incorrect');
+            if(block) block.classList.add(correct ? 'correct' : 'incorrect');
+            if(!correct) addCorrectAnswerDisplay(input, correctAnswers[q].display);
+            return;
+        }
+        const radios = document.querySelectorAll(`input[name="q${q}"]`);
+        if(radios.length){
+            if(block) block.classList.add(correct ? 'correct' : 'incorrect');
+            radios.forEach(radio => {
+                const label = radio.closest('label');
+                if(radio.checked && !correct && label) label.classList.add('incorrect-choice');
+                if(correctAnswers[q].accepted.map(normalizeAnswer).includes(normalizeAnswer(radio.value)) && label) label.classList.add('correct-answer-highlight');
+            });
+        }
+        if(!answered){ const nav = document.querySelector(`.subQuestion[data-nav-q="${q}"]`); if(nav) nav.classList.add('unanswered-after-submit'); }
+    }
+
+    window.checkAnswers = function(){
+        if(submitted) return;
+        submitted = true; pauseTimer(); clearPreviousMarks();
+        let score=0, unanswered=0, wrong=0; const details=[];
+        for(let q=1; q<=40; q++){
+            const answered = isQuestionAnswered(q);
+            const correct = answered && isCorrect(q);
+            if(correct) score++; else if(!answered) unanswered++; else wrong++;
+            markQuestion(q, correct, answered);
+            const nav = document.querySelector(`.subQuestion[data-nav-q="${q}"]`);
+            if(nav) nav.classList.add(correct ? 'correct' : (answered ? 'incorrect' : 'unanswered-after-submit'));
+            details.push({q,user:getUserAnswerDisplay(q)||'Not Answered',correct:correctAnswers[q].display,status:correct?'Correct':(answered?'Incorrect':'Unanswered')});
+        }
+        document.querySelectorAll('input,select,textarea').forEach(el => el.disabled = true);
+        deliverButton.disabled = true;
+        const percentage = Math.round((score / 40) * 100);
+        document.getElementById('results-score').textContent = score;
+        document.getElementById('results-band').textContent = `${getBand(score)} / 9.0`;
+        document.getElementById('performance-summary').innerHTML = `<div>Correct<br>${score}</div><div>Wrong<br>${wrong}</div><div>Unanswered<br>${unanswered}</div><div>Percentage<br>${percentage}%</div>`;
+        const resultsDetails = document.getElementById('results-details');
+        resultsDetails.innerHTML = '<div class="review-header"><span>No.</span><span>User Answer</span><span>Correct Answer</span><span>Status</span></div>';
+        details.forEach(row => {
+            const div = document.createElement('div');
+            div.className = `result-row ${row.status === 'Correct' ? 'correct-row' : row.status === 'Unanswered' ? 'unanswered-row' : 'incorrect'}`;
+            div.innerHTML = `<span class="q-num">${row.q}</span><span class="user-ans">${row.user}</span><span class="correct-ans">${row.correct}</span><span class="status">${row.status}</span>`;
+            resultsDetails.appendChild(div);
+        });
+        document.getElementById('results-modal').classList.remove('hidden');
+    };
+    window.closeResultsModal = function(){ document.getElementById('results-modal').classList.add('hidden'); };
+
+    function setupQuestionActivation(){
+        document.querySelectorAll('[data-q-start]').forEach(el => {
+            el.addEventListener('click', event => {
+                const input = event.target.closest('input,select,textarea');
+                let q = parseInt(el.dataset.qStart,10);
+                if(input && input.id && /^q\d+$/.test(input.id)) q = parseInt(input.id.substring(1),10);
+                currentQuestion = q; updateNavigation();
+            });
+        });
+        document.querySelectorAll('input,select').forEach(el => {
+            el.addEventListener('focus', () => { if(el.id && /^q\d+$/.test(el.id)){ currentQuestion = parseInt(el.id.substring(1),10); updateNavigation(); }});
+            el.addEventListener('input', updateAllIndicators);
+            el.addEventListener('change', updateAllIndicators);
+        });
+    }
+
+    function initResize(e){ e.preventDefault(); document.addEventListener('mousemove', doResize); document.addEventListener('mouseup', stopResize); document.body.style.cursor='col-resize'; document.body.style.userSelect='none'; }
+    function doResize(e){ if(window.innerWidth <= 900) return; const container = document.querySelector('.panels-container'); const rect = container.getBoundingClientRect(); let leftWidth = e.clientX - rect.left; const minWidth = 220; const maxWidth = rect.width - 220; leftWidth = Math.max(minWidth, Math.min(maxWidth,leftWidth)); passagePanel.style.flex = `0 0 ${leftWidth}px`; questionsPanel.style.flex = '1 1 auto'; }
+    function stopResize(){ document.removeEventListener('mousemove',doResize); document.removeEventListener('mouseup',stopResize); document.body.style.cursor=''; document.body.style.userSelect=''; }
+
+    function initializeContextMenu(){
+        const panels = [passagePanel, questionsPanel];
+        document.addEventListener('selectionchange', () => { const selection = window.getSelection(); if(selection && !selection.isCollapsed && selection.toString().trim().length > 0){ const range = selection.getRangeAt(0); if(panels.some(panel => panel.contains(range.commonAncestorContainer))){ selectedRange = range; contextMenu.targetElementForClear = null; } } });
+        panels.forEach(panel => panel.addEventListener('contextmenu', e => { const isHighlight = e.target.closest('.highlight,.comment-highlight'); const hasSelection = selectedRange && selectedRange.toString().trim().length > 0; if(!isHighlight && !hasSelection) return; e.preventDefault(); document.getElementById('menu-highlight').style.display = isHighlight ? 'none':'block'; document.getElementById('menu-note').style.display = isHighlight ? 'none':'block'; document.getElementById('menu-clear').style.display = isHighlight ? 'block':'none'; contextMenu.targetElementForClear = isHighlight; contextMenu.style.display='block'; let left=e.pageX, top=e.pageY; if(left + 150 > window.innerWidth) left = window.innerWidth - 158; contextMenu.style.left=`${left}px`; contextMenu.style.top=`${top}px`; }));
+        document.addEventListener('click', e => { if(!contextMenu.contains(e.target)) contextMenu.style.display='none'; });
+    }
+    function unwrapElement(element){ const parent = element.parentNode; if(!parent) return; while(element.firstChild) parent.insertBefore(element.firstChild, element); parent.removeChild(element); parent.normalize(); }
+    window.highlightText = function(){ if(selectedRange && !selectedRange.collapsed){ const span = document.createElement('span'); span.className='highlight'; span.appendChild(selectedRange.extractContents()); selectedRange.insertNode(span); } contextMenu.style.display='none'; window.getSelection().removeAllRanges(); };
+    window.addNote = function(){ const note = prompt('Enter your note:'); if(note && selectedRange && !selectedRange.collapsed){ const span=document.createElement('span'); span.className='comment-highlight'; const tooltip=document.createElement('span'); tooltip.className='comment-tooltip'; tooltip.textContent=note; span.appendChild(selectedRange.extractContents()); span.appendChild(tooltip); selectedRange.insertNode(span); } contextMenu.style.display='none'; window.getSelection().removeAllRanges(); };
+    window.clearHighlight = function(){ if(contextMenu.targetElementForClear) unwrapElement(contextMenu.targetElementForClear); contextMenu.style.display='none'; };
+    window.clearAllHighlights = function(){ document.querySelectorAll('.highlight,.comment-highlight').forEach(unwrapElement); contextMenu.style.display='none'; };
+
+    timerToggleButton.addEventListener('click', toggleTimer);
+    timerResetButton.addEventListener('click', resetTimer);
+    deliverButton.addEventListener('click', checkAnswers);
+    resizer.addEventListener('mousedown', initResize, false);
+    document.addEventListener('keydown', e => { if(['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)) return; if(e.key === 'ArrowRight' && currentQuestion < 40) goToQuestion(currentQuestion + 1); if(e.key === 'ArrowLeft' && currentQuestion > 1) goToQuestion(currentQuestion - 1); });
+
+    buildNav(); setupQuestionActivation(); initializeContextMenu(); updateTimerDisplay(); startTimer(); switchToPart(1);
+});
+</script>
+</body>
+</html>
