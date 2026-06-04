@@ -85,7 +85,7 @@
     .brand-text p { margin: 4px 0 0; color: var(--muted); font-size: 0.92rem; }
 
     .nav-links {
-      display: flex;
+      
       flex-wrap: wrap;
       gap: 10px;
       justify-content: flex-end;
@@ -196,6 +196,7 @@
       display: flex;
       gap: 7px;
       margin-top: 22px;
+      padding-left: 2px;
     }
 
     .flip-dots span {
@@ -400,9 +401,21 @@
     .quick-links a span { color: rgba(255,255,255,0.85); font-weight: 400; font-size: 0.92rem; }
     .quick-links a strong { color: #fff; }
     .quick-links a:hover { transform: translateY(-2px); filter: brightness(1.1); }
-    .quick-links a.ql-telegram { background: #229ED9; }
-    .quick-links a.ql-whatsapp { background: #25D366; }
-    .quick-links a.ql-email    { background: #8b2020; }
+.quick-links a.ql-telegram {
+      background: linear-gradient(135deg, #1a8bbf, #229ED9);
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 18px rgba(34,158,217,0.35);
+    }
+    .quick-links a.ql-whatsapp {
+      background: linear-gradient(135deg, #1aad52, #25D366);
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 18px rgba(37,211,102,0.35);
+    }
+    .quick-links a.ql-email {
+      background: linear-gradient(135deg, #6b1515, #a02525);
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 4px 18px rgba(139,32,32,0.35);
+    }
 
     /* ── SECTIONS ── */
     .section { padding: 24px 0 8px; }
@@ -656,15 +669,15 @@
           </div>
           <div class="quick-links">
             <a class="ql-telegram" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener noreferrer">
-              <span>Telegram Channel</span>
+              <span>✈️ &nbsp;Telegram Channel</span>
               <strong>Open →</strong>
             </a>
             <a class="ql-whatsapp" href="https://wa.me/8801733644619" target="_blank" rel="noopener noreferrer">
-              <span>WhatsApp Support</span>
+              <span>💬 &nbsp;WhatsApp Support</span>
               <strong>Chat →</strong>
             </a>
             <a class="ql-email" href="mailto:abrahman644619@gmail.com">
-              <span>Email Support</span>
+              <span>📧 &nbsp;Email Support</span>
               <strong>Mail →</strong>
             </a>
           </div>
