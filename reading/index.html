@@ -36,6 +36,36 @@
     }
     .back { color: #34c3ff; display: inline-block; margin-bottom: 28px; text-decoration: none; }
     .back:hover { text-decoration: underline; }
+
+    .locked-card {
+      opacity: 0.75;
+      cursor: default;
+      border-style: dashed;
+      border-color: rgba(255,159,28,0.35);
+      background: rgba(255,159,28,0.05);
+    }
+
+    .premium-note {
+      color: #ffbf69;
+      font-size: 0.85rem;
+      margin-top: 6px !important;
+      font-weight: 600;
+    }
+
+    .badge-premium {
+      background: linear-gradient(135deg, #ff9f1c, #ffbf69);
+      color: #1b1203 !important;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: 0.2s;
+      flex-shrink: 0;
+    }
+
+    .badge-premium:hover { filter: brightness(1.1); transform: translateY(-1px); }
   </style>
 </head>
 <body>
@@ -67,13 +97,15 @@
     <span class="badge">Start →</span>
   </a>
 
-  <a class="test-card" href="Real_Exam_AC_Reading_03.html">
+ <!-- PREMIUM LOCKED CARD -->
+  <div class="test-card locked-card">
     <div class="left">
-      <h3>Real Exam Academic Reading 03</h3>
+      <h3>🔒 Real Exam Academic Reading 03</h3>
       <p>3 Passages · 40 Questions · 60 Minutes · Instant Score</p>
+      <p class="premium-note">⭐ Premium — Join Telegram to unlock</p>
     </div>
-    <span class="badge">Start →</span>
-  </a>
+    <a class="badge badge-premium" href="https://t.me/demoIELTSclass" target="_blank">Unlock →</a>
+  </div>
   
 </body>
 </html>
