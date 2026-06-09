@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Vocabulary Masterclass – Test 02</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:#fff;line-height:1.5;font-size:16px;color:#1a1a1a}
+.header{background:linear-gradient(135deg,#1a237e 0%,#283593 40%,#1565c0 70%,#0277bd 100%);padding:0 24px;position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 16px rgba(0,0,0,0.3)}
+.header-left{display:flex;flex-direction:column;justify-content:center}
+.header-title{font-family:Arial,sans-serif;font-size:1.18rem;font-weight:bold;color:#fff;letter-spacing:0.3px;line-height:1.1}
+.header-title span{background:linear-gradient(90deg,#ffd54f,#ffb300,#ff8f00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header-gift{font-size:0.78rem;color:rgba(255,255,255,0.75);margin-top:2px;font-style:italic}
+.header-right{display:flex;align-items:center;gap:16px}
+.timer-box{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:8px;padding:6px 16px;text-align:center}
+.timer-label{font-size:0.7rem;color:rgba(255,255,255,0.7);letter-spacing:1px;text-transform:uppercase}
+.timer-display{font-size:1.5rem;font-weight:bold;color:#fff;font-family:monospace;letter-spacing:2px}
+.timer-box.warning .timer-display{color:#ffb300;animation:pulse 1s infinite}
+.timer-box.danger .timer-display{color:#ff5252;animation:pulse 0.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+.main-container{margin-top:64px;height:calc(100vh - 64px);display:flex;flex-direction:column}
+.panels-container{display:flex;flex:1;overflow:hidden}
+.passage-panel{flex:1;padding:24px 24px 110px;overflow-y:auto;min-width:200px;background:#fafaf8}
+.questions-panel{flex:1;padding:24px 24px 110px;overflow-y:auto;min-width:200px;border-left:2px solid #e0e0e0;background:#fff}
+.resizer{width:8px;cursor:col-resize;background:#e8e8e8;flex-shrink:0;transition:background .2s}
+.resizer:hover{background:#bdbdbd}
+.set-tabs{display:flex;border-bottom:2px solid #1a237e;background:#f5f5f5}
+.set-tab{padding:10px 24px;cursor:pointer;font-weight:bold;font-size:0.95rem;color:#666;border:none;background:none;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;font-family:Arial,sans-serif}
+.set-tab.active{color:#1a237e;border-bottom-color:#1a237e;background:#fff}
+.set-tab:hover:not(.active){color:#1a237e;background:#ede7f6}
+.set-header{background:linear-gradient(135deg,#e8eaf6,#e3f2fd);border-left:5px solid #1a237e;padding:14px 18px;border-radius:4px;margin-bottom:20px}
+.set-header h2{font-size:1.1rem;color:#1a237e;margin-bottom:4px}
+.set-header p{font-size:0.9rem;color:#555;font-style:italic}
+.vocab-entry{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid #e8e8e8}
+.vocab-entry:last-child{border-bottom:none}
+.vocab-term{font-weight:bold;font-size:1.02rem;color:#1a237e;margin-bottom:4px}
+.vocab-def{color:#333;line-height:1.6;font-size:0.97rem}
+.question-set-header{background:linear-gradient(135deg,#1a237e,#1565c0);color:#fff;padding:12px 18px;border-radius:6px;margin-bottom:16px}
+.question-set-header h3{font-size:1rem;margin-bottom:2px}
+.question-set-header p{font-size:0.82rem;color:rgba(255,255,255,0.8);font-style:italic}
+.question-block{margin-bottom:20px;padding:12px 14px;border-radius:6px;border:1px solid #e8e8e8;transition:all .2s}
+.question-block:hover{border-color:#9fa8da;background:#f8f9ff}
+.question-block.correct{background:#e8f5e9;border-color:#66bb6a}
+.question-block.incorrect{background:#ffebee;border-color:#ef5350}
+.question-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.q-num{min-width:32px;height:32px;border-radius:50%;background:#1a237e;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:0.88rem;flex-shrink:0}
+.question-block.correct .q-num{background:#388e3c}
+.question-block.incorrect .q-num{background:#c62828}
+.prompt-text{flex:1;padding-top:6px;line-height:1.6;font-size:0.97rem}
+.answer-input{width:100%;padding:8px 12px;border:1.5px solid #c5cae9;border-radius:6px;font-size:0.95rem;font-family:Arial,sans-serif;background:#fafafa;transition:border-color .2s,box-shadow .2s}
+.answer-input:focus{outline:none;border-color:#1a237e;box-shadow:0 0 0 3px rgba(26,35,126,.12);background:#fff}
+.answer-input.correct{border-color:#388e3c;background:#e8f5e9}
+.answer-input.incorrect{border-color:#c62828;background:#ffebee}
+.correct-answer-display{font-size:0.83rem;color:#388e3c;font-weight:bold;margin-top:6px;display:flex;align-items:center;gap:4px}
+.nav-row{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid #e0e0e0;height:80px;z-index:100;display:flex;align-items:center;padding:0 16px;gap:8px;overflow-x:auto}
+.q-nav-btn{min-width:36px;height:36px;border-radius:6px;border:1.5px solid #c5cae9;background:#fff;color:#333;font-size:0.85rem;font-weight:bold;cursor:pointer;transition:all .15s;flex-shrink:0}
+.q-nav-btn:hover{background:#e8eaf6;border-color:#1a237e}
+.q-nav-btn.active{background:#1a237e;color:#fff;border-color:#1a237e}
+.q-nav-btn.answered{background:#e8eaf6;border-color:#9fa8da}
+.q-nav-btn.correct{background:#388e3c;color:#fff;border-color:#388e3c}
+.q-nav-btn.incorrect{background:#c62828;color:#fff;border-color:#c62828}
+.q-nav-btn.unanswered-warn{background:#ff8f00;color:#fff;border-color:#ff8f00}
+.nav-spacer{flex:1}
+.submit-btn{padding:12px 28px;border-radius:8px;font-weight:bold;font-size:1rem;background:linear-gradient(135deg,#1a237e,#1565c0);color:#fff;border:none;cursor:pointer;flex-shrink:0;transition:all .2s;font-family:Arial,sans-serif;box-shadow:0 4px 12px rgba(26,35,126,.3)}
+.submit-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(26,35,126,.4)}
+.submit-btn:disabled{background:#bdbdbd;cursor:not-allowed;transform:none;box-shadow:none}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:2000;display:flex;justify-content:center;align-items:center}
+.modal-overlay.hidden{display:none}
+.modal-content{background:#fff;border-radius:16px;width:92%;max-width:640px;max-height:88vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.4)}
+.modal-header{background:linear-gradient(135deg,#1a237e,#1565c0);padding:24px 28px;color:#fff;text-align:center}
+.modal-header h2{font-size:1.5rem;margin-bottom:4px}
+.modal-header p{font-size:0.9rem;color:rgba(255,255,255,.8)}
+.modal-body{padding:24px 28px;overflow-y:auto}
+.score-big{text-align:center;margin-bottom:24px}
+.score-number{font-size:4rem;font-weight:bold;line-height:1;color:#1a237e}
+.score-label{font-size:1rem;color:#666;margin-top:4px}
+.score-bar-wrap{background:#e8eaf6;border-radius:99px;height:14px;margin:16px 0;overflow:hidden}
+.score-bar{height:100%;border-radius:99px;background:linear-gradient(90deg,#1565c0,#0277bd);transition:width 1s ease}
+.perf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.perf-card{border:1.5px solid #e8eaf6;border-radius:10px;padding:14px;text-align:center}
+.perf-card .val{font-size:1.6rem;font-weight:bold;color:#1a237e}
+.perf-card .lbl{font-size:0.78rem;color:#888;margin-top:2px}
+.perf-card.green .val{color:#388e3c}
+.perf-card.red .val{color:#c62828}
+.perf-card.amber .val{color:#f57c00}
+.result-table{width:100%;border-collapse:collapse;font-size:0.88rem}
+.result-table th{background:#e8eaf6;color:#1a237e;padding:8px 10px;text-align:left;font-weight:bold}
+.result-table td{padding:8px 10px;border-bottom:1px solid #f0f0f0}
+.result-table tr.correct-row td{background:#f1f8e9}
+.result-table tr.incorrect-row td{background:#ffebee}
+.result-table tr.unanswered-row td{background:#fff8e1}
+.correct-ans-cell{color:#388e3c;font-weight:bold}
+.modal-footer{padding:16px 28px;border-top:1px solid #e8e8e8;display:flex;gap:10px;justify-content:center}
+.btn-retry{padding:10px 24px;border-radius:8px;background:#1a237e;color:#fff;border:none;cursor:pointer;font-weight:bold;font-family:Arial,sans-serif}
+.btn-close{padding:10px 24px;border-radius:8px;background:#fff;color:#1a237e;border:2px solid #1a237e;cursor:pointer;font-weight:bold;font-family:Arial,sans-serif}
+@media(max-width:860px){.panels-container{flex-direction:column}.passage-panel,.questions-panel{min-height:44vh;width:100%!important;border-left:none}.questions-panel{border-top:2px solid #e0e0e0}.resizer{display:none}}
+@media(max-width:540px){.header{height:72px}.main-container{margin-top:72px;height:calc(100vh - 72px)}.perf-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-left">
+    <div class="header-title">📖 IELTS <span>Vocabulary Masterclass</span></div>
+    <div class="header-gift">✦ A gift from Abidur Rahman Tahmid</div>
+  </div>
+  <div class="header-right">
+    <div class="timer-box" id="timerBox">
+      <div class="timer-label">Time Left</div>
+      <div class="timer-display" id="timerDisplay">30:00</div>
+    </div>
+  </div>
+</header>
+
+<div class="main-container">
+  <div class="set-tabs">
+    <button class="set-tab active" onclick="switchSet(1)">Set 1 &nbsp;·&nbsp; Q 1–6</button>
+    <button class="set-tab" onclick="switchSet(2)">Set 2 &nbsp;·&nbsp; Q 7–12</button>
+    <button class="set-tab" onclick="switchSet(3)">Set 3 &nbsp;·&nbsp; Q 13–18</button>
+  </div>
+
+  <div class="panels-container">
+    <div class="passage-panel" id="passagePanel">
+
+      <!-- SET 1 PASSAGE -->
+      <div id="passage-set1">
+        <div class="set-header">
+          <h2>Set 1 — Vocabulary in Context</h2>
+          <p>Read the collocations and their meanings carefully before answering the questions on the right.</p>
+        </div>
+        <div class="vocab-entry"><div class="vocab-term">a day off-</div><div class="vocab-def">A day when someone does not go to work or school. This can be because of a holiday or an individual choice to not go to work. Usually this phrase is not applied to Saturdays and Sundays, however, it can be used to describe scheduled days in which one does not work.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">deal with someone/something-</div><div class="vocab-def">To acknowledge a problematic situation, problem, or person and solve the issue. To successfully handle a problem.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">dead battery-</div><div class="vocab-def">Used to describe electronics which have no charge and will not function until the charge is restored, usually used for phones and laptops.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">deck of cards-</div><div class="vocab-def">A complete unit of cards for playing games. In games like poker, a standard deck of cards is 54. In games like Uno, a complete deck would be a different number.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">in the deep end-</div><div class="vocab-def">This has two meanings. The literal meaning is the area of a swimming pool with the greatest depth. The figurative meaning is when someone finds himself or herself in the most complex and complicated part of a problem or situation. If a company throws you in at the deep end when you start a new job, it means they put you in the job without the necessary training or resources.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">deep sleep-</div><div class="vocab-def">Used to describe a period of sleep that was not interrupted by anything.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">deep thought-</div><div class="vocab-def">An idea which is considered particularly profound. It can also be used to describe someone who is thinking about something very intensely. 'He was in deep thought, when suddenly the phone rang.'</div></div>
+        <div class="vocab-entry"><div class="vocab-term">dining room-</div><div class="vocab-def">A room in a person's home which is dedicated to eating meals, usually for more formal occasions. A dining room is also the space in which people eat in restaurants.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">draw heavily from-</div><div class="vocab-def">When someone is very influenced by someone or something else. 'He draws heavily from other crime novels in his latest book.'</div></div>
+        <div class="vocab-entry"><div class="vocab-term">draw pictures-</div><div class="vocab-def">To create a piece of art or other type of visual representation of something, usually with your hands.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">draw someone's attention to something-</div><div class="vocab-def">To purposefully make someone focus on something specific.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">do chores/housework-</div><div class="vocab-def">Complete tasks like tidying, cleaning, organizing around a person's home etc.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">do someone a favour-</div><div class="vocab-def">To do something nice for someone else without expectation of repayment.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">do better/worse-</div><div class="vocab-def">To improve performance at a task. The opposite is for a decline in performance.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">do homework-</div><div class="vocab-def">To complete assignments meant to be finished outside the classroom.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">do laundry-</div><div class="vocab-def">To wash clothing, linens, or other fabric-based materials.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">do someone's hair/makeup/nails-</div><div class="vocab-def">These actions are all used to describe enhancing one's appearance surrounding these specific attributes.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">do someone's best-</div><div class="vocab-def">When someone attempts to perform a task to the best of their abilities.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">do someone's part-</div><div class="vocab-def">To contribute with effort or hard work in a group or team setting to achieve a specific goal.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">do the math-</div><div class="vocab-def">To make specific calculations, usually used to talk about money or finances.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">do the right thing-</div><div class="vocab-def">Choosing to do something which is morally right or just.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">do time-</div><div class="vocab-def">Colloquial. Used to describe when someone has been sentenced to spend time in prison or jail.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">domestic dispute-</div><div class="vocab-def">A fight, either verbal or physical, between people who live together.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">due date-</div><div class="vocab-def">A day or time when an assignment or project should be submitted. Also used to describe the date when a pregnant woman's child is predicted to be born.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">dye someone's hair/clothes-</div><div class="vocab-def">To change the colour of someone's hair or clothing using dyes specifically meant for this purpose.</div></div>
+      </div>
+
+      <!-- SET 2 PASSAGE -->
+      <div id="passage-set2" style="display:none">
+        <div class="set-header">
+          <h2>Set 2 — Vocabulary in Context</h2>
+          <p>Read the collocations and their meanings carefully before answering the questions on the right.</p>
+        </div>
+        <div class="vocab-entry"><div class="vocab-term">early adopter/adoptee-</div><div class="vocab-def">The first people to accept something, usually new technology or ideas.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">early bird-</div><div class="vocab-def">Someone who arrives before an appointed time or very promptly.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">early days-</div><div class="vocab-def">At the beginning of a project or undertaking before one can say if it will be successful.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">(to have an) early night-</div><div class="vocab-def">To go to bed sooner than usual.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">earn a living/salary (make a living)-</div><div class="vocab-def">To make enough money to live from your job.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">easy access-</div><div class="vocab-def">A place which is simple to enter or something which is easy to get to.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">easy money-</div><div class="vocab-def">Money that was not difficult to make.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">eat in/out-</div><div class="vocab-def">Eating out refers to eating meals at restaurants or other public establishments, while 'eating in' refers to having a meal in your home or someone else's.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">eat well-</div><div class="vocab-def">This has two meanings: either to eat food that is healthy and nutritious or to eat a large amount of food.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">eating habits-</div><div class="vocab-def">Dietary tendencies.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">electric car-</div><div class="vocab-def">A car that runs at least partially on electric energy rather than petrol.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">elevator pitch-</div><div class="vocab-def">A short speech used to convince someone of something.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">empty promise-</div><div class="vocab-def">A promise which has no hope of being upheld or fulfilled.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">entry-level job (position)-</div><div class="vocab-def">A job which doesn't require much experience. These jobs are usually reserved for those just beginning their careers.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">ethnic group-</div><div class="vocab-def">People who share a common background, ancestry, or religion.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">even number-</div><div class="vocab-def">A number which is divisible by two.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">evening gown-</div><div class="vocab-def">A dress worn to formal events. They are usually floor-length.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">evenly distribute-</div><div class="vocab-def">To uniformly disperse over an area, or to share things equally amongst people.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">evenly matched-</div><div class="vocab-def">Used to describe people or things that are of equal skill, talent or quality.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">exact likeness-</div><div class="vocab-def">When two things are almost identical.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">exceed expectation(s)-</div><div class="vocab-def">When someone or something performs better than was predicted or expected.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">existential crisis-</div><div class="vocab-def">Problems concerning one's belief in their reason for being or purpose in life.</div></div>
+      </div>
+
+      <!-- SET 3 PASSAGE -->
+      <div id="passage-set3" style="display:none">
+        <div class="set-header">
+          <h2>Set 3 — Vocabulary in Context</h2>
+          <p>Read the collocations and their meanings carefully before answering the questions on the right.</p>
+        </div>
+        <div class="vocab-entry"><div class="vocab-term">face a fear-</div><div class="vocab-def">To find a way to overcome something which scares you. This often involves people putting themselves in direct contact with the thing which is causing the fear.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">face the facts-</div><div class="vocab-def">A gentle imperative command asking someone to accept the difficult reality of a situation.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">face wash-</div><div class="vocab-def">A product which is used to cleanse the face of dirt or makeup.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">fair trade-</div><div class="vocab-def">This is an economic practice by which international corporations buy products from the developing world. This particular practice is especially beneficial to the producers as it ensures they will be treated well and not taken advantage of.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">familiar face-</div><div class="vocab-def">Used to describe a person who you have met before, even briefly. It is often used to express pleasure in seeing the other person.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">fall asleep-</div><div class="vocab-def">A verbal expression describing the act of going to sleep.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">fall in love-</div><div class="vocab-def">The process of acquiring profound feelings of attraction for another person.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">feed pets-</div><div class="vocab-def">Giving animals in your care food.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">feel free-</div><div class="vocab-def">Letting people know that they are able to act or do as they please. For example, we could say to a friend who is staying in our house; 'feel free to grab food and drinks from the fridge'.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">field trip-</div><div class="vocab-def">Taking students from their normal campus in order to do something educational or fun. These include things like excursions to the theatre, museums, or zoos.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">fight fire-</div><div class="vocab-def">The job of extinguishing fires on a large scale. The person who does this job is called a firefighter.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">final destination-</div><div class="vocab-def">The last place a form of transportation will stop.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">finger food-</div><div class="vocab-def">Light buffet style snacks often served at cocktail parties or before a larger meal.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">free time-</div><div class="vocab-def">A synonym for leisure time. This is used to describe what someone likes doing when they are not studying or working. It's a common theme in the IELTS test.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">follow a rule/law-</div><div class="vocab-def">To behave in accordance to rules and laws.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">the following day/month/year-</div><div class="vocab-def">A time in the future that is yet to come. It just means the day, month or year after what we've mentioned.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">follow your dreams/heart-</div><div class="vocab-def">To do something that you have always wanted to do. Following your heart can also be used to reference making decisions using instinct and sentiment rather than logic or reason.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">foreign policy-</div><div class="vocab-def">The laws, legislation, and general dealings that one country has with others.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">force of habit-</div><div class="vocab-def">Things that are done with little thought because someone does them very often.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">free fall-</div><div class="vocab-def">To plummet quickly. This phrase can be used to describe a certain type of rollercoaster which vertically drops riders quickly. It can also be used when talking about stocks and markets which have lost value unexpectedly fast.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">free speech-</div><div class="vocab-def">The right that an individual has to express their opinions freely through speaking and writing. This includes criticizing one's government or one's employer.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">frozen food-</div><div class="vocab-def">Food that has been frozen in order to preserve it for longer.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">frozen solid-</div><div class="vocab-def">A description of something that is so cold that it has developed ice crystals both outside and in, making it seem like one complete mass.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">full coverage-</div><div class="vocab-def">When something is completely covered. Makeup which completely covers blemishes could be described as full coverage. Insurance which provides dental and vision could also be described as full coverage.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">full house-</div><div class="vocab-def">A description of a place which has a lot of people. It is most commonly used for homes in which many people are living. It can also be used in poker to describe a particular hand.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">full length-</div><div class="vocab-def">When used for physical objects, full length usually means something that reaches to the floor, oftentimes dresses and mirrors. It can also be used to describe media like books, TV, and movies presented in their entirety.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">full moon-</div><div class="vocab-def">When the entire face of the moon is visible from Earth.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">furrowed brow-</div><div class="vocab-def">The brow is the area between the eyes and hairline. Furrowing this area means the eyes are usually raised creating wrinkles in the forehead. It is usually used to denote when people are thinking or worried about a problem.</div></div>
+      </div>
+
+    </div><!-- end passage-panel -->
+
+    <div class="resizer" id="resizer"></div>
+
+    <div class="questions-panel" id="questionsPanel">
+
+      <!-- SET 1 QUESTIONS -->
+      <div id="questions-set1">
+        <div class="question-set-header">
+          <h3>Questions 1–6</h3>
+          <p>Fill in the blank with the correct collocation. You may need to change the form of the words.</p>
+        </div>
+        <div class="question-block" id="qblock-1">
+          <div class="question-row"><span class="q-num">1</span><span class="prompt-text">She was unable to <input class="answer-input" id="q1" type="text" placeholder="type your answer…" autocomplete="off"> her busy schedule because she had too many meetings and appointments.</span></div>
+        </div>
+        <div class="question-block" id="qblock-2">
+          <div class="question-row"><span class="q-num">2</span><span class="prompt-text">He always <input class="answer-input" id="q2" type="text" placeholder="type your answer…" autocomplete="off"> on the weekends when he wasn't working.</span></div>
+        </div>
+        <div class="question-block" id="qblock-3">
+          <div class="question-row"><span class="q-num">3</span><span class="prompt-text">Hairdressers rarely have the same <input class="answer-input" id="q3" type="text" placeholder="type your answer…" autocomplete="off"> as they usually work on the weekends.</span></div>
+        </div>
+        <div class="question-block" id="qblock-4">
+          <div class="question-row"><span class="q-num">4</span><span class="prompt-text">As children, they almost never ate in the <input class="answer-input" id="q4" type="text" placeholder="type your answer…" autocomplete="off"> except at Christmas and other holidays.</span></div>
+        </div>
+        <div class="question-block" id="qblock-5">
+          <div class="question-row"><span class="q-num">5</span><span class="prompt-text">It was clear that the artist <input class="answer-input" id="q5" type="text" placeholder="type your answer…" autocomplete="off"> from the works of Monet and Degas.</span></div>
+        </div>
+        <div class="question-block" id="qblock-6">
+          <div class="question-row"><span class="q-num">6</span><span class="prompt-text">I need to <input class="answer-input" id="q6" type="text" placeholder="type your answer…" autocomplete="off"> because I don't have any clean socks.</span></div>
+        </div>
+      </div>
+
+      <!-- SET 2 QUESTIONS -->
+      <div id="questions-set2" style="display:none">
+        <div class="question-set-header">
+          <h3>Questions 7–12</h3>
+          <p>Fill in the blank with the correct collocation. You may need to change the form of the words.</p>
+        </div>
+        <div class="question-block" id="qblock-7">
+          <div class="question-row"><span class="q-num">7</span><span class="prompt-text">The family tried to <input class="answer-input" id="q7" type="text" placeholder="type your answer…" autocomplete="off"> as much as possible as it is healthier.</span></div>
+        </div>
+        <div class="question-block" id="qblock-8">
+          <div class="question-row"><span class="q-num">8</span><span class="prompt-text"><input class="answer-input" id="q8" type="text" placeholder="type your answer…" autocomplete="off"> of technology usually remain loyal to the brand.</span></div>
+        </div>
+        <div class="question-block" id="qblock-9">
+          <div class="question-row"><span class="q-num">9</span><span class="prompt-text">She has the <input class="answer-input" id="q9" type="text" placeholder="type your answer…" autocomplete="off"> of her mother.</span></div>
+        </div>
+        <div class="question-block" id="qblock-10">
+          <div class="question-row"><span class="q-num">10</span><span class="prompt-text">Anna left the bar at seven because she wanted an <input class="answer-input" id="q10" type="text" placeholder="type your answer…" autocomplete="off">.</span></div>
+        </div>
+        <div class="question-block" id="qblock-11">
+          <div class="question-row"><span class="q-num">11</span><span class="prompt-text">An <input class="answer-input" id="q11" type="text" placeholder="type your answer…" autocomplete="off"> is very energy efficient.</span></div>
+        </div>
+        <div class="question-block" id="qblock-12">
+          <div class="question-row"><span class="q-num">12</span><span class="prompt-text">I would even accept an <input class="answer-input" id="q12" type="text" placeholder="type your answer…" autocomplete="off">; I need the money.</span></div>
+        </div>
+      </div>
+
+      <!-- SET 3 QUESTIONS -->
+      <div id="questions-set3" style="display:none">
+        <div class="question-set-header">
+          <h3>Questions 13–18</h3>
+          <p>Fill in the blank with the correct collocation. You may need to change the form of the words.</p>
+        </div>
+        <div class="question-block" id="qblock-13">
+          <div class="question-row"><span class="q-num">13</span><span class="prompt-text">The <input class="answer-input" id="q13" type="text" placeholder="type your answer…" autocomplete="off"> movie is not shown on airplanes, as it's too long for most short flights.</span></div>
+        </div>
+        <div class="question-block" id="qblock-14">
+          <div class="question-row"><span class="q-num">14</span><span class="prompt-text">He likes to read sci-fi and horror novels in his <input class="answer-input" id="q14" type="text" placeholder="type your answer…" autocomplete="off">.</span></div>
+        </div>
+        <div class="question-block" id="qblock-15">
+          <div class="question-row"><span class="q-num">15</span><span class="prompt-text">Her birthday will be the <input class="answer-input" id="q15" type="text" placeholder="type your answer…" autocomplete="off">.</span></div>
+        </div>
+        <div class="question-block" id="qblock-16">
+          <div class="question-row"><span class="q-num">16</span><span class="prompt-text">I usually watch TV before I <input class="answer-input" id="q16" type="text" placeholder="type your answer…" autocomplete="off">.</span></div>
+        </div>
+        <div class="question-block" id="qblock-17">
+          <div class="question-row"><span class="q-num">17</span><span class="prompt-text">It was good to see a <input class="answer-input" id="q17" type="text" placeholder="type your answer…" autocomplete="off"> at the party because I didn't know many people.</span></div>
+        </div>
+        <div class="question-block" id="qblock-18">
+          <div class="question-row"><span class="q-num">18</span><span class="prompt-text">The children were excited about their <input class="answer-input" id="q18" type="text" placeholder="type your answer…" autocomplete="off"> to the art museum.</span></div>
+        </div>
+      </div>
+
+    </div><!-- end questions-panel -->
+  </div><!-- end panels-container -->
+
+  <div class="nav-row" id="navRow">
+    <button class="q-nav-btn active" id="nav1" onclick="goToQ(1)">1</button>
+    <button class="q-nav-btn" id="nav2" onclick="goToQ(2)">2</button>
+    <button class="q-nav-btn" id="nav3" onclick="goToQ(3)">3</button>
+    <button class="q-nav-btn" id="nav4" onclick="goToQ(4)">4</button>
+    <button class="q-nav-btn" id="nav5" onclick="goToQ(5)">5</button>
+    <button class="q-nav-btn" id="nav6" onclick="goToQ(6)">6</button>
+    <button class="q-nav-btn" id="nav7" onclick="goToQ(7)">7</button>
+    <button class="q-nav-btn" id="nav8" onclick="goToQ(8)">8</button>
+    <button class="q-nav-btn" id="nav9" onclick="goToQ(9)">9</button>
+    <button class="q-nav-btn" id="nav10" onclick="goToQ(10)">10</button>
+    <button class="q-nav-btn" id="nav11" onclick="goToQ(11)">11</button>
+    <button class="q-nav-btn" id="nav12" onclick="goToQ(12)">12</button>
+    <button class="q-nav-btn" id="nav13" onclick="goToQ(13)">13</button>
+    <button class="q-nav-btn" id="nav14" onclick="goToQ(14)">14</button>
+    <button class="q-nav-btn" id="nav15" onclick="goToQ(15)">15</button>
+    <button class="q-nav-btn" id="nav16" onclick="goToQ(16)">16</button>
+    <button class="q-nav-btn" id="nav17" onclick="goToQ(17)">17</button>
+    <button class="q-nav-btn" id="nav18" onclick="goToQ(18)">18</button>
+    <div class="nav-spacer"></div>
+    <button class="submit-btn" id="submitBtn" onclick="submitTest()">Submit Test ✓</button>
+  </div>
+</div>
+
+<!-- RESULTS MODAL -->
+<div class="modal-overlay hidden" id="modalOverlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>📊 Your Results</h2>
+      <p>IELTS Vocabulary Masterclass – Test 02</p>
+    </div>
+    <div class="modal-body">
+      <div class="score-big">
+        <div class="score-number" id="scorePercent">0%</div>
+        <div class="score-label" id="scoreLabel">0 / 18 correct</div>
+      </div>
+      <div class="score-bar-wrap"><div class="score-bar" id="scoreBar" style="width:0%"></div></div>
+      <div class="perf-grid">
+        <div class="perf-card green"><div class="val" id="statCorrect">0</div><div class="lbl">Correct</div></div>
+        <div class="perf-card red"><div class="val" id="statIncorrect">0</div><div class="lbl">Incorrect</div></div>
+        <div class="perf-card amber"><div class="val" id="statUnanswered">0</div><div class="lbl">Unanswered</div></div>
+      </div>
+      <table class="result-table">
+        <thead><tr><th>Q</th><th>Your Answer</th><th>Correct Answer</th><th>Result</th></tr></thead>
+        <tbody id="resultTableBody"></tbody>
+      </table>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-retry" onclick="retryTest()">🔄 Retry</button>
+      <button class="btn-close" onclick="closeModal()">✕ Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const answers = {
+  1:  'deal with',
+  2:  'did housework',
+  3:  'days off',
+  4:  'dining room',
+  5:  'drew heavily',
+  6:  'do laundry',
+  7:  'eat in',
+  8:  'early adopters',
+  9:  'exact likeness',
+  10: 'early night',
+  11: 'electric car',
+  12: 'entry-level job',
+  13: 'full length',
+  14: 'free time',
+  15: 'following month',
+  16: 'fall asleep',
+  17: 'familiar face',
+  18: 'field trip'
+};
+
+const totalQ = 18;
+let timeLeft = 30 * 60;
+let timerInterval = null;
+let submitted = false;
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    if (submitted) { clearInterval(timerInterval); return; }
+    timeLeft--;
+    updateTimerDisplay();
+    if (timeLeft <= 0) { clearInterval(timerInterval); submitTest(true); }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(timeLeft / 60);
+  const s = timeLeft % 60;
+  document.getElementById('timerDisplay').textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  const box = document.getElementById('timerBox');
+  box.className = 'timer-box';
+  if (timeLeft <= 60) box.className += ' danger';
+  else if (timeLeft <= 300) box.className += ' warning';
+}
+
+function switchSet(n) {
+  [1,2,3].forEach(i => {
+    document.getElementById('passage-set'+i).style.display = i===n ? '' : 'none';
+    document.getElementById('questions-set'+i).style.display = i===n ? '' : 'none';
+  });
+  document.querySelectorAll('.set-tab').forEach((t,i) => { t.className = 'set-tab' + (i+1===n ? ' active' : ''); });
+  document.getElementById('passagePanel').scrollTop = 0;
+  document.getElementById('questionsPanel').scrollTop = 0;
+}
+
+function goToQ(n) {
+  if (n <= 6) switchSet(1);
+  else if (n <= 12) switchSet(2);
+  else switchSet(3);
+  setTimeout(() => {
+    const block = document.getElementById('qblock-'+n);
+    if (block) block.scrollIntoView({behavior:'smooth', block:'center'});
+    document.querySelectorAll('.q-nav-btn').forEach(b => b.classList.remove('active'));
+    const nb = document.getElementById('nav'+n);
+    if (nb) nb.classList.add('active');
+  }, 50);
+}
+
+for (let q = 1; q <= totalQ; q++) {
+  const inp = document.getElementById('q'+q);
+  if (inp) inp.addEventListener('input', () => {
+    const nb = document.getElementById('nav'+q);
+    if (nb) nb.className = 'q-nav-btn ' + (inp.value.trim() ? 'answered' : '');
+  });
+}
+
+function norm(s) { return s.trim().toLowerCase().replace(/['']/g,"'").replace(/\s+/,' '); }
+
+function submitTest(autoSubmit=false) {
+  if (submitted) return;
+  if (!autoSubmit) {
+    const unanswered = [];
+    for (let q=1;q<=totalQ;q++) { const inp=document.getElementById('q'+q); if(inp && !inp.value.trim()) unanswered.push(q); }
+    if (unanswered.length > 0) { if (!confirm(`You have ${unanswered.length} unanswered question(s).\nSubmit anyway?`)) return; }
+  }
+  submitted = true;
+  clearInterval(timerInterval);
+  document.getElementById('submitBtn').disabled = true;
+  for (let q=1;q<=totalQ;q++) { const inp=document.getElementById('q'+q); if(inp) inp.disabled=true; }
+
+  let correct=0, incorrect=0, unanswered=0;
+  const tbody = document.getElementById('resultTableBody');
+  tbody.innerHTML = '';
+
+  for (let q=1;q<=totalQ;q++) {
+    const inp = document.getElementById('q'+q);
+    const userAns = inp ? inp.value.trim() : '';
+    const correctAns = answers[q];
+    const isCorrect = norm(userAns) === norm(correctAns);
+    const isUnanswered = !userAns;
+
+    if (isUnanswered) unanswered++;
+    else if (isCorrect) correct++;
+    else incorrect++;
+
+    const block = document.getElementById('qblock-'+q);
+    if (block) {
+      block.className = 'question-block ' + (isUnanswered ? '' : isCorrect ? 'correct' : 'incorrect');
+      if (!isCorrect) {
+        let disp = block.querySelector('.correct-answer-display');
+        if (!disp) { disp = document.createElement('div'); disp.className='correct-answer-display'; block.appendChild(disp); }
+        disp.textContent = '✓ ' + correctAns;
+      }
+      if (inp) inp.className = 'answer-input ' + (isUnanswered ? 'unanswered-warn' : isCorrect ? 'correct' : 'incorrect');
+    }
+    const nb = document.getElementById('nav'+q);
+    if (nb) nb.className = 'q-nav-btn ' + (isUnanswered ? 'unanswered-warn' : isCorrect ? 'correct' : 'incorrect');
+
+    const tr = document.createElement('tr');
+    tr.className = isUnanswered ? 'unanswered-row' : isCorrect ? 'correct-row' : 'incorrect-row';
+    tr.innerHTML = `<td><strong>${q}</strong></td><td>${userAns || '<em style="color:#999">—</em>'}</td><td class="correct-ans-cell">${correctAns}</td><td>${isUnanswered ? '⏭ Skipped' : isCorrect ? '✓ Correct' : '✗ Wrong'}</td>`;
+    tbody.appendChild(tr);
+  }
+
+  const pct = Math.round((correct/totalQ)*100);
+  document.getElementById('scorePercent').textContent = pct + '%';
+  document.getElementById('scoreLabel').textContent = correct + ' / ' + totalQ + ' correct';
+  document.getElementById('statCorrect').textContent = correct;
+  document.getElementById('statIncorrect').textContent = incorrect;
+  document.getElementById('statUnanswered').textContent = unanswered;
+  setTimeout(() => { document.getElementById('scoreBar').style.width = pct + '%'; }, 200);
+  document.getElementById('modalOverlay').classList.remove('hidden');
+}
+
+function closeModal() { document.getElementById('modalOverlay').classList.add('hidden'); }
+function retryTest() { location.reload(); }
+
+const resizer = document.getElementById('resizer');
+const leftPanel = document.getElementById('passagePanel');
+const rightPanel = document.getElementById('questionsPanel');
+let isResizing = false;
+resizer.addEventListener('mousedown', e => { isResizing=true; document.body.style.cursor='col-resize'; e.preventDefault(); });
+document.addEventListener('mousemove', e => {
+  if (!isResizing) return;
+  const container = resizer.parentElement.getBoundingClientRect();
+  const offset = e.clientX - container.left;
+  const total = container.width - resizer.offsetWidth;
+  const pct = Math.min(Math.max(offset/total*100, 20), 80);
+  leftPanel.style.flex='none'; leftPanel.style.width=pct+'%';
+  rightPanel.style.flex='none'; rightPanel.style.width=(100-pct)+'%';
+});
+document.addEventListener('mouseup', () => { isResizing=false; document.body.style.cursor=''; });
+
+startTimer();
+</script>
+</body>
+</html>
