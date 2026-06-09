@@ -595,6 +595,44 @@
       .section-header { flex-direction: column; align-items: flex-start; }
       .pdf-library-block { padding: 18px; }
     }
+    /* Floating Telegram Button */
+.floating-telegram {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9999;
+  background: linear-gradient(135deg, #34c3ff, #0a8edb);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  box-shadow: 0 10px 28px rgba(52,195,255,0.35);
+  border: 1px solid rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.floating-telegram:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(52,195,255,0.5);
+}
+
+.floating-telegram span {
+  font-size: 19px;
+}
+
+@media (max-width: 600px) {
+  .floating-telegram {
+    right: 16px;
+    bottom: 16px;
+    padding: 13px 15px;
+    font-size: 14px;
+  }
+}
   </style>
 </head>
 <body>
@@ -948,6 +986,8 @@
       flipTimer = setInterval(autoFlip, 5000);
     });
   </script>
-
+<a href="https://t.me/demoIELTSclass" class="floating-telegram" target="_blank" rel="noopener">
+  <span>✈️</span> Join Telegram
+</a>
 </body>
 </html>
