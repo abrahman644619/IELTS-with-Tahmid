@@ -57,6 +57,106 @@
 
     .back { color: #34c3ff; display: inline-block; margin-bottom: 28px; text-decoration: none; }
     .back:hover { text-decoration: underline; }
+    /* Vocabulary PDF Resource Section */
+.pdf-section {
+  margin-top: 42px;
+  padding-top: 12px;
+}
+
+.pdf-section h2 {
+  color: #ff9f1c;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.pdf-section .section-subtitle {
+  color: #d9e8ff;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+
+.pdf-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.pdf-card h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.pdf-card p {
+  margin: 0;
+  color: #c9d7e8;
+  font-size: 15px;
+}
+
+.pdf-btn {
+  background: rgba(52,195,255,0.15);
+  border: 1px solid rgba(52,195,255,0.45);
+  color: #34c3ff;
+  padding: 9px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.pdf-btn:hover {
+  background: rgba(52,195,255,0.25);
+}
+
+.pdf-card.premium {
+  border: 1px dashed rgba(255,159,28,0.45);
+  background: rgba(255,255,255,0.04);
+  opacity: 0.78;
+}
+
+.pdf-card.premium h3 {
+  color: #d8d8d8;
+}
+
+.pdf-card.premium p {
+  color: #aeb8c5;
+}
+
+.unlock-btn {
+  background: rgba(255,159,28,0.78);
+  color: #07111f;
+  border: 1px solid rgba(255,159,28,0.9);
+}
+
+.unlock-btn:hover {
+  background: #ff9f1c;
+}
+
+.premium-note {
+  display: block;
+  margin-top: 8px;
+  color: #ffbf69;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@media (max-width: 650px) {
+  .pdf-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pdf-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
   </style>
 </head>
 <body>
@@ -97,6 +197,86 @@
     </div>
     <span class="badge-soon">Coming Soon</span>
   </div>
+<section class="pdf-section">
+  <h2>📚 Vocabulary PDF Resources</h2>
+  <p class="section-subtitle">
+    Download useful Oxford vocabulary resources to improve your word power for IELTS Reading, Writing, Listening, and Speaking.
+  </p>
 
+  <div class="pdf-card">
+    <div>
+      <h3>The Oxford 5000 by CEFR Level</h3>
+      <p>Advanced vocabulary list arranged by CEFR level for stronger academic word choice.</p>
+    </div>
+    <a class="pdf-btn" href="../pdfs/The_Oxford_5000_by_CEFR_level.pdf" target="_blank" rel="noopener">
+      Open PDF →
+    </a>
+  </div>
+
+  <div class="pdf-card">
+    <div>
+      <h3>The Oxford 3000 by CEFR Level</h3>
+      <p>Essential high-frequency English vocabulary arranged by CEFR level.</p>
+    </div>
+    <a class="pdf-btn" href="../pdfs/The_Oxford_3000_by_CEFR_level.pdf" target="_blank" rel="noopener">
+      Open PDF →
+    </a>
+  </div>
+
+  <div class="pdf-card">
+    <div>
+      <h3>Oxford Phrase List</h3>
+      <p>Useful phrases and expressions to build natural English understanding and fluency.</p>
+    </div>
+    <a class="pdf-btn" href="../pdfs/Oxford_Phrase_List.pdf" target="_blank" rel="noopener">
+      Open PDF →
+    </a>
+  </div>
+
+  <div class="pdf-card premium">
+    <div>
+      <h3>🔒 OPAL Written Single Words</h3>
+      <p>Academic written vocabulary for improving IELTS Writing and Reading performance.</p>
+      <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
+    </div>
+    <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">
+      Unlock →
+    </a>
+  </div>
+
+  <div class="pdf-card premium">
+    <div>
+      <h3>🔒 OPAL Spoken Single Words</h3>
+      <p>Academic spoken vocabulary for better IELTS Speaking and Listening preparation.</p>
+      <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
+    </div>
+    <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">
+      Unlock →
+    </a>
+  </div>
+
+  <div class="pdf-card premium">
+    <div>
+      <h3>🔒 OPAL Written Phrases</h3>
+      <p>Useful academic written phrases for stronger IELTS Writing expression.</p>
+      <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
+    </div>
+    <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">
+      Unlock →
+    </a>
+  </div>
+
+  <div class="pdf-card premium">
+    <div>
+      <h3>🔒 OPAL Spoken Phrases</h3>
+      <p>Useful academic spoken phrases for more natural and confident IELTS Speaking.</p>
+      <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
+    </div>
+    <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">
+      Unlock →
+    </a>
+  </div>
+</section>
+  
 </body>
 </html>
