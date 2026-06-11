@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Vocabulary Masterclass – Test 04</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:#fff;line-height:1.5;font-size:16px;color:#1a1a1a}
+
+/* ── HEADER ── */
+.header{
+  background:linear-gradient(135deg,#1a237e 0%,#283593 40%,#1565c0 70%,#0277bd 100%);
+  padding:0 24px;
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  box-shadow:0 2px 16px rgba(0,0,0,0.3);
+}
+.header-left{display:flex;flex-direction:column;justify-content:center}
+.header-title{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:1.18rem;font-weight:bold;color:#fff;
+  letter-spacing:0.3px;line-height:1.1;
+}
+.header-title span{
+  background:linear-gradient(90deg,#ffd54f,#ffb300,#ff8f00);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.header-gift{font-size:0.78rem;color:rgba(255,255,255,0.75);margin-top:2px;font-style:italic}
+.header-right{display:flex;align-items:center;gap:16px}
+.timer-box{
+  background:rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.3);
+  border-radius:8px;padding:6px 16px;
+  text-align:center;
+}
+.timer-label{font-size:0.7rem;color:rgba(255,255,255,0.7);letter-spacing:1px;text-transform:uppercase}
+.timer-display{font-size:1.5rem;font-weight:bold;color:#fff;font-family:monospace;letter-spacing:2px}
+.timer-box.warning .timer-display{color:#ffb300;animation:pulse 1s infinite}
+.timer-box.danger  .timer-display{color:#ff5252;animation:pulse 0.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+
+/* ── MAIN LAYOUT ── */
+.main-container{margin-top:64px;height:calc(100vh - 64px);display:flex;flex-direction:column}
+.panels-container{display:flex;flex:1;overflow:hidden}
+.passage-panel{flex:1;padding:24px 24px 110px;overflow-y:auto;min-width:200px;background:#fafaf8}
+.questions-panel{flex:1;padding:24px 24px 110px;overflow-y:auto;min-width:200px;border-left:2px solid #e0e0e0;background:#fff}
+.resizer{width:8px;cursor:col-resize;background:#e8e8e8;flex-shrink:0;transition:background .2s}
+.resizer:hover{background:#bdbdbd}
+
+/* ── SET TABS ── */
+.set-tabs{display:flex;border-bottom:2px solid #1a237e;background:#f5f5f5}
+.set-tab{
+  padding:10px 24px;cursor:pointer;font-weight:bold;font-size:0.95rem;
+  color:#666;border:none;background:none;border-bottom:3px solid transparent;margin-bottom:-2px;
+  transition:all .2s;font-family:Arial,Helvetica,sans-serif;
+}
+.set-tab.active{color:#1a237e;border-bottom-color:#1a237e;background:#fff}
+.set-tab:hover:not(.active){color:#1a237e;background:#ede7f6}
+
+/* ── PASSAGE STYLES ── */
+.set-header{
+  background:linear-gradient(135deg,#e8eaf6,#e3f2fd);
+  border-left:5px solid #1a237e;
+  padding:14px 18px;border-radius:4px;margin-bottom:20px;
+}
+.set-header h2{font-size:1.1rem;color:#1a237e;margin-bottom:4px}
+.set-header p{font-size:0.9rem;color:#555;font-style:italic}
+.vocab-entry{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid #e8e8e8}
+.vocab-entry:last-child{border-bottom:none}
+.vocab-term{font-weight:bold;font-size:1.02rem;color:#1a237e;margin-bottom:4px}
+.vocab-def{color:#333;line-height:1.6;font-size:0.97rem}
+
+/* ── QUESTIONS ── */
+.question-set-header{
+  background:linear-gradient(135deg,#1a237e,#1565c0);
+  color:#fff;padding:12px 18px;border-radius:6px;margin-bottom:16px;
+}
+.question-set-header h3{font-size:1rem;margin-bottom:2px}
+.question-set-header p{font-size:0.82rem;color:rgba(255,255,255,0.8);font-style:italic}
+.question-block{margin-bottom:20px;padding:12px 14px;border-radius:6px;border:1px solid #e8e8e8;transition:all .2s}
+.question-block:hover{border-color:#9fa8da;background:#f8f9ff}
+.question-block.correct{background:#e8f5e9;border-color:#66bb6a}
+.question-block.incorrect{background:#ffebee;border-color:#ef5350}
+.question-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.q-num{
+  min-width:32px;height:32px;border-radius:50%;
+  background:#1a237e;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:bold;font-size:0.88rem;flex-shrink:0;
+}
+.question-block.correct .q-num{background:#388e3c}
+.question-block.incorrect .q-num{background:#c62828}
+.prompt-text{flex:1;padding-top:6px;line-height:1.6;font-size:0.97rem}
+.answer-input{
+  width:100%;padding:8px 12px;border:1.5px solid #c5cae9;border-radius:6px;
+  font-size:0.95rem;font-family:Arial,Helvetica,sans-serif;background:#fafafa;
+  transition:border-color .2s,box-shadow .2s;
+}
+.answer-input:focus{outline:none;border-color:#1a237e;box-shadow:0 0 0 3px rgba(26,35,126,.12);background:#fff}
+.answer-input.correct{border-color:#388e3c;background:#e8f5e9}
+.answer-input.incorrect{border-color:#c62828;background:#ffebee}
+.correct-answer-display{
+  font-size:0.83rem;color:#388e3c;font-weight:bold;margin-top:6px;
+  display:flex;align-items:center;gap:4px;
+}
+
+/* ── NAV BAR ── */
+.nav-row{
+  position:fixed;bottom:0;left:0;right:0;background:#fff;
+  border-top:2px solid #e0e0e0;height:80px;z-index:100;
+  display:flex;align-items:center;padding:0 16px;gap:8px;
+  overflow-x:auto;
+}
+.q-nav-btn{
+  min-width:36px;height:36px;border-radius:6px;border:1.5px solid #c5cae9;
+  background:#fff;color:#333;font-size:0.85rem;font-weight:bold;cursor:pointer;
+  transition:all .15s;flex-shrink:0;
+}
+.q-nav-btn:hover{background:#e8eaf6;border-color:#1a237e}
+.q-nav-btn.active{background:#1a237e;color:#fff;border-color:#1a237e}
+.q-nav-btn.answered{background:#e8eaf6;border-color:#9fa8da}
+.q-nav-btn.correct{background:#388e3c;color:#fff;border-color:#388e3c}
+.q-nav-btn.incorrect{background:#c62828;color:#fff;border-color:#c62828}
+.q-nav-btn.unanswered-warn{background:#ff8f00;color:#fff;border-color:#ff8f00}
+.nav-spacer{flex:1}
+.submit-btn{
+  padding:12px 28px;border-radius:8px;font-weight:bold;font-size:1rem;
+  background:linear-gradient(135deg,#1a237e,#1565c0);
+  color:#fff;border:none;cursor:pointer;flex-shrink:0;
+  transition:all .2s;font-family:Arial,Helvetica,sans-serif;
+  box-shadow:0 4px 12px rgba(26,35,126,.3);
+}
+.submit-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(26,35,126,.4)}
+.submit-btn:disabled{background:#bdbdbd;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* ── MODAL ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:2000;display:flex;justify-content:center;align-items:center}
+.modal-overlay.hidden{display:none}
+.modal-content{background:#fff;border-radius:16px;width:92%;max-width:640px;max-height:88vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.4)}
+.modal-header{
+  background:linear-gradient(135deg,#1a237e,#1565c0);
+  padding:24px 28px;color:#fff;text-align:center;
+}
+.modal-header h2{font-size:1.5rem;margin-bottom:4px}
+.modal-header p{font-size:0.9rem;color:rgba(255,255,255,.8)}
+.modal-body{padding:24px 28px;overflow-y:auto}
+.score-big{text-align:center;margin-bottom:24px}
+.score-number{font-size:4rem;font-weight:bold;line-height:1;color:#1a237e}
+.score-label{font-size:1rem;color:#666;margin-top:4px}
+.score-bar-wrap{background:#e8eaf6;border-radius:99px;height:14px;margin:16px 0;overflow:hidden}
+.score-bar{height:100%;border-radius:99px;background:linear-gradient(90deg,#1565c0,#0277bd);transition:width 1s ease}
+.perf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.perf-card{border:1.5px solid #e8eaf6;border-radius:10px;padding:14px;text-align:center}
+.perf-card .val{font-size:1.6rem;font-weight:bold;color:#1a237e}
+.perf-card .lbl{font-size:0.78rem;color:#888;margin-top:2px}
+.perf-card.green .val{color:#388e3c}
+.perf-card.red .val{color:#c62828}
+.perf-card.amber .val{color:#f57c00}
+.result-table{width:100%;border-collapse:collapse;font-size:0.88rem}
+.result-table th{background:#e8eaf6;color:#1a237e;padding:8px 10px;text-align:left;font-weight:bold}
+.result-table td{padding:8px 10px;border-bottom:1px solid #f0f0f0}
+.result-table tr.correct-row td{background:#f1f8e9}
+.result-table tr.incorrect-row td{background:#ffebee}
+.result-table tr.unanswered-row td{background:#fff8e1}
+.correct-ans-cell{color:#388e3c;font-weight:bold}
+.modal-footer{padding:16px 28px;border-top:1px solid #e8e8e8;display:flex;gap:10px;justify-content:center}
+.btn-retry{padding:10px 24px;border-radius:8px;background:#1a237e;color:#fff;border:none;cursor:pointer;font-weight:bold;font-family:Arial,Helvetica,sans-serif}
+.btn-close{padding:10px 24px;border-radius:8px;background:#fff;color:#1a237e;border:2px solid #1a237e;cursor:pointer;font-weight:bold;font-family:Arial,Helvetica,sans-serif}
+
+/* ── RESPONSIVE ── */
+@media(max-width:860px){
+  .panels-container{flex-direction:column}
+  .passage-panel,.questions-panel{min-height:44vh;width:100%!important;border-left:none}
+  .questions-panel{border-top:2px solid #e0e0e0}
+  .resizer{display:none}
+  .header-title{font-size:1rem}
+  .timer-display{font-size:1.2rem}
+}
+@media(max-width:540px){
+  .header{height:72px}
+  .main-container{margin-top:72px;height:calc(100vh - 72px)}
+  .header-title{font-size:0.88rem}
+  .header-gift{font-size:0.72rem}
+  .perf-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="header">
+  <div class="header-left">
+    <div class="header-title">📖 IELTS <span>Vocabulary Masterclass</span></div>
+    <div class="header-gift">✦ A gift from Abidur Rahman Tahmid</div>
+  </div>
+  <div class="header-right">
+    <div class="timer-box" id="timerBox">
+      <div class="timer-label">Time Left</div>
+      <div class="timer-display" id="timerDisplay">30:00</div>
+    </div>
+  </div>
+</header>
+
+<div class="main-container">
+
+  <!-- ══ SET TABS ══ -->
+  <div class="set-tabs">
+    <button class="set-tab active" onclick="switchSet(1)">Set 10 &nbsp;·&nbsp; Q 1–5</button>
+    <button class="set-tab"        onclick="switchSet(2)">Set 11 &nbsp;·&nbsp; Q 6–10</button>
+    <button class="set-tab"        onclick="switchSet(3)">Set 12 &nbsp;·&nbsp; Q 11–15</button>
+  </div>
+
+  <div class="panels-container">
+
+    <!-- ══ PASSAGE PANEL ══ -->
+    <div class="passage-panel" id="passagePanel">
+
+      <!-- SET 10 PASSAGE -->
+      <div id="passage-set1">
+        <div class="set-header">
+          <h2>Set 10 — Vocabulary in Context</h2>
+          <p>Read the collocations and their meanings carefully before answering the questions on the right.</p>
+        </div>
+        <div class="vocab-entry"><div class="vocab-term">job interview-</div><div class="vocab-def">A meeting held between a prospective job applicant and employer in order to obtain future employment for the applicant.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">joint account-</div><div class="vocab-def">A bank account which is shared by two people.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">joint effort-</div><div class="vocab-def">An accomplishment which is shared by two people.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">journal entry-</div><div class="vocab-def">Writings in a personal diary or journal about one particular day in their life.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">junk food-</div><div class="vocab-def">Food that is not healthy and has few benefits to one's body. This type of food can be as small as a snack or a full meal.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">jump to a (the) conclusion / jump to conclusions-</div><div class="vocab-def">When someone believes something unfounded based on little evidence which actually supports that belief.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">junk mail-</div><div class="vocab-def">Unwanted correspondence. This phrase can be used to describe physical mail which comes in the post or emails. Most junk mail is a form of advertisement.</div></div>
+      </div>
+
+      <!-- SET 11 PASSAGE -->
+      <div id="passage-set2" style="display:none">
+        <div class="set-header">
+          <h2>Set 11 — Vocabulary in Context</h2>
+          <p>Read the collocations and their meanings carefully before answering the questions on the right.</p>
+        </div>
+        <div class="vocab-entry"><div class="vocab-term">keep a diary-</div><div class="vocab-def">To maintain an account of your schedule or personal life in a handwritten book.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">keep a secret-</div><div class="vocab-def">Learning confidential information about someone or something and not telling anyone else.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">keep busy-</div><div class="vocab-def">To have a full schedule of activities. This is usually done voluntarily and can include a mix of study, work, and leisure.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">keep fit-</div><div class="vocab-def">To try and maintain a certain level of health by exercising and having a healthy diet.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">keep going-</div><div class="vocab-def">To continue in the same direction. This can be an actual physical direction as when someone is driving or walking, or it can mean following a certain plan.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">keep the change-</div><div class="vocab-def">A directive during a monetary transaction. When a bill or coin is more than the amount of a product or good, yet the seller keeps the leftover amount. This is usually done in more casual settings like restaurants.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">keep to oneself-</div><div class="vocab-def">An attempt or desire to not draw attention to oneself.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">key part/role-</div><div class="vocab-def">To have an integral role in creating or developing something.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">keynote address/speaker-</div><div class="vocab-def">A person who is giving the most important or most anticipated speech at a conference.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">knead dough-</div><div class="vocab-def">To take dough and massage it on a floured surface to incorporate air or stretch it.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">knit a sweater-</div><div class="vocab-def">Taking yarn and needles, especially made for knitting, and using a pattern to create a finished garment.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">know about-</div><div class="vocab-def">Having awareness of something.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">know better-</div><div class="vocab-def">Having the experience and wherewithal to make good decisions, and yet not making them.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">know how-</div><div class="vocab-def">Particular experience or understanding in a certain field or on a certain topic.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">known for-</div><div class="vocab-def">The reason why someone or something is famous or important.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">keep quiet-</div><div class="vocab-def">To not make noise or not talk.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">keep score-</div><div class="vocab-def">Literally, to count the points in a game to determine who is winning and losing. Figuratively, to track gains and losses between individuals, usually related to personal or professional problems.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">kill time-</div><div class="vocab-def">A purposeful way to waste time.</div></div>
+      </div>
+
+      <!-- SET 12 PASSAGE -->
+      <div id="passage-set3" style="display:none">
+        <div class="set-header">
+          <h2>Set 12 — Vocabulary in Context</h2>
+          <p>Read the collocations and their meanings carefully before answering the questions on the right.</p>
+        </div>
+        <div class="vocab-entry"><div class="vocab-term">large scale-</div><div class="vocab-def">Something that is very big which needs many people or things in order for it to work.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">last forever-</div><div class="vocab-def">Something that will never diminish, fade, or lessen in number.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">law and order-</div><div class="vocab-def">The system by which people are governed and follow the rules. This involves the police and the judicial system.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">lay groundwork/foundation-</div><div class="vocab-def">To begin the first steps of a project. These things are often foundational and are the things that must be done before more substantial work can be completed.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">laugh out loud-</div><div class="vocab-def">The words behind the popular Internet abbreviation 'lol.' This happens when something is so funny that a person laughs audibly.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">lead to believe-</div><div class="vocab-def">When a person is told information which makes them think a certain way. This phrase is often said when contrary information is presented that makes the person doubt their initial thought.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">leading role-</div><div class="vocab-def">The most important part (character) in a play or movie.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">let go-</div><div class="vocab-def">To permit something or someone to leave you.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">light a candle-</div><div class="vocab-def">To put a fire to the wick of a candle until it ignites and stays alight on its own.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">like crazy-</div><div class="vocab-def">A way to modify an emotion or desire.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">live out a dream/fantasy-</div><div class="vocab-def">To actually fulfil a long-held wish or hope in the way one imagined.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">live performance-</div><div class="vocab-def">A performance given in real time for an audience.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">living room-</div><div class="vocab-def">A common room in someone's home in which people gather to relax or work.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">lock the door-</div><div class="vocab-def">To ensure that a door is unable to be opened from the outside.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">long term-</div><div class="vocab-def">Something that will extend far into the future.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">look alive-</div><div class="vocab-def">A command used to tell someone to appear to be busy or seem cheerful.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">look forward to-</div><div class="vocab-def">To anticipate something or be excited about something.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">look up information-</div><div class="vocab-def">To research a certain topic. This can be done for things like words in a dictionary or general information on the Internet.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">lose connection-</div><div class="vocab-def">When technology which requires a connection to a network in order to work disconnects from the network and no longer functions.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">lose control-</div><div class="vocab-def">There are two meanings: to be unable to maintain composure, usually because of intense emotions; or to lose being in charge of a situation.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">lose faith-</div><div class="vocab-def">The literal meaning is to no longer believe in religion or a god. The figurative meaning is to no longer have trust in a person, concept, or belief.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">lose interest-</div><div class="vocab-def">To no longer want to do something someone was previously excited about.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">lose money-</div><div class="vocab-def">When companies are spending more money than they are earning.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">lose weight-</div><div class="vocab-def">To decrease one's body mass.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">lose your temper-</div><div class="vocab-def">To be unable to maintain composure because of strong feelings of anger.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">lose an appetite-</div><div class="vocab-def">When the desire to eat is no longer appealing. This can also be used figuratively to describe a situation in which someone no longer has interest in doing something.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">lose your mind-</div><div class="vocab-def">The loss of sanity.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">lose touch with something/someone-</div><div class="vocab-def">To no longer have contact.</div></div>
+        <div class="vocab-entry"><div class="vocab-term">loved one(s)-</div><div class="vocab-def">Used to describe a person who you feel very close or attached to, including family members.</div></div>
+      </div>
+
+    </div><!-- end passage-panel -->
+
+    <div class="resizer" id="resizer"></div>
+
+    <!-- ══ QUESTIONS PANEL ══ -->
+    <div class="questions-panel" id="questionsPanel">
+
+      <!-- SET 10 QUESTIONS (Q1–5) -->
+      <div id="questions-set1">
+        <div class="question-set-header">
+          <h3>Questions 1–5</h3>
+          <p>Fill in the blank with the correct collocation. You may need to change the form of the words.</p>
+        </div>
+        <div class="question-block" id="qblock-1">
+          <div class="question-row"><span class="q-num">1</span><span class="prompt-text">Don't <input class="answer-input" id="q1" type="text" placeholder="type your answer…" autocomplete="off">. You don't have enough information about this topic to decide.</span></div>
+        </div>
+        <div class="question-block" id="qblock-2">
+          <div class="question-row"><span class="q-num">2</span><span class="prompt-text">She is very nervous about her first <input class="answer-input" id="q2" type="text" placeholder="type your answer…" autocomplete="off">.</span></div>
+        </div>
+        <div class="question-block" id="qblock-3">
+          <div class="question-row"><span class="q-num">3</span><span class="prompt-text">Too much <input class="answer-input" id="q3" type="text" placeholder="type your answer…" autocomplete="off"> will ruin your health.</span></div>
+        </div>
+        <div class="question-block" id="qblock-4">
+          <div class="question-row"><span class="q-num">4</span><span class="prompt-text">If I receive an email I'm not interested in, I usually send it to the <input class="answer-input" id="q4" type="text" placeholder="type your answer…" autocomplete="off"> folder.</span></div>
+        </div>
+        <div class="question-block" id="qblock-5">
+          <div class="question-row"><span class="q-num">5</span><span class="prompt-text">Maria and Jack just opened up their own <input class="answer-input" id="q5" type="text" placeholder="type your answer…" autocomplete="off"> together.</span></div>
+        </div>
+      </div>
+
+      <!-- SET 11 QUESTIONS (Q6–10) -->
+      <div id="questions-set2" style="display:none">
+        <div class="question-set-header">
+          <h3>Questions 6–10</h3>
+          <p>Fill in the blank with the correct collocation. You may need to change the form of the words.</p>
+        </div>
+        <div class="question-block" id="qblock-6">
+          <div class="question-row"><span class="q-num">6</span><span class="prompt-text">The restaurant is <input class="answer-input" id="q6" type="text" placeholder="type your answer…" autocomplete="off"> its modern Italian food.</span></div>
+        </div>
+        <div class="question-block" id="qblock-7">
+          <div class="question-row"><span class="q-num">7</span><span class="prompt-text">She tries to <input class="answer-input" id="q7" type="text" placeholder="type your answer…" autocomplete="off"> by running and biking every day as well as not eating fatty foods.</span></div>
+        </div>
+        <div class="question-block" id="qblock-8">
+          <div class="question-row"><span class="q-num">8</span><span class="prompt-text">Before we let it rise, we have to <input class="answer-input" id="q8" type="text" placeholder="type your answer…" autocomplete="off"> for five minutes using extra flour.</span></div>
+        </div>
+        <div class="question-block" id="qblock-9">
+          <div class="question-row"><span class="q-num">9</span><span class="prompt-text">I have never been able to <input class="answer-input" id="q9" type="text" placeholder="type your answer…" autocomplete="off">, I tell my husband everything.</span></div>
+        </div>
+        <div class="question-block" id="qblock-10">
+          <div class="question-row"><span class="q-num">10</span><span class="prompt-text">Take a left and <input class="answer-input" id="q10" type="text" placeholder="type your answer…" autocomplete="off"> past the red house on the left.</span></div>
+        </div>
+      </div>
+
+      <!-- SET 12 QUESTIONS (Q11–15) -->
+      <div id="questions-set3" style="display:none">
+        <div class="question-set-header">
+          <h3>Questions 11–15</h3>
+          <p>Fill in the blank with the correct collocation. You may need to change the form of the words.</p>
+        </div>
+        <div class="question-block" id="qblock-11">
+          <div class="question-row"><span class="q-num">11</span><span class="prompt-text">I was <input class="answer-input" id="q11" type="text" placeholder="type your answer…" autocomplete="off"> that the office would be closed tomorrow.</span></div>
+        </div>
+        <div class="question-block" id="qblock-12">
+          <div class="question-row"><span class="q-num">12</span><span class="prompt-text">We want to buy a new couch for the <input class="answer-input" id="q12" type="text" placeholder="type your answer…" autocomplete="off">.</span></div>
+        </div>
+        <div class="question-block" id="qblock-13">
+          <div class="question-row"><span class="q-num">13</span><span class="prompt-text">Although she used to love painting, she seems to have <input class="answer-input" id="q13" type="text" placeholder="type your answer…" autocomplete="off"> in it.</span></div>
+        </div>
+        <div class="question-block" id="qblock-14">
+          <div class="question-row"><span class="q-num">14</span><span class="prompt-text">Christmas is a time to visit <input class="answer-input" id="q14" type="text" placeholder="type your answer…" autocomplete="off"> in traditionally Christian countries.</span></div>
+        </div>
+        <div class="question-block" id="qblock-15">
+          <div class="question-row"><span class="q-num">15</span><span class="prompt-text">This watch <input class="answer-input" id="q15" type="text" placeholder="type your answer…" autocomplete="off">, it never breaks.</span></div>
+        </div>
+      </div>
+
+    </div><!-- end questions-panel -->
+  </div><!-- end panels-container -->
+
+  <!-- ══ NAV BAR ══ -->
+  <div class="nav-row" id="navRow">
+    <button class="q-nav-btn active" id="nav1"  onclick="goToQ(1)">1</button>
+    <button class="q-nav-btn"        id="nav2"  onclick="goToQ(2)">2</button>
+    <button class="q-nav-btn"        id="nav3"  onclick="goToQ(3)">3</button>
+    <button class="q-nav-btn"        id="nav4"  onclick="goToQ(4)">4</button>
+    <button class="q-nav-btn"        id="nav5"  onclick="goToQ(5)">5</button>
+    <button class="q-nav-btn"        id="nav6"  onclick="goToQ(6)">6</button>
+    <button class="q-nav-btn"        id="nav7"  onclick="goToQ(7)">7</button>
+    <button class="q-nav-btn"        id="nav8"  onclick="goToQ(8)">8</button>
+    <button class="q-nav-btn"        id="nav9"  onclick="goToQ(9)">9</button>
+    <button class="q-nav-btn"        id="nav10" onclick="goToQ(10)">10</button>
+    <button class="q-nav-btn"        id="nav11" onclick="goToQ(11)">11</button>
+    <button class="q-nav-btn"        id="nav12" onclick="goToQ(12)">12</button>
+    <button class="q-nav-btn"        id="nav13" onclick="goToQ(13)">13</button>
+    <button class="q-nav-btn"        id="nav14" onclick="goToQ(14)">14</button>
+    <button class="q-nav-btn"        id="nav15" onclick="goToQ(15)">15</button>
+    <div class="nav-spacer"></div>
+    <button class="submit-btn" id="submitBtn" onclick="submitTest()">Submit Test ✓</button>
+  </div>
+</div>
+
+<!-- ══ RESULTS MODAL ══ -->
+<div class="modal-overlay hidden" id="modalOverlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>📊 Your Results</h2>
+      <p>IELTS Vocabulary Masterclass – Test 04</p>
+    </div>
+    <div class="modal-body">
+      <div class="score-big">
+        <div class="score-number" id="scorePercent">0%</div>
+        <div class="score-label" id="scoreLabel">0 / 15 correct</div>
+      </div>
+      <div class="score-bar-wrap"><div class="score-bar" id="scoreBar" style="width:0%"></div></div>
+      <div class="perf-grid">
+        <div class="perf-card green"><div class="val" id="statCorrect">0</div><div class="lbl">Correct</div></div>
+        <div class="perf-card red"><div class="val" id="statIncorrect">0</div><div class="lbl">Incorrect</div></div>
+        <div class="perf-card amber"><div class="val" id="statUnanswered">0</div><div class="lbl">Unanswered</div></div>
+      </div>
+      <table class="result-table">
+        <thead><tr><th>Q</th><th>Your Answer</th><th>Correct Answer</th><th>Result</th></tr></thead>
+        <tbody id="resultTableBody"></tbody>
+      </table>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-retry" onclick="retryTest()">🔄 Retry</button>
+      <button class="btn-close" onclick="closeModal()">✕ Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══ ANSWER KEY ══ */
+const answers = {
+  1:  'jump to conclusions',
+  2:  'job interview',
+  3:  'junk food',
+  4:  'junk mail',
+  5:  'joint account',
+  6:  'known for',
+  7:  'keep fit',
+  8:  'knead the dough',
+  9:  'keep a secret',
+  10: 'keep going',
+  11: 'led to believe',
+  12: 'living room',
+  13: 'lost interest',
+  14: 'loved ones',
+  15: 'lasts forever'
+};
+
+const totalQ = 15;
+
+/* ══ TIMER ══ */
+let timeLeft = 30 * 60;
+let timerInterval = null;
+let submitted = false;
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    if (submitted) { clearInterval(timerInterval); return; }
+    timeLeft--;
+    updateTimerDisplay();
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      submitTest(true);
+    }
+  }, 1000);
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(timeLeft / 60);
+  const s = timeLeft % 60;
+  document.getElementById('timerDisplay').textContent =
+    String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  const box = document.getElementById('timerBox');
+  box.className = 'timer-box';
+  if (timeLeft <= 60)  box.className += ' danger';
+  else if (timeLeft <= 300) box.className += ' warning';
+}
+
+/* ══ SET SWITCHING ══ */
+function switchSet(n) {
+  [1,2,3].forEach(i => {
+    document.getElementById('passage-set'+i).style.display = i===n ? '' : 'none';
+    document.getElementById('questions-set'+i).style.display = i===n ? '' : 'none';
+  });
+  document.querySelectorAll('.set-tab').forEach((t,i) => {
+    t.className = 'set-tab' + (i+1===n ? ' active' : '');
+  });
+  document.getElementById('passagePanel').scrollTop = 0;
+  document.getElementById('questionsPanel').scrollTop = 0;
+}
+
+/* ══ QUESTION NAVIGATION ══ */
+function goToQ(n) {
+  if (n <= 5)        switchSet(1);
+  else if (n <= 10)  switchSet(2);
+  else               switchSet(3);
+
+  setTimeout(() => {
+    const block = document.getElementById('qblock-'+n);
+    if (block) block.scrollIntoView({behavior:'smooth', block:'center'});
+    document.querySelectorAll('.q-nav-btn').forEach(b => b.classList.remove('active'));
+    const nb = document.getElementById('nav'+n);
+    if (nb) nb.classList.add('active');
+  }, 50);
+}
+
+/* ══ TRACK ANSWERED ══ */
+for (let q = 1; q <= totalQ; q++) {
+  const inp = document.getElementById('q'+q);
+  if (inp) {
+    inp.addEventListener('input', () => {
+      const nb = document.getElementById('nav'+q);
+      if (nb) nb.className = 'q-nav-btn ' + (inp.value.trim() ? 'answered' : '');
+    });
+  }
+}
+
+/* ══ NORMALISE helper ══ */
+function norm(s) {
+  return s.trim().toLowerCase()
+    .replace(/['']/g,"'")
+    .replace(/\s+/,' ');
+}
+
+/* ══ SUBMIT ══ */
+function submitTest(autoSubmit=false) {
+  if (submitted) return;
+  if (!autoSubmit) {
+    const unanswered = [];
+    for (let q=1;q<=totalQ;q++){
+      const inp = document.getElementById('q'+q);
+      if (inp && !inp.value.trim()) unanswered.push(q);
+    }
+    if (unanswered.length > 0) {
+      if (!confirm(`You have ${unanswered.length} unanswered question(s).\nSubmit anyway?`)) return;
+    }
+  }
+
+  submitted = true;
+  clearInterval(timerInterval);
+  document.getElementById('submitBtn').disabled = true;
+  for (let q=1;q<=totalQ;q++){
+    const inp = document.getElementById('q'+q);
+    if(inp) inp.disabled = true;
+  }
+
+  let correct=0, incorrect=0, unanswered=0;
+  const tbody = document.getElementById('resultTableBody');
+  tbody.innerHTML = '';
+
+  for (let q=1;q<=totalQ;q++){
+    const inp = document.getElementById('q'+q);
+    const userRaw = inp ? inp.value : '';
+    const userAns = userRaw.trim();
+    const correctAns = answers[q];
+    const isCorrect = norm(userAns) === norm(correctAns);
+    const isUnanswered = !userAns;
+
+    if (isUnanswered) unanswered++;
+    else if (isCorrect) correct++;
+    else incorrect++;
+
+    const block = document.getElementById('qblock-'+q);
+    if (block) {
+      block.className = 'question-block ' + (isUnanswered ? '' : isCorrect ? 'correct' : 'incorrect');
+      if (!isCorrect) {
+        let disp = block.querySelector('.correct-answer-display');
+        if (!disp) { disp = document.createElement('div'); disp.className='correct-answer-display'; block.appendChild(disp); }
+        disp.textContent = '✓ ' + correctAns;
+      }
+      if (inp) inp.className = 'answer-input ' + (isUnanswered ? 'unanswered-warn' : isCorrect ? 'correct' : 'incorrect');
+    }
+
+    const nb = document.getElementById('nav'+q);
+    if (nb) {
+      nb.className = 'q-nav-btn ' + (isUnanswered ? 'unanswered-warn' : isCorrect ? 'correct' : 'incorrect');
+    }
+
+    const tr = document.createElement('tr');
+    tr.className = isUnanswered ? 'unanswered-row' : isCorrect ? 'correct-row' : 'incorrect-row';
+    tr.innerHTML = `
+      <td><strong>${q}</strong></td>
+      <td>${userAns || '<em style="color:#999">—</em>'}</td>
+      <td class="correct-ans-cell">${correctAns}</td>
+      <td>${isUnanswered ? '⏭ Skipped' : isCorrect ? '✓ Correct' : '✗ Wrong'}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+
+  const pct = Math.round((correct/totalQ)*100);
+  document.getElementById('scorePercent').textContent = pct + '%';
+  document.getElementById('scoreLabel').textContent = correct + ' / ' + totalQ + ' correct';
+  document.getElementById('statCorrect').textContent = correct;
+  document.getElementById('statIncorrect').textContent = incorrect;
+  document.getElementById('statUnanswered').textContent = unanswered;
+  setTimeout(() => {
+    document.getElementById('scoreBar').style.width = pct + '%';
+  }, 200);
+
+  document.getElementById('modalOverlay').classList.remove('hidden');
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.add('hidden');
+}
+
+function retryTest() {
+  location.reload();
+}
+
+/* ══ RESIZER ══ */
+const resizer = document.getElementById('resizer');
+const leftPanel = document.getElementById('passagePanel');
+const rightPanel = document.getElementById('questionsPanel');
+let isResizing = false;
+resizer.addEventListener('mousedown', e => { isResizing=true; document.body.style.cursor='col-resize'; e.preventDefault(); });
+document.addEventListener('mousemove', e => {
+  if (!isResizing) return;
+  const container = resizer.parentElement.getBoundingClientRect();
+  const offset = e.clientX - container.left;
+  const total = container.width - resizer.offsetWidth;
+  const pct = Math.min(Math.max(offset/total*100, 20), 80);
+  leftPanel.style.flex='none'; leftPanel.style.width=pct+'%';
+  rightPanel.style.flex='none'; rightPanel.style.width=(100-pct)+'%';
+});
+document.addEventListener('mouseup', () => { isResizing=false; document.body.style.cursor=''; });
+
+/* ══ START ══ */
+startTimer();
+</script>
+</body>
+</html>
