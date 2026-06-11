@@ -5,10 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vocabulary Tests – IELTS with Tahmid</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #07111f; color: #f7fbff; max-width: 860px; margin: 0 auto; padding: 24px; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #07111f;
+      color: #f7fbff;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
     h1 { color: #ff9f1c; margin-bottom: 8px; }
     .subtitle { color: rgba(247,251,255,0.7); margin-bottom: 32px; font-size: 1rem; }
 
+    .back {
+      color: #34c3ff;
+      display: inline-block;
+      margin-bottom: 28px;
+      text-decoration: none;
+    }
+    .back:hover { text-decoration: underline; }
+
+    /* ── LIVE TEST CARD ── */
     .test-card {
       display: flex;
       align-items: center;
@@ -22,9 +39,12 @@
       color: #f7fbff;
       transition: 0.2s;
     }
-    .test-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+    .test-card:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-2px);
+    }
     .test-card .left h3 { margin: 0 0 4px; font-size: 1.1rem; }
-    .test-card .left p { margin: 0; color: rgba(247,251,255,0.6); font-size: 0.9rem; }
+    .test-card .left p  { margin: 0; color: rgba(247,251,255,0.6); font-size: 0.9rem; }
 
     .badge {
       background: rgba(52,195,255,0.15);
@@ -37,9 +57,9 @@
       white-space: nowrap;
     }
 
-    /* Coming soon card */
+    /* ── COMING SOON CARD ── */
     .test-card.soon {
-      opacity: 0.5;
+      opacity: 0.45;
       cursor: not-allowed;
       pointer-events: none;
       border-style: dashed;
@@ -55,326 +75,233 @@
       white-space: nowrap;
     }
 
-    .back { color: #34c3ff; display: inline-block; margin-bottom: 28px; text-decoration: none; }
-    .back:hover { text-decoration: underline; }
-    /* Vocabulary PDF Resource Section */
-.pdf-section {
-  margin-top: 42px;
-  padding-top: 12px;
-}
+    /* ── SECTION DIVIDER ── */
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(247,251,255,0.35);
+      margin: 32px 0 14px;
+    }
 
-.pdf-section h2 {
-  color: #ff9f1c;
-  font-size: 28px;
-  margin-bottom: 8px;
-}
+    /* ── PDF SECTION ── */
+    .pdf-section {
+      margin-top: 48px;
+      padding-top: 12px;
+    }
+    .pdf-section h2 {
+      color: #ff9f1c;
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+    .pdf-section .section-subtitle {
+      color: #d9e8ff;
+      margin-bottom: 22px;
+      line-height: 1.6;
+    }
 
-.pdf-section .section-subtitle {
-  color: #d9e8ff;
-  margin-bottom: 22px;
-  line-height: 1.6;
-}
+    .pdf-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .pdf-card h3 { margin: 0 0 6px; color: #ffffff; font-size: 1.05rem; }
+    .pdf-card p  { margin: 0; color: #c9d7e8; font-size: 0.92rem; }
 
-.pdf-card {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 16px;
-  padding: 20px 24px;
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-}
+    .pdf-btn {
+      background: rgba(52,195,255,0.15);
+      border: 1px solid rgba(52,195,255,0.45);
+      color: #34c3ff;
+      padding: 9px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      white-space: nowrap;
+      font-size: 0.9rem;
+    }
+    .pdf-btn:hover { background: rgba(52,195,255,0.25); }
 
-.pdf-card h3 {
-  margin: 0 0 8px;
-  color: #ffffff;
-  font-size: 18px;
-}
+    .pdf-card.premium {
+      border: 1px dashed rgba(255,159,28,0.45);
+      background: rgba(255,255,255,0.04);
+      opacity: 0.78;
+    }
+    .pdf-card.premium h3 { color: #d8d8d8; }
+    .pdf-card.premium p  { color: #aeb8c5; }
 
-.pdf-card p {
-  margin: 0;
-  color: #c9d7e8;
-  font-size: 15px;
-}
+    .unlock-btn {
+      background: rgba(255,159,28,0.78);
+      color: #07111f;
+      border: 1px solid rgba(255,159,28,0.9);
+    }
+    .unlock-btn:hover { background: #ff9f1c; }
 
-.pdf-btn {
-  background: rgba(52,195,255,0.15);
-  border: 1px solid rgba(52,195,255,0.45);
-  color: #34c3ff;
-  padding: 9px 18px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: bold;
-  white-space: nowrap;
-}
+    .premium-note {
+      display: block;
+      margin-top: 8px;
+      color: #ffbf69;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
 
-.pdf-btn:hover {
-  background: rgba(52,195,255,0.25);
-}
-
-.pdf-card.premium {
-  border: 1px dashed rgba(255,159,28,0.45);
-  background: rgba(255,255,255,0.04);
-  opacity: 0.78;
-}
-
-.pdf-card.premium h3 {
-  color: #d8d8d8;
-}
-
-.pdf-card.premium p {
-  color: #aeb8c5;
-}
-
-.unlock-btn {
-  background: rgba(255,159,28,0.78);
-  color: #07111f;
-  border: 1px solid rgba(255,159,28,0.9);
-}
-
-.unlock-btn:hover {
-  background: #ff9f1c;
-}
-
-.premium-note {
-  display: block;
-  margin-top: 8px;
-  color: #ffbf69;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-@media (max-width: 650px) {
-  .pdf-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .pdf-btn {
-    width: 100%;
-    text-align: center;
-  }
-}
-    /* Vocabulary PDF Resource Section */
-.pdf-section {
-  margin-top: 42px;
-  padding-top: 12px;
-}
-
-.pdf-section h2 {
-  color: #ff9f1c;
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-
-.pdf-section .section-subtitle {
-  color: #d9e8ff;
-  margin-bottom: 22px;
-  line-height: 1.6;
-}
-
-.pdf-card {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 16px;
-  padding: 20px 24px;
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-}
-
-.pdf-card h3 {
-  margin: 0 0 8px;
-  color: #ffffff;
-  font-size: 18px;
-}
-
-.pdf-card p {
-  margin: 0;
-  color: #c9d7e8;
-  font-size: 15px;
-}
-
-.pdf-btn {
-  background: rgba(52,195,255,0.15);
-  border: 1px solid rgba(52,195,255,0.45);
-  color: #34c3ff;
-  padding: 9px 18px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-.pdf-btn:hover {
-  background: rgba(52,195,255,0.25);
-}
-
-.pdf-card.premium {
-  border: 1px dashed rgba(255,159,28,0.45);
-  background: rgba(255,255,255,0.04);
-  opacity: 0.78;
-}
-
-.pdf-card.premium h3 {
-  color: #d8d8d8;
-}
-
-.pdf-card.premium p {
-  color: #aeb8c5;
-}
-
-.unlock-btn {
-  background: rgba(255,159,28,0.78);
-  color: #07111f;
-  border: 1px solid rgba(255,159,28,0.9);
-}
-
-.unlock-btn:hover {
-  background: #ff9f1c;
-}
-
-.premium-note {
-  display: block;
-  margin-top: 8px;
-  color: #ffbf69;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-@media (max-width: 650px) {
-  .pdf-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .pdf-btn {
-    width: 100%;
-    text-align: center;
-  }
-}
+    @media (max-width: 650px) {
+      .pdf-card { flex-direction: column; align-items: flex-start; }
+      .pdf-btn  { width: 100%; text-align: center; }
+    }
   </style>
 </head>
 <body>
+
   <a class="back" href="../index.html">← Back to Home</a>
+
   <h1>📖 Vocabulary Masterclass</h1>
   <p class="subtitle">IELTS-style vocabulary tests with timer, instant scoring, and answer review.</p>
 
-  <!-- Test 01 — LIVE -->
+  <!-- ── LIVE TESTS ── -->
+  <div class="section-label">Available Now</div>
+
   <a class="test-card" href="Vocab_Masterclass_Test_01.html">
     <div class="left">
       <h3>Vocabulary Test 01</h3>
-      <p>3 Sets · 18 Questions · 30 Minutes · Instant Score</p>
+      <p>3 Sets &nbsp;·&nbsp; 18 Questions &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
     </div>
-    <span class="badge">Start</span>
+    <span class="badge">Start →</span>
   </a>
 
   <a class="test-card" href="Vocab_Masterclass_Test_02.html">
     <div class="left">
       <h3>Vocabulary Test 02</h3>
-      <p>3 Sets · 18 Questions · 30 Minutes · Instant Score</p>
+      <p>3 Sets &nbsp;·&nbsp; 18 Questions &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
     </div>
-    <span class="badge">Start</span>
+    <span class="badge">Start →</span>
   </a>
 
   <a class="test-card" href="Vocab_Masterclass_Test_03.html">
     <div class="left">
       <h3>Vocabulary Test 03</h3>
-      <p>3 Sets · 16 Questions · 30 Minutes · Instant Score</p>
+      <p>3 Sets &nbsp;·&nbsp; 16 Questions &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
     </div>
-    <span class="badge">Start</span>
+    <span class="badge">Start →</span>
   </a>
 
-   <a class="test-card" href="Vocab_Masterclass_Test_04.html">
+  <a class="test-card" href="Vocab_Masterclass_Test_04.html">
     <div class="left">
       <h3>Vocabulary Test 04</h3>
-      <p>3 Sets · 15 Questions · 30 Minutes · Instant Score</p>
+      <p>3 Sets &nbsp;·&nbsp; 15 Questions &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
     </div>
-    <span class="badge">Start</span>
+    <span class="badge">Start →</span>
   </a>
-<section class="pdf-section">
-  <h2>📚 Vocabulary PDF Resources</h2>
-  <p class="section-subtitle">
-    Download useful Oxford vocabulary resources to improve your word power for IELTS Reading, Writing, Listening, and Speaking.
-  </p>
 
-  <div class="pdf-card">
-    <div>
-      <h3>The Oxford 5000 by CEFR Level</h3>
-      <p>Advanced vocabulary list arranged by CEFR level for stronger academic word choice.</p>
+  <!-- ── COMING SOON TESTS ── -->
+  <div class="section-label">Coming Soon</div>
+
+  <div class="test-card soon">
+    <div class="left">
+      <h3>Vocabulary Test 05</h3>
+      <p>3 Sets &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
     </div>
-    <a class="pdf-btn" href="../pdfs/The_Oxford_5000_by_CEFR_level.pdf" target="_blank" rel="noopener">
-      Open PDF →
-    </a>
+    <span class="badge-soon">Coming Soon</span>
   </div>
 
-  <div class="pdf-card">
-    <div>
-      <h3>The Oxford 3000 by CEFR Level</h3>
-      <p>Essential high-frequency English vocabulary arranged by CEFR level.</p>
+  <div class="test-card soon">
+    <div class="left">
+      <h3>Vocabulary Test 06</h3>
+      <p>3 Sets &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
     </div>
-    <a class="pdf-btn" href="../pdfs/The_Oxford_3000_by_CEFR_level.pdf" target="_blank" rel="noopener">
-      Open PDF →
-    </a>
+    <span class="badge-soon">Coming Soon</span>
   </div>
 
-  <div class="pdf-card">
-    <div>
-      <h3>Oxford Phrase List</h3>
-      <p>Useful phrases and expressions to build natural English understanding and fluency.</p>
+  <div class="test-card soon">
+    <div class="left">
+      <h3>Vocabulary Test 07</h3>
+      <p>3 Sets &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
     </div>
-    <a class="pdf-btn" href="../pdfs/Oxford_Phrase_List.pdf" target="_blank" rel="noopener">
-      Open PDF →
-    </a>
+    <span class="badge-soon">Coming Soon</span>
   </div>
 
-  <div class="pdf-card premium">
-    <div>
-      <h3>🔒 OPAL Written Single Words</h3>
-      <p>Academic written vocabulary for improving IELTS Writing and Reading performance.</p>
-      <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
+  <div class="test-card soon">
+    <div class="left">
+      <h3>Vocabulary Test 08</h3>
+      <p>3 Sets &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
     </div>
-    <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">
-      Unlock →
-    </a>
+    <span class="badge-soon">Coming Soon</span>
   </div>
 
-  <div class="pdf-card premium">
-    <div>
-      <h3>🔒 OPAL Spoken Single Words</h3>
-      <p>Academic spoken vocabulary for better IELTS Speaking and Listening preparation.</p>
-      <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
-    </div>
-    <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">
-      Unlock →
-    </a>
-  </div>
+  <!-- ── PDF RESOURCES ── -->
+  <section class="pdf-section">
+    <h2>📚 Vocabulary PDF Resources</h2>
+    <p class="section-subtitle">
+      Download useful Oxford vocabulary resources to improve your word power for IELTS Reading, Writing, Listening, and Speaking.
+    </p>
 
-  <div class="pdf-card premium">
-    <div>
-      <h3>🔒 OPAL Written Phrases</h3>
-      <p>Useful academic written phrases for stronger IELTS Writing expression.</p>
-      <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
+    <div class="pdf-card">
+      <div>
+        <h3>The Oxford 5000 by CEFR Level</h3>
+        <p>Advanced vocabulary list arranged by CEFR level for stronger academic word choice.</p>
+      </div>
+      <a class="pdf-btn" href="../pdfs/The_Oxford_5000_by_CEFR_level.pdf" target="_blank" rel="noopener">Open PDF →</a>
     </div>
-    <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">
-      Unlock →
-    </a>
-  </div>
 
-  <div class="pdf-card premium">
-    <div>
-      <h3>🔒 OPAL Spoken Phrases</h3>
-      <p>Useful academic spoken phrases for more natural and confident IELTS Speaking.</p>
-      <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
+    <div class="pdf-card">
+      <div>
+        <h3>The Oxford 3000 by CEFR Level</h3>
+        <p>Essential high-frequency English vocabulary arranged by CEFR level.</p>
+      </div>
+      <a class="pdf-btn" href="../pdfs/The_Oxford_3000_by_CEFR_level.pdf" target="_blank" rel="noopener">Open PDF →</a>
     </div>
-    <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">
-      Unlock →
-    </a>
-  </div>
-</section>  
+
+    <div class="pdf-card">
+      <div>
+        <h3>Oxford Phrase List</h3>
+        <p>Useful phrases and expressions to build natural English understanding and fluency.</p>
+      </div>
+      <a class="pdf-btn" href="../pdfs/Oxford_Phrase_List.pdf" target="_blank" rel="noopener">Open PDF →</a>
+    </div>
+
+    <div class="pdf-card premium">
+      <div>
+        <h3>🔒 OPAL Written Single Words</h3>
+        <p>Academic written vocabulary for improving IELTS Writing and Reading performance.</p>
+        <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
+      </div>
+      <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">Unlock →</a>
+    </div>
+
+    <div class="pdf-card premium">
+      <div>
+        <h3>🔒 OPAL Spoken Single Words</h3>
+        <p>Academic spoken vocabulary for better IELTS Speaking and Listening preparation.</p>
+        <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
+      </div>
+      <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">Unlock →</a>
+    </div>
+
+    <div class="pdf-card premium">
+      <div>
+        <h3>🔒 OPAL Written Phrases</h3>
+        <p>Useful academic written phrases for stronger IELTS Writing expression.</p>
+        <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
+      </div>
+      <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">Unlock →</a>
+    </div>
+
+    <div class="pdf-card premium">
+      <div>
+        <h3>🔒 OPAL Spoken Phrases</h3>
+        <p>Useful academic spoken phrases for more natural and confident IELTS Speaking.</p>
+        <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
+      </div>
+      <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">Unlock →</a>
+    </div>
+
+  </section>
+
 </body>
 </html>
