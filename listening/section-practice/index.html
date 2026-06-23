@@ -1,11 +1,706 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IELTS Listening Section Practice</title>
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-2: rgba(255, 255, 255, 0.12);
+      --border: rgba(255, 255, 255, 0.14);
+      --text: #ffffff;
+      --muted: #b9c4d4;
+      --accent: #ff9f1c;
+      --blue: #38bdf8;
+      --green: #22c55e;
+      --danger: #ef4444;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 32%),
+        radial-gradient(circle at top right, rgba(255, 159, 28, 0.16), transparent 34%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(7, 17, 31, 0.82);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--blue));
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 30px rgba(255, 159, 28, 0.22);
+      font-size: 22px;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .nav-mini {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-mini a {
+      color: var(--muted);
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .nav-mini a:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero {
+      padding: 58px 0 26px;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255, 159, 28, 0.14);
+      right: -100px;
+      top: -80px;
+      filter: blur(3px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1.05;
+      margin-bottom: 16px;
+      letter-spacing: -1.2px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tools {
+      margin: 24px 0 30px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .search-box {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      color: #fff;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .search-box::placeholder {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .quick-note {
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .section-block {
+      margin: 26px 0 42px;
+      scroll-margin-top: 90px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-title h2 {
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .range-pill {
+      color: #fff;
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.26);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .tests-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .test-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 18px;
+      transition: 0.2s ease;
+    }
+
+    .test-card:hover {
+      transform: translateY(-3px);
+      background: var(--card-2);
+      border-color: rgba(255, 159, 28, 0.35);
+    }
+
+    .test-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .test-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .test-number {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 159, 28, 0.16);
+      color: var(--accent);
+      border: 1px solid rgba(255, 159, 28, 0.28);
+      font-weight: 800;
+    }
+
+    .test-title h3 {
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .test-title span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .start-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #111827;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 14px;
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .start-btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.04);
+    }
+
+    .audio-wrap {
+      background: rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 10px;
+    }
+
+    audio {
+      width: 100%;
+      height: 38px;
+      display: block;
+    }
+
+    .audio-name {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 8px;
+      padding-left: 4px;
+    }
+
+    .empty-state {
+      display: none;
+      text-align: center;
+      color: var(--muted);
+      padding: 30px;
+      border: 1px dashed var(--border);
+      border-radius: 20px;
+      margin-bottom: 30px;
+    }
+
+    .back-home {
+      display: inline-flex;
+      margin: 10px 0 38px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .back-home:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .tools {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-note {
+        white-space: normal;
+      }
+
+      .tests-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav-mini {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 30px;
+      }
+
+      .hero-card {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .test-top {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .start-btn {
+        width: 100%;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>IELTS Listening Section Practice</h1>
-  <p>Coming soon...</p>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="../../index.html" class="brand">
+        <div class="brand-mark">🎧</div>
+        <div>
+          IELTS with Tahmid
+          <small>Listening Practice Library</small>
+        </div>
+      </a>
+
+      <nav class="nav-mini" aria-label="Section navigation">
+        <a href="#section-1">Section 1</a>
+        <a href="#section-2">Section 2</a>
+        <a href="#section-3">Section 3</a>
+        <a href="#section-4">Section 4</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-content">
+          <div>
+            <div class="eyebrow">● Section-wise IELTS Listening Practice</div>
+            <h1>IELTS Listening Section Practice</h1>
+            <p>
+              Practise IELTS Listening section by section. Each test includes a question page and an audio player for quick practice.
+              Every individual test will contain 10 questions and show your score out of 10 after submission.
+            </p>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>4</strong>
+              <span>Sections</span>
+            </div>
+            <div class="stat">
+              <strong>80</strong>
+              <span>Total Tests</span>
+            </div>
+            <div class="stat">
+              <strong>10</strong>
+              <span>Questions/Test</span>
+            </div>
+            <div class="stat">
+              <strong>80</strong>
+              <span>Audio Files</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <a class="back-home" href="../../index.html">← Back to Home</a>
+
+    <section class="tools">
+      <input
+        type="search"
+        id="searchInput"
+        class="search-box"
+        placeholder="Search test number, for example: 1, 25, 60..."
+        aria-label="Search tests"
+      />
+      <div class="quick-note">Audio format: TEST 1.mp3 to TEST 80.mp3</div>
+    </section>
+
+    <div id="emptyState" class="empty-state">
+      No test found. Try another test number.
+    </div>
+
+    <div id="sectionsContainer"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="page">
+      © IELTS with Tahmid — Section-wise Listening Practice
+    </div>
+  </footer>
+
+  <script>
+    const sections = [
+      {
+        id: "section-1",
+        title: "Section 1",
+        subtitle: "Everyday social conversation practice",
+        folder: "section-1",
+        start: 1,
+        end: 20
+      },
+      {
+        id: "section-2",
+        title: "Section 2",
+        subtitle: "Everyday monologue practice",
+        folder: "section-2",
+        start: 21,
+        end: 40
+      },
+      {
+        id: "section-3",
+        title: "Section 3",
+        subtitle: "Academic discussion practice",
+        folder: "section-3",
+        start: 41,
+        end: 60
+      },
+      {
+        id: "section-4",
+        title: "Section 4",
+        subtitle: "Academic lecture practice",
+        folder: "section-4",
+        start: 61,
+        end: 80
+      }
+    ];
+
+    const sectionsContainer = document.getElementById("sectionsContainer");
+    const searchInput = document.getElementById("searchInput");
+    const emptyState = document.getElementById("emptyState");
+
+    function padTestNumber(number) {
+      return String(number).padStart(2, "0");
+    }
+
+    function audioPath(number) {
+      return `audio/TEST%20${number}.mp3`;
+    }
+
+    function testPath(sectionFolder, number) {
+      return `${sectionFolder}/test-${padTestNumber(number)}.html`;
+    }
+
+    function createTestCard(section, number) {
+      const card = document.createElement("article");
+      card.className = "test-card";
+      card.dataset.testNumber = String(number);
+      card.dataset.section = section.title.toLowerCase();
+
+      card.innerHTML = `
+        <div class="test-top">
+          <div class="test-title">
+            <div class="test-number">${padTestNumber(number)}</div>
+            <div>
+              <h3>Test ${padTestNumber(number)}</h3>
+              <span>${section.title} Practice • 10 Questions</span>
+            </div>
+          </div>
+
+          <a class="start-btn" href="${testPath(section.folder, number)}">
+            Start Practice →
+          </a>
+        </div>
+
+        <div class="audio-wrap">
+          <audio controls preload="none">
+            <source src="${audioPath(number)}" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <div class="audio-name">Audio: TEST ${number}.mp3</div>
+        </div>
+      `;
+
+      return card;
+    }
+
+    function renderSections() {
+      sectionsContainer.innerHTML = "";
+
+      sections.forEach(section => {
+        const block = document.createElement("section");
+        block.className = "section-block";
+        block.id = section.id;
+
+        const grid = document.createElement("div");
+        grid.className = "tests-grid";
+
+        for (let i = section.start; i <= section.end; i++) {
+          grid.appendChild(createTestCard(section, i));
+        }
+
+        block.innerHTML = `
+          <div class="section-head">
+            <div class="section-title">
+              <h2>${section.title}</h2>
+              <p>${section.subtitle}</p>
+            </div>
+            <div class="range-pill">Test ${padTestNumber(section.start)}–${padTestNumber(section.end)}</div>
+          </div>
+        `;
+
+        block.appendChild(grid);
+        sectionsContainer.appendChild(block);
+      });
+
+      setupAudioBehaviour();
+    }
+
+    function setupAudioBehaviour() {
+      const audioPlayers = document.querySelectorAll("audio");
+
+      audioPlayers.forEach(player => {
+        player.addEventListener("play", () => {
+          audioPlayers.forEach(otherPlayer => {
+            if (otherPlayer !== player) {
+              otherPlayer.pause();
+            }
+          });
+        });
+      });
+    }
+
+    function filterTests() {
+      const query = searchInput.value.trim().toLowerCase();
+      const cards = document.querySelectorAll(".test-card");
+      const sectionBlocks = document.querySelectorAll(".section-block");
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const testNumber = card.dataset.testNumber;
+        const paddedNumber = padTestNumber(Number(testNumber));
+        const sectionName = card.dataset.section;
+
+        const isMatch =
+          query === "" ||
+          testNumber.includes(query) ||
+          paddedNumber.includes(query) ||
+          sectionName.includes(query) ||
+          `test ${paddedNumber}`.includes(query) ||
+          `test ${testNumber}`.includes(query);
+
+        card.style.display = isMatch ? "" : "none";
+
+        if (isMatch) visibleCount++;
+      });
+
+      sectionBlocks.forEach(block => {
+        const visibleCards = block.querySelectorAll('.test-card:not([style*="display: none"])');
+        block.style.display = visibleCards.length ? "" : "none";
+      });
+
+      emptyState.style.display = visibleCount ? "none" : "block";
+    }
+
+    renderSections();
+    searchInput.addEventListener("input", filterTests);
+  </script>
 </body>
 </html>
