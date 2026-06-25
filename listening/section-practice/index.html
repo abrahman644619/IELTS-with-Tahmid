@@ -20,6 +20,16 @@
       --shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
     }
 
+    body.light-mode {
+      --bg: #f4f7fb;
+      --card: rgba(255, 255, 255, 0.86);
+      --card-2: #ffffff;
+      --border: rgba(17, 24, 39, 0.13);
+      --text: #111827;
+      --muted: #4b5563;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -116,6 +126,25 @@
     .nav-mini a:hover {
       color: #fff;
       background: rgba(255, 255, 255, 0.08);
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.12);
     }
 
     .hero {
@@ -343,25 +372,6 @@
       filter: brightness(1.04);
     }
 
-    .audio-wrap {
-      background: rgba(0, 0, 0, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 10px;
-    }
-
-    audio {
-      width: 100%;
-      height: 38px;
-      display: block;
-    }
-
-    .audio-name {
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 8px;
-      padding-left: 4px;
-    }
 
     .empty-state {
       display: none;
@@ -394,6 +404,66 @@
       color: var(--muted);
       text-align: center;
       font-size: 14px;
+    }
+
+    body.light-mode {
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 32%),
+        radial-gradient(circle at top right, rgba(255, 159, 28, 0.16), transparent 34%),
+        var(--bg);
+    }
+
+    body.light-mode .topbar {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom-color: var(--border);
+    }
+
+    body.light-mode .nav-mini a:hover {
+      color: var(--text);
+      background: rgba(17, 24, 39, 0.06);
+    }
+
+    body.light-mode .theme-toggle {
+      background: rgba(17, 24, 39, 0.06);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    body.light-mode .theme-toggle:hover {
+      background: rgba(17, 24, 39, 0.10);
+    }
+
+    body.light-mode .hero-card {
+      background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.72));
+    }
+
+    body.light-mode .stat {
+      background: rgba(255, 255, 255, 0.78);
+    }
+
+    body.light-mode .stat strong {
+      color: var(--text);
+    }
+
+    body.light-mode .search-box {
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--text);
+    }
+
+    body.light-mode .search-box::placeholder {
+      color: rgba(17, 24, 39, 0.48);
+    }
+
+    body.light-mode .range-pill {
+      color: #0f172a;
+      background: rgba(56, 189, 248, 0.18);
+      border-color: rgba(56, 189, 248, 0.32);
+    }
+
+    body.light-mode .back-home:hover {
+      color: var(--text);
+      background: rgba(17, 24, 39, 0.06);
     }
 
     @media (max-width: 860px) {
@@ -471,6 +541,7 @@
         <a href="#section-2">Section 2</a>
         <a href="#section-3">Section 3</a>
         <a href="#section-4">Section 4</a>
+        <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to light mode" aria-pressed="false">☀️ Light</button>
       </nav>
     </div>
   </header>
@@ -483,7 +554,7 @@
             <div class="eyebrow">● Section-wise IELTS Listening Practice</div>
             <h1>IELTS Listening Section Practice</h1>
             <p>
-              Practise IELTS Listening section by section. Each test includes a question page and an audio player for quick practice.
+              Practise IELTS Listening section by section. Each test opens a dedicated question page where the audio player is available for practice.
               Every individual test will contain 10 questions and show your score out of 10 after submission.
             </p>
           </div>
@@ -520,7 +591,7 @@
         placeholder="Search test number, for example: 1, 25, 60..."
         aria-label="Search tests"
       />
-      <div class="quick-note">Audio format: TEST 1.mp3 to TEST 80.mp3</div>
+      <div class="quick-note">Audio will play inside each test page</div>
     </section>
 
     <div id="emptyState" class="empty-state">
@@ -575,13 +646,27 @@
     const sectionsContainer = document.getElementById("sectionsContainer");
     const searchInput = document.getElementById("searchInput");
     const emptyState = document.getElementById("emptyState");
+    const themeToggle = document.getElementById("themeToggle");
+
+    function applyTheme(theme) {
+      const isLight = theme === "light";
+      document.body.classList.toggle("light-mode", isLight);
+      themeToggle.textContent = isLight ? "🌙 Dark" : "☀️ Light";
+      themeToggle.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+      themeToggle.setAttribute("aria-pressed", String(isLight));
+      localStorage.setItem("listeningSectionTheme", theme);
+    }
+
+    const savedTheme = localStorage.getItem("listeningSectionTheme") || "dark";
+    applyTheme(savedTheme);
+
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = document.body.classList.contains("light-mode") ? "dark" : "light";
+      applyTheme(nextTheme);
+    });
 
     function padTestNumber(number) {
       return String(number).padStart(2, "0");
-    }
-
-    function audioPath(number) {
-      return `audio/TEST%20${number}.mp3`;
     }
 
     function testPath(sectionFolder, number) {
@@ -607,16 +692,7 @@
           <a class="start-btn" href="${testPath(section.folder, number)}">
             Start Practice →
           </a>
-        </div>
-
-        <div class="audio-wrap">
-          <audio controls preload="none">
-            <source src="${audioPath(number)}" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-          <div class="audio-name">Audio: TEST ${number}.mp3</div>
-        </div>
-      `;
+        </div>      `;
 
       return card;
     }
@@ -650,21 +726,6 @@
         sectionsContainer.appendChild(block);
       });
 
-      setupAudioBehaviour();
-    }
-
-    function setupAudioBehaviour() {
-      const audioPlayers = document.querySelectorAll("audio");
-
-      audioPlayers.forEach(player => {
-        player.addEventListener("play", () => {
-          audioPlayers.forEach(otherPlayer => {
-            if (otherPlayer !== player) {
-              otherPlayer.pause();
-            }
-          });
-        });
-      });
     }
 
     function filterTests() {
