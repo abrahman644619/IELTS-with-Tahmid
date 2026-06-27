@@ -398,6 +398,81 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
+
+
+    .poster-section {
+      margin: 34px 0 26px;
+    }
+
+    .poster-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      box-shadow: var(--shadow);
+      padding: 16px;
+      backdrop-filter: blur(12px);
+    }
+
+    .poster-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(56,189,248,0.12), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(255,159,28,0.12), transparent 30%);
+      pointer-events: none;
+    }
+
+    .poster-head {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      color: var(--muted);
+    }
+
+    .poster-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .poster-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .poster-visual {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.28);
+    }
+
+    body.light-mode .poster-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(255,255,255,0.82));
+    }
+
+    body.light-mode .poster-badge {
+      background: rgba(17,24,39,0.04);
+    }
+
     .footer {
       border-top: 1px solid var(--border);
       padding: 28px 0;
@@ -517,6 +592,18 @@
         width: 100%;
       }
 
+
+
+      .poster-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .poster-card {
+        padding: 12px;
+        border-radius: 22px;
+      }
+
       .section-head {
         flex-direction: column;
         align-items: flex-start;
@@ -599,6 +686,17 @@
     </div>
 
     <div id="sectionsContainer"></div>
+
+    <section class="poster-section">
+      <div class="poster-card">
+        <div class="poster-head">
+          <span class="poster-badge">🔥 Motivation Corner</span>
+          <div class="poster-subtitle">A quick reminder before you finish your practice session.</div>
+        </div>
+        <img class="poster-visual" src="images/Footer-Poster.png" alt="Motivational success poster featuring Abidur Rahman Tahmid" />
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
