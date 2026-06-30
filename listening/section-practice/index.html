@@ -400,6 +400,140 @@
 
 
 
+    /* Dynamic home upgrade */
+    .hero-card {
+      isolation: isolate;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle, rgba(56, 189, 248, 0.22), transparent 62%),
+        radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.10), transparent 42%);
+      left: -170px;
+      bottom: -210px;
+      filter: blur(2px);
+      opacity: 0.95;
+      animation: floatGlowOne 10s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-card::after {
+      animation: floatGlowTwo 12s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-card .orb-line {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(120deg, transparent 0%, transparent 45%, rgba(255,255,255,0.20) 50%, transparent 55%, transparent 100%);
+      transform: translateX(-60%);
+      animation: lightSweep 8s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    @keyframes floatGlowOne {
+      0% { transform: translate3d(0, 0, 0) scale(1); }
+      100% { transform: translate3d(45px, -35px, 0) scale(1.08); }
+    }
+
+    @keyframes floatGlowTwo {
+      0% { transform: translate3d(0, 0, 0) scale(1); }
+      100% { transform: translate3d(-52px, 38px, 0) scale(1.13); }
+    }
+
+    @keyframes lightSweep {
+      0%, 58% { transform: translateX(-72%); }
+      100% { transform: translateX(72%); }
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: -12px 0 26px;
+    }
+
+    .filter-tab {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .filter-tab:hover {
+      transform: translateY(-1px);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.10);
+      border-color: rgba(255, 159, 28, 0.26);
+    }
+
+    .filter-tab.active {
+      color: #111827;
+      background: var(--accent);
+      border-color: rgba(255, 159, 28, 0.65);
+      box-shadow: 0 12px 28px rgba(255, 159, 28, 0.18);
+    }
+
+    .section-block {
+      animation: sectionReveal 0.65s ease both;
+    }
+
+    .test-card {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: cardReveal 0.55s ease forwards;
+      animation-delay: var(--delay, 0ms);
+      will-change: transform, opacity;
+    }
+
+    .test-card:hover {
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18);
+    }
+
+    @keyframes sectionReveal {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes cardReveal {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    body.light-mode .filter-tab {
+      background: rgba(255, 255, 255, 0.84);
+      color: var(--muted);
+    }
+
+    body.light-mode .filter-tab:hover {
+      color: var(--text);
+      background: #ffffff;
+    }
+
+    body.light-mode .filter-tab.active {
+      color: #111827;
+      background: var(--accent);
+    }
+
+
     .poster-section {
       margin: 34px 0 26px;
     }
@@ -541,6 +675,94 @@
       background: rgba(17, 24, 39, 0.06);
     }
 
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .page,
+      .topbar-inner {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .topbar {
+        position: sticky;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 13px;
+      }
+
+      .nav-mini {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+
+      .nav-mini::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-mini a,
+      .theme-toggle {
+        flex: 0 0 auto;
+      }
+
+      .filter-tabs {
+        position: sticky;
+        top: 70px;
+        z-index: 40;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 10px 0;
+        margin: -10px 0 20px;
+        background: linear-gradient(180deg, var(--bg) 0%, rgba(7,17,31,0.82) 100%);
+        scrollbar-width: none;
+      }
+
+      .filter-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      body.light-mode .filter-tabs {
+        background: linear-gradient(180deg, var(--bg) 0%, rgba(244,247,251,0.90) 100%);
+      }
+
+      .filter-tab {
+        flex: 0 0 auto;
+        padding: 9px 13px;
+        font-size: 13px;
+      }
+
+      .hero h1 {
+        font-size: clamp(30px, 10vw, 44px);
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .test-card {
+        border-radius: 18px;
+        padding: 16px;
+      }
+
+      .test-number {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+      }
+    }
+
     @media (max-width: 860px) {
       .hero-content {
         grid-template-columns: 1fr;
@@ -636,6 +858,7 @@
   <main class="page">
     <section class="hero">
       <div class="hero-card">
+        <div class="orb-line" aria-hidden="true"></div>
         <div class="hero-content">
           <div>
             <div class="eyebrow">● Section-wise IELTS Listening Practice</div>
@@ -679,6 +902,14 @@
         aria-label="Search tests"
       />
       <div class="quick-note">Audio will play inside each test page</div>
+    </section>
+
+    <section class="filter-tabs" aria-label="Filter tests by section">
+      <button type="button" class="filter-tab active" data-filter="all">All Tests</button>
+      <button type="button" class="filter-tab" data-filter="section-1">Section 1</button>
+      <button type="button" class="filter-tab" data-filter="section-2">Section 2</button>
+      <button type="button" class="filter-tab" data-filter="section-3">Section 3</button>
+      <button type="button" class="filter-tab" data-filter="section-4">Section 4</button>
     </section>
 
     <div id="emptyState" class="empty-state">
@@ -745,6 +976,8 @@
     const searchInput = document.getElementById("searchInput");
     const emptyState = document.getElementById("emptyState");
     const themeToggle = document.getElementById("themeToggle");
+    const filterTabs = document.querySelectorAll(".filter-tab");
+    let activeFilter = "all";
 
     function applyTheme(theme) {
       const isLight = theme === "light";
@@ -776,6 +1009,7 @@
       card.className = "test-card";
       card.dataset.testNumber = String(number);
       card.dataset.section = section.title.toLowerCase();
+      card.dataset.sectionKey = section.id;
 
       card.innerHTML = `
         <div class="test-top">
@@ -793,6 +1027,12 @@
         </div>      `;
 
       return card;
+    }
+
+    function applyCardAnimation() {
+      document.querySelectorAll(".test-card").forEach((card, index) => {
+        card.style.setProperty("--delay", `${Math.min(index * 18, 420)}ms`);
+      });
     }
 
     function renderSections() {
@@ -824,6 +1064,7 @@
         sectionsContainer.appendChild(block);
       });
 
+      applyCardAnimation();
     }
 
     function filterTests() {
@@ -836,14 +1077,18 @@
         const testNumber = card.dataset.testNumber;
         const paddedNumber = padTestNumber(Number(testNumber));
         const sectionName = card.dataset.section;
+        const sectionKey = card.dataset.sectionKey;
 
-        const isMatch =
+        const queryMatch =
           query === "" ||
           testNumber.includes(query) ||
           paddedNumber.includes(query) ||
           sectionName.includes(query) ||
           `test ${paddedNumber}`.includes(query) ||
           `test ${testNumber}`.includes(query);
+
+        const filterMatch = activeFilter === "all" || activeFilter === sectionKey;
+        const isMatch = queryMatch && filterMatch;
 
         card.style.display = isMatch ? "" : "none";
 
@@ -855,11 +1100,28 @@
         block.style.display = visibleCards.length ? "" : "none";
       });
 
+      emptyState.textContent = activeFilter === "all"
+        ? "No test found. Try another test number."
+        : "No test found in this section. Try another test number or choose All Tests.";
       emptyState.style.display = visibleCount ? "none" : "block";
+    }
+
+    function setActiveFilter(filter) {
+      activeFilter = filter;
+      filterTabs.forEach(tab => {
+        const isActive = tab.dataset.filter === filter;
+        tab.classList.toggle("active", isActive);
+        tab.setAttribute("aria-pressed", String(isActive));
+      });
+      filterTests();
     }
 
     renderSections();
     searchInput.addEventListener("input", filterTests);
+    filterTabs.forEach(tab => {
+      tab.setAttribute("aria-pressed", String(tab.classList.contains("active")));
+      tab.addEventListener("click", () => setActiveFilter(tab.dataset.filter));
+    });
   </script>
 </body>
 </html>
