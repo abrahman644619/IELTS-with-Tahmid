@@ -534,6 +534,337 @@
     }
 
 
+
+
+    /* Dynamic Home V2: progress, score history, continue test, quote carousel */
+    .progress-panel {
+      margin: -10px 0 26px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .continue-card,
+    .progress-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045));
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: 0 18px 42px rgba(0,0,0,0.14);
+    }
+
+    .continue-card::before,
+    .progress-card::before {
+      content: "";
+      position: absolute;
+      inset: -80px auto auto -80px;
+      width: 190px;
+      height: 190px;
+      border-radius: 999px;
+      background: rgba(56,189,248,0.15);
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    .continue-card > *,
+    .progress-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .progress-label {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .continue-title {
+      font-size: 24px;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    .continue-copy {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .progress-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .progress-action,
+    .history-toggle,
+    .quote-btn {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-family: inherit;
+      font-weight: 900;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      color: var(--text);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .progress-action.primary {
+      background: var(--accent);
+      border-color: rgba(255,159,28,0.55);
+      color: #111827;
+    }
+
+    .progress-action:hover,
+    .history-toggle:hover,
+    .quote-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.13);
+    }
+
+    .progress-action.primary:hover {
+      background: var(--accent);
+      filter: brightness(1.04);
+    }
+
+    .progress-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .progress-mini {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 12px;
+    }
+
+    .progress-mini strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+
+    .progress-mini span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .test-card.completed {
+      border-color: rgba(34,197,94,0.38);
+      background: linear-gradient(135deg, rgba(34,197,94,0.12), var(--card));
+    }
+
+    .test-card.last-test {
+      border-color: rgba(255,159,28,0.55);
+      box-shadow: 0 0 0 1px rgba(255,159,28,0.18), 0 18px 44px rgba(255,159,28,0.08);
+    }
+
+    .card-status-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: -4px;
+    }
+
+    .score-pill,
+    .done-badge,
+    .last-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 6px 9px;
+      font-size: 12px;
+      font-weight: 900;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .done-badge {
+      color: #dcfce7;
+      border-color: rgba(34,197,94,0.36);
+      background: rgba(34,197,94,0.16);
+    }
+
+    .last-badge {
+      color: #ffedd5;
+      border-color: rgba(255,159,28,0.36);
+      background: rgba(255,159,28,0.14);
+    }
+
+    .history-drawer {
+      display: none;
+      margin: -8px 0 26px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 22px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .history-drawer.show {
+      display: block;
+      animation: sectionReveal 0.35s ease both;
+    }
+
+    .history-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .history-head h2 {
+      font-size: 20px;
+    }
+
+    .history-list {
+      display: grid;
+      gap: 10px;
+      max-height: 360px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .history-item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px;
+      background: rgba(255,255,255,0.055);
+    }
+
+    .history-test-no {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,159,28,0.16);
+      color: var(--accent);
+      border: 1px solid rgba(255,159,28,0.28);
+      font-weight: 900;
+    }
+
+    .history-item strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .history-item span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .history-score {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--green);
+      white-space: nowrap;
+    }
+
+    .history-empty {
+      color: var(--muted);
+      border: 1px dashed var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .quote-carousel {
+      position: relative;
+      overflow: hidden;
+      margin: 28px 0 18px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(255,159,28,0.10));
+      box-shadow: 0 20px 45px rgba(0,0,0,0.14);
+      padding: 20px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .quote-carousel::before {
+      content: "\201C";
+      position: absolute;
+      left: 18px;
+      top: -30px;
+      color: rgba(255,255,255,0.12);
+      font-size: 140px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .quote-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .quote-text {
+      font-size: clamp(20px, 3vw, 34px);
+      font-weight: 900;
+      line-height: 1.18;
+      letter-spacing: -0.5px;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .quote-author {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+      margin-top: 8px;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .quote-content.switching .quote-text,
+    .quote-content.switching .quote-author {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    body.light-mode .continue-card,
+    body.light-mode .progress-card,
+    body.light-mode .history-drawer,
+    body.light-mode .history-item {
+      background: rgba(255,255,255,0.88);
+    }
+
+    body.light-mode .done-badge {
+      color: #14532d;
+    }
+
+    body.light-mode .last-badge {
+      color: #7c2d12;
+    }
+
+    body.light-mode .quote-carousel {
+      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,247,237,0.88));
+    }
+
+
     .poster-section {
       margin: 34px 0 26px;
     }
@@ -689,6 +1020,51 @@
       .topbar-inner {
         width: min(100% - 24px, 1180px);
       }
+
+
+
+      .progress-panel {
+        grid-template-columns: 1fr;
+        margin-top: -6px;
+      }
+
+      .continue-title {
+        font-size: 20px;
+      }
+
+      .progress-mini-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .progress-mini {
+        padding: 10px;
+      }
+
+      .progress-mini strong {
+        font-size: 19px;
+      }
+
+      .history-item {
+        grid-template-columns: auto 1fr;
+      }
+
+      .history-score {
+        grid-column: 1 / -1;
+      }
+
+      .quote-carousel {
+        grid-template-columns: 1fr;
+        padding: 16px;
+      }
+
+      .quote-btn {
+        display: none;
+      }
+
+      .card-status-row {
+        margin-top: 4px;
+      }
+
 
       .topbar {
         position: sticky;
@@ -893,6 +1269,36 @@
 
     <a class="back-home" href="../../index.html">← Back to Home</a>
 
+
+    <section id="progressPanel" class="progress-panel" aria-label="Practice progress">
+      <div class="continue-card">
+        <div class="progress-label">Continue Practice</div>
+        <h2 id="continueTitle" class="continue-title">Start your IELTS Listening journey</h2>
+        <p id="continueCopy" class="continue-copy">Your last opened test and latest scores will appear here after you start practising.</p>
+        <div class="progress-actions">
+          <a id="continueButton" class="progress-action primary" href="section-1/test-01.html">Start Test 01 →</a>
+          <button type="button" id="historyToggle" class="history-toggle">Score History</button>
+        </div>
+      </div>
+
+      <div class="progress-card">
+        <div class="progress-label">Your Progress</div>
+        <div class="progress-mini-grid">
+          <div class="progress-mini"><strong id="completedCount">0</strong><span>Completed</span></div>
+          <div class="progress-mini"><strong id="averageBest">0</strong><span>Avg. Best</span></div>
+          <div class="progress-mini"><strong id="latestScore">—</strong><span>Latest Score</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="historyDrawer" class="history-drawer" aria-label="Score history">
+      <div class="history-head">
+        <h2>Score History</h2>
+        <button type="button" id="historyClose" class="history-toggle">Close</button>
+      </div>
+      <div id="historyList" class="history-list"></div>
+    </section>
+
     <section class="tools">
       <input
         type="search"
@@ -918,6 +1324,17 @@
 
     <div id="sectionsContainer"></div>
 
+
+
+    <section class="quote-carousel" aria-label="Motivational quote carousel">
+      <button type="button" id="quotePrev" class="quote-btn" aria-label="Previous quote">‹</button>
+      <div id="quoteContent" class="quote-content">
+        <div id="quoteText" class="quote-text">Practice does not make perfect. Practice makes progress.</div>
+        <div id="quoteAuthor" class="quote-author">IELTS with Tahmid</div>
+      </div>
+      <button type="button" id="quoteNext" class="quote-btn" aria-label="Next quote">›</button>
+    </section>
+
     <section class="poster-section">
       <div class="poster-card">
         <div class="poster-head">
@@ -937,6 +1354,8 @@
   </footer>
 
   <script>
+    const PROGRESS_KEY = "ieltsListeningProgressV1";
+
     const sections = [
       {
         id: "section-1",
@@ -972,12 +1391,78 @@
       }
     ];
 
+    const quotes = [
+      { text: "Success is not given. It is earned one practice at a time.", author: "IELTS with Tahmid" },
+      { text: "Small improvements every day become big results on exam day.", author: "Practice Reminder" },
+      { text: "Do not just listen to audio. Train your focus.", author: "Listening Strategy" },
+      { text: "Your next score is built by the test you complete today.", author: "Consistency Wins" },
+      { text: "Stay calm, follow the questions, and trust your practice.", author: "IELTS Listening" }
+    ];
+
     const sectionsContainer = document.getElementById("sectionsContainer");
     const searchInput = document.getElementById("searchInput");
     const emptyState = document.getElementById("emptyState");
     const themeToggle = document.getElementById("themeToggle");
     const filterTabs = document.querySelectorAll(".filter-tab");
+    const continueTitle = document.getElementById("continueTitle");
+    const continueCopy = document.getElementById("continueCopy");
+    const continueButton = document.getElementById("continueButton");
+    const completedCount = document.getElementById("completedCount");
+    const averageBest = document.getElementById("averageBest");
+    const latestScore = document.getElementById("latestScore");
+    const historyToggle = document.getElementById("historyToggle");
+    const historyClose = document.getElementById("historyClose");
+    const historyDrawer = document.getElementById("historyDrawer");
+    const historyList = document.getElementById("historyList");
+    const quoteContent = document.getElementById("quoteContent");
+    const quoteText = document.getElementById("quoteText");
+    const quoteAuthor = document.getElementById("quoteAuthor");
+    const quotePrev = document.getElementById("quotePrev");
+    const quoteNext = document.getElementById("quoteNext");
+
     let activeFilter = "all";
+    let quoteIndex = 0;
+    let quoteTimer = null;
+
+    function emptyProgress() {
+      return { lastTest: null, scores: {}, bestScores: {}, completed: {} };
+    }
+
+    function readProgress() {
+      try {
+        return { ...emptyProgress(), ...(JSON.parse(localStorage.getItem(PROGRESS_KEY)) || {}) };
+      } catch (error) {
+        return emptyProgress();
+      }
+    }
+
+    function saveProgress(progress) {
+      localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+    }
+
+    function getSectionForTest(number) {
+      return sections.find(section => number >= section.start && number <= section.end) || sections[0];
+    }
+
+    function padTestNumber(number) {
+      return String(number).padStart(2, "0");
+    }
+
+    function testPath(sectionFolder, number) {
+      return `${sectionFolder}/test-${padTestNumber(number)}.html`;
+    }
+
+    function getTestStatus(number) {
+      const progress = readProgress();
+      const key = String(number);
+      const attempts = progress.scores?.[key] || [];
+      return {
+        completed: Boolean(progress.completed?.[key]),
+        best: progress.bestScores?.[key],
+        attempts,
+        isLast: Number(progress.lastTest?.number) === Number(number)
+      };
+    }
 
     function applyTheme(theme) {
       const isLight = theme === "light";
@@ -996,20 +1481,30 @@
       applyTheme(nextTheme);
     });
 
-    function padTestNumber(number) {
-      return String(number).padStart(2, "0");
-    }
-
-    function testPath(sectionFolder, number) {
-      return `${sectionFolder}/test-${padTestNumber(number)}.html`;
+    function rememberStart(number, path, sectionTitle) {
+      const progress = readProgress();
+      progress.lastTest = {
+        number,
+        path,
+        sectionTitle,
+        openedAt: Date.now()
+      };
+      saveProgress(progress);
     }
 
     function createTestCard(section, number) {
+      const status = getTestStatus(number);
       const card = document.createElement("article");
       card.className = "test-card";
+      if (status.completed) card.classList.add("completed");
+      if (status.isLast) card.classList.add("last-test");
       card.dataset.testNumber = String(number);
       card.dataset.section = section.title.toLowerCase();
       card.dataset.sectionKey = section.id;
+
+      const path = testPath(section.folder, number);
+      const bestLabel = status.best !== undefined && status.best !== null ? `Best ${status.best}/10` : "No score yet";
+      const attemptsLabel = status.attempts.length ? `${status.attempts.length} attempt${status.attempts.length > 1 ? "s" : ""}` : "Not attempted";
 
       card.innerHTML = `
         <div class="test-top">
@@ -1021,10 +1516,19 @@
             </div>
           </div>
 
-          <a class="start-btn" href="${testPath(section.folder, number)}">
-            Start Practice →
+          <a class="start-btn" data-test-number="${number}" data-section-title="${section.title}" href="${path}">
+            ${status.completed ? "Practice Again →" : "Start Practice →"}
           </a>
-        </div>      `;
+        </div>
+        <div class="card-status-row">
+          ${status.completed ? '<span class="done-badge">✓ Done</span>' : ''}
+          ${status.isLast ? '<span class="last-badge">↺ Last opened</span>' : ''}
+          <span class="score-pill">${bestLabel}</span>
+          <span class="score-pill">${attemptsLabel}</span>
+        </div>`;
+
+      const startBtn = card.querySelector(".start-btn");
+      startBtn.addEventListener("click", () => rememberStart(number, path, section.title));
 
       return card;
     }
@@ -1065,6 +1569,67 @@
       });
 
       applyCardAnimation();
+      updateProgressUI();
+    }
+
+    function getAllAttempts(progress) {
+      const all = [];
+      Object.entries(progress.scores || {}).forEach(([testNumber, attempts]) => {
+        attempts.forEach(attempt => all.push({ testNumber: Number(testNumber), ...attempt }));
+      });
+      return all.sort((a, b) => (b.time || 0) - (a.time || 0));
+    }
+
+    function updateProgressUI() {
+      const progress = readProgress();
+      const completedTotal = Object.keys(progress.completed || {}).length;
+      const bestValues = Object.values(progress.bestScores || {}).map(Number).filter(score => !Number.isNaN(score));
+      const avg = bestValues.length ? (bestValues.reduce((sum, score) => sum + score, 0) / bestValues.length).toFixed(1) : "0";
+      const attempts = getAllAttempts(progress);
+      const latest = attempts[0];
+
+      completedCount.textContent = `${completedTotal}/80`;
+      averageBest.textContent = avg;
+      latestScore.textContent = latest ? `${latest.score}/10` : "—";
+
+      if (progress.lastTest?.number) {
+        const number = Number(progress.lastTest.number);
+        const section = getSectionForTest(number);
+        const best = progress.bestScores?.[String(number)];
+        continueTitle.textContent = `Continue Test ${padTestNumber(number)}`;
+        continueCopy.textContent = `${progress.lastTest.sectionTitle || section.title} • ${best !== undefined ? `Best score ${best}/10` : "No score submitted yet"}`;
+        continueButton.textContent = `Continue Test ${padTestNumber(number)} →`;
+        continueButton.href = progress.lastTest.path || testPath(section.folder, number);
+      } else {
+        continueTitle.textContent = "Start your IELTS Listening journey";
+        continueCopy.textContent = "Your last opened test and latest scores will appear here after you start practising.";
+        continueButton.textContent = "Start Test 01 →";
+        continueButton.href = "section-1/test-01.html";
+      }
+
+      renderHistory(attempts);
+    }
+
+    function renderHistory(attempts) {
+      if (!attempts.length) {
+        historyList.innerHTML = '<div class="history-empty">No score history yet. Complete any test and submit your answers.</div>';
+        return;
+      }
+
+      historyList.innerHTML = attempts.slice(0, 30).map(item => {
+        const section = getSectionForTest(item.testNumber);
+        const date = item.time ? new Date(item.time).toLocaleString([], { dateStyle: "medium", timeStyle: "short" }) : "Saved score";
+        return `
+          <div class="history-item">
+            <div class="history-test-no">${padTestNumber(item.testNumber)}</div>
+            <div>
+              <strong>Test ${padTestNumber(item.testNumber)} • ${section.title}</strong>
+              <span>${date}</span>
+            </div>
+            <div class="history-score">${item.score}/10</div>
+          </div>
+        `;
+      }).join("");
     }
 
     function filterTests() {
@@ -1116,11 +1681,53 @@
       filterTests();
     }
 
+    function showQuote(index) {
+      quoteIndex = (index + quotes.length) % quotes.length;
+      quoteContent.classList.add("switching");
+      setTimeout(() => {
+        quoteText.textContent = quotes[quoteIndex].text;
+        quoteAuthor.textContent = quotes[quoteIndex].author;
+        quoteContent.classList.remove("switching");
+      }, 180);
+    }
+
+    function restartQuoteTimer() {
+      clearInterval(quoteTimer);
+      quoteTimer = setInterval(() => showQuote(quoteIndex + 1), 4500);
+    }
+
     renderSections();
     searchInput.addEventListener("input", filterTests);
     filterTabs.forEach(tab => {
       tab.setAttribute("aria-pressed", String(tab.classList.contains("active")));
       tab.addEventListener("click", () => setActiveFilter(tab.dataset.filter));
+    });
+
+    historyToggle.addEventListener("click", () => {
+      historyDrawer.classList.toggle("show");
+      if (historyDrawer.classList.contains("show")) {
+        historyDrawer.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    });
+
+    historyClose.addEventListener("click", () => historyDrawer.classList.remove("show"));
+
+    quotePrev.addEventListener("click", () => {
+      showQuote(quoteIndex - 1);
+      restartQuoteTimer();
+    });
+
+    quoteNext.addEventListener("click", () => {
+      showQuote(quoteIndex + 1);
+      restartQuoteTimer();
+    });
+
+    restartQuoteTimer();
+    window.addEventListener("storage", event => {
+      if (event.key === PROGRESS_KEY) {
+        renderSections();
+        filterTests();
+      }
     });
   </script>
 </body>
