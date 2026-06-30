@@ -17,4 +17,5 @@ function resetAnswers(){document.querySelectorAll('.qinput').forEach(e=>e.value=
 function limit(){document.querySelectorAll('[data-max]').forEach(g=>{let m=+g.dataset.max||2, boxes=[...g.querySelectorAll('input[type=checkbox]')];boxes.forEach(b=>b.addEventListener('change',()=>{let n=boxes.filter(x=>x.checked).length;boxes.forEach(x=>{if(!x.checked)x.disabled=n>=m;else x.disabled=false})}))})}
 document.addEventListener('DOMContentLoaded',limit);
 </script>  <script src="../exam-tools.js"></script>
+  <script src="../progress-tracker.js"></script>
 </body></html>
