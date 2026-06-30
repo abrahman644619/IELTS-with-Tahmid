@@ -29,4 +29,5 @@ function resetAnswers(){document.querySelectorAll('.answer-input').forEach(input
 function setupCheckboxLimits(){document.querySelectorAll('[data-max-checks]').forEach(group=>{const max=parseInt(group.dataset.maxChecks,10)||2;const boxes=Array.from(group.querySelectorAll('input[type="checkbox"]'));boxes.forEach(box=>box.addEventListener('change',()=>{const checked=boxes.filter(x=>x.checked).length;boxes.forEach(x=>{if(!x.checked) x.disabled=checked>=max; else x.disabled=false;});}));});}
 document.addEventListener('DOMContentLoaded',setupCheckboxLimits);
 </script>  <script src="../exam-tools.js"></script>
+  <script src="../progress-tracker.js"></script>
 </body></html>
