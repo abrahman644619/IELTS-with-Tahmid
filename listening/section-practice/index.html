@@ -128,6 +128,44 @@
       background: rgba(255, 255, 255, 0.08);
     }
 
+
+    .telegram-cta {
+      position: relative;
+      isolation: isolate;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #111827 !important;
+      background: linear-gradient(135deg, var(--accent), #ffd166);
+      border: 1px solid rgba(255, 159, 28, 0.55);
+      box-shadow: 0 14px 32px rgba(255, 159, 28, 0.22);
+      font-weight: 900;
+      padding: 10px 15px !important;
+      overflow: hidden;
+    }
+
+    .telegram-cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.42), transparent);
+      transform: translateX(-120%);
+      transition: transform 0.65s ease;
+    }
+
+    .telegram-cta:hover {
+      color: #111827 !important;
+      background: linear-gradient(135deg, #ffb13d, #ffe08a) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 18px 42px rgba(255, 159, 28, 0.30);
+    }
+
+    .telegram-cta:hover::before {
+      transform: translateX(120%);
+    }
+
     .theme-toggle {
       border: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.08);
@@ -964,6 +1002,19 @@
       background: rgba(17, 24, 39, 0.06);
     }
 
+
+    body.light-mode .telegram-cta {
+      color: #111827 !important;
+      background: linear-gradient(135deg, var(--accent), #ffd166);
+      border-color: rgba(255, 159, 28, 0.50);
+      box-shadow: 0 14px 32px rgba(245, 158, 11, 0.18);
+    }
+
+    body.light-mode .telegram-cta:hover {
+      color: #111827 !important;
+      background: linear-gradient(135deg, #ffb13d, #ffe08a) !important;
+    }
+
     body.light-mode .theme-toggle {
       background: rgba(17, 24, 39, 0.06);
       color: var(--text);
@@ -1168,6 +1219,23 @@
         justify-content: flex-start;
       }
 
+
+      .nav-mini {
+        width: 100%;
+        gap: 8px;
+      }
+
+      .telegram-cta {
+        flex: 1 1 100%;
+        width: 100%;
+        padding: 12px 14px !important;
+      }
+
+      .theme-toggle {
+        width: 100%;
+        justify-content: center;
+      }
+
       .hero {
         padding-top: 30px;
       }
@@ -1221,11 +1289,10 @@
         </div>
       </a>
 
-      <nav class="nav-mini" aria-label="Section navigation">
-        <a href="#section-1">Section 1</a>
-        <a href="#section-2">Section 2</a>
-        <a href="#section-3">Section 3</a>
-        <a href="#section-4">Section 4</a>
+      <nav class="nav-mini" aria-label="Primary navigation">
+        <a class="telegram-cta" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener noreferrer">
+          📚 Join Telegram for FREE resources
+        </a>
         <button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to light mode" aria-pressed="false">☀️ Light</button>
       </nav>
     </div>
