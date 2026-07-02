@@ -5,9 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Listening Tests – IELTS with Tahmid</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #07111f; color: #f7fbff; max-width: 860px; margin: 0 auto; padding: 24px; }
-    h1 { color: #ff9f1c; margin-bottom: 8px; }
-    .subtitle { color: rgba(247,251,255,0.7); margin-bottom: 32px; font-size: 1rem; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #07111f;
+      color: #f7fbff;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    h1 {
+      color: #ff9f1c;
+      margin-bottom: 8px;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      position: relative;
+    }
+
+    .secret-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: inline-grid;
+      place-items: center;
+      text-decoration: none;
+      position: relative;
+      transform: translateY(-2px);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .secret-dot::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #ef4444;
+      box-shadow:
+        0 0 0 4px rgba(239, 68, 68, 0.10),
+        0 0 14px rgba(239, 68, 68, 0.85),
+        0 0 26px rgba(239, 68, 68, 0.45);
+      animation: secretPulse 1.9s ease-in-out infinite;
+    }
+
+    .secret-dot:hover::before,
+    .secret-dot:focus-visible::before {
+      background: #ff5b5b;
+      box-shadow:
+        0 0 0 6px rgba(239, 68, 68, 0.15),
+        0 0 18px rgba(239, 68, 68, 0.95),
+        0 0 34px rgba(239, 68, 68, 0.55);
+    }
+
+    .secret-dot:focus-visible {
+      outline: 2px solid rgba(239, 68, 68, 0.75);
+      outline-offset: 3px;
+    }
+
+    @keyframes secretPulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.78;
+      }
+      50% {
+        transform: scale(1.35);
+        opacity: 1;
+      }
+    }
+
+    .subtitle {
+      color: rgba(247,251,255,0.7);
+      margin-bottom: 32px;
+      font-size: 1rem;
+    }
+
     .test-card {
       display: flex;
       align-items: center;
@@ -21,9 +97,23 @@
       color: #f7fbff;
       transition: 0.2s;
     }
-    .test-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
-    .test-card .left h3 { margin: 0 0 4px; font-size: 1.1rem; }
-    .test-card .left p { margin: 0; color: rgba(247,251,255,0.6); font-size: 0.9rem; }
+
+    .test-card:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-2px);
+    }
+
+    .test-card .left h3 {
+      margin: 0 0 4px;
+      font-size: 1.1rem;
+    }
+
+    .test-card .left p {
+      margin: 0;
+      color: rgba(247,251,255,0.6);
+      font-size: 0.9rem;
+    }
+
     .badge {
       background: rgba(52,195,255,0.15);
       border: 1px solid rgba(52,195,255,0.3);
@@ -34,13 +124,63 @@
       font-weight: 700;
       white-space: nowrap;
     }
-    .back { color: #34c3ff; display: inline-block; margin-bottom: 28px; text-decoration: none; }
-    .back:hover { text-decoration: underline; }
+
+    .back {
+      color: #34c3ff;
+      display: inline-block;
+      margin-bottom: 28px;
+      text-decoration: none;
+    }
+
+    .back:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 560px) {
+      body {
+        padding: 20px;
+      }
+
+      .title-row {
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+        line-height: 1.15;
+      }
+
+      .secret-dot {
+        width: 34px;
+        height: 34px;
+        transform: translateY(-4px);
+      }
+
+      .test-card {
+        padding: 18px;
+        gap: 12px;
+      }
+
+      .badge {
+        padding: 6px 12px;
+      }
+    }
   </style>
 </head>
 <body>
   <a class="back" href="../index.html">← Back to Home</a>
-  <h1>🎧 Listening Mock Tests</h1>
+
+  <div class="title-row">
+    <h1>🎧 Listening Mock Tests</h1>
+    <a
+      class="secret-dot"
+      href="https://abrahman644619.github.io/IELTS-with-Tahmid/listening/section-practice/index.html"
+      aria-label="Secret section-wise listening practice"
+      title=""
+    ></a>
+  </div>
+
   <p class="subtitle">Full IELTS-style listening tests with audio player, timer, and instant band result.</p>
 
   <a class="test-card" href="Listening_Mock_Test_01.html">
@@ -66,6 +206,6 @@
     </div>
     <span class="badge">Start →</span>
   </a>
-  
+
 </body>
 </html>
