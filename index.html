@@ -460,10 +460,29 @@
       border-radius: 16px;
       display: grid;
       place-items: center;
-      font-size: 1.5rem;
+      color: #d8f1ff;
       background: linear-gradient(135deg, rgba(52,195,255,0.18), rgba(255,159,28,0.15));
       border: 1px solid rgba(255,255,255,0.12);
       margin-bottom: 12px;
+      transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease,
+        color 0.22s ease;
+    }
+
+    .card-icon svg {
+      width: 25px;
+      height: 25px;
+      stroke-width: 1.9;
+    }
+
+    .resource-card:hover .card-icon,
+    .pdf-sub-card:hover .card-icon {
+      color: #ffffff;
+      border-color: rgba(52, 195, 255, 0.4);
+      box-shadow: 0 8px 24px rgba(52, 195, 255, 0.18);
+      transform: translateY(-2px);
     }
 
     .resource-card h3 { margin: 0 0 6px; font-size: 1.12rem; }
@@ -483,6 +502,13 @@
       font-weight: 700;
       margin-bottom: 12px;
       width: fit-content;
+    }
+
+    .band-badge svg {
+      width: 13px;
+      height: 13px;
+      stroke-width: 2.2;
+      flex: 0 0 auto;
     }
 
     .resource-card .small-link { color: #d8f1ff; font-weight: 700; font-size: 0.95rem; }
@@ -533,7 +559,8 @@
       background: rgba(255,255,255,0.09);
     }
 
-    .pdf-sub-card .card-icon { width: 42px; height: 42px; font-size: 1.2rem; margin-bottom: 10px; }
+    .pdf-sub-card .card-icon { width: 42px; height: 42px; margin-bottom: 10px; }
+    .pdf-sub-card .card-icon svg { width: 21px; height: 21px; }
     .pdf-sub-card h3 { margin: 0 0 6px; font-size: 1.02rem; }
     .pdf-sub-card p  { margin: 0 0 14px; color: var(--muted); font-size: 0.9rem; flex: 1; }
     .pdf-sub-card .small-link { color: #d8f1ff; font-weight: 700; font-size: 0.92rem; }
@@ -621,8 +648,11 @@
   box-shadow: 0 14px 34px rgba(52,195,255,0.5);
 }
 
-.floating-telegram span {
-  font-size: 19px;
+.floating-telegram svg {
+  width: 19px;
+  height: 19px;
+  stroke-width: 2.2;
+  flex: 0 0 auto;
 }
 
 @media (max-width: 600px) {
@@ -738,10 +768,10 @@
           <!-- Reading -->
           <article class="resource-card" id="reading">
             <div>
-              <div class="card-icon">📘</div>
+              <div class="card-icon"><i data-lucide="book-open" aria-hidden="true"></i></div>
               <h3>Reading</h3>
               <p>Passages, strategies, question types, and practice sets.</p>
-              <div class="band-badge">🎯 Target: Band 7.5+</div>
+              <div class="band-badge"><i data-lucide="target" aria-hidden="true"></i>Target: Band 7.5+</div>
             </div>
             <a class="small-link" href="reading/index.html">Start Reading Tests →</a>
           </article>
@@ -749,10 +779,10 @@
           <!-- Listening -->
           <article class="resource-card" id="listening">
             <div>
-              <div class="card-icon">🎧</div>
+              <div class="card-icon"><i data-lucide="headphones" aria-hidden="true"></i></div>
               <h3>Listening</h3>
               <p>Audio practice, test files, and exam-style listening support.</p>
-              <div class="band-badge">🎯 Target: Band 7.5+</div>
+              <div class="band-badge"><i data-lucide="target" aria-hidden="true"></i>Target: Band 7.5+</div>
             </div>
             <a class="small-link" href="listening/index.html">Start Listening Tests →</a>
           </article>
@@ -760,10 +790,10 @@
           <!-- Writing -->
           <article class="resource-card" id="writing">
             <div>
-              <div class="card-icon">📝</div>
+              <div class="card-icon"><i data-lucide="pen-line" aria-hidden="true"></i></div>
               <h3>Writing</h3>
               <p>Task 1, Task 2, model answers, and writing improvement tips.</p>
-              <div class="band-badge">🎯 Target: Band 7.0+</div>
+              <div class="band-badge"><i data-lucide="target" aria-hidden="true"></i>Target: Band 7.0+</div>
             </div>
             <a class="small-link" href="pdfs/writing-index.html">Get Writing Resources →</a>
           </article>
@@ -771,10 +801,10 @@
           <!-- Speaking -->
           <article class="resource-card" id="speaking">
             <div>
-              <div class="card-icon">🎤</div>
+              <div class="card-icon"><i data-lucide="mic" aria-hidden="true"></i></div>
               <h3>Speaking</h3>
               <p>Cue cards, sample answers, fluency practice, and vocab support.</p>
-              <div class="band-badge">🎯 Target: Band 7.0+</div>
+              <div class="band-badge"><i data-lucide="target" aria-hidden="true"></i>Target: Band 7.0+</div>
             </div>
             <a class="small-link" href="pdfs/speaking-index.html">Get Speaking Resources →</a>
           </article>
@@ -782,10 +812,10 @@
           <!-- Grammar Must-Know -->
           <article class="resource-card" id="grammar-must">
             <div>
-              <div class="card-icon">📐</div>
+              <div class="card-icon"><i data-lucide="spell-check" aria-hidden="true"></i></div>
               <h3>Grammar for IELTS</h3>
               <p>Essential grammar topics every IELTS student must master.</p>
-              <div class="band-badge">🎯 Target: Band 7.0+</div>
+              <div class="band-badge"><i data-lucide="target" aria-hidden="true"></i>Target: Band 7.0+</div>
             </div>
             <a class="small-link" href="pdfs/grammar-must.html">Open Grammar Guide →</a>
           </article>
@@ -793,10 +823,10 @@
           <!-- Vocabulary -->
           <article class="resource-card" id="vocabulary">
             <div>
-              <div class="card-icon">📖</div>
+              <div class="card-icon"><i data-lucide="book-a" aria-hidden="true"></i></div>
               <h3>Vocabulary</h3>
               <p>Topic-based word lists, collocations, and useful expressions.</p>
-              <div class="band-badge">Become A Pro</div>
+              <div class="band-badge"><i data-lucide="sparkles" aria-hidden="true"></i>Become A Pro</div>
             </div>
             <a class="small-link" href="vocabulary/index.html">Explore Vocabulary →</a>
           </article>
@@ -806,7 +836,7 @@
         <!-- ══ PDF LIBRARY FULL-WIDTH CARD ══ -->
         <div class="pdf-library-block" id="pdfs">
           <div class="pdf-library-header">
-            <div class="card-icon">📚</div>
+            <div class="card-icon"><i data-lucide="library" aria-hidden="true"></i></div>
             <div>
               <h3>PDF Library</h3>
               <p>Download study materials organised by category.</p>
@@ -816,7 +846,7 @@
 
             <article class="pdf-sub-card">
               <div>
-                <div class="card-icon">📚</div>
+                <div class="card-icon"><i data-lucide="blocks" aria-hidden="true"></i></div>
                 <h3>Super Basic Grammar</h3>
                 <p>Grammar episodes, story-based lessons, and A2–B2 level materials for strong foundations.</p>
               </div>
@@ -825,7 +855,7 @@
 
             <article class="pdf-sub-card">
               <div>
-                <div class="card-icon">📄</div>
+                <div class="card-icon"><i data-lucide="file-text" aria-hidden="true"></i></div>
                 <h3>IELTS Reading Resources</h3>
                 <p>Reading passages, strategies, question-type guides, and practice handouts.</p>
               </div>
@@ -834,7 +864,7 @@
 
             <article class="pdf-sub-card">
               <div>
-                <div class="card-icon">✍️</div>
+                <div class="card-icon"><i data-lucide="notebook-pen" aria-hidden="true"></i></div>
                 <h3>IELTS Writing Resources</h3>
                 <p>Task 1 &amp; Task 2 model answers, templates, band descriptors, and tip sheets.</p>
               </div>
@@ -843,7 +873,7 @@
 
             <article class="pdf-sub-card">
               <div>
-                <div class="card-icon">🗣️</div>
+                <div class="card-icon"><i data-lucide="messages-square" aria-hidden="true"></i></div>
                 <h3>IELTS Speaking Resources</h3>
                 <p>Cue card topics, sample answers, vocabulary sheets, and speaking strategies.</p>
               </div>
@@ -895,6 +925,7 @@
   </footer>
 
   <!-- ══ SCRIPTS ══ -->
+  <script src="https://unpkg.com/lucide@1.24.0/dist/umd/lucide.min.js"></script>
   <script>
     /* ── Animated headline ── */
     const words  = ['smart', 'fun', 'easy'];
@@ -985,9 +1016,15 @@
       setFlip(!isFlipped);
       flipTimer = setInterval(autoFlip, 5000);
     });
+
+    /* Convert icon placeholders into Lucide SVG icons */
+    if (window.lucide) {
+      lucide.createIcons();
+    }
   </script>
 <a href="https://t.me/demoIELTSclass" class="floating-telegram" target="_blank" rel="noopener">
-  <span>✈️</span> Join Telegram
+  <i data-lucide="send" aria-hidden="true"></i>
+  Join Telegram
 </a>
 </body>
 </html>
