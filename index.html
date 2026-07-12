@@ -3,1028 +3,944 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="IELTS with Tahmid - Practice, Improve, Achieve. Free IELTS resources for Reading, Listening, Writing, Speaking, Vocabulary, PDF Library, and Video Lessons." />
+  <meta name="description" content="IELTS with Tahmid - Free IELTS learning resources for Reading, Listening, Writing, Speaking, Grammar, Vocabulary, and PDF practice." />
+  <meta name="theme-color" content="#06101d" />
   <title>IELTS with Tahmid</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+
   <style>
     :root {
-      --bg: #07111f;
-      --bg2: #0d1b2a;
-      --card: rgba(255, 255, 255, 0.07);
-      --card-border: rgba(255, 255, 255, 0.12);
-      --text: #f7fbff;
-      --muted: rgba(247, 251, 255, 0.74);
-      --accent: #ff9f1c;
-      --accent2: #34c3ff;
-      --telegram: #229ED9;
-      --whatsapp: #25D366;
-      --email: #8b2020;
-      --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
-      --radius: 24px;
+      --bg: #06101d;
+      --bg2: #0a1727;
+      --surface: rgba(255,255,255,.065);
+      --surface2: rgba(255,255,255,.095);
+      --border: rgba(255,255,255,.12);
+      --text: #f6fbff;
+      --muted: #aab8c8;
+      --orange: #ff9f1c;
+      --orange2: #ffbf69;
+      --cyan: #36c7ff;
+      --blue: #4f8cff;
+      --purple: #9b6cff;
+      --pink: #ff6aa9;
+      --green: #44d89e;
+      --shadow: 0 24px 70px rgba(0,0,0,.34);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
       --max: 1180px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(52, 195, 255, 0.15), transparent 30%),
-        radial-gradient(circle at top right, rgba(255, 159, 28, 0.16), transparent 28%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: "Inter", Arial, sans-serif;
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
+      background:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px),
+        radial-gradient(circle at 8% 8%, rgba(54,199,255,.14), transparent 28%),
+        radial-gradient(circle at 92% 4%, rgba(255,159,28,.14), transparent 25%),
+        linear-gradient(180deg, var(--bg), var(--bg2) 50%, var(--bg));
+      background-size: 44px 44px, 44px 44px, auto, auto, auto;
     }
 
+    body.menu-open { overflow: hidden; }
     a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { color: inherit; }
+    img { max-width: 100%; display: block; }
+    ::selection { color: #07111f; background: var(--orange2); }
 
-    .container {
-      width: min(100% - 32px, var(--max));
-      margin: 0 auto;
+    .container { width: min(calc(100% - 32px), var(--max)); margin-inline: auto; }
+    .section { position: relative; padding-top: 88px; }
+    h1, h2, h3 { font-family: "Manrope", "Inter", sans-serif; }
+
+    .orb {
+      position: fixed;
+      z-index: -1;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: .5;
+      filter: blur(10px);
+      animation: floatOrb 13s ease-in-out infinite;
+    }
+    .orb.one { width: 330px; height: 330px; left: -140px; top: 24%; background: radial-gradient(circle, rgba(54,199,255,.25), transparent 68%); }
+    .orb.two { width: 380px; height: 380px; right: -180px; top: 58%; background: radial-gradient(circle, rgba(255,159,28,.22), transparent 68%); animation-delay: -5s; }
+    @keyframes floatOrb { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-24px) scale(1.06); } }
+
+    #mouseGlow {
+      position: fixed;
+      z-index: -1;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(54,199,255,.09), transparent 66%);
+      transition: opacity .25s ease;
     }
 
-    /* ── TOPBAR ── */
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(16px);
-      background: rgba(7, 17, 31, 0.78);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      background: rgba(6,16,29,.76);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
     .nav {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      padding: 14px 0;
+      gap: 22px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
+    .brand { display: inline-flex; align-items: center; gap: 13px; min-width: 0; }
     .brand img {
-      width: 58px;
-      height: 58px;
+      width: 50px;
+      height: 50px;
       object-fit: cover;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: var(--shadow);
-      flex: 0 0 auto;
+      border-radius: 15px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: 0 12px 30px rgba(0,0,0,.22);
     }
+    .brand-copy strong { display: block; font-family: "Manrope", sans-serif; font-size: 1rem; line-height: 1.15; }
+    .brand-copy span { color: var(--muted); font-size: .78rem; }
 
-    .brand-text { min-width: 0; }
-    .brand-text h1 { margin: 0; font-size: 1.15rem; line-height: 1.2; letter-spacing: 0.2px; }
-    .brand-text p { margin: 4px 0 0; color: var(--muted); font-size: 0.92rem; }
-
-    .nav-links {
-      
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: flex-end;
-    }
-
+    .nav-links { display: flex; align-items: center; gap: 4px; }
     .nav-links a {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.92rem;
-      color: var(--muted);
-      transition: 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-      transform: translateY(-1px);
-      border-color: rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.08);
-    }
-
-    /* ── HERO ── */
-    .hero { padding: 54px 0 24px; }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.95fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .hero-main,
-    .hero-side,
-    .section-card,
-    .resource-card,
-    .contact-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-    }
-
-    /* ── FLIP CARD ── */
-    .hero-flip {
-      min-height: 340px;
-      perspective: 1200px;
-    }
-
-    .flip-inner {
-      width: 100%;
-      height: 100%;
-      min-height: 340px;
       position: relative;
-      transform-style: preserve-3d;
-      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .flip-inner.flipped {
-      transform: rotateY(180deg);
-    }
-
-    .flip-front,
-    .flip-back {
-      position: absolute;
-      inset: 0;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      border-radius: var(--radius);
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow);
-      padding: 34px;
-      overflow: hidden;
-    }
-
-    .flip-back {
-      transform: rotateY(180deg);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      background: linear-gradient(135deg, rgba(52,195,255,0.08), rgba(255,159,28,0.08));
-      border-color: rgba(255,255,255,0.15);
-    }
-
-    .flip-front::before {
-      content: "";
-      position: absolute;
-      inset: auto -120px -120px auto;
-      width: 280px;
-      height: 280px;
-      background: radial-gradient(circle, rgba(255,159,28,0.28), transparent 60%);
-      pointer-events: none;
-    }
-
-    .flip-back::before {
-      content: "";
-      position: absolute;
-      inset: -80px auto auto -80px;
-      width: 260px;
-      height: 260px;
-      background: radial-gradient(circle, rgba(52,195,255,0.18), transparent 60%);
-      pointer-events: none;
-    }
-
-    .flip-dots {
-      display: flex;
-      gap: 7px;
-      margin-top: 22px;
-      padding-left: 2px;
-    }
-
-    .flip-dots span {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      transition: background 0.3s, width 0.3s;
-      cursor: pointer;
-    }
-
-    .flip-dots span.active {
-      background: var(--accent);
-      width: 22px;
-      border-radius: 4px;
-    }
-
-    .trainer-gift {
-      font-size: 0.85rem;
+      padding: 10px 12px;
+      border-radius: 12px;
       color: var(--muted);
-      margin: 0 0 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-weight: 600;
+      font-size: .9rem;
+      font-weight: 700;
+      transition: .22s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); background: rgba(255,255,255,.065); }
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      left: 13px;
+      right: 13px;
+      bottom: 4px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--orange));
     }
 
-    .trainer-name {
-      font-size: clamp(1.5rem, 3.2vw, 2.6rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin: 0 0 10px;
-      background: linear-gradient(135deg, #ff9f1c, #f72585, #34c3ff, #7209b7);
-      background-size: 300% 300%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: gradientShift 4s ease infinite;
-    }
-
-    @keyframes gradientShift {
-      0%   { background-position: 0% 50%; }
-      50%  { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .trainer-role {
-      font-size: 1.15rem;
-      font-style: italic;
-      color: #34c3ff;
-      margin: 0 0 8px;
-      font-weight: 600;
-    }
-
-    .trainer-exp {
+    .nav-cta {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 16px;
-      border-radius: 999px;
-      background: rgba(255,159,28,0.12);
-      border: 1px solid rgba(255,159,28,0.28);
-      color: #ffbf69;
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-top: 14px;
+      padding: 11px 15px;
+      border-radius: 13px;
+      color: #171006;
+      background: linear-gradient(135deg, var(--orange), var(--orange2));
+      box-shadow: 0 12px 28px rgba(255,159,28,.2);
+      font-size: .88rem;
+      font-weight: 800;
+      transition: .22s ease;
     }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 35px rgba(255,159,28,.26); }
+    .nav-cta svg { width: 16px; height: 16px; }
 
-    .hero-main {
-      padding: 34px;
-      position: relative;
-      overflow: hidden;
-      min-height: 340px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(52, 195, 255, 0.12);
-      border: 1px solid rgba(52, 195, 255, 0.22);
-      color: #ccefff;
-      font-size: 0.92rem;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
-
-    /* ── ANIMATED HEADLINE ── */
-    .hero-main h2 {
-      margin: 18px 0 12px;
-      font-size: clamp(1.8rem, 4vw, 3.4rem);
-      line-height: 1.2;
-      letter-spacing: -0.8px;
-      display: block;
-    }
-
-    .headline-static { display: inline; }
-
-    .headline-word-wrap {
-      display: inline-block;
-      overflow: hidden;
-      vertical-align: -0.15em;
-      height: 1.1em;
-      max-width: 220px;
-    }
-
-    .headline-word {
-      display: block;
-      animation: slideWord 9s infinite;
-      background: linear-gradient(135deg, var(--accent), #34c3ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-style: italic;
-    }
-
-    @keyframes slideWord {
-      0%   { transform: translateY(0%);    opacity: 1; }
-      28%  { transform: translateY(0%);    opacity: 1; }
-      33%  { transform: translateY(-100%); opacity: 0; }
-      34%  { transform: translateY(100%);  opacity: 0; }
-      36%  { transform: translateY(0%);    opacity: 1; }
-      61%  { transform: translateY(0%);    opacity: 1; }
-      66%  { transform: translateY(-100%); opacity: 0; }
-      67%  { transform: translateY(100%);  opacity: 0; }
-      69%  { transform: translateY(0%);    opacity: 1; }
-      94%  { transform: translateY(0%);    opacity: 1; }
-      99%  { transform: translateY(-100%); opacity: 0; }
-      100% { transform: translateY(0%);    opacity: 1; }
-    }
-
-    .word-smart { animation-delay: 0s; }
-    .word-fun   { animation-delay: 3s; display: none; }
-    .word-easy  { animation-delay: 6s; display: none; }
-
-    .hero-main .tagline {
-      font-size: 1.12rem;
-      color: var(--muted);
-      max-width: 60ch;
-      margin-bottom: 24px;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 18px;
-      border-radius: 14px;
-      font-weight: 700;
-      border: 0;
-      transition: 0.2s ease;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: linear-gradient(135deg, var(--accent), #ffbf69); color: #1b1203; }
-    .btn-outline { background: rgba(255,255,255,0.06); color: var(--text); border: 1px solid rgba(255,255,255,0.14); }
-
-    .hero-side {
-      padding: 22px;
-      display: grid;
-      gap: 14px;
-      align-content: start;
-    }
-
-    .hero-side .mini-panel {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .mini-panel h3 { margin: 0 0 8px; font-size: 1.02rem; }
-    .mini-panel p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-
-    .quick-links { display: grid; gap: 12px; }
-
-    .quick-links a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      color: #fff;
-      font-weight: 700;
-      transition: 0.2s ease;
-      border: none;
-    }
-
-    .quick-links a span { color: rgba(255,255,255,0.85); font-weight: 400; font-size: 0.92rem; }
-    .quick-links a strong { color: #fff; }
-    .quick-links a:hover { transform: translateY(-2px); filter: brightness(1.1); }
-.quick-links a.ql-telegram {
-      background: linear-gradient(135deg, #1a8bbf, #229ED9);
-      border: 1px solid rgba(255,255,255,0.15);
-      box-shadow: 0 4px 18px rgba(34,158,217,0.35);
-    }
-    .quick-links a.ql-whatsapp {
-      background: linear-gradient(135deg, #1aad52, #25D366);
-      border: 1px solid rgba(255,255,255,0.15);
-      box-shadow: 0 4px 18px rgba(37,211,102,0.35);
-    }
-    .quick-links a.ql-email {
-      background: linear-gradient(135deg, #6b1515, #a02525);
-      border: 1px solid rgba(255,255,255,0.15);
-      box-shadow: 0 4px 18px rgba(139,32,32,0.35);
-    }
-
-    /* ── SECTIONS ── */
-    .section { padding: 24px 0 8px; }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .section-header h2 { margin: 0; font-size: 1.6rem; }
-    .section-header p { margin: 0; color: var(--muted); max-width: 58ch; }
-
-    /* ── MAIN GRID ── */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    /* ── RESOURCE CARDS ── */
-    .resource-card {
-      padding: 22px;
-      min-height: 180px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: 0.22s ease;
-    }
-
-    .resource-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.09);
-    }
-
-    .card-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      display: grid;
+    .menu-button {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--surface);
       place-items: center;
-      color: #d8f1ff;
-      background: linear-gradient(135deg, rgba(52,195,255,0.18), rgba(255,159,28,0.15));
-      border: 1px solid rgba(255,255,255,0.12);
-      margin-bottom: 12px;
-      transition:
-        transform 0.22s ease,
-        box-shadow 0.22s ease,
-        border-color 0.22s ease,
-        color 0.22s ease;
+      cursor: pointer;
+    }
+    .menu-button svg { width: 22px; height: 22px; }
+
+    .hero { position: relative; padding: 72px 0 20px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(380px,.9fr); gap: 26px; align-items: stretch; }
+    .hero-copy, .hero-dashboard {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(145deg, rgba(255,255,255,.085), rgba(255,255,255,.045));
+      box-shadow: var(--shadow);
+    }
+    .hero-copy { padding: clamp(30px,5vw,58px); }
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      width: 310px;
+      height: 310px;
+      right: -130px;
+      bottom: -155px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(255,159,28,.3), transparent 66%);
     }
 
-    .card-icon svg {
-      width: 25px;
-      height: 25px;
-      stroke-width: 1.9;
-    }
-
-    .resource-card:hover .card-icon,
-    .pdf-sub-card:hover .card-icon {
-      color: #ffffff;
-      border-color: rgba(52, 195, 255, 0.4);
-      box-shadow: 0 8px 24px rgba(52, 195, 255, 0.18);
-      transform: translateY(-2px);
-    }
-
-    .resource-card h3 { margin: 0 0 6px; font-size: 1.12rem; }
-    .resource-card p  { margin: 0 0 10px; color: var(--muted); font-size: 0.95rem; }
-
-    /* ── BAND BADGE ── */
-    .band-badge {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 4px 10px;
+      gap: 9px;
+      padding: 8px 13px;
+      border: 1px solid rgba(54,199,255,.25);
       border-radius: 999px;
-      background: rgba(255, 159, 28, 0.15);
-      border: 1px solid rgba(255, 159, 28, 0.3);
-      color: #ffbf69;
-      font-size: 0.78rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      width: fit-content;
+      color: #c7f2ff;
+      background: rgba(54,199,255,.09);
+      font-size: .82rem;
+      font-weight: 800;
     }
+    .hero-badge svg { width: 16px; height: 16px; }
 
-    .band-badge svg {
-      width: 13px;
-      height: 13px;
-      stroke-width: 2.2;
-      flex: 0 0 auto;
+    .hero h1 {
+      max-width: 760px;
+      margin: 22px 0 17px;
+      font-size: clamp(2.7rem,6.5vw,5.7rem);
+      line-height: .99;
+      letter-spacing: -.065em;
     }
-
-    .resource-card .small-link { color: #d8f1ff; font-weight: 700; font-size: 0.95rem; }
-
-    /* ── PDF LIBRARY BLOCK ── */
-    .pdf-library-block {
-      margin-top: 16px;
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      padding: 26px;
+    .gradient-text {
+      display: inline-block;
+      min-width: 5.4ch;
+      color: transparent;
+      background: linear-gradient(135deg, var(--cyan), #dff7ff 45%, var(--orange2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      transition: opacity .28s ease, transform .28s ease;
     }
+    .hero-copy > p { max-width: 62ch; margin: 0; color: var(--muted); font-size: 1.04rem; }
 
-    .pdf-library-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .pdf-library-header .card-icon { margin-bottom: 0; flex-shrink: 0; }
-    .pdf-library-header h3 { margin: 0 0 4px; font-size: 1.2rem; }
-    .pdf-library-header p  { margin: 0; color: var(--muted); font-size: 0.95rem; }
-
-    /* ── PDF SUBSECTIONS ── */
-    .pdf-subsections {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .pdf-sub-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 18px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 150px;
-      transition: 0.22s ease;
-    }
-
-    .pdf-sub-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.09);
-    }
-
-    .pdf-sub-card .card-icon { width: 42px; height: 42px; margin-bottom: 10px; }
-    .pdf-sub-card .card-icon svg { width: 21px; height: 21px; }
-    .pdf-sub-card h3 { margin: 0 0 6px; font-size: 1.02rem; }
-    .pdf-sub-card p  { margin: 0 0 14px; color: var(--muted); font-size: 0.9rem; flex: 1; }
-    .pdf-sub-card .small-link { color: #d8f1ff; font-weight: 700; font-size: 0.92rem; }
-
-    /* ── CONTACT ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 16px;
-    }
-
-    .contact-card { padding: 22px; }
-    .contact-card h3 { margin: 0 0 8px; font-size: 1.1rem; }
-    .contact-card p { margin: 0 0 14px; color: var(--muted); }
-
-    .contact-card a {
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      width: 100%;
-      padding: 13px 16px;
-      border-radius: 14px;
-      font-weight: 700;
-      transition: 0.2s ease;
-      color: #fff;
+      min-height: 48px;
+      padding: 12px 18px;
+      border: 1px solid transparent;
+      border-radius: 15px;
+      font-weight: 800;
+      transition: .22s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button svg { width: 18px; height: 18px; }
+    .button-primary { color: #171006; background: linear-gradient(135deg, var(--orange), var(--orange2)); box-shadow: 0 14px 34px rgba(255,159,28,.22); }
+    .button-secondary { color: var(--text); border-color: var(--border); background: rgba(255,255,255,.055); }
+
+    .hero-trust { display: flex; flex-wrap: wrap; gap: 17px; margin-top: 26px; color: #c6d4e0; font-size: .84rem; font-weight: 700; }
+    .hero-trust span { display: inline-flex; align-items: center; gap: 7px; }
+    .hero-trust svg { width: 15px; height: 15px; color: var(--green); }
+
+    .hero-dashboard {
+      padding: 23px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: radial-gradient(circle at 90% 0%, rgba(155,108,255,.14), transparent 34%), linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.045));
+    }
+    .dashboard-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 18px; }
+    .dashboard-top h2 { margin: 0; font-size: 1.1rem; }
+    .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border: 1px solid rgba(68,216,158,.24);
+      border-radius: 999px;
+      color: #baf7dd;
+      background: rgba(68,216,158,.1);
+      font-size: .73rem;
+      font-weight: 800;
+    }
+    .live-pill::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(68,216,158,.08);
+      animation: pulseDot 1.8s ease-in-out infinite;
+    }
+    @keyframes pulseDot { 0%,100% { transform: scale(1); } 50% { transform: scale(1.25); } }
+
+    .skill-list { display: grid; gap: 12px; }
+    .skill-row {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 13px;
+      padding: 15px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 18px;
+      background: rgba(255,255,255,.055);
+      transition: .24s ease;
+    }
+    .skill-row:hover { transform: translateX(4px); border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.085); }
+    .skill-row::after { content: ""; position: absolute; inset: auto 0 0; height: 2px; opacity: .75; }
+    .skill-row.reading::after { background: linear-gradient(90deg, var(--blue), transparent); }
+    .skill-row.listening::after { background: linear-gradient(90deg, var(--purple), transparent); }
+    .skill-row.writing::after { background: linear-gradient(90deg, var(--orange), transparent); }
+    .skill-row.speaking::after { background: linear-gradient(90deg, var(--pink), transparent); }
+
+    .skill-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; }
+    .reading .skill-icon { color: var(--blue); background: rgba(79,140,255,.13); border: 1px solid rgba(79,140,255,.26); }
+    .listening .skill-icon { color: var(--purple); background: rgba(155,108,255,.13); border: 1px solid rgba(155,108,255,.26); }
+    .writing .skill-icon { color: var(--orange); background: rgba(255,159,28,.13); border: 1px solid rgba(255,159,28,.26); }
+    .speaking .skill-icon { color: var(--pink); background: rgba(255,106,169,.13); border: 1px solid rgba(255,106,169,.26); }
+    .skill-icon svg { width: 21px; height: 21px; }
+    .skill-copy strong { display: block; font-size: .92rem; }
+    .skill-copy span { display: block; margin-top: 2px; color: var(--muted); font-size: .76rem; }
+    .skill-target { padding: 7px 9px; border-radius: 10px; color: #f1f8fb; background: rgba(255,255,255,.07); font-size: .75rem; font-weight: 800; }
+
+    .trainer-strip { display: flex; align-items: center; gap: 13px; margin-top: 18px; padding: 15px; border: 1px solid rgba(255,255,255,.1); border-radius: 18px; background: linear-gradient(135deg, rgba(54,199,255,.09), rgba(255,159,28,.08)); }
+    .trainer-avatar { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(255,159,28,.23); border-radius: 13px; color: var(--orange2); background: rgba(255,159,28,.12); }
+    .trainer-avatar svg { width: 21px; height: 21px; }
+    .trainer-strip strong { display: block; font-size: .86rem; }
+    .trainer-strip span span { color: var(--muted); font-size: .75rem; }
+
+    .stats-wrap { padding-top: 25px; }
+    .stats { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius-lg); background: rgba(255,255,255,.045); box-shadow: var(--shadow); }
+    .stat { position: relative; padding: 24px; text-align: center; }
+    .stat:not(:last-child)::after { content: ""; position: absolute; right: 0; top: 22%; width: 1px; height: 56%; background: var(--border); }
+    .stat strong { display: block; font-family: "Manrope", sans-serif; font-size: clamp(1.7rem,4vw,2.45rem); line-height: 1; }
+    .stat span { display: block; margin-top: 8px; color: var(--muted); font-size: .82rem; font-weight: 700; }
+    .stat strong .counter { display: inline; margin: 0; color: inherit; font: inherit; }
+
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 26px; }
+    .section-heading > div:first-child { max-width: 720px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 13px; color: #bfeeff; font-size: .82rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 30px; height: 2px; border-radius: 999px; background: linear-gradient(90deg, var(--cyan), var(--orange)); }
+    .section-heading h2 { margin: 0; font-size: clamp(2rem,4vw,3.1rem); line-height: 1.12; letter-spacing: -.04em; }
+    .section-heading p { margin: 12px 0 0; max-width: 64ch; color: var(--muted); }
+
+    .resource-tools { display: flex; align-items: center; min-width: min(100%,340px); }
+    .search-box { position: relative; width: 100%; }
+    .search-box svg { position: absolute; left: 14px; top: 50%; width: 18px; height: 18px; color: var(--muted); transform: translateY(-50%); pointer-events: none; }
+    .search-box input { width: 100%; min-height: 48px; padding: 12px 15px 12px 43px; color: var(--text); border: 1px solid var(--border); border-radius: 15px; outline: 0; background: rgba(255,255,255,.055); transition: .22s ease; }
+    .search-box input::placeholder { color: #8191a3; }
+    .search-box input:focus { border-color: rgba(54,199,255,.42); box-shadow: 0 0 0 4px rgba(54,199,255,.08); }
+
+    .learning-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+    .learning-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 255px;
+      padding: 23px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, rgba(255,255,255,.072), rgba(255,255,255,.043));
+      box-shadow: 0 18px 48px rgba(0,0,0,.22);
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .learning-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; opacity: .75; }
+    .learning-card.reading::before { background: linear-gradient(90deg, var(--blue), transparent 76%); }
+    .learning-card.listening::before { background: linear-gradient(90deg, var(--purple), transparent 76%); }
+    .learning-card.writing::before { background: linear-gradient(90deg, var(--orange), transparent 76%); }
+    .learning-card.speaking::before { background: linear-gradient(90deg, var(--pink), transparent 76%); }
+    .learning-card.grammar::before { background: linear-gradient(90deg, var(--green), transparent 76%); }
+    .learning-card.vocabulary::before { background: linear-gradient(90deg, var(--cyan), transparent 76%); }
+    .learning-card:hover { transform: translateY(-7px); border-color: rgba(255,255,255,.22); background: linear-gradient(145deg, rgba(255,255,255,.095), rgba(255,255,255,.055)); }
+
+    .card-top { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+    .card-icon { width: 51px; height: 51px; display: grid; place-items: center; border-radius: 16px; transition: .25s ease; }
+    .reading .card-icon { color: var(--blue); background: rgba(79,140,255,.13); border: 1px solid rgba(79,140,255,.27); }
+    .listening .card-icon { color: var(--purple); background: rgba(155,108,255,.13); border: 1px solid rgba(155,108,255,.27); }
+    .writing .card-icon { color: var(--orange); background: rgba(255,159,28,.13); border: 1px solid rgba(255,159,28,.27); }
+    .speaking .card-icon { color: var(--pink); background: rgba(255,106,169,.13); border: 1px solid rgba(255,106,169,.27); }
+    .grammar .card-icon { color: var(--green); background: rgba(68,216,158,.13); border: 1px solid rgba(68,216,158,.27); }
+    .vocabulary .card-icon { color: var(--cyan); background: rgba(54,199,255,.13); border: 1px solid rgba(54,199,255,.27); }
+    .learning-card:hover .card-icon { transform: scale(1.06) rotate(-3deg); }
+    .card-icon svg { width: 24px; height: 24px; stroke-width: 1.9; }
+
+    .status-pill { padding: 6px 9px; border: 1px solid rgba(54,199,255,.18); border-radius: 999px; color: #c9f3ff; background: rgba(54,199,255,.075); font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .learning-card h3 { margin: 22px 0 7px; font-size: 1.18rem; }
+    .learning-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .band-pill { display: inline-flex; align-items: center; gap: 7px; width: fit-content; margin: 17px 0 18px; padding: 6px 10px; border: 1px solid rgba(255,159,28,.2); border-radius: 999px; color: #ffcc85; background: rgba(255,159,28,.09); font-size: .73rem; font-weight: 800; }
+    .band-pill svg { width: 14px; height: 14px; }
+    .card-link { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; color: #e5f8ff; font-size: .89rem; font-weight: 800; }
+    .card-link svg { width: 17px; height: 17px; transition: .2s ease; }
+    .learning-card:hover .card-link svg, .featured-card:hover .card-link svg, .library-card:hover .card-link svg { transform: translateX(4px); }
+    .empty-state { display: none; margin-top: 16px; padding: 18px; border: 1px dashed rgba(255,255,255,.2); border-radius: var(--radius-md); color: var(--muted); text-align: center; background: rgba(255,255,255,.035); }
+
+    .journey-shell { position: relative; overflow: hidden; padding: 28px; border: 1px solid var(--border); border-radius: var(--radius-xl); background: radial-gradient(circle at 0 0, rgba(54,199,255,.12), transparent 32%), linear-gradient(145deg, rgba(255,255,255,.065), rgba(255,255,255,.035)); box-shadow: var(--shadow); }
+    .journey-line { position: absolute; left: 8%; right: 8%; top: 78px; height: 2px; background: rgba(255,255,255,.09); }
+    .journey-line span { display: block; width: 0; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--cyan), var(--purple), var(--orange)); transition: width 1.3s ease; }
+    .journey-shell.visible .journey-line span { width: 100%; }
+    .journey-grid { position: relative; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 17px; }
+    .journey-step { padding: 18px; border: 1px solid rgba(255,255,255,.09); border-radius: 19px; background: rgba(6,16,29,.55); }
+    .step-number { width: 48px; height: 48px; display: grid; place-items: center; margin-bottom: 20px; border-radius: 15px; color: #06101d; background: linear-gradient(135deg, var(--cyan), #dff9ff); font-family: "Manrope", sans-serif; font-weight: 800; box-shadow: 0 10px 28px rgba(54,199,255,.16); }
+    .journey-step:nth-child(2) .step-number { background: linear-gradient(135deg, var(--purple), #d8cfff); }
+    .journey-step:nth-child(3) .step-number { background: linear-gradient(135deg, var(--orange), var(--orange2)); }
+    .journey-step:nth-child(4) .step-number { background: linear-gradient(135deg, var(--green), #c9ffe9); }
+    .journey-step h3 { margin: 0 0 7px; font-size: 1rem; }
+    .journey-step p { margin: 0; color: var(--muted); font-size: .84rem; }
+
+    .featured-grid { display: grid; grid-template-columns: 1.25fr repeat(2,minmax(0,.875fr)); gap: 16px; }
+    .featured-card { position: relative; overflow: hidden; min-height: 275px; padding: 24px; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--radius-lg); background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.04)); transition: .25s ease; }
+    .featured-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,.2); background: rgba(255,255,255,.075); }
+    .featured-card.primary { background: radial-gradient(circle at 100% 0, rgba(54,199,255,.19), transparent 34%), linear-gradient(145deg, rgba(255,255,255,.085), rgba(255,255,255,.045)); }
+    .featured-label { display: inline-flex; width: fit-content; padding: 6px 9px; border: 1px solid rgba(54,199,255,.18); border-radius: 999px; color: #c8f2ff; background: rgba(54,199,255,.08); font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .featured-card h3 { max-width: 18ch; margin: 22px 0 10px; font-size: clamp(1.2rem,2.7vw,1.75rem); line-height: 1.15; }
+    .featured-card p { margin: 0 0 22px; color: var(--muted); font-size: .9rem; }
+    .featured-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .featured-meta span { padding: 6px 8px; border-radius: 9px; color: #c7d3dd; background: rgba(255,255,255,.055); font-size: .71rem; font-weight: 700; }
+
+    .library-shell { padding: 26px; border: 1px solid var(--border); border-radius: var(--radius-xl); background: linear-gradient(145deg, rgba(255,255,255,.065), rgba(255,255,255,.035)); box-shadow: var(--shadow); }
+    .library-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; }
+    .library-card { min-height: 230px; padding: 20px; display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,.095); border-radius: 19px; background: rgba(255,255,255,.045); transition: .24s ease; }
+    .library-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.075); }
+    .library-icon { width: 45px; height: 45px; display: grid; place-items: center; border: 1px solid rgba(54,199,255,.2); border-radius: 14px; color: var(--cyan); background: rgba(54,199,255,.09); }
+    .library-icon svg { width: 22px; height: 22px; }
+    .library-card h3 { margin: 18px 0 8px; font-size: 1.02rem; }
+    .library-card p { margin: 0 0 16px; color: var(--muted); font-size: .83rem; }
+    .access-badge { display: inline-flex; align-items: center; gap: 7px; width: fit-content; margin-bottom: 15px; padding: 6px 9px; border-radius: 999px; font-size: .68rem; font-weight: 800; }
+    .access-badge.free { color: #bdf7de; background: rgba(68,216,158,.08); border: 1px solid rgba(68,216,158,.19); }
+    .access-badge.telegram-gate { color: #c5efff; background: rgba(34,158,217,.09); border: 1px solid rgba(34,158,217,.22); }
+    .access-badge.whatsapp-gate { color: #c9f8dc; background: rgba(37,211,102,.09); border: 1px solid rgba(37,211,102,.22); }
+    .access-badge svg { width: 13px; height: 13px; }
+
+    .community-panel { position: relative; overflow: hidden; display: grid; grid-template-columns: 1.1fr .9fr; gap: 30px; align-items: center; padding: clamp(27px,5vw,50px); border: 1px solid var(--border); border-radius: var(--radius-xl); background: radial-gradient(circle at 100% 0, rgba(255,159,28,.17), transparent 34%), radial-gradient(circle at 0 100%, rgba(54,199,255,.13), transparent 35%), linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.04)); box-shadow: var(--shadow); }
+    .community-panel h2 { margin: 0; font-size: clamp(2rem,4vw,3.1rem); line-height: 1.09; letter-spacing: -.045em; }
+    .community-panel p { max-width: 58ch; margin: 14px 0 0; color: var(--muted); }
+    .community-links { display: grid; gap: 11px; }
+    .community-link { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 13px; min-height: 66px; padding: 12px 14px; border: 1px solid rgba(255,255,255,.1); border-radius: 17px; background: rgba(255,255,255,.05); transition: .22s ease; }
+    .community-link:hover { transform: translateX(4px); border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.08); }
+    .link-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; }
+    .telegram-link .link-icon { color: #bfefff; background: rgba(34,158,217,.14); }
+    .whatsapp-link .link-icon { color: #c6f6d8; background: rgba(37,211,102,.14); }
+    .email-link .link-icon { color: #ffd3d3; background: rgba(180,55,55,.14); }
+    .community-link svg { width: 20px; height: 20px; }
+    .community-link strong { display: block; font-size: .9rem; }
+    .community-link span span { color: var(--muted); font-size: .74rem; }
+    .community-link > svg:last-child { width: 17px; height: 17px; color: var(--muted); }
+
+    .footer { padding: 42px 0 34px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 22px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,.08); color: var(--muted); font-size: .82rem; }
+    .footer-inner strong { color: var(--text); }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 17px; }
+    .footer-links a:hover { color: var(--text); }
+
+    .floating-telegram { position: fixed; right: 20px; bottom: 20px; z-index: 90; display: inline-flex; align-items: center; gap: 9px; min-height: 48px; padding: 12px 16px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; color: #fff; background: linear-gradient(135deg, #2bace3, #137cbd); box-shadow: 0 16px 42px rgba(34,158,217,.34); font-size: .84rem; font-weight: 800; transition: .22s ease; }
+    .floating-telegram:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(34,158,217,.42); }
+    .floating-telegram svg { width: 18px; height: 18px; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .stagger > * { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+    .stagger.visible > * { opacity: 1; transform: translateY(0); }
+    .stagger.visible > *:nth-child(2) { transition-delay: .08s; }
+    .stagger.visible > *:nth-child(3) { transition-delay: .16s; }
+    .stagger.visible > *:nth-child(4) { transition-delay: .24s; }
+    .stagger.visible > *:nth-child(5) { transition-delay: .32s; }
+    .stagger.visible > *:nth-child(6) { transition-delay: .4s; }
+
+    @media (max-width: 1040px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .learning-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .featured-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .featured-card.primary { grid-column: 1 / -1; }
+      .library-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .community-panel { grid-template-columns: 1fr; }
     }
 
-    .contact-card a:hover { transform: translateY(-2px); filter: brightness(1.1); }
-    .telegram { background: #229ED9; }
-    .whatsapp { background: #25D366; }
-    .email    { background: #8b2020; }
-
-    /* ── FOOTER ── */
-    .footer {
-      padding: 28px 0 42px;
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.95rem;
-    }
-    .footer strong { color: var(--text); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1100px) {
-      .hero-grid { grid-template-columns: 1fr 1fr; }
-      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .contact-grid { grid-template-columns: 1fr; }
+    @media (max-width: 860px) {
+      .nav-links, .nav-cta { display: none; }
+      .menu-button { display: grid; }
+      .nav-links.mobile-open { position: fixed; left: 16px; right: 16px; top: 88px; display: grid; gap: 6px; padding: 12px; border: 1px solid var(--border); border-radius: 18px; background: rgba(7,17,31,.96); box-shadow: var(--shadow); }
+      .nav-links.mobile-open a { padding: 13px 14px; }
+      .journey-line { display: none; }
+      .journey-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .stats { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .stat:nth-child(2)::after { display: none; }
+      .stat:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
     }
 
-    @media (max-width: 760px) {
-      .nav { flex-direction: column; align-items: flex-start; }
-      .nav-links { justify-content: flex-start; }
-      .hero { padding-top: 28px; }
-      .hero-grid,
-      .grid,
-      .pdf-subsections,
-      .contact-grid { grid-template-columns: 1fr; }
-      .hero-main { padding: 24px; }
-      .section-header { flex-direction: column; align-items: flex-start; }
-      .pdf-library-block { padding: 18px; }
+    @media (max-width: 680px) {
+      .section { padding-top: 72px; }
+      .hero { padding-top: 36px; }
+      .hero-copy, .hero-dashboard { border-radius: 23px; }
+      .hero-copy { padding: 27px 22px; }
+      .hero h1 { font-size: clamp(2.5rem,14vw,4rem); }
+      .hero-actions { display: grid; }
+      .button { width: 100%; }
+      .section-heading { align-items: stretch; flex-direction: column; gap: 18px; }
+      .resource-tools { min-width: 0; }
+      .learning-grid, .featured-grid, .library-grid, .journey-grid { grid-template-columns: 1fr; }
+      .featured-card.primary { grid-column: auto; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .stat { padding: 20px 12px; }
+      .community-panel { padding: 27px 20px; }
+      .footer-inner { flex-direction: column; }
+      .floating-telegram { right: 14px; bottom: 14px; padding: 11px 14px; }
+      .floating-telegram span { display: none; }
     }
-    /* Floating Telegram Button */
-.floating-telegram {
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  z-index: 9999;
-  background: linear-gradient(135deg, #34c3ff, #0a8edb);
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 15px;
-  padding: 14px 18px;
-  border-radius: 999px;
-  box-shadow: 0 10px 28px rgba(52,195,255,0.35);
-  border: 1px solid rgba(255,255,255,0.25);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
 
-.floating-telegram:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 34px rgba(52,195,255,0.5);
-}
+    @media (max-width: 430px) {
+      .brand-copy span { display: none; }
+      .skill-row { grid-template-columns: auto 1fr; }
+      .skill-target { display: none; }
+    }
 
-.floating-telegram svg {
-  width: 19px;
-  height: 19px;
-  stroke-width: 2.2;
-  flex: 0 0 auto;
-}
-
-@media (max-width: 600px) {
-  .floating-telegram {
-    right: 16px;
-    bottom: 16px;
-    padding: 13px 15px;
-    font-size: 14px;
-  }
-}
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+      .reveal, .stagger > * { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
+  <div class="orb one" aria-hidden="true"></div>
+  <div class="orb two" aria-hidden="true"></div>
+  <div id="mouseGlow" aria-hidden="true"></div>
 
-  <!-- ══ TOPBAR ══ -->
   <header class="topbar">
     <div class="container nav">
-      <div class="brand">
-        <img src="logo.png.png" alt="IELTS with Tahmid Logo" />
-        <div class="brand-text">
-          <h1>IELTS with Tahmid</h1>
-          <p>Practice • Improve • Achieve</p>
-        </div>
-      </div>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#reading">Reading</a>
-        <a href="#listening">Listening</a>
-        <a href="#writing">Writing</a>
-        <a href="#speaking">Speaking</a>
-        <a href="#contact">Contact</a>
+      <a class="brand" href="#home" aria-label="IELTS with Tahmid homepage">
+        <img src="logo.png.png" alt="IELTS with Tahmid logo" />
+        <span class="brand-copy">
+          <strong>IELTS with Tahmid</strong>
+          <span>Practice • Improve • Achieve</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="#home" class="active">Home</a>
+        <a href="#learn">Learn</a>
+        <a href="#journey">Pathway</a>
+        <a href="#featured">Featured</a>
+        <a href="#library">PDF Library</a>
+        <a href="#community">Contact</a>
       </nav>
+
+      <a class="nav-cta" href="#learn">Start Learning <i data-lucide="arrow-right"></i></a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <i data-lucide="menu"></i>
+      </button>
     </div>
   </header>
 
   <main>
-
-    <!-- ══ HERO ══ -->
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="container hero-grid">
-        <!-- ══ FLIP CARD ══ -->
-        <div class="hero-flip">
-          <div class="flip-inner" id="flipInner">
+        <div class="hero-copy reveal">
+          <span class="hero-badge"><i data-lucide="sparkles"></i> Free IELTS Learning Platform</span>
+          <h1>Build your IELTS skills. <span class="gradient-text" id="dynamicWord">Succeed.</span></h1>
+          <p>Learn Reading, Listening, Writing, Speaking, Grammar, and Vocabulary through organised lessons, practice tests, PDF resources, and clear guidance.</p>
 
-            <!-- FRONT: Hero -->
-            <div class="flip-front">
-              <span class="badge">Free IELTS Learning Hub</span>
-              <h2>
-                <span class="headline-static">Learn IELTS the </span><span class="headline-word-wrap"><span class="headline-word" id="hw"></span></span><span class="headline-static"> way.</span>
-              </h2>
-              <p class="tagline">
-                Explore Reading, Listening, Writing, Speaking, Vocabulary, PDF Library, and more — all in one place.
-              </p>
-              <div class="cta-row">
-                <a class="btn btn-primary" href="#resources">Browse Resources</a>
-                <a class="btn btn-outline" href="#contact">Contact Now</a>
-              </div>
-              <div class="flip-dots">
-                <span class="active" id="dot0"></span>
-                <span id="dot1"></span>
-              </div>
-            </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#learn"><i data-lucide="play"></i> Start Learning</a>
+            <a class="button button-secondary" href="#library"><i data-lucide="library"></i> Explore Free Resources</a>
+          </div>
 
-            <!-- BACK: Trainer card -->
-            <div class="flip-back">
-              <p class="trainer-gift">🎁 A gift from</p>
-              <h2 class="trainer-name">Abidur Rahman Tahmid</h2>
-              <p class="trainer-role">IELTS Trainer</p>
-              <div class="trainer-exp">⭐ 8+ Years of Experience</div>
-              <div class="flip-dots" style="margin-top: 28px;">
-                <span id="dot2"></span>
-                <span class="active" id="dot3"></span>
-              </div>
-            </div>
-
+          <div class="hero-trust">
+            <span><i data-lucide="check-circle-2"></i> Free learning materials</span>
+            <span><i data-lucide="check-circle-2"></i> Band-focused practice</span>
+            <span><i data-lucide="check-circle-2"></i> Mobile-friendly access</span>
           </div>
         </div>
 
-        <aside class="hero-side">
-          <div class="mini-panel">
-            <h3>Join the community</h3>
-            <p>Get updates, practice links, and new materials through Telegram and WhatsApp.</p>
+        <aside class="hero-dashboard reveal" aria-label="IELTS skill dashboard">
+          <div>
+            <div class="dashboard-top">
+              <h2>Your IELTS Skill Dashboard</h2>
+              <span class="live-pill">Learning Hub</span>
+            </div>
+
+            <div class="skill-list">
+              <a class="skill-row reading" href="reading/index.html">
+                <span class="skill-icon"><i data-lucide="book-open"></i></span>
+                <span class="skill-copy"><strong>Reading</strong><span>Passages, strategies, and question types</span></span>
+                <span class="skill-target">Band 7.5+</span>
+              </a>
+
+              <a class="skill-row listening" href="listening/index.html">
+                <span class="skill-icon"><i data-lucide="headphones"></i></span>
+                <span class="skill-copy"><strong>Listening</strong><span>Exam-style audio practice and support</span></span>
+                <span class="skill-target">Band 7.5+</span>
+              </a>
+
+              <a class="skill-row writing" href="pdfs/writing-index.html">
+                <span class="skill-icon"><i data-lucide="pen-line"></i></span>
+                <span class="skill-copy"><strong>Writing</strong><span>Task 1, Task 2, models, and guidance</span></span>
+                <span class="skill-target">Band 7.0+</span>
+              </a>
+
+              <a class="skill-row speaking" href="pdfs/speaking-index.html">
+                <span class="skill-icon"><i data-lucide="mic-2"></i></span>
+                <span class="skill-copy"><strong>Speaking</strong><span>Cue cards, fluency, and vocabulary</span></span>
+                <span class="skill-target">Band 7.0+</span>
+              </a>
+            </div>
           </div>
-          <div class="quick-links">
-            <a class="ql-telegram" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener noreferrer">
-              <span>Telegram Channel</span>
-              <strong>Open →</strong>
-            </a>
-            <a class="ql-whatsapp" href="https://wa.me/8801733644619" target="_blank" rel="noopener noreferrer">
-              <span>💬 &nbsp;WhatsApp Support</span>
-              <strong>Chat →</strong>
-            </a>
-            <a class="ql-email" href="mailto:abrahman644619@gmail.com">
-              <span>📧 &nbsp;Email Support</span>
-              <strong>Mail →</strong>
-            </a>
+
+          <div class="trainer-strip">
+            <span class="trainer-avatar"><i data-lucide="graduation-cap"></i></span>
+            <span><strong>Created by Abidur Rahman Tahmid</strong><span>IELTS Trainer • 8+ years of experience</span></span>
           </div>
         </aside>
       </div>
-    </section>
 
-    <!-- ══ LEARNING SECTIONS ══ -->
-    <section class="section" id="resources">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>Learning Sections</h2>
-            <p>Start from any module and build your IELTS skills step by step.</p>
-          </div>
+      <div class="container stats-wrap">
+        <div class="stats reveal" id="stats">
+          <div class="stat"><strong><span class="counter" data-value="100">0</span>+</strong><span>Free Resources</span></div>
+          <div class="stat"><strong><span class="counter" data-value="40">0</span>+</strong><span>Practice Tests</span></div>
+          <div class="stat"><strong><span class="counter" data-value="4">0</span></strong><span>Core IELTS Skills</span></div>
+          <div class="stat"><strong>Band 7+</strong><span>Focused Learning</span></div>
         </div>
-
-        <div class="grid">
-
-          <!-- Reading -->
-          <article class="resource-card" id="reading">
-            <div>
-              <div class="card-icon"><i data-lucide="book-open" aria-hidden="true"></i></div>
-              <h3>Reading</h3>
-              <p>Passages, strategies, question types, and practice sets.</p>
-              <div class="band-badge"><i data-lucide="target" aria-hidden="true"></i>Target: Band 7.5+</div>
-            </div>
-            <a class="small-link" href="reading/index.html">Start Reading Tests →</a>
-          </article>
-
-          <!-- Listening -->
-          <article class="resource-card" id="listening">
-            <div>
-              <div class="card-icon"><i data-lucide="headphones" aria-hidden="true"></i></div>
-              <h3>Listening</h3>
-              <p>Audio practice, test files, and exam-style listening support.</p>
-              <div class="band-badge"><i data-lucide="target" aria-hidden="true"></i>Target: Band 7.5+</div>
-            </div>
-            <a class="small-link" href="listening/index.html">Start Listening Tests →</a>
-          </article>
-
-          <!-- Writing -->
-          <article class="resource-card" id="writing">
-            <div>
-              <div class="card-icon"><i data-lucide="pen-line" aria-hidden="true"></i></div>
-              <h3>Writing</h3>
-              <p>Task 1, Task 2, model answers, and writing improvement tips.</p>
-              <div class="band-badge"><i data-lucide="target" aria-hidden="true"></i>Target: Band 7.0+</div>
-            </div>
-            <a class="small-link" href="pdfs/writing-index.html">Get Writing Resources →</a>
-          </article>
-
-          <!-- Speaking -->
-          <article class="resource-card" id="speaking">
-            <div>
-              <div class="card-icon"><i data-lucide="mic" aria-hidden="true"></i></div>
-              <h3>Speaking</h3>
-              <p>Cue cards, sample answers, fluency practice, and vocab support.</p>
-              <div class="band-badge"><i data-lucide="target" aria-hidden="true"></i>Target: Band 7.0+</div>
-            </div>
-            <a class="small-link" href="pdfs/speaking-index.html">Get Speaking Resources →</a>
-          </article>
-
-          <!-- Grammar Must-Know -->
-          <article class="resource-card" id="grammar-must">
-            <div>
-              <div class="card-icon"><i data-lucide="spell-check" aria-hidden="true"></i></div>
-              <h3>Grammar for IELTS</h3>
-              <p>Essential grammar topics every IELTS student must master.</p>
-              <div class="band-badge"><i data-lucide="target" aria-hidden="true"></i>Target: Band 7.0+</div>
-            </div>
-            <a class="small-link" href="pdfs/grammar-must.html">Open Grammar Guide →</a>
-          </article>
-
-          <!-- Vocabulary -->
-          <article class="resource-card" id="vocabulary">
-            <div>
-              <div class="card-icon"><i data-lucide="book-a" aria-hidden="true"></i></div>
-              <h3>Vocabulary</h3>
-              <p>Topic-based word lists, collocations, and useful expressions.</p>
-              <div class="band-badge"><i data-lucide="sparkles" aria-hidden="true"></i>Become A Pro</div>
-            </div>
-            <a class="small-link" href="vocabulary/index.html">Explore Vocabulary →</a>
-          </article>
-
-        </div><!-- end .grid -->
-
-        <!-- ══ PDF LIBRARY FULL-WIDTH CARD ══ -->
-        <div class="pdf-library-block" id="pdfs">
-          <div class="pdf-library-header">
-            <div class="card-icon"><i data-lucide="library" aria-hidden="true"></i></div>
-            <div>
-              <h3>PDF Library</h3>
-              <p>Download study materials organised by category.</p>
-            </div>
-          </div>
-          <div class="pdf-subsections">
-
-            <article class="pdf-sub-card">
-              <div>
-                <div class="card-icon"><i data-lucide="blocks" aria-hidden="true"></i></div>
-                <h3>Super Basic Grammar</h3>
-                <p>Grammar episodes, story-based lessons, and A2–B2 level materials for strong foundations.</p>
-              </div>
-              <a class="small-link" href="pdfs/index.html">Open Grammar PDFs →</a>
-            </article>
-
-            <article class="pdf-sub-card">
-              <div>
-                <div class="card-icon"><i data-lucide="file-text" aria-hidden="true"></i></div>
-                <h3>IELTS Reading Resources</h3>
-                <p>Reading passages, strategies, question-type guides, and practice handouts.</p>
-              </div>
-              <a class="small-link" href="pdfs/reading-index.html">Open Reading PDFs →</a>
-            </article>
-
-            <article class="pdf-sub-card">
-              <div>
-                <div class="card-icon"><i data-lucide="notebook-pen" aria-hidden="true"></i></div>
-                <h3>IELTS Writing Resources</h3>
-                <p>Task 1 &amp; Task 2 model answers, templates, band descriptors, and tip sheets.</p>
-              </div>
-              <a class="small-link" href="pdfs/writing-index.html">Open Writing PDFs →</a>
-            </article>
-
-            <article class="pdf-sub-card">
-              <div>
-                <div class="card-icon"><i data-lucide="messages-square" aria-hidden="true"></i></div>
-                <h3>IELTS Speaking Resources</h3>
-                <p>Cue card topics, sample answers, vocabulary sheets, and speaking strategies.</p>
-              </div>
-              <a class="small-link" href="pdfs/speaking-index.html">Open Speaking PDFs →</a>
-            </article>
-
-          </div>
-        </div><!-- end pdf-library-block -->
-
       </div>
     </section>
 
-    <!-- ══ CONTACT ══ -->
-    <section class="section" id="contact">
+    <section class="section" id="learn">
       <div class="container">
-        <div class="section-header">
+        <div class="section-heading reveal">
           <div>
-            <h2>Stay Connected</h2>
-            <p>Reach out through your preferred platform for updates and support.</p>
+            <span class="eyebrow">Learning Sections</span>
+            <h2>Choose a skill and start improving today.</h2>
+            <p>Every section is organised to help you move from foundations to exam-level practice.</p>
+          </div>
+
+          <div class="resource-tools">
+            <label class="search-box" for="resourceSearch">
+              <i data-lucide="search"></i>
+              <input id="resourceSearch" type="search" placeholder="Search Reading, Task 2, Grammar..." autocomplete="off" />
+            </label>
           </div>
         </div>
 
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Telegram Channel</h3>
-            <p>Share announcements, class updates, and new IELTS resources.</p>
-            <a class="telegram" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener noreferrer">Join Telegram</a>
+        <div class="learning-grid stagger" id="learningGrid">
+          <article class="learning-card reading searchable-card" data-search="reading passages strategies question types practice tests matching headings true false not given">
+            <div class="card-top"><span class="card-icon"><i data-lucide="book-open"></i></span><span class="status-pill">Popular</span></div>
+            <h3>Reading</h3>
+            <p>Passages, strategies, question types, and structured practice sets.</p>
+            <span class="band-pill"><i data-lucide="target"></i> Target: Band 7.5+</span>
+            <a class="card-link" href="reading/index.html">Start Reading Tests <i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="learning-card listening searchable-card" data-search="listening audio practice test files spelling map labelling multiple choice">
+            <div class="card-top"><span class="card-icon"><i data-lucide="headphones"></i></span><span class="status-pill">Practice</span></div>
+            <h3>Listening</h3>
+            <p>Audio practice, test files, and exam-style listening support.</p>
+            <span class="band-pill"><i data-lucide="target"></i> Target: Band 7.5+</span>
+            <a class="card-link" href="listening/index.html">Start Listening Tests <i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="learning-card writing searchable-card" data-search="writing task 1 task 2 essay model answers academic writing report graph opinion discussion">
+            <div class="card-top"><span class="card-icon"><i data-lucide="notebook-pen"></i></span><span class="status-pill">Band Focus</span></div>
+            <h3>Writing</h3>
+            <p>Task 1, Task 2, model answers, and practical improvement guidance.</p>
+            <span class="band-pill"><i data-lucide="target"></i> Target: Band 7.0+</span>
+            <a class="card-link" href="pdfs/writing-index.html">Get Writing Resources <i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="learning-card speaking searchable-card" data-search="speaking cue cards part 1 part 2 part 3 fluency pronunciation vocabulary sample answers">
+            <div class="card-top"><span class="card-icon"><i data-lucide="messages-square"></i></span><span class="status-pill">Fluency</span></div>
+            <h3>Speaking</h3>
+            <p>Cue cards, sample answers, fluency practice, and vocabulary support.</p>
+            <span class="band-pill"><i data-lucide="target"></i> Target: Band 7.0+</span>
+            <a class="card-link" href="pdfs/speaking-index.html">Get Speaking Resources <i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="learning-card grammar searchable-card" data-search="grammar tense sentence articles preposition subject verb agreement punctuation foundation">
+            <div class="card-top"><span class="card-icon"><i data-lucide="spell-check-2"></i></span><span class="status-pill">Essential</span></div>
+            <h3>Grammar for IELTS</h3>
+            <p>Essential grammar topics every IELTS student should master.</p>
+            <span class="band-pill"><i data-lucide="target"></i> Target: Band 7.0+</span>
+            <a class="card-link" href="pdfs/grammar-must.html">Open Grammar Guide <i data-lucide="arrow-right"></i></a>
+          </article>
+
+          <article class="learning-card vocabulary searchable-card" data-search="vocabulary collocations topic words expressions synonyms academic vocabulary">
+            <div class="card-top"><span class="card-icon"><i data-lucide="book-a"></i></span><span class="status-pill">Grow</span></div>
+            <h3>Vocabulary</h3>
+            <p>Topic-based word lists, collocations, and useful expressions.</p>
+            <span class="band-pill"><i data-lucide="sparkles"></i> Become a Pro</span>
+            <a class="card-link" href="vocabulary/index.html">Explore Vocabulary <i data-lucide="arrow-right"></i></a>
+          </article>
+        </div>
+
+        <div class="empty-state" id="emptyState">No matching section found. Try another keyword.</div>
+      </div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="eyebrow">Learning Pathway</span>
+            <h2>Your IELTS journey, clearly organised.</h2>
+            <p>Follow a simple four-step route instead of studying random materials without direction.</p>
           </div>
-          <div class="contact-card">
-            <h3>WhatsApp</h3>
-            <p>Quick communication for learners and support messages.</p>
-            <a class="whatsapp" href="https://wa.me/8801733644619" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
-          </div>
-          <div class="contact-card">
-            <h3>Email</h3>
-            <p>Send files, questions, or business inquiries by email.</p>
-            <a class="email" href="mailto:abrahman644619@gmail.com">Send Email</a>
+        </div>
+
+        <div class="journey-shell reveal">
+          <div class="journey-line" aria-hidden="true"><span></span></div>
+          <div class="journey-grid stagger">
+            <article class="journey-step"><div class="step-number">01</div><h3>Learn the Basics</h3><p>Build a strong foundation with grammar, vocabulary, and essential concepts.</p></article>
+            <article class="journey-step"><div class="step-number">02</div><h3>Practise Each Skill</h3><p>Work separately on Reading, Listening, Writing, and Speaking.</p></article>
+            <article class="journey-step"><div class="step-number">03</div><h3>Take Practice Tests</h3><p>Apply exam timing, question strategies, and realistic test conditions.</p></article>
+            <article class="journey-step"><div class="step-number">04</div><h3>Review and Improve</h3><p>Use explanations, corrections, and model answers to fix weaknesses.</p></article>
           </div>
         </div>
       </div>
     </section>
 
+    <section class="section" id="featured">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="eyebrow">Featured Resources</span>
+            <h2>Start with these high-value learning areas.</h2>
+            <p>Quick access to the materials IELTS learners use most frequently.</p>
+          </div>
+        </div>
+
+        <div class="featured-grid stagger">
+          <article class="featured-card primary">
+            <span class="featured-label">Recommended Start</span>
+            <h3>Complete Reading Practice Hub</h3>
+            <p>Practise passages, common question types, strategies, and test-style activities.</p>
+            <div class="featured-meta"><span>Practice Tests</span><span>Strategies</span><span>Telegram Gate</span></div>
+            <a class="card-link" href="reading/index.html">Open Reading Hub <i data-lucide="arrow-up-right"></i></a>
+          </article>
+
+          <article class="featured-card">
+            <span class="featured-label">Writing</span>
+            <h3>Task 1 &amp; Task 2 Resource Library</h3>
+            <p>Model answers, structures, useful language, and band-focused guidance.</p>
+            <div class="featured-meta"><span>Academic</span><span>Essay</span></div>
+            <a class="card-link" href="pdfs/writing-index.html">Explore Writing <i data-lucide="arrow-up-right"></i></a>
+          </article>
+
+          <article class="featured-card">
+            <span class="featured-label">Foundation</span>
+            <h3>Super Basic Grammar Library</h3>
+            <p>Story-based grammar lessons and A2–B2 materials for stronger foundations.</p>
+            <div class="featured-meta"><span>PDF</span><span>WhatsApp Gate</span></div>
+            <a class="card-link" href="pdfs/index.html">Explore Grammar <i data-lucide="arrow-up-right"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="library">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="eyebrow">PDF Library</span>
+            <h2>Study materials, organised by category.</h2>
+            <p>Use clearly labelled access options for free, Telegram-gated, and WhatsApp-gated content.</p>
+          </div>
+        </div>
+
+        <div class="library-shell reveal">
+          <div class="library-grid stagger">
+            <article class="library-card">
+              <span class="library-icon"><i data-lucide="blocks"></i></span>
+              <h3>Super Basic Grammar</h3>
+              <p>Grammar episodes, story-based lessons, and A2–B2 learning materials.</p>
+              <span class="access-badge whatsapp-gate"><i data-lucide="message-circle"></i> WhatsApp Gate</span>
+              <a class="card-link" href="pdfs/index.html">Open Grammar PDFs <i data-lucide="arrow-right"></i></a>
+            </article>
+
+            <article class="library-card">
+              <span class="library-icon"><i data-lucide="file-text"></i></span>
+              <h3>IELTS Reading Resources</h3>
+              <p>Passages, strategies, question-type guides, and practice handouts.</p>
+              <span class="access-badge telegram-gate"><i data-lucide="send"></i> Telegram Gate</span>
+              <a class="card-link" href="pdfs/reading-index.html">Open Reading PDFs <i data-lucide="arrow-right"></i></a>
+            </article>
+
+            <article class="library-card">
+              <span class="library-icon"><i data-lucide="notebook-pen"></i></span>
+              <h3>IELTS Writing Resources</h3>
+              <p>Task 1 and Task 2 models, structures, descriptors, and tip sheets.</p>
+              <span class="access-badge free"><i data-lucide="unlock"></i> Free Access</span>
+              <a class="card-link" href="pdfs/writing-index.html">Open Writing PDFs <i data-lucide="arrow-right"></i></a>
+            </article>
+
+            <article class="library-card">
+              <span class="library-icon"><i data-lucide="messages-square"></i></span>
+              <h3>IELTS Speaking Resources</h3>
+              <p>Cue cards, sample answers, vocabulary sheets, and speaking strategies.</p>
+              <span class="access-badge free"><i data-lucide="unlock"></i> Free Access</span>
+              <a class="card-link" href="pdfs/speaking-index.html">Open Speaking PDFs <i data-lucide="arrow-right"></i></a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="community">
+      <div class="container">
+        <div class="community-panel reveal">
+          <div>
+            <span class="eyebrow">Stay Connected</span>
+            <h2>Join the IELTS learning community.</h2>
+            <p>Receive new materials, practice links, updates, and learner support through your preferred platform.</p>
+          </div>
+
+          <div class="community-links">
+            <a class="community-link telegram-link" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener noreferrer">
+              <span class="link-icon"><i data-lucide="send"></i></span>
+              <span><strong>Telegram Channel</strong><span>Updates, resources, and reading access</span></span>
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="community-link whatsapp-link" href="https://wa.me/8801733644619" target="_blank" rel="noopener noreferrer">
+              <span class="link-icon"><i data-lucide="message-circle"></i></span>
+              <span><strong>WhatsApp Support</strong><span>Quick support and grammar PDF access</span></span>
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="community-link email-link" href="mailto:abrahman644619@gmail.com">
+              <span class="link-icon"><i data-lucide="mail"></i></span>
+              <span><strong>Email Support</strong><span>Questions, files, and business enquiries</span></span>
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <strong>Developed by Abidur Rahman Tahmid</strong> — Practice • Improve • Achieve
+    <div class="container footer-inner">
+      <span><strong>IELTS with Tahmid</strong> — Practice • Improve • Achieve</span>
+      <span class="footer-links"><a href="#learn">Learn</a><a href="#library">PDF Library</a><a href="#community">Contact</a></span>
     </div>
   </footer>
 
-  <!-- ══ SCRIPTS ══ -->
-  <script src="https://unpkg.com/lucide@1.24.0/dist/umd/lucide.min.js"></script>
+  <a class="floating-telegram" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener noreferrer" aria-label="Join the Telegram channel">
+    <i data-lucide="send"></i><span>Join Telegram</span>
+  </a>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
   <script>
-    /* ── Animated headline ── */
-    const words  = ['smart', 'fun', 'easy'];
-    const colors = [
-      'linear-gradient(135deg, #ff9f1c, #34c3ff)',
-      'linear-gradient(135deg, #f72585, #ff9f1c)',
-      'linear-gradient(135deg, #34c3ff, #7209b7)'
-    ];
-    let wi = 0;
-    const el = document.getElementById('hw');
-
-    function applyWord() {
-      el.textContent = words[wi];
-      el.style.backgroundImage = colors[wi];
-      el.style.webkitBackgroundClip = 'text';
-      el.style.webkitTextFillColor = 'transparent';
-      el.style.backgroundClip = 'text';
-      el.style.display = 'inline-block';
-    }
-
-    function showWord() {
-      el.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
-      el.style.transform = 'translateY(-110%)';
-      el.style.opacity = '0';
-      setTimeout(() => {
-        wi = (wi + 1) % words.length;
-        applyWord();
-        el.style.transition = 'none';
-        el.style.transform = 'translateY(110%)';
-        el.style.opacity = '0';
-        requestAnimationFrame(() => requestAnimationFrame(() => {
-          el.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
-          el.style.transform = 'translateY(0)';
-          el.style.opacity = '1';
-        }));
-      }, 400);
-    }
-
-    applyWord();
-    el.style.transform = 'translateY(0)';
-    el.style.opacity = '1';
-    setInterval(showWord, 2800);
-
-    /* ── Flip card ── */
-    const flipInner = document.getElementById('flipInner');
-    const dot0 = document.getElementById('dot0');
-    const dot1 = document.getElementById('dot1');
-    const dot2 = document.getElementById('dot2');
-    const dot3 = document.getElementById('dot3');
-    let isFlipped = false;
-    let flipTimer;
-
-    function setFlip(flipped) {
-      isFlipped = flipped;
-      if (flipped) {
-        flipInner.classList.add('flipped');
-        dot0.classList.remove('active'); dot1.classList.add('active');
-        dot2.classList.remove('active'); dot3.classList.add('active');
-      } else {
-        flipInner.classList.remove('flipped');
-        dot0.classList.add('active'); dot1.classList.remove('active');
-        dot2.classList.add('active'); dot3.classList.remove('active');
-      }
-    }
-
-    function autoFlip() {
-      setFlip(!isFlipped);
-    }
-
-    flipTimer = setInterval(autoFlip, 5000);
-
-    // Click dots to flip manually
-    [dot0, dot2].forEach(d => d.addEventListener('click', () => {
-      clearInterval(flipTimer);
-      setFlip(false);
-      flipTimer = setInterval(autoFlip, 5000);
-    }));
-
-    [dot1, dot3].forEach(d => d.addEventListener('click', () => {
-      clearInterval(flipTimer);
-      setFlip(true);
-      flipTimer = setInterval(autoFlip, 5000);
-    }));
-
-    // Click card to flip
-    flipInner.addEventListener('click', () => {
-      clearInterval(flipTimer);
-      setFlip(!isFlipped);
-      flipTimer = setInterval(autoFlip, 5000);
-    });
-
-    /* Convert icon placeholders into Lucide SVG icons */
-    if (window.lucide) {
+    document.addEventListener("DOMContentLoaded", () => {
       lucide.createIcons();
-    }
+
+      const dynamicWord = document.getElementById("dynamicWord");
+      const words = ["Succeed.", "Improve.", "Achieve."];
+      let wordIndex = 0;
+      setInterval(() => {
+        dynamicWord.style.opacity = "0";
+        dynamicWord.style.transform = "translateY(8px)";
+        setTimeout(() => {
+          wordIndex = (wordIndex + 1) % words.length;
+          dynamicWord.textContent = words[wordIndex];
+          dynamicWord.style.opacity = "1";
+          dynamicWord.style.transform = "translateY(0)";
+        }, 280);
+      }, 2600);
+
+      const menuButton = document.getElementById("menuButton");
+      const navLinks = document.getElementById("navLinks");
+      menuButton.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("mobile-open");
+        document.body.classList.toggle("menu-open", isOpen);
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.innerHTML = isOpen ? '<i data-lucide="x"></i>' : '<i data-lucide="menu"></i>';
+        lucide.createIcons();
+      });
+      navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+        navLinks.classList.remove("mobile-open");
+        document.body.classList.remove("menu-open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.innerHTML = '<i data-lucide="menu"></i>';
+        lucide.createIcons();
+      }));
+
+      const revealItems = document.querySelectorAll(".reveal, .stagger");
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .14 });
+      revealItems.forEach(item => revealObserver.observe(item));
+
+      const counters = document.querySelectorAll(".counter");
+      const statsSection = document.getElementById("stats");
+      let countersStarted = false;
+      const counterObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting || countersStarted) return;
+          countersStarted = true;
+          counters.forEach(counter => {
+            const target = Number(counter.dataset.value);
+            const duration = 1200;
+            const startTime = performance.now();
+            function updateCounter(now) {
+              const progress = Math.min((now - startTime) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              counter.textContent = Math.floor(target * eased);
+              if (progress < 1) requestAnimationFrame(updateCounter);
+              else counter.textContent = target;
+            }
+            requestAnimationFrame(updateCounter);
+          });
+          counterObserver.unobserve(statsSection);
+        });
+      }, { threshold: .35 });
+      counterObserver.observe(statsSection);
+
+      const resourceSearch = document.getElementById("resourceSearch");
+      const cards = [...document.querySelectorAll(".searchable-card")];
+      const emptyState = document.getElementById("emptyState");
+      resourceSearch.addEventListener("input", () => {
+        const query = resourceSearch.value.trim().toLowerCase();
+        let visible = 0;
+        cards.forEach(card => {
+          const content = `${card.dataset.search} ${card.textContent}`.toLowerCase();
+          const match = content.includes(query);
+          card.style.display = match ? "flex" : "none";
+          if (match) visible++;
+        });
+        emptyState.style.display = visible ? "none" : "block";
+      });
+
+      const sections = document.querySelectorAll("main section[id]");
+      const navAnchors = [...navLinks.querySelectorAll("a")];
+      const sectionObserver = new IntersectionObserver(entries => {
+        const visibleEntry = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visibleEntry) return;
+        navAnchors.forEach(anchor => anchor.classList.toggle("active", anchor.getAttribute("href") === `#${visibleEntry.target.id}`));
+      }, { rootMargin: "-35% 0px -55% 0px", threshold: [0,.25,.5,.75] });
+      sections.forEach(section => sectionObserver.observe(section));
+
+      const mouseGlow = document.getElementById("mouseGlow");
+      if (window.matchMedia("(pointer: fine)").matches) {
+        document.addEventListener("mousemove", event => {
+          mouseGlow.style.left = `${event.clientX}px`;
+          mouseGlow.style.top = `${event.clientY}px`;
+          mouseGlow.style.opacity = "1";
+        });
+        document.addEventListener("mouseleave", () => { mouseGlow.style.opacity = "0"; });
+      }
+    });
   </script>
-<a href="https://t.me/demoIELTSclass" class="floating-telegram" target="_blank" rel="noopener">
-  <i data-lucide="send" aria-hidden="true"></i>
-  Join Telegram
-</a>
 </body>
 </html>
