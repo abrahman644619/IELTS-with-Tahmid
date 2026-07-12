@@ -3,305 +3,1487 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="IELTS vocabulary tests and Oxford vocabulary PDF resources with scoring, review, and premium Telegram access from IELTS with Tahmid."
+  />
+  <meta name="theme-color" content="#07111f" />
   <title>Vocabulary Tests – IELTS with Tahmid</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
+    :root {
+      --bg: #06101d;
+      --surface: rgba(255, 255, 255, 0.065);
+      --border: rgba(255, 255, 255, 0.12);
+      --border-strong: rgba(255, 255, 255, 0.2);
+      --text: #f6fbff;
+      --muted: #aab8c8;
+      --cyan: #36c7ff;
+      --cyan-soft: #bfefff;
+      --green: #44d89e;
+      --green-soft: #bff7dc;
+      --accent: #ff9f1c;
+      --accent-soft: #ffbf69;
+      --telegram: #229ed9;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 94px;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #07111f;
-      color: #f7fbff;
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-
-    h1 { color: #ff9f1c; margin-bottom: 8px; }
-    .subtitle { color: rgba(247,251,255,0.7); margin-bottom: 32px; font-size: 1rem; }
-
-    .back {
-      color: #34c3ff;
-      display: inline-block;
-      margin-bottom: 28px;
-      text-decoration: none;
-    }
-    .back:hover { text-decoration: underline; }
-
-    /* ── LIVE TEST CARD ── */
-    .test-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 24px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      margin-bottom: 14px;
-      text-decoration: none;
-      color: #f7fbff;
-      transition: 0.2s;
-    }
-    .test-card:hover {
-      background: rgba(255,255,255,0.12);
-      transform: translateY(-2px);
-    }
-    .test-card .left h3 { margin: 0 0 4px; font-size: 1.1rem; }
-    .test-card .left p  { margin: 0; color: rgba(247,251,255,0.6); font-size: 0.9rem; }
-
-    .badge {
-      background: rgba(52,195,255,0.15);
-      border: 1px solid rgba(52,195,255,0.3);
-      color: #34c3ff;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    /* ── COMING SOON CARD ── */
-    .test-card.soon {
-      opacity: 0.45;
-      cursor: not-allowed;
-      pointer-events: none;
-      border-style: dashed;
-    }
-    .badge-soon {
-      background: rgba(255,159,28,0.15);
-      border: 1px solid rgba(255,159,28,0.3);
-      color: #ff9f1c;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    /* ── SECTION DIVIDER ── */
-    .section-label {
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: rgba(247,251,255,0.35);
-      margin: 32px 0 14px;
-    }
-
-    /* ── PDF SECTION ── */
-    .pdf-section {
-      margin-top: 48px;
-      padding-top: 12px;
-    }
-    .pdf-section h2 {
-      color: #ff9f1c;
-      font-size: 1.6rem;
-      margin-bottom: 8px;
-    }
-    .pdf-section .section-subtitle {
-      color: #d9e8ff;
-      margin-bottom: 22px;
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        radial-gradient(circle at 8% 8%, rgba(54, 199, 255, 0.15), transparent 28%),
+        radial-gradient(circle at 92% 4%, rgba(68, 216, 158, 0.13), transparent 25%),
+        linear-gradient(180deg, #06101d 0%, #081625 48%, #06101d 100%);
+      background-size: 44px 44px, 44px 44px, auto, auto, auto;
       line-height: 1.6;
     }
 
-    .pdf-card {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      padding: 20px 24px;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      color: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .orb {
+      position: fixed;
+      z-index: -1;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(10px);
+      opacity: 0.5;
+      animation: orbFloat 13s ease-in-out infinite;
+    }
+
+    .orb-one {
+      width: 330px;
+      height: 330px;
+      left: -140px;
+      top: 18%;
+      background: radial-gradient(circle, rgba(54, 199, 255, 0.25), transparent 68%);
+    }
+
+    .orb-two {
+      width: 380px;
+      height: 380px;
+      right: -180px;
+      top: 62%;
+      background: radial-gradient(circle, rgba(68, 216, 158, 0.22), transparent 68%);
+      animation-delay: -5s;
+    }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(0, -24px, 0) scale(1.06); }
+    }
+
+    /* Topbar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      background: rgba(6, 16, 29, 0.76);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 0.97rem;
+      line-height: 1.15;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      color: #e6fbff;
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 0.84rem;
+      font-weight: 800;
+      transition: 0.22s ease;
+    }
+
+    .home-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(54, 199, 255, 0.34);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .home-link svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 58px 0 24px;
+    }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      padding: clamp(28px, 5vw, 48px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(54, 199, 255, 0.18), transparent 34%),
+        radial-gradient(circle at 0% 100%, rgba(68, 216, 158, 0.1), transparent 30%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      left: -120px;
+      bottom: -140px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(54, 199, 255, 0.18), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
       margin-bottom: 14px;
+      color: #c8f3ff;
+      font-size: 0.79rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--green));
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Manrope", "Inter", sans-serif;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-copy p {
+      max-width: 60ch;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 11px 16px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      transition: 0.22s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .button-primary {
+      color: #071217;
+      background: linear-gradient(135deg, var(--cyan), var(--cyan-soft));
+      box-shadow: 0 14px 34px rgba(54, 199, 255, 0.2);
+    }
+
+    .button-secondary {
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat-card {
+      min-height: 128px;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 19px;
+      background: rgba(6, 16, 29, 0.5);
+    }
+
+    .stat-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 12px;
+      color: var(--cyan);
+      background: rgba(54, 199, 255, 0.09);
+      border: 1px solid rgba(54, 199, 255, 0.18);
+    }
+
+    .stat-icon svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .stat-card span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    /* Controls */
+    .controls {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 18px;
+      margin: 34px 0 18px;
     }
-    .pdf-card h3 { margin: 0 0 6px; color: #ffffff; font-size: 1.05rem; }
-    .pdf-card p  { margin: 0; color: #c9d7e8; font-size: 0.92rem; }
 
-    .pdf-btn {
-      background: rgba(52,195,255,0.15);
-      border: 1px solid rgba(52,195,255,0.45);
-      color: #34c3ff;
-      padding: 9px 18px;
+    .controls-copy h2 {
+      margin: 0;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .controls-copy p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-box {
+      position: relative;
+      min-width: 300px;
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      color: var(--muted);
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .search-box input {
+      width: 100%;
+      min-height: 46px;
+      padding: 11px 14px 11px 42px;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.055);
+      transition: 0.22s ease;
+    }
+
+    .search-box input::placeholder {
+      color: #8191a3;
+    }
+
+    .search-box input:focus {
+      border-color: rgba(54, 199, 255, 0.42);
+      box-shadow: 0 0 0 4px rgba(54, 199, 255, 0.08);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .filter-button {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
       border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      white-space: nowrap;
-      font-size: 0.9rem;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.77rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
     }
-    .pdf-btn:hover { background: rgba(52,195,255,0.25); }
 
-    .pdf-card.premium {
-      border: 1px dashed rgba(255,159,28,0.45);
-      background: rgba(255,255,255,0.04);
-      opacity: 0.78;
+    .filter-button:hover,
+    .filter-button.active {
+      color: var(--text);
+      border-color: rgba(54, 199, 255, 0.3);
+      background: rgba(54, 199, 255, 0.09);
     }
-    .pdf-card.premium h3 { color: #d8d8d8; }
-    .pdf-card.premium p  { color: #aeb8c5; }
 
-    .unlock-btn {
-      background: rgba(255,159,28,0.78);
-      color: #07111f;
-      border: 1px solid rgba(255,159,28,0.9);
+    /* Sections */
+    .resource-section {
+      margin-bottom: 44px;
     }
-    .unlock-btn:hover { background: #ff9f1c; }
 
-    .premium-note {
-      display: block;
-      margin-top: 8px;
-      color: #ffbf69;
-      font-weight: bold;
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-size: clamp(1.35rem, 3vw, 1.9rem);
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+    }
+
+    .section-header p {
+      margin: 7px 0 0;
+      color: var(--muted);
       font-size: 0.85rem;
     }
 
-    @media (max-width: 650px) {
-      .pdf-card { flex-direction: column; align-items: flex-start; }
-      .pdf-btn  { width: 100%; text-align: center; }
+    .section-count {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: #c8f3ff;
+      background: rgba(54, 199, 255, 0.08);
+      border: 1px solid rgba(54, 199, 255, 0.18);
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .resource-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    /* Test cards */
+    .test-card {
+      --card-accent: var(--cyan);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 17px;
+      min-height: 118px;
+      padding: 19px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(54, 199, 255, 0.07), transparent 28%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.042));
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.22);
+      transition: 0.24s ease;
+    }
+
+    .test-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      opacity: 0.8;
+      background: linear-gradient(180deg, var(--card-accent), transparent);
+    }
+
+    .test-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(54, 199, 255, 0.3);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(54, 199, 255, 0.13), transparent 28%),
+        rgba(255, 255, 255, 0.078);
+    }
+
+    .test-card.coming-soon {
+      --card-accent: var(--accent);
+      border-style: dashed;
+      border-color: rgba(255, 159, 28, 0.25);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(255, 159, 28, 0.06), transparent 28%),
+        linear-gradient(145deg, rgba(255, 159, 28, 0.04), rgba(255, 255, 255, 0.025));
+      opacity: 0.8;
+    }
+
+    .test-card.coming-soon:hover {
+      transform: none;
+      border-color: rgba(255, 159, 28, 0.34);
+    }
+
+    .item-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      color: var(--card-accent);
+      background: color-mix(in srgb, var(--card-accent) 11%, transparent);
+      border: 1px solid color-mix(in srgb, var(--card-accent) 22%, transparent);
+    }
+
+    .item-icon svg {
+      width: 23px;
+      height: 23px;
+      stroke-width: 1.9;
+    }
+
+    .item-copy h3 {
+      margin: 0 0 5px;
+      font-size: 1rem;
+    }
+
+    .item-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.79rem;
+    }
+
+    .item-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 13px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.73rem;
+    }
+
+    .item-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .item-meta svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .action-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 108px;
+      padding: 10px 13px;
+      border-radius: 13px;
+      color: #d9f8ff;
+      background: rgba(54, 199, 255, 0.1);
+      border: 1px solid rgba(54, 199, 255, 0.22);
+      font-size: 0.79rem;
+      font-weight: 800;
+      transition: 0.22s ease;
+    }
+
+    .action-button svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .test-card:hover .action-button {
+      color: #ffffff;
+      background: rgba(54, 199, 255, 0.16);
+      transform: translateX(2px);
+    }
+
+    .coming-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 115px;
+      padding: 10px 13px;
+      border-radius: 13px;
+      color: #ffd18d;
+      background: rgba(255, 159, 28, 0.08);
+      border: 1px solid rgba(255, 159, 28, 0.2);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .coming-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* PDF cards */
+    .pdf-card {
+      --card-accent: var(--green);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 17px;
+      min-height: 122px;
+      padding: 19px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(68, 216, 158, 0.07), transparent 28%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.042));
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.22);
+      transition: 0.24s ease;
+    }
+
+    .pdf-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      opacity: 0.8;
+      background: linear-gradient(180deg, var(--card-accent), transparent);
+    }
+
+    .pdf-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(68, 216, 158, 0.3);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(68, 216, 158, 0.13), transparent 28%),
+        rgba(255, 255, 255, 0.078);
+    }
+
+    .pdf-card.premium {
+      --card-accent: var(--telegram);
+      border-style: dashed;
+      border-color: rgba(34, 158, 217, 0.27);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(34, 158, 217, 0.08), transparent 28%),
+        linear-gradient(145deg, rgba(34, 158, 217, 0.04), rgba(255, 255, 255, 0.03));
+    }
+
+    .pdf-card.premium:hover {
+      border-color: rgba(34, 158, 217, 0.4);
+    }
+
+    .premium-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      margin-top: 9px;
+      color: #bfeeff;
+      font-size: 0.74rem;
+      font-weight: 800;
+    }
+
+    .premium-note svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .action-button.pdf {
+      color: #d8ffea;
+      background: rgba(68, 216, 158, 0.1);
+      border-color: rgba(68, 216, 158, 0.22);
+    }
+
+    .pdf-card:hover .action-button.pdf {
+      color: #ffffff;
+      background: rgba(68, 216, 158, 0.16);
+      transform: translateX(2px);
+    }
+
+    .action-button.telegram {
+      color: #ffffff;
+      background: linear-gradient(135deg, #2aace2, #147fbe);
+      border-color: rgba(34, 158, 217, 0.25);
+      box-shadow: 0 12px 28px rgba(34, 158, 217, 0.18);
+    }
+
+    .pdf-card.premium:hover .action-button.telegram {
+      background: linear-gradient(135deg, #36b7ed, #1688ca);
+    }
+
+    .empty-state {
+      display: none;
+      margin-bottom: 70px;
+      padding: 22px;
+      border: 1px dashed var(--border-strong);
+      border-radius: var(--radius-md);
+      color: var(--muted);
+      text-align: center;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .content-bottom {
+      padding-bottom: 30px;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 0 0 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .footer-inner strong {
+      color: var(--text);
+    }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger > * {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .stagger.visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger.visible > *:nth-child(2) { transition-delay: 0.05s; }
+    .stagger.visible > *:nth-child(3) { transition-delay: 0.1s; }
+    .stagger.visible > *:nth-child(4) { transition-delay: 0.15s; }
+    .stagger.visible > *:nth-child(5) { transition-delay: 0.2s; }
+    .stagger.visible > *:nth-child(6) { transition-delay: 0.25s; }
+    .stagger.visible > *:nth-child(7) { transition-delay: 0.3s; }
+    .stagger.visible > *:nth-child(8) { transition-delay: 0.35s; }
+
+    @media (max-width: 860px) {
+      .hero-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .controls {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .toolbar,
+      .search-box {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        padding-top: 34px;
+      }
+
+      .hero-panel {
+        padding: 25px 20px;
+        border-radius: 23px;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .test-card,
+      .pdf-card {
+        grid-template-columns: auto 1fr;
+        align-items: start;
+      }
+
+      .action-button,
+      .coming-badge {
+        grid-column: 1 / -1;
+        width: 100%;
+        margin-top: 4px;
+      }
+
+      .brand-copy span {
+        display: none;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .home-link span {
+        display: none;
+      }
+
+      .home-link {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+
+      .reveal,
+      .stagger > * {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
+
 <body>
+  <div class="orb orb-one" aria-hidden="true"></div>
+  <div class="orb orb-two" aria-hidden="true"></div>
 
-  <a class="back" href="../index.html">← Back to Home</a>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="../index.html" aria-label="IELTS with Tahmid homepage">
+        <img src="../logo.png.png" alt="IELTS with Tahmid logo" />
+        <span class="brand-copy">
+          <strong>IELTS with Tahmid</strong>
+          <span>Practice • Improve • Achieve</span>
+        </span>
+      </a>
 
-  <h1>📖 Vocabulary Masterclass</h1>
-  <p class="subtitle">IELTS-style vocabulary tests with timer, instant scoring, and answer review.</p>
-
-  <!-- ── LIVE TESTS ── -->
-  <div class="section-label">Available Now</div>
-
-  <a class="test-card" href="Vocab_Masterclass_Test_01.html">
-    <div class="left">
-      <h3>Vocabulary Test 01</h3>
-      <p>3 Sets &nbsp;·&nbsp; 18 Questions &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
+      <a class="home-link" href="../index.html">
+        <i data-lucide="arrow-left"></i>
+        <span>Back to Home</span>
+      </a>
     </div>
-    <span class="badge">Start →</span>
-  </a>
+  </header>
 
-  <a class="test-card" href="Vocab_Masterclass_Test_02.html">
-    <div class="left">
-      <h3>Vocabulary Test 02</h3>
-      <p>3 Sets &nbsp;·&nbsp; 18 Questions &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
-    </div>
-    <span class="badge">Start →</span>
-  </a>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-panel reveal">
+          <div class="hero-copy">
+            <span class="eyebrow">IELTS Vocabulary Practice</span>
+            <h1>Vocabulary Masterclass</h1>
+            <p>
+              Strengthen your vocabulary through timed tests, instant scoring,
+              answer review, Oxford word lists, academic vocabulary, and useful phrases.
+            </p>
 
-  <a class="test-card" href="Vocab_Masterclass_Test_03.html">
-    <div class="left">
-      <h3>Vocabulary Test 03</h3>
-      <p>3 Sets &nbsp;·&nbsp; 16 Questions &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
-    </div>
-    <span class="badge">Start →</span>
-  </a>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#resources">
+                <i data-lucide="play"></i>
+                Start Learning
+              </a>
 
-  <a class="test-card" href="Vocab_Masterclass_Test_04.html">
-    <div class="left">
-      <h3>Vocabulary Test 04</h3>
-      <p>3 Sets &nbsp;·&nbsp; 15 Questions &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
-    </div>
-    <span class="badge">Start →</span>
-  </a>
+              <a class="button button-secondary" href="#pdf-resources">
+                <i data-lucide="library"></i>
+                Browse PDF Resources
+              </a>
+            </div>
+          </div>
 
-  <!-- ── COMING SOON TESTS ── -->
-  <div class="section-label">Coming Soon</div>
+          <div class="hero-stats" aria-label="Vocabulary resource summary">
+            <div class="stat-card">
+              <span class="stat-icon"><i data-lucide="clipboard-check"></i></span>
+              <strong>8</strong>
+              <span>Total Tests</span>
+            </div>
 
-  <div class="test-card soon">
-    <div class="left">
-      <h3>Vocabulary Test 05</h3>
-      <p>3 Sets &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
-    </div>
-    <span class="badge-soon">Coming Soon</span>
-  </div>
+            <div class="stat-card">
+              <span class="stat-icon"><i data-lucide="play-circle"></i></span>
+              <strong>4</strong>
+              <span>Available Now</span>
+            </div>
 
-  <div class="test-card soon">
-    <div class="left">
-      <h3>Vocabulary Test 06</h3>
-      <p>3 Sets &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
-    </div>
-    <span class="badge-soon">Coming Soon</span>
-  </div>
+            <div class="stat-card">
+              <span class="stat-icon"><i data-lucide="files"></i></span>
+              <strong>7</strong>
+              <span>PDF Resources</span>
+            </div>
 
-  <div class="test-card soon">
-    <div class="left">
-      <h3>Vocabulary Test 07</h3>
-      <p>3 Sets &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
-    </div>
-    <span class="badge-soon">Coming Soon</span>
-  </div>
-
-  <div class="test-card soon">
-    <div class="left">
-      <h3>Vocabulary Test 08</h3>
-      <p>3 Sets &nbsp;·&nbsp; 30 Minutes &nbsp;·&nbsp; Instant Score</p>
-    </div>
-    <span class="badge-soon">Coming Soon</span>
-  </div>
-
-  <!-- ── PDF RESOURCES ── -->
-  <section class="pdf-section">
-    <h2>📚 Vocabulary PDF Resources</h2>
-    <p class="section-subtitle">
-      Download useful Oxford vocabulary resources to improve your word power for IELTS Reading, Writing, Listening, and Speaking.
-    </p>
-
-    <div class="pdf-card">
-      <div>
-        <h3>The Oxford 5000 by CEFR Level</h3>
-        <p>Advanced vocabulary list arranged by CEFR level for stronger academic word choice.</p>
+            <div class="stat-card">
+              <span class="stat-icon"><i data-lucide="sparkles"></i></span>
+              <strong>Oxford</strong>
+              <span>Word Lists &amp; Phrases</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <a class="pdf-btn" href="../pdfs/The_Oxford_5000_by_CEFR_level.pdf" target="_blank" rel="noopener">Open PDF →</a>
-    </div>
+    </section>
 
-    <div class="pdf-card">
-      <div>
-        <h3>The Oxford 3000 by CEFR Level</h3>
-        <p>Essential high-frequency English vocabulary arranged by CEFR level.</p>
+    <section id="resources">
+      <div class="container content-bottom">
+        <div class="controls reveal">
+          <div class="controls-copy">
+            <h2>Choose a Vocabulary Resource</h2>
+            <p>Search by title or filter tests and PDF materials by availability.</p>
+          </div>
+
+          <div class="toolbar">
+            <label class="search-box" for="resourceSearch">
+              <i data-lucide="search"></i>
+              <input
+                id="resourceSearch"
+                type="search"
+                placeholder="Search tests, Oxford, OPAL..."
+                autocomplete="off"
+              />
+            </label>
+          </div>
+        </div>
+
+        <div class="filters reveal" aria-label="Vocabulary resource filters">
+          <button class="filter-button active" type="button" data-filter="all">All</button>
+          <button class="filter-button" type="button" data-filter="tests">Tests</button>
+          <button class="filter-button" type="button" data-filter="pdf">PDFs</button>
+          <button class="filter-button" type="button" data-filter="available">Available</button>
+          <button class="filter-button" type="button" data-filter="premium">Premium</button>
+          <button class="filter-button" type="button" data-filter="soon">Coming Soon</button>
+        </div>
+
+        <!-- Available Tests -->
+        <section class="resource-section reveal" data-section-group="available-tests">
+          <div class="section-header">
+            <div>
+              <h2>Available Vocabulary Tests</h2>
+              <p>Timed vocabulary practice with instant scoring and answer review.</p>
+            </div>
+            <span class="section-count">4 Tests</span>
+          </div>
+
+          <div class="resource-list stagger">
+            <a
+              class="test-card searchable-resource"
+              href="Vocab_Masterclass_Test_01.html"
+              data-kind="tests"
+              data-status="available"
+              data-search="vocabulary test 01 3 sets 18 questions 30 minutes instant score"
+            >
+              <span class="item-icon"><i data-lucide="book-check"></i></span>
+
+              <span class="item-copy">
+                <h3>Vocabulary Test 01</h3>
+                <p>Build accuracy through structured IELTS-style vocabulary practice.</p>
+                <span class="item-meta">
+                  <span><i data-lucide="layers-3"></i> 3 Sets</span>
+                  <span><i data-lucide="list-checks"></i> 18 Questions</span>
+                  <span><i data-lucide="clock-3"></i> 30 Minutes</span>
+                  <span><i data-lucide="bar-chart-3"></i> Instant Score</span>
+                </span>
+              </span>
+
+              <span class="action-button">
+                Start <i data-lucide="arrow-right"></i>
+              </span>
+            </a>
+
+            <a
+              class="test-card searchable-resource"
+              href="Vocab_Masterclass_Test_02.html"
+              data-kind="tests"
+              data-status="available"
+              data-search="vocabulary test 02 3 sets 18 questions 30 minutes instant score"
+            >
+              <span class="item-icon"><i data-lucide="brain"></i></span>
+
+              <span class="item-copy">
+                <h3>Vocabulary Test 02</h3>
+                <p>Practise word meaning, context, and accurate usage.</p>
+                <span class="item-meta">
+                  <span><i data-lucide="layers-3"></i> 3 Sets</span>
+                  <span><i data-lucide="list-checks"></i> 18 Questions</span>
+                  <span><i data-lucide="clock-3"></i> 30 Minutes</span>
+                  <span><i data-lucide="bar-chart-3"></i> Instant Score</span>
+                </span>
+              </span>
+
+              <span class="action-button">
+                Start <i data-lucide="arrow-right"></i>
+              </span>
+            </a>
+
+            <a
+              class="test-card searchable-resource"
+              href="Vocab_Masterclass_Test_03.html"
+              data-kind="tests"
+              data-status="available"
+              data-search="vocabulary test 03 3 sets 16 questions 30 minutes instant score"
+            >
+              <span class="item-icon"><i data-lucide="spell-check-2"></i></span>
+
+              <span class="item-copy">
+                <h3>Vocabulary Test 03</h3>
+                <p>Review vocabulary choices and strengthen word recognition.</p>
+                <span class="item-meta">
+                  <span><i data-lucide="layers-3"></i> 3 Sets</span>
+                  <span><i data-lucide="list-checks"></i> 16 Questions</span>
+                  <span><i data-lucide="clock-3"></i> 30 Minutes</span>
+                  <span><i data-lucide="bar-chart-3"></i> Instant Score</span>
+                </span>
+              </span>
+
+              <span class="action-button">
+                Start <i data-lucide="arrow-right"></i>
+              </span>
+            </a>
+
+            <a
+              class="test-card searchable-resource"
+              href="Vocab_Masterclass_Test_04.html"
+              data-kind="tests"
+              data-status="available"
+              data-search="vocabulary test 04 3 sets 15 questions 30 minutes instant score"
+            >
+              <span class="item-icon"><i data-lucide="book-a"></i></span>
+
+              <span class="item-copy">
+                <h3>Vocabulary Test 04</h3>
+                <p>Develop flexible vocabulary use for IELTS communication.</p>
+                <span class="item-meta">
+                  <span><i data-lucide="layers-3"></i> 3 Sets</span>
+                  <span><i data-lucide="list-checks"></i> 15 Questions</span>
+                  <span><i data-lucide="clock-3"></i> 30 Minutes</span>
+                  <span><i data-lucide="bar-chart-3"></i> Instant Score</span>
+                </span>
+              </span>
+
+              <span class="action-button">
+                Start <i data-lucide="arrow-right"></i>
+              </span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Coming Soon Tests -->
+        <section class="resource-section reveal" data-section-group="coming-tests">
+          <div class="section-header">
+            <div>
+              <h2>Coming Soon</h2>
+              <p>More vocabulary practice tests are currently being prepared.</p>
+            </div>
+            <span class="section-count">4 Tests</span>
+          </div>
+
+          <div class="resource-list stagger">
+            <article
+              class="test-card coming-soon searchable-resource"
+              data-kind="tests"
+              data-status="soon"
+              data-search="vocabulary test 05 coming soon 3 sets 30 minutes instant score"
+            >
+              <span class="item-icon"><i data-lucide="hourglass"></i></span>
+
+              <span class="item-copy">
+                <h3>Vocabulary Test 05</h3>
+                <p>3 Sets · 30 Minutes · Instant Score</p>
+              </span>
+
+              <span class="coming-badge">
+                <i data-lucide="clock-3"></i>
+                Coming Soon
+              </span>
+            </article>
+
+            <article
+              class="test-card coming-soon searchable-resource"
+              data-kind="tests"
+              data-status="soon"
+              data-search="vocabulary test 06 coming soon 3 sets 30 minutes instant score"
+            >
+              <span class="item-icon"><i data-lucide="hourglass"></i></span>
+
+              <span class="item-copy">
+                <h3>Vocabulary Test 06</h3>
+                <p>3 Sets · 30 Minutes · Instant Score</p>
+              </span>
+
+              <span class="coming-badge">
+                <i data-lucide="clock-3"></i>
+                Coming Soon
+              </span>
+            </article>
+
+            <article
+              class="test-card coming-soon searchable-resource"
+              data-kind="tests"
+              data-status="soon"
+              data-search="vocabulary test 07 coming soon 3 sets 30 minutes instant score"
+            >
+              <span class="item-icon"><i data-lucide="hourglass"></i></span>
+
+              <span class="item-copy">
+                <h3>Vocabulary Test 07</h3>
+                <p>3 Sets · 30 Minutes · Instant Score</p>
+              </span>
+
+              <span class="coming-badge">
+                <i data-lucide="clock-3"></i>
+                Coming Soon
+              </span>
+            </article>
+
+            <article
+              class="test-card coming-soon searchable-resource"
+              data-kind="tests"
+              data-status="soon"
+              data-search="vocabulary test 08 coming soon 3 sets 30 minutes instant score"
+            >
+              <span class="item-icon"><i data-lucide="hourglass"></i></span>
+
+              <span class="item-copy">
+                <h3>Vocabulary Test 08</h3>
+                <p>3 Sets · 30 Minutes · Instant Score</p>
+              </span>
+
+              <span class="coming-badge">
+                <i data-lucide="clock-3"></i>
+                Coming Soon
+              </span>
+            </article>
+          </div>
+        </section>
+
+        <!-- PDF Resources -->
+        <section class="resource-section reveal" id="pdf-resources" data-section-group="pdf-resources">
+          <div class="section-header">
+            <div>
+              <h2>Vocabulary PDF Resources</h2>
+              <p>
+                Oxford vocabulary and phrase resources for IELTS Reading, Writing,
+                Listening, and Speaking.
+              </p>
+            </div>
+            <span class="section-count">7 PDFs</span>
+          </div>
+
+          <div class="resource-list stagger">
+            <a
+              class="pdf-card searchable-resource"
+              href="../pdfs/The_Oxford_5000_by_CEFR_level.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-kind="pdf"
+              data-status="available"
+              data-search="the oxford 5000 by cefr level advanced vocabulary academic word choice pdf"
+            >
+              <span class="item-icon"><i data-lucide="book-open-text"></i></span>
+
+              <span class="item-copy">
+                <h3>The Oxford 5000 by CEFR Level</h3>
+                <p>Advanced vocabulary arranged by CEFR level for stronger academic word choice.</p>
+                <span class="item-meta">
+                  <span><i data-lucide="file-text"></i> PDF</span>
+                  <span><i data-lucide="graduation-cap"></i> Advanced</span>
+                  <span><i data-lucide="unlock"></i> Free Access</span>
+                </span>
+              </span>
+
+              <span class="action-button pdf">
+                Open PDF <i data-lucide="arrow-up-right"></i>
+              </span>
+            </a>
+
+            <a
+              class="pdf-card searchable-resource"
+              href="../pdfs/The_Oxford_3000_by_CEFR_level.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-kind="pdf"
+              data-status="available"
+              data-search="the oxford 3000 by cefr level essential high frequency english vocabulary pdf"
+            >
+              <span class="item-icon"><i data-lucide="library-big"></i></span>
+
+              <span class="item-copy">
+                <h3>The Oxford 3000 by CEFR Level</h3>
+                <p>Essential high-frequency English vocabulary arranged by CEFR level.</p>
+                <span class="item-meta">
+                  <span><i data-lucide="file-text"></i> PDF</span>
+                  <span><i data-lucide="layers-3"></i> CEFR Levels</span>
+                  <span><i data-lucide="unlock"></i> Free Access</span>
+                </span>
+              </span>
+
+              <span class="action-button pdf">
+                Open PDF <i data-lucide="arrow-up-right"></i>
+              </span>
+            </a>
+
+            <a
+              class="pdf-card searchable-resource"
+              href="../pdfs/Oxford_Phrase_List.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-kind="pdf"
+              data-status="available"
+              data-search="oxford phrase list useful phrases expressions natural english understanding fluency pdf"
+            >
+              <span class="item-icon"><i data-lucide="messages-square"></i></span>
+
+              <span class="item-copy">
+                <h3>Oxford Phrase List</h3>
+                <p>Useful phrases and expressions for natural English understanding and fluency.</p>
+                <span class="item-meta">
+                  <span><i data-lucide="file-text"></i> PDF</span>
+                  <span><i data-lucide="message-square-text"></i> Phrases</span>
+                  <span><i data-lucide="unlock"></i> Free Access</span>
+                </span>
+              </span>
+
+              <span class="action-button pdf">
+                Open PDF <i data-lucide="arrow-up-right"></i>
+              </span>
+            </a>
+
+            <a
+              class="pdf-card premium searchable-resource"
+              href="https://t.me/demoIELTSclass"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-kind="pdf"
+              data-status="premium"
+              data-search="opal written single words academic written vocabulary ielts writing reading premium telegram"
+            >
+              <span class="item-icon"><i data-lucide="lock-keyhole"></i></span>
+
+              <span class="item-copy">
+                <h3>OPAL Written Single Words</h3>
+                <p>Academic written vocabulary for improving IELTS Writing and Reading performance.</p>
+                <span class="premium-note">
+                  <i data-lucide="crown"></i>
+                  Premium — Join Telegram to unlock
+                </span>
+              </span>
+
+              <span class="action-button telegram">
+                Unlock <i data-lucide="send"></i>
+              </span>
+            </a>
+
+            <a
+              class="pdf-card premium searchable-resource"
+              href="https://t.me/demoIELTSclass"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-kind="pdf"
+              data-status="premium"
+              data-search="opal spoken single words academic spoken vocabulary ielts speaking listening premium telegram"
+            >
+              <span class="item-icon"><i data-lucide="lock-keyhole"></i></span>
+
+              <span class="item-copy">
+                <h3>OPAL Spoken Single Words</h3>
+                <p>Academic spoken vocabulary for IELTS Speaking and Listening preparation.</p>
+                <span class="premium-note">
+                  <i data-lucide="crown"></i>
+                  Premium — Join Telegram to unlock
+                </span>
+              </span>
+
+              <span class="action-button telegram">
+                Unlock <i data-lucide="send"></i>
+              </span>
+            </a>
+
+            <a
+              class="pdf-card premium searchable-resource"
+              href="https://t.me/demoIELTSclass"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-kind="pdf"
+              data-status="premium"
+              data-search="opal written phrases academic written phrases ielts writing expression premium telegram"
+            >
+              <span class="item-icon"><i data-lucide="lock-keyhole"></i></span>
+
+              <span class="item-copy">
+                <h3>OPAL Written Phrases</h3>
+                <p>Useful academic written phrases for stronger IELTS Writing expression.</p>
+                <span class="premium-note">
+                  <i data-lucide="crown"></i>
+                  Premium — Join Telegram to unlock
+                </span>
+              </span>
+
+              <span class="action-button telegram">
+                Unlock <i data-lucide="send"></i>
+              </span>
+            </a>
+
+            <a
+              class="pdf-card premium searchable-resource"
+              href="https://t.me/demoIELTSclass"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-kind="pdf"
+              data-status="premium"
+              data-search="opal spoken phrases academic spoken phrases natural confident ielts speaking premium telegram"
+            >
+              <span class="item-icon"><i data-lucide="lock-keyhole"></i></span>
+
+              <span class="item-copy">
+                <h3>OPAL Spoken Phrases</h3>
+                <p>Useful academic spoken phrases for more natural and confident IELTS Speaking.</p>
+                <span class="premium-note">
+                  <i data-lucide="crown"></i>
+                  Premium — Join Telegram to unlock
+                </span>
+              </span>
+
+              <span class="action-button telegram">
+                Unlock <i data-lucide="send"></i>
+              </span>
+            </a>
+          </div>
+        </section>
+
+        <div class="empty-state" id="emptyState">
+          No matching vocabulary resource found.
+        </div>
       </div>
-      <a class="pdf-btn" href="../pdfs/The_Oxford_3000_by_CEFR_level.pdf" target="_blank" rel="noopener">Open PDF →</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span><strong>IELTS with Tahmid</strong> — Vocabulary Masterclass</span>
+      <span>Practice • Improve • Achieve</span>
     </div>
+  </footer>
 
-    <div class="pdf-card">
-      <div>
-        <h3>Oxford Phrase List</h3>
-        <p>Useful phrases and expressions to build natural English understanding and fluency.</p>
-      </div>
-      <a class="pdf-btn" href="../pdfs/Oxford_Phrase_List.pdf" target="_blank" rel="noopener">Open PDF →</a>
-    </div>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
-    <div class="pdf-card premium">
-      <div>
-        <h3>🔒 OPAL Written Single Words</h3>
-        <p>Academic written vocabulary for improving IELTS Writing and Reading performance.</p>
-        <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
-      </div>
-      <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">Unlock →</a>
-    </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
 
-    <div class="pdf-card premium">
-      <div>
-        <h3>🔒 OPAL Spoken Single Words</h3>
-        <p>Academic spoken vocabulary for better IELTS Speaking and Listening preparation.</p>
-        <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
-      </div>
-      <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">Unlock →</a>
-    </div>
+      const revealItems = document.querySelectorAll(".reveal, .stagger");
 
-    <div class="pdf-card premium">
-      <div>
-        <h3>🔒 OPAL Written Phrases</h3>
-        <p>Useful academic written phrases for stronger IELTS Writing expression.</p>
-        <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
-      </div>
-      <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">Unlock →</a>
-    </div>
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
 
-    <div class="pdf-card premium">
-      <div>
-        <h3>🔒 OPAL Spoken Phrases</h3>
-        <p>Useful academic spoken phrases for more natural and confident IELTS Speaking.</p>
-        <span class="premium-note">⭐ Premium — Join Telegram to unlock</span>
-      </div>
-      <a class="pdf-btn unlock-btn" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener">Unlock →</a>
-    </div>
+      revealItems.forEach((item) => revealObserver.observe(item));
 
-  </section>
+      const searchInput = document.getElementById("resourceSearch");
+      const filterButtons = [...document.querySelectorAll(".filter-button")];
+      const resourceCards = [...document.querySelectorAll(".searchable-resource")];
+      const resourceSections = [...document.querySelectorAll(".resource-section")];
+      const emptyState = document.getElementById("emptyState");
+      let activeFilter = "all";
 
+      function matchesCurrentFilter(card) {
+        if (activeFilter === "all") return true;
+        if (activeFilter === "tests") return card.dataset.kind === "tests";
+        if (activeFilter === "pdf") return card.dataset.kind === "pdf";
+        if (activeFilter === "available") return card.dataset.status === "available";
+        if (activeFilter === "premium") return card.dataset.status === "premium";
+        if (activeFilter === "soon") return card.dataset.status === "soon";
+        return true;
+      }
+
+      function updateResources() {
+        const query = searchInput.value.trim().toLowerCase();
+        let totalVisible = 0;
+
+        resourceCards.forEach((card) => {
+          const searchableText =
+            `${card.dataset.search} ${card.textContent}`.toLowerCase();
+
+          const matchesSearch = searchableText.includes(query);
+          const matchesFilter = matchesCurrentFilter(card);
+          const isVisible = matchesSearch && matchesFilter;
+
+          card.style.display = isVisible ? "grid" : "none";
+
+          if (isVisible) {
+            totalVisible += 1;
+          }
+        });
+
+        resourceSections.forEach((section) => {
+          const hasVisibleCards = [...section.querySelectorAll(".searchable-resource")]
+            .some((card) => card.style.display !== "none");
+
+          section.style.display = hasVisibleCards ? "block" : "none";
+        });
+
+        emptyState.style.display = totalVisible ? "none" : "block";
+      }
+
+      searchInput.addEventListener("input", updateResources);
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          activeFilter = button.dataset.filter;
+
+          filterButtons.forEach((item) => {
+            item.classList.toggle("active", item === button);
+          });
+
+          updateResources();
+        });
+      });
+    });
+  </script>
 </body>
 </html>
