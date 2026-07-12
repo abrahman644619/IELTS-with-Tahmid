@@ -3,41 +3,1056 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Story-based grammar PDF lessons from IELTS with Tahmid, including eight grammar episodes for building stronger English foundations."
+  />
+  <meta name="theme-color" content="#07111f" />
   <title>PDF Library – IELTS with Tahmid</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    body { font-family: Arial, sans-serif; background: #07111f; color: #f7fbff; max-width: 800px; margin: 0 auto; padding: 24px; }
-    h1 { color: #ff9f1c; }
-    .pdf-list { list-style: none; padding: 0; }
-    .pdf-list li { margin: 12px 0; }
-    .pdf-list a {
-      display: block;
-      padding: 16px 20px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px;
-      color: #34c3ff;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: 0.2s;
+    :root {
+      --bg: #06101d;
+      --surface: rgba(255, 255, 255, 0.065);
+      --border: rgba(255, 255, 255, 0.12);
+      --border-strong: rgba(255, 255, 255, 0.2);
+      --text: #f6fbff;
+      --muted: #aab8c8;
+      --green: #44d89e;
+      --green-soft: #c4fbe4;
+      --cyan: #36c7ff;
+      --accent: #ff9f1c;
+      --accent-soft: #ffbf69;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max-width: 1080px;
     }
-    .pdf-list a:hover { background: rgba(255,255,255,0.13); }
-    .back { color: #34c3ff; display: inline-block; margin-bottom: 20px; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 94px;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        radial-gradient(circle at 8% 8%, rgba(68, 216, 158, 0.15), transparent 28%),
+        radial-gradient(circle at 92% 4%, rgba(54, 199, 255, 0.12), transparent 25%),
+        linear-gradient(180deg, #06101d 0%, #081625 48%, #06101d 100%);
+      background-size: 44px 44px, 44px 44px, auto, auto, auto;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .orb {
+      position: fixed;
+      z-index: -1;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(10px);
+      opacity: 0.5;
+      animation: orbFloat 13s ease-in-out infinite;
+    }
+
+    .orb-one {
+      width: 330px;
+      height: 330px;
+      left: -140px;
+      top: 18%;
+      background: radial-gradient(circle, rgba(68, 216, 158, 0.25), transparent 68%);
+    }
+
+    .orb-two {
+      width: 380px;
+      height: 380px;
+      right: -180px;
+      top: 62%;
+      background: radial-gradient(circle, rgba(54, 199, 255, 0.2), transparent 68%);
+      animation-delay: -5s;
+    }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(0, -24px, 0) scale(1.06); }
+    }
+
+    /* Topbar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      background: rgba(6, 16, 29, 0.76);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 0.97rem;
+      line-height: 1.15;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      color: #e4fff2;
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 0.84rem;
+      font-weight: 800;
+      transition: 0.22s ease;
+    }
+
+    .home-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(68, 216, 158, 0.34);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .home-link svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 58px 0 24px;
+    }
+
+    .hero-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 28px;
+      align-items: center;
+      padding: clamp(28px, 5vw, 48px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(68, 216, 158, 0.18), transparent 34%),
+        radial-gradient(circle at 0% 100%, rgba(54, 199, 255, 0.08), transparent 30%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      left: -120px;
+      bottom: -140px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(68, 216, 158, 0.18), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 14px;
+      color: #c8f8df;
+      font-size: 0.79rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--green), var(--cyan));
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Manrope", "Inter", sans-serif;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-copy p {
+      max-width: 60ch;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 11px 16px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      transition: 0.22s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .button-primary {
+      color: #08130d;
+      background: linear-gradient(135deg, var(--green), var(--green-soft));
+      box-shadow: 0 14px 34px rgba(68, 216, 158, 0.2);
+    }
+
+    .button-secondary {
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat-card {
+      min-height: 128px;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 19px;
+      background: rgba(6, 16, 29, 0.5);
+    }
+
+    .stat-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 12px;
+      color: var(--green);
+      background: rgba(68, 216, 158, 0.09);
+      border: 1px solid rgba(68, 216, 158, 0.18);
+    }
+
+    .stat-icon svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .stat-card strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .stat-card span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 34px 0 20px;
+    }
+
+    .controls-copy h2 {
+      margin: 0;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .controls-copy p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-box {
+      position: relative;
+      min-width: 300px;
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      color: var(--muted);
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .search-box input {
+      width: 100%;
+      min-height: 46px;
+      padding: 11px 14px 11px 42px;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.055);
+      transition: 0.22s ease;
+    }
+
+    .search-box input::placeholder {
+      color: #8191a3;
+    }
+
+    .search-box input:focus {
+      border-color: rgba(68, 216, 158, 0.42);
+      box-shadow: 0 0 0 4px rgba(68, 216, 158, 0.08);
+    }
+
+    /* Episode cards */
+    .episode-list {
+      display: grid;
+      gap: 14px;
+      padding-bottom: 70px;
+    }
+
+    .episode-card {
+      --card-accent: var(--green);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 17px;
+      min-height: 122px;
+      padding: 19px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(68, 216, 158, 0.07), transparent 28%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.042));
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.22);
+      transition: 0.24s ease;
+    }
+
+    .episode-card:nth-child(even) {
+      --card-accent: var(--cyan);
+    }
+
+    .episode-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      opacity: 0.8;
+      background: linear-gradient(180deg, var(--card-accent), transparent);
+    }
+
+    .episode-card:hover {
+      transform: translateY(-5px);
+      border-color: color-mix(in srgb, var(--card-accent) 34%, var(--border));
+      background:
+        radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--card-accent) 13%, transparent), transparent 28%),
+        rgba(255, 255, 255, 0.078);
+    }
+
+    .episode-number {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      color: var(--card-accent);
+      background: color-mix(in srgb, var(--card-accent) 11%, transparent);
+      border: 1px solid color-mix(in srgb, var(--card-accent) 22%, transparent);
+      font-family: "Manrope", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+    }
+
+    .episode-copy h3 {
+      margin: 0 0 5px;
+      font-size: 1rem;
+    }
+
+    .episode-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.79rem;
+    }
+
+    .episode-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 9px;
+    }
+
+    .episode-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 8px;
+      border-radius: 9px;
+      color: #cdd8e2;
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 0.69rem;
+      font-weight: 700;
+    }
+
+    .episode-meta svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .action-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 108px;
+      padding: 10px 13px;
+      border-radius: 13px;
+      color: #ddffed;
+      background: rgba(68, 216, 158, 0.1);
+      border: 1px solid rgba(68, 216, 158, 0.22);
+      font-size: 0.79rem;
+      font-weight: 800;
+      transition: 0.22s ease;
+    }
+
+    .action-button svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .episode-card:nth-child(even) .action-button {
+      color: #daf8ff;
+      background: rgba(54, 199, 255, 0.1);
+      border-color: rgba(54, 199, 255, 0.22);
+    }
+
+    .episode-card:hover .action-button {
+      color: #ffffff;
+      transform: translateX(2px);
+      background: color-mix(in srgb, var(--card-accent) 16%, transparent);
+    }
+
+    .empty-state {
+      display: none;
+      margin-bottom: 70px;
+      padding: 22px;
+      border: 1px dashed var(--border-strong);
+      border-radius: var(--radius-md);
+      color: var(--muted);
+      text-align: center;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 0 0 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .footer-inner strong {
+      color: var(--text);
+    }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger > * {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .stagger.visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger.visible > *:nth-child(2) { transition-delay: 0.05s; }
+    .stagger.visible > *:nth-child(3) { transition-delay: 0.1s; }
+    .stagger.visible > *:nth-child(4) { transition-delay: 0.15s; }
+    .stagger.visible > *:nth-child(5) { transition-delay: 0.2s; }
+    .stagger.visible > *:nth-child(6) { transition-delay: 0.25s; }
+    .stagger.visible > *:nth-child(7) { transition-delay: 0.3s; }
+    .stagger.visible > *:nth-child(8) { transition-delay: 0.35s; }
+
+    @media (max-width: 860px) {
+      .hero-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .controls {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .toolbar,
+      .search-box {
+        width: 100%;
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        padding-top: 34px;
+      }
+
+      .hero-panel {
+        padding: 25px 20px;
+        border-radius: 23px;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .episode-card {
+        grid-template-columns: auto 1fr;
+        align-items: start;
+      }
+
+      .action-button {
+        grid-column: 1 / -1;
+        width: 100%;
+        margin-top: 4px;
+      }
+
+      .brand-copy span {
+        display: none;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .home-link span {
+        display: none;
+      }
+
+      .home-link {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+
+      .reveal,
+      .stagger > * {
+        opacity: 1;
+        transform: none;
+      }
+    }
   </style>
 </head>
-<body>
-  <a class="back" href="../index.html">← Back to Home</a>
-  <h1>📚 PDF Library</h1>
-  <p>Click any file to open or download it.</p>
 
-  <ul class="pdf-list">
-    <li><a href="Grammar_Episode_1_The_Lost_Wallet.pdf" target="_blank">📄 Grammar Episode 1 – The Lost Wallet</a></li>
-    <li><a href="Grammar_Episode_2_The_Exam_Stress_Week.pdf" target="_blank">📄 Grammar Episode 2 – The Exam Stress Week</a></li>
-    <li><a href="Grammar_Episode_3_The_Missing_Alarm.pdf" target="_blank">📄 Grammar Episode 3 – The Missing Alarm</a></li>
-    <li><a href="Grammar_Episode_4_The_Friend_in_Trouble.pdf" target="_blank">📄 Grammar Episode 4 – The Friend in Trouble</a></li>
-    <li><a href="Grammar_Episode_5_The_Community_Service_Day.pdf" target="_blank">📄 Grammar Episode 5 – The Community Service Day</a></li>
-    <li><a href="Grammar_Episode_6_The_Angry_Message.pdf" target="_blank">📄 Grammar Episode 6 – The Angry Message</a></li>
-    <li><a href="Grammar_Episode_7_The_Secret_Responsibility.pdf" target="_blank">📄 Grammar Episode 7 – The Secret Responsibility</a></li>
-    <li><a href="Grammar_Episode_8_The_New_Beginning.pdf" target="_blank">📄 Grammar Episode 8 – The New Beginning</a></li>
-  </ul>
+<body>
+  <div class="orb orb-one" aria-hidden="true"></div>
+  <div class="orb orb-two" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="../index.html" aria-label="IELTS with Tahmid homepage">
+        <img src="../logo.png.png" alt="IELTS with Tahmid logo" />
+        <span class="brand-copy">
+          <strong>IELTS with Tahmid</strong>
+          <span>Practice • Improve • Achieve</span>
+        </span>
+      </a>
+
+      <a class="home-link" href="../index.html">
+        <i data-lucide="arrow-left"></i>
+        <span>Back to Home</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-panel reveal">
+          <div class="hero-copy">
+            <span class="eyebrow">Story-Based Grammar Library</span>
+            <h1>Grammar PDF Library</h1>
+            <p>
+              Learn essential grammar through eight story-based episodes designed to make
+              rules easier to understand, remember, and apply in real English.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#episodes">
+                <i data-lucide="book-open-check"></i>
+                Browse Episodes
+              </a>
+
+              <a class="button button-secondary" href="../index.html#library">
+                <i data-lucide="library"></i>
+                Full PDF Library
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-stats" aria-label="Grammar PDF summary">
+            <div class="stat-card">
+              <span class="stat-icon"><i data-lucide="files"></i></span>
+              <strong>8</strong>
+              <span>Grammar Episodes</span>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-icon"><i data-lucide="unlock"></i></span>
+              <strong>Free</strong>
+              <span>Open Access</span>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-icon"><i data-lucide="book-heart"></i></span>
+              <strong>Story</strong>
+              <span>Based Learning</span>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-icon"><i data-lucide="file-text"></i></span>
+              <strong>PDF</strong>
+              <span>Resource Format</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="episodes">
+      <div class="container">
+        <div class="controls reveal">
+          <div class="controls-copy">
+            <h2>Choose a Grammar Episode</h2>
+            <p>Search by episode number or story title.</p>
+          </div>
+
+          <div class="toolbar">
+            <label class="search-box" for="episodeSearch">
+              <i data-lucide="search"></i>
+              <input
+                id="episodeSearch"
+                type="search"
+                placeholder="Search wallet, alarm, stress..."
+                autocomplete="off"
+              />
+            </label>
+          </div>
+        </div>
+
+        <div class="episode-list stagger" id="episodeList">
+          <a
+            class="episode-card searchable-episode"
+            href="Grammar_Episode_1_The_Lost_Wallet.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-search="grammar episode 1 the lost wallet"
+          >
+            <span class="episode-number">01</span>
+
+            <span class="episode-copy">
+              <h3>Grammar Episode 1 – The Lost Wallet</h3>
+              <p>Open the first story-based grammar lesson.</p>
+
+              <span class="episode-meta">
+                <span><i data-lucide="file-text"></i> PDF</span>
+                <span><i data-lucide="book-open"></i> Story Lesson</span>
+                <span><i data-lucide="unlock"></i> Free Access</span>
+              </span>
+            </span>
+
+            <span class="action-button">
+              Open PDF <i data-lucide="arrow-up-right"></i>
+            </span>
+          </a>
+
+          <a
+            class="episode-card searchable-episode"
+            href="Grammar_Episode_2_The_Exam_Stress_Week.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-search="grammar episode 2 the exam stress week"
+          >
+            <span class="episode-number">02</span>
+
+            <span class="episode-copy">
+              <h3>Grammar Episode 2 – The Exam Stress Week</h3>
+              <p>Continue learning grammar through an exam-week story.</p>
+
+              <span class="episode-meta">
+                <span><i data-lucide="file-text"></i> PDF</span>
+                <span><i data-lucide="book-open"></i> Story Lesson</span>
+                <span><i data-lucide="unlock"></i> Free Access</span>
+              </span>
+            </span>
+
+            <span class="action-button">
+              Open PDF <i data-lucide="arrow-up-right"></i>
+            </span>
+          </a>
+
+          <a
+            class="episode-card searchable-episode"
+            href="Grammar_Episode_3_The_Missing_Alarm.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-search="grammar episode 3 the missing alarm"
+          >
+            <span class="episode-number">03</span>
+
+            <span class="episode-copy">
+              <h3>Grammar Episode 3 – The Missing Alarm</h3>
+              <p>Study the next grammar lesson through a memorable situation.</p>
+
+              <span class="episode-meta">
+                <span><i data-lucide="file-text"></i> PDF</span>
+                <span><i data-lucide="book-open"></i> Story Lesson</span>
+                <span><i data-lucide="unlock"></i> Free Access</span>
+              </span>
+            </span>
+
+            <span class="action-button">
+              Open PDF <i data-lucide="arrow-up-right"></i>
+            </span>
+          </a>
+
+          <a
+            class="episode-card searchable-episode"
+            href="Grammar_Episode_4_The_Friend_in_Trouble.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-search="grammar episode 4 the friend in trouble"
+          >
+            <span class="episode-number">04</span>
+
+            <span class="episode-copy">
+              <h3>Grammar Episode 4 – The Friend in Trouble</h3>
+              <p>Learn grammar through a story about helping a friend.</p>
+
+              <span class="episode-meta">
+                <span><i data-lucide="file-text"></i> PDF</span>
+                <span><i data-lucide="book-open"></i> Story Lesson</span>
+                <span><i data-lucide="unlock"></i> Free Access</span>
+              </span>
+            </span>
+
+            <span class="action-button">
+              Open PDF <i data-lucide="arrow-up-right"></i>
+            </span>
+          </a>
+
+          <a
+            class="episode-card searchable-episode"
+            href="Grammar_Episode_5_The_Community_Service_Day.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-search="grammar episode 5 the community service day"
+          >
+            <span class="episode-number">05</span>
+
+            <span class="episode-copy">
+              <h3>Grammar Episode 5 – The Community Service Day</h3>
+              <p>Build grammar understanding through a community-based story.</p>
+
+              <span class="episode-meta">
+                <span><i data-lucide="file-text"></i> PDF</span>
+                <span><i data-lucide="book-open"></i> Story Lesson</span>
+                <span><i data-lucide="unlock"></i> Free Access</span>
+              </span>
+            </span>
+
+            <span class="action-button">
+              Open PDF <i data-lucide="arrow-up-right"></i>
+            </span>
+          </a>
+
+          <a
+            class="episode-card searchable-episode"
+            href="Grammar_Episode_6_The_Angry_Message.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-search="grammar episode 6 the angry message"
+          >
+            <span class="episode-number">06</span>
+
+            <span class="episode-copy">
+              <h3>Grammar Episode 6 – The Angry Message</h3>
+              <p>Explore grammar through a communication-based situation.</p>
+
+              <span class="episode-meta">
+                <span><i data-lucide="file-text"></i> PDF</span>
+                <span><i data-lucide="book-open"></i> Story Lesson</span>
+                <span><i data-lucide="unlock"></i> Free Access</span>
+              </span>
+            </span>
+
+            <span class="action-button">
+              Open PDF <i data-lucide="arrow-up-right"></i>
+            </span>
+          </a>
+
+          <a
+            class="episode-card searchable-episode"
+            href="Grammar_Episode_7_The_Secret_Responsibility.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-search="grammar episode 7 the secret responsibility"
+          >
+            <span class="episode-number">07</span>
+
+            <span class="episode-copy">
+              <h3>Grammar Episode 7 – The Secret Responsibility</h3>
+              <p>Strengthen grammar through a story about responsibility.</p>
+
+              <span class="episode-meta">
+                <span><i data-lucide="file-text"></i> PDF</span>
+                <span><i data-lucide="book-open"></i> Story Lesson</span>
+                <span><i data-lucide="unlock"></i> Free Access</span>
+              </span>
+            </span>
+
+            <span class="action-button">
+              Open PDF <i data-lucide="arrow-up-right"></i>
+            </span>
+          </a>
+
+          <a
+            class="episode-card searchable-episode"
+            href="Grammar_Episode_8_The_New_Beginning.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-search="grammar episode 8 the new beginning"
+          >
+            <span class="episode-number">08</span>
+
+            <span class="episode-copy">
+              <h3>Grammar Episode 8 – The New Beginning</h3>
+              <p>Complete the series with the final story-based grammar lesson.</p>
+
+              <span class="episode-meta">
+                <span><i data-lucide="file-text"></i> PDF</span>
+                <span><i data-lucide="book-open"></i> Story Lesson</span>
+                <span><i data-lucide="unlock"></i> Free Access</span>
+              </span>
+            </span>
+
+            <span class="action-button">
+              Open PDF <i data-lucide="arrow-up-right"></i>
+            </span>
+          </a>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+          No matching grammar episode found.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span><strong>IELTS with Tahmid</strong> — Grammar PDF Library</span>
+      <span>Practice • Improve • Achieve</span>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+
+      const revealItems = document.querySelectorAll(".reveal, .stagger");
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+
+      const searchInput = document.getElementById("episodeSearch");
+      const episodeCards = [...document.querySelectorAll(".searchable-episode")];
+      const emptyState = document.getElementById("emptyState");
+
+      function updateEpisodes() {
+        const query = searchInput.value.trim().toLowerCase();
+        let visibleCount = 0;
+
+        episodeCards.forEach((card) => {
+          const content = `${card.dataset.search} ${card.textContent}`.toLowerCase();
+          const isVisible = content.includes(query);
+
+          card.style.display = isVisible ? "grid" : "none";
+
+          if (isVisible) {
+            visibleCount += 1;
+          }
+        });
+
+        emptyState.style.display = visibleCount ? "none" : "block";
+      }
+
+      searchInput.addEventListener("input", updateEpisodes);
+    });
+  </script>
 </body>
 </html>
