@@ -751,6 +751,40 @@
       color: var(--text);
     }
 
+    /* Quiet worksheet dots — intentionally understated, no visible labels */
+    .quiet-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      margin-top: 26px;
+      padding-top: 4px;
+    }
+
+    .quiet-dot {
+      --dot-color: var(--muted);
+      position: relative;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--dot-color);
+      opacity: 0.32;
+      transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .quiet-dot:hover,
+    .quiet-dot:focus-visible {
+      opacity: 1;
+      transform: scale(1.35);
+      box-shadow: 0 0 10px var(--dot-color);
+      outline: none;
+    }
+
+    .quiet-dot.dot-red { --dot-color: #ff4d4d; }
+    .quiet-dot.dot-green { --dot-color: var(--green); }
+    .quiet-dot.dot-navy { --dot-color: #3d63c9; }
+    .quiet-dot.dot-silver { --dot-color: #d3d8de; }
+
     /* Reveal */
     .reveal {
       opacity: 0;
@@ -1400,6 +1434,13 @@
       <span><strong>IELTS with Tahmid</strong> — Vocabulary Masterclass</span>
       <span>Practice • Improve • Achieve</span>
     </div>
+
+    <nav class="quiet-links" aria-label="Additional practice links">
+      <a class="quiet-dot dot-red" href="https://t.me/demoIELTSclass" target="_blank" rel="noopener noreferrer" aria-label="Writing"></a>
+      <a class="quiet-dot dot-green" href="Verbs_Vocabulary_Hub.html" aria-label="Verbs"></a>
+      <a class="quiet-dot dot-navy" href="IELTS_Synonyms_Practice_Hub.html" aria-label="Synonyms"></a>
+      <a class="quiet-dot dot-silver" href="Adjectives_Vocabulary_Hub.html" aria-label="Adjectives"></a>
+    </nav>
   </footer>
 
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
