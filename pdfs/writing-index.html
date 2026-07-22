@@ -674,6 +674,38 @@
       color: var(--text);
     }
 
+    /* Quiet resource dots — intentionally understated, no visible labels */
+    .quiet-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      margin-top: 26px;
+      padding-top: 4px;
+    }
+
+    .quiet-dot {
+      --dot-color: var(--muted);
+      position: relative;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--dot-color);
+      opacity: 0.32;
+      transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .quiet-dot:hover,
+    .quiet-dot:focus-visible {
+      opacity: 1;
+      transform: scale(1.35);
+      box-shadow: 0 0 10px var(--dot-color);
+      outline: none;
+    }
+
+    .quiet-dot.dot-red { --dot-color: #ff4d4d; }
+    .quiet-dot.dot-green { --dot-color: var(--green); }
+
     /* Reveal */
     .reveal {
       opacity: 0;
@@ -1188,6 +1220,11 @@
       <span><strong>IELTS with Tahmid</strong> — Writing Resource Hub</span>
       <span>Practice • Improve • Achieve</span>
     </div>
+
+    <nav class="quiet-links" aria-label="Additional practice links">
+      <a class="quiet-dot dot-red" href="Liz's ideas for essay.pdf" target="_blank" rel="noopener noreferrer" aria-label="Essay ideas"></a>
+      <a class="quiet-dot dot-green" href="Harrison_Mim-Smart_Words_Vocabulary_for_the_Erudit.pdf" target="_blank" rel="noopener noreferrer" aria-label="Smart words vocabulary"></a>
+    </nav>
   </footer>
 
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
