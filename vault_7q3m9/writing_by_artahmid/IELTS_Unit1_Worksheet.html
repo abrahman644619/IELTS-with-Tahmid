@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Writing — Unit 1: Fast Food | Abidur Rahman Tahmid</title>
+<style>
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ===== BASE ===== */
+body {
+  font-family: Arial, 'Noto Sans Bengali', 'Vrinda', sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #111;
+  background: #d0d0d0;
+  padding: 16px 0 30px;
+}
+
+/* ===== PAGE WRAPPER ===== */
+.page {
+  max-width: 790px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 18px 28px 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+}
+
+/* ===== ACTION BUTTONS ===== */
+.action-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 9px 22px;
+  font-size: 13.5px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn-clear { background: #e2e2e2; color: #333; border: 1px solid #aaa; }
+.btn-clear:hover { background: #d0d0d0; }
+.btn-save  { background: #1a7575; color: #fff; }
+.btn-save:hover  { background: #155f5f; }
+
+/* ===== PAGE HEADER BAR ===== */
+.header-bar {
+  background: #e8e8e8;
+  border: 1px solid #bbb;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.brand {
+  font-family: 'Arial Black', 'Arial', sans-serif;
+  font-weight: 900;
+  color: navy;
+  font-size: 13.5px;
+  display: block;
+}
+
+/* ===== TITLE BLOCK ===== */
+.title-block {
+  border: 2px solid #1a7575;
+  margin: 8px 0 10px;
+  padding: 12px;
+  text-align: center;
+}
+.unit-label {
+  background: #1a7575;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 3px 12px;
+  margin-bottom: 6px;
+}
+.unit-main  { font-size: 17px; font-weight: bold; color: #1a7575; margin-bottom: 3px; }
+.unit-sub   { font-size: 13px; color: #333; }
+
+/* ===== NAME / DATE / SCORE ===== */
+.nds-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: flex-end;
+  margin: 10px 0 12px;
+  font-size: 13px;
+}
+.nds-field { display: flex; align-items: flex-end; gap: 5px; flex: 1; min-width: 130px; }
+.nds-field label { font-weight: bold; white-space: nowrap; }
+.nds-field input {
+  border: none;
+  border-bottom: 1.5px solid #333;
+  flex: 1;
+  padding: 2px 3px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  background: transparent;
+  min-width: 60px;
+}
+.nds-score { flex: 0.45; }
+
+/* ===== BENGALI / INTRO TEXT ===== */
+.intro { font-size: 13px; margin: 7px 0; line-height: 1.7; }
+.intro strong { font-size: 14px; }
+
+/* ===== LEARNING OBJECTIVES BOX ===== */
+.obj-box { border: 2px solid #1a7575; margin: 10px 0; }
+.obj-head { background: #1a7575; color: #fff; padding: 5px 10px; font-weight: bold; font-size: 13px; }
+.obj-body { padding: 8px 12px; font-size: 13px; }
+.obj-body ul { list-style: disc; padding-left: 20px; margin-top: 5px; }
+.obj-body li { margin: 3px 0; }
+
+/* ===== SECTION HEADER ===== */
+.sec-head {
+  background: #1a7575;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 16px 0 8px;
+  border-radius: 2px;
+}
+
+/* ===== SUB-SECTION HEADER ===== */
+.sub-head {
+  color: #1a7575;
+  font-size: 13px;
+  font-weight: bold;
+  border-bottom: 2px solid #1a7575;
+  padding-bottom: 3px;
+  margin: 14px 0 8px;
+}
+
+/* ===== CHART TITLE BOX ===== */
+.chart-title-box {
+  background: #e5f5f5;
+  border: 1px solid #1a7575;
+  padding: 6px 10px;
+  font-size: 13px;
+  margin: 8px 0;
+}
+.chart-title-box strong { color: #1a7575; }
+
+/* ===== CHART AREA ===== */
+.chart-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+}
+.chart-title-text {
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 6px;
+}
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  justify-content: center;
+  margin-top: 8px;
+  font-size: 12px;
+}
+.legend-item { display: flex; align-items: center; gap: 5px; }
+.leg-swatch  {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #555;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ===== QUESTIONS ===== */
+.q { margin: 8px 0; font-size: 13px; }
+.qn { font-weight: bold; color: #1a7575; margin-right: 3px; }
+
+/* ===== ANSWER LINE (full-width underline input) ===== */
+input.aline {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #666;
+  margin-top: 5px;
+  padding: 3px 4px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  background: transparent;
+}
+input.aline:focus { border-bottom-color: #1a7575; }
+
+/* ===== INLINE BLANK ===== */
+input.blank {
+  display: inline;
+  border: none;
+  border-bottom: 1px solid #555;
+  width: 130px;
+  padding: 1px 4px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  background: transparent;
+  vertical-align: middle;
+}
+input.blank:focus { border-bottom-color: #1a7575; }
+input.blank.wide  { width: 170px; }
+input.blank.sm    { width: 80px; }
+
+/* ===== VOCABULARY TABLE ===== */
+table.vtab {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 8px 0;
+}
+table.vtab th {
+  background: #1a7575;
+  color: #fff;
+  padding: 6px 8px;
+  text-align: left;
+}
+table.vtab td {
+  border: 1px solid #bbb;
+  padding: 5px 8px;
+  vertical-align: top;
+}
+table.vtab tr:nth-child(even) td { background: #f6f6f6; }
+
+/* ===== DISTINCTION BOX ===== */
+.dist-box {
+  background: #f4f4f4;
+  border-left: 4px solid #1a7575;
+  padding: 8px 12px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+.dist-box p { margin: 4px 0; }
+
+/* ===== WORD BOX ===== */
+.word-box {
+  background: #fffae4;
+  border: 1.5px solid #c8a200;
+  padding: 7px 12px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+/* ===== GRAMMAR NOTE ===== */
+.gram-box {
+  background: #e5f4f4;
+  border: 1px solid #1a7575;
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 13px;
+}
+.gram-box .gtitle { font-weight: bold; color: #1a7575; margin-bottom: 6px; }
+.gram-box p { margin: 3px 0; }
+.gram-box ul { padding-left: 22px; margin: 4px 0; }
+.gram-box li { margin: 2px 0; }
+
+/* ===== GRAMMAR TABLE (6A) ===== */
+table.gtab {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 8px 0;
+}
+table.gtab th {
+  background: #1a7575;
+  color: #fff;
+  padding: 6px 8px;
+  text-align: center;
+  border: 1px solid #1a7575;
+}
+table.gtab td {
+  border: 1px solid #bbb;
+  padding: 5px 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+table.gtab td input.blank { width: 90%; }
+
+/* ===== SUPERLATIVE TABLE (6C) ===== */
+table.stab {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 8px 0;
+}
+table.stab th {
+  background: #1a7575;
+  color: #fff;
+  padding: 6px 8px;
+  text-align: left;
+  border: 1px solid #1a7575;
+}
+table.stab td {
+  border: 1px solid #bbb;
+  padding: 6px 8px;
+  vertical-align: middle;
+}
+table.stab td:nth-child(1) { width: 32px; text-align: center; }
+table.stab td:nth-child(3) { width: 38%; }
+table.stab td input.blank  { width: 95%; }
+
+/* ===== STRUCTURE TABLE (Task 1) ===== */
+table.struct {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 8px 0;
+}
+table.struct th {
+  background: #1a7575;
+  color: #fff;
+  padding: 7px 8px;
+  text-align: left;
+  border: 1px solid #1a7575;
+  vertical-align: top;
+  width: 115px;
+}
+table.struct td {
+  border: 1px solid #bbb;
+  padding: 7px 8px;
+  vertical-align: top;
+}
+
+/* ===== PARAGRAPH TEXT BOX ===== */
+.para-box {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin: 8px 0;
+  line-height: 1.8;
+}
+.para-box p { margin: 3px 0; }
+
+/* ===== SENTENCE STARTERS BOX ===== */
+.starters-box {
+  background: #fffae4;
+  border: 1.5px solid #c8a200;
+  padding: 9px 13px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+.starters-box .st-title { font-weight: bold; color: #1a7575; margin-bottom: 6px; }
+.starters-box p { font-style: italic; color: #1a7575; margin: 3px 0; }
+
+/* ===== GUIDED WRITING TEXTAREA ===== */
+textarea.writing-area {
+  width: 100%;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  padding: 8px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  resize: vertical;
+  min-height: 180px;
+  margin-top: 6px;
+  outline: none;
+  line-height: 1.8;
+}
+textarea.writing-area:focus { border-color: #1a7575; }
+
+/* ===== SELF-CHECK ===== */
+.sc-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 7px 0;
+  font-size: 13px;
+}
+.sc-text { flex: 1; min-width: 200px; }
+.sc-yesno { display: flex; gap: 10px; white-space: nowrap; }
+.sc-yesno label { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+
+/* ===== ANSWER KEY ===== */
+.ak-sec h3 {
+  color: #1a7575;
+  font-size: 13px;
+  border-bottom: 1px solid #1a7575;
+  padding-bottom: 2px;
+  margin: 10px 0 5px;
+}
+.ak-sec ol, .ak-sec ul { padding-left: 22px; font-size: 13px; }
+.ak-sec li { margin: 2px 0; }
+table.ak-tab {
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 4px 0;
+}
+table.ak-tab td, table.ak-tab th {
+  border: 1px solid #ccc;
+  padding: 4px 10px;
+}
+table.ak-tab th { background: #e0e0e0; }
+
+/* ===== TEACHER NOTES ===== */
+.tn ul { list-style: disc; padding-left: 22px; font-size: 13px; }
+.tn li { margin: 5px 0; }
+
+/* ===== FOOTER DIVIDER ===== */
+.pg-footer {
+  border-top: 1px solid #bbb;
+  padding-top: 4px;
+  margin: 18px 0 12px;
+  font-size: 10.5px;
+  font-style: italic;
+  color: #666;
+  text-align: center;
+}
+
+/* ===== PRINT ===== */
+@media print {
+  body { background: white; padding: 0; }
+  .page { box-shadow: none; padding: 10px 18px 18px; max-width: 100%; }
+  .action-bar { display: none; }
+  input.aline  { border-bottom: 1px solid #000 !important; }
+  input.blank  { border-bottom: 1px solid #000 !important; }
+  textarea.writing-area { border: 1px solid #000 !important; }
+  @page { margin: 12mm 15mm; size: A4; }
+  table { page-break-inside: avoid; }
+  .sec-head { page-break-after: avoid; }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 580px) {
+  .page { padding: 12px 14px 18px; }
+  input.blank.wide { width: 120px; }
+  table.stab td:nth-child(3) { width: 34%; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ===== ACTION BUTTONS ===== -->
+<div class="action-bar">
+  <button class="btn btn-clear" onclick="clearAll()">Clear my response</button>
+  <button class="btn btn-save"  onclick="window.print()">Save as PDF</button>
+</div>
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="header-bar">
+  <span class="brand">A Gift from Abidur Rahman Tahmid</span>
+  <span>🎓 BA H, University of Greenwich (UK) &nbsp;|&nbsp; 🎓 EMBA, Dhaka University</span>
+</div>
+
+<!-- ===== TITLE BLOCK ===== -->
+<div class="title-block">
+  <div><span class="unit-label">IELTS Writing — Unit 1</span></div>
+  <div class="unit-main">Fast Food: Describing Pie Charts</div>
+  <div class="unit-sub">Task 1 Focus | Worksheet for Bangladeshi IELTS Learners</div>
+</div>
+
+<!-- NAME / DATE / SCORE -->
+<div class="nds-row">
+  <div class="nds-field"><label>Name:</label><input type="text" class="aline" style="display:inline;margin:0;"></div>
+  <div class="nds-field" style="max-width:170px;"><label>Date:</label><input type="text" class="aline" style="display:inline;margin:0;"></div>
+  <div class="nds-field nds-score" style="flex:0 0 auto;gap:4px;"><label>Score:</label><input type="text" class="aline" style="display:inline;margin:0;width:38px;"> <span>/ 55</span></div>
+</div>
+
+<!-- ===== INTRO ===== -->
+<div class="intro">
+  <strong>ভূমিকা</strong><br>
+  এই worksheet-টি IELTS Writing বইয়ের Unit 1 (Fast Food) অনুযায়ী তৈরি। IELTS Task 1-এ তোমায় প্রায়ই একটি pie chart বা graph দেখানো হবে এবং সেটি দেখে একটি paragraph লিখতে হবে।<br>
+  এই unit-এ তুমি লিখবে কীভাবে percentage (শতকরা হার) ব্যবহার করে chart বর্ণনা করতে হয়, comparatives ও superlatives ব্যবহার করতে হয়, এবং একটি Task 1 উত্তর কীভাবে সাজাতে হয়।<br>
+  প্রতিটি section একটু একটু করে করো, নিজে চেষ্টা করো, তারপর Answer Key দেখো।
+</div>
+
+<!-- ===== LEARNING OBJECTIVES ===== -->
+<div class="obj-box">
+  <div class="obj-head">শেখার লক্ষ্য | Learning Objectives</div>
+  <div class="obj-body">
+    <p>এই worksheet শেষ করলে তুমি পারবে —</p>
+    <ul>
+      <li>Read and interpret data from a pie chart.</li>
+      <li>Use key vocabulary for describing percentages: <em>make up, represent, account for, per cent, proportion, respectively.</em></li>
+      <li>Use <em>popular</em> and <em>famous</em> correctly in sentences.</li>
+      <li>Form comparatives: <em>bigger than, more popular than, less expensive than.</em></li>
+      <li>Form superlatives: <em>the biggest, the most popular, the least popular.</em></li>
+      <li>Vary the subject of sentences when describing chart data.</li>
+      <li>Structure a Task 1 answer using three parts: topic sentence, overview, and data description.</li>
+      <li>Write a guided paragraph describing a pie chart.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== WARM-UP ===== -->
+<div class="sec-head">Warm-Up | শুরু করার আগে ভাবো</div>
+<p class="intro">নিচের প্রশ্নগুলো ভাবো এবং সংক্ষেপে উত্তর দেখো। কোনো সাহায্য ছাড়াই চেষ্টা করো।</p>
+
+<div class="q"><span class="qn">1.</span> What is a pie chart? Describe it in your own words. (Pie chart কী? নিজের ভাষায় বলো।)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">2.</span> Name 3 types of fast food that are popular in Bangladesh. (বাংলাদেশে জনপ্রিয় ৩টি fast food-এর নাম দেখো।)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">3.</span> In IELTS Task 1, what should you write about a chart? (Task 1-এ chart সম্পর্কে কী লিখতে হয়?)<input type="text" class="aline"></div>
+
+<!-- ===== CHART READING ===== -->
+<div class="sec-head">Chart Reading | Pie Chart দেখো এবং বোঝো</div>
+<p class="intro">নিচে একটি survey-এর ফলাফল দেওয়া আছে — এটি একটি pie chart-দেখাচ্ছে। মনোযোগ দিয়ে পড়ো এবং প্রশ্নের উত্তর দাও।</p>
+
+<div class="chart-title-box">
+  <strong>Chart Title: Fast Food Preferences of Teenagers in the USA</strong><br>
+  <em>Survey question: What is your favourite fast food?</em>
+</div>
+
+<div class="chart-wrap">
+  <div class="chart-title-text">Fast Food Preferences of Teenagers in the USA</div>
+  <svg id="chart1" width="300" height="260" viewBox="0 0 300 260"></svg>
+  <div class="chart-legend" id="legend1"></div>
+</div>
+
+<!-- 4A -->
+<div class="sub-head">4A — Chart Comprehension Questions | Chart বোঝার প্রশ্ন</div>
+<p>Answer these questions using information from the chart above. (উপরের chart দেখে উত্তর দেখো।)</p>
+
+<div class="q"><span class="qn">1.</span> What is the most popular fast food among teenagers in the USA?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">2.</span> What percentage of teenagers prefer pizza?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">3.</span> Which are the second and third most popular fast foods?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">4.</span> What percentage of teenagers prefer fried chicken and tacos respectively?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">5.</span> Which is the least popular fast food in this survey?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">6.</span> What percentage of teenagers prefer sushi?<input type="text" class="aline"></div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 1: Fast Food | Task 1 Focus: Pie Chart Description</div>
+
+<!-- ===== VOCABULARY ===== -->
+<div class="sec-head">Vocabulary | গুরুত্বপূর্ণ শব্দভাণ্ডার</div>
+<p class="intro">Pie chart বর্ণনা করার সময় এই শব্দ ও phrase গুলো IELTS-এ সবচেয়ে বেশি ব্যবহার হয়। মনোযোগ দিয়ে অর্থ ও উদাহরণ দেখো।</p>
+
+<!-- 5A -->
+<div class="sub-head">5A — Key Graph Vocabulary | Chart বর্ণনার মূল শব্দ</div>
+<table class="vtab">
+  <thead><tr><th style="width:145px;">Word / Phrase</th><th>Meaning + Example (অর্থ ও উদাহরণ)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>make up</strong></td><td>মোটের মধ্যে একটি অংশ গঠন করা। Ex: Hamburgers <em>make up</em> 33% of the total.</td></tr>
+    <tr><td><strong>represent</strong></td><td>কোনো একটি অংশকে সংখ্যায় প্রকাশ করা। Ex: French fries <em>represent</em> 22% of the chart.</td></tr>
+    <tr><td><strong>account for</strong></td><td>মোটের একটি নির্দিষ্ট অংশ নেওয়া। Ex: Sushi <em>accounts for</em> only 3% of the total.</td></tr>
+    <tr><td><strong>proportion</strong></td><td>মোটের তুলনায় একটি অংশের ভাগ বা অনুপাত। Ex: Pizza has the second largest <em>proportion.</em></td></tr>
+    <tr><td><strong>per cent / %</strong></td><td>শতকরা হার। 26 per cent = 26%. Ex: 26 <em>per cent</em> of teenagers prefer pizza.</td></tr>
+    <tr><td><strong>respectively</strong></td><td>যথাক্রমে / একই ক্রমে। দুটো বা বেশি বিষয় একসাথে বলার সময় ব্যবহার হয়। Ex: Fried chicken and tacos represent 9 and 7 per cent <em>respectively.</em></td></tr>
+    <tr><td><strong>prefer</strong></td><td>বেশি পছন্দ করা / বেছে নেওয়া। Ex: Most teenagers <em>prefer</em> hamburgers.</td></tr>
+    <tr><td><strong>beverage</strong></td><td>পানীয় (যেকোনো পানীয়, জল ছাড়া)। Ex: Soda is a popular <em>beverage</em> in the USA.</td></tr>
+  </tbody>
+</table>
+
+<!-- 5B -->
+<div class="sub-head">5B — 'Popular' vs 'Famous' | পার্থক্য দেখো</div>
+<div class="dist-box">
+  <p><strong>গুরুত্বপূর্ণ পার্থক্য — এই দুটো শব্দ এক নয়!</strong></p>
+  <p style="margin-top:6px;"><strong>POPULAR</strong> = অনেক মানুষ পছন্দ করে বা ব্যবহার করে। | <em>Many people like or choose it.</em></p>
+  <p><strong>FAMOUS</strong> = অনেক মানুষ জানে বা শুনেছে। | <em>Many people have heard about it, but they may not like it.</em></p>
+  <p style="margin-top:6px;"><strong>Examples:</strong> Hamburgers are <em>popular</em> in the USA (many people eat them). McDonald's is <em>famous</em> all over the world (people know about it, but they may or may not eat there).</p>
+</div>
+<p>Choose the correct word — <strong>popular</strong> or <strong>famous</strong> — for each sentence below. Write it in the blank.<br>(প্রতিটি বাক্যে popular না famous সেটি বেছে নিয়ে ঘরে লেখো।)</p>
+
+<div class="q"><span class="qn">1.</span> Beef is not <input type="text" class="blank"> as a food in many Muslim countries, but it is available.</div>
+<div class="q"><span class="qn">2.</span> McDonald's is a <input type="text" class="blank"> restaurant chain that is known all over the world.</div>
+<div class="q"><span class="qn">3.</span> French fries are very <input type="text" class="blank"> among teenagers in the USA.</div>
+<div class="q"><span class="qn">4.</span> The Taj Mahal is <input type="text" class="blank">, but it is not a restaurant — it is a tourist destination.</div>
+<div class="q"><span class="qn">5.</span> Sushi is <input type="text" class="blank"> in Japan, and many people eat it every day.</div>
+
+<!-- 5C -->
+<div class="sub-head">5C — Fill in the Blanks | সঠিক শব্দ সাও</div>
+<p>Use the words in the box to complete the sentences. Change the word form if needed.<br>(Box-এর শব্দ ব্যবহার করে বাক্য পূরণ করো। প্রয়োজনে শব্দের রূপ পরিবর্তন করো।)</p>
+
+<div class="word-box">
+  Word Box: <strong>make up &nbsp;|&nbsp; represent &nbsp;|&nbsp; account for &nbsp;|&nbsp; proportion &nbsp;|&nbsp; prefer &nbsp;|&nbsp; respectively &nbsp;|&nbsp; per cent</strong>
+</div>
+
+<div class="q"><span class="qn">1.</span> Hamburgers <input type="text" class="blank"> the largest <input type="text" class="blank"> of the pie chart, at 33%.</div>
+<div class="q"><span class="qn">2.</span> Pizza and French fries <input type="text" class="blank"> 26 and 22 per cent <input type="text" class="blank">.</div>
+<div class="q"><span class="qn">3.</span> Only 3 <input type="text" class="blank sm"> of teenagers in the survey prefer sushi.</div>
+<div class="q"><span class="qn">4.</span> Fried chicken and tacos <input type="text" class="blank"> for 9 and 7 per cent of the total.</div>
+<div class="q"><span class="qn">5.</span> Most teenagers <input type="text" class="blank"> hamburgers over other types of fast food.</div>
+<div class="q"><span class="qn">6.</span> Sushi <input type="text" class="blank"> the smallest portion of the chart.</div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 1: Fast Food | Task 1 Focus: Pie Chart Description</div>
+
+<!-- ===== GRAMMAR FOCUS ===== -->
+<div class="sec-head">Grammar Focus | Comparatives &amp; Superlatives</div>
+<p class="intro">IELTS Task 1-এ pie chart বা graph বর্ণনা করার সময় তুলনা করা খুবই জরুরি। এই section-এ তুমি comparatives ও superlatives লিখবে।</p>
+
+<div class="gram-box">
+  <div class="gtitle">Grammar Note | ব্যাকরণ নোট</div>
+  <p><strong>COMPARATIVE</strong> — দুটি জিনিসের মধ্যে তুলনা করতে:</p>
+  <ul>
+    <li>One-syllable adj (ছোট adj): adjective + <em>-er + than</em> → big → <em>bigger than</em>, high → <em>higher than</em></li>
+    <li>Two+ syllable adj (বড় adj): <em>more</em> + adjective + <em>than</em> → popular → <em>more popular than</em></li>
+    <li>Negative comparison: <em>less</em> + adjective + <em>than</em> → sushi is <em>less popular than</em> pizza</li>
+  </ul>
+  <p style="margin-top:8px;"><strong>SUPERLATIVE</strong> — একটি group-এর মধ্যে সর্বোচ্চ বা সর্বনিম্ন:</p>
+  <ul>
+    <li>One-syllable adj: <em>the</em> + adjective + <em>-est</em> → big → <em>the biggest</em></li>
+    <li>Two+ syllable adj: <em>the most</em> + adjective → popular → <em>the most popular</em></li>
+    <li>Negative superlative: <em>the least</em> + adjective → sushi → <em>the least popular</em></li>
+  </ul>
+</div>
+
+<!-- 6A -->
+<div class="sub-head">6A — Form Comparatives &amp; Superlatives | সঠিক রূপ তৈরি করো</div>
+<p>Complete the table. Write the comparative and superlative form of each adjective.<br>(নিচের টেবিলে প্রতিটি adjective-এর comparative ও superlative লেখো।)</p>
+
+<table class="gtab">
+  <thead><tr><th>Adjective</th><th>Comparative (তুলনামূলক)</th><th>Superlative (সর্বোচ্চ/নিম্ন)</th></tr></thead>
+  <tbody>
+    <tr><td><em>popular</em> (e.g.)</td><td>more popular than</td><td>the most popular</td></tr>
+    <tr><td><em>high</em></td><td><input type="text" class="blank"></td><td><input type="text" class="blank"></td></tr>
+    <tr><td><em>low</em></td><td><input type="text" class="blank"></td><td><input type="text" class="blank"></td></tr>
+    <tr><td><em>large</em></td><td><input type="text" class="blank"></td><td><input type="text" class="blank"></td></tr>
+    <tr><td><em>small</em></td><td><input type="text" class="blank"></td><td><input type="text" class="blank"></td></tr>
+    <tr><td><em>expensive</em></td><td><input type="text" class="blank"></td><td><input type="text" class="blank"></td></tr>
+    <tr><td><em>common</em></td><td><input type="text" class="blank"></td><td><input type="text" class="blank"></td></tr>
+  </tbody>
+</table>
+
+<!-- 6B -->
+<div class="sub-head">6B — Use Comparatives in Sentences | তুলনামূলক বাক্য লেখো</div>
+<p>Use the pie chart data from Section 4 to write sentences using comparatives. Use: <em>more … than / less … than / bigger than.</em><br>(Section 4-এর chart data ব্যবহার করে comparative বাক্য লেখো।)</p>
+<p style="margin:8px 0 4px;"><strong>Example:</strong> Hamburgers (33%) vs Pizza (26%)<br>
+<span style="margin-left:12px;"><strong>Answer:</strong> Hamburgers are more popular than pizza among teenagers in the USA.</span></p>
+
+<div class="q"><span class="qn">a.</span> Pizza (26%) vs French fries (22%) → Write a sentence using <em>more popular than.</em><input type="text" class="aline"></div>
+<div class="q"><span class="qn">b.</span> French fries (22%) vs Fried chicken (9%) → Write a sentence using <em>higher than.</em><input type="text" class="aline"></div>
+<div class="q"><span class="qn">c.</span> Tacos (7%) vs Sushi (3%) → Write a sentence using <em>less popular than.</em><input type="text" class="aline"></div>
+<div class="q"><span class="qn">d.</span> Sushi (3%) vs Hamburgers (33%) → Write a sentence using <em>much less popular than.</em><input type="text" class="aline"></div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 1: Fast Food | Task 1 Focus: Pie Chart Description</div>
+
+<!-- 6C -->
+<div class="sub-head">6C — Use Superlatives in Sentences | Superlative বাক্য লেখো</div>
+<p>Complete these sentences using the correct superlative form.<br>(সঠিক superlative রূপ ব্যবহার করে বাক্য সম্পূর্ণ করো।)</p>
+
+<table class="stab">
+  <thead><tr><th>#</th><th>Sentence (বাক্য)</th><th>Your Answer (উত্তর)</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Hamburgers are ________________ (popular) fast food in the survey.</td>
+      <td><input type="text" class="blank" style="width:95%;"></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Sushi is ________________ (popular) fast food among teenagers.</td>
+      <td><input type="text" class="blank" style="width:95%;"></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Pizza has ________________ (large) proportion after hamburgers.</td>
+      <td><input type="text" class="blank" style="width:95%;"></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Only 3% of teenagers prefer sushi — it has ________________ (small) share of all.</td>
+      <td><input type="text" class="blank" style="width:95%;"></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Hamburgers make up ________________ (big) portion of the pie chart.</td>
+      <td><input type="text" class="blank" style="width:95%;"></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== LANGUAGE FOCUS ===== -->
+<div class="sec-head">Language Focus | বাক্যের Subject পরিবর্তন করো</div>
+<p class="intro">IELTS Task 1-এ একটি ভালো paragraph লিখতে হলে subject পরিবর্তন করা জরুরি — একই subject বারবার ব্যবহার করলে লেখা একঘেয়ে হয়।</p>
+<p class="intro">তুমি তিনটি ভিন্ন subject ব্যবহার করতে পারো:</p>
+<div style="margin: 8px 0; font-size:13px; padding-left:8px;">
+  <p><strong>Subject 1:</strong> The type of fast food → <em>Hamburgers</em> are the most popular fast food in the survey.</p>
+  <p><strong>Subject 2:</strong> The percentage of teenagers → <em>33 per cent of teenagers</em> choose hamburgers.</p>
+  <p><strong>Subject 3:</strong> The percentage as a proportion → <em>Hamburgers</em> account for the largest proportion of the pie chart.</p>
+</div>
+
+<!-- 7A -->
+<div class="sub-head">7A — Rewrite with a Different Subject | Subject বদলে বাক্য লেখো</div>
+<p>Rewrite each sentence two more times using a different subject. The meaning must stay the same.<br>(প্রতিটি বাক্য আরও দুইবার ভিন্ন subject দিয়ে লেখো — অর্থ একই থাকবে।)</p>
+
+<div style="margin:10px 0; font-size:13px; background:#f9f9f9; border:1px solid #ddd; padding:8px 12px;">
+  <p><strong>Original:</strong> Pizza is the second most popular fast food.</p>
+  <p><strong>Version 2:</strong> 26 per cent of teenagers prefer pizza.</p>
+  <p><strong>Version 3:</strong> Pizza accounts for 26 per cent of the total survey.</p>
+</div>
+
+<p style="margin-top:10px; font-weight:bold;">Now try these:</p>
+
+<div class="q" style="margin-top:10px;">
+  <p><strong>Original sentence:</strong> French fries are the third most popular fast food, at 22 per cent.</p>
+  <p>Version 2: <input type="text" class="aline"></p>
+  <p>Version 3: <input type="text" class="aline"></p>
+</div>
+
+<div class="q" style="margin-top:12px;">
+  <p><strong>Original sentence:</strong> Sushi is the least popular fast food in the survey, at only 3 per cent.</p>
+  <p>Version 2: <input type="text" class="aline"></p>
+  <p>Version 3: <input type="text" class="aline"></p>
+</div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 1: Fast Food | Task 1 Focus: Pie Chart Description</div>
+
+<!-- ===== TASK 1 STRUCTURE ===== -->
+<div class="sec-head">Task 1 Structure | উত্তরের সঠিক গঠন দেখো</div>
+<p class="intro">একটি ভালো IELTS Task 1 উত্তরে ৩টি অংশ থাকে। প্রতিটি অংশের কাজ ভিন্ন।</p>
+
+<table class="struct">
+  <thead><tr><th>Part</th><th>What it does</th><th>Example (from Model 1)</th></tr></thead>
+  <tbody>
+    <tr>
+      <th>Part 1:<br>Topic Sentence</th>
+      <td>Names the chart and what it shows. (Chart কী বিষয়ে তা বলো।)</td>
+      <td><em>The pie chart shows the fast foods that teenagers prefer in the USA.</em></td>
+    </tr>
+    <tr>
+      <th>Part 2:<br>Overview Sentence</th>
+      <td>States the most important general trend — no numbers yet. (সবচেয়ে গুরুত্বপূর্ণ তথ্য সংক্ষেপে বলো — শুধু number নয়।)</td>
+      <td><em>In general, hamburgers, pizza, and French fries are the most popular, while sushi is the least popular.</em></td>
+    </tr>
+    <tr>
+      <th>Part 3:<br>Data Description</th>
+      <td>Gives specific numbers and details from the chart. (নির্দিষ্ট সংখ্যা ও তথ্য দাও।)</td>
+      <td><em>Hamburgers account for the largest proportion at 33 per cent. Pizza is the second most popular at 26 per cent…</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- 8A -->
+<div class="sub-head">8A — Identify the Parts | অংশ চিহ্নিত করো</div>
+<p>Read the paragraph below. Label each sentence with: <strong>Topic Sentence / Overview / Data.</strong><br>(নিচের paragraph পড়ো এবং প্রতিটি বাক্যের পাশে লেখো: Topic Sentence / Overview / Data।)</p>
+
+<div class="para-box">
+  <p>[1] The pie chart shows the fast foods that teenagers prefer in the USA.</p>
+  <p>[2] In general, hamburgers, pizza, and French fries are the most popular, while sushi is the least popular.</p>
+  <p>[3] Hamburgers account for the largest proportion of the pie chart, at 33 per cent.</p>
+  <p>[4] Pizza is the second most popular, and this makes up 26 per cent of the total survey.</p>
+  <p>[5] Teenagers also like French fries, which represent 22 per cent.</p>
+  <p>[6] The least popular fast food in this survey is sushi, preferred by only 3 per cent of teenagers.</p>
+</div>
+
+<div style="font-size:13px; margin:8px 0;">
+  <div class="q">[1] <input type="text" class="blank wide"></div>
+  <div class="q">[2] <input type="text" class="blank wide"></div>
+  <div class="q">[3] <input type="text" class="blank wide"></div>
+  <div class="q">[4] <input type="text" class="blank wide"></div>
+  <div class="q">[5] <input type="text" class="blank wide"></div>
+  <div class="q">[6] <input type="text" class="blank wide"></div>
+</div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 1: Fast Food | Task 1 Focus: Pie Chart Description</div>
+
+<!-- ===== GUIDED WRITING ===== -->
+<div class="sec-head">Guided Writing</div>
+<p class="intro">এই section-এ তোমাকে নিচের pie chart দেখে একটি paragraph লিখতে হবে। এটা তোমার আসল IELTS Task 1 অনুশীলন। Sentence starters দেওয়া আছে — নিজের মতো করে লেখো।</p>
+
+<div class="chart-title-box">
+  <strong>Chart: Fruit Preferences of Primary School Children in New Zealand</strong>
+</div>
+
+<div class="chart-wrap">
+  <div class="chart-title-text">Fruit Preferences of Primary School Children in New Zealand</div>
+  <svg id="chart2" width="300" height="265" viewBox="0 0 300 265"></svg>
+  <div class="chart-legend" id="legend2"></div>
+</div>
+
+<div class="starters-box">
+  <div class="st-title">Sentence Starters to Help You &nbsp;(সব ব্যবহার করতে হবে না):</div>
+  <p>The pie chart shows the fruit preferences of ...</p>
+  <p>In general, bananas and strawberries are the most ... , while kiwi fruit is ...</p>
+  <p>Bananas are the most popular fruit, accounting for ...</p>
+  <p>Strawberries represent the second largest proportion at ...</p>
+  <p>Oranges and apples make up ... and ... per cent respectively.</p>
+  <p>The least popular fruit in this survey is ..., preferred by only ...</p>
+</div>
+
+<p style="margin:8px 0; font-size:13px;">Write your paragraph here (aim for 8–10 sentences):<br>(এখানে তোমার paragraph লেখো — ৮-১০টি বাক্য লেখার চেষ্টা করো)</p>
+<textarea class="writing-area" rows="11" placeholder="Write your paragraph here..."></textarea>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 1: Fast Food | Task 1 Focus: Pie Chart Description</div>
+
+<!-- ===== SELF-CHECK ===== -->
+<div class="sec-head">Self-Check | নিজে পরীক্ষা করো &nbsp;[ Yes / No ]</div>
+
+<div class="sc-item">
+  <span class="sc-text">Did I include a topic sentence that names the chart?</span>
+  <div class="sc-yesno">
+    <label><input type="radio" name="sc1" value="yes"> Yes</label>
+    <label><input type="radio" name="sc1" value="no"> No</label>
+  </div>
+</div>
+<div class="sc-item">
+  <span class="sc-text">Did I write an overview of the main trend?</span>
+  <div class="sc-yesno">
+    <label><input type="radio" name="sc2" value="yes"> Yes</label>
+    <label><input type="radio" name="sc2" value="no"> No</label>
+  </div>
+</div>
+<div class="sc-item">
+  <span class="sc-text">Did I include specific percentages from the chart?</span>
+  <div class="sc-yesno">
+    <label><input type="radio" name="sc3" value="yes"> Yes</label>
+    <label><input type="radio" name="sc3" value="no"> No</label>
+  </div>
+</div>
+<div class="sc-item">
+  <span class="sc-text">Did I use <em>make up / represent / account for</em> at least once each?</span>
+  <div class="sc-yesno">
+    <label><input type="radio" name="sc4" value="yes"> Yes</label>
+    <label><input type="radio" name="sc4" value="no"> No</label>
+  </div>
+</div>
+<div class="sc-item">
+  <span class="sc-text">Did I use a comparative or superlative?</span>
+  <div class="sc-yesno">
+    <label><input type="radio" name="sc5" value="yes"> Yes</label>
+    <label><input type="radio" name="sc5" value="no"> No</label>
+  </div>
+</div>
+<div class="sc-item">
+  <span class="sc-text">Did I vary the subject of my sentences?</span>
+  <div class="sc-yesno">
+    <label><input type="radio" name="sc6" value="yes"> Yes</label>
+    <label><input type="radio" name="sc6" value="no"> No</label>
+  </div>
+</div>
+<div class="sc-item">
+  <span class="sc-text">Did I use 'respectively' to group two items together?</span>
+  <div class="sc-yesno">
+    <label><input type="radio" name="sc7" value="yes"> Yes</label>
+    <label><input type="radio" name="sc7" value="no"> No</label>
+  </div>
+</div>
+
+<!-- ===== REVIEW & REFLECTION ===== -->
+<div class="sec-head">Review &amp; Reflection</div>
+<p style="margin-bottom:8px; font-size:13px;">Answer in a few words or one sentence. Be honest!</p>
+
+<div class="q"><span class="qn">1.</span> What are the three parts of a Task 1 answer? (একটি Task 1 উত্তরের তিনটি অংশ কী কী?)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">2.</span> What is the difference between 'make up', 'represent', and 'account for'?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">3.</span> Write one sentence from your paragraph that used a comparative or superlative.<input type="text" class="aline"></div>
+<div class="q"><span class="qn">4.</span> What did you find most difficult in this unit? How will you practise it?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">5.</span> In your opinion, is writing a pie chart description easy or difficult? Why?<input type="text" class="aline"></div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 1: Fast Food | Task 1 Focus: Pie Chart Description</div>
+
+<!-- ===== ANSWER KEY ===== -->
+<div class="sec-head">Answer Key</div>
+<p style="font-size:13px; font-style:italic; margin-bottom:8px;">Students should only check after attempting all sections independently.</p>
+
+<div class="ak-sec">
+  <h3>Section 4A — Chart Comprehension</h3>
+  <ol><li>Hamburgers (33%)</li><li>26 per cent</li><li>2nd: Pizza; 3rd: French fries</li><li>9 and 7 per cent respectively</li><li>Sushi</li><li>3 per cent</li></ol>
+
+  <h3>Section 5B — Popular vs Famous</h3>
+  <ol><li>popular</li><li>famous</li><li>popular</li><li>famous</li><li>popular</li></ol>
+
+  <h3>Section 5C — Vocabulary Fill</h3>
+  <ol><li>represent … proportion</li><li>make up … respectively</li><li>per cent</li><li>account</li><li>prefer</li><li>represents</li></ol>
+
+  <h3>Section 6A — Comparatives &amp; Superlatives Table</h3>
+  <table class="ak-tab">
+    <thead><tr><th>Adjective</th><th>Comparative</th><th>Superlative</th></tr></thead>
+    <tbody>
+      <tr><td>high</td><td>higher than</td><td>the highest</td></tr>
+      <tr><td>low</td><td>lower than</td><td>the lowest</td></tr>
+      <tr><td>large</td><td>larger than</td><td>the largest</td></tr>
+      <tr><td>small</td><td>smaller than</td><td>the smallest</td></tr>
+      <tr><td>expensive</td><td>more expensive than</td><td>the most expensive</td></tr>
+      <tr><td>common</td><td>more common than</td><td>the most common</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Section 6B — Comparative Sentences (Model Answers)</h3>
+  <ol type="a">
+    <li>Pizza is more popular than French fries among teenagers in the USA.</li>
+    <li>French fries have a higher percentage than fried chicken (22% vs 9%).</li>
+    <li>Sushi is less popular than tacos in this survey.</li>
+    <li>Sushi is much less popular than hamburgers (3% vs 33%).</li>
+  </ol>
+
+  <h3>Section 6C — Superlative Fill</h3>
+  <ol><li>the most popular</li><li>the least popular</li><li>the largest</li><li>the smallest</li><li>the biggest</li></ol>
+
+  <h3>Section 8A — Identify the Parts</h3>
+  <div style="padding-left:8px; font-size:13px; line-height:1.9;">
+    <p>[1] Topic Sentence &nbsp;|&nbsp; [2] Overview Sentence &nbsp;|&nbsp; [3] Data Description</p>
+    <p>[4] Data Description &nbsp;|&nbsp; [5] Data Description &nbsp;|&nbsp; [6] Data Description</p>
+  </div>
+
+  <h3>Section 9 — Guided Writing (Model Paragraph)</h3>
+  <div style="background:#f9f9f9; border:1px solid #ccc; padding:10px 14px; font-size:13px; font-style:italic; line-height:1.75;">
+    The pie chart shows the fruit preferences of primary school children in New Zealand. In general, bananas and strawberries are the most popular fruits, while kiwi fruit is the least popular. Bananas are the most popular fruit, accounting for the largest proportion of the chart at 34 per cent. Strawberries represent the second largest proportion at 27 per cent. Oranges and apples make up 15 and 14 per cent respectively. Peaches are less popular, representing 7 per cent of the total. The least popular fruit in this survey is kiwi fruit, preferred by only 3 per cent of children.
+  </div>
+</div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 1: Fast Food | Task 1 Focus: Pie Chart Description</div>
+
+<!-- ===== TEACHER NOTES ===== -->
+<div class="sec-head">Teacher Notes</div>
+<p style="font-size:13px; font-weight:bold; margin:6px 0;">Unit 1 — Fast Food: Teaching Tips &amp; Notes</p>
+<div class="tn">
+  <ul>
+    <li>This worksheet is designed for IELTS Task 1 (pie chart description). Suitable after Unit 0 is completed.</li>
+    <li><strong>Section 3 (Warm-Up):</strong> Do this orally first — ask students to name fast foods they know. This activates schema about food preferences and survey data.</li>
+    <li><strong>Section 4 (Chart Reading):</strong> The pie chart data is presented as a visual. If you have a projector, draw a rough pie chart on the board using the percentages — this visual connection is important.</li>
+    <li><strong>Section 5B (Popular vs Famous):</strong> Common error — Bangladeshi learners often use 'famous' when they mean 'popular'. Emphasise with local examples (e.g. 'Naan bread is popular in Bangladesh' vs 'The Shahid Minar is famous in Bangladesh').</li>
+    <li><strong>Section 5C (Vocabulary Fill):</strong> Note that 'make up', 'represent', and 'account for' are interchangeable in meaning but stylistically distinct. Encourage students to vary their use.</li>
+  </ul>
+</div>
+
+<!-- BOTTOM BUTTONS -->
+<div class="action-bar" style="margin-top:24px;">
+  <button class="btn btn-clear" onclick="clearAll()">Clear my response</button>
+  <button class="btn btn-save"  onclick="window.print()">Save as PDF</button>
+</div>
+
+</div><!-- /page -->
+
+<script>
+/* ===== PIE CHART ENGINE ===== */
+function xy(cx, cy, r, deg) {
+  var rad = (deg - 90) * Math.PI / 180;
+  return [cx + r * Math.cos(rad), cy + r * Math.sin(rad)];
+}
+
+function slice(cx, cy, r, a1, a2, fill) {
+  var s = xy(cx, cy, r, a1);
+  var e = xy(cx, cy, r, a2);
+  var lg = (a2 - a1) > 180 ? 1 : 0;
+  return '<path d="M' + cx + ',' + cy +
+    ' L' + s[0].toFixed(2) + ',' + s[1].toFixed(2) +
+    ' A' + r + ',' + r + ' 0 ' + lg + ',1 ' +
+    e[0].toFixed(2) + ',' + e[1].toFixed(2) + ' Z"' +
+    ' fill="' + fill + '" stroke="white" stroke-width="2.2"/>';
+}
+
+function label(cx, cy, r, midDeg, txt, col) {
+  var p = xy(cx, cy, r * 0.66, midDeg);
+  return '<text x="' + p[0].toFixed(1) + '" y="' + p[1].toFixed(1) + '"' +
+    ' text-anchor="middle" dominant-baseline="middle"' +
+    ' font-size="10.5" font-weight="bold" font-family="Arial,sans-serif"' +
+    ' fill="' + col + '">' + txt + '</text>';
+}
+
+/* Label placed OUTSIDE the pie with a leader line — for thin slices */
+function labelOut(cx, cy, r, midDeg, txt) {
+  var a = xy(cx, cy, r, midDeg);
+  var b = xy(cx, cy, r + 14, midDeg);
+  var anchor = (Math.cos((midDeg - 90) * Math.PI / 180) >= 0) ? 'start' : 'end';
+  var tx = b[0] + (anchor === 'start' ? 2 : -2);
+  return '<line x1="' + a[0].toFixed(1) + '" y1="' + a[1].toFixed(1) +
+    '" x2="' + b[0].toFixed(1) + '" y2="' + b[1].toFixed(1) +
+    '" stroke="#333" stroke-width="0.8"/>' +
+    '<text x="' + tx.toFixed(1) + '" y="' + b[1].toFixed(1) + '"' +
+    ' text-anchor="' + anchor + '" dominant-baseline="middle"' +
+    ' font-size="10.5" font-weight="bold" font-family="Arial,sans-serif"' +
+    ' fill="#111">' + txt + '</text>';
+}
+
+/* ===== CHART 1 — Coloured (Fast Food) ===== */
+function drawChart1() {
+  var data = [
+    { label: 'Hamburgers',   pct: 33, fill: '#3d9e3d', tc: 'white' },
+    { label: 'Pizza',        pct: 26, fill: '#d4521e', tc: 'white' },
+    { label: 'French Fries', pct: 22, fill: '#cad814', tc: '#333'  },
+    { label: 'Fried Chicken',pct:  9, fill: '#2755b0', tc: 'white' },
+    { label: 'Tacos',        pct:  7, fill: '#4a4a4a', tc: 'white' },
+    { label: 'Sushi',        pct:  3, fill: '#22b8cc', tc: '#333'  }
+  ];
+  var svg = document.getElementById('chart1');
+  var leg = document.getElementById('legend1');
+  var cx = 150, cy = 130, r = 112;
+  var html = '', legH = '', a = 0;
+  data.forEach(function(d) {
+    var ea = a + (d.pct / 100) * 360;
+    html += slice(cx, cy, r, a, ea, d.fill);
+    html += label(cx, cy, r, a + (ea - a) / 2, d.pct + '%', d.tc);
+    legH += '<div class="legend-item"><span class="leg-swatch" style="background:' + d.fill + '"></span><span>' + d.label + '</span></div>';
+    a = ea;
+  });
+  svg.innerHTML = html;
+  leg.innerHTML = legH;
+}
+
+/* ===== CHART 2 — B&W Patterns (Fruit) ===== */
+function drawChart2() {
+  var data = [
+    { label: 'Bananas',      pct: 34, fill: 'url(#pb)',  tc: '#111' },
+    { label: 'Strawberries', pct: 27, fill: 'url(#ps)',  tc: '#111' },
+    { label: 'Oranges',      pct: 15, fill: 'url(#po)',  tc: '#111' },
+    { label: 'Apples',       pct: 14, fill: 'url(#pa)',  tc: '#111' },
+    { label: 'Peaches',      pct:  7, fill: 'url(#pp)',  tc: '#444' },
+    { label: 'Kiwi fruit',   pct:  3, fill: 'url(#pk)',  tc: '#111' }
+  ];
+
+  var defs =
+    '<defs>' +
+    /* Banana: cross-hatch */
+    '<pattern id="pb" width="7" height="7" patternUnits="userSpaceOnUse">' +
+    '<rect width="7" height="7" fill="white"/>' +
+    '<line x1="0" y1="0" x2="7" y2="7" stroke="#222" stroke-width="1.2"/>' +
+    '<line x1="7" y1="0" x2="0" y2="7" stroke="#222" stroke-width="1.2"/>' +
+    '</pattern>' +
+    /* Strawberry: forward diagonal / */
+    '<pattern id="ps" width="6" height="6" patternUnits="userSpaceOnUse">' +
+    '<rect width="6" height="6" fill="white"/>' +
+    '<line x1="0" y1="6" x2="6" y2="0" stroke="#222" stroke-width="1.5"/>' +
+    '</pattern>' +
+    /* Orange: dots */
+    '<pattern id="po" width="7" height="7" patternUnits="userSpaceOnUse">' +
+    '<rect width="7" height="7" fill="white"/>' +
+    '<circle cx="3.5" cy="3.5" r="1.7" fill="#222"/>' +
+    '</pattern>' +
+    /* Apple: backward diagonal \ */
+    '<pattern id="pa" width="6" height="6" patternUnits="userSpaceOnUse">' +
+    '<rect width="6" height="6" fill="white"/>' +
+    '<line x1="0" y1="0" x2="6" y2="6" stroke="#222" stroke-width="1.5"/>' +
+    '</pattern>' +
+    /* Peach: horizontal lines */
+    '<pattern id="pp" width="6" height="6" patternUnits="userSpaceOnUse">' +
+    '<rect width="6" height="6" fill="white"/>' +
+    '<line x1="0" y1="3" x2="6" y2="3" stroke="#777" stroke-width="0.9"/>' +
+    '</pattern>' +
+    /* Kiwi: white with border effect */
+    '<pattern id="pk" width="4" height="4" patternUnits="userSpaceOnUse">' +
+    '<rect width="4" height="4" fill="white"/>' +
+    '</pattern>' +
+    '</defs>';
+
+  /* Legend swatches via CSS background-image */
+  var legCSS = {
+    'Bananas':      'background:white; background-image:repeating-linear-gradient(45deg,#222 0,#222 1.2px,white 0,white 50%); background-size:7px 7px;',
+    'Strawberries': 'background:white; background-image:repeating-linear-gradient(-45deg,#222 0,#222 1.5px,white 0,white 50%); background-size:6px 6px;',
+    'Oranges':      'background:radial-gradient(circle,#222 30%,white 30%) 0 0/7px 7px;',
+    'Apples':       'background:white; background-image:repeating-linear-gradient(135deg,#222 0,#222 1.5px,white 0,white 50%); background-size:6px 6px;',
+    'Peaches':      'background:white; background-image:repeating-linear-gradient(0deg,#777 0,#777 0.9px,white 0,white 50%); background-size:6px 6px;',
+    'Kiwi fruit':   'background:white; border:1.5px solid #444;'
+  };
+
+  var svg = document.getElementById('chart2');
+  var leg = document.getElementById('legend2');
+  var cx = 150, cy = 132, r = 112;
+  var html = defs, legH = '', a = 0;
+  data.forEach(function(d) {
+    var ea = a + (d.pct / 100) * 360;
+    html += slice(cx, cy, r, a, ea, d.fill);
+    if (d.pct >= 7) {
+      html += label(cx, cy, r, a + (ea - a) / 2, d.pct + '%', d.tc);
+    } else {
+      html += labelOut(cx, cy, r, a + (ea - a) / 2, d.pct + '%');
+    }
+    legH += '<div class="legend-item"><span class="leg-swatch" style="' + legCSS[d.label] + '"></span><span>' + d.label + '</span></div>';
+    a = ea;
+  });
+  svg.innerHTML = html;
+  leg.innerHTML = legH;
+}
+
+window.onload = function() {
+  drawChart1();
+  drawChart2();
+};
+
+/* ===== CLEAR ALL ===== */
+function clearAll() {
+  if (!confirm('Clear all your answers? This cannot be undone.')) return;
+  document.querySelectorAll('input[type="text"]').forEach(function(el) { el.value = ''; });
+  document.querySelectorAll('textarea').forEach(function(el) { el.value = ''; });
+  document.querySelectorAll('input[type="radio"]').forEach(function(el) { el.checked = false; });
+}
+</script>
+</body>
+</html>

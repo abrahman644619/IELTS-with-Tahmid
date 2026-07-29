@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Writing — Unit 3: Media | Abidur Rahman Tahmid</title>
+<style>
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ===== BASE ===== */
+body {
+  font-family: Arial, 'Noto Sans Bengali', 'Vrinda', sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #111;
+  background: #d0d0d0;
+  padding: 16px 0 30px;
+}
+
+/* ===== PAGE WRAPPER ===== */
+.page {
+  max-width: 790px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 18px 28px 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+}
+
+/* ===== ACTION BUTTONS ===== */
+.action-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 9px 22px;
+  font-size: 13.5px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn-clear { background: #e2e2e2; color: #333; border: 1px solid #aaa; }
+.btn-clear:hover { background: #d0d0d0; }
+.btn-save  { background: #1a7575; color: #fff; }
+.btn-save:hover  { background: #155f5f; }
+
+/* ===== PAGE HEADER BAR ===== */
+.header-bar {
+  background: #e8e8e8;
+  border: 1px solid #bbb;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.brand {
+  font-family: 'Arial Black', 'Arial', sans-serif;
+  font-weight: 900;
+  color: navy;
+  font-size: 13.5px;
+  display: block;
+}
+
+/* ===== TITLE BLOCK ===== */
+.title-block {
+  border: 2px solid #1a7575;
+  margin: 8px 0 10px;
+  padding: 12px;
+  text-align: center;
+}
+.unit-label {
+  background: #1a7575;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 3px 12px;
+  margin-bottom: 6px;
+}
+.unit-main  { font-size: 17px; font-weight: bold; color: #1a7575; margin-bottom: 3px; }
+.unit-sub   { font-size: 13px; color: #333; }
+
+/* ===== NAME / DATE / SCORE ===== */
+.nds-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: flex-end;
+  margin: 10px 0 12px;
+  font-size: 13px;
+}
+.nds-field { display: flex; align-items: flex-end; gap: 5px; flex: 1; min-width: 130px; }
+.nds-field label { font-weight: bold; white-space: nowrap; }
+.nds-field input {
+  border: none;
+  border-bottom: 1.5px solid #333;
+  flex: 1;
+  padding: 2px 3px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  background: transparent;
+  min-width: 60px;
+}
+.nds-score { flex: 0.45; }
+
+/* ===== BENGALI / INTRO TEXT ===== */
+.intro { font-size: 13px; margin: 7px 0; line-height: 1.7; }
+.intro strong { font-size: 14px; }
+
+/* ===== LEARNING OBJECTIVES BOX ===== */
+.obj-box { border: 2px solid #1a7575; margin: 10px 0; }
+.obj-head { background: #1a7575; color: #fff; padding: 5px 10px; font-weight: bold; font-size: 13px; }
+.obj-body { padding: 8px 12px; font-size: 13px; }
+.obj-body ul { list-style: disc; padding-left: 20px; margin-top: 5px; }
+.obj-body li { margin: 3px 0; }
+
+/* ===== SECTION HEADER ===== */
+.sec-head {
+  background: #1a7575;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 16px 0 8px;
+  border-radius: 2px;
+}
+
+/* ===== SUB-SECTION HEADER ===== */
+.sub-head {
+  color: #1a7575;
+  font-size: 13px;
+  font-weight: bold;
+  border-bottom: 2px solid #1a7575;
+  padding-bottom: 3px;
+  margin: 14px 0 8px;
+}
+
+/* ===== CHART TITLE BOX ===== */
+.chart-title-box {
+  background: #e5f5f5;
+  border: 1px solid #1a7575;
+  padding: 6px 10px;
+  font-size: 13px;
+  margin: 8px 0;
+}
+.chart-title-box strong { color: #1a7575; }
+
+/* ===== CHART AREA ===== */
+.chart-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+  overflow-x: auto;
+}
+.chart-title-text {
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  color: #1a7575;
+  margin-bottom: 6px;
+}
+
+/* ===== QUESTIONS ===== */
+.q { margin: 8px 0; font-size: 13px; }
+.qn { font-weight: bold; color: #1a7575; margin-right: 3px; }
+
+/* ===== ANSWER LINE (full-width underline input) ===== */
+input.aline {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #666;
+  margin-top: 5px;
+  padding: 3px 4px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  background: transparent;
+}
+input.aline:focus { border-bottom-color: #1a7575; }
+
+/* ===== INLINE BLANK ===== */
+input.blank {
+  display: inline;
+  border: none;
+  border-bottom: 1px solid #555;
+  width: 130px;
+  padding: 1px 4px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  background: transparent;
+  vertical-align: middle;
+}
+input.blank:focus { border-bottom-color: #1a7575; }
+input.blank.wide  { width: 170px; }
+input.blank.sm    { width: 80px; }
+input.blank.xs    { width: 50px; }
+
+/* ===== VOCABULARY TABLE ===== */
+table.vtab {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 8px 0;
+}
+table.vtab th {
+  background: #1a7575;
+  color: #fff;
+  padding: 6px 8px;
+  text-align: left;
+}
+table.vtab td {
+  border: 1px solid #bbb;
+  padding: 5px 8px;
+  vertical-align: top;
+}
+table.vtab tr:nth-child(even) td { background: #f6f6f6; }
+
+/* ===== EXERCISE TABLES (Similar/Different, Word Functions, Modifiers) ===== */
+table.etab {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 8px 0;
+}
+table.etab th {
+  background: #1a7575;
+  color: #fff;
+  padding: 6px 8px;
+  text-align: center;
+  border: 1px solid #1a7575;
+}
+table.etab th.left { text-align: left; }
+table.etab td {
+  border: 1px solid #bbb;
+  padding: 5px 8px;
+  vertical-align: middle;
+}
+table.etab td.num { text-align: center; width: 32px; font-weight: bold; color: #1a7575; }
+table.etab td.ans { text-align: center; width: 100px; }
+table.etab td input.blank { width: 70px; }
+
+/* ===== WORD FORMS TABLE ===== */
+table.wftab {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 8px 0;
+}
+table.wftab th {
+  background: #1a7575;
+  color: #fff;
+  padding: 6px 8px;
+  text-align: center;
+  border: 1px solid #1a7575;
+}
+table.wftab td {
+  border: 1px solid #bbb;
+  padding: 5px 8px;
+  vertical-align: middle;
+  text-align: center;
+}
+table.wftab td.verb-base { font-weight: bold; text-align: left; }
+table.wftab td input.blank { width: 90%; }
+
+/* ===== GRAMMAR NOTE ===== */
+.gram-box {
+  background: #e5f4f4;
+  border: 1px solid #1a7575;
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 13px;
+}
+.gram-box .gtitle { font-weight: bold; color: #1a7575; margin-bottom: 6px; }
+.gram-box p { margin: 3px 0; }
+.gram-box ul { padding-left: 22px; margin: 4px 0; }
+.gram-box li { margin: 2px 0; }
+
+/* ===== PARA BOX (model text) ===== */
+.para-box {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin: 8px 0;
+  line-height: 1.8;
+}
+.para-box p { margin: 3px 0; }
+
+/* ===== SENTENCE STARTERS BOX ===== */
+.starters-box {
+  background: #fffae4;
+  border: 1.5px solid #c8a200;
+  padding: 9px 13px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+.starters-box .st-title { font-weight: bold; color: #1a7575; margin-bottom: 6px; }
+.starters-box p { font-style: italic; color: #1a7575; margin: 3px 0; }
+
+/* ===== GUIDED WRITING TEXTAREA ===== */
+textarea.writing-area {
+  width: 100%;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  padding: 8px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  resize: vertical;
+  min-height: 180px;
+  margin-top: 6px;
+  outline: none;
+  line-height: 1.8;
+}
+textarea.writing-area:focus { border-color: #1a7575; }
+
+/* ===== SELF-CHECK ===== */
+.sc-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 7px 0;
+  font-size: 13px;
+}
+.sc-text { flex: 1; min-width: 200px; }
+.sc-yesno { display: flex; gap: 10px; white-space: nowrap; }
+.sc-yesno label { display: flex; align-items: center; gap: 4px; cursor: pointer; }
+
+/* ===== ANSWER KEY ===== */
+.ak-sec h3 {
+  color: #1a7575;
+  font-size: 13px;
+  border-bottom: 1px solid #1a7575;
+  padding-bottom: 2px;
+  margin: 10px 0 5px;
+}
+.ak-sec ol, .ak-sec ul { padding-left: 22px; font-size: 13px; }
+.ak-sec li { margin: 3px 0; }
+table.ak-tab {
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 4px 0;
+}
+table.ak-tab td, table.ak-tab th {
+  border: 1px solid #ccc;
+  padding: 4px 10px;
+}
+table.ak-tab th { background: #e0e0e0; }
+
+/* ===== TEACHER NOTES ===== */
+.tn ul { list-style: disc; padding-left: 22px; font-size: 13px; }
+.tn li { margin: 5px 0; }
+
+/* ===== FOOTER DIVIDER ===== */
+.pg-footer {
+  border-top: 1px solid #bbb;
+  padding-top: 4px;
+  margin: 18px 0 12px;
+  font-size: 10.5px;
+  font-style: italic;
+  color: #666;
+  text-align: center;
+}
+
+/* ===== WHO EXERCISE ===== */
+.who-q { margin: 10px 0; font-size: 13px; }
+.who-q .who-prompt { font-style: italic; color: #555; margin-bottom: 3px; }
+
+/* ===== PRINT ===== */
+@media print {
+  body { background: white; padding: 0; }
+  .page { box-shadow: none; padding: 10px 18px 18px; max-width: 100%; }
+  .action-bar { display: none; }
+  input.aline  { border-bottom: 1px solid #000 !important; }
+  input.blank  { border-bottom: 1px solid #000 !important; }
+  textarea.writing-area { border: 1px solid #000 !important; }
+  @page { margin: 12mm 15mm; size: A4; }
+  table { page-break-inside: avoid; }
+  .sec-head { page-break-after: avoid; }
+  .chart-wrap svg { max-width: 100%; }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 580px) {
+  .page { padding: 12px 14px 18px; }
+  input.blank.wide { width: 120px; }
+  table.etab td.ans { width: 80px; }
+  .chart-wrap svg { width: 100%; height: auto; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ===== ACTION BUTTONS (TOP) ===== -->
+<div class="action-bar">
+  <button class="btn btn-clear" onclick="clearAll()">Clear my response</button>
+  <button class="btn btn-save"  onclick="window.print()">Save as PDF</button>
+</div>
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="header-bar">
+  <span class="brand">A Gift from Abidur Rahman Tahmid</span>
+  <span>🎓 BA H, University of Greenwich (UK) &nbsp;|&nbsp; 🎓 EMBA, Dhaka University</span>
+</div>
+
+<!-- ===== TITLE BLOCK ===== -->
+<div class="title-block">
+  <div><span class="unit-label">IELTS Writing — Unit 3</span></div>
+  <div class="unit-main">Media: Describing Bar Charts</div>
+  <div class="unit-sub">Task 1 Focus | Worksheet for Bangladeshi IELTS Learners</div>
+</div>
+
+<!-- NAME / DATE / SCORE -->
+<div class="nds-row">
+  <div class="nds-field"><label>Name:</label><input type="text" class="aline" style="display:inline;margin:0;"></div>
+  <div class="nds-field" style="max-width:180px;"><label>Date:</label><input type="text" class="aline" style="display:inline;margin:0;"></div>
+  <div class="nds-field nds-score" style="flex:0 0 auto;gap:4px;"><label>Score:</label><input type="text" class="aline" style="display:inline;margin:0;width:38px;"> <span>/ 60</span></div>
+</div>
+
+<!-- ===== INTRO ===== -->
+<div class="intro">
+  <strong>ভূমিকা</strong><br>
+  এই worksheet-টি IELTS Writing বইয়ের Unit 3 (Media) অনুযায়ী তৈরি। এটি IELTS Task 1-এর উপর — যেখানে তোমাকে একটি bar chart দেখে একটি paragraph লিখতে হবে।<br>
+  এই unit-এ তুমি লিখবে কীভাবে bar chart-এর overall trend বর্ণনা করতে হয়, approximate figures বলতে হয়, এবং 'who' ব্যবহার করে specific group of people describe করতে হয়।<br>
+  এই unit-এর জন্য তিনটি bar chart নিয়ে দেওয়া আছে — মনোযোগ দিয়ে দেখো এবং প্রতিটি তথ্য বোঝার চেষ্টা করো।
+</div>
+
+<!-- ===== LEARNING OBJECTIVES ===== -->
+<div class="obj-box">
+  <div class="obj-head">শেখার লক্ষ্য | Learning Objectives</div>
+  <div class="obj-body">
+    <p>এই worksheet শেষ করলে তুমি পারবে —</p>
+    <ul>
+      <li>Read and interpret data from a bar chart.</li>
+      <li>Use <em>'in relation to'</em> to explain what a graph compares.</li>
+      <li>Use approximate language: <em>approximately, about, around.</em></li>
+      <li>Identify words functioning as verb, noun, or adjective (<em>average, decrease, score, view, show</em>).</li>
+      <li>Use correct modifiers: <em>many / fewer</em> (countable) vs <em>much / less</em> (uncountable) vs <em>a lot of</em> (both).</li>
+      <li>Use the relative pronoun <em>'who'</em> to describe groups of people.</li>
+      <li>Write a structured bar chart paragraph: topic sentence + overall trend + data details.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== WARM-UP ===== -->
+<div class="sec-head">Warm-Up | শুরু করার আগে ভাবো</div>
+<p style="font-size:13px; margin-bottom:8px;">নিচের প্রশ্নগুলোর উত্তর দাও। নিজে চেষ্টা করো।</p>
+
+<div class="q">
+  <span class="qn">1.</span> How many hours of television (or online video) do you watch every day? Does it affect your studies?
+  <input type="text" class="aline">
+</div>
+<div class="q">
+  <span class="qn">2.</span> What is a 'bar chart'? How is it different from a pie chart?
+  <input type="text" class="aline">
+</div>
+<div class="q">
+  <span class="qn">3.</span> In IELTS Task 1, what is the 'overall trend'? Why is it important?
+  <input type="text" class="aline">
+</div>
+
+<!-- ===== CHART 1 ===== -->
+<div class="sec-head">Chart 1 — Model 1 | Bar Chart দেখো ও বোঝো</div>
+
+<p class="intro">নিচের bar chart-টি মনোযোগ দিয়ে দেখো। এটি দেখাচ্ছে Grade 8-এর ছাত্রছাত্রীদের দৈনিক TV দেখার সময় এবং তাদের গড় বিজ্ঞান পরীক্ষার নম্বরের মধ্যে সম্পর্ক।</p>
+
+<div class="chart-title-box">
+  <strong>Chart Title: Average Science Test Scores of Grade 8 Students in Relation to Daily Television Viewing</strong><br>
+  X-axis: Daily TV Viewing (None / 1 hr or less / 2 hrs / 3 hrs / 4 hrs / 5 hrs / 6 hrs or more) &nbsp;|&nbsp; Y-axis: Average Test Scores (50–100)
+</div>
+
+<!-- BAR CHART 1 — SVG -->
+<div class="chart-wrap">
+  <div class="chart-title-text">Average Science Test Scores of Grade 8 Students<br>in Relation to Daily Television Viewing</div>
+  <svg id="chart1svg" width="560" height="310" viewBox="0 0 560 310" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif" font-size="11">
+    <!-- grid lines and y-axis -->
+    <!-- Y axis line -->
+    <line x1="70" y1="15" x2="70" y2="245" stroke="#999" stroke-width="1"/>
+    <!-- X axis line -->
+    <line x1="70" y1="245" x2="545" y2="245" stroke="#999" stroke-width="1"/>
+
+    <!-- Y-axis gridlines and labels: 50,55,60,65,70,75,80,85,90,95,100 -->
+    <!-- scale: y=245 -> score=50, y=15 -> score=100, so 230px for 50 units = 4.6px per unit -->
+    <!-- y = 245 - (score-50)*4.6 -->
+    <line x1="70" y1="245" x2="545" y2="245" stroke="#ddd" stroke-width="0.8"/>
+    <text x="62" y="248" text-anchor="end" fill="#555" font-size="10">50</text>
+
+    <line x1="70" y1="222" x2="545" y2="222" stroke="#ddd" stroke-width="0.8"/>
+    <text x="62" y="225" text-anchor="end" fill="#555" font-size="10">55</text>
+
+    <line x1="70" y1="199" x2="545" y2="199" stroke="#ddd" stroke-width="0.8"/>
+    <text x="62" y="202" text-anchor="end" fill="#555" font-size="10">60</text>
+
+    <line x1="70" y1="176" x2="545" y2="176" stroke="#ddd" stroke-width="0.8"/>
+    <text x="62" y="179" text-anchor="end" fill="#555" font-size="10">65</text>
+
+    <line x1="70" y1="153" x2="545" y2="153" stroke="#ddd" stroke-width="0.8"/>
+    <text x="62" y="156" text-anchor="end" fill="#555" font-size="10">70</text>
+
+    <line x1="70" y1="130" x2="545" y2="130" stroke="#ddd" stroke-width="0.8"/>
+    <text x="62" y="133" text-anchor="end" fill="#555" font-size="10">75</text>
+
+    <line x1="70" y1="107" x2="545" y2="107" stroke="#ddd" stroke-width="0.8"/>
+    <text x="62" y="110" text-anchor="end" fill="#555" font-size="10">80</text>
+
+    <line x1="70" y1="84" x2="545" y2="84" stroke="#ddd" stroke-width="0.8"/>
+    <text x="62" y="87" text-anchor="end" fill="#555" font-size="10">85</text>
+
+    <line x1="70" y1="61" x2="545" y2="61" stroke="#ddd" stroke-width="0.8"/>
+    <text x="62" y="64" text-anchor="end" fill="#555" font-size="10">90</text>
+
+    <line x1="70" y1="38" x2="545" y2="38" stroke="#ddd" stroke-width="0.8"/>
+    <text x="62" y="41" text-anchor="end" fill="#555" font-size="10">95</text>
+
+    <line x1="70" y1="15" x2="545" y2="15" stroke="#ddd" stroke-width="0.8"/>
+    <text x="62" y="18" text-anchor="end" fill="#555" font-size="10">100</text>
+
+    <!-- Y-axis label (rotated) -->
+    <text transform="rotate(-90,14,130)" x="14" y="130" text-anchor="middle" font-size="11" fill="#333">Average Test Scores</text>
+
+    <!-- 7 bars: None=76, 1hr or less=80 (dark teal), 2hrs=79, 3hrs=76, 4hrs=74, 5hrs=71, 6hrs+=65 -->
+    <!-- bar width=48, gap=18, start x=85 -->
+    <!-- y = 245 - (score-50)*4.6 -->
+
+    <!-- None: score 76, y=245-(26*4.6)=245-119.6=125.4, h=119.6 -->
+    <rect x="85" y="125" width="48" height="120" fill="#a8d5d5"/>
+    <text x="109" y="120" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">76</text>
+
+    <!-- 1 hr or less: score 80 (dark teal), y=245-(30*4.6)=245-138=107, h=138 -->
+    <rect x="151" y="107" width="48" height="138" fill="#1a7575"/>
+    <text x="175" y="102" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">80</text>
+
+    <!-- 2 hrs: score 79, y=245-(29*4.6)=245-133.4=111.6, h=133.4 -->
+    <rect x="217" y="112" width="48" height="133" fill="#a8d5d5"/>
+    <text x="241" y="107" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">79</text>
+
+    <!-- 3 hrs: score 76, y=125, h=120 -->
+    <rect x="283" y="125" width="48" height="120" fill="#a8d5d5"/>
+    <text x="307" y="120" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">76</text>
+
+    <!-- 4 hrs: score 74, y=245-(24*4.6)=245-110.4=134.6, h=110.4 -->
+    <rect x="349" y="135" width="48" height="110" fill="#a8d5d5"/>
+    <text x="373" y="130" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">74</text>
+
+    <!-- 5 hrs: score 71, y=245-(21*4.6)=245-96.6=148.4, h=96.6 -->
+    <rect x="415" y="148" width="48" height="97" fill="#a8d5d5"/>
+    <text x="439" y="143" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">71</text>
+
+    <!-- 6 hrs or more: score 65, y=245-(15*4.6)=245-69=176, h=69 -->
+    <rect x="481" y="176" width="48" height="69" fill="#a8d5d5"/>
+    <text x="505" y="171" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">65</text>
+
+    <!-- X-axis labels -->
+    <text x="109" y="260" text-anchor="middle" font-size="10" fill="#333">None</text>
+    <text x="175" y="258" text-anchor="middle" font-size="10" fill="#333">1 hour</text>
+    <text x="175" y="270" text-anchor="middle" font-size="10" fill="#333">or less</text>
+    <text x="241" y="260" text-anchor="middle" font-size="10" fill="#333">2 hours</text>
+    <text x="307" y="260" text-anchor="middle" font-size="10" fill="#333">3 hours</text>
+    <text x="373" y="260" text-anchor="middle" font-size="10" fill="#333">4 hours</text>
+    <text x="439" y="260" text-anchor="middle" font-size="10" fill="#333">5 hours</text>
+    <text x="505" y="258" text-anchor="middle" font-size="10" fill="#333">6 hours</text>
+    <text x="505" y="270" text-anchor="middle" font-size="10" fill="#333">or more</text>
+
+    <!-- X-axis title -->
+    <text x="307" y="292" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">Daily Television Viewing</text>
+
+    <!-- Trend annotation box -->
+    <rect x="390" y="70" width="148" height="34" fill="#fffbcc" stroke="#c8a200" stroke-width="0.8" rx="2"/>
+    <text x="464" y="83" text-anchor="middle" font-size="9.5" font-style="italic" fill="#555">Overall trend: scores decrease</text>
+    <text x="464" y="95" text-anchor="middle" font-size="9.5" font-style="italic" fill="#555">as TV viewing increases</text>
+    <!-- arrow line from annotation to bar area -->
+    <line x1="390" y1="87" x2="375" y2="140" stroke="#c8a200" stroke-width="1" marker-end="url(#arrowhead)"/>
+    <defs>
+      <marker id="arrowhead" markerWidth="7" markerHeight="7" refX="4" refY="3.5" orient="auto">
+        <polygon points="0 0, 7 3.5, 0 7" fill="#c8a200"/>
+      </marker>
+    </defs>
+  </svg>
+</div>
+
+<!-- ===== 4A COMPREHENSION ===== -->
+<div class="sub-head">4A — Chart 1 Comprehension Questions | Chart বোঝার প্রশ্ন</div>
+<p style="font-size:13px; margin-bottom:8px;">Answer using the bar chart above. Write full sentences where possible.</p>
+
+<div class="q"><span class="qn">1.</span> What type of graph is this?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">2.</span> What does this graph show? (Write one sentence.)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">3.</span> How is the television viewing measured?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">4.</span> Which group has the highest average test score? What is that score?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">5.</span> Which group has the lowest average test score? What is that score?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">6.</span> What happens to test scores as TV viewing hours increase? (Describe the overall trend.)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">7.</span> Do students who watch no TV and students who watch 3 hours have similar scores?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">8.</span> Write one sentence describing the overall trend of this graph in your own words.<input type="text" class="aline"></div>
+
+<!-- ===== MODEL TEXT ===== -->
+<div class="sec-head">Model Text — পড়ো ও মনে রাখো</div>
+<p class="intro">নিচের Model paragraph-টি Chart 1 সম্পর্কে লেখা হয়েছে। মনোযোগ দিয়ে পড়ো।</p>
+
+<div class="para-box">
+  <p><strong>Model 1</strong></p>
+  <p style="margin-top:6px;">The bar graph shows the average science test scores of students in Grade 8 in relation to the hours they spend watching television. Overall, the students who watch less television have higher scores, and the average test score decreases as the number of viewing hours increases. The highest score of 80 is for students who usually watch one hour or less of television a day. The next highest score is approximately 79. This is for students who average two hours of television viewing. Students who watch no television and students who watch about 3 hours of television per day have a score of around 76. The lowest score of approximately 65 is for students who view six or more hours of television daily.</p>
+</div>
+
+<!-- ===== 5A ANALYSE THE MODEL ===== -->
+<div class="sub-head">5A — Analyse the Model | Model text মনে রাখো</div>
+<p style="font-size:13px; margin-bottom:8px;">Answer these questions about Model 1.</p>
+
+<div class="q"><span class="qn">1.</span> Find and write the phrase <em>'in relation to'</em>. What does it mean?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">2.</span> Find all words like <em>'approximately'</em>, <em>'about'</em>, and <em>'around'</em> in the model. Why are they used?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">3.</span> Find the relative pronoun <em>'who'</em>. Write TWO examples from the text.<input type="text" class="aline"></div>
+<div class="q"><span class="qn">4.</span> What is the topic sentence of this paragraph? Write it here.<input type="text" class="aline"></div>
+<div class="q"><span class="qn">5.</span> What is the overall trend sentence? Write it here.<input type="text" class="aline"></div>
+<div class="q"><span class="qn">6.</span> Why does the model use approximate figures like <em>'approximately 79'</em> instead of exactly 79?<input type="text" class="aline"></div>
+
+<!-- ===== VOCABULARY ===== -->
+<div class="sec-head">Vocabulary | গুরুত্বপূর্ণ শব্দভাণ্ডার</div>
+
+<div class="sub-head">6A — Key Words with Bengali Meanings</div>
+<table class="vtab">
+  <thead><tr><th>Word</th><th>Meaning + Example</th></tr></thead>
+  <tbody>
+    <tr><td><strong>average</strong> (adj./n./v.)</td><td>গড়। Ex: The average test score is 76.</td></tr>
+    <tr><td><strong>decrease</strong> (v./n.)</td><td>হ্রাস পাওয়া। Ex: Scores decrease as TV hours increase.</td></tr>
+    <tr><td><strong>increase</strong> (v./n.)</td><td>বৃদ্ধি পাওয়া। Ex: Viewing time increases with age.</td></tr>
+    <tr><td><strong>overall</strong> (adv./adj.)</td><td>সামগ্রিকভাবে। Ex: Overall, older people watch more TV.</td></tr>
+    <tr><td><strong>trend</strong> (n.)</td><td>ধারা / প্রবণতা। Ex: The overall trend shows a decrease in scores.</td></tr>
+    <tr><td><strong>approximately</strong> (adv.)</td><td>প্রায়। Ex: approximately 79</td></tr>
+    <tr><td><strong>about</strong> (adv.)</td><td>প্রায়। Ex: about 76</td></tr>
+    <tr><td><strong>around</strong> (adv.)</td><td>প্রায়। Ex: around 3.7 hours</td></tr>
+    <tr><td><strong>in relation to</strong></td><td>…-এর সম্পর্কে। Ex: scores in relation to TV hours</td></tr>
+    <tr><td><strong>slightly</strong> (adv.)</td><td>সামান্য। Ex: scores decrease slightly.</td></tr>
+    <tr><td><strong>figure</strong> (n.)</td><td>সংখ্যা। Ex: The figure for 2-hour viewers is 79.</td></tr>
+    <tr><td><strong>habit</strong> (n.)</td><td>অভ্যাস। Ex: television viewing habits</td></tr>
+    <tr><td><strong>score</strong> (n./v.)</td><td>নম্বর। Ex: Students who watch less TV score higher.</td></tr>
+    <tr><td><strong>view / viewing</strong> (v./n.)</td><td>দেখা। Ex: viewing time increases with age.</td></tr>
+    <tr><td><strong>spend</strong> (v.)</td><td>সময় ব্যয় করা। Ex: Students who spend more time watching TV score lower.</td></tr>
+    <tr><td><strong>weekday</strong> (n.)</td><td>সপ্তাহের দিন (শনি-রবি ছাড়া)। Ex: weekday television viewing</td></tr>
+  </tbody>
+</table>
+
+<!-- 6B SIMILAR OR DIFFERENT -->
+<div class="sub-head">6B — Similar or Different? | একই অর্থ না ভিন্ন?</div>
+<p style="font-size:13px; margin-bottom:6px;">Are these pairs of words similar (S) or different (D) in meaning? Write S or D.<br>
+(শব্দজোড়ার অর্থ একই না ভিন্ন? S (similar) অথবা D (different) লেখো।)</p>
+
+<table class="etab">
+  <thead>
+    <tr>
+      <th style="width:32px; text-align:center;">#</th>
+      <th class="left">Sentence</th>
+      <th style="width:100px; text-align:center;">Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="num">1</td>
+      <td>watch , view → S / D</td>
+      <td class="ans"><input type="text" class="blank xs"></td>
+    </tr>
+    <tr>
+      <td class="num">2</td>
+      <td>increase , decrease → S / D</td>
+      <td class="ans"><input type="text" class="blank xs"></td>
+    </tr>
+    <tr>
+      <td class="num">3</td>
+      <td>less , more → S / D</td>
+      <td class="ans"><input type="text" class="blank xs"></td>
+    </tr>
+    <tr>
+      <td class="num">4</td>
+      <td>about , approximately → S / D</td>
+      <td class="ans"><input type="text" class="blank xs"></td>
+    </tr>
+    <tr>
+      <td class="num">5</td>
+      <td>each day , per day → S / D</td>
+      <td class="ans"><input type="text" class="blank xs"></td>
+    </tr>
+    <tr>
+      <td class="num">6</td>
+      <td>fewer , greater → S / D</td>
+      <td class="ans"><input type="text" class="blank xs"></td>
+    </tr>
+    <tr>
+      <td class="num">7</td>
+      <td>number , figure → S / D</td>
+      <td class="ans"><input type="text" class="blank xs"></td>
+    </tr>
+    <tr>
+      <td class="num">8</td>
+      <td>highest , lowest → S / D</td>
+      <td class="ans"><input type="text" class="blank xs"></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- 6C WORD FORMS TABLE -->
+<div class="sub-head">6C — Word Forms Table | শব্দর রূপভেদ</div>
+<p style="font-size:13px; margin-bottom:6px;">Complete the table. Write 'X' if a form does not exist.</p>
+
+<table class="wftab">
+  <thead>
+    <tr>
+      <th style="text-align:left; width:16%;">Base Verb</th>
+      <th style="width:28%;">Other Verb Forms</th>
+      <th style="width:28%;">Noun</th>
+      <th style="width:28%;">Adjective</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="verb-base">average</td>
+      <td>averages / averaged</td>
+      <td>average</td>
+      <td>average</td>
+    </tr>
+    <tr>
+      <td class="verb-base">decrease</td>
+      <td>decreases / decreased → <input type="text" class="blank" style="width:80px;"></td>
+      <td>decrease → <input type="text" class="blank" style="width:60px;"></td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td class="verb-base">increase</td>
+      <td>increases / increased → <input type="text" class="blank" style="width:80px;"></td>
+      <td>increase → <input type="text" class="blank" style="width:60px;"></td>
+      <td>increasing</td>
+    </tr>
+    <tr>
+      <td class="verb-base">score</td>
+      <td>scores / scored → <input type="text" class="blank" style="width:80px;"></td>
+      <td>score → <input type="text" class="blank" style="width:60px;"></td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td class="verb-base">inform</td>
+      <td>informs / informed → <input type="text" class="blank" style="width:80px;"></td>
+      <td>information → <input type="text" class="blank" style="width:60px;"></td>
+      <td>informative</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== GRAMMAR FOCUS ===== -->
+<div class="sec-head">Grammar Focus | ব্যাকরণ</div>
+
+<!-- 7A WORD FUNCTIONS -->
+<div class="sub-head">7A — Words as Verbs, Nouns, or Adjectives</div>
+
+<div class="gram-box">
+  <div class="gtitle">Grammar Note | ব্যাকরণ নোট</div>
+  <p>ইংরেজিতে অনেক শব্দ একই রূপে verb, noun বা adjective হিসেবে ব্যবহার হতে পারে।</p>
+  <p style="margin-top:6px;"><strong>decrease</strong> as VERB: The score <em>decreases</em> each year. (action — verb)</p>
+  <p><strong>decrease</strong> as NOUN: There is a <em>decrease</em> in scores. (subject/object — noun)</p>
+  <p><strong>average</strong> as VERB: Students <em>average</em> 4 hours per day. (what they do)</p>
+  <p><strong>average</strong> as ADJ: The <em>average</em> score is 76. (describes 'score')</p>
+</div>
+
+<p style="font-size:13px; margin-bottom:6px;">Decide if the bracketed word is a Verb (V), Noun (N), or Adjective (Adj).<br>
+(ব্র্যাকেটের শব্দটি Verb, Noun বা Adjective — লেখো।)</p>
+
+<table class="etab">
+  <thead>
+    <tr>
+      <th style="width:32px; text-align:center;">#</th>
+      <th class="left">Sentence</th>
+      <th style="width:100px; text-align:center;">Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="num">1</td><td>The students [<strong>average</strong>] four hours of television per day. → V / N / Adj</td><td class="ans"><input type="text" class="blank xs"></td></tr>
+    <tr><td class="num">2</td><td>The magic [<strong>show</strong>] lasted two hours. → V / N / Adj</td><td class="ans"><input type="text" class="blank xs"></td></tr>
+    <tr><td class="num">3</td><td>There was a [<strong>decrease</strong>] in test scores over the period. → V / N / Adj</td><td class="ans"><input type="text" class="blank xs"></td></tr>
+    <tr><td class="num">4</td><td>The students [<strong>view</strong>] six hours of television each day. → V / N / Adj</td><td class="ans"><input type="text" class="blank xs"></td></tr>
+    <tr><td class="num">5</td><td>The bar graphs [<strong>show</strong>] the average score of students. → V / N / Adj</td><td class="ans"><input type="text" class="blank xs"></td></tr>
+    <tr><td class="num">6</td><td>The [<strong>average</strong>] test scores in the class decrease each year. → V / N / Adj</td><td class="ans"><input type="text" class="blank xs"></td></tr>
+    <tr><td class="num">7</td><td>My friend always [<strong>scores</strong>] highly in this test. → V / N / Adj</td><td class="ans"><input type="text" class="blank xs"></td></tr>
+    <tr><td class="num">8</td><td>The [<strong>view</strong>] from my window is very beautiful. → V / N / Adj</td><td class="ans"><input type="text" class="blank xs"></td></tr>
+    <tr><td class="num">9</td><td>Scores [<strong>decrease</strong>] as television viewing rises. → V / N / Adj</td><td class="ans"><input type="text" class="blank xs"></td></tr>
+    <tr><td class="num">10</td><td>Researchers [<strong>test</strong>] students to find out if TV viewing affects performance. → V / N / Adj</td><td class="ans"><input type="text" class="blank xs"></td></tr>
+  </tbody>
+</table>
+
+<!-- 7B MODIFIERS -->
+<div class="sub-head">7B — Modifiers: many/fewer vs much/less vs a lot of</div>
+
+<div class="gram-box">
+  <div class="gtitle">Grammar Note | ব্যাকরণ নোট</div>
+  <p><strong>many / fewer</strong> → Countable noun-এর সাথে। Ex: many hours / fewer students</p>
+  <p><strong>much / less</strong> → Uncountable noun-এর সাথে। Ex: much time / less television</p>
+  <p><strong>a lot of</strong> → Countable ও uncountable উভয়ের সাথে। Ex: a lot of hours / a lot of time</p>
+</div>
+
+<p style="font-size:13px; margin-bottom:6px;">Choose the correct modifier. Write it in the answer column.</p>
+
+<table class="etab">
+  <thead>
+    <tr>
+      <th style="width:32px; text-align:center;">#</th>
+      <th class="left">Sentence</th>
+      <th style="width:120px; text-align:center;">Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="num">1</td><td>Students who watch (less / fewer) television have higher test scores.</td><td class="ans"><input type="text" class="blank" style="width:90px;"></td></tr>
+    <tr><td class="num">2</td><td>The graph shows how (many / much) time people spend watching television.</td><td class="ans"><input type="text" class="blank" style="width:90px;"></td></tr>
+    <tr><td class="num">3</td><td>(Fewer / Less) students watch television on weekdays than on weekends.</td><td class="ans"><input type="text" class="blank" style="width:90px;"></td></tr>
+    <tr><td class="num">4</td><td>(Many / Much) students have low test scores because they watch too much TV.</td><td class="ans"><input type="text" class="blank" style="width:90px;"></td></tr>
+    <tr><td class="num">5</td><td>Students spend (many / a lot of) time on studying for their exams.</td><td class="ans"><input type="text" class="blank" style="width:90px;"></td></tr>
+    <tr><td class="num">6</td><td>People in the 65+ age group watch (much / many) more TV than younger people.</td><td class="ans"><input type="text" class="blank" style="width:90px;"></td></tr>
+    <tr><td class="num">7</td><td>There are (fewer / less) hours of study time when students watch more TV.</td><td class="ans"><input type="text" class="blank" style="width:90px;"></td></tr>
+  </tbody>
+</table>
+
+<!-- 7C WHO -->
+<div class="sub-head">7C — Relative Pronoun 'who' | 'who' দিয়ে বাক্য যুক্ত করো</div>
+
+<div class="gram-box">
+  <div class="gtitle">Grammar Note | ব্যাকরণ নোট</div>
+  <p>People বা groups of people describe করার সময় <strong>'who'</strong> (বা 'that') ব্যবহার করো।</p>
+  <p style="margin-top:5px;">Two sentences: These students watch no TV. They have a score of 76.</p>
+  <p>With <strong>'who'</strong>: The students <em>who watch no television</em> have a score of 76.</p>
+</div>
+
+<p style="font-size:13px; margin-bottom:8px;">Join each pair of sentences using <em>'who'</em>. Write your answer on the line.</p>
+
+<div class="who-q">
+  <p><strong>a.)</strong> These students watch no television. They have an average score of 76.</p>
+  <p class="who-prompt">Your answer:</p>
+  <input type="text" class="aline">
+</div>
+<div class="who-q">
+  <p><strong>b.)</strong> The people are in the 65 to 74 age group. They watch more television.</p>
+  <p class="who-prompt">Your answer:</p>
+  <input type="text" class="aline">
+</div>
+<div class="who-q">
+  <p><strong>c.)</strong> People do a lot of sport. They generally watch less television.</p>
+  <p class="who-prompt">Your answer:</p>
+  <input type="text" class="aline">
+</div>
+<div class="who-q">
+  <p><strong>d.)</strong> Those people watch a lot of English TV. They often have good spoken English skills.</p>
+  <p class="who-prompt">Your answer:</p>
+  <input type="text" class="aline">
+</div>
+<div class="who-q">
+  <p><strong>e.)</strong> Students try to speak English all the time. They improve their speaking skill quickly.</p>
+  <p class="who-prompt">Your answer:</p>
+  <input type="text" class="aline">
+</div>
+
+<!-- ===== LANGUAGE FOCUS ===== -->
+<div class="sec-head">Language Focus | 'in relation to' ও Approximate Language</div>
+
+<!-- 8A -->
+<div class="sub-head">8A — Write Sentences with 'in relation to'</div>
+<div class="gram-box">
+  <div class="gtitle">Pattern:</div>
+  <p>The graph shows [Y-axis topic] <strong>in relation to</strong> [X-axis topic].</p>
+  <p style="margin-top:4px;"><em>Example: The bar graph shows average science test scores in relation to daily television viewing.</em></p>
+</div>
+<p style="font-size:13px; margin-bottom:8px;">Use the prompts to write a topic sentence using <em>'in relation to'</em>.</p>
+
+<div class="who-q">
+  <p><strong>a.)</strong> Test scores of primary school children — hours spent doing homework</p>
+  <p class="who-prompt">Your sentence:</p>
+  <input type="text" class="aline">
+</div>
+<div class="who-q">
+  <p><strong>b.)</strong> IELTS scores of students — amount of English TV they watch</p>
+  <p class="who-prompt">Your sentence:</p>
+  <input type="text" class="aline">
+</div>
+<div class="who-q">
+  <p><strong>c.)</strong> Fitness test scores of high school students — time spent doing sport</p>
+  <p class="who-prompt">Your sentence:</p>
+  <input type="text" class="aline">
+</div>
+
+<!-- 8B APPROXIMATE LANGUAGE -->
+<div class="sub-head">8B — Approximate Language Practice | Approximate শব্দ ব্যবহার করো</div>
+<div class="starters-box">
+  <div class="st-title">Use these when you cannot read the exact number from a graph:</div>
+  <p>approximately 79 &nbsp;/&nbsp; about 76 &nbsp;/&nbsp; around 3.7 hours</p>
+</div>
+<p style="font-size:13px; margin-bottom:8px;">Rewrite each sentence using the correct approximate word in brackets.</p>
+
+<div class="q">
+  <span class="qn">1.</span> The score for students who watch 2 hours of TV is 79. <em>(approximately)</em>
+  <input type="text" class="aline">
+</div>
+<div class="q">
+  <span class="qn">2.</span> The 65+ age group watches 3.7 hours of TV per day. <em>(around)</em>
+  <input type="text" class="aline">
+</div>
+<div class="q">
+  <span class="qn">3.</span> The percentage for the 41–50 age group who cannot live without TV is 30%. <em>(about)</em>
+  <input type="text" class="aline">
+</div>
+<div class="q">
+  <span class="qn">4.</span> Students who watch no TV score 76 on the test. <em>(approximately)</em>
+  <input type="text" class="aline">
+</div>
+
+<!-- ===== GUIDED WRITING — CHART 2 ===== -->
+<div class="sec-head">Guided Writing | Chart 2 দেখে Paragraph লেখো</div>
+
+<p class="intro">নিচের Chart 2 দেখো এবং একটি paragraph লেখো। Model 1-এর structure অনুসরণ করো।</p>
+
+<div class="chart-title-box">
+  <strong>Chart 2: Weekday Television Viewing Habits of Americans by Age Group</strong><br>
+  X-axis: Age Group (15–24 / 25–34 / 35–44 / 45–54 / 55–64 / 65+) &nbsp;|&nbsp; Y-axis: Hours Watching TV (weekdays)
+</div>
+
+<!-- BAR CHART 2 — SVG -->
+<div class="chart-wrap">
+  <div class="chart-title-text">Weekday Television Viewing Habits of Americans<br>by Age Group</div>
+  <svg id="chart2svg" width="500" height="290" viewBox="0 0 500 290" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif" font-size="11">
+    <!-- Y axis -->
+    <line x1="60" y1="15" x2="60" y2="230" stroke="#999" stroke-width="1"/>
+    <!-- X axis -->
+    <line x1="60" y1="230" x2="490" y2="230" stroke="#999" stroke-width="1"/>
+
+    <!-- Y-axis scale: 0.0 to 4.0, height 215px for 4 units = 53.75px per unit -->
+    <!-- y = 230 - (value * 53.75) -->
+    <!-- gridlines -->
+    <line x1="60" y1="230" x2="490" y2="230" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="233" text-anchor="end" fill="#555" font-size="10">0.0</text>
+
+    <line x1="60" y1="176" x2="490" y2="176" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="179" text-anchor="end" fill="#555" font-size="10">1.0</text>
+
+    <line x1="60" y1="122" x2="490" y2="122" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="125" text-anchor="end" fill="#555" font-size="10">2.0</text>
+
+    <line x1="60" y1="69" x2="490" y2="69" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="72" text-anchor="end" fill="#555" font-size="10">3.0</text>
+
+    <line x1="60" y1="15" x2="490" y2="15" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="18" text-anchor="end" fill="#555" font-size="10">4.0</text>
+
+    <!-- 0.5 gridlines -->
+    <line x1="60" y1="203" x2="490" y2="203" stroke="#eee" stroke-width="0.6"/>
+    <text x="52" y="206" text-anchor="end" fill="#999" font-size="9">0.5</text>
+    <line x1="60" y1="149" x2="490" y2="149" stroke="#eee" stroke-width="0.6"/>
+    <text x="52" y="152" text-anchor="end" fill="#999" font-size="9">1.5</text>
+    <line x1="60" y1="96" x2="490" y2="96" stroke="#eee" stroke-width="0.6"/>
+    <text x="52" y="99" text-anchor="end" fill="#999" font-size="9">2.5</text>
+    <line x1="60" y1="42" x2="490" y2="42" stroke="#eee" stroke-width="0.6"/>
+    <text x="52" y="45" text-anchor="end" fill="#999" font-size="9">3.5</text>
+
+    <!-- 2.0 hrs reference line (dashed, gold) -->
+    <line x1="60" y1="122" x2="465" y2="122" stroke="#c8a200" stroke-width="1" stroke-dasharray="5,3"/>
+    <text x="470" y="120" font-size="9" fill="#c8a200">2.0 hrs</text>
+    <text x="470" y="130" font-size="9" fill="#c8a200">reference</text>
+
+    <!-- Y-axis label -->
+    <text transform="rotate(-90,12,122)" x="12" y="122" text-anchor="middle" font-size="10" fill="#333">Hours Watching TV (Weekdays)</text>
+
+    <!-- Bars: 15-24=2.0, 25-34=2.0, 35-44=1.8, 45-54=2.1, 55-64=2.6, 65+=3.7 -->
+    <!-- bar width=46, gap=20, start x=75 -->
+    <!-- y = 230 - (val * 53.75) -->
+
+    <!-- 15-24: 2.0 -> y=230-107.5=122.5, h=107.5 -->
+    <rect x="75" y="122" width="46" height="108" fill="#a8d5d5"/>
+    <text x="98" y="117" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">2.0</text>
+
+    <!-- 25-34: 2.0 -> same -->
+    <rect x="141" y="122" width="46" height="108" fill="#a8d5d5"/>
+    <text x="164" y="117" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">2.0</text>
+
+    <!-- 35-44: 1.8 -> y=230-96.75=133.25, h=96.75 -->
+    <rect x="207" y="133" width="46" height="97" fill="#a8d5d5"/>
+    <text x="230" y="128" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">1.8</text>
+
+    <!-- 45-54: 2.1 -> y=230-112.875=117.125, h=112.875 -->
+    <rect x="273" y="117" width="46" height="113" fill="#a8d5d5"/>
+    <text x="296" y="112" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">2.1</text>
+
+    <!-- 55-64: 2.6 -> y=230-139.75=90.25, h=139.75 -->
+    <rect x="339" y="90" width="46" height="140" fill="#a8d5d5"/>
+    <text x="362" y="85" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">2.6</text>
+
+    <!-- 65+: 3.7 -> y=230-198.875=31.125, h=198.875; dark teal -->
+    <rect x="405" y="31" width="46" height="199" fill="#1a7575"/>
+    <text x="428" y="26" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">3.7</text>
+
+    <!-- X-axis labels -->
+    <text x="98" y="246" text-anchor="middle" font-size="10" fill="#333">15–24</text>
+    <text x="164" y="246" text-anchor="middle" font-size="10" fill="#333">25–34</text>
+    <text x="230" y="246" text-anchor="middle" font-size="10" fill="#333">35–44</text>
+    <text x="296" y="246" text-anchor="middle" font-size="10" fill="#333">45–54</text>
+    <text x="362" y="246" text-anchor="middle" font-size="10" fill="#333">55–64</text>
+    <text x="428" y="246" text-anchor="middle" font-size="10" fill="#333">65+</text>
+
+    <!-- X-axis title -->
+    <text x="275" y="270" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">Age Group</text>
+  </svg>
+</div>
+
+<!-- 9A PRE-WRITING -->
+<div class="sub-head">9A — Pre-Writing Questions</div>
+<p style="font-size:13px; margin-bottom:8px;">Answer these questions first — they will guide your paragraph.</p>
+
+<div class="q"><span class="qn">1.</span> What type of graph is this?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">2.</span> What does this graph show? (Write one sentence using <em>'in relation to'</em>.)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">3.</span> What is the overall trend? Do older or younger people watch more TV?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">4.</span> How many hours do the 15–24 and 25–34 age groups watch? (use <em>'around'</em>)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">5.</span> How much does the 35–44 group watch? (use <em>'approximately'</em>)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">6.</span> Which two age groups watch around 2.1 and 2.6 hours respectively?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">7.</span> Which group watches the most weekday TV? How many hours? (use <em>'approximately'</em>)<input type="text" class="aline"></div>
+
+<!-- 9B WRITE YOUR PARAGRAPH -->
+<div class="sub-head">9B — Write Your Paragraph</div>
+
+<div class="starters-box">
+  <div class="st-title">Sentence Starters to Help You:</div>
+  <p>&#9658; The bar graph shows … in relation to …</p>
+  <p>&#9658; Overall, the older age groups watch … , and the viewing time …</p>
+  <p>&#9658; The figure is around … for the two younger age groups, … and …</p>
+  <p>&#9658; The viewing time decreases slightly to around … for the … age group.</p>
+  <p>&#9658; The viewing time is slightly higher for the … age group, at about …</p>
+  <p>&#9658; People who are in the age group 65+ watch approximately …</p>
+</div>
+
+<p style="font-size:13px; margin:6px 0;">Write your paragraph here (aim for 8–10 sentences):</p>
+<textarea class="writing-area" style="min-height:220px;" placeholder="Write your paragraph here..."></textarea>
+
+<!-- ===== WRITING PRACTICE — CHART 3 ===== -->
+<div class="sec-head">Writing Practice | নিজে লেখো — Chart 3</div>
+
+<p class="intro">এখন কোনো sentence starter ছাড়াই নিজে একা paragraph লেখো। এই unit-এ শেখা সবকিছু ব্যবহার করো।</p>
+
+<div class="chart-title-box">
+  <strong>Chart 3: Percentage of People Who Say They Cannot Live Without Television, by Age Group</strong><br>
+  X-axis: Age Group (18–26 / 27–40 / 41–50 / 51–61 / 62+) &nbsp;|&nbsp; Y-axis: Percentage (%)
+</div>
+
+<!-- BAR CHART 3 — SVG -->
+<div class="chart-wrap">
+  <div class="chart-title-text">Percentage of People Who Say They Cannot Live<br>Without Television, by Age Group</div>
+  <svg id="chart3svg" width="480" height="310" viewBox="0 0 480 310" xmlns="http://www.w3.org/2000/svg" font-family="Arial,sans-serif" font-size="11">
+    <!-- Y axis -->
+    <line x1="60" y1="15" x2="60" y2="240" stroke="#999" stroke-width="1"/>
+    <!-- X axis -->
+    <line x1="60" y1="240" x2="460" y2="240" stroke="#999" stroke-width="1"/>
+
+    <!-- Y-axis: 0 to 55, height 225px for 55 units = 4.09px per unit -->
+    <!-- y = 240 - (val * 225/55) = 240 - (val * 4.09) -->
+    <line x1="60" y1="240" x2="460" y2="240" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="243" text-anchor="end" fill="#555" font-size="10">0</text>
+
+    <line x1="60" y1="219" x2="460" y2="219" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="222" text-anchor="end" fill="#555" font-size="10">5</text>
+
+    <line x1="60" y1="199" x2="460" y2="199" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="202" text-anchor="end" fill="#555" font-size="10">10</text>
+
+    <line x1="60" y1="178" x2="460" y2="178" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="181" text-anchor="end" fill="#555" font-size="10">15</text>
+
+    <line x1="60" y1="158" x2="460" y2="158" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="161" text-anchor="end" fill="#555" font-size="10">20</text>
+
+    <line x1="60" y1="137" x2="460" y2="137" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="140" text-anchor="end" fill="#555" font-size="10">25</text>
+
+    <line x1="60" y1="117" x2="460" y2="117" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="120" text-anchor="end" fill="#555" font-size="10">30</text>
+
+    <line x1="60" y1="96" x2="460" y2="96" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="99" text-anchor="end" fill="#555" font-size="10">35</text>
+
+    <line x1="60" y1="76" x2="460" y2="76" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="79" text-anchor="end" fill="#555" font-size="10">40</text>
+
+    <line x1="60" y1="55" x2="460" y2="55" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="58" text-anchor="end" fill="#555" font-size="10">45</text>
+
+    <line x1="60" y1="35" x2="460" y2="35" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="38" text-anchor="end" fill="#555" font-size="10">50</text>
+
+    <line x1="60" y1="15" x2="460" y2="15" stroke="#ddd" stroke-width="0.8"/>
+    <text x="52" y="18" text-anchor="end" fill="#555" font-size="10">55</text>
+
+    <!-- Y-axis label -->
+    <text transform="rotate(-90,12,127)" x="12" y="127" text-anchor="middle" font-size="10" fill="#333">Percentage (%)</text>
+
+    <!-- Bars: 18-26=18%, 27-40=25%, 41-50=30%, 51-61=35%, 62+=44% (dark teal = highest) -->
+    <!-- y = 240 - (val * 4.09) -->
+    <!-- bar width=52, gap=20, start x=77 -->
+
+    <!-- Legend box -->
+    <rect x="70" y="20" width="12" height="12" fill="#1a7575"/>
+    <text x="86" y="30" font-size="10" fill="#333">Highest group</text>
+
+    <!-- 18-26: 18% -> y=240-(18*4.09)=240-73.6=166.4, h=73.6 -->
+    <rect x="78" y="166" width="52" height="74" fill="#a8d5d5"/>
+    <text x="104" y="161" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">18%</text>
+
+    <!-- 27-40: 25% -> y=240-102.25=137.75, h=102.25 -->
+    <rect x="154" y="138" width="52" height="102" fill="#a8d5d5"/>
+    <text x="180" y="133" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">25%</text>
+
+    <!-- 41-50: 30% -> y=240-122.7=117.3, h=122.7 -->
+    <rect x="230" y="117" width="52" height="123" fill="#a8d5d5"/>
+    <text x="256" y="112" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">30%</text>
+
+    <!-- 51-61: 35% -> y=240-143.15=96.85, h=143.15 -->
+    <rect x="306" y="97" width="52" height="143" fill="#a8d5d5"/>
+    <text x="332" y="92" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">35%</text>
+
+    <!-- 62+: 44% -> y=240-179.96=60.04, h=179.96; dark teal -->
+    <rect x="382" y="60" width="52" height="180" fill="#1a7575"/>
+    <text x="408" y="55" text-anchor="middle" font-weight="bold" font-size="11" fill="#333">44%</text>
+
+    <!-- Trend line (diagonal gold) -->
+    <line x1="104" y1="166" x2="408" y2="60" stroke="#c8a200" stroke-width="1.5"/>
+
+    <!-- X-axis labels -->
+    <text x="104" y="257" text-anchor="middle" font-size="10" fill="#333">18–26</text>
+    <text x="180" y="257" text-anchor="middle" font-size="10" fill="#333">27–40</text>
+    <text x="256" y="257" text-anchor="middle" font-size="10" fill="#333">41–50</text>
+    <text x="332" y="257" text-anchor="middle" font-size="10" fill="#333">51–61</text>
+    <text x="408" y="257" text-anchor="middle" font-size="10" fill="#333">62+</text>
+
+    <!-- X-axis title -->
+    <text x="260" y="278" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">Age Group</text>
+  </svg>
+</div>
+
+<p style="font-size:13px; margin:8px 0;">Write your paragraph here (aim for 8–10 sentences — minimum 130 words):</p>
+<textarea class="writing-area" style="min-height:260px;" placeholder="Write your paragraph here (minimum 130 words)..."></textarea>
+
+<!-- ===== SELF-CHECK ===== -->
+<div class="sec-head">Self-Check | নিজে পরীক্ষা করো</div>
+
+<div class="sc-item">
+  <span class="sc-text">&#9658; Did I write a topic sentence using <em>'in relation to'</em>?</span>
+  <span class="sc-yesno">
+    <label><input type="radio" name="sc1" value="yes"> Yes</label>
+    <label><input type="radio" name="sc1" value="no"> No</label>
+  </span>
+</div>
+<div class="sc-item">
+  <span class="sc-text">&#9658; Did I describe the overall trend in one sentence?</span>
+  <span class="sc-yesno">
+    <label><input type="radio" name="sc2" value="yes"> Yes</label>
+    <label><input type="radio" name="sc2" value="no"> No</label>
+  </span>
+</div>
+<div class="sc-item">
+  <span class="sc-text">&#9658; Did I use <em>approximately / about / around</em> for inexact numbers?</span>
+  <span class="sc-yesno">
+    <label><input type="radio" name="sc3" value="yes"> Yes</label>
+    <label><input type="radio" name="sc3" value="no"> No</label>
+  </span>
+</div>
+<div class="sc-item">
+  <span class="sc-text">&#9658; Did I use <em>'who'</em> to describe at least one age group?</span>
+  <span class="sc-yesno">
+    <label><input type="radio" name="sc4" value="yes"> Yes</label>
+    <label><input type="radio" name="sc4" value="no"> No</label>
+  </span>
+</div>
+<div class="sc-item">
+  <span class="sc-text">&#9658; Did I use correct modifiers (<em>many/fewer/much/less/a lot of</em>)?</span>
+  <span class="sc-yesno">
+    <label><input type="radio" name="sc5" value="yes"> Yes</label>
+    <label><input type="radio" name="sc5" value="no"> No</label>
+  </span>
+</div>
+<div class="sc-item">
+  <span class="sc-text">&#9658; Did I use present simple tense throughout?</span>
+  <span class="sc-yesno">
+    <label><input type="radio" name="sc6" value="yes"> Yes</label>
+    <label><input type="radio" name="sc6" value="no"> No</label>
+  </span>
+</div>
+<div class="sc-item">
+  <span class="sc-text">&#9658; Is my paragraph at least 150 words?</span>
+  <span class="sc-yesno">
+    <label><input type="radio" name="sc7" value="yes"> Yes</label>
+    <label><input type="radio" name="sc7" value="no"> No</label>
+  </span>
+</div>
+
+<!-- ===== REVIEW & REFLECTION ===== -->
+<div class="sec-head">Review &amp; Reflection</div>
+<p style="font-size:13px; margin-bottom:8px;">Answer honestly in a few words or one sentence.</p>
+
+<div class="q"><span class="qn">1.</span> What is <em>'in relation to'</em>? Write one example sentence.<input type="text" class="aline"></div>
+<div class="q"><span class="qn">2.</span> Name THREE approximate words you use when a bar chart number is not exact.<input type="text" class="aline"></div>
+<div class="q"><span class="qn">3.</span> What is the difference between <em>'fewer'</em> and <em>'less'</em>? Give one example of each.<input type="text" class="aline"></div>
+<div class="q"><span class="qn">4.</span> Write one sentence using <em>'who'</em> to describe a group from any chart in this unit.<input type="text" class="aline"></div>
+<div class="q"><span class="qn">5.</span> What was the most difficult part of this unit? What will you do to improve?<input type="text" class="aline"></div>
+
+<!-- ===== ANSWER KEY ===== -->
+<div class="pg-footer">Worksheet: IELTS Writing Unit 3 — Media &nbsp;|&nbsp; Task 1: Bar Chart Description</div>
+
+<div class="sec-head">Answer Key</div>
+<p style="font-size:13px; font-style:italic; margin-bottom:8px;">Students should only check after completing all sections independently.</p>
+
+<div class="ak-sec">
+
+  <h3>Section 4A — Chart 1 Comprehension</h3>
+  <ol>
+    <li>A bar chart / bar graph</li>
+    <li>Average science test scores of Grade 8 students in relation to daily TV viewing</li>
+    <li>Hours per day</li>
+    <li>1 hour or less → score 80</li>
+    <li>6 hours or more → score approximately 65</li>
+    <li>Scores decrease as TV viewing increases — overall downward trend</li>
+    <li>Similar — both approximately 76</li>
+    <li>As the number of hours students spend watching television increases, their average test scores decrease.</li>
+  </ol>
+
+  <h3>Section 6B — Similar or Different</h3>
+  <ol type="a">
+    <li>S (watch / view — same meaning)</li>
+    <li>D (opposites)</li>
+    <li>D (opposites)</li>
+    <li>S (about / approximately — similar)</li>
+    <li>S (each day / per day — same)</li>
+    <li>D (fewer = less in number; greater = more)</li>
+    <li>S (number / figure — similar)</li>
+    <li>D (opposites)</li>
+  </ol>
+
+  <h3>Section 7A — Word Functions</h3>
+  <ol>
+    <li>V</li><li>N</li><li>N</li><li>V</li><li>V</li>
+    <li>Adj</li><li>V</li><li>N</li><li>V</li><li>V</li>
+  </ol>
+
+  <h3>Section 7B — Modifiers</h3>
+  <ol>
+    <li>fewer</li><li>much</li><li>Fewer</li><li>Many</li>
+    <li>a lot of</li><li>much</li><li>fewer</li>
+  </ol>
+
+  <h3>Section 7C — Joining with 'who' (Model Answers)</h3>
+  <ol type="a">
+    <li>The students who watch no television have an average score of 76.</li>
+    <li>The people who are in the 65 to 74 age group watch more television.</li>
+    <li>People who do a lot of sport generally watch less television.</li>
+    <li>Those people who watch a lot of English TV often have good spoken English skills.</li>
+    <li>Students who try to speak English all the time improve their speaking skill quickly.</li>
+  </ol>
+
+  <h3>Section 9 — Model Paragraph for Chart 2</h3>
+  <div class="para-box">
+    <p>The bar graph shows how many hours Americans spend watching weekday television in relation to age group. Overall, the older age groups watch around twice as much weekday television as the younger groups, and the viewing time increases with age. The figure is around two hours for the two younger age groups, 15 to 24 and 25 to 34, but decreases slightly to around 1.8 hours for the viewers who are 35 to 44. The viewing time is slightly higher for the 45 to 54 age group, at about 2.1 hours, and increases to 2.6 hours for the people who are 55 to 64 years old. People who are in the age group 65+ watch approximately 3.7 hours of television a day.</p>
+  </div>
+
+</div>
+
+<!-- ===== TEACHER NOTES ===== -->
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 3: Media | Task 1 Focus: Bar Chart Description</div>
+
+<div class="sec-head">Teacher Notes</div>
+<p style="font-size:13px; font-weight:bold; margin:6px 0;">Unit 3 — Media: Teaching Tips &amp; Notes</p>
+<div class="tn">
+  <ul>
+    <li>This worksheet includes 3 bar charts embedded directly — no separate printout needed.</li>
+    <li><strong>Section 4 (Chart Reading):</strong> Ask students to cover the model and describe Chart 1 in their own words first — this activates prior language.</li>
+    <li><strong>Section 5 (Model Text):</strong> Ask students to underline (1) <em>'in relation to'</em>, (2) <em>'who'</em>, and (3) approximate words before answering the questions.</li>
+    <li><strong>Section 6B (Similar or Different):</strong> 'fewer' and 'greater' are opposites. 'number' and 'figure' are similar. These are key IELTS vocabulary pairs.</li>
+    <li><strong>Section 7A (Word Functions):</strong> This is the most challenging grammar point in the unit. Spend extra time with board examples. Bangladeshi learners often struggle because Bengali does not inflect this way.</li>
+    <li><strong>Section 7B (Modifiers):</strong> The key error is 'less students' — drill: 'fewer students' (countable) / 'less time' (uncountable). 'A lot of' works for both — encourage students to use it when unsure.</li>
+    <li><strong>Section 7C (who):</strong> Emphasise that 'who' is ONLY for people. 'Which' is for objects/things.</li>
+    <li><strong>Section 9 (Guided Writing):</strong> The sentence starters reduce cognitive load. Encourage students to vary the structure once comfortable.</li>
+  </ul>
+</div>
+
+<!-- BOTTOM BUTTONS -->
+<div class="action-bar" style="margin-top:24px;">
+  <button class="btn btn-clear" onclick="clearAll()">Clear my response</button>
+  <button class="btn btn-save"  onclick="window.print()">Save as PDF</button>
+</div>
+
+</div><!-- /page -->
+
+<script>
+function clearAll() {
+  if (!confirm('Clear all your answers? This cannot be undone.')) return;
+  document.querySelectorAll('input[type="text"]').forEach(function(el) { el.value = ''; });
+  document.querySelectorAll('textarea').forEach(function(el) { el.value = ''; });
+  document.querySelectorAll('input[type="radio"]').forEach(function(el) { el.checked = false; });
+}
+</script>
+</body>
+</html>
