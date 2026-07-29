@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Character & Grammar Through Stories | Episode 6 - The Angry Message</title>
+<style>
+  :root{
+    --teal-medium:#0F766E;
+    --teal-dark:#0F5E5E;
+    --mint:#E6F4F1;
+    --text:#111111;
+    --border:#8FC0BB;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:#ffffff;
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .page{
+    max-width:850px;
+    margin:0 auto;
+    padding:24px 28px 80px 28px;
+  }
+  /* ---------- Running header ---------- */
+  .running-header{
+    text-align:center;
+    color:var(--teal-medium);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.2px;
+    margin-bottom:10px;
+  }
+  /* ---------- Title block ---------- */
+  .title-block{ text-align:center; margin-bottom:16px; }
+  .main-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:var(--teal-dark);
+    font-size:28px;
+    margin:0 0 4px 0;
+  }
+  .episode-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:18px;
+    margin:0;
+  }
+  /* ---------- Info box ---------- */
+  .info-box{
+    background:var(--mint);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0;
+  }
+  .info-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:6px 0;
+    flex-wrap:wrap;
+  }
+  .info-label{ font-weight:bold; color:var(--teal-dark); white-space:nowrap; }
+  .info-input{ flex:1; min-width:160px; }
+  .info-input.short{ flex:0 0 180px; }
+  .level-value{ font-weight:bold; margin-left:2px; }
+
+  /* ---------- Goals box ---------- */
+  .goals-box{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0 26px 0;
+  }
+  .goals-label{ color:var(--teal-medium); font-weight:bold; margin:0 0 4px 0; }
+  .goals-intro{ margin:0 0 8px 0; font-style:italic; }
+  .goals-list{ margin:0; padding-left:0; list-style:none; }
+  .goals-list li{ margin:4px 0; }
+
+  /* ---------- Section bars ---------- */
+  .section-bar{
+    background:var(--teal-dark);
+    color:#ffffff;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:9px 14px;
+    border-radius:5px;
+    margin:30px 0 14px 0;
+    font-size:14.5px;
+    letter-spacing:.2px;
+    scroll-margin-top:20px;
+  }
+  .section-content{ margin-bottom:6px; }
+
+  .sub-heading{
+    color:var(--teal-medium);
+    font-size:15.5px;
+    margin:18px 0 6px 0;
+  }
+  .instructions{ margin:4px 0 12px 0; }
+  .bengali-tag{ color:var(--teal-medium); font-weight:bold; }
+
+  .q-list{ margin:0 0 10px 0; padding-left:20px; }
+  .q-list li{ margin:0 0 14px 0; }
+
+  /* ---------- Inputs ---------- */
+  input.aline{
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:5px 2px;
+    margin:4px 0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+  }
+  input.aline:focus{ outline:none; border-bottom:1px solid var(--teal-medium); }
+
+  input.blank{
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:2px 4px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    width:60px;
+    text-align:center;
+  }
+  input.blank.sm{ width:40px; }
+  input.blank.wide{ width:150px; }
+  input.blank:focus{ outline:none; border-bottom:1px solid var(--teal-medium); }
+
+  textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:10px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+  }
+  textarea:focus{ outline:none; border:1px solid var(--teal-medium); }
+
+  /* ---------- Story ---------- */
+  .story-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    font-style:italic;
+    color:var(--teal-dark);
+    font-size:20px;
+    text-align:center;
+    margin:8px 0 14px 0;
+  }
+  .story-text p{ margin:0 0 12px 0; text-align:justify; }
+
+  /* ---------- Tables ---------- */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 18px 0;
+    font-size:14px;
+  }
+  table caption{ text-align:left; font-weight:bold; margin-bottom:6px; }
+  th, td{
+    border:1px solid var(--border);
+    padding:8px 10px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:var(--mint);
+    color:var(--teal-dark);
+    font-weight:bold;
+  }
+
+  .word-box{
+    border:1px dashed var(--border);
+    border-radius:5px;
+    padding:8px 12px;
+    margin:8px 0 14px 0;
+    font-weight:bold;
+    color:var(--teal-dark);
+  }
+
+  .mc-question{ margin:0 0 16px 0; }
+  .mc-options{ display:flex; flex-wrap:wrap; gap:14px; margin:6px 0; }
+  .mc-options label{ display:flex; align-items:center; gap:5px; }
+  .mc-answer{ margin-top:4px; }
+  .mc-answer input.blank{ margin-left:6px; }
+
+  .checklist{ list-style:none; padding:0; margin:0; }
+  .checklist li{ display:flex; align-items:center; gap:6px; margin:3px 0; }
+  .checklist input[type="checkbox"]{ width:15px; height:15px; }
+
+  .grammar-lab-item{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:12px 14px;
+    margin-bottom:14px;
+  }
+  .grammar-lab-item .gl-sentence{ font-weight:bold; margin:0 0 8px 0; }
+  .grammar-lab-item .gl-q{ margin:6px 0; }
+  .grammar-lab-item .gl-q label{ display:block; margin-bottom:3px; }
+
+  .homework-columns{
+    display:flex;
+    gap:18px;
+    margin:10px 0 16px 0;
+    flex-wrap:wrap;
+  }
+  .homework-box{
+    flex:1;
+    min-width:240px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 16px;
+  }
+  .homework-box h4{ color:var(--teal-medium); margin:0 0 8px 0; }
+  .homework-box textarea{ margin-top:8px; }
+  .homework-box .q-list{ margin-top:8px; padding-left:18px; }
+  .homework-box .q-list li{ margin:0 0 8px 0; }
+  .final-reminder{ font-style:italic; margin-top:10px; }
+
+  .footer-divider{
+    border-top:1px solid var(--border);
+    margin-top:34px;
+    padding-top:10px;
+    text-align:center;
+    font-style:italic;
+    font-size:11.5px;
+    color:var(--teal-medium);
+  }
+
+  /* ---------- Action bars ---------- */
+  .action-bar{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    padding:10px 14px;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .action-bar.bottom{
+    border-bottom:none;
+    border-top:1px solid var(--border);
+    position:sticky;
+    top:auto;
+    bottom:0;
+  }
+  .action-bar button{
+    background:var(--teal-medium);
+    color:#ffffff;
+    border:none;
+    border-radius:20px;
+    padding:9px 18px;
+    font-size:13.5px;
+    font-weight:bold;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .action-bar button:hover{ background:var(--teal-dark); }
+  .action-bar button.secondary{ background:#555555; }
+  .action-bar button.secondary:hover{ background:#333333; }
+
+  /* ---------- Floating story button ---------- */
+  .story-float{
+    position:fixed;
+    right:20px;
+    bottom:78px;
+    background:var(--teal-medium);
+    color:#ffffff;
+    border:none;
+    border-radius:30px;
+    padding:10px 16px;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+    display:none;
+    z-index:60;
+    box-shadow:0 0 0 0 rgba(15,118,110,0.6);
+    animation:glowPulse 2s infinite;
+  }
+  .story-float.visible{ display:block; }
+  @keyframes glowPulse{
+    0%{ box-shadow:0 0 0 0 rgba(15,118,110,0.55); }
+    70%{ box-shadow:0 0 0 12px rgba(15,118,110,0); }
+    100%{ box-shadow:0 0 0 0 rgba(15,118,110,0); }
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    .action-bar, .story-float{ display:none !important; }
+    body{ font-size:12px; }
+    .page{ max-width:100%; padding:0; }
+    .section-bar{ break-inside:avoid; }
+    table, .grammar-lab-item, .story-text, .homework-box{ break-inside:avoid; }
+    input.aline, input.blank{ border-bottom:1px solid #000000; color:#000; }
+    textarea{ border:1px solid #000000; color:#000; }
+    th, td{ border:1px solid #000000; }
+    @page{ size:A4; margin:16mm 14mm; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:600px){
+    .page{ padding:16px 14px 90px 14px; }
+    .main-title{ font-size:22px; }
+    .episode-subtitle{ font-size:15px; }
+    .homework-columns{ flex-direction:column; }
+    .mc-options{ gap:8px 12px; }
+    .action-bar{ gap:8px; flex-wrap:wrap; }
+    .action-bar button{ padding:8px 12px; font-size:12.5px; }
+    table, th, td{ font-size:12.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="action-bar top">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <div class="running-header">Character &amp; Grammar Through Stories | Episode 6 - The Angry Message</div>
+
+  <div class="title-block">
+    <h1 class="main-title">Character &amp; Grammar Through Stories</h1>
+    <h2 class="episode-subtitle">Episode 6 - The Angry Message</h2>
+  </div>
+
+  <div class="info-box">
+    <div class="info-row">
+      <span class="info-label">Student Name:</span>
+      <input type="text" class="aline info-input">
+    </div>
+    <div class="info-row">
+      <span class="info-label">Date:</span>
+      <input type="text" class="aline info-input short">
+      <span class="info-label">Level:</span>
+      <span class="level-value">A2–B1</span>
+    </div>
+  </div>
+
+  <div class="goals-box">
+    <p class="goals-label">Learning Goals:</p>
+    <p class="goals-intro">By the end of this worksheet, students will be able to:</p>
+    <ul class="goals-list">
+      <li>✓ Read and understand a realistic story</li>
+      <li>✓ Learn communication-related vocabulary</li>
+      <li>✓ Identify grammar in context</li>
+      <li>✓ Build accurate sentences</li>
+      <li>✓ Practise short writing tasks</li>
+      <li>✓ Reflect on emotional control and respectful communication</li>
+    </ul>
+  </div>
+
+  <!-- ===================== SECTION 1 ===================== -->
+  <div class="section-bar" id="section1">SECTION 1 | WARM-UP | Before You Read</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Answer the questions before reading the story. | <span class="bengali-tag">নির্দেশনা:</span> গল্প পড়ার আগে প্রশ্নগুলোর উত্তর দাও।</p>
+
+    <h3 class="sub-heading">Part A - Prediction Questions | অনুমানভিত্তিক প্রশ্ন</h3>
+    <ol class="q-list">
+      <li>What can happen when someone sends a message while feeling angry?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>Why can online communication sometimes create misunderstandings?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Part B - Personal Reflection | ব্যক্তিগত ভাবনা</h3>
+    <ol class="q-list">
+      <li>Have you ever waited before replying to a message? What happened?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>Is it always a good idea to reply immediately when you are upset? Why or why not?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 2 ===================== -->
+  <div class="section-bar" id="section2">SECTION 2 | MAIN STORY | Read the Story</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Read the story carefully. Notice how grammar is used naturally in the sentences. | <span class="bengali-tag">নির্দেশনা:</span> গল্পটি মনোযোগ দিয়ে পড়ো। বাক্যে ব্যাকরণ কীভাবে স্বাভাবিকভাবে ব্যবহৃত হয়েছে তা লক্ষ করো।</p>
+
+    <h3 class="story-title" id="story-title">The Angry Message</h3>
+    <div class="story-text">
+      <p>Hasan was working on a group assignment at his college when his phone suddenly buzzed. The project was important because it would be counted for their final marks. Every evening, updates are posted in the class group, and documents are shared there by the team leader. Hasan usually checks the messages calmly, but that night he was tired and worried about the deadline.</p>
+
+      <p>A message from Rafiq appeared on the screen: "Hasan, you have not done your part properly. We cannot wait for you forever." Hasan stared at the words. His face became hot, and he felt that the message was rude and unfair.</p>
+
+      <p>"What does he mean?" Hasan said to himself. "I have already finished half of the slides."</p>
+
+      <p>He opened the chat and started typing a harsh reply. "You should check your own work before blaming me," he wrote. Then he added, "If you spoke more politely, people would respect you more." His thumb moved toward the send button.</p>
+
+      <p>At that moment, his younger brother entered the room. "Why are you typing so fast?" he asked.</p>
+
+      <p>"Rafiq has sent an angry message," Hasan said. "I am going to reply now."</p>
+
+      <p>His brother looked at the screen and said, "Maybe you should wait. Messages can be misunderstood. If you send this now, the problem will become bigger."</p>
+
+      <p>Hasan took a deep breath. He did not send the message. Instead, he saved the file, put the phone beside his books, and decided to talk the next morning. It was not easy. He was still annoyed, but he knew that an angry reaction could damage the group.</p>
+
+      <p>The next day, Hasan met Rafiq near the library. Rafiq looked embarrassed. "Hasan, I need to explain something," he said. "Yesterday I was under pressure. The message was written in a hurry, and I did not choose my words carefully. I did not mean to disrespect you."</p>
+
+      <p>Hasan felt calmer. "I was upset when I read it," he replied, "but I did not want to fight in the group chat. We should clarify problems before we judge each other."</p>
+
+      <p>Rafiq nodded. "You are right. I have also learned that short messages can sound harsher than we intend. The part which I asked about was only one slide. I thought it was missing."</p>
+
+      <p>Hasan opened his laptop and showed the slide that he had prepared the night before. "Here it is. I am going to add the references today. Then we can combine everything."</p>
+
+      <p>Soon the other teammates joined them. They had a short discussion in which everyone spoke respectfully. Tasks were divided again, and a new deadline was set. Rafiq apologized to the group, and Hasan rewrote his response in a calm way: "Thanks for explaining. I understand the pressure. Let us finish the project together."</p>
+
+      <p>By Thursday, the presentation had been completed. The slides were checked, the references were added, and the final file was uploaded before the deadline. Hasan felt relieved. He thought about the message he had almost sent. If he had sent it, the group might have argued for days.</p>
+
+      <p>That evening, Hasan wrote in his notebook, "A calm reply can solve a problem, but an angry reply can create a bigger one." He had learned that patience is not weakness. It is a skill that helps people communicate with respect and make better decisions.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 3 ===================== -->
+  <div class="section-bar" id="section3">SECTION 3 | VOCABULARY ZONE | শব্দভান্ডার</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Study the words from the story. Then complete the vocabulary tasks. | <span class="bengali-tag">নির্দেশনা:</span> গল্পের শব্দগুলো শেখো। এরপর শব্দভিত্তিক কাজগুলো সম্পন্ন করো।</p>
+
+    <table>
+      <thead>
+        <tr><th>Word</th><th>Part of Speech</th><th>Simple English Meaning</th><th>বাংলা অর্থ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>assignment</td><td>noun</td><td>a task or piece of work for study</td><td>অ্যাসাইনমেন্ট / নির্ধারিত কাজ</td></tr>
+        <tr><td>deadline</td><td>noun</td><td>the latest time to finish something</td><td>শেষ সময়সীমা</td></tr>
+        <tr><td>teammate</td><td>noun</td><td>a person who works in the same team</td><td>দলের সহযোগী</td></tr>
+        <tr><td>message</td><td>noun</td><td>a written or spoken note sent to someone</td><td>বার্তা</td></tr>
+        <tr><td>rude</td><td>adjective</td><td>not polite or respectful</td><td>অভদ্র</td></tr>
+        <tr><td>unfair</td><td>adjective</td><td>not right or not equal</td><td>অন্যায্য</td></tr>
+        <tr><td>harsh</td><td>adjective</td><td>too strong, unkind, or severe</td><td>কঠোর / রূঢ়</td></tr>
+        <tr><td>pause</td><td>verb/noun</td><td>to stop for a short time</td><td>কিছুক্ষণ থামা / বিরতি</td></tr>
+        <tr><td>misunderstand</td><td>verb</td><td>to understand something in the wrong way</td><td>ভুল বোঝা</td></tr>
+        <tr><td>respectful</td><td>adjective</td><td>showing politeness and care</td><td>সম্মানজনক</td></tr>
+        <tr><td>response</td><td>noun</td><td>an answer or reply</td><td>উত্তর / প্রতিক্রিয়া</td></tr>
+        <tr><td>conflict</td><td>noun</td><td>a disagreement or problem between people</td><td>বিরোধ / মতভেদ</td></tr>
+        <tr><td>clarify</td><td>verb</td><td>to make something clear</td><td>পরিষ্কার করা / বোঝানো</td></tr>
+        <tr><td>discussion</td><td>noun</td><td>a talk about a topic or problem</td><td>আলোচনা</td></tr>
+        <tr><td>solution</td><td>noun</td><td>a way to solve a problem</td><td>সমাধান</td></tr>
+        <tr><td>reaction</td><td>noun</td><td>what someone does or says after something happens</td><td>প্রতিক্রিয়া</td></tr>
+        <tr><td>apologize</td><td>verb</td><td>to say sorry for a mistake</td><td>ক্ষমা চাওয়া</td></tr>
+        <tr><td>intention</td><td>noun</td><td>what someone means or plans to do</td><td>উদ্দেশ্য</td></tr>
+        <tr><td>upload</td><td>verb</td><td>to put a file online</td><td>অনলাইনে ফাইল দেওয়া</td></tr>
+        <tr><td>relieved</td><td>adjective</td><td>feeling less worried after a problem</td><td>স্বস্তি পাওয়া</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task A - Matching | মিলকরণ</h3>
+    <p class="instructions"><strong>Instructions:</strong> Match the words with the correct meanings. Write the correct letter. | <span class="bengali-tag">নির্দেশনা:</span> শব্দের সাথে সঠিক অর্থ মিলিয়ে অক্ষরটি লেখো।</p>
+    <table>
+      <thead><tr><th>Word</th><th>Meaning</th><th>Answer</th></tr></thead>
+      <tbody>
+        <tr><td>1. conflict</td><td>A. to make something clear</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>2. clarify</td><td>B. a person in the same team</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>3. relieved</td><td>C. a disagreement or problem</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>4. teammate</td><td>D. feeling less worried</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>5. response</td><td>E. showing politeness and care</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>6. respectful</td><td>F. a reply or answer</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>7. deadline</td><td>G. to say sorry</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>8. apologize</td><td>H. the latest time to finish work</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>9. reaction</td><td>I. a way to solve a problem</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>10. solution</td><td>J. what someone does after something happens</td><td><input type="text" class="blank sm"></td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Fill in the Blanks | শূন্যস্থান পূরণ</h3>
+    <p class="instructions"><strong>Instructions:</strong> Complete the sentences using words from the box. | <span class="bengali-tag">নির্দেশনা:</span> বক্সের শব্দ ব্যবহার করে বাক্যগুলো সম্পন্ন করো।</p>
+    <div class="word-box">Word Bank: rude | pause | message | discussion | intention | upload | harsh | unfair | misunderstood | assignment</div>
+    <ol class="q-list">
+      <li>Hasan received a <input type="text" class="blank wide"> from his teammate.</li>
+      <li>The group had to finish an important <input type="text" class="blank wide">.</li>
+      <li>Hasan felt that Rafiq's words were <input type="text" class="blank wide"> and <input type="text" class="blank wide">.</li>
+      <li>Before sending a reply, Hasan decided to <input type="text" class="blank wide">.</li>
+      <li>Rafiq's real <input type="text" class="blank wide"> was not to disrespect Hasan.</li>
+      <li>The students had a calm <input type="text" class="blank wide"> near the library.</li>
+      <li>The message was <input type="text" class="blank wide"> because it was written in a hurry.</li>
+      <li>The team had to <input type="text" class="blank wide"> the final file before the deadline.</li>
+      <li>A <input type="text" class="blank wide"> reply can hurt people.</li>
+      <li>It is <input type="text" class="blank wide"> to blame someone without checking the full situation.</li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 4 ===================== -->
+  <div class="section-bar" id="section4">SECTION 4 | GRAMMAR DETECTIVE 🔍 | Grammar in Context</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Task A - Find Grammar from the Story | গল্প থেকে ব্যাকরণ খুঁজে বের করো</h3>
+    <p class="instructions"><strong>Instructions:</strong> Find examples from the story and write them in the spaces. | <span class="bengali-tag">নির্দেশনা:</span> গল্প থেকে উদাহরণ খুঁজে নিচের জায়গায় লেখো।</p>
+    <table>
+      <thead><tr><th>Grammar Focus</th><th>How many?</th><th>Examples from the Story</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Past Simple</td><td>3</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline"><br>
+            3. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Present Passive</td><td>2</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Modal Verbs</td><td>2</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Relative Clauses</td><td>2</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Conditional Sentence</td><td>1</td>
+          <td>1. <input type="text" class="aline"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Grammar Lab | ব্যাকরণ বিশ্লেষণ</h3>
+    <p class="instructions"><strong>Instructions:</strong> Read each sentence. Then answer the three questions. | <span class="bengali-tag">নির্দেশনা:</span> প্রতিটি বাক্য পড়ো। তারপর তিনটি প্রশ্নের উত্তর দাও।</p>
+
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">1. "The project was important because it would be counted for their final marks."</p>
+      <div class="gl-q"><label>1. Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>2. Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>3. Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">2. "I have already finished half of the slides."</p>
+      <div class="gl-q"><label>1. Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>2. Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>3. Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">3. "Maybe you should wait."</p>
+      <div class="gl-q"><label>1. Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>2. Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>3. Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">4. "If he had sent it, the group might have argued for days."</p>
+      <div class="gl-q"><label>1. Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>2. Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>3. Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 5 ===================== -->
+  <div class="section-bar" id="section5">SECTION 5 | MIXED GRAMMAR CHALLENGE</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">A. Error Correction | ভুল সংশোধন</h3>
+    <p class="instructions"><strong>Instructions:</strong> Find the mistake and rewrite each sentence correctly. | <span class="bengali-tag">নির্দেশনা:</span> ভুলটি খুঁজে প্রতিটি বাক্য সঠিকভাবে আবার লেখো।</p>
+    <ol class="q-list">
+      <li>Hasan send a harsh reply yesterday.<br>Correction: <input type="text" class="aline"></li>
+      <li>The message was write in a hurry.<br>Correction: <input type="text" class="aline"></li>
+      <li>He should to wait before replying.<br>Correction: <input type="text" class="aline"></li>
+      <li>If Hasan had sent the message, the group will argue for days.<br>Correction: <input type="text" class="aline"></li>
+      <li>The teammate which sent the message felt sorry.<br>Correction: <input type="text" class="aline"></li>
+    </ol>
+
+    <h3 class="sub-heading">B. Multiple Choice | সঠিক উত্তর বাছাই</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose the correct answer. Circle A, B, C, or D. | <span class="bengali-tag">নির্দেশনা:</span> সঠিক উত্তর নির্বাচন করো। A, B, C অথবা D ঘিরে দাও।</p>
+
+    <div class="mc-question">
+      <p>1. Hasan ______ on a group assignment when his phone buzzed.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc1"> A. works</label>
+        <label><input type="radio" name="mc1"> B. was working</label>
+        <label><input type="radio" name="mc1"> C. has worked</label>
+        <label><input type="radio" name="mc1"> D. will work</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>2. Updates ______ in the class group every evening.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc2"> A. posted</label>
+        <label><input type="radio" name="mc2"> B. are posted</label>
+        <label><input type="radio" name="mc2"> C. is posting</label>
+        <label><input type="radio" name="mc2"> D. has posted</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>3. Hasan ______ reply calmly instead of writing harsh words.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc3"> A. should</label>
+        <label><input type="radio" name="mc3"> B. should to</label>
+        <label><input type="radio" name="mc3"> C. must to</label>
+        <label><input type="radio" name="mc3"> D. can to</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>4. If people spoke calmly, many conflicts ______ easier to solve.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc4"> A. are</label>
+        <label><input type="radio" name="mc4"> B. were</label>
+        <label><input type="radio" name="mc4"> C. would be</label>
+        <label><input type="radio" name="mc4"> D. have been</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>5. Rafiq was the teammate ______ sent the message.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc5"> A. who</label>
+        <label><input type="radio" name="mc5"> B. where</label>
+        <label><input type="radio" name="mc5"> C. what</label>
+        <label><input type="radio" name="mc5"> D. when</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <h3 class="sub-heading">C. Gap Fill | শূন্যস্থান পূরণ</h3>
+    <p class="instructions"><strong>Instructions:</strong> Complete the sentences with the correct form of the words in brackets. | <span class="bengali-tag">নির্দেশনা:</span> বন্ধনীর শব্দের সঠিক রূপ দিয়ে বাক্য সম্পন্ন করো।</p>
+    <ol class="q-list">
+      <li>Hasan <input type="text" class="blank wide"> (feel) angry after reading the message.</li>
+      <li>The final file <input type="text" class="blank wide"> (upload) before the deadline.</li>
+      <li>Rafiq <input type="text" class="blank wide"> (apologize) to the group after the discussion.</li>
+      <li>Hasan has already <input type="text" class="blank wide"> (prepare) part of the slides.</li>
+      <li>If Hasan had replied angrily, the problem <input type="text" class="blank wide"> (become) bigger.</li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 6 ===================== -->
+  <div class="section-bar" id="section6">SECTION 6 | SENTENCE BUILDER | Build Your Own Sentences</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Use each word to write your own sentence. Try to use correct grammar. | <span class="bengali-tag">নির্দেশনা:</span> প্রতিটি শব্দ দিয়ে নিজের বাক্য লেখো। সঠিক ব্যাকরণ ব্যবহার করার চেষ্টা করো।</p>
+
+    <table>
+      <thead><tr><th>Word</th><th>Your Sentence</th></tr></thead>
+      <tbody>
+        <tr><td>respectful</td><td><input type="text" class="aline"></td></tr>
+        <tr><td>misunderstanding</td><td><input type="text" class="aline"></td></tr>
+        <tr><td>communicate</td><td><input type="text" class="aline"></td></tr>
+        <tr><td>reaction</td><td><input type="text" class="aline"></td></tr>
+        <tr><td>solution</td><td><input type="text" class="aline"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== SECTION 7 ===================== -->
+  <div class="section-bar" id="section7">SECTION 7 | SHORT WRITING TASK | Think &amp; Write</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Write 80-120 words. Use ideas from your own life or imagination. | <span class="bengali-tag">নির্দেশনা:</span> ৮০-১২০ শব্দে লেখো। নিজের জীবনের অভিজ্ঞতা বা কল্পনা ব্যবহার করতে পারো।</p>
+    <p><strong>Prompt:</strong> Imagine that one of your friends sends a message that hurts your feelings. How would you handle the situation? What would you do before replying?</p>
+    <p class="sub-heading" style="margin-top:14px;">Writing | লেখার জায়গা</p>
+    <textarea rows="10" placeholder="Write your answer here..."></textarea>
+  </div>
+
+  <!-- ===================== SECTION 8 ===================== -->
+  <div class="section-bar" id="section8">SECTION 8 | CHARACTER REFLECTION | Character Corner</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Discuss or write short answers. Think about real communication habits. | <span class="bengali-tag">নির্দেশনা:</span> আলোচনা করো অথবা সংক্ষিপ্ত উত্তর লেখো। বাস্তব যোগাযোগের অভ্যাস নিয়ে ভাবো।</p>
+
+    <p><strong>1.</strong> Why is it important to think before responding to an upsetting message?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>2.</strong> Can misunderstandings happen even among good friends or good teammates? Explain your idea.</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>3.</strong> What are two respectful ways to solve a conflict in a group project?</p>
+    <textarea rows="2"></textarea>
+  </div>
+
+  <!-- ===================== SECTION 9 ===================== -->
+  <div class="section-bar" id="section9">SECTION 9 | HOMEWORK | বাড়ির কাজ</div>
+  <div class="section-content">
+    <div class="homework-columns">
+      <div class="homework-box">
+        <h4>Level 1</h4>
+        <p>Write 5 sentences about good communication habits.</p>
+        <textarea rows="6" placeholder="Write your answer here..."></textarea>
+      </div>
+      <div class="homework-box">
+        <h4>Level 2</h4>
+        <p>Write a diary entry of 100-120 words. Use Past Simple, Present Perfect, and Future Plans. Topic: "A Misunderstanding I Resolved"</p>
+        <textarea rows="8" placeholder="Write your answer here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-divider">© Abidur Rahman Tahmid | English Learning Through Stories | Episode 6 - The Angry Message</div>
+
+</div>
+
+<div class="action-bar bottom">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<button id="storyBtn" class="story-float" onclick="scrollToStory()">📖 Story</button>
+
+<script>
+  function clearAll(){
+    if(!confirm("Are you sure you want to clear all your answers? This cannot be undone.")) return;
+    document.querySelectorAll('input[type="text"]').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('textarea').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('input[type="radio"]').forEach(function(el){ el.checked = false; });
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(el){ el.checked = false; });
+  }
+
+  function scrollToStory(){
+    var target = document.getElementById('story-title');
+    if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  }
+
+  (function(){
+    var storyBtn = document.getElementById('storyBtn');
+    var sec4 = document.getElementById('section4');
+    var sec9 = document.getElementById('section9');
+    if(!storyBtn || !sec4 || !sec9) return;
+
+    function updateVisibility(){
+      var sec4Top = sec4.getBoundingClientRect().top;
+      var sec9Top = sec9.getBoundingClientRect().top;
+      var viewportH = window.innerHeight;
+      var passedSection4 = sec4Top < viewportH * 0.6;
+      var passedSection9 = sec9Top < viewportH * 0.6;
+      if(passedSection4 && !passedSection9){
+        storyBtn.classList.add('visible');
+      } else {
+        storyBtn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateVisibility, {passive:true});
+    window.addEventListener('resize', updateVisibility);
+    updateVisibility();
+  })();
+</script>
+
+</body>
+</html>

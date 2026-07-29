@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Character & Grammar Through Stories | Episode 8 - The New Beginning</title>
+<style>
+  :root{
+    --teal-medium:#0F766E;
+    --teal-dark:#0F5E5E;
+    --mint:#E6F4F1;
+    --text:#111111;
+    --border:#8FC0BB;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:#ffffff;
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .page{
+    max-width:850px;
+    margin:0 auto;
+    padding:24px 28px 80px 28px;
+  }
+  /* ---------- Running header ---------- */
+  .running-header{
+    text-align:center;
+    color:var(--teal-medium);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.2px;
+    margin-bottom:10px;
+  }
+  /* ---------- Title block ---------- */
+  .title-block{ text-align:center; margin-bottom:16px; }
+  .main-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:var(--teal-dark);
+    font-size:28px;
+    margin:0 0 4px 0;
+  }
+  .episode-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:18px;
+    margin:0;
+  }
+  /* ---------- Info box ---------- */
+  .info-box{
+    background:var(--mint);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0;
+  }
+  .info-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:6px 0;
+    flex-wrap:wrap;
+  }
+  .info-label{ font-weight:bold; color:var(--teal-dark); white-space:nowrap; }
+  .info-input{ flex:1; min-width:160px; }
+  .info-input.short{ flex:0 0 180px; }
+  .level-value{ font-weight:bold; margin-left:2px; }
+
+  /* ---------- Goals box ---------- */
+  .goals-box{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0 26px 0;
+  }
+  .goals-label{ color:var(--teal-medium); font-weight:bold; margin:0 0 4px 0; }
+  .goals-intro{ margin:0 0 8px 0; font-style:italic; }
+  .goals-list{ margin:0; padding-left:0; list-style:none; }
+  .goals-list li{ margin:4px 0; }
+
+  /* ---------- Section bars ---------- */
+  .section-bar{
+    background:var(--teal-dark);
+    color:#ffffff;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:9px 14px;
+    border-radius:5px;
+    margin:30px 0 14px 0;
+    font-size:14.5px;
+    letter-spacing:.2px;
+    scroll-margin-top:20px;
+  }
+  .section-content{ margin-bottom:6px; }
+
+  .sub-heading{
+    color:var(--teal-medium);
+    font-size:15.5px;
+    margin:18px 0 6px 0;
+  }
+  .instructions{ margin:4px 0 12px 0; }
+  .bengali-tag{ color:var(--teal-medium); font-weight:bold; }
+
+  .q-list{ margin:0 0 10px 0; padding-left:20px; }
+  .q-list li{ margin:0 0 14px 0; }
+
+  /* ---------- Inputs ---------- */
+  input.aline{
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:5px 2px;
+    margin:4px 0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+  }
+  input.aline:focus{ outline:none; border-bottom:1px solid var(--teal-medium); }
+
+  input.blank{
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:2px 4px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    width:60px;
+    text-align:center;
+  }
+  input.blank.sm{ width:40px; }
+  input.blank.wide{ width:150px; }
+  input.blank:focus{ outline:none; border-bottom:1px solid var(--teal-medium); }
+
+  textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:10px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+  }
+  textarea:focus{ outline:none; border:1px solid var(--teal-medium); }
+
+  /* ---------- Story ---------- */
+  .story-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    font-style:italic;
+    color:var(--teal-dark);
+    font-size:20px;
+    text-align:center;
+    margin:8px 0 14px 0;
+  }
+  .story-text p{ margin:0 0 12px 0; text-align:justify; }
+
+  /* ---------- Tables ---------- */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 18px 0;
+    font-size:14px;
+  }
+  table caption{ text-align:left; font-weight:bold; margin-bottom:6px; }
+  th, td{
+    border:1px solid var(--border);
+    padding:8px 10px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:var(--mint);
+    color:var(--teal-dark);
+    font-weight:bold;
+  }
+
+  .word-box{
+    border:1px dashed var(--border);
+    border-radius:5px;
+    padding:8px 12px;
+    margin:8px 0 14px 0;
+    font-weight:bold;
+    color:var(--teal-dark);
+  }
+
+  .mc-question{ margin:0 0 16px 0; }
+  .mc-options{ display:flex; flex-wrap:wrap; gap:14px; margin:6px 0; }
+  .mc-options label{ display:flex; align-items:center; gap:5px; }
+  .mc-answer{ margin-top:4px; }
+  .mc-answer input.blank{ margin-left:6px; }
+
+  .checklist{ list-style:none; padding:0; margin:0; }
+  .checklist li{ display:flex; align-items:center; gap:6px; margin:3px 0; }
+  .checklist input[type="checkbox"]{ width:15px; height:15px; }
+
+  .grammar-lab-item{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:12px 14px;
+    margin-bottom:14px;
+  }
+  .grammar-lab-item .gl-sentence{ font-weight:bold; margin:0 0 8px 0; }
+  .grammar-lab-item .gl-q{ margin:6px 0; }
+  .grammar-lab-item .gl-q label{ display:block; margin-bottom:3px; }
+
+  .transform-item{ margin:0 0 16px 0; }
+  .transform-item .t-original{ margin:0 0 6px 0; }
+  .transform-item .t-instruction{ color:var(--teal-medium); font-weight:bold; margin:0 0 4px 0; }
+
+  .rating-table select{
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:4px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+  }
+
+  .closing-note{
+    text-align:center;
+    font-style:italic;
+    color:var(--teal-dark);
+    font-weight:bold;
+    margin:30px 0 6px 0;
+    font-size:15px;
+  }
+
+  .homework-columns{
+    display:flex;
+    gap:18px;
+    margin:10px 0 16px 0;
+    flex-wrap:wrap;
+  }
+  .homework-box{
+    flex:1;
+    min-width:240px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 16px;
+  }
+  .homework-box h4{ color:var(--teal-medium); margin:0 0 8px 0; }
+  .homework-box textarea{ margin-top:8px; }
+  .homework-box .q-list{ margin-top:8px; padding-left:18px; }
+  .homework-box .q-list li{ margin:0 0 8px 0; }
+  .final-reminder{ font-style:italic; margin-top:10px; }
+
+  .footer-divider{
+    border-top:1px solid var(--border);
+    margin-top:34px;
+    padding-top:10px;
+    text-align:center;
+    font-style:italic;
+    font-size:11.5px;
+    color:var(--teal-medium);
+  }
+
+  /* ---------- Action bars ---------- */
+  .action-bar{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    padding:10px 14px;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .action-bar.bottom{
+    border-bottom:none;
+    border-top:1px solid var(--border);
+    position:sticky;
+    top:auto;
+    bottom:0;
+  }
+  .action-bar button{
+    background:var(--teal-medium);
+    color:#ffffff;
+    border:none;
+    border-radius:20px;
+    padding:9px 18px;
+    font-size:13.5px;
+    font-weight:bold;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .action-bar button:hover{ background:var(--teal-dark); }
+  .action-bar button.secondary{ background:#555555; }
+  .action-bar button.secondary:hover{ background:#333333; }
+
+  /* ---------- Floating story button ---------- */
+  .story-float{
+    position:fixed;
+    right:20px;
+    bottom:78px;
+    background:var(--teal-medium);
+    color:#ffffff;
+    border:none;
+    border-radius:30px;
+    padding:10px 16px;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+    display:none;
+    z-index:60;
+    box-shadow:0 0 0 0 rgba(15,118,110,0.6);
+    animation:glowPulse 2s infinite;
+  }
+  .story-float.visible{ display:block; }
+  @keyframes glowPulse{
+    0%{ box-shadow:0 0 0 0 rgba(15,118,110,0.55); }
+    70%{ box-shadow:0 0 0 12px rgba(15,118,110,0); }
+    100%{ box-shadow:0 0 0 0 rgba(15,118,110,0); }
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    .action-bar, .story-float{ display:none !important; }
+    body{ font-size:12px; }
+    .page{ max-width:100%; padding:0; }
+    .section-bar{ break-inside:avoid; }
+    table, .grammar-lab-item, .story-text, .homework-box{ break-inside:avoid; }
+    input.aline, input.blank{ border-bottom:1px solid #000000; color:#000; }
+    textarea{ border:1px solid #000000; color:#000; }
+    th, td{ border:1px solid #000000; }
+    @page{ size:A4; margin:16mm 14mm; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:600px){
+    .page{ padding:16px 14px 90px 14px; }
+    .main-title{ font-size:22px; }
+    .episode-subtitle{ font-size:15px; }
+    .homework-columns{ flex-direction:column; }
+    .mc-options{ gap:8px 12px; }
+    .action-bar{ gap:8px; flex-wrap:wrap; }
+    .action-bar button{ padding:8px 12px; font-size:12.5px; }
+    table, th, td{ font-size:12.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="action-bar top">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <div class="running-header">Character &amp; Grammar Through Stories | Episode 8 - The New Beginning</div>
+
+  <div class="title-block">
+    <h1 class="main-title">Character &amp; Grammar Through Stories</h1>
+    <h2 class="episode-subtitle">Episode 8 - The New Beginning</h2>
+  </div>
+
+  <div class="info-box">
+    <div class="info-row">
+      <span class="info-label">Student Name:</span>
+      <input type="text" class="aline info-input">
+    </div>
+    <div class="info-row">
+      <span class="info-label">Date:</span>
+      <input type="text" class="aline info-input short">
+      <span class="info-label">Level:</span>
+      <span class="level-value">A2–B2</span>
+    </div>
+  </div>
+
+  <div class="goals-box">
+    <p class="goals-label">Learning Goals:</p>
+    <p class="goals-intro">By the end of this worksheet, students will be able to:</p>
+    <ul class="goals-list">
+      <li>✓ Read and understand a realistic story</li>
+      <li>✓ Learn both everyday and advanced vocabulary</li>
+      <li>✓ Identify grammar in context</li>
+      <li>✓ Build accurate sentences</li>
+      <li>✓ Practise short writing tasks</li>
+      <li>✓ Reflect on personal growth and future goals</li>
+    </ul>
+  </div>
+
+  <!-- ===================== SECTION 1 ===================== -->
+  <div class="section-bar" id="section1">SECTION 1 | WARM-UP | Before You Read</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Answer the questions before reading. Use short answers or discuss with a partner. | <span class="bengali-tag">নির্দেশনা:</span> পড়ার আগে প্রশ্নগুলোর উত্তর দাও। ছোট উত্তর লিখতে পারো বা জোড়ায় আলোচনা করতে পারো।</p>
+
+    <h3 class="sub-heading">Part A - Prediction Questions | অনুমানমূলক প্রশ্ন</h3>
+    <ol class="q-list">
+      <li>What does a "new beginning" mean in a student's life?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>How can challenges help a person grow stronger and wiser?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Part B - Personal Reflection Questions | ব্যক্তিগত ভাবনা</h3>
+    <ol class="q-list">
+      <li>What does success mean to you: grades, character, confidence, or something else?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>What lesson have you learned in the last few years that still helps you today?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 2 ===================== -->
+  <div class="section-bar" id="section2">SECTION 2 | MAIN STORY | Read the Story</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Read the story carefully. Underline sentences that show growth, gratitude, and future plans. | <span class="bengali-tag">নির্দেশনা:</span> গল্পটি মনোযোগ দিয়ে পড়ো। যেসব বাক্যে উন্নতি, কৃতজ্ঞতা ও ভবিষ্যৎ পরিকল্পনা বোঝায় সেগুলো দাগ দাও।</p>
+
+    <h3 class="story-title" id="story-title">The New Beginning</h3>
+    <div class="story-text">
+      <p>Several months have passed since Hasan first returned the lost wallet to its owner. At that time, he was just a quiet student who was trying to do the right thing. Now, as he walks through the college gate on a bright Thursday morning, he feels that something inside him has changed. The college is organising a programme called "Lessons from Our Journey," and students are being invited to share what they have learned during their academic journey.</p>
+
+      <p>In the auditorium, volunteers are arranging chairs, testing the microphone, and placing name cards on the table. Hasan is going to speak in front of many students and teachers. He feels nervous, but he is not afraid in the same way he was before. He has been trying to become more disciplined, more patient, and more responsible. Today, he wants to speak honestly about that journey.</p>
+
+      <p>Robin, his close friend, comes and sits beside him. "You look serious," Robin says with a smile. "Are you ready?" Hasan looks at the small paper in his hand. "I have written the main points, but I don't want to sound perfect. I want to sound real." Robin nods. "That is better. People listen when a speaker shares something meaningful."</p>
+
+      <p>While waiting for his turn, Hasan remembers the lost wallet. He could have kept the money, but he returned it. He remembers the exam week when worry almost stopped him from studying. He remembers the missing alarm that taught him to prepare the night before. He also remembers the day when he helped Robin return to better study habits instead of judging him. Each experience was small, but each one gave him a new perspective.</p>
+
+      <p>He also thinks about the community service day when students cleaned a public space and organized books for younger learners. At first, some students thought the work was boring, but later they saw how teamwork can create real change. Then he remembers the angry message in the group chat. If he had sent a harsh reply, the project might have been damaged. Instead, he waited, clarified the problem, and learned that respectful communication can protect friendships. Finally, he remembers the registration mistake he admitted during the college event. It was embarrassing, but the problem was fixed because he accepted responsibility.</p>
+
+      <p>Soon, a teacher who has guided many students calls his name. Hasan walks to the front. The audience becomes quiet. For a moment, he looks at the faces of his classmates. Some are confident, some are tired, and some are still searching for their direction. He takes a deep breath and begins.</p>
+
+      <p>"I used to think success meant only good marks and recognition," Hasan says. "But I have learned that success also means becoming trustworthy, learning from mistakes, helping others, and staying hopeful when life feels difficult. If we remember only our results, we will forget the character that helped us reach them."</p>
+
+      <p>He continues, "I have made mistakes. I have felt overwhelmed. I have blamed others when I should have checked myself first. But those moments were not useless. They were lessons. If I were still the same careless student, I would probably avoid responsibility. Now I understand that growth is not a sudden accomplishment. It is a lifelong journey."</p>
+
+      <p>A few students look at one another and smile. Hasan feels calmer. "We should be grateful for the people who correct us kindly," he says. "We can improve when we accept advice with humility. We must also support friends who are struggling, because a small act of encouragement may become a turning point in someone's life."</p>
+
+      <p>After the speech, the hall fills with warm applause. The principal thanks Hasan and says, "Your words remind us that education is not only information. It is also transformation." Hasan feels grateful, not because he gave a perfect speech, but because he spoke from experience.</p>
+
+      <p>Later, as the program ends, Robin walks beside him across the campus. "So, what is next?" he asks. Hasan looks at the open sky above the college field. "I am going to keep learning," he replies. "I will still make mistakes, but I will try to correct them faster. My aspiration is not to look successful only from outside. I want to become useful, honest, and steady from inside."</p>
+
+      <p>The afternoon sunlight falls on the empty chairs as the students leave the auditorium. Hasan folds his speech paper and puts it in his bag. He knows that one chapter of his student life has taught him many lessons, but another chapter is waiting. With gratitude in his heart and hope in his steps, he walks forward into a new beginning.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 3 ===================== -->
+  <div class="section-bar" id="section3">SECTION 3 | VOCABULARY ZONE | শব্দভান্ডার</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Study the words from the story. Try to use them in your own speaking and writing. | <span class="bengali-tag">নির্দেশনা:</span> গল্পের শব্দগুলো পড়ো। নিজের কথা বলা ও লেখায় এগুলো ব্যবহার করার চেষ্টা করো।</p>
+
+    <table>
+      <thead>
+        <tr><th>Word</th><th>Part of Speech</th><th>Simple English Meaning</th><th>বাংলা অর্থ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>gratitude</td><td>noun</td><td>a thankful feeling</td><td>কৃতজ্ঞতা</td></tr>
+        <tr><td>resilience</td><td>noun</td><td>the ability to become strong again after difficulty</td><td>কঠিন সময়ের পর আবার শক্ত হওয়ার ক্ষমতা</td></tr>
+        <tr><td>opportunity</td><td>noun</td><td>a chance to do something good</td><td>সুযোগ</td></tr>
+        <tr><td>confidence</td><td>noun</td><td>belief in yourself</td><td>আত্মবিশ্বাস</td></tr>
+        <tr><td>achievement</td><td>noun</td><td>something good you have done</td><td>অর্জন</td></tr>
+        <tr><td>responsibility</td><td>noun</td><td>a duty you should do properly</td><td>দায়িত্ব</td></tr>
+        <tr><td>reflection</td><td>noun</td><td>careful thinking about yourself or an experience</td><td>আত্মচিন্তা / ভাবনা</td></tr>
+        <tr><td>perseverance</td><td>noun</td><td>continued effort even when something is hard</td><td>অটল চেষ্টা / অধ্যবসায়</td></tr>
+        <tr><td>aspiration</td><td>noun</td><td>a strong hope or goal for the future</td><td>উচ্চ আশা / লক্ষ্য</td></tr>
+        <tr><td>transformation</td><td>noun</td><td>a big positive change</td><td>রূপান্তর / বড় পরিবর্তন</td></tr>
+        <tr><td>perspective</td><td>noun</td><td>a way of seeing or understanding something</td><td>দৃষ্টিভঙ্গি</td></tr>
+        <tr><td>meaningful</td><td>adjective</td><td>important and useful</td><td>অর্থপূর্ণ</td></tr>
+        <tr><td>accomplishment</td><td>noun</td><td>a successful result after effort</td><td>সফল অর্জন</td></tr>
+        <tr><td>integrity</td><td>noun</td><td>honesty and strong moral character</td><td>সততা ও নৈতিক দৃঢ়তা</td></tr>
+        <tr><td>lifelong</td><td>adjective</td><td>continuing for the whole life</td><td>সারা জীবনের</td></tr>
+        <tr><td>humility</td><td>noun</td><td>the quality of not being proud</td><td>বিনয়</td></tr>
+        <tr><td>discipline</td><td>noun</td><td>control that helps you follow good habits</td><td>শৃঙ্খলা</td></tr>
+        <tr><td>consistent</td><td>adjective</td><td>doing something regularly in the same way</td><td>নিয়মিত / ধারাবাহিক</td></tr>
+        <tr><td>challenge</td><td>noun</td><td>a difficult task or situation</td><td>চ্যালেঞ্জ / কঠিন অবস্থা</td></tr>
+        <tr><td>support</td><td>verb/noun</td><td>to help or help itself</td><td>সহায়তা করা / সহায়তা</td></tr>
+        <tr><td>audience</td><td>noun</td><td>people who listen to or watch a program</td><td>শ্রোতা / দর্শক</td></tr>
+        <tr><td>speech</td><td>noun</td><td>a formal talk in front of people</td><td>বক্তব্য</td></tr>
+        <tr><td>journey</td><td>noun</td><td>a process of moving or growing over time</td><td>যাত্রা / অগ্রগতি</td></tr>
+        <tr><td>recognition</td><td>noun</td><td>praise or attention for good work</td><td>স্বীকৃতি</td></tr>
+        <tr><td>improve</td><td>verb</td><td>to become better</td><td>উন্নতি করা</td></tr>
+        <tr><td>inspire</td><td>verb</td><td>to make someone feel hopeful or ready to act</td><td>অনুপ্রাণিত করা</td></tr>
+        <tr><td>chapter</td><td>noun</td><td>a part of a book or a stage of life</td><td>অধ্যায় / জীবনের পর্যায়</td></tr>
+        <tr><td>future</td><td>noun/adjective</td><td>time that will come later</td><td>ভবিষ্যৎ</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task A - Matching | শব্দের অর্থ মেলাও</h3>
+    <p class="instructions"><strong>Instructions:</strong> Match the words with the correct meanings. Write the letter beside each number. | <span class="bengali-tag">নির্দেশনা:</span> শব্দের সাথে সঠিক অর্থ মেলাও। প্রতিটি নম্বরের পাশে অক্ষর লেখো।</p>
+    <table>
+      <thead><tr><th>Word</th><th>Meaning</th><th>Answer</th></tr></thead>
+      <tbody>
+        <tr><td>1. gratitude</td><td>A. a formal talk in front of people</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>2. resilience</td><td>B. a chance to do something good</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>3. aspiration</td><td>C. continued effort when something is hard</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>4. speech</td><td>D. a thankful feeling</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>5. opportunity</td><td>E. the ability to become strong again after difficulty</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>6. integrity</td><td>F. a strong hope or goal for the future</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>7. perseverance</td><td>G. honesty and strong moral character</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>8. transformation</td><td>H. a big positive change</td><td><input type="text" class="blank sm"></td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Fill in the Blanks | শূন্যস্থান পূরণ করো</h3>
+    <p class="instructions"><strong>Instructions:</strong> Complete the sentences using words from the box. You may change the form if needed. | <span class="bengali-tag">নির্দেশনা:</span> বক্সের শব্দ ব্যবহার করে বাক্য পূরণ করো। প্রয়োজন হলে শব্দের রূপ বদলাতে পারো।</p>
+    <div class="word-box">Word Bank: gratitude | discipline | responsibility | confidence | improve | support | meaningful | future</div>
+    <ol class="q-list">
+      <li>Hasan felt <input type="text" class="blank wide"> because many people helped him grow.</li>
+      <li>Good study habits require <input type="text" class="blank wide"> and regular effort.</li>
+      <li>When we accept a duty, we should complete it with <input type="text" class="blank wide">.</li>
+      <li>A small kind word can <input type="text" class="blank wide"> a friend who is struggling.</li>
+      <li>Hasan spoke with more <input type="text" class="blank wide"> after he remembered his journey.</li>
+      <li>Students can <input type="text" class="blank wide"> when they learn from their mistakes.</li>
+      <li>A <input type="text" class="blank wide"> life is not only about awards; it is also about character.</li>
+      <li>Hasan is hopeful about his <input type="text" class="blank wide">.</li>
+    </ol>
+
+    <h3 class="sub-heading">Task C - Vocabulary in Context | বাক্যের ভেতর থেকে অর্থ বোঝা</h3>
+    <p class="instructions"><strong>Instructions:</strong> Read each sentence and guess the meaning of the underlined word from context. | <span class="bengali-tag">নির্দেশনা:</span> প্রতিটি বাক্য পড়ো এবং প্রসঙ্গ দেখে দাগ দেওয়া শব্দের অর্থ অনুমান করো।</p>
+    <ol class="q-list">
+      <li>"Education is not only information. It is also transformation." What does <em>transformation</em> mean here?
+        <input type="text" class="aline">
+      </li>
+      <li>"A small act of encouragement may become a turning point." What does <em>encouragement</em> mean here?
+        <input type="text" class="aline">
+      </li>
+      <li>"He spoke from experience." What does <em>experience</em> mean in this sentence?
+        <input type="text" class="aline">
+      </li>
+      <li>"Growth is a lifelong journey." What does <em>lifelong</em> mean here?
+        <input type="text" class="aline">
+      </li>
+      <li>"He accepted advice with humility." What does <em>humility</em> mean here?
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Task D - Personal Vocabulary Journal | নিজের শব্দ-ডায়েরি</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose 3 new words. Write the Bengali meaning and your own English sentence. | <span class="bengali-tag">নির্দেশনা:</span> ৩টি নতুন শব্দ বেছে নাও। বাংলা অর্থও নিজের ইংরেজি বাক্যে লেখো।</p>
+    <table>
+      <thead><tr><th>No.</th><th>New Word</th><th>বাংলা অর্থ</th><th>My Own English Sentence</th></tr></thead>
+      <tbody>
+        <tr><td>1.</td><td><input type="text" class="aline"></td><td><input type="text" class="aline"></td><td><input type="text" class="aline"></td></tr>
+        <tr><td>2.</td><td><input type="text" class="aline"></td><td><input type="text" class="aline"></td><td><input type="text" class="aline"></td></tr>
+        <tr><td>3.</td><td><input type="text" class="aline"></td><td><input type="text" class="aline"></td><td><input type="text" class="aline"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== SECTION 4 ===================== -->
+  <div class="section-bar" id="section4">SECTION 4 | GRAMMAR DETECTIVE 🔍 | Grammar in Context</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Find grammar examples from the story. Do not worry about rules first. Notice how the grammar is used. | <span class="bengali-tag">নির্দেশনা:</span> গল্প থেকে ব্যাকরণের উদাহরণ খুঁজে বের করো। আগে নিয়ম মুখস্থ করার দরকার নেই। বাক্যে কীভাবে ব্যবহার হয়েছে তা লক্ষ করো।</p>
+
+    <h3 class="sub-heading">Task A - Find from the Story | গল্প থেকে খুঁজে লেখো</h3>
+    <table>
+      <thead><tr><th>Grammar Focus</th><th>How many?</th><th>Examples from the Story</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Past Simple</td><td>3</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline"><br>
+            3. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Present Perfect</td><td>2</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Present Perfect Continuous</td><td>1</td>
+          <td>1. <input type="text" class="aline"></td>
+        </tr>
+        <tr>
+          <td>Modal Verb</td><td>2</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Relative Clauses</td><td>2</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>First Conditional</td><td>1</td>
+          <td>1. <input type="text" class="aline"></td>
+        </tr>
+        <tr>
+          <td>Passive Voice</td><td>1</td>
+          <td>1. <input type="text" class="aline"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Grammar Lab | বাক্যের ভেতরে ব্যাকরণ বোঝা</h3>
+    <p class="instructions"><strong>Instructions:</strong> Read each story sentence. Answer the three questions for each sentence. | <span class="bengali-tag">নির্দেশনা:</span> প্রতিটি গল্পের বাক্য পড়ো। প্রতিটি বাক্যের নিচে তিনটি প্রশ্নের উত্তর দাও।</p>
+
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">1. Several months have passed since Hasan first returned the lost wallet to its owner.</p>
+      <div class="gl-q"><label>a) Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>b) Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>c) Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">2. He has been trying to become more disciplined, more patient, and more responsible.</p>
+      <div class="gl-q"><label>a) Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>b) Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>c) Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">3. The college is organizing a program called "Lessons from Our Journey."</p>
+      <div class="gl-q"><label>a) Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>b) Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>c) Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">4. If we remember only our results, we will forget the character that helped us reach them.</p>
+      <div class="gl-q"><label>a) Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>b) Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>c) Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">5. Education is not only information. It is also transformation.</p>
+      <div class="gl-q"><label>a) Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>b) Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>c) Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 5 ===================== -->
+  <div class="section-bar" id="section5">SECTION 5 | MIXED GRAMMAR CHALLENGE</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Use the story context to complete the grammar tasks. Read carefully before answering. | <span class="bengali-tag">নির্দেশনা:</span> গল্পের প্রেক্ষাপট ব্যবহার করে ব্যাকরণের কাজগুলো সম্পন্ন করো। উত্তর দেওয়ার আগে ভালোভাবে পড়ো।</p>
+
+    <h3 class="sub-heading">A. Error Correction | ভুল ঠিক করো</h3>
+    <ol class="q-list">
+      <li>Wrong: Hasan have learned many lessons from his journey.<br>Correct: <input type="text" class="aline"></li>
+      <li>Wrong: The program organize by the college for student reflection.<br>Correct: <input type="text" class="aline"></li>
+      <li>Wrong: If students support each other, they becomes stronger.<br>Correct: <input type="text" class="aline"></li>
+      <li>Wrong: Hasan has been try to improve his habits.<br>Correct: <input type="text" class="aline"></li>
+      <li>Wrong: The teacher which guided Hasan called his name.<br>Correct: <input type="text" class="aline"></li>
+    </ol>
+
+    <h3 class="sub-heading">B. Multiple Choice | সঠিক উত্তর বেছে নাও</h3>
+
+    <div class="mc-question">
+      <p>1. Several months ______ since the first event.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc1"> A. has passed</label>
+        <label><input type="radio" name="mc1"> B. have passed</label>
+        <label><input type="radio" name="mc1"> C. passed have</label>
+        <label><input type="radio" name="mc1"> D. passing</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>2. Hasan ______ a speech at the program.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc2"> A. is going to give</label>
+        <label><input type="radio" name="mc2"> B. giving</label>
+        <label><input type="radio" name="mc2"> C. have given</label>
+        <label><input type="radio" name="mc2"> D. was give</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>3. The program ______ organized by the college.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc3"> A. is been</label>
+        <label><input type="radio" name="mc3"> B. was</label>
+        <label><input type="radio" name="mc3"> C. were</label>
+        <label><input type="radio" name="mc3"> D. has</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>4. If we learn from mistakes, we ______ wiser.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc4"> A. became</label>
+        <label><input type="radio" name="mc4"> B. becomes</label>
+        <label><input type="radio" name="mc4"> C. will become</label>
+        <label><input type="radio" name="mc4"> D. has become</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>5. Robin is the friend ______ encouraged Hasan.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc5"> A. which</label>
+        <label><input type="radio" name="mc5"> B. who</label>
+        <label><input type="radio" name="mc5"> C. where</label>
+        <label><input type="radio" name="mc5"> D. when</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <h3 class="sub-heading">C. Gap Fill | শূন্যস্থান পূরণ করো</h3>
+    <p class="instructions"><strong>Instructions:</strong> Use the correct form of the word in brackets. | <span class="bengali-tag">নির্দেশনা:</span> বন্ধনীর শব্দের সঠিক রূপ ব্যবহার করো।</p>
+    <ol class="q-list">
+      <li>Hasan has been <input type="text" class="blank wide"> (prepare) for his speech all week.</li>
+      <li>The audience <input type="text" class="blank wide"> (listen) carefully during the program.</li>
+      <li>If Hasan stays disciplined, he <input type="text" class="blank wide"> (achieve) more meaningful goals.</li>
+      <li>The name cards were <input type="text" class="blank wide"> (place) on the table before the event.</li>
+      <li>We should <input type="text" class="blank wide"> (support) friends who are struggling.</li>
+    </ol>
+
+    <h3 class="sub-heading">D. Sentence Transformation | বাক্য পরিবর্তন করো</h3>
+    <p class="instructions"><strong>Instructions:</strong> Rewrite the sentences as directed. Keep the meaning similar. | <span class="bengali-tag">নির্দেশনা:</span> নির্দেশনা অনুযায়ী বাক্য নতুনভাবে লেখো। অর্থ একই থাকে।</p>
+
+    <div class="transform-item">
+      <p class="t-original">1. Original: The college organized the program.</p>
+      <p class="t-instruction">Change to Passive Voice:</p>
+      <p>The program <input type="text" class="aline"></p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">2. Original: Hasan learned many lessons.</p>
+      <p class="t-instruction">Change to Present Perfect:</p>
+      <p>Hasan <input type="text" class="aline"></p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">3. Original: I make a mistake. I learn from it.</p>
+      <p class="t-instruction">Change to First Conditional:</p>
+      <p>If I <input type="text" class="aline"></p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 6 ===================== -->
+  <div class="section-bar" id="section6">SECTION 6 | SENTENCE BUILDER | Build Your Own Sentences</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Use each word to create your own original sentence. Try to connect it with student life. | <span class="bengali-tag">নির্দেশনা:</span> প্রতিটি শব্দ দিয়ে নিজের মৌলিক বাক্য লেখো। সম্ভব হলে ছাত্রজীবনের সাথে মিলিয়ে লেখো।</p>
+    <ol class="q-list">
+      <li>perseverance: <input type="text" class="aline"></li>
+      <li>gratitude: <input type="text" class="aline"></li>
+      <li>aspiration: <input type="text" class="aline"></li>
+      <li>integrity: <input type="text" class="aline"></li>
+      <li>resilience: <input type="text" class="aline"></li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 7 ===================== -->
+  <div class="section-bar" id="section7">SECTION 7 | SHORT WRITING TASK | Think &amp; Write</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Write 120-150 words. Use clear sentences and include both past experience and future goals. | <span class="bengali-tag">নির্দেশনা:</span> ১২০-১৫০ শব্দ লেখো। পরিষ্কার বাক্য ব্যবহার করো এবং অতীত অভিজ্ঞতা ও ভবিষ্যৎ লক্ষ্য দুটোই উল্লেখ করো।</p>
+    <p><strong>Prompt:</strong> Looking back on the last two years of your life, what lessons have helped you grow as a person? What goals do you have for the future?</p>
+    <p class="sub-heading" style="margin-top:14px;">Writing | লেখার জায়গা</p>
+    <textarea rows="12" placeholder="Write your answer here..."></textarea>
+  </div>
+
+  <!-- ===================== SECTION 8 ===================== -->
+  <div class="section-bar" id="section8">SECTION 8 | CHARACTER REFLECTION | Character Corner - Looking Back, Moving Forward</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Think deeply and answer in your own words. You may discuss your ideas before writing. | <span class="bengali-tag">নির্দেশনা:</span> গভীরভাবে ভাবো এবং নিজের ভাষায় উত্তর দাও। লেখার আগে আলোচনা করতে পারো।</p>
+
+    <p><strong>1.</strong> Which personal quality do you want to improve most this year? Why?</p>
+    <textarea rows="2"></textarea>
+
+    <p style="margin-top:14px;"><strong>2.</strong> What challenge taught you an important lesson about yourself?</p>
+    <textarea rows="2"></textarea>
+
+    <p style="margin-top:14px;"><strong>3.</strong> How can gratitude help a person stay positive during difficult times?</p>
+    <textarea rows="2"></textarea>
+
+    <p style="margin-top:14px;"><strong>4.</strong> Why is learning from mistakes better than hiding them?</p>
+    <textarea rows="2"></textarea>
+
+    <p style="margin-top:14px;"><strong>5.</strong> How can good character help someone succeed in study, work, and relationships?</p>
+    <textarea rows="2"></textarea>
+  </div>
+
+  <!-- ===================== SECTION 9 ===================== -->
+  <div class="section-bar" id="section9">SECTION 9 | HOMEWORK | বাড়ির কাজ</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Choose your level and complete the task at home. | <span class="bengali-tag">নির্দেশনা:</span> তোমার লেভেল বেছে নিয়ে বাড়িতে কাজটি সম্পন্ন করো।</p>
+    <div class="homework-columns">
+      <div class="homework-box">
+        <h4>Level 1</h4>
+        <p>Write 8 sentences about your future goals. Use will, going to, and First Conditional.</p>
+        <textarea rows="9" placeholder="1.&#10;2.&#10;3.&#10;4.&#10;5.&#10;6.&#10;7.&#10;8."></textarea>
+      </div>
+      <div class="homework-box">
+        <h4>Level 2</h4>
+        <p>Write a reflective journal entry (120-150 words). Topic: "My New Beginning". Requirements: Mention one challenge, one lesson learned, and one future goal. Use at least 2 Past Simple sentences, 2 Present Perfect sentences, and 2 Future sentences.</p>
+        <textarea rows="9" placeholder="Write your answer here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== BONUS CHALLENGE ===================== -->
+  <div class="section-bar" id="bonus">BONUS CHALLENGE | My Character Growth Map</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Complete the table. Be honest with yourself. 1 = low, 5 = strong. | <span class="bengali-tag">নির্দেশনা:</span> টেবিল পূরণ করো। নিজের সাথে সৎ থাকো। ১ = কম, ৫ = শক্তিশালী।</p>
+
+    <table>
+      <thead><tr><th>Quality</th><th>Current Level (1-5)</th><th>Goal (1-5)</th></tr></thead>
+      <tbody>
+        <tr><td>Honesty</td><td><input type="text" class="blank sm"></td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>Discipline</td><td><input type="text" class="blank sm"></td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>Patience</td><td><input type="text" class="blank sm"></td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>Responsibility</td><td><input type="text" class="blank sm"></td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>Communication</td><td><input type="text" class="blank sm"></td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>Leadership</td><td><input type="text" class="blank sm"></td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>Gratitude</td><td><input type="text" class="blank sm"></td><td><input type="text" class="blank sm"></td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Final Reflection | শেষ ভাবনা</h3>
+    <p>Which quality would you most like to improve this year and why?</p>
+    <textarea rows="5"></textarea>
+  </div>
+
+  <p class="closing-note">End of Episode 8 - A new journey begins.</p>
+
+  <div class="footer-divider">© Abidur Rahman Tahmid | English Learning Through Stories | Episode 8 - The New Beginning</div>
+
+</div>
+
+<div class="action-bar bottom">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<button id="storyBtn" class="story-float" onclick="scrollToStory()">📖 Story</button>
+
+<script>
+  function clearAll(){
+    if(!confirm("Are you sure you want to clear all your answers? This cannot be undone.")) return;
+    document.querySelectorAll('input[type="text"]').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('textarea').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('input[type="radio"]').forEach(function(el){ el.checked = false; });
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(el){ el.checked = false; });
+  }
+
+  function scrollToStory(){
+    var target = document.getElementById('story-title');
+    if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  }
+
+  (function(){
+    var storyBtn = document.getElementById('storyBtn');
+    var sec4 = document.getElementById('section4');
+    var sec9 = document.getElementById('section9');
+    if(!storyBtn || !sec4 || !sec9) return;
+
+    function updateVisibility(){
+      var sec4Top = sec4.getBoundingClientRect().top;
+      var sec9Top = sec9.getBoundingClientRect().top;
+      var viewportH = window.innerHeight;
+      var passedSection4 = sec4Top < viewportH * 0.6;
+      var passedSection9 = sec9Top < viewportH * 0.6;
+      if(passedSection4 && !passedSection9){
+        storyBtn.classList.add('visible');
+      } else {
+        storyBtn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateVisibility, {passive:true});
+    window.addEventListener('resize', updateVisibility);
+    updateVisibility();
+  })();
+</script>
+
+</body>
+</html>

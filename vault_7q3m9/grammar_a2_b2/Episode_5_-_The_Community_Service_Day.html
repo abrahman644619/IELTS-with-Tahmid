@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Character & Grammar Through Stories | Episode 5 - The Community Service Day</title>
+<style>
+  :root{
+    --teal-medium:#0F766E;
+    --teal-dark:#0F5E5E;
+    --mint:#E6F4F1;
+    --text:#111111;
+    --border:#8FC0BB;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:#ffffff;
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .page{
+    max-width:850px;
+    margin:0 auto;
+    padding:24px 28px 80px 28px;
+  }
+  /* ---------- Running header ---------- */
+  .running-header{
+    text-align:center;
+    color:var(--teal-medium);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.2px;
+    margin-bottom:10px;
+  }
+  /* ---------- Title block ---------- */
+  .title-block{ text-align:center; margin-bottom:16px; }
+  .main-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:var(--teal-dark);
+    font-size:28px;
+    margin:0 0 4px 0;
+  }
+  .episode-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:18px;
+    margin:0;
+  }
+  /* ---------- Info box ---------- */
+  .info-box{
+    background:var(--mint);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0;
+  }
+  .info-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:6px 0;
+    flex-wrap:wrap;
+  }
+  .info-label{ font-weight:bold; color:var(--teal-dark); white-space:nowrap; }
+  .info-input{ flex:1; min-width:160px; }
+  .info-input.short{ flex:0 0 180px; }
+  .level-value{ font-weight:bold; margin-left:2px; }
+
+  /* ---------- Goals box ---------- */
+  .goals-box{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0 26px 0;
+  }
+  .goals-label{ color:var(--teal-medium); font-weight:bold; margin:0 0 4px 0; }
+  .goals-intro{ margin:0 0 8px 0; font-style:italic; }
+  .goals-list{ margin:0; padding-left:0; list-style:none; }
+  .goals-list li{ margin:4px 0; }
+
+  /* ---------- Section bars ---------- */
+  .section-bar{
+    background:var(--teal-dark);
+    color:#ffffff;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:9px 14px;
+    border-radius:5px;
+    margin:30px 0 14px 0;
+    font-size:14.5px;
+    letter-spacing:.2px;
+    scroll-margin-top:20px;
+  }
+  .section-content{ margin-bottom:6px; }
+
+  .sub-heading{
+    color:var(--teal-medium);
+    font-size:15.5px;
+    margin:18px 0 6px 0;
+  }
+  .instructions{ margin:4px 0 12px 0; }
+  .bengali-tag{ color:var(--teal-medium); font-weight:bold; }
+
+  .q-list{ margin:0 0 10px 0; padding-left:20px; }
+  .q-list li{ margin:0 0 14px 0; }
+
+  /* ---------- Inputs ---------- */
+  input.aline{
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:5px 2px;
+    margin:4px 0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+  }
+  input.aline:focus{ outline:none; border-bottom:1px solid var(--teal-medium); }
+
+  input.blank{
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:2px 4px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    width:60px;
+    text-align:center;
+  }
+  input.blank.sm{ width:40px; }
+  input.blank.wide{ width:150px; }
+  input.blank:focus{ outline:none; border-bottom:1px solid var(--teal-medium); }
+
+  textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:10px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+  }
+  textarea:focus{ outline:none; border:1px solid var(--teal-medium); }
+
+  /* ---------- Story ---------- */
+  .story-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    font-style:italic;
+    color:var(--teal-dark);
+    font-size:20px;
+    text-align:center;
+    margin:8px 0 14px 0;
+  }
+  .story-text p{ margin:0 0 12px 0; text-align:justify; }
+
+  /* ---------- Tables ---------- */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 18px 0;
+    font-size:14px;
+  }
+  table caption{ text-align:left; font-weight:bold; margin-bottom:6px; }
+  th, td{
+    border:1px solid var(--border);
+    padding:8px 10px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:var(--mint);
+    color:var(--teal-dark);
+    font-weight:bold;
+  }
+
+  .word-box{
+    border:1px dashed var(--border);
+    border-radius:5px;
+    padding:8px 12px;
+    margin:8px 0 14px 0;
+    font-weight:bold;
+    color:var(--teal-dark);
+  }
+
+  .mc-question{ margin:0 0 16px 0; }
+  .mc-options{ display:flex; flex-wrap:wrap; gap:14px; margin:6px 0; }
+  .mc-options label{ display:flex; align-items:center; gap:5px; }
+  .mc-answer{ margin-top:4px; }
+  .mc-answer input.blank{ margin-left:6px; }
+
+  .checklist{ list-style:none; padding:0; margin:0; }
+  .checklist li{ display:flex; align-items:center; gap:6px; margin:3px 0; }
+  .checklist input[type="checkbox"]{ width:15px; height:15px; }
+
+  .grammar-lab-item{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:12px 14px;
+    margin-bottom:14px;
+  }
+  .grammar-lab-item .gl-sentence{ font-weight:bold; margin:0 0 8px 0; }
+  .grammar-lab-item .gl-q{ margin:6px 0; }
+  .grammar-lab-item .gl-q label{ display:block; margin-bottom:3px; }
+
+  .homework-columns{
+    display:flex;
+    gap:18px;
+    margin:10px 0 16px 0;
+    flex-wrap:wrap;
+  }
+  .homework-box{
+    flex:1;
+    min-width:240px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 16px;
+  }
+  .homework-box h4{ color:var(--teal-medium); margin:0 0 8px 0; }
+  .homework-box textarea{ margin-top:8px; }
+  .homework-box .q-list{ margin-top:8px; padding-left:18px; }
+  .homework-box .q-list li{ margin:0 0 8px 0; }
+  .final-reminder{ font-style:italic; margin-top:10px; }
+
+  .footer-divider{
+    border-top:1px solid var(--border);
+    margin-top:34px;
+    padding-top:10px;
+    text-align:center;
+    font-style:italic;
+    font-size:11.5px;
+    color:var(--teal-medium);
+  }
+
+  /* ---------- Action bars ---------- */
+  .action-bar{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    padding:10px 14px;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .action-bar.bottom{
+    border-bottom:none;
+    border-top:1px solid var(--border);
+    position:sticky;
+    top:auto;
+    bottom:0;
+  }
+  .action-bar button{
+    background:var(--teal-medium);
+    color:#ffffff;
+    border:none;
+    border-radius:20px;
+    padding:9px 18px;
+    font-size:13.5px;
+    font-weight:bold;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .action-bar button:hover{ background:var(--teal-dark); }
+  .action-bar button.secondary{ background:#555555; }
+  .action-bar button.secondary:hover{ background:#333333; }
+
+  /* ---------- Floating story button ---------- */
+  .story-float{
+    position:fixed;
+    right:20px;
+    bottom:78px;
+    background:var(--teal-medium);
+    color:#ffffff;
+    border:none;
+    border-radius:30px;
+    padding:10px 16px;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+    display:none;
+    z-index:60;
+    box-shadow:0 0 0 0 rgba(15,118,110,0.6);
+    animation:glowPulse 2s infinite;
+  }
+  .story-float.visible{ display:block; }
+  @keyframes glowPulse{
+    0%{ box-shadow:0 0 0 0 rgba(15,118,110,0.55); }
+    70%{ box-shadow:0 0 0 12px rgba(15,118,110,0); }
+    100%{ box-shadow:0 0 0 0 rgba(15,118,110,0); }
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    .action-bar, .story-float{ display:none !important; }
+    body{ font-size:12px; }
+    .page{ max-width:100%; padding:0; }
+    .section-bar{ break-inside:avoid; }
+    table, .grammar-lab-item, .story-text, .homework-box{ break-inside:avoid; }
+    input.aline, input.blank{ border-bottom:1px solid #000000; color:#000; }
+    textarea{ border:1px solid #000000; color:#000; }
+    th, td{ border:1px solid #000000; }
+    @page{ size:A4; margin:16mm 14mm; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:600px){
+    .page{ padding:16px 14px 90px 14px; }
+    .main-title{ font-size:22px; }
+    .episode-subtitle{ font-size:15px; }
+    .homework-columns{ flex-direction:column; }
+    .mc-options{ gap:8px 12px; }
+    .action-bar{ gap:8px; flex-wrap:wrap; }
+    .action-bar button{ padding:8px 12px; font-size:12.5px; }
+    table, th, td{ font-size:12.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="action-bar top">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <div class="running-header">Character &amp; Grammar Through Stories | Episode 5 - The Community Service Day</div>
+
+  <div class="title-block">
+    <h1 class="main-title">Character &amp; Grammar Through Stories</h1>
+    <h2 class="episode-subtitle">Episode 5 - The Community Service Day</h2>
+  </div>
+
+  <div class="info-box">
+    <div class="info-row">
+      <span class="info-label">Student Name:</span>
+      <input type="text" class="aline info-input">
+    </div>
+    <div class="info-row">
+      <span class="info-label">Date:</span>
+      <input type="text" class="aline info-input short">
+      <span class="info-label">Level:</span>
+      <span class="level-value">A2–B1</span>
+    </div>
+  </div>
+
+  <div class="goals-box">
+    <p class="goals-label">Learning Goals:</p>
+    <p class="goals-intro">By the end of this worksheet, students will be able to:</p>
+    <ul class="goals-list">
+      <li>✓ Read and understand a realistic story</li>
+      <li>✓ Learn community-related vocabulary</li>
+      <li>✓ Identify grammar in context</li>
+      <li>✓ Practise sentence building</li>
+      <li>✓ Practise short writing tasks</li>
+      <li>✓ Reflect on kindness and teamwork</li>
+    </ul>
+  </div>
+
+  <!-- ===================== SECTION 1 ===================== -->
+  <div class="section-bar" id="section1">SECTION 1 | WARM-UP | Before You Read</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Answer the questions before reading the story. Use short but clear sentences. | <span class="bengali-tag">নির্দেশনা:</span> গল্প পড়ার আগে প্রশ্নগুলোর উত্তর দাও। ছোট কিন্তু পরিষ্কার বাক্য ব্যবহার করো।</p>
+
+    <h3 class="sub-heading">Part A - Prediction Questions | অনুমান করা</h3>
+    <ol class="q-list">
+      <li>What does it mean to help a community?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>What kind of activities might students do on a Community Service Day?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Part B - Personal Reflection | নিজের অভিজ্ঞতা শেয়ার করো</h3>
+    <ol class="q-list" start="3">
+      <li>Have you ever participated in a volunteer activity? What did you do?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>Why is teamwork important when people are trying to help others?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 2 ===================== -->
+  <div class="section-bar" id="section2">SECTION 2 | MAIN STORY | Read the Story</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Read the story carefully. Notice the actions, feelings, and grammar in the sentences. | <span class="bengali-tag">নির্দেশনা:</span> গল্পটি মনোযোগ দিয়ে পড়ো। চরিত্রের কাজ, অনুভূতি এবং বাক্যের grammar লক্ষ করো।</p>
+
+    <h3 class="story-title" id="story-title">The Community Service Day</h3>
+    <div class="story-text">
+      <p>Hasan studies at a college in Sylhet, and he usually keeps himself busy with classes, assignments, and family responsibilities. One Monday morning, his English teacher wrote a notice on the board: Community Service Day will be held this Thursday. All students can join a project that will help the local area. Hasan read the notice twice because he had never joined a college volunteer project before.</p>
+
+      <p>During the break, some students were talking excitedly near the classroom door. "We are going to clean the small public reading corner beside the market," said Rafi. "We will also organize books and learning materials for younger students who visit the centre." Another student laughed and said, "It sounds like hard work. I think it will be a waste of time." Hasan did not answer at first. He understood that the day might be tiring, but he also felt that students should contribute when they can.</p>
+
+      <p>On Thursday morning, Hasan arrived with a group of volunteers. The reading corner looked dusty, and many books were lying in different boxes. Some posters were old, and a few notebooks had no covers. For a moment, the task seemed too big. "How will we finish all this before afternoon?" one student asked. Their teacher smiled and said, "If you work together, you will finish more than you expect."</p>
+
+      <p>Hasan started by making a simple plan. "Rafi, you can check the books. Sumi, you can make labels. I will arrange the tables with two others," he said. At first, everyone moved slowly, but soon the team found a rhythm. Some students were sweeping the floor, some were sorting books, and others were writing names on small labels. A few students who had been quiet in class showed strong leadership during the project.</p>
+
+      <p>After an hour, the place began to change. The shelves looked neat, the tables were clean, and the learning materials were easier to find. A young boy came with his little sister and looked at the books. "Can we read here?" he asked. Hasan smiled and replied, "Yes, you can. This space is for students like you." The boy's face became bright, and Hasan felt that their effort had already made a difference.</p>
+
+      <p>Later, the team packed extra notebooks and pencils into small sets for younger learners. One student, who had called the project a waste of time, quietly said, "I was wrong. I have realized that small actions can help many people." Hasan nodded and said, "Teamwork makes difficult work lighter. We should do this again next month."</p>
+
+      <p>By the end of the day, everyone was tired, but nobody complained. They had organized the books, cleaned the space, and prepared learning materials for the children. Their teacher thanked them and said, "You have shown responsibility today. Real leadership is not only about giving instructions. It is also about serving others." Hasan walked home slowly, feeling proud and peaceful. He knew that the project had not solved every problem in the community, but it had taught him something important: when people work together with kindness, even a small effort can become a meaningful achievement.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 3 ===================== -->
+  <div class="section-bar" id="section3">SECTION 3 | VOCABULARY ZONE | শব্দভান্ডার</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Study the words from the story. Then complete the vocabulary tasks. | <span class="bengali-tag">নির্দেশনা:</span> গল্প থেকে দেওয়া শব্দগুলো পড়ো। এরপর vocabulary কাজগুলো সম্পন্ন করো।</p>
+
+    <table>
+      <thead>
+        <tr><th>Word</th><th>Part of Speech</th><th>Simple English Meaning</th><th>বাংলা অর্থ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>volunteer</td><td>noun/verb</td><td>a person who helps without being forced</td><td>স্বেচ্ছাসেবক / স্বেচ্ছায় সাহায্য করা</td></tr>
+        <tr><td>community</td><td>noun</td><td>people living in the same area or group</td><td>সমাজ / এলাকাবাসী</td></tr>
+        <tr><td>organize</td><td>verb</td><td>to put things in order</td><td>গুছিয়ে রাখা / সংগঠিত করা</td></tr>
+        <tr><td>teamwork</td><td>noun</td><td>working together as a group</td><td>দলগত কাজ</td></tr>
+        <tr><td>leadership</td><td>noun</td><td>the ability to guide or support a group</td><td>নেতৃত্ব</td></tr>
+        <tr><td>project</td><td>noun</td><td>a planned piece of work</td><td>পরিকল্পিত কাজ / প্রকল্প</td></tr>
+        <tr><td>effort</td><td>noun</td><td>hard work to do something</td><td>চেষ্টা / পরিশ্রম</td></tr>
+        <tr><td>responsibility</td><td>noun</td><td>a duty that someone should do</td><td>দায়িত্ব</td></tr>
+        <tr><td>contribute</td><td>verb</td><td>to give help, time, or ideas</td><td>অবদান রাখা</td></tr>
+        <tr><td>achievement</td><td>noun</td><td>something good that you successfully do</td><td>অর্জন / সাফল্য</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task A - Matching | মিলকরণ</h3>
+    <p class="instructions"><strong>Instructions:</strong> Match the words in Column A with the correct meanings in Column B. | <span class="bengali-tag">নির্দেশনা:</span> Column A-এর শব্দগুলোর সাথে Column B-এর সঠিক অর্থ মেলাও।</p>
+    <table>
+      <thead><tr><th>Word</th><th>Your Answer</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>1. volunteer</td><td><input type="text" class="blank sm"></td><td>A. a planned piece of work</td></tr>
+        <tr><td>2. teamwork</td><td><input type="text" class="blank sm"></td><td>B. a duty someone should do</td></tr>
+        <tr><td>3. project</td><td><input type="text" class="blank sm"></td><td>C. a person who helps freely</td></tr>
+        <tr><td>4. responsibility</td><td><input type="text" class="blank sm"></td><td>D. working together as a group</td></tr>
+        <tr><td>5. achievement</td><td><input type="text" class="blank sm"></td><td>E. something good you successfully do</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Fill in the Blanks | শূন্যস্থান পূরণ করো</h3>
+    <p class="instructions"><strong>Instructions:</strong> Use words from the box to complete the sentences. | <span class="bengali-tag">নির্দেশনা:</span> বক্সের শব্দগুলো ব্যবহার করে বাক্যের শূন্যস্থান পূরণ করো।</p>
+    <div class="word-box">Word Box: volunteer | organize | contribute | effort | leadership</div>
+    <ol class="q-list">
+      <li>Hasan wanted to <input type="text" class="blank wide"> to his local community.</li>
+      <li>The team worked hard to <input type="text" class="blank wide"> the books and materials.</li>
+      <li>Good <input type="text" class="blank wide"> helps a group work with confidence.</li>
+      <li>A <input type="text" class="blank wide"> gives time and energy to help others.</li>
+      <li>Their small <input type="text" class="blank wide"> made the reading corner better.</li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 4 ===================== -->
+  <div class="section-bar" id="section4">SECTION 4 | GRAMMAR DETECTIVE 🔍 | Grammar in Context</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Do not memorize rules here. Find grammar examples from the story and think about why they are used. | <span class="bengali-tag">নির্দেশনা:</span> এখানে শুধু নিয়ম মুখস্থ কোরো না। গল্প থেকে grammar উদাহরণ খুঁজে বের করো এবং সেটি কীভাবে ব্যবহার হয়েছে তা ভাবো।</p>
+
+    <h3 class="sub-heading">Task A - Find from the Story | গল্প থেকে খুঁজে লেখো</h3>
+    <table>
+      <thead><tr><th>Grammar Target</th><th>How many?</th><th>Sentences from the Story</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Past Simple</td><td>3</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline"><br>
+            3. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Present Perfect</td><td>2</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Modal Verb</td><td>2</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Relative Clauses</td><td>2</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>First Conditional</td><td>1</td>
+          <td>1. <input type="text" class="aline"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Grammar Lab | Grammar বুঝে ব্যবহার করো</h3>
+    <p class="instructions"><strong>Instructions:</strong> Read each sentence. Write the grammar structure, the reason, and your own similar sentence. | <span class="bengali-tag">নির্দেশনা:</span> প্রতিটি বাক্য পড়ো। grammar structure, ব্যবহারের কারণ, এবং নিজের মতো একটি বাক্য লেখো।</p>
+
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">1. Hasan had never joined a college volunteer project before.</p>
+      <div class="gl-q"><label>Structure:</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>My sentence:</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">2. Some students were sorting books, and others were writing names on small labels.</p>
+      <div class="gl-q"><label>Structure:</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>My sentence:</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">3. If you work together, you will finish more than you expect.</p>
+      <div class="gl-q"><label>Structure:</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>My sentence:</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">4. A few students who had been quiet in class showed strong leadership during the project.</p>
+      <div class="gl-q"><label>Structure:</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>My sentence:</label><input type="text" class="aline"></div>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 5 ===================== -->
+  <div class="section-bar" id="section5">SECTION 5 | MIXED GRAMMAR CHALLENGE</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Complete the grammar tasks using the story context. Try to notice tense, modals, conditionals, and relative clauses. | <span class="bengali-tag">নির্দেশনা:</span> গল্পের পরিস্থিতি ব্যবহার করে grammar কাজগুলো করো। tense, modal, conditional, relative clause লক্ষ করো।</p>
+
+    <h3 class="sub-heading">A. Error Correction | ভুল ঠিক করো</h3>
+    <ol class="q-list">
+      <li>Hasan join the community project on Thursday.<input type="text" class="aline"></li>
+      <li>The students has organized the books together.<input type="text" class="aline"></li>
+      <li>If they will work together, they will finish faster.<input type="text" class="aline"></li>
+      <li>A volunteer which helps others learns responsibility.<input type="text" class="aline"></li>
+      <li>We should contributed to our community.<input type="text" class="aline"></li>
+    </ol>
+
+    <h3 class="sub-heading">B. Multiple Choice | সঠিক উত্তর বেছে নাও</h3>
+
+    <div class="mc-question">
+      <p>1. Hasan ______ the notice twice.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc1"> A. read</label>
+        <label><input type="radio" name="mc1"> B. reads</label>
+        <label><input type="radio" name="mc1"> C. reading</label>
+        <label><input type="radio" name="mc1"> D. has read</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>2. The students ______ books when the reading corner began to look neat.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc2"> A. sort</label>
+        <label><input type="radio" name="mc2"> B. are sort</label>
+        <label><input type="radio" name="mc2"> C. were sorting</label>
+        <label><input type="radio" name="mc2"> D. has sorted</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>3. Everyone ______ help if the team plans the work well.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc3"> A. can</label>
+        <label><input type="radio" name="mc3"> B. musted</label>
+        <label><input type="radio" name="mc3"> C. has</label>
+        <label><input type="radio" name="mc3"> D. were</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>4. The boy ______ came with his sister wanted to read.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc4"> A. which</label>
+        <label><input type="radio" name="mc4"> B. who</label>
+        <label><input type="radio" name="mc4"> C. where</label>
+        <label><input type="radio" name="mc4"> D. when</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>5. They ______ do another project next month.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc5"> A. are going to</label>
+        <label><input type="radio" name="mc5"> B. goes to</label>
+        <label><input type="radio" name="mc5"> C. has to</label>
+        <label><input type="radio" name="mc5"> D. did to</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <h3 class="sub-heading">C. Gap Fill | শূন্যস্থান পূরণ করো</h3>
+    <p class="instructions">Use the correct form of the verbs or words in brackets.</p>
+    <ol class="q-list">
+      <li>Hasan <input type="text" class="blank wide"> (feel) proud at the end of the day.</li>
+      <li>The team <input type="text" class="blank wide"> (have / organize) the books by the afternoon.</li>
+      <li>Students <input type="text" class="blank wide"> (should / help) their community when they can.</li>
+      <li>If people work together, they <input type="text" class="blank wide"> (make) a positive difference.</li>
+      <li>This is the project <input type="text" class="blank wide"> (that / who) helped younger students.</li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 6 ===================== -->
+  <div class="section-bar" id="section6">SECTION 6 | SENTENCE BUILDER | Build Your Own Sentences</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Use each word to write your own meaningful sentence. You may connect the sentence to school, college, or daily life. | <span class="bengali-tag">নির্দেশনা:</span> প্রতিটি শব্দ দিয়ে নিজের অর্থপূর্ণ বাক্য লেখো। স্কুল, কলেজ বা দৈনন্দিন জীবনের সাথে বাক্য মিলিয়ে লিখতে পারো।</p>
+
+    <table>
+      <thead><tr><th>Word</th><th>My Sentence</th></tr></thead>
+      <tbody>
+        <tr><td>volunteer</td><td><input type="text" class="aline"></td></tr>
+        <tr><td>teamwork</td><td><input type="text" class="aline"></td></tr>
+        <tr><td>contribute</td><td><input type="text" class="aline"></td></tr>
+        <tr><td>leadership</td><td><input type="text" class="aline"></td></tr>
+        <tr><td>achievement</td><td><input type="text" class="aline"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== SECTION 7 ===================== -->
+  <div class="section-bar" id="section7">SECTION 7 | SHORT WRITING TASK | Think &amp; Write</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Write 110-120 words. Use clear sentences and try to include at least two grammar structures from the story. | <span class="bengali-tag">নির্দেশনা:</span> ১১০-১২০ শব্দে লেখো। পরিষ্কার বাক্য ব্যবহার করো এবং গল্প থেকে শেখা অন্তত দুই ধরনের grammar ব্যবহার করার চেষ্টা করো।</p>
+    <p><strong>Prompt:</strong> Imagine that your school or college is organizing a Community Service Day. What activity would you choose and why? How would it help others?</p>
+    <p class="sub-heading" style="margin-top:14px;">Writing | লেখার জায়গা</p>
+    <textarea rows="10" placeholder="Write your answer here..."></textarea>
+  </div>
+
+  <!-- ===================== SECTION 8 ===================== -->
+  <div class="section-bar" id="section8">SECTION 8 | CHARACTER REFLECTION | Character Corner</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Answer the questions honestly. You can discuss your ideas with a partner before writing. | <span class="bengali-tag">নির্দেশনা:</span> সততার সাথে উত্তর দাও। লেখার আগে চাইলে একজন সহপাঠীর সাথে আলোচনা করতে পারো।</p>
+
+    <p><strong>1.</strong> How can a small act of service make a positive difference in a community?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>2.</strong> What makes teamwork successful when people have different ideas or abilities?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>3.</strong> In the story, Hasan helped lead the team. What kind of leadership do you respect most? Why?</p>
+    <textarea rows="3"></textarea>
+  </div>
+
+  <!-- ===================== SECTION 9 ===================== -->
+  <div class="section-bar" id="section9">SECTION 9 | HOMEWORK | বাড়ির কাজ</div>
+  <div class="section-content">
+    <div class="homework-columns">
+      <div class="homework-box">
+        <h4>Level 1</h4>
+        <p>Write 5 sentences about ways people can help their community.</p>
+        <textarea rows="6" placeholder="Write your answer here..."></textarea>
+      </div>
+      <div class="homework-box">
+        <h4>Level 2</h4>
+        <p>Write a diary entry of 100-120 words. Topic: "A Day When I Helped Others." Use Past Simple, Present Perfect, and Modals.</p>
+        <textarea rows="8" placeholder="Write your answer here..."></textarea>
+      </div>
+    </div>
+    <p class="final-reminder"><strong>Final Reminder | শেষ কথা:</strong> Good grammar helps your writing. Good character helps your life. Try to practise both every day.</p>
+  </div>
+
+  <div class="footer-divider">© Abidur Rahman Tahmid | English Learning Through Stories | Episode 5 - The Community Service Day</div>
+
+</div>
+
+<div class="action-bar bottom">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<button id="storyBtn" class="story-float" onclick="scrollToStory()">📖 Story</button>
+
+<script>
+  function clearAll(){
+    if(!confirm("Are you sure you want to clear all your answers? This cannot be undone.")) return;
+    document.querySelectorAll('input[type="text"]').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('textarea').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('input[type="radio"]').forEach(function(el){ el.checked = false; });
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(el){ el.checked = false; });
+  }
+
+  function scrollToStory(){
+    var target = document.getElementById('story-title');
+    if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  }
+
+  (function(){
+    var storyBtn = document.getElementById('storyBtn');
+    var sec4 = document.getElementById('section4');
+    var sec9 = document.getElementById('section9');
+    if(!storyBtn || !sec4 || !sec9) return;
+
+    function updateVisibility(){
+      var sec4Top = sec4.getBoundingClientRect().top;
+      var sec9Top = sec9.getBoundingClientRect().top;
+      var viewportH = window.innerHeight;
+      var passedSection4 = sec4Top < viewportH * 0.6;
+      var passedSection9 = sec9Top < viewportH * 0.6;
+      if(passedSection4 && !passedSection9){
+        storyBtn.classList.add('visible');
+      } else {
+        storyBtn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateVisibility, {passive:true});
+    window.addEventListener('resize', updateVisibility);
+    updateVisibility();
+  })();
+</script>
+
+</body>
+</html>

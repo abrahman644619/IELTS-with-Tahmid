@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Character & Grammar Through Stories | Episode 3 - The Missing Alarm</title>
+<style>
+  :root{
+    --teal-medium:#0F766E;
+    --teal-dark:#0F5E5E;
+    --mint:#E6F4F1;
+    --text:#111111;
+    --border:#8FC0BB;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:#ffffff;
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .page{
+    max-width:850px;
+    margin:0 auto;
+    padding:24px 28px 80px 28px;
+  }
+  /* ---------- Running header ---------- */
+  .running-header{
+    text-align:center;
+    color:var(--teal-medium);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.2px;
+    margin-bottom:10px;
+  }
+  /* ---------- Title block ---------- */
+  .title-block{ text-align:center; margin-bottom:16px; }
+  .main-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:var(--teal-dark);
+    font-size:28px;
+    margin:0 0 4px 0;
+  }
+  .episode-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:18px;
+    margin:0;
+  }
+  /* ---------- Info box ---------- */
+  .info-box{
+    background:var(--mint);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0;
+  }
+  .info-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:6px 0;
+    flex-wrap:wrap;
+  }
+  .info-label{ font-weight:bold; color:var(--teal-dark); white-space:nowrap; }
+  .info-input{ flex:1; min-width:160px; }
+  .info-input.short{ flex:0 0 180px; }
+  .level-value{ font-weight:bold; margin-left:2px; }
+
+  /* ---------- Goals box ---------- */
+  .goals-box{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0 26px 0;
+  }
+  .goals-label{ color:var(--teal-medium); font-weight:bold; margin:0 0 4px 0; }
+  .goals-intro{ margin:0 0 8px 0; font-style:italic; }
+  .goals-list{ margin:0; padding-left:0; list-style:none; }
+  .goals-list li{ margin:4px 0; }
+
+  /* ---------- Section bars ---------- */
+  .section-bar{
+    background:var(--teal-dark);
+    color:#ffffff;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:9px 14px;
+    border-radius:5px;
+    margin:30px 0 14px 0;
+    font-size:14.5px;
+    letter-spacing:.2px;
+    scroll-margin-top:20px;
+  }
+  .section-content{ margin-bottom:6px; }
+
+  .sub-heading{
+    color:var(--teal-medium);
+    font-size:15.5px;
+    margin:18px 0 6px 0;
+  }
+  .instructions{ margin:4px 0 12px 0; }
+  .bengali-tag{ color:var(--teal-medium); font-weight:bold; }
+
+  .q-list{ margin:0 0 10px 0; padding-left:20px; }
+  .q-list li{ margin:0 0 14px 0; }
+
+  /* ---------- Inputs ---------- */
+  input.aline{
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:5px 2px;
+    margin:4px 0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+  }
+  input.aline:focus{ outline:none; border-bottom:1px solid var(--teal-medium); }
+
+  input.blank{
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:2px 4px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    width:60px;
+    text-align:center;
+  }
+  input.blank.sm{ width:40px; }
+  input.blank.wide{ width:150px; }
+  input.blank:focus{ outline:none; border-bottom:1px solid var(--teal-medium); }
+
+  textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:10px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+  }
+  textarea:focus{ outline:none; border:1px solid var(--teal-medium); }
+
+  /* ---------- Story ---------- */
+  .story-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    font-style:italic;
+    color:var(--teal-dark);
+    font-size:20px;
+    text-align:center;
+    margin:8px 0 14px 0;
+  }
+  .story-text p{ margin:0 0 12px 0; text-align:justify; }
+
+  /* ---------- Tables ---------- */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 18px 0;
+    font-size:14px;
+  }
+  table caption{ text-align:left; font-weight:bold; margin-bottom:6px; }
+  th, td{
+    border:1px solid var(--border);
+    padding:8px 10px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:var(--mint);
+    color:var(--teal-dark);
+    font-weight:bold;
+  }
+
+  .word-box{
+    border:1px dashed var(--border);
+    border-radius:5px;
+    padding:8px 12px;
+    margin:8px 0 14px 0;
+    font-weight:bold;
+    color:var(--teal-dark);
+  }
+
+  .mc-question{ margin:0 0 16px 0; }
+  .mc-options{ display:flex; flex-wrap:wrap; gap:14px; margin:6px 0; }
+  .mc-options label{ display:flex; align-items:center; gap:5px; }
+  .mc-answer{ margin-top:4px; }
+  .mc-answer input.blank{ margin-left:6px; }
+
+  .checklist{ list-style:none; padding:0; margin:0; }
+  .checklist li{ display:flex; align-items:center; gap:6px; margin:3px 0; }
+  .checklist input[type="checkbox"]{ width:15px; height:15px; }
+
+  .grammar-lab-item{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:12px 14px;
+    margin-bottom:14px;
+  }
+  .grammar-lab-item .gl-sentence{ font-weight:bold; margin:0 0 8px 0; }
+  .grammar-lab-item .gl-q{ margin:6px 0; }
+  .grammar-lab-item .gl-q label{ display:block; margin-bottom:3px; }
+
+  .homework-columns{
+    display:flex;
+    gap:18px;
+    margin:10px 0 16px 0;
+    flex-wrap:wrap;
+  }
+  .homework-box{
+    flex:1;
+    min-width:240px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 16px;
+  }
+  .homework-box h4{ color:var(--teal-medium); margin:0 0 8px 0; }
+  .homework-box textarea{ margin-top:8px; }
+  .homework-box .q-list{ margin-top:8px; padding-left:18px; }
+  .homework-box .q-list li{ margin:0 0 8px 0; }
+  .final-reminder{ font-style:italic; margin-top:10px; }
+
+  .footer-divider{
+    border-top:1px solid var(--border);
+    margin-top:34px;
+    padding-top:10px;
+    text-align:center;
+    font-style:italic;
+    font-size:11.5px;
+    color:var(--teal-medium);
+  }
+
+  /* ---------- Action bars ---------- */
+  .action-bar{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    padding:10px 14px;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .action-bar.bottom{
+    border-bottom:none;
+    border-top:1px solid var(--border);
+    position:sticky;
+    top:auto;
+    bottom:0;
+  }
+  .action-bar button{
+    background:var(--teal-medium);
+    color:#ffffff;
+    border:none;
+    border-radius:20px;
+    padding:9px 18px;
+    font-size:13.5px;
+    font-weight:bold;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .action-bar button:hover{ background:var(--teal-dark); }
+  .action-bar button.secondary{ background:#555555; }
+  .action-bar button.secondary:hover{ background:#333333; }
+
+  /* ---------- Floating story button ---------- */
+  .story-float{
+    position:fixed;
+    right:20px;
+    bottom:78px;
+    background:var(--teal-medium);
+    color:#ffffff;
+    border:none;
+    border-radius:30px;
+    padding:10px 16px;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+    display:none;
+    z-index:60;
+    box-shadow:0 0 0 0 rgba(15,118,110,0.6);
+    animation:glowPulse 2s infinite;
+  }
+  .story-float.visible{ display:block; }
+  @keyframes glowPulse{
+    0%{ box-shadow:0 0 0 0 rgba(15,118,110,0.55); }
+    70%{ box-shadow:0 0 0 12px rgba(15,118,110,0); }
+    100%{ box-shadow:0 0 0 0 rgba(15,118,110,0); }
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    .action-bar, .story-float{ display:none !important; }
+    body{ font-size:12px; }
+    .page{ max-width:100%; padding:0; }
+    .section-bar{ break-inside:avoid; }
+    table, .grammar-lab-item, .story-text, .homework-box{ break-inside:avoid; }
+    input.aline, input.blank{ border-bottom:1px solid #000000; color:#000; }
+    textarea{ border:1px solid #000000; color:#000; }
+    th, td{ border:1px solid #000000; }
+    @page{ size:A4; margin:16mm 14mm; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:600px){
+    .page{ padding:16px 14px 90px 14px; }
+    .main-title{ font-size:22px; }
+    .episode-subtitle{ font-size:15px; }
+    .homework-columns{ flex-direction:column; }
+    .mc-options{ gap:8px 12px; }
+    .action-bar{ gap:8px; flex-wrap:wrap; }
+    .action-bar button{ padding:8px 12px; font-size:12.5px; }
+    table, th, td{ font-size:12.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="action-bar top">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <div class="running-header">Character &amp; Grammar Through Stories | Episode 3 - The Missing Alarm</div>
+
+  <div class="title-block">
+    <h1 class="main-title">Character &amp; Grammar Through Stories</h1>
+    <h2 class="episode-subtitle">Episode 3 - The Missing Alarm</h2>
+  </div>
+
+  <div class="info-box">
+    <div class="info-row">
+      <span class="info-label">Student Name:</span>
+      <input type="text" class="aline info-input">
+    </div>
+    <div class="info-row">
+      <span class="info-label">Date:</span>
+      <input type="text" class="aline info-input short">
+      <span class="info-label">Level:</span>
+      <span class="level-value">A2–B1</span>
+    </div>
+  </div>
+
+  <div class="goals-box">
+    <p class="goals-label">Learning Goals:</p>
+    <p class="goals-intro">By the end of this worksheet, students will be able to:</p>
+    <ul class="goals-list">
+      <li>✓ Read and understand a realistic story</li>
+      <li>✓ Learn useful everyday vocabulary</li>
+      <li>✓ Identify grammar in context</li>
+      <li>✓ Build accurate sentences</li>
+      <li>✓ Practise short writing tasks</li>
+      <li>✓ Reflect on discipline and good habits</li>
+    </ul>
+  </div>
+
+  <!-- ===================== SECTION 1 ===================== -->
+  <div class="section-bar" id="section1">SECTION 1 | WARM-UP | Before You Read</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Part A - Prediction Questions | অনুমান করা</h3>
+    <p class="instructions"><strong>Instructions:</strong> Answer the questions before reading the story. Write short answers. | <span class="bengali-tag">নির্দেশনা:</span> গল্প পড়ার আগে প্রশ্নগুলোর সংক্ষিপ্ত উত্তর লেখো।</p>
+    <ol class="q-list">
+      <li>What may happen when someone misses an important alarm?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>How can a student build a better morning routine?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Part B - Personal Reflection | নিজের জীবনের সাথে মিলাও</h3>
+    <p class="instructions"><strong>Instructions:</strong> Think about your own habits. There is no wrong answer. | <span class="bengali-tag">নির্দেশনা:</span> নিজের অভ্যাস নিয়ে ভাবো। এখানে কোনো ভুল উত্তর নেই।</p>
+    <ol class="q-list">
+      <li>How do you usually wake up on time for class, work, or an important task?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>What helps people stay consistent with good habits?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 2 ===================== -->
+  <div class="section-bar" id="section2">SECTION 2 | MAIN STORY | Read the Story</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Read the story carefully. Notice how the sentences show time, actions, plans, advice, and conditions. | <span class="bengali-tag">নির্দেশনা:</span> গল্পটি মনোযোগ দিয়ে পড়ো। বাক্যগুলোর মাধ্যমে সময়, কাজ, পরিকল্পনা, উপদেশ ও শর্ত কীভাবে প্রকাশ করা হয়েছে তা লক্ষ করো।</p>
+
+    <h3 class="story-title" id="story-title">The Missing Alarm</h3>
+    <div class="story-text">
+      <p>Hasan usually wakes up before sunrise. He keeps his phone beside his bed, drinks a glass of water, reviews his plan for the day, and then gets ready for class. His routine is not perfect, but it helps him feel calm. On Wednesday night, however, he was tired after a long day at university. He had a presentation in the morning, and he was going to meet his group at 7:30 a.m. to practise one last time.</p>
+
+      <p>Before sleeping, Hasan set one alarm for 6:00 a.m. "This is enough," he said to himself. His younger sister, Lina, was arranging her books on the next table. She looked at him and asked, "Are you sure? Your phone battery is only twelve percent." Hasan smiled. "Don't worry. I can wake up easily." He placed the phone near his pillow, but he did not connect the charger. He also kept scrolling for a few more minutes, and those few minutes became half an hour.</p>
+
+      <p>The next morning, sunlight was already entering the room when Hasan opened his eyes. For a second, he did not understand what was happening. Then he saw the clock: 7:15 a.m. His phone was dead. The alarm had not rung. Hasan jumped out of bed and felt his heart beating fast. "Oh no! I have missed the alarm," he said. He washed his face quickly and looked for his presentation file. His notes were on the desk, but his bag was not ready.</p>
+
+      <p>At first, Hasan blamed the phone. "This alarm is useless," he said angrily. Lina stood at the door and replied softly, "The alarm was not the only problem. You were not ready before sleeping." Hasan wanted to argue, but he knew she was right. If he continued like this, he would face the same problem again. He reached the campus late, and his group had already started practising without him. "I'm sorry," Hasan told them. "I should have prepared better last night."</p>
+
+      <p>After class, Hasan felt disappointed. His teacher did not scold him, but she said, "Responsibility begins before the important moment. Small habits protect big goals." These words stayed in Hasan's mind. In the evening, he sat with his uncle, who often gave him practical advice. Hasan explained everything. His uncle listened carefully and said, "You cannot control every problem, but you can reduce many problems with a clear routine. Tonight, you should prepare your bag, charge your phone, sleep earlier, and set two reminders. If you prepare before sleeping, you will wake up with less stress."</p>
+
+      <p>Hasan nodded. "I have been careless with my nights," he said. "I am going to change it from today." He made a simple checklist: charge the phone, keep the notebook inside the bag, put clothes on the chair, set two alarms, and stop using the phone after 10:30 p.m. He also wrote one sentence at the top of the page: Good habits make hard days easier.</p>
+
+      <p>That night, Hasan followed the checklist. He was preparing his bag when Lina walked past the room. "Another presentation?" she asked. Hasan laughed. "No, but I am practising discipline." He set one alarm on his phone and another on a small clock. He placed both across the room so that he would have to stand up to turn them off. Then he slept earlier than usual.</p>
+
+      <p>The next morning, the clock rang loudly at 6:00 a.m. Hasan got up, turned it off, and smiled. His phone alarm rang two minutes later. This time, he was ready. His bag was packed, his clothes were prepared, and his mind felt lighter. He did not become a perfect person in one day, but he had taken a real step. As he walked to campus on time, he felt proud because he had accepted his mistake and improved his habit.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 3 ===================== -->
+  <div class="section-bar" id="section3">SECTION 3 | VOCABULARY ZONE | শব্দভান্ডার</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Study the words from the story. Then complete the tasks. | <span class="bengali-tag">নির্দেশনা:</span> গল্প থেকে দেওয়া শব্দগুলো পড়ো। তারপর কাজগুলো সম্পন্ন করো।</p>
+
+    <table>
+      <thead>
+        <tr><th>Word</th><th>Part of Speech</th><th>Simple English Meaning</th><th>বাংলা অর্থ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>alarm</td><td>noun</td><td>a device or sound that wakes or warns you</td><td>ঘুম ভাঙানোর যন্ত্র বা সতর্ক করার শব্দ</td></tr>
+        <tr><td>routine</td><td>noun</td><td>a regular way of doing things</td><td>নিয়মিত কাজের ধারা</td></tr>
+        <tr><td>delay</td><td>noun/verb</td><td>a late start; to make something late</td><td>দেরি; দেরি করানো</td></tr>
+        <tr><td>responsible</td><td>adjective</td><td>careful and able to take duty seriously</td><td>দায়িত্বশীল</td></tr>
+        <tr><td>schedule</td><td>noun</td><td>a plan that shows times for tasks</td><td>সময়ভিত্তিক কাজের পরিকল্পনা</td></tr>
+        <tr><td>reminder</td><td>noun</td><td>something that helps you remember</td><td>মনে করিয়ে দেওয়ার উপায়/বার্তা</td></tr>
+        <tr><td>discipline</td><td>noun</td><td>control over your actions and habits</td><td>শৃঙ্খলা/আত্মনিয়ন্ত্রণ</td></tr>
+        <tr><td>improve</td><td>verb</td><td>to make something better</td><td>উন্নতি করা</td></tr>
+        <tr><td>prepare</td><td>verb</td><td>to get ready before something happens</td><td>প্রস্তুত হওয়া/প্রস্তুত করা</td></tr>
+        <tr><td>habit</td><td>noun</td><td>something you do often and regularly</td><td>অভ্যাস</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task A - Matching | মিলকরণ</h3>
+    <p class="instructions"><strong>Instructions:</strong> Match each word with the correct meaning. Write the letter beside the word. | <span class="bengali-tag">নির্দেশনা:</span> প্রতিটি শব্দের সাথে সঠিক অর্থ মেলাও। শব্দের পাশে অক্ষর লেখো।</p>
+    <table>
+      <thead><tr><th>Word</th><th>Your Answer</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>1. routine</td><td><input type="text" class="blank sm"></td><td>A. to make something better</td></tr>
+        <tr><td>2. reminder</td><td><input type="text" class="blank sm"></td><td>B. control over your actions</td></tr>
+        <tr><td>3. discipline</td><td><input type="text" class="blank sm"></td><td>C. a regular way of doing things</td></tr>
+        <tr><td>4. prepare</td><td><input type="text" class="blank sm"></td><td>D. something that helps you remember</td></tr>
+        <tr><td>5. improve</td><td><input type="text" class="blank sm"></td><td>E. to get ready before an event</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Fill in the Blanks | শূন্যস্থান পূরণ করো</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose words from the box and complete the sentences. | <span class="bengali-tag">নির্দেশনা:</span> বক্স থেকে শব্দ নিয়ে বাক্যগুলো সম্পূর্ণ করো।</p>
+    <div class="word-box">Word Box: alarm | schedule | responsible | habit | delay</div>
+    <ol class="q-list">
+      <li>Hasan woke up late because his <input type="text" class="blank wide"> did not ring.</li>
+      <li>A good <input type="text" class="blank wide"> helps students manage their study time.</li>
+      <li>A <input type="text" class="blank wide"> person accepts mistakes and tries to improve.</li>
+      <li>Sleeping early can become a helpful <input type="text" class="blank wide">.</li>
+      <li>A small <input type="text" class="blank wide"> can create a big problem before class.</li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 4 ===================== -->
+  <div class="section-bar" id="section4">SECTION 4 | GRAMMAR DETECTIVE 🔍 | Grammar in Context</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Task A - Find Grammar in the Story | গল্প থেকে ব্যাকরণ খুঁজে বের করো</h3>
+    <p class="instructions"><strong>Instructions:</strong> Find the sentences from the story and write them in the table. | <span class="bengali-tag">নির্দেশনা:</span> গল্প থেকে বাক্য খুঁজে বের করে লিখে রাখো।</p>
+    <table>
+      <thead><tr><th>Grammar Target</th><th>How many?</th><th>Sentences from the Story</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Past Simple</td><td>3</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline"><br>
+            3. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Present Perfect</td><td>2</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Modal Verb</td><td>2</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>First Conditional</td><td>1</td>
+          <td>1. <input type="text" class="aline"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Grammar Lab | ব্যাকরণ বিশ্লেষণ</h3>
+    <p class="instructions"><strong>Instructions:</strong> Read each sentence. Write the grammar structure, why it is used, and one similar sentence. | <span class="bengali-tag">নির্দেশনা:</span> প্রতিটি বাক্য পড়ো। কোন গ্রামার ব্যবহার হয়েছে, কেন হয়েছে, এবং একই ধরনের একটি বাক্য লেখো।</p>
+
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">1. "He had a presentation in the morning."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">2. "I have missed the alarm."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">3. "You should prepare your bag."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">4. "If you prepare before sleeping, you will wake up with less stress."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 5 ===================== -->
+  <div class="section-bar" id="section5">SECTION 5 | MIXED GRAMMAR CHALLENGE</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Complete the grammar tasks using situations from the story. | <span class="bengali-tag">নির্দেশনা:</span> গল্পের পরিস্থিতি ব্যবহার করে গ্রামার কাজগুলো সম্পন্ন করো।</p>
+
+    <h3 class="sub-heading">A. Error Correction | ভুল সংশোধন করা</h3>
+    <ol class="q-list">
+      <li>Hasan wake up late yesterday.<input type="text" class="aline"></li>
+      <li>His phone have died before morning.<input type="text" class="aline"></li>
+      <li>He is prepared his bag last night.<input type="text" class="aline"></li>
+      <li>Students must to manage their time.<input type="text" class="aline"></li>
+      <li>If Hasan sleeps early, he wake up on time.<input type="text" class="aline"></li>
+    </ol>
+
+    <h3 class="sub-heading">B. Multiple Choice | সঠিক উত্তর বেছে নাও</h3>
+
+    <div class="mc-question">
+      <p>1. Hasan usually ______ before sunrise.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc1"> A. wake</label>
+        <label><input type="radio" name="mc1"> B. wakes</label>
+        <label><input type="radio" name="mc1"> C. waking</label>
+        <label><input type="radio" name="mc1"> D. woke</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>2. Last Wednesday, he ______ very tired.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc2"> A. is</label>
+        <label><input type="radio" name="mc2"> B. was</label>
+        <label><input type="radio" name="mc2"> C. has been</label>
+        <label><input type="radio" name="mc2"> D. will be</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>3. Hasan ______ his phone before sleeping.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc3"> A. should charge</label>
+        <label><input type="radio" name="mc3"> B. should charging</label>
+        <label><input type="radio" name="mc3"> C. should charged</label>
+        <label><input type="radio" name="mc3"> D. should to charge</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>4. "I ______ careless with my nights," Hasan said.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc4"> A. have been</label>
+        <label><input type="radio" name="mc4"> B. has been</label>
+        <label><input type="radio" name="mc4"> C. was be</label>
+        <label><input type="radio" name="mc4"> D. am been</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>5. If he sets two alarms, he ______ more safely.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc5"> A. woke up</label>
+        <label><input type="radio" name="mc5"> B. wakes up</label>
+        <label><input type="radio" name="mc5"> C. will wake up</label>
+        <label><input type="radio" name="mc5"> D. has woken up</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <h3 class="sub-heading">C. Gap Fill | শূন্যস্থান পূরণ করা</h3>
+    <ol class="q-list">
+      <li>Hasan <input type="text" class="blank wide"> (set) one alarm before sleeping.</li>
+      <li>Lina <input type="text" class="blank wide"> (arrange) her books when Hasan checked his phone.</li>
+      <li>Hasan <input type="text" class="blank wide"> (not / prepare) his bag the night before.</li>
+      <li>He <input type="text" class="blank wide"> (take) a real step to improve his habit.</li>
+      <li>If students plan early, they <input type="text" class="blank wide"> (feel) less stress.</li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 6 ===================== -->
+  <div class="section-bar" id="section6">SECTION 6 | SENTENCE BUILDER | Build Your Own Sentences</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Use each word to write your own sentence. Try to use different tenses. | <span class="bengali-tag">নির্দেশনা:</span> প্রতিটি শব্দ নিয়ে নিজের বাক্য লেখো। ভিন্ন ভিন্ন tense ব্যবহার করার চেষ্টা করো।</p>
+
+    <table>
+      <thead><tr><th>Word</th><th>Your Sentence</th><th>Grammar Used</th></tr></thead>
+      <tbody>
+        <tr><td>routine</td><td><input type="text" class="aline"></td><td><input type="text" class="aline"></td></tr>
+        <tr><td>prepare</td><td><input type="text" class="aline"></td><td><input type="text" class="aline"></td></tr>
+        <tr><td>reminder</td><td><input type="text" class="aline"></td><td><input type="text" class="aline"></td></tr>
+        <tr><td>disciplined</td><td><input type="text" class="aline"></td><td><input type="text" class="aline"></td></tr>
+        <tr><td>improve</td><td><input type="text" class="aline"></td><td><input type="text" class="aline"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== SECTION 7 ===================== -->
+  <div class="section-bar" id="section7">SECTION 7 | SHORT WRITING TASK | Think &amp; Write</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Write 80-120 words. Use clear sentences and at least two grammar structures from the story. | <span class="bengali-tag">নির্দেশনা:</span> ৮০-১২০ শব্দ লেখো। পরিষ্কার বাক্য ব্যবহার করো এবং গল্প থেকে শেখা অন্তত দুটি grammar structure ব্যবহার করো।</p>
+    <p><strong>Prompt:</strong> Have you ever missed something important because you were not prepared? What happened? What would you do differently next time?</p>
+    <p class="sub-heading" style="margin-top:14px;">Writing | লেখার জায়গা</p>
+    <textarea rows="10" placeholder="Write your answer here..."></textarea>
+  </div>
+
+  <!-- ===================== SECTION 8 ===================== -->
+  <div class="section-bar" id="section8">SECTION 8 | CHARACTER REFLECTION | Character Corner</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Discuss or write your ideas. Use examples from the story and from real life. | <span class="bengali-tag">নির্দেশনা:</span> আলোচনা করো অথবা নিজের মতামত লেখো। গল্প ও বাস্তব জীবন থেকে উদাহরণ দাও।</p>
+
+    <p><strong>1.</strong> Why do small routines matter in a student's daily life?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>2.</strong> How can discipline help a person become more responsible?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>3.</strong> What can a person learn after making a mistake like Hasan's?</p>
+    <textarea rows="3"></textarea>
+  </div>
+
+  <!-- ===================== SECTION 9 ===================== -->
+  <div class="section-bar" id="section9">SECTION 9 | HOMEWORK | বাড়ির কাজ</div>
+  <div class="section-content">
+    <div class="homework-columns">
+      <div class="homework-box">
+        <h4>Level 1</h4>
+        <p>Write 5 sentences about your daily routine. Use different tenses. | তোমার দৈনন্দিন রুটিন সম্পর্কে ৫টি বাক্য লেখো। ভিন্ন tense ব্যবহার করো।</p>
+        <textarea rows="6" placeholder="1.&#10;2.&#10;3.&#10;4.&#10;5."></textarea>
+      </div>
+      <div class="homework-box">
+        <h4>Level 2</h4>
+        <p>Write a short diary entry (100-120 words). Topic: "A Day I Woke Up Late". Use: Past Simple, Present Perfect, and Future Plans.</p>
+        <textarea rows="8" placeholder="Write your answer here..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-divider">© Abidur Rahman Tahmid | English Learning Through Stories | Episode 3 - The Missing Alarm</div>
+
+</div>
+
+<div class="action-bar bottom">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<button id="storyBtn" class="story-float" onclick="scrollToStory()">📖 Story</button>
+
+<script>
+  function clearAll(){
+    if(!confirm("Are you sure you want to clear all your answers? This cannot be undone.")) return;
+    document.querySelectorAll('input[type="text"]').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('textarea').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('input[type="radio"]').forEach(function(el){ el.checked = false; });
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(el){ el.checked = false; });
+  }
+
+  function scrollToStory(){
+    var target = document.getElementById('story-title');
+    if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  }
+
+  (function(){
+    var storyBtn = document.getElementById('storyBtn');
+    var sec4 = document.getElementById('section4');
+    var sec9 = document.getElementById('section9');
+    if(!storyBtn || !sec4 || !sec9) return;
+
+    function updateVisibility(){
+      var sec4Top = sec4.getBoundingClientRect().top;
+      var sec9Top = sec9.getBoundingClientRect().top;
+      var viewportH = window.innerHeight;
+      var passedSection4 = sec4Top < viewportH * 0.6;
+      var passedSection9 = sec9Top < viewportH * 0.6;
+      if(passedSection4 && !passedSection9){
+        storyBtn.classList.add('visible');
+      } else {
+        storyBtn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateVisibility, {passive:true});
+    window.addEventListener('resize', updateVisibility);
+    updateVisibility();
+  })();
+</script>
+
+</body>
+</html>

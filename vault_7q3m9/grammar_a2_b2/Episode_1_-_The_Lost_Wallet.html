@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Character & Grammar Through Stories | Episode 1 - The Lost Wallet</title>
+<style>
+  :root{
+    --teal-medium:#0F766E;
+    --teal-dark:#0F5E5E;
+    --mint:#E6F4F1;
+    --text:#111111;
+    --border:#8FC0BB;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:#ffffff;
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .page{
+    max-width:850px;
+    margin:0 auto;
+    padding:24px 28px 80px 28px;
+  }
+  /* ---------- Running header ---------- */
+  .running-header{
+    text-align:center;
+    color:var(--teal-medium);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.2px;
+    margin-bottom:10px;
+  }
+  /* ---------- Title block ---------- */
+  .title-block{ text-align:center; margin-bottom:16px; }
+  .main-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:var(--teal-dark);
+    font-size:28px;
+    margin:0 0 4px 0;
+  }
+  .episode-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:18px;
+    margin:0;
+  }
+  /* ---------- Info box ---------- */
+  .info-box{
+    background:var(--mint);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0;
+  }
+  .info-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:6px 0;
+    flex-wrap:wrap;
+  }
+  .info-label{ font-weight:bold; color:var(--teal-dark); white-space:nowrap; }
+  .info-input{ flex:1; min-width:160px; }
+  .info-input.short{ flex:0 0 180px; }
+  .level-value{ font-weight:bold; margin-left:2px; }
+
+  /* ---------- Goals box ---------- */
+  .goals-box{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0 26px 0;
+  }
+  .goals-label{ color:var(--teal-medium); font-weight:bold; margin:0 0 4px 0; }
+  .goals-intro{ margin:0 0 8px 0; font-style:italic; }
+  .goals-list{ margin:0; padding-left:0; list-style:none; }
+  .goals-list li{ margin:4px 0; }
+
+  /* ---------- Section bars ---------- */
+  .section-bar{
+    background:var(--teal-dark);
+    color:#ffffff;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:9px 14px;
+    border-radius:5px;
+    margin:30px 0 14px 0;
+    font-size:14.5px;
+    letter-spacing:.2px;
+    scroll-margin-top:20px;
+  }
+  .section-content{ margin-bottom:6px; }
+
+  .sub-heading{
+    color:var(--teal-medium);
+    font-size:15.5px;
+    margin:18px 0 6px 0;
+  }
+  .instructions{ margin:4px 0 12px 0; }
+  .bengali-tag{ color:var(--teal-medium); font-weight:bold; }
+
+  .q-list{ margin:0 0 10px 0; padding-left:20px; }
+  .q-list li{ margin:0 0 14px 0; }
+
+  /* ---------- Inputs ---------- */
+  input.aline{
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:5px 2px;
+    margin:4px 0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+  }
+  input.aline:focus{ outline:none; border-bottom:1px solid var(--teal-medium); }
+
+  input.blank{
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:2px 4px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    width:60px;
+    text-align:center;
+  }
+  input.blank.sm{ width:40px; }
+  input.blank.wide{ width:150px; }
+  input.blank:focus{ outline:none; border-bottom:1px solid var(--teal-medium); }
+
+  textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:10px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+  }
+  textarea:focus{ outline:none; border:1px solid var(--teal-medium); }
+
+  /* ---------- Story ---------- */
+  .story-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    font-style:italic;
+    color:var(--teal-dark);
+    font-size:20px;
+    text-align:center;
+    margin:8px 0 14px 0;
+  }
+  .story-text p{ margin:0 0 12px 0; text-align:justify; }
+
+  /* ---------- Tables ---------- */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 18px 0;
+    font-size:14px;
+  }
+  table caption{ text-align:left; font-weight:bold; margin-bottom:6px; }
+  th, td{
+    border:1px solid var(--border);
+    padding:8px 10px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:var(--mint);
+    color:var(--teal-dark);
+    font-weight:bold;
+  }
+
+  .word-box{
+    border:1px dashed var(--border);
+    border-radius:5px;
+    padding:8px 12px;
+    margin:8px 0 14px 0;
+    font-weight:bold;
+    color:var(--teal-dark);
+  }
+
+  .mc-question{ margin:0 0 16px 0; }
+  .mc-options{ display:flex; flex-wrap:wrap; gap:14px; margin:6px 0; }
+  .mc-options label{ display:flex; align-items:center; gap:5px; }
+  .mc-answer{ margin-top:4px; }
+  .mc-answer input.blank{ margin-left:6px; }
+
+  .checklist{ list-style:none; padding:0; margin:0; }
+  .checklist li{ display:flex; align-items:center; gap:6px; margin:3px 0; }
+  .checklist input[type="checkbox"]{ width:15px; height:15px; }
+
+  .grammar-lab-item{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:12px 14px;
+    margin-bottom:14px;
+  }
+  .grammar-lab-item .gl-sentence{ font-weight:bold; margin:0 0 8px 0; }
+  .grammar-lab-item .gl-q{ margin:6px 0; }
+  .grammar-lab-item .gl-q label{ display:block; margin-bottom:3px; }
+
+  .homework-columns{
+    display:flex;
+    gap:18px;
+    margin:10px 0 16px 0;
+    flex-wrap:wrap;
+  }
+  .homework-box{
+    flex:1;
+    min-width:240px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 16px;
+  }
+  .homework-box h4{ color:var(--teal-medium); margin:0 0 8px 0; }
+  .homework-box textarea{ margin-top:8px; }
+  .final-reminder{ font-style:italic; margin-top:10px; }
+
+  .footer-divider{
+    border-top:1px solid var(--border);
+    margin-top:34px;
+    padding-top:10px;
+    text-align:center;
+    font-style:italic;
+    font-size:11.5px;
+    color:var(--teal-medium);
+  }
+
+  /* ---------- Action bars ---------- */
+  .action-bar{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    padding:10px 14px;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .action-bar.bottom{
+    border-bottom:none;
+    border-top:1px solid var(--border);
+    position:sticky;
+    top:auto;
+    bottom:0;
+  }
+  .action-bar button{
+    background:var(--teal-medium);
+    color:#ffffff;
+    border:none;
+    border-radius:20px;
+    padding:9px 18px;
+    font-size:13.5px;
+    font-weight:bold;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .action-bar button:hover{ background:var(--teal-dark); }
+  .action-bar button.secondary{ background:#555555; }
+  .action-bar button.secondary:hover{ background:#333333; }
+
+  /* ---------- Floating story button ---------- */
+  .story-float{
+    position:fixed;
+    right:20px;
+    bottom:78px;
+    background:var(--teal-medium);
+    color:#ffffff;
+    border:none;
+    border-radius:30px;
+    padding:10px 16px;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+    display:none;
+    z-index:60;
+    box-shadow:0 0 0 0 rgba(15,118,110,0.6);
+    animation:glowPulse 2s infinite;
+  }
+  .story-float.visible{ display:block; }
+  @keyframes glowPulse{
+    0%{ box-shadow:0 0 0 0 rgba(15,118,110,0.55); }
+    70%{ box-shadow:0 0 0 12px rgba(15,118,110,0); }
+    100%{ box-shadow:0 0 0 0 rgba(15,118,110,0); }
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    .action-bar, .story-float{ display:none !important; }
+    body{ font-size:12px; }
+    .page{ max-width:100%; padding:0; }
+    .section-bar{ break-inside:avoid; }
+    table, .grammar-lab-item, .story-text, .homework-box{ break-inside:avoid; }
+    input.aline, input.blank{ border-bottom:1px solid #000000; color:#000; }
+    textarea{ border:1px solid #000000; color:#000; }
+    th, td{ border:1px solid #000000; }
+    @page{ size:A4; margin:16mm 14mm; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:600px){
+    .page{ padding:16px 14px 90px 14px; }
+    .main-title{ font-size:22px; }
+    .episode-subtitle{ font-size:15px; }
+    .homework-columns{ flex-direction:column; }
+    .mc-options{ gap:8px 12px; }
+    .action-bar{ gap:8px; flex-wrap:wrap; }
+    .action-bar button{ padding:8px 12px; font-size:12.5px; }
+    table, th, td{ font-size:12.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="action-bar top">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <div class="running-header">Character &amp; Grammar Through Stories | Episode 1 - The Lost Wallet</div>
+
+  <div class="title-block">
+    <h1 class="main-title">Character &amp; Grammar Through Stories</h1>
+    <h2 class="episode-subtitle">Episode 1 - The Lost Wallet</h2>
+  </div>
+
+  <div class="info-box">
+    <div class="info-row">
+      <span class="info-label">Student Name:</span>
+      <input type="text" class="aline info-input">
+    </div>
+    <div class="info-row">
+      <span class="info-label">Date:</span>
+      <input type="text" class="aline info-input short">
+      <span class="info-label">Level:</span>
+      <span class="level-value">A2–B1</span>
+    </div>
+  </div>
+
+  <div class="goals-box">
+    <p class="goals-label">Learning Goals:</p>
+    <p class="goals-intro">By the end of this worksheet, students will be able to:</p>
+    <ul class="goals-list">
+      <li>✓ Read and understand a realistic story</li>
+      <li>✓ Learn useful vocabulary</li>
+      <li>✓ Identify grammar in context</li>
+      <li>✓ Build accurate sentences</li>
+      <li>✓ Practise short writing tasks</li>
+      <li>✓ Reflect on moral character values</li>
+    </ul>
+  </div>
+
+  <!-- ===================== SECTION 1 ===================== -->
+  <div class="section-bar" id="section1">SECTION 1 | WARM-UP | Before You Read</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Part A - Prediction Questions | অনুমান করা</h3>
+    <p class="instructions"><strong>Instructions:</strong> Answer the questions before reading the story. | <span class="bengali-tag">নির্দেশনা:</span> গল্প পড়ার আগে প্রশ্নগুলোর উত্তর দাও।</p>
+    <ol class="q-list">
+      <li>What do you think Hasan will do when he finds the wallet?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>Why can a lost wallet be a serious problem for its owner?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Part B - Personal Reflection | নিজের ভাবনা</h3>
+    <p class="instructions"><strong>Instructions:</strong> Write your honest ideas. There is no "perfect" answer. | <span class="bengali-tag">নির্দেশনা:</span> নিজের সত্য ভাবনা লেখো। এখানে কোনো ভুল উত্তর নেই।</p>
+    <ol class="q-list">
+      <li>What makes a person trustworthy in daily life?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>When is it difficult to be honest? Give one example.
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 2 ===================== -->
+  <div class="section-bar" id="section2">SECTION 2 | MAIN STORY | Read the Story</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Read the story carefully. Underline any useful grammar or vocabulary you notice. | <span class="bengali-tag">নির্দেশনা:</span> গল্পটি মনোযোগ দিয়ে পড়ো। যে grammar বা vocabulary গুরুত্বপূর্ণ মনে হয়, দাগ দাও।</p>
+
+    <h3 class="story-title" id="story-title">The Lost Wallet</h3>
+    <div class="story-text">
+      <p>Hasan studies English at a private university in Sylhet. He usually goes home by bus after class, but that afternoon the sky was dark and the road was crowded. He was walking quickly past a small tea stall when he saw a black wallet near the footpath. At first, he thought it was only an empty cover. Then he picked it up and felt its weight.</p>
+
+      <p>"Maybe someone has just dropped it," Hasan said to himself. He looked around. People were getting on buses, a rickshaw driver was calling for passengers, and shopkeepers were closing their stalls because rain was coming. No one seemed to be searching for anything.</p>
+
+      <p>Hasan opened the wallet carefully. Inside, there was a good amount of money, a university ID card, a national ID photocopy, and some important papers. The name on the university card was Arif Hossain. Hasan had never met him, but he understood one thing clearly: this wallet was not a small matter. Someone might be very worried at that moment.</p>
+
+      <p>For a few seconds, Hasan stood silently. He had been saving money for a new phone, and his old phone was almost broken. A small thought came into his mind: "If I keep the money, I can solve my problem." He felt uncomfortable as soon as he thought that. He remembered what his mother often says: "A trusted person protects what does not belong to him." He also remembered that honesty is not only a word; it is a choice when nobody is watching.</p>
+
+      <p>Hasan closed the wallet and took a deep breath. "No," he whispered. "I must return it." He went back to the tea stall and asked the owner, "Uncle, has anyone come here looking for a wallet?" The man shook his head. "Not yet. But you should leave your number with me. If someone comes, I will tell him." Hasan gave his phone number, but he did not leave the wallet there. The documents were important, and he felt responsible for keeping them safe.</p>
+
+      <p>Then Hasan checked the university ID again. It showed the department and a student number. "I am going to call the university office," he decided. He searched online for the office number and called. A staff member answered, "We can try to contact the student, but it may take some time." Hasan replied, "I have found his wallet. Please tell him that it is safe."</p>
+
+      <p>While Hasan was waiting near the bus stop, his phone rang. A nervous voice said, "Take my Salam! Brother, are you Hasan? I am Arif. Have you really found my wallet?" Hasan smiled and answered, "Peace be upon you! Yes, I have it. Your ID card and documents are inside. Where are you now?" Arif sounded relieved. "I am coming back from the campus. I have been looking for it for almost an hour. My exam admit card is inside, and I thought I had lost everything."</p>
+
+      <p>Hasan waited under a shop shade as the rain began. Twenty minutes later, Arif arrived, breathing fast and looking worried. Hasan asked him to describe the wallet before giving it back. Arif described it correctly, and Hasan handed it to him. Arif opened it, checked the documents, and almost laughed with relief. "Brother, you have saved me from a huge problem. I don't know how to thank you," he said.</p>
+
+      <p>Hasan replied, "You do not need to thank me too much. Anyone can lose something. If I lose my wallet one day, I hope someone will return it too." Arif offered him some money as a reward, but Hasan gently refused. "Please keep me in your prayer. That is enough," he said.</p>
+
+      <p>On the bus home, Hasan felt light and peaceful. His phone was still broken, and he still needed money to buy a new one. But his heart was calm. He had chosen honesty when he could have chosen the easy way. He knew he would remember this day for a long time, not because he found a wallet, but because he returned a trust to its owner.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 3 ===================== -->
+  <div class="section-bar" id="section3">SECTION 3 | VOCABULARY ZONE | শব্দভান্ডার</div>
+  <div class="section-content">
+    <p class="instructions">Study these useful words from the story. | এগুলো গল্পে ব্যবহৃত গুরুত্বপূর্ণ শব্দ।</p>
+
+    <table>
+      <thead>
+        <tr><th>Word</th><th>Part of Speech</th><th>Simple English Meaning</th><th>বাংলা অর্থ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>wallet</td><td>noun</td><td>a small case for money and cards</td><td>মানিব্যাগ</td></tr>
+        <tr><td>footpath</td><td>noun</td><td>a path beside a road for walking</td><td>ফুটপাত</td></tr>
+        <tr><td>documents</td><td>noun</td><td>important papers</td><td>গুরুত্বপূর্ণ কাগজপত্র</td></tr>
+        <tr><td>amount</td><td>noun</td><td>a quantity of something</td><td>পরিমাণ</td></tr>
+        <tr><td>worried</td><td>adjective</td><td>feeling anxious or afraid about a problem</td><td>চিন্তিত</td></tr>
+        <tr><td>trusted</td><td>adjective</td><td>someone people can believe and depend on</td><td>বিশ্বাসযোগ্য</td></tr>
+        <tr><td>responsible</td><td>adjective</td><td>having a duty to do something properly</td><td>দায়িত্বশীল</td></tr>
+        <tr><td>contact</td><td>verb/noun</td><td>to communicate with someone</td><td>যোগাযোগ করা / যোগাযোগ</td></tr>
+        <tr><td>relieved</td><td>adjective</td><td>feeling happy because a problem is gone</td><td>স্বস্তি পাওয়া</td></tr>
+        <tr><td>reward</td><td>noun</td><td>something given for a good action</td><td>পুরস্কার</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task A - Matching | মিলকরণ</h3>
+    <p class="instructions"><strong>Instructions:</strong> Match the words with the correct meanings. Write the letter beside each word. | <span class="bengali-tag">নির্দেশনা:</span> শব্দের পাশে সঠিক অর্থের অক্ষর লেখো।</p>
+    <table>
+      <thead><tr><th>Word</th><th>Your Answer</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>1. responsible</td><td><input type="text" class="blank sm"></td><td>A. important papers</td></tr>
+        <tr><td>2. relieved</td><td><input type="text" class="blank sm"></td><td>B. feeling happy after a problem is gone</td></tr>
+        <tr><td>3. documents</td><td><input type="text" class="blank sm"></td><td>C. to communicate with someone</td></tr>
+        <tr><td>4. contact</td><td><input type="text" class="blank sm"></td><td>D. having a duty to do something properly</td></tr>
+        <tr><td>5. reward</td><td><input type="text" class="blank sm"></td><td>E. something given for a good action</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Fill in the Blanks | শূন্যস্থান পূরণ করো</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose the best word from the box and complete the sentences. | <span class="bengali-tag">নির্দেশনা:</span> বক্স থেকে সঠিক শব্দ বেছে বাক্য সম্পূর্ণ করো।</p>
+    <div class="word-box">Word Box: wallet | worried | trusted | contact | reward</div>
+    <ol class="q-list">
+      <li>Hasan found a black <input type="text" class="blank wide"> near the footpath.</li>
+      <li>Arif was very <input type="text" class="blank wide"> because his admit card was inside.</li>
+      <li>A <input type="text" class="blank wide"> person returns what belongs to others.</li>
+      <li>Hasan tried to <input type="text" class="blank wide"> the owner through the university office.</li>
+      <li>Arif offered Hasan a <input type="text" class="blank wide">, but Hasan refused politely.</li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 4 ===================== -->
+  <div class="section-bar" id="section4">SECTION 4 | GRAMMAR DETECTIVE 🔍 | Grammar in Context</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Grammar Helper | ছোট ব্যাখ্যা:</strong> Grammar আলাদা করে মুখস্থ করার দরকার নেই। গল্পের বাক্যে grammar কীভাবে কাজ করে, সেটা খুঁজে দেখো।</p>
+
+    <h3 class="sub-heading">Task A - Find Examples from the Story | গল্প থেকে উদাহরণ খুঁজো</h3>
+    <p class="instructions"><strong>Instructions:</strong> Find and copy the sentences or parts of sentences from the story. | <span class="bengali-tag">নির্দেশনা:</span> গল্প থেকে বাক্য বা বাক্যের অংশ কপি করে লেখো।</p>
+    <table>
+      <thead><tr><th>Grammar Focus</th><th>How many?</th><th>Examples from the Story</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Past Simple</td><td>3</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline"><br>
+            3. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Present Perfect</td><td>2</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Modal Verb</td><td>2</td>
+          <td>
+            1. <input type="text" class="aline"><br>
+            2. <input type="text" class="aline">
+          </td>
+        </tr>
+        <tr>
+          <td>Conditional Sentence</td><td>1</td>
+          <td>1. <input type="text" class="aline"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Grammar Lab | Grammar বুঝে ব্যবহার করো</h3>
+    <p class="instructions"><strong>Instructions:</strong> Look at each sentence. Answer the three questions. | <span class="bengali-tag">নির্দেশনা:</span> প্রতিটি বাক্য দেখে তিনটি প্রশ্নের উত্তর দাও।</p>
+
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">1. Hasan was walking quickly past a small tea stall.</p>
+      <div class="gl-q"><label>1. Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>2. Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>3. Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">2. I have found his wallet.</p>
+      <div class="gl-q"><label>1. Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>2. Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>3. Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">3. You should leave your number with me.</p>
+      <div class="gl-q"><label>1. Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>2. Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>3. Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">4. If I lose my wallet one day, I hope someone will return it too.</p>
+      <div class="gl-q"><label>1. Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>2. Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>3. Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 5 ===================== -->
+  <div class="section-bar" id="section5">SECTION 5 | MIXED GRAMMAR CHALLENGE | মিশ্র Grammar অনুশীলন</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">A. Error Correction | ভুল সংশোধন</h3>
+    <p class="instructions"><strong>Instructions:</strong> Correct the grammar mistakes. Rewrite the full sentence. | <span class="bengali-tag">নির্দেশনা:</span> Grammar ভুল ঠিক করে সম্পূর্ণ বাক্যটি আবার লেখো।</p>
+    <ol class="q-list">
+      <li>Hasan find a wallet near the footpath.<input type="text" class="aline"></li>
+      <li>People was getting on buses.<input type="text" class="aline"></li>
+      <li>I has found his wallet.<input type="text" class="aline"></li>
+      <li>You must returns it to the owner.<input type="text" class="aline"></li>
+      <li>If I will keep the money, I can solve my problem.<input type="text" class="aline"></li>
+    </ol>
+
+    <h3 class="sub-heading">B. Multiple Choice | সঠিক উত্তর বেছে নাও</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose the best answer: A, B, C, or D. | <span class="bengali-tag">নির্দেশনা:</span> সঠিক উত্তর A, B, C, অথবা D বেছে নাও।</p>
+
+    <div class="mc-question">
+      <p>1. Hasan usually ______ home by bus after class.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc1"> A. go</label>
+        <label><input type="radio" name="mc1"> B. goes</label>
+        <label><input type="radio" name="mc1"> C. went</label>
+        <label><input type="radio" name="mc1"> D. going</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>2. He ______ quickly when he saw the wallet.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc2"> A. walks</label>
+        <label><input type="radio" name="mc2"> B. is walking</label>
+        <label><input type="radio" name="mc2"> C. was walking</label>
+        <label><input type="radio" name="mc2"> D. has walked</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>3. "I ______ his wallet," Hasan told the office.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc3"> A. have found</label>
+        <label><input type="radio" name="mc3"> B. has found</label>
+        <label><input type="radio" name="mc3"> C. founds</label>
+        <label><input type="radio" name="mc3"> D. finding</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>4. You ______ return things that do not belong to you.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc4"> A. can to</label>
+        <label><input type="radio" name="mc4"> B. should</label>
+        <label><input type="radio" name="mc4"> C. should to</label>
+        <label><input type="radio" name="mc4"> D. must to</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>5. If someone loses important documents, he ______ feel worried.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc5"> A. may</label>
+        <label><input type="radio" name="mc5"> B. are</label>
+        <label><input type="radio" name="mc5"> C. has</label>
+        <label><input type="radio" name="mc5"> D. were</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <h3 class="sub-heading">C. Gap Fill | শূন্যস্থান পূরণ</h3>
+    <p class="instructions"><strong>Instructions:</strong> Complete the sentences with the correct form of the verbs in brackets. | <span class="bengali-tag">নির্দেশনা:</span> ব্র্যাকেটের verb-এর সঠিক form দিয়ে বাক্য পূরণ করো।</p>
+    <ol class="q-list">
+      <li>Hasan usually <input type="text" class="blank wide"> (go) home by bus.</li>
+      <li>He <input type="text" class="blank wide"> (pick) up the wallet from the footpath.</li>
+      <li>Arif <input type="text" class="blank wide"> (look) for it for almost an hour.</li>
+      <li>Hasan <input type="text" class="blank wide"> (return) the wallet because it was the right thing to do.</li>
+      <li>If I find something important, I <input type="text" class="blank wide"> (try) to return it.</li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 6 ===================== -->
+  <div class="section-bar" id="section6">SECTION 6 | SENTENCE BUILDER | Build Your Own Sentences</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Use each word to write one original sentence. Do not copy from the story. | <span class="bengali-tag">নির্দেশনা:</span> প্রতিটি শব্দ দিয়ে নিজের একটি নতুন বাক্য লেখো। গল্প থেকে কপি করো না।</p>
+
+    <table>
+      <thead><tr><th>Word</th><th>Your Sentence</th><th>Checklist</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>wallet</td>
+          <td><input type="text" class="aline"></td>
+          <td>
+            <ul class="checklist">
+              <li><input type="checkbox"> Capital letter</li>
+              <li><input type="checkbox"> Full stop</li>
+              <li><input type="checkbox"> Correct verb</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>responsible</td>
+          <td><input type="text" class="aline"></td>
+          <td>
+            <ul class="checklist">
+              <li><input type="checkbox"> Capital letter</li>
+              <li><input type="checkbox"> Full stop</li>
+              <li><input type="checkbox"> Correct verb</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>contact</td>
+          <td><input type="text" class="aline"></td>
+          <td>
+            <ul class="checklist">
+              <li><input type="checkbox"> Capital letter</li>
+              <li><input type="checkbox"> Full stop</li>
+              <li><input type="checkbox"> Correct verb</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>worried</td>
+          <td><input type="text" class="aline"></td>
+          <td>
+            <ul class="checklist">
+              <li><input type="checkbox"> Capital letter</li>
+              <li><input type="checkbox"> Full stop</li>
+              <li><input type="checkbox"> Correct verb</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>reward</td>
+          <td><input type="text" class="aline"></td>
+          <td>
+            <ul class="checklist">
+              <li><input type="checkbox"> Capital letter</li>
+              <li><input type="checkbox"> Full stop</li>
+              <li><input type="checkbox"> Correct verb</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== SECTION 7 ===================== -->
+  <div class="section-bar" id="section7">SECTION 7 | SHORT WRITING TASK | Think &amp; Write</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Write 80-120 words. Try to use Past Simple, Present Perfect, modals, and one conditional sentence. | <span class="bengali-tag">নির্দেশনা:</span> ৮০-১২০ শব্দ লেখো। Past Simple, Present Perfect, modal এবং একটি conditional sentence ব্যবহার করার চেষ্টা করো।</p>
+    <p><strong>Prompt:</strong> Have you ever found something that belonged to someone else? What did you do? If not, what would you do?</p>
+    <p class="sub-heading" style="margin-top:14px;">Writing | লেখার জায়গা</p>
+    <textarea rows="10" placeholder="Write your answer here..."></textarea>
+  </div>
+
+  <!-- ===================== SECTION 8 ===================== -->
+  <div class="section-bar" id="section8">SECTION 8 | CHARACTER REFLECTION | Character Corner</div>
+  <div class="section-content">
+    <p class="instructions">Discuss or write short answers. These questions are about real life decisions, not only the story. | সংক্ষেপে আলোচনা বা উত্তর লেখো।</p>
+
+    <p><strong>1.</strong> Hasan could keep the money, but he did not. What does this show about his character?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>2.</strong> Why is trustworthiness important in friendship, family, study, and work?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>3.</strong> What small action can you take this week to become more responsible?</p>
+    <textarea rows="3"></textarea>
+  </div>
+
+  <!-- ===================== SECTION 9 ===================== -->
+  <div class="section-bar" id="section9">SECTION 9 | HOMEWORK | বাড়ির কাজ</div>
+  <div class="section-content">
+    <div class="homework-columns">
+      <div class="homework-box">
+        <h4>Level 1</h4>
+        <p>Write 5 sentences about a time when you helped someone.</p>
+        <textarea rows="6" placeholder="Write your answer here..."></textarea>
+      </div>
+      <div class="homework-box">
+        <h4>Level 2</h4>
+        <p>Write a short diary entry (100-120 words). Use Past Simple and Present Perfect.</p>
+        <textarea rows="8" placeholder="Write your answer here..."></textarea>
+      </div>
+    </div>
+    <p class="final-reminder"><strong>Final Reminder | শেষ কথা:</strong> Good grammar helps your writing. Good character helps your life. Try to practise both every day.</p>
+  </div>
+
+  <div class="footer-divider">© Abidur Rahman Tahmid | English Learning Through Stories | Episode 1 - The Lost Wallet</div>
+
+</div>
+
+<div class="action-bar bottom">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<button id="storyBtn" class="story-float" onclick="scrollToStory()">📖 Story</button>
+
+<script>
+  function clearAll(){
+    if(!confirm("Are you sure you want to clear all your answers? This cannot be undone.")) return;
+    document.querySelectorAll('input[type="text"]').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('textarea').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('input[type="radio"]').forEach(function(el){ el.checked = false; });
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(el){ el.checked = false; });
+  }
+
+  function scrollToStory(){
+    var target = document.getElementById('story-title');
+    if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  }
+
+  (function(){
+    var storyBtn = document.getElementById('storyBtn');
+    var sec4 = document.getElementById('section4');
+    var sec9 = document.getElementById('section9');
+    if(!storyBtn || !sec4 || !sec9) return;
+
+    function updateVisibility(){
+      var sec4Top = sec4.getBoundingClientRect().top;
+      var sec9Top = sec9.getBoundingClientRect().top;
+      var viewportH = window.innerHeight;
+      /* Show once section4's bar has scrolled at or above roughly mid-viewport,
+         hide once section9's bar reaches that same point */
+      var passedSection4 = sec4Top < viewportH * 0.6;
+      var passedSection9 = sec9Top < viewportH * 0.6;
+      if(passedSection4 && !passedSection9){
+        storyBtn.classList.add('visible');
+      } else {
+        storyBtn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateVisibility, {passive:true});
+    window.addEventListener('resize', updateVisibility);
+    updateVisibility();
+  })();
+</script>
+
+</body>
+</html>
