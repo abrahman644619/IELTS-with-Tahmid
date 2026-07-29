@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Writing — Vocabulary Bank | Abidur Rahman Tahmid</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Arial,sans-serif;font-size:14px;color:#1a1a1a;background:#f0f0f0;line-height:1.55;}
+.page{max-width:900px;margin:0 auto;background:#fff;padding-bottom:40px;}
+
+/* HEADER */
+.doc-header{background:#fff;border-bottom:2.5px solid #1a3a6e;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.gift-brand{font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:15px;color:#1a3a6e;letter-spacing:0.2px;}
+.credentials{font-size:12px;color:#444;text-align:right;}
+.doc-subheader{background:#f0f4ff;border-bottom:1px solid #d0d8ee;padding:5px 22px;font-size:11.5px;color:#555;}
+
+/* TITLE */
+.title-bar{background:#007b8a;color:#fff;text-align:center;padding:18px 20px 14px;}
+.title-bar h1{font-size:22px;font-weight:bold;letter-spacing:0.4px;margin-bottom:4px;}
+.title-bar h2{font-size:15px;font-weight:normal;margin-bottom:4px;}
+.title-bar p{font-size:12.5px;opacity:0.92;}
+
+.content{padding:0 24px;}
+
+.box-intro{background:#fffbe6;border:1.5px solid #e8c030;border-left:5px solid #d4a017;border-radius:3px;padding:12px 16px;margin:16px 0;font-size:13px;}
+.box-intro .btitle{font-weight:bold;font-size:14px;color:#7a5200;margin-bottom:7px;}
+
+/* MODE TABS */
+.mode-tabs{display:flex;gap:10px;margin:18px 0 6px;}
+.mode-tab{flex:1;text-align:center;padding:13px 10px;border-radius:6px;border:2px solid #007b8a;background:#fff;color:#007b8a;font-weight:bold;font-size:15px;cursor:pointer;transition:all .15s;}
+.mode-tab.active{background:#007b8a;color:#fff;}
+.mode-tab:hover{opacity:.9;}
+.mode-panel{display:none;}
+.mode-panel.active{display:block;}
+
+/* FILTER BAR */
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:#f4f8fa;border:1px solid #d5e4e8;border-radius:5px;padding:12px 14px;margin:14px 0;}
+.filter-bar label{font-size:12.5px;font-weight:bold;color:#333;margin-right:4px;}
+.filter-bar select,.filter-bar input[type=text]{border:1px solid #bbb;border-radius:4px;padding:6px 8px;font-size:13px;font-family:Arial,sans-serif;background:#fff;}
+.filter-bar input[type=text]{flex:1;min-width:140px;}
+.filter-count{font-size:12px;color:#666;margin-left:auto;white-space:nowrap;}
+
+/* CATEGORY BLOCKS */
+.vocab-cat{margin:20px 0 6px;}
+.vocab-cat-head{background:#007b8a;color:#fff;padding:7px 12px;border-radius:3px;font-size:14px;font-weight:bold;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px;}
+.vocab-cat-head .unit-tag{font-size:11px;font-weight:normal;opacity:.85;background:rgba(255,255,255,.18);padding:2px 8px;border-radius:10px;}
+table.vtab{width:100%;border-collapse:collapse;margin:8px 0 4px;font-size:12.8px;}
+table.vtab th{background:#e5f2ff;color:#0d3f80;padding:6px 9px;text-align:left;font-size:12px;border:1px solid #c6dcf0;}
+table.vtab td{border:1px solid #ddd;padding:7px 9px;vertical-align:top;}
+table.vtab tr:nth-child(even) td{background:#fafafa;}
+table.vtab .wcol{width:24%;font-weight:bold;}
+table.vtab .meaning{color:#444;font-weight:normal;display:block;margin-top:2px;font-size:12px;}
+table.vtab .scol{width:26%;color:#555;font-style:italic;}
+.no-results{padding:20px;text-align:center;color:#888;font-size:13px;}
+
+/* QUIZ SET CARDS */
+.set-cards{display:flex;gap:14px;flex-wrap:wrap;margin:16px 0;}
+.set-card{flex:1;min-width:260px;border:2px solid #aecdf0;background:#eef6ff;border-radius:6px;padding:16px;}
+.set-card h3{color:#0d3f80;font-size:16px;margin-bottom:4px;}
+.set-card .count{font-size:12.5px;color:#555;margin-bottom:10px;}
+.set-card .lastscore{font-size:12.5px;color:#333;background:#fff;border:1px solid #cfe0f0;border-radius:4px;padding:6px 8px;margin-bottom:10px;}
+.set-card .lastscore .pct{font-weight:bold;color:#007b8a;}
+.len-choice{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.len-choice label{background:#fff;border:1.5px solid #aecdf0;border-radius:14px;padding:5px 12px;font-size:12.5px;cursor:pointer;}
+.len-choice input{margin-right:5px;}
+.len-choice input:checked + span{font-weight:bold;}
+.btn-start{background:#007b8a;color:#fff;border:none;padding:9px 20px;border-radius:5px;font-size:14px;font-weight:bold;cursor:pointer;width:100%;}
+.btn-start:hover{background:#005c68;}
+
+/* QUIZ RUNNING */
+.quiz-run{display:none;margin-top:10px;}
+.quiz-run.active{display:block;}
+.quiz-progress{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#555;margin-bottom:10px;}
+.quiz-progress-bar{flex:1;height:7px;background:#e0e0e0;border-radius:4px;margin:0 10px;overflow:hidden;}
+.quiz-progress-fill{height:100%;background:#007b8a;transition:width .2s;}
+.quiz-card{border:2px solid #007b8a;border-radius:8px;padding:20px;background:#fafdfd;}
+.quiz-direction{font-size:11.5px;color:#007b8a;font-weight:bold;text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px;}
+.quiz-prompt{font-size:17px;font-weight:bold;color:#1a1a1a;margin-bottom:4px;line-height:1.4;}
+.quiz-sub{font-size:12.5px;color:#666;margin-bottom:16px;}
+.quiz-options{display:flex;flex-direction:column;gap:9px;}
+.opt-btn{text-align:left;padding:11px 14px;border:1.5px solid #ccc;border-radius:5px;background:#fff;font-size:13.5px;cursor:pointer;font-family:Arial,sans-serif;}
+.opt-btn:hover:not(:disabled){border-color:#007b8a;background:#f4fbfb;}
+.opt-btn:disabled{cursor:default;}
+.opt-btn.correct{background:#e3f6e6;border-color:#2e9e46;color:#1c6b2c;font-weight:bold;}
+.opt-btn.wrong{background:#fdeaea;border-color:#c0392b;color:#8f2418;font-weight:bold;}
+.quiz-footer{display:flex;justify-content:flex-end;margin-top:16px;}
+.btn-next{background:#007b8a;color:#fff;border:none;padding:9px 22px;border-radius:5px;font-size:13.5px;font-weight:bold;cursor:pointer;display:none;}
+.btn-next.show{display:inline-block;}
+
+/* QUIZ RESULT */
+.quiz-result{display:none;text-align:center;padding:20px 10px;}
+.quiz-result.active{display:block;}
+.score-badge{width:130px;height:130px;border-radius:50%;border:8px solid #007b8a;display:flex;align-items:center;justify-content:center;flex-direction:column;margin:0 auto 14px;}
+.score-badge.high{border-color:#2e9e46;}
+.score-badge.mid{border-color:#e69500;}
+.score-badge.low{border-color:#c0392b;}
+.score-badge .pctnum{font-size:26px;font-weight:bold;color:#1a1a1a;}
+.score-badge .pctsign{font-size:13px;color:#666;}
+.result-detail{font-size:14px;color:#333;margin-bottom:16px;}
+.missed-box{text-align:left;background:#fdeaea;border:1px solid #e6b0aa;border-radius:5px;padding:12px 16px;margin:0 0 16px;font-size:13px;max-height:260px;overflow-y:auto;}
+.missed-box h4{color:#8f2418;font-size:13px;margin-bottom:8px;}
+.missed-item{padding:5px 0;border-bottom:1px solid #f2d5d2;}
+.missed-item:last-child{border-bottom:none;}
+.missed-item b{color:#1a1a1a;}
+.result-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.btn-secondary{background:#fff;color:#007b8a;border:2px solid #007b8a;padding:9px 18px;border-radius:5px;font-size:13.5px;font-weight:bold;cursor:pointer;}
+.btn-secondary:hover{background:#eef8f9;}
+
+.pg-footer{border-top:1px solid #ddd;padding:14px 0;margin-top:26px;font-size:11px;font-style:italic;color:#777;text-align:center;}
+
+@media(max-width:660px){
+  .content{padding:0 12px;}
+  .set-cards{flex-direction:column;}
+  table.vtab{font-size:11.5px;}
+  .filter-count{margin-left:0;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="doc-header">
+  <div class="gift-brand">A Gift from Abidur Rahman Tahmid</div>
+  <div class="credentials">🎓 BA H, University of Greenwich (UK) &nbsp;|&nbsp; 🎓 EMBA, Dhaka University</div>
+</div>
+<div class="doc-subheader">
+  <span>Worksheet prepared for IELTS Writing — Vocabulary | For classroom and home study use</span>
+</div>
+
+<div class="title-bar">
+  <h1>IELTS Writing — Vocabulary Bank</h1>
+  <h2>পূর্ণ শব্দভাণ্ডার তালিকা | Master Reference &amp; Self-Test Hub</h2>
+  <p>Complete Vocabulary Reference &nbsp;|&nbsp; Worksheet for Bangladeshi IELTS Learners</p>
+</div>
+
+<div class="content">
+
+<div class="box-intro" style="margin-top:16px;">
+  <div class="btitle">ভূমিকা</div>
+  <p>এই Vocabulary Bank-টি IELTS Writing Lessons for IELTS বইয়ের সব উল্লেখযোগ্য vocabulary ধারণ করে। <strong>PART 1</strong>: Writing Task 1 expressions (trends, percentages, comparison, process)। <strong>PART 2</strong>: Writing Task 2 topic vocabulary (by unit)। প্রতিটি entry-তে রয়েছে: শব্দ + বাংলা অর্থ, সমার্থক শব্দ, এবং IELTS writing-এ ব্যবহারের উদাহরণ।</p>
+  <p style="margin-top:8px;">নিচে দুটি mode আছে — <strong>Study Mode</strong>-এ পুরো তালিকা পড়ে ও খুঁজে দেখতে পারবে, আর <strong>Quiz Mode</strong>-এ নিজেকে পরীক্ষা করতে পারবে এবং percentage-এ স্কোর দেখতে পারবে (Task 1 ও Task 2 আলাদাভাবে)।</p>
+</div>
+
+<!-- MODE TABS -->
+<div class="mode-tabs">
+  <div class="mode-tab active" id="tabStudy" onclick="switchMode('study')">📖 Study Mode</div>
+  <div class="mode-tab" id="tabQuiz" onclick="switchMode('quiz')">📝 Quiz Mode</div>
+</div>
+
+<!-- ===================== STUDY MODE ===================== -->
+<div class="mode-panel active" id="panelStudy">
+
+  <div class="filter-bar">
+    <label>Part:</label>
+    <select id="filterPart" onchange="onPartChange()">
+      <option value="all">All (Task 1 + Task 2)</option>
+      <option value="1">Part 1 — Task 1 (Functional Language)</option>
+      <option value="2">Part 2 — Task 2 (Topic Vocabulary)</option>
+    </select>
+    <label>Category:</label>
+    <select id="filterCategory" onchange="renderStudy()">
+      <option value="all">All categories</option>
+    </select>
+    <input type="text" id="filterSearch" placeholder="Search a word or meaning…" oninput="renderStudy()">
+    <span class="filter-count" id="filterCount"></span>
+  </div>
+
+  <div id="studyResults"></div>
+</div>
+
+<!-- ===================== QUIZ MODE ===================== -->
+<div class="mode-panel" id="panelQuiz">
+
+  <div id="quizSetup">
+    <div class="set-cards">
+      <div class="set-card">
+        <h3>Part 1 — Task 1</h3>
+        <div class="count" id="t1count">Functional Language</div>
+        <div class="lastscore" id="t1lastscore">No attempt yet this session.</div>
+        <div class="len-choice" data-task="1">
+          <label><input type="radio" name="len1" value="10" checked><span>Quick (10)</span></label>
+          <label><input type="radio" name="len1" value="20"><span>Standard (20)</span></label>
+          <label><input type="radio" name="len1" value="all"><span>Full Set</span></label>
+        </div>
+        <button class="btn-start" onclick="startQuiz(1)">Start Task 1 Quiz</button>
+      </div>
+      <div class="set-card">
+        <h3>Part 2 — Task 2</h3>
+        <div class="count" id="t2count">Topic Vocabulary</div>
+        <div class="lastscore" id="t2lastscore">No attempt yet this session.</div>
+        <div class="len-choice" data-task="2">
+          <label><input type="radio" name="len2" value="10" checked><span>Quick (10)</span></label>
+          <label><input type="radio" name="len2" value="20"><span>Standard (20)</span></label>
+          <label><input type="radio" name="len2" value="all"><span>Full Set</span></label>
+        </div>
+        <button class="btn-start" onclick="startQuiz(2)">Start Task 2 Quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-run" id="quizRun">
+    <div class="quiz-progress">
+      <span id="quizProgressText">Question 1 of 10</span>
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill" style="width:0%"></div></div>
+      <span id="quizTaskLabel">Task 1</span>
+    </div>
+    <div class="quiz-card">
+      <div class="quiz-direction" id="quizDirection">WHICH WORD MATCHES THIS MEANING?</div>
+      <div class="quiz-prompt" id="quizPrompt">—</div>
+      <div class="quiz-sub" id="quizSub"></div>
+      <div class="quiz-options" id="quizOptions"></div>
+      <div class="quiz-footer"><button class="btn-next" id="btnNext" onclick="nextQuestion()">Next →</button></div>
+    </div>
+  </div>
+
+  <div class="quiz-result" id="quizResult">
+    <div class="score-badge" id="scoreBadge"><div class="pctnum" id="scorePct">0%</div><div class="pctsign">score</div></div>
+    <div class="result-detail" id="resultDetail"></div>
+    <div id="missedWrap"></div>
+    <div class="result-btns">
+      <button class="btn-start" style="width:auto;" onclick="retrySameSet()">Retry This Set</button>
+      <button class="btn-secondary" onclick="backToSetup()">Back to Set Selection</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Vocabulary Bank Reference | For classroom and home study use</div>
+
+</div><!-- /content -->
+</div><!-- /page -->
+
+<script>
+const VOCAB_DATA = [{"task": 1, "category": "Describing Trends — Upward Movement", "unit": "Units 8, 14, 17", "word": "rise / increase / grow / go up", "meaning": "বাড়া, বৃদ্ধি পাওয়া", "synonyms": "climb, surge, jump, soar", "example": "Sales rose significantly over the five-year period. The number of users grew sharply in the third quarter.", "id": 0}, {"task": 1, "category": "Describing Trends — Upward Movement", "unit": "Units 8, 14, 17", "word": "improve / boom / advance", "meaning": "উন্নতি হওয়া, ঊর্ধ্বমুখী হওয়া", "synonyms": "progress, escalate, expand", "example": "The economy improved steadily. Tourist numbers boomed after the new airport opened.", "id": 1}, {"task": 1, "category": "Describing Trends — Upward Movement", "unit": "Units 8, 14, 17", "word": "rose slightly / increased marginally", "meaning": "সামান্য বৃদ্ধি পেয়েছে", "synonyms": "rose a little, crept up, edged up", "example": "Coal-fired energy increased marginally from 14% to 16% over the period.", "id": 2}, {"task": 1, "category": "Describing Trends — Upward Movement", "unit": "Units 8, 14, 17", "word": "rose significantly / increased sharply / grew steeply", "meaning": "উল্লেখযোগ্যভাবে / তীব্রভাবে বৃদ্ধি পেয়েছে", "synonyms": "surged dramatically, climbed steeply, shot up", "example": "Part-time employment grew steadily from 21% to 38%. Revenue increased sharply after the policy change.", "id": 3}, {"task": 1, "category": "Describing Trends — Upward Movement", "unit": "Units 8, 14, 17", "word": "grew steadily / climbed quickly", "meaning": "ধীরে ধীরে, নিয়মিতভাবে বৃদ্ধি পেয়েছে", "synonyms": "rose gradually, increased continuously", "example": "Mobile phone usage grew steadily throughout the decade.", "id": 4}, {"task": 1, "category": "Describing Trends — Upward Movement", "unit": "Units 8, 14, 17", "word": "dramatic increase / sharp rise", "meaning": "নাটকীয় বৃদ্ধি", "synonyms": "sharp surge, rapid expansion, significant growth", "example": "There was a dramatic increase in tourist numbers after the new airport opened.", "id": 5}, {"task": 1, "category": "Describing Trends — Upward Movement", "unit": "Units 8, 14, 17", "word": "steady rise / moderate growth / considerable improvement", "meaning": "ধীর কিন্তু নিয়মিত বৃদ্ধি", "synonyms": "gradual increase, sustained growth", "example": "A steady rise in living standards was recorded over the twenty-year period.", "id": 6}, {"task": 1, "category": "Describing Trends — Upward Movement", "unit": "Units 8, 14, 17", "word": "peaked / reached a peak / reached the highest point", "meaning": "সর্বোচ্চ পর্যায়ে পৌঁছেছে", "synonyms": "hit a maximum, topped out, hit the highest level", "example": "Car ownership peaked in 2005 at 85 per cent. Visitor numbers reached their highest point in August.", "id": 7}, {"task": 1, "category": "Describing Trends — Downward Movement", "unit": "Units 8, 14, 17", "word": "decrease / fall / drop / decline", "meaning": "কমা, হ্রাস পাওয়া", "synonyms": "reduce, dip, plunge, plummet, go down", "example": "Unemployment decreased from 11% to 3% over twenty years. Oil prices fell sharply in the second half.", "id": 8}, {"task": 1, "category": "Describing Trends — Downward Movement", "unit": "Units 8, 14, 17", "word": "fell slightly / dropped marginally", "meaning": "সামান্য কমেছে", "synonyms": "dipped a little, edged down", "example": "The percentage of copper production dropped slightly from 30% to 28%.", "id": 9}, {"task": 1, "category": "Describing Trends — Downward Movement", "unit": "Units 8, 14, 17", "word": "fell significantly / dropped sharply / declined dramatically", "meaning": "উল্লেখযোগ্যভাবে / তীব্রভাবে কমেছে", "synonyms": "plummeted, plunged, collapsed", "example": "The percentage of Caucasians declined dramatically from 68% to 47% over twenty years.", "id": 10}, {"task": 1, "category": "Describing Trends — Downward Movement", "unit": "Units 8, 14, 17", "word": "fell gradually / decreased slowly", "meaning": "ধীরে ধীরে কমেছে", "synonyms": "declined steadily, dropped gradually", "example": "Inflation fell gradually throughout the decade.", "id": 11}, {"task": 1, "category": "Describing Trends — Downward Movement", "unit": "Units 8, 14, 17", "word": "dramatic decline / massive reduction", "meaning": "নাটকীয় পতন, ব্যাপক হ্রাস", "synonyms": "sharp drop, sudden plunge, steep fall", "example": "There was a massive reduction in the Caucasian percentage, from 68% to 47%.", "id": 12}, {"task": 1, "category": "Describing Trends — Downward Movement", "unit": "Units 8, 14, 17", "word": "steady fall / moderate dip", "meaning": "ধীর, নিয়মিত হ্রাস", "synonyms": "gradual decrease, consistent fall", "example": "A steady fall in unemployment was recorded throughout the period.", "id": 13}, {"task": 1, "category": "Describing Trends — Downward Movement", "unit": "Units 8, 14, 17", "word": "reached the lowest point / dropped to the lowest level", "meaning": "সর্বনিম্নে পৌঁছেছে", "synonyms": "hit a low, fell to a minimum, bottomed out", "example": "Sales reached their lowest point in 2009 before recovering the following year.", "id": 14}, {"task": 1, "category": "Describing Trends — Stability & Fluctuation", "unit": "Units 8, 14, 17", "word": "remain stable / stay unchanged / maintained", "meaning": "অপরিবর্তিত থাকা, স্থিতিশীল থাকা", "synonyms": "hold steady, persist, stay constant", "example": "The percentage of full-time workers remained stable at around 40% throughout the period.", "id": 15}, {"task": 1, "category": "Describing Trends — Stability & Fluctuation", "unit": "Units 8, 14, 17", "word": "relatively stable / remained consistent", "meaning": "তুলনামূলকভাবে স্থিতিশীল", "synonyms": "broadly unchanged, fairly constant", "example": "The proportion of part-time workers remained consistent at approximately 20%.", "id": 16}, {"task": 1, "category": "Describing Trends — Stability & Fluctuation", "unit": "Units 8, 14, 17", "word": "levelled off / stabilised / plateaued", "meaning": "একই স্তরে স্থিতিশীল হয়েছে", "synonyms": "flattened out, became steady", "example": "Growth levelled off after 2005 and remained flat for several years.", "id": 17}, {"task": 1, "category": "Describing Trends — Stability & Fluctuation", "unit": "Units 8, 14, 17", "word": "relatively insignificant changes / similar growth pattern", "meaning": "খুব কম পরিবর্তন হয়েছে", "synonyms": "minimal change, broadly stable", "example": "Both groups showed a similar growth pattern over the twenty-year period.", "id": 18}, {"task": 1, "category": "Describing Trends — Stability & Fluctuation", "unit": "Units 8, 14, 17", "word": "fluctuate / change", "meaning": "ওঠানামা করা", "synonyms": "vary, oscillate, swing, waver", "example": "Prices fluctuated considerably throughout the year, rising and falling unpredictably.", "id": 19}, {"task": 1, "category": "Expressing Percentages & Proportions", "unit": "Units 1, 12, 16, 17", "word": "account for / represent / make up", "meaning": "X% ধারণ করে, হয়", "synonyms": "constitute, comprise, form, equal", "example": "Iron ore accounts for 41 per cent of Austani's total metal production.", "id": 20}, {"task": 1, "category": "Expressing Percentages & Proportions", "unit": "Units 1, 12, 16, 17", "word": "a significant percentage / a substantial proportion", "meaning": "উল্লেখযোগ্য শতাংশ / অনুপাত", "synonyms": "a large share, a major portion", "example": "Austani had a significant percentage of its production in iron ore and copper.", "id": 21}, {"task": 1, "category": "Expressing Percentages & Proportions", "unit": "Units 1, 12, 16, 17", "word": "a further X per cent / an additional X%", "meaning": "আরও X%", "synonyms": "another X%, an extra X%", "example": "Uranium contributed a further 20 per cent of Austani's production.", "id": 22}, {"task": 1, "category": "Expressing Percentages & Proportions", "unit": "Units 1, 12, 16, 17", "word": "X and Y per cent respectively", "meaning": "যথাক্রমে X এবং Y%", "synonyms": "X and Y in turn, X and Y in that order", "example": "The Polynesians and South-East Asians grew from 18% and 12% respectively in 1988.", "id": 23}, {"task": 1, "category": "Expressing Percentages & Proportions", "unit": "Units 1, 12, 16, 17", "word": "over two thirds / about half / almost one third", "meaning": "দুই-তৃতীয়াংশেরও বেশি / প্রায় অর্ধেক", "synonyms": "more than two-thirds, roughly half", "example": "Austani had over two thirds of its production in iron ore and copper.", "id": 24}, {"task": 1, "category": "Expressing Percentages & Proportions", "unit": "Units 1, 12, 16, 17", "word": "less than one tenth / approximately a quarter", "meaning": "দশ ভাগের এক ভাগেরও কম / প্রায় এক চতুর্থাংশ", "synonyms": "a small fraction, a minor share", "example": "Gold and silver equalled less than one tenth of Austani's production.", "id": 25}, {"task": 1, "category": "Describing Numbers and Time", "unit": "Units 3, 6, 8, 16, 17", "word": "double / twice as much / increase twofold", "meaning": "দ্বিগুণ হওয়া", "synonyms": "multiply by two, increase by 100%", "example": "The budget nearly doubled, growing from €5 billion to €11 billion. The number of users doubled.", "id": 26}, {"task": 1, "category": "Describing Numbers and Time", "unit": "Units 3, 6, 8, 16, 17", "word": "treble / more than trebled / increase threefold", "meaning": "তিনগুণ হওয়া", "synonyms": "triple, multiply by three", "example": "The Indian population more than trebled from 2,500 to 8,500 in a single decade.", "id": 27}, {"task": 1, "category": "Describing Numbers and Time", "unit": "Units 3, 6, 8, 16, 17", "word": "quadruple / increase fourfold", "meaning": "চারগুণ হওয়া", "synonyms": "multiply by four", "example": "Property values quadrupled in the city between 1990 and 2010.", "id": 28}, {"task": 1, "category": "Describing Numbers and Time", "unit": "Units 3, 6, 8, 16, 17", "word": "roughly / approximately / about / nearly / almost", "meaning": "প্রায়, মোটামুটি", "synonyms": "around, close to, in the region of", "example": "The total population grew to approximately 152,500. There are roughly 35,000 mobile phone users.", "id": 29}, {"task": 1, "category": "Describing Numbers and Time", "unit": "Units 3, 6, 8, 16, 17", "word": "in x-yearly intervals / over a 20-year period", "meaning": "X বছর পরপর / ২০ বছরের সময়কালে", "synonyms": "across twenty years, over two decades", "example": "The table shows population changes over a twenty-year period from 1988 to 2008.", "id": 30}, {"task": 1, "category": "Language for Comparison and Contrast", "unit": "Units 6, 16, 17", "word": "in contrast / on the other hand", "meaning": "বৈসাদৃশ্যে, অপরদিকে", "synonyms": "conversely, by comparison, by contrast", "example": "In contrast, Kizani had a much more balanced output overall.", "id": 31}, {"task": 1, "category": "Language for Comparison and Contrast", "unit": "Units 6, 16, 17", "word": "whereas / while", "meaning": "যেখানে, অথচ", "synonyms": "although, but, even though", "example": "Austani focused on iron ore, whereas Kizani had a more balanced output.", "id": 32}, {"task": 1, "category": "Language for Comparison and Contrast", "unit": "Units 6, 16, 17", "word": "although / even though", "meaning": "যদিও", "synonyms": "despite the fact that, in spite of", "example": "Although their numbers increased, their percentage declined considerably.", "id": 33}, {"task": 1, "category": "Language for Comparison and Contrast", "unit": "Units 6, 16, 17", "word": "however / nevertheless", "meaning": "কিন্তু, তবুও", "synonyms": "yet, even so, despite this", "example": "However, there are major benefits to be gained by hosting the Games.", "id": 34}, {"task": 1, "category": "Language for Comparison and Contrast", "unit": "Units 6, 16, 17", "word": "almost the same as / comparable to", "meaning": "প্রায় একই", "synonyms": "roughly equal to, similar to", "example": "Laptops and PCs were almost the same, at 4% and 3% respectively.", "id": 35}, {"task": 1, "category": "Describing a Process", "unit": "Unit 13", "word": "in the first stage / in the second stage", "meaning": "প্রথম ধাপে, দ্বিতীয় ধাপে", "synonyms": "in stage one, during the first phase", "example": "In the first stage, the raw materials are collected and cleaned.", "id": 36}, {"task": 1, "category": "Describing a Process", "unit": "Unit 13", "word": "at the same time / simultaneously / during", "meaning": "একই সময়ে", "synonyms": "concurrently, meanwhile, at this point", "example": "At the same time, the mixture is heated to remove impurities.", "id": 37}, {"task": 1, "category": "Describing a Process", "unit": "Unit 13", "word": "first / firstly / second / finally", "meaning": "প্রথমে, দ্বিতীয়ত, সবশেষে", "synonyms": "initially, then, subsequently, lastly", "example": "Firstly, the wheat is harvested. After that, it is processed. Finally, the bread is baked.", "id": 38}, {"task": 1, "category": "Describing a Process", "unit": "Unit 13", "word": "after that / then / following this", "meaning": "এরপরে, তারপর", "synonyms": "subsequently, next, afterwards", "example": "After that, the mixture is poured into moulds. Then it is left to cool for 30 minutes.", "id": 39}, {"task": 1, "category": "Describing a Process", "unit": "Unit 13", "word": "five key stages / several stages", "meaning": "পাঁচটি মূল ধাপ / বেশ কয়েকটি ধাপ", "synonyms": "multiple steps, a number of phases", "example": "The cheese-making process involves five key stages, from milk collection to packaging.", "id": 40}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "activity (n.)", "meaning": "কার্যকলাপ, অনুশীলন", "synonyms": "exercise, sport, pastime, pursuit", "example": "Regular physical activity is essential for maintaining good health and preventing obesity.", "id": 41}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "avoid (v.)", "meaning": "এড়ানো", "synonyms": "prevent, evade, steer clear of", "example": "Regular exercise helps people avoid obesity and associated health problems.", "id": 42}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "benefit (n.)", "meaning": "সুবিধা, উপকার", "synonyms": "advantage, gain, merit, positive effect", "example": "There are many health benefits to participating in regular sport and exercise.", "id": 43}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "blood pressure (n.)", "meaning": "রক্তচাপ", "synonyms": "hypertension (when high)", "example": "High blood pressure is a major risk factor for heart disease and stroke.", "id": 44}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "competition (n.)", "meaning": "প্রতিযোগিতা", "synonyms": "contest, tournament, match, event", "example": "International competition motivates athletes to train harder and perform better.", "id": 45}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "diabetes (n.)", "meaning": "ডায়াবেটিস", "synonyms": "blood sugar condition, type 2 diabetes", "example": "Regular exercise can significantly reduce the risk of developing type 2 diabetes.", "id": 46}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "discipline (n.)", "meaning": "শৃঙ্খলা", "synonyms": "self-control, order, structure, rule-following", "example": "Team sports teach young people important values such as discipline and respect.", "id": 47}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "disease (n.)", "meaning": "রোগ", "synonyms": "illness, condition, ailment, disorder", "example": "A sedentary lifestyle significantly increases the risk of chronic disease.", "id": 48}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "exercise (n./v.)", "meaning": "ব্যায়াম, শারীরিক কসরত", "synonyms": "physical activity, workout, training", "example": "Regular exercise improves both physical fitness and mental wellbeing.", "id": 49}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "health problems (n.)", "meaning": "স্বাস্থ্য সমস্যা", "synonyms": "medical issues, health conditions, illness", "example": "Lack of exercise leads to serious health problems including obesity and heart disease.", "id": 50}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "heart disease (n.)", "meaning": "হৃদরোগ", "synonyms": "cardiovascular disease, cardiac condition", "example": "Heart disease is one of the leading causes of death in developed countries.", "id": 51}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "muscle (n.)", "meaning": "পেশী", "synonyms": "muscular strength, physical strength", "example": "Regular exercise builds muscle and improves overall physical fitness.", "id": 52}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "obesity (n.)", "meaning": "স্থূলতা", "synonyms": "overweight condition, excess body fat", "example": "Obesity has become a major public health issue in many developed countries.", "id": 53}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "overweight (adj.)", "meaning": "অতিরিক্ত ওজন", "synonyms": "obese, heavy, carrying excess weight", "example": "Too many children are overweight due to lack of exercise and poor diet.", "id": 54}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "participation (n.)", "meaning": "অংশগ্রহণ", "synonyms": "involvement, engagement, taking part", "example": "Participation in sport decreases significantly as children grow older.", "id": 55}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "physical fitness (n.)", "meaning": "শারীরিক সুস্থতা", "synonyms": "physical health, bodily strength", "example": "Physical fitness is essential for a healthy and productive lifestyle.", "id": 56}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "promote (v.)", "meaning": "প্রচার করা, উৎসাহিত করা", "synonyms": "encourage, support, advocate, foster", "example": "Schools should actively promote healthy eating and regular exercise habits.", "id": 57}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "skill (n.)", "meaning": "দক্ষতা", "synonyms": "ability, talent, competence, expertise", "example": "Team sports help children develop both physical and social skills.", "id": 58}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "spectators (n.)", "meaning": "দর্শক", "synonyms": "audience, fans, viewers, onlookers", "example": "Millions of spectators watched the final match on television worldwide.", "id": 59}, {"task": 2, "category": "Sport & Health", "unit": "Unit 2", "word": "teamwork (n.)", "meaning": "দলগত কাজ", "synonyms": "cooperation, collaboration, group effort", "example": "Sport teaches young people the importance of teamwork and communication.", "id": 60}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "addiction (n.)", "meaning": "আসক্তি", "synonyms": "dependency, obsession, over-reliance", "example": "Internet addiction is a growing problem among young people worldwide.", "id": 61}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "available (adj.)", "meaning": "পাওয়া যায়, উপলব্ধ", "synonyms": "accessible, obtainable, at hand", "example": "Broadband internet is now available in most urban areas of the world.", "id": 62}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "browse (v.)", "meaning": "ব্রাউজ করা", "synonyms": "surf, search, explore online", "example": "Students often browse the internet for information instead of using books.", "id": 63}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "download (v./n.)", "meaning": "ডাউনলোড করা", "synonyms": "save, retrieve, transfer, access", "example": "It is easy to download music, films, and documents from the internet.", "id": 64}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "eye strain (n.)", "meaning": "চোখের ক্লান্তি", "synonyms": "eye fatigue, visual stress", "example": "Prolonged screen use can cause eye strain and frequent headaches.", "id": 65}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "leisure (n.)", "meaning": "অবসর, বিনোদন", "synonyms": "free time, recreation, relaxation", "example": "Many people use computers for leisure activities such as gaming and social media.", "id": 66}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "neglect (v.)", "meaning": "অবহেলা করা, ছেড়ে দেওয়া", "synonyms": "ignore, abandon, disregard", "example": "Excessive computer use can cause people to neglect their studies and responsibilities.", "id": 67}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "network (n.)", "meaning": "নেটওয়ার্ক, জালিকা", "synonyms": "system, connection, grid", "example": "Social networks allow people to communicate instantly across the world.", "id": 68}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "parental supervision (n.)", "meaning": "পিতামাতার তত্ত্বাবধান", "synonyms": "parental control, family oversight", "example": "Parental supervision is essential when children use the internet.", "id": 69}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "privacy (n.)", "meaning": "গোপনীয়তা", "synonyms": "confidentiality, personal data security", "example": "Sharing personal information online can pose a serious privacy risk.", "id": 70}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "prolonged (adj.)", "meaning": "দীর্ঘস্থায়ী", "synonyms": "extended, lengthy, continuous, sustained", "example": "Prolonged computer use can lead to repetitive strain injury and eye problems.", "id": 71}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "repetitive (adj.)", "meaning": "পুনরাবৃত্তিমূলক", "synonyms": "recurring, repeated, monotonous", "example": "Repetitive strain injury is common among people who type for long periods.", "id": 72}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "restrictions (n.)", "meaning": "বিধিনিষেধ", "synonyms": "limits, controls, regulations, rules", "example": "Parental restrictions on internet use can protect children from harmful content.", "id": 73}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "surf the net (v.phr.)", "meaning": "ইন্টারনেট ব্যবহার করা", "synonyms": "browse online, go online", "example": "Young people spend hours surfing the net instead of doing exercise.", "id": 74}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "supervision (n.)", "meaning": "তত্ত্বাবধান", "synonyms": "oversight, monitoring, control", "example": "Children need proper supervision when using the internet at home.", "id": 75}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "tendency (n.)", "meaning": "প্রবণতা", "synonyms": "inclination, habit, trend, propensity", "example": "There is a growing tendency among young people to spend too much time online.", "id": 76}, {"task": 2, "category": "Computers & the Internet", "unit": "Unit 4", "word": "unrestricted (adj.)", "meaning": "অনিয়ন্ত্রিত", "synonyms": "uncensored, unlimited, unfiltered", "example": "Unrestricted access to the internet can expose children to harmful content.", "id": 77}, {"task": 2, "category": "Mixed Schools & Education", "unit": "Unit 7", "word": "academic (adj.)", "meaning": "শিক্ষামূলক, একাডেমিক", "synonyms": "scholarly, educational, intellectual", "example": "Co-educational schools often achieve better academic results overall.", "id": 78}, {"task": 2, "category": "Mixed Schools & Education", "unit": "Unit 7", "word": "advantage (n.)", "meaning": "সুবিধা", "synonyms": "benefit, merit, gain, plus", "example": "One advantage of single-sex schools is fewer distractions in the classroom.", "id": 79}, {"task": 2, "category": "Mixed Schools & Education", "unit": "Unit 7", "word": "co-educational (adj.)", "meaning": "সহশিক্ষামূলক (ছেলেমেয়ে একসাথে)", "synonyms": "mixed, coeducational", "example": "Co-educational schools prepare students better for the real world of work.", "id": 80}, {"task": 2, "category": "Mixed Schools & Education", "unit": "Unit 7", "word": "concentrate (v.)", "meaning": "মনোযোগ দেওয়া", "synonyms": "focus, pay attention, be attentive", "example": "Some students find it easier to concentrate in single-sex schools.", "id": 81}, {"task": 2, "category": "Mixed Schools & Education", "unit": "Unit 7", "word": "discipline (n.)", "meaning": "শৃঙ্খলা", "synonyms": "order, control, structure", "example": "Schools with strict discipline often produce better academic outcomes.", "id": 82}, {"task": 2, "category": "Mixed Schools & Education", "unit": "Unit 7", "word": "distract (v.)", "meaning": "মনোযোগ বিক্ষিপ্ত করা", "synonyms": "divert attention, interrupt, disrupt", "example": "Mixed schools may distract students from their academic studies.", "id": 83}, {"task": 2, "category": "Mixed Schools & Education", "unit": "Unit 7", "word": "interact (v.)", "meaning": "যোগাযোগ করা, মিলামেশা করা", "synonyms": "communicate, socialise, engage with", "example": "Students in mixed schools learn to interact with both genders effectively.", "id": 84}, {"task": 2, "category": "Mixed Schools & Education", "unit": "Unit 7", "word": "peers (n.)", "meaning": "সমবয়সী বন্ধু, সমকক্ষ", "synonyms": "classmates, contemporaries, fellow students", "example": "Peer pressure can negatively affect students' behaviour and academic choices.", "id": 85}, {"task": 2, "category": "Mixed Schools & Education", "unit": "Unit 7", "word": "single-sex (adj.)", "meaning": "একলিঙ্গ (শুধু ছেলে বা শুধু মেয়ে)", "synonyms": "boys-only, girls-only", "example": "Some parents prefer single-sex schools for academic or religious reasons.", "id": 86}, {"task": 2, "category": "Mixed Schools & Education", "unit": "Unit 7", "word": "social skills (n.)", "meaning": "সামাজিক দক্ষতা", "synonyms": "interpersonal skills, communication skills", "example": "Mixed schools help develop important social skills that are valuable in adult life.", "id": 87}, {"task": 2, "category": "Mixed Schools & Education", "unit": "Unit 7", "word": "strict (adj.)", "meaning": "কঠোর", "synonyms": "firm, demanding, rigorous, disciplined", "example": "Strict schools often have better academic outcomes and student behaviour.", "id": 88}, {"task": 2, "category": "Mixed Schools & Education", "unit": "Unit 7", "word": "opportunity (n.)", "meaning": "সুযোগ", "synonyms": "chance, occasion, possibility", "example": "Co-educational schools provide more opportunities to develop social skills.", "id": 89}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "barley / cereal / grain", "meaning": "যব / শস্য / শস্যদানা", "synonyms": "crops, staple food, produce", "example": "Cereals such as barley, oats, and wheat are the basis of many diets worldwide.", "id": 90}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "climate (n.)", "meaning": "আবহাওয়া, জলবায়ু", "synonyms": "weather conditions, environment", "example": "Changes in climate are making food production increasingly difficult in many regions.", "id": 91}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "crops (n.)", "meaning": "ফসল", "synonyms": "plants, produce, harvest, agricultural goods", "example": "Growing crops requires adequate rainfall and fertile, nutrient-rich soil.", "id": 92}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "drought (n.)", "meaning": "খরা", "synonyms": "dry spell, water shortage, aridity", "example": "Severe drought destroyed the harvest in several African countries last year.", "id": 93}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "fertiliser (n.)", "meaning": "সার", "synonyms": "nutrients, soil additives, agricultural chemicals", "example": "Using fertiliser can significantly improve the yield of crops per hectare.", "id": 94}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "food shortage (n.)", "meaning": "খাদ্য সংকট", "synonyms": "food scarcity, famine, food insecurity", "example": "Food shortages affect hundreds of millions of people in developing countries.", "id": 95}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "genetic modification (n.)", "meaning": "জিনগত পরিবর্তন", "synonyms": "GM crops, genetic engineering, bioengineering", "example": "Genetic modification can produce crops that are resistant to drought and disease.", "id": 96}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "hectare (n.)", "meaning": "হেক্টর (১০,০০০ বর্গমিটার)", "synonyms": "unit of land, 10,000 square metres", "example": "The farmer planted wheat on 200 hectares of land in the northern region.", "id": 97}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "irrigate (v.)", "meaning": "সেচ দেওয়া", "synonyms": "water crops, supply water to fields", "example": "In dry regions, farmers must irrigate their land regularly to grow crops.", "id": 98}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "productivity (n.)", "meaning": "উৎপাদনশীলতা", "synonyms": "efficiency, output rate, yield rate", "example": "New farming techniques have dramatically improved agricultural productivity.", "id": 99}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "scarce (adj.)", "meaning": "দুর্লভ, অপ্রতুল", "synonyms": "rare, limited, insufficient, in short supply", "example": "Fresh water is becoming increasingly scarce in many parts of the world.", "id": 100}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "seeds (n.)", "meaning": "বীজ", "synonyms": "seedlings, plant seeds", "example": "Developing better seeds that resist disease is one way to increase food production.", "id": 101}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "soil (n.)", "meaning": "মাটি", "synonyms": "earth, ground, land", "example": "Rich, fertile soil is essential for growing healthy and productive crops.", "id": 102}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "techniques (n.)", "meaning": "কৌশল, পদ্ধতি", "synonyms": "methods, approaches, strategies", "example": "Modern farming techniques have significantly increased food production worldwide.", "id": 103}, {"task": 2, "category": "Food Production & Agriculture", "unit": "Unit 9", "word": "yield (n./v.)", "meaning": "ফলন, উৎপাদন", "synonyms": "harvest, output, production, produce", "example": "Improved seeds and fertilisers can greatly increase the yield per hectare.", "id": 104}, {"task": 2, "category": "Censorship & the Media", "unit": "Unit 10", "word": "adversely (adv.)", "meaning": "ক্ষতিকরভাবে", "synonyms": "negatively, harmfully, badly", "example": "Violent content can adversely affect children's behaviour and attitudes.", "id": 105}, {"task": 2, "category": "Censorship & the Media", "unit": "Unit 10", "word": "censorship (n.)", "meaning": "সেন্সরশিপ, নিয়ন্ত্রণ", "synonyms": "content control, restrictions, regulation", "example": "Censorship is necessary to protect children from harmful online content.", "id": 106}, {"task": 2, "category": "Censorship & the Media", "unit": "Unit 10", "word": "exposure (n.)", "meaning": "উন্মোচন, সংস্পর্শ", "synonyms": "contact with, encounter with, access to", "example": "Early exposure to violence on screens can desensitise children to real-world violence.", "id": 107}, {"task": 2, "category": "Censorship & the Media", "unit": "Unit 10", "word": "graphic images (n.)", "meaning": "গ্রাফিক / ভয়ংকর ছবি", "synonyms": "disturbing content, explicit images", "example": "Children should be protected from graphic images of violence and abuse.", "id": 108}, {"task": 2, "category": "Censorship & the Media", "unit": "Unit 10", "word": "harmful (adj.)", "meaning": "ক্ষতিকর", "synonyms": "dangerous, damaging, injurious, destructive", "example": "Some internet content is extremely harmful to young and vulnerable people.", "id": 109}, {"task": 2, "category": "Censorship & the Media", "unit": "Unit 10", "word": "inappropriate (adj.)", "meaning": "অনুচিত, অনুপযুক্ত", "synonyms": "unsuitable, unacceptable, not suitable", "example": "Parents should use filters to block inappropriate websites for children.", "id": 110}, {"task": 2, "category": "Censorship & the Media", "unit": "Unit 10", "word": "influence (n./v.)", "meaning": "প্রভাব, প্রভাব ফেলা", "synonyms": "effect, impact, affect, shape", "example": "Media violence can significantly influence children's attitudes and behaviour.", "id": 111}, {"task": 2, "category": "Censorship & the Media", "unit": "Unit 10", "word": "restrict (v.)", "meaning": "সীমাবদ্ধ করা", "synonyms": "limit, control, regulate, curtail", "example": "Governments should restrict access to pornographic and violent websites.", "id": 112}, {"task": 2, "category": "Censorship & the Media", "unit": "Unit 10", "word": "unsuitable (adj.)", "meaning": "অনুপযুক্ত", "synonyms": "inappropriate, not appropriate, unfit", "example": "Many TV programmes are unsuitable for young children to watch unsupervised.", "id": 113}, {"task": 2, "category": "Censorship & the Media", "unit": "Unit 10", "word": "violence (n.)", "meaning": "সহিংসতা", "synonyms": "aggression, brutality, force, conflict", "example": "Exposure to media violence can lead to aggressive behaviour in children.", "id": 114}, {"task": 2, "category": "Transport & City Planning", "unit": "Unit 11", "word": "charge (n./v.)", "meaning": "ফি, চার্জ দেওয়া", "synonyms": "fee, toll, levy, congestion charge", "example": "The city introduced a charge for driving into the city centre at peak times.", "id": 115}, {"task": 2, "category": "Transport & City Planning", "unit": "Unit 11", "word": "congestion (n.)", "meaning": "যানজট", "synonyms": "traffic jam, gridlock, traffic build-up", "example": "Congestion in inner cities wastes time and contributes to air pollution.", "id": 116}, {"task": 2, "category": "Transport & City Planning", "unit": "Unit 11", "word": "construct (v.)", "meaning": "নির্মাণ করা", "synonyms": "build, develop, create, establish", "example": "Many new roads and motorways have been constructed in urban areas.", "id": 117}, {"task": 2, "category": "Transport & City Planning", "unit": "Unit 11", "word": "disabled (adj./n.)", "meaning": "প্রতিবন্ধী", "synonyms": "people with disabilities, mobility-impaired", "example": "The new transport system must be accessible to disabled people.", "id": 118}, {"task": 2, "category": "Transport & City Planning", "unit": "Unit 11", "word": "efficient (adj.)", "meaning": "দক্ষ, কার্যকরী", "synonyms": "effective, streamlined, productive", "example": "An efficient public transport system can significantly reduce traffic congestion.", "id": 119}, {"task": 2, "category": "Transport & City Planning", "unit": "Unit 11", "word": "inconvenience (n.)", "meaning": "অসুবিধা", "synonyms": "difficulty, problem, trouble, disruption", "example": "Restricting cars can cause inconvenience for some citizens and businesses.", "id": 120}, {"task": 2, "category": "Transport & City Planning", "unit": "Unit 11", "word": "motorists (n.)", "meaning": "গাড়িচালক", "synonyms": "car drivers, vehicle drivers", "example": "Motorists face long delays due to congestion in the city centre.", "id": 121}, {"task": 2, "category": "Transport & City Planning", "unit": "Unit 11", "word": "restrict (v.)", "meaning": "সীমাবদ্ধ করা", "synonyms": "limit, control, regulate, reduce", "example": "Some cities restrict the number of cars that can enter the inner city.", "id": 122}, {"task": 2, "category": "Transport & City Planning", "unit": "Unit 11", "word": "solution (n.)", "meaning": "সমাধান", "synonyms": "answer, resolution, remedy", "example": "An effective solution to congestion is to encourage public transport use.", "id": 123}, {"task": 2, "category": "Transport & City Planning", "unit": "Unit 11", "word": "traffic jams (n.)", "meaning": "যানজট", "synonyms": "congestion, gridlock, standstill", "example": "Traffic jams are becoming a serious and costly problem in urban areas.", "id": 124}, {"task": 2, "category": "Transport & City Planning", "unit": "Unit 11", "word": "underground (n./adj.)", "meaning": "ভূগর্ভস্থ পরিবহন, সাবওয়ে", "synonyms": "subway, metro, tube", "example": "An underground railway could significantly reduce congestion in the city.", "id": 125}, {"task": 2, "category": "Transport & City Planning", "unit": "Unit 11", "word": "urban (adj.)", "meaning": "শহুরে", "synonyms": "city-based, metropolitan, inner-city", "example": "Urban areas suffer far more from traffic problems than rural areas.", "id": 126}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "consequence (n.)", "meaning": "পরিণতি", "synonyms": "result, outcome, effect, impact", "example": "One serious consequence of excessive stress is insomnia and health problems.", "id": 127}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "depression (n.)", "meaning": "বিষণ্নতা", "synonyms": "low mood, clinical depression, mental illness", "example": "Untreated stress and loneliness can lead to depression and social withdrawal.", "id": 128}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "exams (n.)", "meaning": "পরীক্ষা", "synonyms": "tests, assessments, examinations", "example": "The pressure of exams is a major cause of stress for young students.", "id": 129}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "factor (n.)", "meaning": "কারণ, উপাদান", "synonyms": "element, cause, contributor, variable", "example": "Excessive workload is a significant factor in student stress and burnout.", "id": 130}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "insomnia (n.)", "meaning": "ঘুমের সমস্যা, অনিদ্রা", "synonyms": "sleeplessness, sleep disorder", "example": "Stress and anxiety can lead to insomnia, which affects academic performance.", "id": 131}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "loneliness (n.)", "meaning": "একাকীত্ব", "synonyms": "isolation, social withdrawal, solitude", "example": "Depression and loneliness are serious consequences of social exclusion.", "id": 132}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "stress (n.)", "meaning": "মানসিক চাপ", "synonyms": "pressure, anxiety, tension, strain", "example": "Student stress is caused by high workloads, exams, and academic pressure.", "id": 133}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "under pressure (phr.)", "meaning": "চাপের মধ্যে", "synonyms": "pressurised, stressed, overwhelmed", "example": "Most students feel under considerable pressure to do well in their exams.", "id": 134}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "workload (n.)", "meaning": "কাজের বোঝা", "synonyms": "amount of work, tasks, burden", "example": "An unrealistic workload can lead to serious stress and long-term burnout.", "id": 135}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "commit crimes (v.phr.)", "meaning": "অপরাধ করা", "synonyms": "break the law, offend, engage in criminal activity", "example": "Teenagers who commit crimes often come from disadvantaged family backgrounds.", "id": 136}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "drug (n.)", "meaning": "মাদকদ্রব্য", "synonyms": "narcotic, substance, illegal substance", "example": "Drug addiction is one of the main causes of teenage crime and family breakdown.", "id": 137}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "gangs (n.)", "meaning": "অপরাধী দল", "synonyms": "criminal groups, organised crime groups", "example": "Young people who join gangs are more likely to commit serious crimes.", "id": 138}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "prison (n.)", "meaning": "কারাগার", "synonyms": "jail, detention, correctional facility", "example": "Young offenders who commit serious crimes can end up in prison.", "id": 139}, {"task": 2, "category": "Youth: Stress & Crime", "unit": "Unit 15", "word": "violence (n.)", "meaning": "সহিংসতা", "synonyms": "aggression, assault, brutality", "example": "Youth violence has become a serious problem in many urban areas.", "id": 140}, {"task": 2, "category": "International Events", "unit": "Unit 18", "word": "accommodation (n.)", "meaning": "আবাসন, থাকার ব্যবস্থা", "synonyms": "housing, lodging, facilities", "example": "Hosting the Games ensures investment in accommodation and transport infrastructure.", "id": 141}, {"task": 2, "category": "International Events", "unit": "Unit 18", "word": "budget (n.)", "meaning": "বাজেট", "synonyms": "financial plan, spending limit, allocation", "example": "The original budget of under €5 billion grew to €11 billion for the Athens Olympics.", "id": 142}, {"task": 2, "category": "International Events", "unit": "Unit 18", "word": "break even (v.phr.)", "meaning": "খরচ উঠে আসা (লাভ-ক্ষতি শূন্য)", "synonyms": "cover costs, make no profit or loss", "example": "Over the twenty years to 2000, every Olympic host country broke even or made a profit.", "id": 143}, {"task": 2, "category": "International Events", "unit": "Unit 18", "word": "expenditure (n.)", "meaning": "ব্যয়, খরচ", "synonyms": "spending, cost, outlay, financial commitment", "example": "Visitor expenditure and TV rights revenue helped the host country cover its costs.", "id": 144}, {"task": 2, "category": "International Events", "unit": "Unit 18", "word": "facility / facilities (n.)", "meaning": "সুবিধা, স্থাপনা", "synonyms": "infrastructure, venues, buildings", "example": "Hosting the Olympics ensures significant investment in facilities such as stadiums.", "id": 145}, {"task": 2, "category": "International Events", "unit": "Unit 18", "word": "generate (v.)", "meaning": "উৎপন্ন করা, তৈরি করা", "synonyms": "produce, create, bring in", "example": "The Games generate global interest and enormous TV coverage worldwide.", "id": 146}, {"task": 2, "category": "International Events", "unit": "Unit 18", "word": "prestige (n.)", "meaning": "সম্মান, প্রতিপত্তি", "synonyms": "status, recognition, reputation, honour", "example": "Hosting the Olympics brings great prestige and global recognition to the host country.", "id": 147}, {"task": 2, "category": "International Events", "unit": "Unit 18", "word": "publicity (n.)", "meaning": "প্রচার", "synonyms": "media coverage, exposure, promotion", "example": "The Games provide worldwide publicity for the host country's culture and attractions.", "id": 148}, {"task": 2, "category": "International Events", "unit": "Unit 18", "word": "risk (n.)", "meaning": "ঝুঁকি", "synonyms": "danger, hazard, threat", "example": "Hosting the Olympics involves significant financial risks and potential cost overruns.", "id": 149}, {"task": 2, "category": "International Events", "unit": "Unit 18", "word": "soaring costs (n.phr.)", "meaning": "মাত্রাতিরিক্ত ব্যয়", "synonyms": "spiralling costs, escalating expenditure", "example": "It has become a huge undertaking because of the soaring costs of preparation.", "id": 150}, {"task": 2, "category": "International Events", "unit": "Unit 18", "word": "sponsorship (n.)", "meaning": "পৃষ্ঠপোষকতা", "synonyms": "funding, financial support, corporate backing", "example": "Revenue from TV rights and sponsorship helps cover the enormous cost of hosting.", "id": 151}, {"task": 2, "category": "International Events", "unit": "Unit 18", "word": "undertaking (n.)", "meaning": "বড় দায়িত্ব, বৃহৎ প্রকল্প", "synonyms": "major project, enterprise, commitment", "example": "Hosting the Olympics has become a huge undertaking because of financial risks.", "id": 152}, {"task": 2, "category": "International Events", "unit": "Unit 18", "word": "worldwide (adj./adv.)", "meaning": "বিশ্বব্যাপী", "synonyms": "globally, internationally, across the world", "example": "The Games generate worldwide publicity and attract tourists from every country.", "id": 153}, {"task": 2, "category": "Mobile Phones & Communication", "unit": "Unit 19", "word": "brain damage (n.)", "meaning": "মস্তিষ্কের ক্ষতি", "synonyms": "neurological damage, cognitive harm", "example": "Some people claim that radiation from mobile phones can cause brain damage.", "id": 154}, {"task": 2, "category": "Mobile Phones & Communication", "unit": "Unit 19", "word": "bullying (n.)", "meaning": "হয়রানি, নির্যাতন", "synonyms": "harassment, intimidation, cyberbullying", "example": "Online bullying through mobile phones is a growing problem among teenagers.", "id": 155}, {"task": 2, "category": "Mobile Phones & Communication", "unit": "Unit 19", "word": "cancer (n.)", "meaning": "ক্যান্সার", "synonyms": "malignant disease, tumour", "example": "Some people believe that radiation from mobile phones may cause cancer.", "id": 156}, {"task": 2, "category": "Mobile Phones & Communication", "unit": "Unit 19", "word": "concentrate (v.)", "meaning": "মনোযোগ দেওয়া", "synonyms": "focus, pay attention, stay focused", "example": "Drivers cannot concentrate properly on the road while talking on a mobile phone.", "id": 157}, {"task": 2, "category": "Mobile Phones & Communication", "unit": "Unit 19", "word": "debate (n.)", "meaning": "বিতর্ক", "synonyms": "argument, controversy, discussion", "example": "There is considerable debate about the safety of mobile phone radiation.", "id": 158}, {"task": 2, "category": "Mobile Phones & Communication", "unit": "Unit 19", "word": "emit (v.)", "meaning": "নির্গত করা", "synonyms": "release, discharge, radiate, give off", "example": "Mobile phones emit non-ionising electromagnetic radiation when they are used.", "id": 159}, {"task": 2, "category": "Mobile Phones & Communication", "unit": "Unit 19", "word": "evidence (n.)", "meaning": "প্রমাণ", "synonyms": "proof, data, findings, research results", "example": "So far, researchers have found no evidence linking mobile phones to disease.", "id": 160}, {"task": 2, "category": "Mobile Phones & Communication", "unit": "Unit 19", "word": "hands-free (adj.)", "meaning": "হাতমুক্ত ফোন", "synonyms": "speakerphone, earpiece phone", "example": "Even hands-free mobile phones are dangerous to use while driving a car.", "id": 161}, {"task": 2, "category": "Mobile Phones & Communication", "unit": "Unit 19", "word": "isolated (adj.)", "meaning": "বিচ্ছিন্ন, দূরবর্তী", "synonyms": "remote, disconnected, cut off", "example": "Isolated communities can use mobile phones to contact the outside world.", "id": 162}, {"task": 2, "category": "Mobile Phones & Communication", "unit": "Unit 19", "word": "landline (n.)", "meaning": "স্থির ফোন লাইন", "synonyms": "fixed telephone, wired phone", "example": "Installing landline phones is very expensive in remote or isolated areas.", "id": 163}, {"task": 2, "category": "Mobile Phones & Communication", "unit": "Unit 19", "word": "radiation (n.)", "meaning": "বিকিরণ", "synonyms": "electromagnetic waves, radio waves", "example": "Mobile phones emit radiation that some researchers believe may be harmful.", "id": 164}, {"task": 2, "category": "Mobile Phones & Communication", "unit": "Unit 19", "word": "research (n.)", "meaning": "গবেষণা", "synonyms": "study, investigation, experiment, inquiry", "example": "Many researchers have conducted long-term studies on the safety of mobile phones.", "id": 165}, {"task": 2, "category": "Mobile Phones & Communication", "unit": "Unit 19", "word": "tower (n.)", "meaning": "টাওয়ার", "synonyms": "phone mast, cell tower, transmitter", "example": "Some people worry that living near a cell phone tower may be bad for health.", "id": 166}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "attract (v.)", "meaning": "আকৃষ্ট করা", "synonyms": "draw, entice, lure, appeal to", "example": "Beautiful beaches and historic sites attract millions of tourists every year.", "id": 167}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "damage (n./v.)", "meaning": "ক্ষতি করা, ক্ষতি", "synonyms": "harm, destruction, deterioration", "example": "Too many visitors can cause serious damage to historic buildings and paintings.", "id": 168}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "delicate (adj.)", "meaning": "ভঙ্গুর, সূক্ষ্ম", "synonyms": "fragile, sensitive, easily damaged", "example": "People should not walk on delicate areas of the Great Wall of China.", "id": 169}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "emissions (n.)", "meaning": "নির্গমন", "synonyms": "gas release, pollution output, exhaust fumes", "example": "Greenhouse gas emissions from aeroplanes contribute significantly to global warming.", "id": 170}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "enforce (v.)", "meaning": "কার্যকর করা, বলবৎ করা", "synonyms": "implement, apply, uphold, impose", "example": "Governments need to enforce strict rules about tourist behaviour at heritage sites.", "id": 171}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "erosion (n.)", "meaning": "ক্ষয়", "synonyms": "wearing away, deterioration, land damage", "example": "Tourists walking on sand dunes and delicate areas cause significant erosion.", "id": 172}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "generation (n.)", "meaning": "প্রজন্ম", "synonyms": "future generations, age group, cohort", "example": "Future generations should have the opportunity to see these great historical wonders.", "id": 173}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "greenhouse gas (n.)", "meaning": "গ্রিনহাউস গ্যাস", "synonyms": "CO2 emissions, carbon emissions, climate gases", "example": "Aeroplanes produce greenhouse gases that destroy the ozone layer and cause warming.", "id": 174}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "humidity (n.)", "meaning": "আর্দ্রতা", "synonyms": "moisture in the air, dampness", "example": "Human breath raises the humidity inside the Sistine Chapel, damaging the paintings.", "id": 175}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "influx (n.)", "meaning": "আগমনের ঢল", "synonyms": "surge, flood, large number, rush", "example": "The influx of tourists has caused serious damage to many historic and natural sites.", "id": 176}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "ozone layer (n.)", "meaning": "ওজোন স্তর", "synonyms": "atmospheric protection layer", "example": "Aeroplanes destroy our ozone layer through greenhouse gas emissions.", "id": 177}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "preservation (n.)", "meaning": "সংরক্ষণ", "synonyms": "conservation, protection, safeguarding", "example": "Strict rules are essential for the preservation of historic and natural places.", "id": 178}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "preserve (v.)", "meaning": "সংরক্ষণ করা", "synonyms": "protect, maintain, conserve, safeguard", "example": "We must preserve these famous places for the benefit of future generations.", "id": 179}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "protect (v.)", "meaning": "রক্ষা করা", "synonyms": "safeguard, defend, shield, conserve", "example": "Special paths can be built to protect delicate areas from damage by tourists.", "id": 180}, {"task": 2, "category": "Tourism & Environmental Damage", "unit": "Unit 20", "word": "wild places (n.phr.)", "meaning": "প্রাকৃতিক স্থান, বন্য পরিবেশ", "synonyms": "wilderness, natural areas, unspoilt nature", "example": "Wild places such as remote national parks are being threatened by increased tourism.", "id": 181}];
+
+/* ============== MODE SWITCHING ============== */
+function switchMode(mode){
+  document.getElementById('tabStudy').classList.toggle('active', mode==='study');
+  document.getElementById('tabQuiz').classList.toggle('active', mode==='quiz');
+  document.getElementById('panelStudy').classList.toggle('active', mode==='study');
+  document.getElementById('panelQuiz').classList.toggle('active', mode==='quiz');
+}
+
+/* ============== STUDY MODE ============== */
+function onPartChange(){
+  populateCategoryFilter();
+  renderStudy();
+}
+
+function populateCategoryFilter(){
+  const part = document.getElementById('filterPart').value;
+  const catSel = document.getElementById('filterCategory');
+  let pool = VOCAB_DATA;
+  if(part !== 'all') pool = pool.filter(d => String(d.task) === part);
+  const cats = [...new Set(pool.map(d => d.category))];
+  catSel.innerHTML = '<option value="all">All categories</option>' +
+    cats.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+}
+
+function renderStudy(){
+  const part = document.getElementById('filterPart').value;
+  const cat = document.getElementById('filterCategory').value;
+  const q = document.getElementById('filterSearch').value.trim().toLowerCase();
+
+  let pool = VOCAB_DATA;
+  if(part !== 'all') pool = pool.filter(d => String(d.task) === part);
+  if(cat !== 'all') pool = pool.filter(d => d.category === cat);
+  if(q) pool = pool.filter(d =>
+    d.word.toLowerCase().includes(q) ||
+    d.meaning.toLowerCase().includes(q) ||
+    d.synonyms.toLowerCase().includes(q) ||
+    d.example.toLowerCase().includes(q)
+  );
+
+  document.getElementById('filterCount').textContent = pool.length + ' entries shown';
+
+  const container = document.getElementById('studyResults');
+  if(pool.length === 0){
+    container.innerHTML = '<div class="no-results">No matching vocabulary found. Try a different search or filter.</div>';
+    return;
+  }
+
+  // group by category, preserving first-seen order within filtered pool
+  const order = [];
+  const groups = {};
+  pool.forEach(d => {
+    if(!groups[d.category]){ groups[d.category] = { unit: d.unit, task: d.task, items: [] }; order.push(d.category); }
+    groups[d.category].items.push(d);
+  });
+
+  let html = '';
+  order.forEach(catName => {
+    const g = groups[catName];
+    const partLabel = g.task === 1 ? 'Task 1' : 'Task 2';
+    html += `<div class="vocab-cat">
+      <div class="vocab-cat-head"><span>${escapeHtml(catName)}</span><span class="unit-tag">${partLabel} · ${escapeHtml(g.unit)}</span></div>
+      <table class="vtab">
+        <thead><tr><th class="wcol">Main Word</th><th class="scol">Synonyms / Alternatives</th><th>Example in Writing Tasks</th></tr></thead>
+        <tbody>`;
+    g.items.forEach(d => {
+      html += `<tr>
+        <td class="wcol">${escapeHtml(d.word)}<span class="meaning">${escapeHtml(d.meaning)}</span></td>
+        <td class="scol">${escapeHtml(d.synonyms)}</td>
+        <td>${escapeHtml(d.example)}</td>
+      </tr>`;
+    });
+    html += `</tbody></table></div>`;
+  });
+  container.innerHTML = html;
+}
+
+function escapeHtml(str){
+  return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+/* ============== QUIZ MODE ============== */
+let quizState = null;
+const sessionScores = { 1: null, 2: null };
+
+function initQuizCounts(){
+  const t1 = VOCAB_DATA.filter(d => d.task === 1).length;
+  const t2 = VOCAB_DATA.filter(d => d.task === 2).length;
+  document.getElementById('t1count').textContent = `Functional Language — ${t1} words available`;
+  document.getElementById('t2count').textContent = `Topic Vocabulary — ${t2} words available`;
+}
+
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+function getLength(task){
+  const sel = document.querySelector(`.len-choice[data-task="${task}"] input:checked`).value;
+  const poolSize = VOCAB_DATA.filter(d => d.task === task).length;
+  if(sel === 'all') return poolSize;
+  return Math.min(parseInt(sel,10), poolSize);
+}
+
+function startQuiz(task){
+  const pool = VOCAB_DATA.filter(d => d.task === task);
+  const len = getLength(task);
+  const questions = shuffle(pool).slice(0, len).map(entry => {
+    const direction = Math.random() < 0.5 ? 'word2meaning' : 'meaning2word';
+    const field = direction === 'word2meaning' ? 'meaning' : 'word';
+    const promptField = direction === 'word2meaning' ? 'word' : 'meaning';
+    const distractPool = pool.filter(d => d.id !== entry.id && d[field] !== entry[field]);
+    const seen = new Set([entry[field]]);
+    const distractors = [];
+    for(const d of shuffle(distractPool)){
+      if(distractors.length >= 3) break;
+      if(seen.has(d[field])) continue;
+      seen.add(d[field]);
+      distractors.push(d[field]);
+    }
+    const options = shuffle([entry[field], ...distractors]);
+    return { entry, direction, promptField, field, options, answered:false, correct:false };
+  });
+
+  quizState = { task, questions, index:0, correctCount:0 };
+  document.getElementById('quizSetup').style.display = 'none';
+  document.getElementById('quizRun').classList.add('active');
+  document.getElementById('quizResult').classList.remove('active');
+  document.getElementById('quizTaskLabel').textContent = 'Task ' + task;
+  showQuestion();
+}
+
+function showQuestion(){
+  const st = quizState;
+  const q = st.questions[st.index];
+  document.getElementById('quizProgressText').textContent = `Question ${st.index+1} of ${st.questions.length}`;
+  document.getElementById('quizProgressFill').style.width = ((st.index)/st.questions.length*100) + '%';
+
+  const dirLabel = q.direction === 'word2meaning'
+    ? 'WHICH MEANING MATCHES THIS WORD?'
+    : 'WHICH WORD MATCHES THIS MEANING?';
+  document.getElementById('quizDirection').textContent = dirLabel;
+  document.getElementById('quizPrompt').textContent = q.entry[q.promptField];
+  document.getElementById('quizSub').textContent = `${q.entry.category} (${q.entry.unit})`;
+
+  const optWrap = document.getElementById('quizOptions');
+  optWrap.innerHTML = '';
+  q.options.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'opt-btn';
+    btn.textContent = opt;
+    btn.onclick = () => selectOption(opt);
+    optWrap.appendChild(btn);
+  });
+  document.getElementById('btnNext').classList.remove('show');
+}
+
+function selectOption(chosen){
+  const st = quizState;
+  const q = st.questions[st.index];
+  if(q.answered) return;
+  q.answered = true;
+  const correctVal = q.entry[q.field];
+  q.correct = (chosen === correctVal);
+  if(q.correct) st.correctCount++;
+
+  const btns = document.querySelectorAll('#quizOptions .opt-btn');
+  btns.forEach(b => {
+    b.disabled = true;
+    if(b.textContent === correctVal) b.classList.add('correct');
+    else if(b.textContent === chosen) b.classList.add('wrong');
+  });
+  document.getElementById('btnNext').classList.add('show');
+  document.getElementById('btnNext').textContent = (st.index === st.questions.length-1) ? 'Finish Quiz →' : 'Next →';
+}
+
+function nextQuestion(){
+  const st = quizState;
+  if(st.index === st.questions.length-1){
+    finishQuiz();
+    return;
+  }
+  st.index++;
+  showQuestion();
+}
+
+function finishQuiz(){
+  const st = quizState;
+  const pct = Math.round((st.correctCount / st.questions.length) * 100);
+  sessionScores[st.task] = { correct: st.correctCount, total: st.questions.length, pct };
+  updateLastScoreDisplays();
+
+  document.getElementById('quizProgressFill').style.width = '100%';
+  document.getElementById('quizRun').classList.remove('active');
+  document.getElementById('quizResult').classList.add('active');
+
+  const badge = document.getElementById('scoreBadge');
+  badge.className = 'score-badge ' + (pct >= 80 ? 'high' : pct >= 50 ? 'mid' : 'low');
+  document.getElementById('scorePct').textContent = pct + '%';
+  document.getElementById('resultDetail').textContent =
+    `You scored ${st.correctCount} out of ${st.questions.length} on the Task ${st.task} vocabulary quiz.`;
+
+  const missed = st.questions.filter(q => !q.correct);
+  const missedWrap = document.getElementById('missedWrap');
+  if(missed.length === 0){
+    missedWrap.innerHTML = '<p style="color:#2e9e46;font-weight:bold;margin-bottom:16px;">Perfect score — every answer was correct! 🎉</p>';
+  } else {
+    let html = `<div class="missed-box"><h4>Words to review (${missed.length}):</h4>`;
+    missed.forEach(q => {
+      html += `<div class="missed-item"><b>${escapeHtml(q.entry.word)}</b> — ${escapeHtml(q.entry.meaning)}<br><span style="color:#666;font-size:12px;">${escapeHtml(q.entry.example)}</span></div>`;
+    });
+    html += `</div>`;
+    missedWrap.innerHTML = html;
+  }
+}
+
+function updateLastScoreDisplays(){
+  const s1 = sessionScores[1];
+  const s2 = sessionScores[2];
+  document.getElementById('t1lastscore').innerHTML = s1
+    ? `Last attempt: <span class="pct">${s1.pct}%</span> (${s1.correct}/${s1.total})`
+    : 'No attempt yet this session.';
+  document.getElementById('t2lastscore').innerHTML = s2
+    ? `Last attempt: <span class="pct">${s2.pct}%</span> (${s2.correct}/${s2.total})`
+    : 'No attempt yet this session.';
+}
+
+function retrySameSet(){
+  startQuiz(quizState.task);
+}
+
+function backToSetup(){
+  document.getElementById('quizResult').classList.remove('active');
+  document.getElementById('quizRun').classList.remove('active');
+  document.getElementById('quizSetup').style.display = 'block';
+}
+
+/* ============== INIT ============== */
+populateCategoryFilter();
+renderStudy();
+initQuizCounts();
+</script>
+</body>
+</html>

@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Writing — Unit 17: Social Issues: Population | Abidur Rahman Tahmid</title>
+<style>
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ===== BASE ===== */
+body {
+  font-family: Arial, 'Noto Sans Bengali', 'Vrinda', sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #111;
+  background: #d0d0d0;
+  padding: 16px 0 30px;
+}
+
+/* ===== PAGE WRAPPER ===== */
+.page {
+  max-width: 790px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 18px 28px 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+}
+
+/* ===== ACTION BUTTONS ===== */
+.action-bar {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 9px 22px;
+  font-size: 13.5px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn-clear { background: #e2e2e2; color: #333; border: 1px solid #aaa; }
+.btn-clear:hover { background: #d0d0d0; }
+.btn-save  { background: #1a7575; color: #fff; }
+.btn-save:hover  { background: #155f5f; }
+
+/* ===== PAGE HEADER BAR ===== */
+.header-bar {
+  background: #e8e8e8;
+  border: 1px solid #bbb;
+  padding: 5px 10px;
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.brand {
+  font-family: 'Arial Black', 'Arial', sans-serif;
+  font-weight: 900;
+  color: navy;
+  font-size: 13.5px;
+  display: block;
+}
+
+/* ===== TITLE BLOCK ===== */
+.title-block {
+  border: 2px solid #1a7575;
+  margin: 8px 0 10px;
+  padding: 12px;
+  text-align: center;
+}
+.unit-label {
+  background: #1a7575;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 3px 12px;
+  margin-bottom: 6px;
+}
+.unit-main  { font-size: 17px; font-weight: bold; color: #1a7575; margin-bottom: 3px; }
+.unit-sub   { font-size: 13px; color: #333; }
+
+/* ===== NAME / DATE / SCORE ===== */
+.nds-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: flex-end;
+  margin: 10px 0 12px;
+  font-size: 13px;
+}
+.nds-field { display: flex; align-items: flex-end; gap: 5px; flex: 1; min-width: 130px; }
+.nds-field label { font-weight: bold; white-space: nowrap; }
+.nds-field input {
+  border: none;
+  border-bottom: 1.5px solid #333;
+  flex: 1;
+  padding: 2px 3px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  background: transparent;
+  min-width: 60px;
+}
+.nds-score { flex: 0.45; }
+
+/* ===== BENGALI / INTRO TEXT ===== */
+.intro { font-size: 13px; margin: 7px 0; line-height: 1.7; }
+.intro strong { font-size: 14px; }
+
+/* ===== LEARNING OBJECTIVES BOX ===== */
+.obj-box { border: 2px solid #1a7575; margin: 10px 0; }
+.obj-head { background: #1a7575; color: #fff; padding: 5px 10px; font-weight: bold; font-size: 13px; }
+.obj-body { padding: 8px 12px; font-size: 13px; }
+.obj-body ul { list-style: disc; padding-left: 20px; margin-top: 5px; }
+.obj-body li { margin: 3px 0; }
+
+/* ===== SECTION HEADER ===== */
+.sec-head {
+  background: #1a7575;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 16px 0 8px;
+  border-radius: 2px;
+}
+
+/* ===== SUB-SECTION HEADER ===== */
+.sub-head {
+  color: #1a7575;
+  font-size: 13px;
+  font-weight: bold;
+  border-bottom: 2px solid #1a7575;
+  padding-bottom: 3px;
+  margin: 14px 0 8px;
+}
+
+/* ===== CHART TITLE BOX (reused as data-table intro box) ===== */
+.chart-title-box {
+  background: #e5f5f5;
+  border: 1px solid #1a7575;
+  padding: 6px 10px;
+  font-size: 13px;
+  margin: 8px 0;
+}
+.chart-title-box strong { color: #1a7575; }
+
+/* ===== QUESTIONS ===== */
+.q { margin: 8px 0; font-size: 13px; }
+.qn { font-weight: bold; color: #1a7575; margin-right: 3px; }
+
+/* ===== ANSWER LINE (full-width underline input) ===== */
+input.aline {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #666;
+  margin-top: 5px;
+  padding: 3px 4px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  background: transparent;
+}
+input.aline:focus { border-bottom-color: #1a7575; }
+
+/* ===== INLINE BLANK ===== */
+input.blank {
+  display: inline;
+  border: none;
+  border-bottom: 1px solid #555;
+  width: 130px;
+  padding: 1px 4px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  background: transparent;
+  vertical-align: middle;
+}
+input.blank:focus { border-bottom-color: #1a7575; }
+input.blank.wide  { width: 170px; }
+input.blank.sm    { width: 80px; }
+input.blank.xs    { width: 52px; }
+
+/* ===== VOCABULARY TABLE ===== */
+table.vtab {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 8px 0;
+}
+table.vtab th {
+  background: #1a7575;
+  color: #fff;
+  padding: 6px 8px;
+  text-align: left;
+}
+table.vtab td {
+  border: 1px solid #bbb;
+  padding: 5px 8px;
+  vertical-align: top;
+}
+table.vtab tr:nth-child(even) td { background: #f6f6f6; }
+
+/* ===== DATA TABLE (complex tables with merged headers) ===== */
+table.dtab {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.3px;
+  margin: 8px 0;
+}
+table.dtab th {
+  background: #1a7575;
+  color: #fff;
+  padding: 5px 6px;
+  text-align: center;
+  border: 1px solid #14615f;
+}
+table.dtab td {
+  border: 1px solid #bbb;
+  padding: 5px 6px;
+  text-align: center;
+}
+table.dtab tr:nth-child(even) td { background: #f6f6f6; }
+table.dtab td:first-child { font-weight: bold; }
+
+/* ===== WORD BOX ===== */
+.word-box {
+  background: #fffae4;
+  border: 1.5px solid #c8a200;
+  padding: 7px 12px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+/* ===== GRAMMAR NOTE ===== */
+.gram-box {
+  background: #e5f4f4;
+  border: 1px solid #1a7575;
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 13px;
+}
+.gram-box .gtitle { font-weight: bold; color: #1a7575; margin-bottom: 6px; }
+.gram-box p { margin: 3px 0; }
+.gram-box ul { padding-left: 22px; margin: 4px 0; }
+.gram-box li { margin: 2px 0; }
+
+/* ===== GRAMMAR TABLE (editable fill tables) ===== */
+table.gtab {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 8px 0;
+}
+table.gtab th {
+  background: #1a7575;
+  color: #fff;
+  padding: 6px 8px;
+  text-align: center;
+  border: 1px solid #1a7575;
+}
+table.gtab td {
+  border: 1px solid #bbb;
+  padding: 5px 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+table.gtab td input.blank { width: 90%; }
+
+/* ===== PARAGRAPH TEXT BOX ===== */
+.para-box {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin: 8px 0;
+  line-height: 1.8;
+}
+.para-box p { margin: 3px 0; }
+
+/* ===== GUIDED WRITING TEXTAREA ===== */
+textarea.writing-area {
+  width: 100%;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  padding: 8px;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+  resize: vertical;
+  min-height: 180px;
+  margin-top: 6px;
+  outline: none;
+  line-height: 1.8;
+}
+textarea.writing-area:focus { border-color: #1a7575; }
+textarea.ta-lg { min-height: 240px; }
+
+/* ===== ANSWER KEY ===== */
+.ak-sec h3 {
+  color: #1a7575;
+  font-size: 13px;
+  border-bottom: 1px solid #1a7575;
+  padding-bottom: 2px;
+  margin: 10px 0 5px;
+}
+.ak-sec ol, .ak-sec ul { padding-left: 22px; font-size: 13px; }
+.ak-sec li { margin: 2px 0; }
+table.ak-tab {
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 4px 0;
+}
+table.ak-tab td, table.ak-tab th {
+  border: 1px solid #ccc;
+  padding: 4px 10px;
+}
+table.ak-tab th { background: #e0e0e0; }
+
+/* ===== TEACHER NOTES ===== */
+.tn ul { list-style: disc; padding-left: 22px; font-size: 13px; }
+.tn li { margin: 5px 0; }
+
+/* ===== FOOTER DIVIDER ===== */
+.pg-footer {
+  border-top: 1px solid #bbb;
+  padding-top: 4px;
+  margin: 18px 0 12px;
+  font-size: 10.5px;
+  font-style: italic;
+  color: #666;
+  text-align: center;
+}
+
+/* ===== PRINT ===== */
+@media print {
+  body { background: white; padding: 0; }
+  .page { box-shadow: none; padding: 10px 18px 18px; max-width: 100%; }
+  .action-bar { display: none; }
+  input.aline  { border-bottom: 1px solid #000 !important; }
+  input.blank  { border-bottom: 1px solid #000 !important; }
+  textarea.writing-area { border: 1px solid #000 !important; }
+  @page { margin: 12mm 15mm; size: A4; }
+  table { page-break-inside: avoid; }
+  .sec-head { page-break-after: avoid; }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 580px) {
+  .page { padding: 12px 14px 18px; }
+  input.blank.wide { width: 120px; }
+  table.dtab { font-size: 10.5px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ===== ACTION BUTTONS ===== -->
+<div class="action-bar">
+  <button class="btn btn-clear" onclick="clearAll()">Clear my response</button>
+  <button class="btn btn-save"  onclick="window.print()">Save as PDF</button>
+</div>
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="header-bar">
+  <span class="brand">A Gift from Abidur Rahman Tahmid</span>
+  <span>🎓 BA H, University of Greenwich (UK) &nbsp;|&nbsp; 🎓 EMBA, Dhaka University</span>
+</div>
+
+<!-- ===== TITLE BLOCK ===== -->
+<div class="title-block">
+  <div><span class="unit-label">IELTS Writing — Unit 17</span></div>
+  <div class="unit-main">Social Issues: Population — Describing Complex Tables</div>
+  <div class="unit-sub">Task 1 Focus | Worksheet for Bangladeshi IELTS Learners</div>
+</div>
+
+<!-- NAME / DATE / SCORE -->
+<div class="nds-row">
+  <div class="nds-field"><label>Name:</label><input type="text" class="aline" style="display:inline;margin:0;"></div>
+  <div class="nds-field" style="max-width:170px;"><label>Date:</label><input type="text" class="aline" style="display:inline;margin:0;"></div>
+  <div class="nds-field nds-score" style="flex:0 0 auto;gap:4px;"><label>Score:</label><input type="text" class="aline" style="display:inline;margin:0;width:38px;"> <span>/ 60</span></div>
+</div>
+
+<!-- ===== INTRO ===== -->
+<div class="intro">
+  <strong>ভূমিকা</strong><br>
+  এই worksheet-টি IELTS Writing বইয়ের Unit 17 (Social Issues: Population) অনুযায়ী তৈরি। এটি IELTS Task 1-এর উপর — যেখানে তোমাকে একটি data table দেখে সময়ের সাথে পরিবর্তনের বর্ণনা লিখতে হবে।<br>
+  এই unit-এ তুমি শিখবে: (১) পরিবর্তনের মাত্রা বোঝাতে prepositional phrases (from...to..., by...) ব্যবহার করতে, (২) non-defining relative clauses দিয়ে অতিরিক্ত তথ্য যোগ করতে, (৩) বিপরীত তথ্য যুক্ত করতে although ও even though ব্যবহার করতে।<br>
+  জনসংখ্যা ও সামাজিক পরিবর্তন ইসলামিক দৃষ্টিতেও গুরুত্বপূর্ণ। প্রতিটি মানুষ আল্লাহর সৃষ্টি এবং সমাজের একটি অংশ। এই unit পড়তে পড়তে সেই মূল্যবোধ মনে রেখো।
+</div>
+
+<!-- ===== LEARNING OBJECTIVES ===== -->
+<div class="obj-box">
+  <div class="obj-head">শেখার লক্ষ্য | Learning Objectives</div>
+  <div class="obj-body">
+    <p>এই worksheet শেষ করলে তুমি পারবে —</p>
+    <ul>
+      <li>Read and interpret complex data tables showing changes over time.</li>
+      <li>Use 12 key vocabulary words for describing population and social changes.</li>
+      <li>Describe the magnitude of change using prepositional phrases: <em>from...to..., by..., by more than...</em></li>
+      <li>Use non-defining relative clauses (who/which, with commas) to add extra data information.</li>
+      <li>Use 'although' and 'even though' to contrast surprising or unexpected information.</li>
+      <li>Write a full Task 1 paragraph describing a complex data table.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== WARM-UP ===== -->
+<div class="sec-head">Warm-Up | শুরু করার আগে ভাবো</div>
+<p class="intro">নিচের প্রশ্নগুলোর উত্তর লেখো।</p>
+
+<div class="q"><span class="qn">1.</span> Data table কী? Line graph বা pie chart থেকে data table কীভাবে আলাদা? (What is a data table? How is it different from a line graph or pie chart?)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">2.</span> "The population increased by one third, from 60,000 to 80,000" — এই বাক্যে from, to, এবং by কীভাবে ব্যবহার হয়েছে? (How are "from", "to", and "by" used in this sentence?)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">3.</span> তুমি কি "although" এবং "but" এর পার্থক্য জানো? একটি উদাহরণ দাও। (Do you know the difference between "although" and "but"? Give an example.)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">4.</span> "which increased by over a third" — এটি কোন ধরনের clause? বাক্যের কোথায় এটি আসে? ("which increased by over a third" — what type of clause is this? Where does it appear in a sentence?)<input type="text" class="aline"></div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 17: Social Issues: Population | Task 1 Focus: Complex Table Description</div>
+
+<!-- ===== TABLE 1 — MODEL 1 ===== -->
+<div class="sec-head">Table 1 — Model 1 | Table দেখা ও Model পড়া</div>
+<p class="intro">নিচের table-টি মনোযোগ দিয়ে দেখো — এটি Atlantis City-তে দুটি দশকে ethnic population groups-এর পরিবর্তন দেখাচ্ছে।</p>
+
+<div class="chart-title-box"><strong>Population of Atlantis City</strong></div>
+
+<table class="dtab">
+  <thead>
+    <tr><th rowspan="2">Year</th><th colspan="2">SE Asian</th><th colspan="2">Indian</th><th colspan="2">Caucasian</th><th colspan="2">Polynesian</th><th rowspan="2">Total Population</th></tr>
+    <tr><th>Number</th><th>%</th><th>Number</th><th>%</th><th>Number</th><th>%</th><th>Number</th><th>%</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1988</td><td>11,000</td><td>12%</td><td>2,000</td><td>2%</td><td>60,000</td><td>68%</td><td>16,000</td><td>18%</td><td>89,000</td></tr>
+    <tr><td>1998</td><td>18,000</td><td>16%</td><td>2,500</td><td>2%</td><td>65,000</td><td>59%</td><td>25,000</td><td>23%</td><td>110,500</td></tr>
+    <tr><td>2008</td><td>35,000</td><td>23%</td><td>8,500</td><td>6%</td><td>72,000</td><td>47%</td><td>37,000</td><td>24%</td><td>152,500</td></tr>
+  </tbody>
+</table>
+
+<!-- 4A -->
+<div class="sub-head">4A — Comprehension Questions | Table বোঝার প্রশ্ন</div>
+<p>Answer using the table only — before reading the model. (Model পড়ার আগে শুধু table দেখে উত্তর দাও।)</p>
+
+<div class="q"><span class="qn">a.</span> What information is the table showing? (Table-টি কী দেখাচ্ছে?)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">b.</span> What has happened to the overall population of Atlantis City? (মোট জনসংখ্যার কী পরিবর্তন হয়েছে?)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">c.</span> Which ethnic groups have increased in percentage? (কোন groups-এর শতাংশ বেড়েছে?)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">d.</span> Which group's percentage has dropped? (কোন group-এর শতাংশ কমেছে?) By how much?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">e.</span> Which two groups have had a similar (but not identical) growth pattern? (কোন দুটি group-এর growth pattern প্রায় একই?)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">f.</span> Which group has had the biggest percentage change but the smallest population increase? (কোন group-এর percentage change সবচেয়ে বেশি কিন্তু number change সবচেয়ে কম?)<input type="text" class="aline"></div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 17: Social Issues: Population | Task 1 Focus: Complex Table Description</div>
+
+<!-- 4B -->
+<div class="sub-head">4B — Read Model 1 | Model 1 পড়ো</div>
+<p>Read Model 1. Check your answers to the comprehension questions above.</p>
+
+<div class="para-box">
+  <p><strong>Model 1 — Population of Atlantis City: Changes in Ethnic Groups</strong></p>
+  <p>The table shows the changes in ethnic population groups in Atlantis City over a twenty-year period. Overall, the city population grew significantly and all ethnic groups grew in size, but the percentages of each group changed considerably.</p>
+  <p>There was a massive reduction in the percentage of Caucasians, which decreased by about one third, from 68% in 1988 to 59% in 1998 and 47% in 2008, although their numbers increased from 60,000 to 72,000.</p>
+  <p>The Indian population stayed relatively stable for the first decade and then more than trebled from 2,500 to 8,500, in the decade from 1998 to 2008, even though it remained the smallest group in the city.</p>
+  <p>The Polynesians and South-East Asians had a similar growth pattern, increasing from 18% and 12% respectively in 1988 to 24% and 23% of the population in 2008, although the South-East Asian population, which grew from 11,000 in 1988 to 35,000 in 2008, had a greater percentage increase.</p>
+</div>
+
+<!-- 4C -->
+<div class="sub-head">4C — Analyse Model 1 | Model 1 বিশ্লেষণ করো</div>
+<p>Answer these questions about Model 1.</p>
+
+<div class="q"><span class="qn">1.</span> Find and copy the OVERALL TREND sentence (sentence 2 in paragraph 1). What two things does it tell us? (Overall trend sentence খুঁজে দেখো।)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">2.</span> Find the word used to "match items in one list to items in another list". (দুটি তালিকার items মেলাতে কোন শব্দ ব্যবহার হয়েছে?)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">3.</span> Find all the words used to say something is NOT exact (e.g., approximately). List them. (অনুমান বোঝানোর সব শব্দ তালিকা করো।)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">4.</span> Find ONE example of "although" and ONE example of "even though" in Model 1. Copy the full sentences. (একটি "although" এবং একটি "even though" উদাহরণ দেখো।)<input type="text" class="aline"><input type="text" class="aline" style="margin-top:8px;"></div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 17: Social Issues: Population | Task 1 Focus: Complex Table Description</div>
+
+<!-- ===== VOCABULARY ===== -->
+<div class="sec-head">Key Vocabulary | মূল শব্দভাণ্ডার</div>
+<p class="intro">নিচের ১২টি শব্দ Unit 17-এর মূল vocabulary। প্রতিটির অর্থ ও উদাহরণ মনে রাখো।</p>
+
+<!-- 5A -->
+<div class="sub-head">5A — Vocabulary Meanings</div>
+<table class="vtab">
+  <thead><tr><th style="width:145px;">Word</th><th>Meaning + Example (অর্থ ও উদাহরণ)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>significant</strong> (adj.)</td><td>উল্লেখযোগ্য / গুরুত্বপূর্ণ। Ex: There was a <em>significant</em> increase in the Indian population.</td></tr>
+    <tr><td><strong>situation</strong> (n.)</td><td>অবস্থা / পরিস্থিতি। Ex: The employment <em>situation</em> changed dramatically over the two decades.</td></tr>
+    <tr><td><strong>employment</strong> (n.)</td><td>কর্মসংস্থান / চাকরি। Ex: The table shows <em>employment</em> status from 1988 to 2008.</td></tr>
+    <tr><td><strong>composition</strong> (n.)</td><td>গঠন / উপাদান। Ex: The ethnic <em>composition</em> of the city changed over twenty years.</td></tr>
+    <tr><td><strong>upper</strong> (adj.)</td><td>উচ্চ / উপরের। Ex: The <em>upper</em> income bracket grew from 7% to 12%.</td></tr>
+    <tr><td><strong>considerable</strong> (adj.)</td><td>উল্লেখযোগ্য / বেশ বড়। Ex: There was a <em>considerable</em> growth in the population.</td></tr>
+    <tr><td><strong>income bracket</strong> (n.)</td><td>আয়ের শ্রেণি / উপার্জনের স্তর। Ex: More people moved into the higher <em>income brackets</em>.</td></tr>
+    <tr><td><strong>roughly</strong> (adv.)</td><td>মোটামুটি / প্রায়। Ex: <em>Roughly</em> 35,000 SE Asians lived in the city in 2008.</td></tr>
+    <tr><td><strong>earner</strong> (n.)</td><td>উপার্জনকারী। Ex: High <em>earners</em> make up 12% of the workforce.</td></tr>
+    <tr><td><strong>huge</strong> (adj.)</td><td>বিশাল / অনেক বড়। Ex: There was a <em>huge</em> increase in the SE Asian population.</td></tr>
+    <tr><td><strong>massive</strong> (adj.)</td><td>অত্যন্ত বড় / বিশাল। Ex: There was a <em>massive</em> reduction in the percentage of Caucasians.</td></tr>
+    <tr><td><strong>treble</strong> (v./adj.)</td><td>তিনগুণ হওয়া / তিনগুণ। Ex: The Indian population <em>trebled</em> from 2,500 to 8,500.</td></tr>
+  </tbody>
+</table>
+
+<!-- 5B -->
+<div class="sub-head">5B — Complete the Text | অনুচ্ছেদ সম্পূর্ণ করো</div>
+<p>Choose the correct option in brackets and fill in the numbered blanks using words from the vocabulary above. Check word forms carefully. (বন্ধনীর সঠিক শব্দ বেছে নাও এবং numbered blanks-গুলো vocabulary থেকে পূরণ করো।)</p>
+
+<div class="para-box">
+  <p>The population of Xanadu has had a (considerable / considerably) <input type="text" class="blank sm"> (grow / growth) <input type="text" class="blank sm"> in the last decade. Xanadu is (composed / composition) <input type="text" class="blank sm"> of four main (group / groups) <input type="text" class="blank sm">, and thus it is (ethnically / ethnic) <input type="text" class="blank sm"> (diverse / diversity) <input type="text" class="blank sm">.</p>
+  <p>The (bigger / biggest) <input type="text" class="blank sm"> group is the Hun, who represents 25 (per cent / percentage) <input type="text" class="blank sm"> of the population, and this group has (grown / growth) <input type="text" class="blank sm"> (significantly / significant) <input type="text" class="blank sm"> over the past ten years. There are now (approximate / approximately) <input type="text" class="blank sm"> 35,000 Hun in Xanadu.</p>
+  <p>The second and third (bigger / biggest) <input type="text" class="blank sm"> groups are the Jakes and the Wallies, who ___(1)___ <input type="text" class="blank" placeholder="(1)"> 15 and 12 (per cent / percentage) <input type="text" class="blank sm"> and whose numbers have stayed (relative / relatively) <input type="text" class="blank sm"> ___(2)___ <input type="text" class="blank" placeholder="(2)"> (over / by) <input type="text" class="blank sm"> the period at about 20,000.</p>
+  <p>The smallest group, the Pixies, has had a ___(3)___ <input type="text" class="blank" placeholder="(3)"> increase from 5 to 15 per cent of the population. Although their proportion of the population has (treble / trebled) <input type="text" class="blank sm">, the group remains small in terms of numbers.</p>
+</div>
+
+<div class="word-box">
+  <strong>Hints for numbered blanks | সংকেত</strong><br>
+  (1) = a phrase meaning "make up / constitute" &nbsp;|&nbsp; (2) = an adjective meaning "not changing" &nbsp;|&nbsp; (3) = an adjective meaning "very large / significant"
+</div>
+
+<!-- 5C -->
+<div class="sub-head">5C — Complete the Synonyms List | সমার্থক শব্দ তালিকা সম্পূর্ণ করো</div>
+<p>Use the words from the box to add synonyms to each group below. Some groups have more than one answer. (নিচের Word Bank থেকে প্রতিটি group-এ synonyms যোগ করো।)</p>
+
+<div class="word-box">
+  <strong>Word Bank | শব্দ তালিকা</strong><br>
+  about &nbsp;•&nbsp; massively &nbsp;•&nbsp; increase fourfold &nbsp;•&nbsp; significantly &nbsp;•&nbsp; increase threefold &nbsp;•&nbsp; considerably &nbsp;•&nbsp; not quite &nbsp;•&nbsp; increase twofold
+</div>
+
+<div class="q"><span class="qn">a.</span> almost, nearly, <input type="text" class="blank"></div>
+<div class="q"><span class="qn">b.</span> roughly, approximately, <input type="text" class="blank"></div>
+<div class="q"><span class="qn">c.</span> double, <input type="text" class="blank"></div>
+<div class="q"><span class="qn">d.</span> treble, <input type="text" class="blank"></div>
+<div class="q"><span class="qn">e.</span> quadruple, <input type="text" class="blank"></div>
+<div class="q"><span class="qn">f.</span> to a large degree, <input type="text" class="blank"> , <input type="text" class="blank"> , <input type="text" class="blank"></div>
+
+<!-- 5D -->
+<div class="sub-head">5D — Match Ethnicities to Geographical Areas | জাতিগোষ্ঠী মেলাও</div>
+<p>Match each ethnicity to the correct geographical area. Write the ethnicity name in the first column. (প্রতিটি ethnicity-র সাথে সঠিক geographical area মেলাও।)</p>
+<p style="margin:6px 0;font-size:12.5px;color:#555;">Caucasian &nbsp;•&nbsp; Indian &nbsp;•&nbsp; South-East Asian &nbsp;•&nbsp; Polynesian &nbsp;•&nbsp; West African</p>
+
+<table class="vtab">
+  <thead><tr><th style="width:200px;">Ethnicity (write it here)</th><th>Geographical Areas</th></tr></thead>
+  <tbody>
+    <tr><td>Caucasian (e.g.)</td><td>Europe, USA, United Kingdom, Republic of Ireland</td></tr>
+    <tr><td><input type="text" class="blank wide"></td><td>Tonga, Samoa, Cook Islands, Niue</td></tr>
+    <tr><td><input type="text" class="blank wide"></td><td>Cambodia, Thailand, Vietnam, Indonesia, Philippines, East Timor</td></tr>
+    <tr><td><input type="text" class="blank wide"></td><td>Benin, Côte d'Ivoire, Ghana, Liberia, Mali, Nigeria, Senegal</td></tr>
+    <tr><td><input type="text" class="blank wide"></td><td>India</td></tr>
+  </tbody>
+</table>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 17: Social Issues: Population | Task 1 Focus: Complex Table Description</div>
+
+<!-- USEFUL WORDS -->
+<div class="sub-head">Useful Words Revision — দুটি দরকারি টুল | Two Useful Tools</div>
+<div class="gram-box">
+  <p><strong>"respectively"</strong> — দুটি তালিকার items একই ক্রমে মেলানোর জন্য। (Matches items from two lists in the same order.)</p>
+  <p style="margin-top:6px;">Ex: "The Polynesians and South-East Asians increased from 18% and 12% respectively in 1988..."</p>
+  <p style="margin-top:8px;"><strong>Approximate words</strong> — "not exact" বোঝানোর জন্য। (Use when the figure is not perfectly precise.)</p>
+  <p>about &nbsp;•&nbsp; roughly &nbsp;•&nbsp; approximately &nbsp;•&nbsp; nearly &nbsp;•&nbsp; almost &nbsp;•&nbsp; around</p>
+  <p style="margin-top:6px;">Ex: The total population grew to approximately 152,500. | About one third of residents were Caucasian.</p>
+</div>
+
+<div class="q"><span class="qn">6A.</span> Model 1-এ "respectively"-এর উদাহরণ খুঁজে দেখো। তারপর "approximate" বোঝানোর সব শব্দ খুঁজে তালিকা করো। (Find the example of "respectively" in Model 1. Then find and list all the approximate words.)</div>
+<p style="font-size:13px; margin:4px 0;">"respectively" example: <input type="text" class="aline"></p>
+<p style="font-size:13px; margin:4px 0;">Approximate words in Model 1: <input type="text" class="aline"></p>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 17: Social Issues: Population | Task 1 Focus: Complex Table Description</div>
+
+<!-- ===== ESSENTIAL GRAMMAR ===== -->
+<div class="sec-head">Essential Grammar | Prepositional Phrases for Change</div>
+
+<div class="gram-box">
+  <div class="gtitle">Grammar Note | ব্যাকরণ নোট</div>
+  <p>কত পরিবর্তন হয়েছে তা বলতে আমরা prepositional phrases ব্যবহার করি। এটি আমাদের data-কে নির্দিষ্ট figures দিয়ে statements support করতে সাহায্য করে।</p>
+  <ul>
+    <li><em>from...to...</em> → শুরু ও শেষ মান বলতে। Ex: from 68% to 47%</li>
+    <li><em>by...</em> → পরিবর্তনের পরিমাণ বলতে। Ex: decreased by about one third</li>
+    <li><em>by more than...</em> → "বেশি" বোঝাতে। Ex: increased by more than 100 per cent</li>
+    <li><em>at...</em> → একটি নির্দিষ্ট মানে স্থির থাকলে। Ex: remained stable at 2 per cent</li>
+  </ul>
+</div>
+
+<!-- 7A -->
+<div class="sub-head">7A — Complete the Sentences | বাক্য সম্পূর্ণ করো</div>
+<p>Fill in each blank with "from", "to", or "by". You may use each preposition more than once. (প্রতিটি শূন্যস্থানে "from", "to", অথবা "by" বসাও।)</p>
+
+<div class="q"><span class="qn">a.</span> The Caucasian population increased <input type="text" class="blank xs"> over 300,000, <input type="text" class="blank xs"> 12 per cent <input type="text" class="blank xs"> 37 per cent.</div>
+<div class="q"><span class="qn">b.</span> The Polynesian population decreased <input type="text" class="blank xs"> roughly a quarter, <input type="text" class="blank xs"> 42 per cent <input type="text" class="blank xs"> 33 per cent.</div>
+<div class="q"><span class="qn">c.</span> The South-East Asian population fell <input type="text" class="blank xs"> 35 per cent <input type="text" class="blank xs"> 18 per cent.</div>
+<div class="q"><span class="qn">d.</span> The West African population increased <input type="text" class="blank xs"> a third, <input type="text" class="blank xs"> 6 per cent <input type="text" class="blank xs"> 8 per cent.</div>
+<div class="q"><span class="qn">e.</span> The Indian population dropped slightly, <input type="text" class="blank xs"> 5 per cent <input type="text" class="blank xs"> 4 per cent.</div>
+
+<!-- 7B -->
+<div class="sub-head">7B — Find Prepositional Phrases in Model 1 | Model 1-এ খোঁজো</div>
+<p>Read Model 1 again (section 4B). Find and underline ALL prepositional phrases that show change data (from, to, by). List them below. (Model 1-এ সব prepositional phrases খুঁজো।)</p>
+
+<div class="q"><span class="qn">1.</span><input type="text" class="aline"></div>
+<div class="q"><span class="qn">2.</span><input type="text" class="aline"></div>
+<div class="q"><span class="qn">3.</span><input type="text" class="aline"></div>
+<div class="q"><span class="qn">4.</span><input type="text" class="aline"></div>
+<div class="q"><span class="qn">5.</span><input type="text" class="aline"></div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 17: Social Issues: Population | Task 1 Focus: Complex Table Description</div>
+
+<!-- ===== LANGUAGE FOCUS 1 ===== -->
+<div class="sec-head">Language Focus 1 | Non-defining Relative Clauses | Non-defining Relative Clause</div>
+
+<div class="gram-box">
+  <div class="gtitle">Grammar Note | ব্যাকরণ নোট</div>
+  <p>Non-defining relative clause কী? এই ধরনের clause একটি noun সম্পর্কে অতিরিক্ত তথ্য দেয়। এটি সবসময় comma দিয়ে আলাদা করা হয়।</p>
+  <ul>
+    <li><em>who</em> → মানুষ বা group-এর জন্য। Ex: The Indians, who made up one of the smallest groups, were recent arrivals.</li>
+    <li><em>which</em> → জিনিস বা concept-এর জন্য। Ex: ...the percentage of Caucasians, which decreased by about one third...</li>
+  </ul>
+  <p style="margin-top:8px;"><strong>মূল নিয়ম:</strong> Non-defining clause সবসময় সেই noun-এর ঠিক পরে আসে যেটি সম্পর্কে বলা হচ্ছে। Comma (,) এবং comma (,) দিয়ে clause-টি আলাদা করতে হয়।</p>
+</div>
+
+<!-- 8A -->
+<div class="sub-head">8A — Find Non-defining Relative Clauses in Model 1 | Model 1-এ খোঁজো</div>
+<p>Read Model 1 again. Find and list ALL non-defining relative clauses (who / which, with commas). Write each one and the noun it describes. (Model 1-এ সব non-defining relative clause খুঁজো।)</p>
+
+<table class="gtab">
+  <thead><tr><th>Non-defining Relative Clause</th><th>Noun it Describes</th></tr></thead>
+  <tbody>
+    <tr><td><input type="text" class="blank" style="width:95%;"></td><td><input type="text" class="blank" style="width:95%;"></td></tr>
+    <tr><td><input type="text" class="blank" style="width:95%;"></td><td><input type="text" class="blank" style="width:95%;"></td></tr>
+    <tr><td><input type="text" class="blank" style="width:95%;"></td><td><input type="text" class="blank" style="width:95%;"></td></tr>
+    <tr><td><input type="text" class="blank" style="width:95%;"></td><td><input type="text" class="blank" style="width:95%;"></td></tr>
+  </tbody>
+</table>
+
+<!-- 8B -->
+<div class="sub-head">8B — Join Sentences Using Relative Clauses | Relative Clause দিয়ে বাক্য জোড়ো</div>
+<p>Join each pair of sentences into ONE sentence with a main clause and a non-defining relative clause. Fill in the prepositions (to, from, by, at) where shown. The first one is done for you. (প্রতিটি জোড়া বাক্যকে relative clause সহ এক বাক্যে লেখো।)</p>
+
+<div class="para-box">
+  <p><strong>Example | উদাহরণ</strong></p>
+  <p>There was a huge increase in Xanadu's Caucasian population. Xanadu's Caucasian population increased <input type="text" class="blank xs"> over 300 per cent.</p>
+  <p>→ There was a huge increase in Xanadu's Caucasian population, which increased by over 300 per cent.</p>
+</div>
+
+<div class="q"><span class="qn">a.</span> There was a corresponding fall in the South-East Asian population. The South-East Asian population decreased <input type="text" class="blank xs"> 35 per cent <input type="text" class="blank xs"> 18 per cent.<br>→ <input type="text" class="aline"></div>
+<div class="q"><span class="qn">b.</span> There was no change to the North African population. The North African population remained stable <input type="text" class="blank xs"> 2 per cent.<br>→ <input type="text" class="aline"></div>
+<div class="q"><span class="qn">c.</span> The South-East Asian population remained stable over the period. It stayed <input type="text" class="blank xs"> around 24,000 people.<br>→ <input type="text" class="aline"></div>
+<div class="q"><span class="qn">d.</span> There was a significant fall in the Pixie population. It decreased threefold.<br>→ <input type="text" class="aline"></div>
+<div class="q"><span class="qn">e.</span> The Wallies immigrated last century. The Wallies make up about 45% of the population.<br>→ <input type="text" class="aline"></div>
+<div class="q"><span class="qn">f.</span> The Polynesian population showed a threefold increase. The Polynesian population is one of the larger ethnic groups.<br>→ <input type="text" class="aline"></div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 17: Social Issues: Population | Task 1 Focus: Complex Table Description</div>
+
+<!-- 8C -->
+<div class="sub-head">8C — Complete the Xenia Paragraph | Xenia-র অনুচ্ছেদ সম্পূর্ণ করো</div>
+<p>Look at the Xenia data table below. Fill in the gaps in the paragraph — add prepositions (from, to, by, at) AND relative pronouns (who / which) as needed. (নিচের Xenia table দেখো। অনুচ্ছেদে prepositions ও relative pronouns বসাও।)</p>
+
+<table class="vtab">
+  <thead><tr><th>Ethnic Groups</th><th>1978 (%)</th><th>2008 (%)</th></tr></thead>
+  <tbody>
+    <tr><td>Caucasian</td><td>12%</td><td>37%</td></tr>
+    <tr><td>Polynesian</td><td>42%</td><td>33%</td></tr>
+    <tr><td>South-East Asian</td><td>35%</td><td>18%</td></tr>
+    <tr><td>West African</td><td>6%</td><td>8%</td></tr>
+    <tr><td>Indian</td><td>5%</td><td>4%</td></tr>
+  </tbody>
+</table>
+
+<div class="para-box">
+  <p>Between 1978 and 2008, the Caucasian population of Xenia increased ___(1)___ <input type="text" class="blank" placeholder="(1)"> 300 per cent. There was a corresponding fall in the South-East Asian population, ___(2)___ <input type="text" class="blank" placeholder="(2)"> decreased ___(3)___ <input type="text" class="blank" placeholder="(3)"> nearly half, ___(4)___ <input type="text" class="blank" placeholder="(4)"> 35% ___(5)___ <input type="text" class="blank" placeholder="(5)"> 18%.</p>
+  <p>There was also a significant decrease in the Polynesian population group, ___(6)___ <input type="text" class="blank" placeholder="(6)"> fell roughly one ___(7)___ <input type="text" class="blank" placeholder="(7)">, from 42% ___(8)___ <input type="text" class="blank" placeholder="(8)"> 33%. The West African population, ___(9)___ <input type="text" class="blank" placeholder="(9)"> made up one of the smallest groups, increased ___(10)___ <input type="text" class="blank" placeholder="(10)"> a third, from 6% ___(11)___ <input type="text" class="blank" placeholder="(11)"> 8%.</p>
+  <p>Finally, there was a slight drop in the Indian population, ___(12)___ <input type="text" class="blank" placeholder="(12)"> fell ___(13)___ <input type="text" class="blank" placeholder="(13)"> 5% ___(14)___ <input type="text" class="blank" placeholder="(14)"> 4%.</p>
+</div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 17: Social Issues: Population | Task 1 Focus: Complex Table Description</div>
+
+<!-- ===== LANGUAGE FOCUS 2 ===== -->
+<div class="sec-head">Language Focus 2 | 'although', 'even though', 'though'</div>
+
+<div class="gram-box">
+  <div class="gtitle">Grammar Note | ব্যাকরণ নোট</div>
+  <p>'although', 'even though', 'though' — তিনটির অর্থ একই। কোনো কিছু অপ্রত্যাশিত বা বিপরীত তথ্য বোঝাতে ব্যবহার হয়। এগুলো বাক্যের শুরুতে বা মাঝে আসতে পারে।</p>
+  <ul>
+    <li>Although/Even though + clause, + main clause.</li>
+    <li>Main clause + although/even though + clause.</li>
+    <li>উদাহরণ: ...their numbers increased from 60,000 to 72,000, although their percentage decreased significantly.</li>
+    <li>উদাহরণ: Even though the Indian population trebled, it remained the smallest group.</li>
+  </ul>
+  <p style="margin-top:8px;"><strong>সাবধান:</strong> 'although'/'even though'-এর সাথে 'but' ব্যবহার করা যাবে না। এবং 'even' (without 'though') এর ভিন্ন অর্থ আছে।</p>
+</div>
+
+<!-- 9A -->
+<div class="sub-head">9A — Find 'although' and 'even though' in Model 1 | Model 1-এ খোঁজো</div>
+<p>Read Model 1 again. Find and mark ALL examples of 'although' and 'even though'. Copy the full sentences below. (Model 1-এ 'although' ও 'even though'-এর সব উদাহরণ খুঁজো।)</p>
+
+<div class="q"><span class="qn">1.</span><input type="text" class="aline"></div>
+<div class="q"><span class="qn">2.</span><input type="text" class="aline"></div>
+<div class="q"><span class="qn">3.</span><input type="text" class="aline"></div>
+
+<!-- 9B -->
+<div class="sub-head">9B — Join Ideas Using 'although' / 'even though' | বাক্য যুক্ত করো</div>
+<p>Join each pair of ideas into one sentence using 'although' or 'even though'. Try to vary the position of the linking word. The first one is done for you. (প্রতিটি জোড়া idea-কে একটি বাক্যে যুক্ত করো।)</p>
+
+<div class="para-box">
+  <p><strong>Example | উদাহরণ</strong></p>
+  <p>Indian population grew significantly + smallest numbers</p>
+  <p>→ The Indian population grew significantly, even though it remained the group with the smallest numbers.</p>
+</div>
+
+<div class="q"><span class="qn">a.</span> largest numbers / percentage of Caucasians declined<br>→ <input type="text" class="aline"></div>
+<div class="q"><span class="qn">b.</span> influx of Wallies from Wallyland in 1995 / percentage of Wallies decreased<br>→ <input type="text" class="aline"></div>
+<div class="q"><span class="qn">c.</span> numbers of Pixies remained stable / percentage decrease<br>→ <input type="text" class="aline"></div>
+<div class="q"><span class="qn">d.</span> population as a whole grew / Polynesian population declined<br>→ <input type="text" class="aline"></div>
+<div class="q"><span class="qn">e.</span> Hun was the largest group / smallest percentage increase<br>→ <input type="text" class="aline"></div>
+<div class="q"><span class="qn">f.</span> Jakes and Wallies had similar numbers / percentage of Jakes rose more than percentage of Wallies<br>→ <input type="text" class="aline"></div>
+<div class="q"><span class="qn">g.</span> smallest percentage increase / Caucasians had the largest numbers<br>→ <input type="text" class="aline"></div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 17: Social Issues: Population | Task 1 Focus: Complex Table Description</div>
+
+<!-- ===== GUIDED WRITING ===== -->
+<div class="sec-head">Guided Writing | Workforce Table</div>
+<p class="intro">নিচের table-টি দেখো — এটি Atlantis City-তে ১৮ থেকে ৬৫ বছর বয়সীদের employment status ১৯৮৮-২০০৮ সালে দেখাচ্ছে।</p>
+
+<div class="chart-title-box"><strong>Workforce of Atlantis City, aged 18 – 65</strong></div>
+
+<table class="dtab">
+  <thead>
+    <tr><th rowspan="2">Year</th><th colspan="2">Full-time</th><th colspan="2">Part-time</th><th colspan="2">Unemployed</th><th colspan="2">Student</th><th rowspan="2">Total Population</th></tr>
+    <tr><th>Number</th><th>%</th><th>Number</th><th>%</th><th>Number</th><th>%</th><th>Number</th><th>%</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1988</td><td>36,000</td><td>40%</td><td>19,000</td><td>21%</td><td>10,000</td><td>11%</td><td>24,000</td><td>28%</td><td>89,000</td></tr>
+    <tr><td>1998</td><td>40,000</td><td>35%</td><td>25,400</td><td>23%</td><td>10,500</td><td>9%</td><td>38,100</td><td>33%</td><td>114,000</td></tr>
+    <tr><td>2008</td><td>65,000</td><td>41%</td><td>59,000</td><td>38%</td><td>4,500</td><td>3%</td><td>28,000</td><td>18%</td><td>156,500</td></tr>
+  </tbody>
+</table>
+
+<!-- 10A -->
+<div class="sub-head">10A — Pre-Writing Questions | লেখার আগে প্রশ্নের উত্তর দাও</div>
+<p>Answer these questions using the Workforce table. (Workforce table দেখে উত্তর দাও।)</p>
+
+<div class="q"><span class="qn">a.</span> What main pieces of information is the table showing?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">b.</span> What are the four categories of employment status?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">c.</span> What are the overall trends? (Hint: look especially at part-time work and unemployed)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">d.</span> Which group has stayed at almost the same PERCENTAGE? (কোন group-এর percentage প্রায় একই থেকেছে?)<input type="text" class="aline"></div>
+<div class="q"><span class="qn">e.</span> Which group has grown significantly in both number and percentage?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">f.</span> Which group's percentage has dropped dramatically?<input type="text" class="aline"></div>
+<div class="q"><span class="qn">g.</span> Which group's percentage had a rise and then a fall? (বৃদ্ধির পর হ্রাস পেয়েছে কোন group-এর?)<input type="text" class="aline"></div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 17: Social Issues: Population | Task 1 Focus: Complex Table Description</div>
+
+<!-- 10B -->
+<div class="sub-head">10B — Write Your Paragraph | নিজের paragraph লেখো</div>
+<p>Before reading Model 2, write your own paragraph about the Workforce table. Include: (i) a topic sentence, (ii) an overall trend sentence, (iii) a description supported by data. Minimum 150 words. (Model 2 দেখার আগে নিজে paragraph লেখো।)</p>
+<textarea class="writing-area ta-lg" placeholder="Write your paragraph here..."></textarea>
+<p style="font-size:13px; margin-top:6px;">Word count: <input type="text" class="blank sm"></p>
+
+<!-- 10C -->
+<div class="sub-head">10C — Read Model 2 and Compare | Model 2 পড়ো এবং তোমার লেখার সাথে তুলনা করো</div>
+
+<div class="para-box">
+  <p><strong>Model 2 — Workforce of Atlantis City, aged 18–65</strong></p>
+  <p>The table shows the changes in the employment status of the population of Atlantic City over two decades. Overall, the percentage of part-time workers nearly doubled in this period, while the number of unemployed people declined significantly.</p>
+  <p>The percentage of full-time workers stayed relatively stable over the two decades, at around 40%, although the total number increased from 36,000 in 1988 to 40,000 in 1998 and 65,000 in 2008.</p>
+  <p>There was a massive increase in the number of part-time workers, which rose from 19,000 to 59,000 and whose percentage increased steadily from 21% to 38% of the workforce.</p>
+  <p>In contrast, the proportion of the unemployed, who were the smallest group, reduced more than threefold from 11% to 3%, and their numbers also dropped in the decade from 1998 to 2008.</p>
+  <p>The percentage of students rose in 1998 and then declined dramatically from 33% to 18%, although the total number of students rose slightly from 24,000 in 1988 to 28,000 in 2008.</p>
+</div>
+
+<!-- 10D -->
+<div class="sub-head">10D — Analyse Model 2 | Model 2 বিশ্লেষণ করো</div>
+<p>Read Model 2 and find the following. Write examples below. (Model 2-এ নিচের বিষয়গুলো চিহ্নিত করো।)</p>
+
+<div class="q"><span class="qn">1.</span> Prepositional phrases for change (from, to, by) (পরিবর্তনের prepositional phrases)<br><input type="text" class="aline"><input type="text" class="aline" style="margin-top:6px;"></div>
+<div class="q"><span class="qn">2.</span> Non-defining relative clauses (who / which + comma)<br><input type="text" class="aline"><input type="text" class="aline" style="margin-top:6px;"></div>
+<div class="q"><span class="qn">3.</span> 'although' and 'even though' — full sentences<br><input type="text" class="aline"><input type="text" class="aline" style="margin-top:6px;"></div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 17: Social Issues: Population | Task 1 Focus: Complex Table Description</div>
+
+<!-- ===== WRITING PRACTICE ===== -->
+<div class="sec-head">Writing Practice | নিজে একা লেখো</div>
+<p class="intro">নিচের table-টি দেখো — এটি Atlantis City Workforce-এর income distribution দেখাচ্ছে। Model 1 ও Model 2 অনুসরণ করে একটি paragraph লেখো। Minimum 150 words. (নিচের income table সম্পর্কে paragraph লেখো।)</p>
+
+<div class="chart-title-box"><strong>Income of Atlantis City Workforce</strong></div>
+
+<table class="dtab">
+  <thead>
+    <tr><th rowspan="2">Year</th><th colspan="2">$15,000 – 25,000</th><th colspan="2">$25,000 – 40,000</th><th colspan="2">$40,000 – 60,000</th><th colspan="2">$60,000+</th><th rowspan="2">Total Population</th></tr>
+    <tr><th>Number</th><th>%</th><th>Number</th><th>%</th><th>Number</th><th>%</th><th>Number</th><th>%</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1985</td><td>37,000</td><td>41%</td><td>29,300</td><td>33%</td><td>16,500</td><td>19%</td><td>6,200</td><td>7%</td><td>89,000</td></tr>
+    <tr><td>1995</td><td>35,200</td><td>31%</td><td>44,000</td><td>40%</td><td>22,000</td><td>20%</td><td>9,800</td><td>9%</td><td>111,000</td></tr>
+    <tr><td>2005</td><td>28,000</td><td>18%</td><td>64,000</td><td>41%</td><td>45,000</td><td>29%</td><td>19,500</td><td>12%</td><td>156,500</td></tr>
+  </tbody>
+</table>
+
+<div class="gram-box">
+  <div class="gtitle">Remember to include | মনে রেখো</div>
+  <ul>
+    <li>A topic sentence stating what the table shows</li>
+    <li>An overall trend sentence (the most significant change/trend)</li>
+    <li>Prepositional phrases for data: from...to..., by... (with figures)</li>
+    <li>At least ONE non-defining relative clause (who/which + comma)</li>
+    <li>At least ONE 'although' or 'even though' sentence</li>
+    <li>Approximate words where needed: roughly, about, approximately</li>
+  </ul>
+</div>
+
+<p style="font-size:13px; margin:8px 0;">Write your paragraph here (minimum 150 words):</p>
+<textarea class="writing-area ta-lg" placeholder="Write your paragraph here..."></textarea>
+<p style="font-size:13px; margin-top:6px;">Word count: <input type="text" class="blank sm"></p>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 17: Social Issues: Population | Task 1 Focus: Complex Table Description</div>
+
+<!-- ===== ANSWER KEY ===== -->
+<div class="sec-head">Answer Key</div>
+<p style="font-size:13px; font-style:italic; margin-bottom:8px;">Students should only check after completing all sections independently.</p>
+
+<div class="ak-sec">
+  <h3>Section 4A — Comprehension</h3>
+  <ol type="a">
+    <li>Changes in ethnic population groups in Atlantis City over twenty years (1988–2008).</li>
+    <li>Overall population grew from 89,000 to 152,500 (by about 71%).</li>
+    <li>SE Asian, Indian, and Polynesian percentages all increased.</li>
+    <li>Caucasian percentage dropped — from 68% to 47%, a decrease of about one third.</li>
+    <li>Polynesians and South-East Asians had similar (but not identical) growth patterns.</li>
+    <li>Indian group — biggest percentage change (2% to 6%, trebled) but smallest population increase (2,000 to 8,500, only +6,500).</li>
+  </ol>
+
+  <h3>Section 5B — Xanadu Text</h3>
+  <p>Brackets: considerable / growth / composed / groups / ethnically / diverse / biggest / per cent / grown / significantly / approximately / biggest / per cent / relatively / over / trebled</p>
+  <p>Blanks: (1) represent / make up &nbsp;|&nbsp; (2) stable &nbsp;|&nbsp; (3) significant / massive / considerable</p>
+
+  <h3>Section 5C — Synonyms</h3>
+  <ol type="a">
+    <li>not quite</li>
+    <li>about</li>
+    <li>increase twofold</li>
+    <li>increase threefold</li>
+    <li>increase fourfold</li>
+    <li>massively, significantly, considerably</li>
+  </ol>
+
+  <h3>Section 5D — Ethnicity Matching</h3>
+  <ul>
+    <li>Polynesian — Tonga, Samoa, Cook Islands, Niue</li>
+    <li>South-East Asian — Cambodia, Thailand, Vietnam, Indonesia, Philippines, East Timor</li>
+    <li>West African — Benin, Côte d'Ivoire, Ghana, Liberia, Mali, Nigeria, Senegal</li>
+    <li>Indian — India</li>
+  </ul>
+
+  <h3>Section 7A — Prepositions</h3>
+  <ol type="a">
+    <li>by / from / to</li>
+    <li>by / from / to</li>
+    <li>from / to</li>
+    <li>by / from / to</li>
+    <li>from / to</li>
+  </ol>
+
+  <h3>Section 8B — Join Sentences</h3>
+  <ol type="a">
+    <li>There was a corresponding fall in the South-East Asian population, which decreased from 35 per cent to 18 per cent.</li>
+    <li>There was no change to the North African population, which remained stable at 2 per cent.</li>
+    <li>The South-East Asian population remained stable over the period, staying at around 24,000 people.</li>
+    <li>There was a significant fall in the Pixie population, which decreased threefold.</li>
+    <li>The Wallies, who immigrated last century, make up about 45% of the population.</li>
+    <li>The Polynesian population, which showed a threefold increase, is one of the larger ethnic groups.</li>
+  </ol>
+
+  <h3>Section 8C — Xenia Paragraph</h3>
+  <p>(1) by &nbsp;(2) which &nbsp;(3) by &nbsp;(4) from &nbsp;(5) to &nbsp;(6) which &nbsp;(7) third &nbsp;(8) to &nbsp;(9) who/which &nbsp;(10) by &nbsp;(11) to &nbsp;(12) which &nbsp;(13) from &nbsp;(14) to</p>
+
+  <h3>Section 9B — Join Ideas with 'although'/'even though'</h3>
+  <ol type="a">
+    <li>Although Caucasians had the largest numbers, their percentage declined.</li>
+    <li>Even though there was an influx of Wallies from Wallyland in 1995, the percentage of Wallies decreased.</li>
+    <li>Although the numbers of Pixies remained stable, their percentage decreased.</li>
+    <li>Although the population as a whole grew, the Polynesian population declined.</li>
+    <li>Although the Hun was the largest group, it had the smallest percentage increase.</li>
+    <li>The Jakes and Wallies had similar numbers, even though the percentage of Jakes rose more than the percentage of Wallies.</li>
+    <li>Although Caucasians had the largest numbers, they had the smallest percentage increase.</li>
+  </ol>
+</div>
+
+<div class="pg-footer">Worksheet prepared for IELTS Writing — Unit 17: Social Issues: Population | Task 1 Focus: Complex Table Description</div>
+
+<!-- ===== TEACHER NOTES ===== -->
+<div class="sec-head">Teacher Notes</div>
+<p style="font-size:13px; font-weight:bold; margin:6px 0;">Unit 17 — Social Issues: Population: Teaching Tips &amp; Notes</p>
+<div class="tn">
+  <ul>
+    <li>This worksheet is designed for IELTS Task 1 (complex table description). Students should be comfortable with basic pie chart and bar chart description (Units 1–2) before attempting this unit, as tables combine several data categories at once.</li>
+    <li><strong>Section 4 (Table Reading):</strong> Spend extra time here — many students struggle to read a table with multiple sub-columns (Number and %). Model reading one row aloud first, tracing across the table with a finger or ruler.</li>
+    <li><strong>Section 5B (Xanadu Text):</strong> This is a dense exercise combining word-form choice and vocabulary recall. Consider letting weaker students complete it in pairs.</li>
+    <li><strong>Sections 7–9 (Grammar Focus):</strong> Prepositional phrases, non-defining relative clauses, and although/even though are all high-level grammar structures that examiners reward in Band 7+ scripts. Encourage students to use at least one of each in their final paragraph, but warn against overusing them, as forced or unnatural grammar can lower the Coherence and Cohesion score.</li>
+    <li><strong>Guided Writing &amp; Writing Practice:</strong> Remind students that describing a table well is about grouping and selecting the most important data — not listing every number. Encourage them to group similar categories together (e.g., full-time and part-time as "employed") rather than describing each column separately.</li>
+    <li>Every learner in this class, regardless of their current writing level, is a unique creation of Allah, deserving of patience and encouragement. Population and social data can sometimes carry sensitive comparisons between groups — remind students that describing statistics accurately in English is a language skill, and should never be used to make value judgements about any community.</li>
+  </ul>
+</div>
+
+<!-- BOTTOM BUTTONS -->
+<div class="action-bar" style="margin-top:24px;">
+  <button class="btn btn-clear" onclick="clearAll()">Clear my response</button>
+  <button class="btn btn-save"  onclick="window.print()">Save as PDF</button>
+</div>
+
+</div><!-- /page -->
+
+<script>
+/* ===== CLEAR ALL ===== */
+function clearAll() {
+  if (!confirm('Clear all your answers? This cannot be undone.')) return;
+  document.querySelectorAll('input[type="text"]').forEach(function(el) { el.value = ''; });
+  document.querySelectorAll('textarea').forEach(function(el) { el.value = ''; });
+  document.querySelectorAll('input[type="radio"]').forEach(function(el) { el.checked = false; });
+}
+</script>
+</body>
+</html>
