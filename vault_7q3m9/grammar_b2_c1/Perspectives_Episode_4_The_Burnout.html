@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perspectives | Character &amp; Grammar Through Stories | Episode 4 - The Burnout</title>
+<style>
+  :root{
+    --navy:#1B3358;
+    --teal-deep:#147D75;
+    --gold-text:#8A5A00;
+    --gold-fill:#FBEFD3;
+    --maroon:#7A2048;
+    --writing-fill:#F4F6F9;
+    --grammar-fill:#EAF6F5;
+    --slate:#5B6B79;
+    --mint:#E6F4F1;
+    --text:#111111;
+    --border:#8FC0BB;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:#ffffff;
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .page{
+    max-width:850px;
+    margin:0 auto;
+    padding:24px 28px 80px 28px;
+  }
+  /* ---------- Running header ---------- */
+  .running-header{
+    text-align:center;
+    color:var(--teal-deep);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.2px;
+    margin-bottom:10px;
+  }
+  /* ---------- Title block ---------- */
+  .title-block{ text-align:center; margin-bottom:16px; }
+  .main-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:var(--navy);
+    font-size:32px;
+    margin:0 0 4px 0;
+  }
+  .format-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:18px;
+    margin:0 0 2px 0;
+  }
+  .episode-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:16px;
+    margin:0;
+  }
+  /* ---------- Info box ---------- */
+  .info-box{
+    background:var(--mint);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0;
+  }
+  .info-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:6px 0;
+    flex-wrap:wrap;
+  }
+  .info-label{ font-weight:bold; color:var(--navy); white-space:nowrap; }
+  .info-input{ flex:1; min-width:160px; }
+  .info-input.short{ flex:0 0 180px; }
+  .level-value{ font-weight:bold; margin-left:2px; }
+
+  /* ---------- Goals box ---------- */
+  .goals-box{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0 26px 0;
+  }
+  .goals-label{ color:var(--teal-deep); font-weight:bold; margin:0 0 4px 0; }
+  .goals-intro{ margin:0 0 8px 0; font-style:italic; }
+  .goals-list{ margin:0; padding-left:0; list-style:none; }
+  .goals-list li{ margin:4px 0; }
+
+  /* ---------- Section bars ---------- */
+  .section-bar{
+    background:var(--navy);
+    color:#ffffff;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:9px 14px;
+    border-radius:5px;
+    margin:30px 0 14px 0;
+    font-size:14.5px;
+    letter-spacing:.2px;
+    scroll-margin-top:20px;
+  }
+  .section-content{ margin-bottom:6px; }
+
+  .sub-heading{
+    color:var(--teal-deep);
+    font-size:15.5px;
+    margin:18px 0 6px 0;
+  }
+  .instructions{ margin:4px 0 12px 0; }
+  .bengali-tag{ color:var(--teal-deep); font-weight:bold; }
+
+  .q-list{ margin:0 0 10px 0; padding-left:20px; }
+  .q-list li{ margin:0 0 14px 0; }
+
+  /* ---------- Inputs ---------- */
+  input.aline{
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:5px 2px;
+    margin:4px 0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+  }
+  input.aline:focus{ outline:none; border-bottom:1px solid var(--teal-deep); }
+
+  input.blank{
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:2px 4px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    width:60px;
+    text-align:center;
+  }
+  input.blank.sm{ width:40px; }
+  input.blank.wide{ width:150px; }
+  input.blank:focus{ outline:none; border-bottom:1px solid var(--teal-deep); }
+
+  textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:10px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+  }
+  textarea:focus{ outline:none; border:1px solid var(--teal-deep); }
+
+  .section-bar.accent-maroon{
+    background:var(--maroon);
+  }
+
+  .writing-box{
+    border:1px solid var(--navy) !important;
+    background:var(--writing-fill) !important;
+  }
+
+  .keyterm{
+    color:var(--gold-text);
+    background:var(--gold-fill);
+    font-weight:bold;
+  }
+
+  /* ---------- Story ---------- */
+  .story-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    font-style:italic;
+    color:var(--navy);
+    font-size:20px;
+    text-align:center;
+    margin:8px 0 14px 0;
+  }
+  .story-text p{ margin:0 0 12px 0; text-align:justify; }
+
+  /* ---------- Tables ---------- */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 18px 0;
+    font-size:14px;
+  }
+  table caption{ text-align:left; font-weight:bold; margin-bottom:6px; }
+  th, td{
+    border:1px solid var(--border);
+    padding:8px 10px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:var(--teal-deep);
+    color:#ffffff;
+    font-weight:bold;
+  }
+
+
+  .sentence-box{
+    width:100%;
+    min-height:36px;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:6px 8px;
+    margin:0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+    line-height:1.4;
+  }
+  .sentence-box:focus{ outline:none; border:1px solid var(--teal-deep); }
+
+  .word-box{
+    border:1px dashed var(--border);
+    border-radius:5px;
+    padding:8px 12px;
+    margin:8px 0 14px 0;
+    font-weight:bold;
+    color:var(--navy);
+  }
+
+  .mc-question{ margin:0 0 16px 0; }
+  .mc-options{ display:flex; flex-wrap:wrap; gap:14px; margin:6px 0; }
+  .mc-options label{ display:flex; align-items:center; gap:5px; }
+  .mc-answer{ margin-top:4px; }
+  .mc-answer input.blank{ margin-left:6px; }
+
+  .checklist{ list-style:none; padding:0; margin:0; }
+  .checklist li{ display:flex; align-items:center; gap:6px; margin:3px 0; }
+  .checklist input[type="checkbox"]{ width:15px; height:15px; }
+
+  .grammar-lab-item{
+    border:1px solid var(--teal-deep);
+    background:var(--grammar-fill);
+    border-radius:6px;
+    padding:12px 14px;
+    margin-bottom:14px;
+  }
+  .grammar-lab-item .gl-sentence{ font-weight:bold; margin:0 0 8px 0; }
+  .grammar-lab-item .gl-q{ margin:6px 0; }
+  .grammar-lab-item .gl-q label{ display:block; margin-bottom:3px; }
+
+  .transform-item{ margin:0 0 16px 0; }
+  .transform-item .t-original{ margin:0 0 6px 0; }
+  .transform-item .t-instruction{ color:var(--teal-deep); font-weight:bold; margin:0 0 4px 0; }
+
+  .homework-columns{
+    display:flex;
+    gap:18px;
+    margin:10px 0 16px 0;
+    flex-wrap:wrap;
+  }
+  .homework-box{
+    flex:1;
+    min-width:240px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 16px;
+  }
+  .homework-box h4{ color:var(--teal-deep); margin:0 0 8px 0; }
+  .homework-box textarea{ margin-top:8px; }
+  .homework-box .q-list{ margin-top:8px; padding-left:18px; }
+  .homework-box .q-list li{ margin:0 0 8px 0; }
+  .final-reminder{ font-style:italic; margin-top:10px; color:var(--slate); }
+
+  .footer-divider{
+    border-top:1px solid var(--border);
+    margin-top:34px;
+    padding-top:10px;
+    text-align:center;
+    font-style:italic;
+    font-size:11.5px;
+    color:var(--slate);
+  }
+
+  /* ---------- Action bars ---------- */
+  .action-bar{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    padding:10px 14px;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .action-bar.bottom{
+    border-bottom:none;
+    border-top:1px solid var(--border);
+    position:sticky;
+    top:auto;
+    bottom:0;
+  }
+  .action-bar button{
+    background:var(--teal-deep);
+    color:#ffffff;
+    border:none;
+    border-radius:20px;
+    padding:9px 18px;
+    font-size:13.5px;
+    font-weight:bold;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .action-bar button:hover{ background:var(--navy); }
+  .action-bar button.secondary{ background:#555555; }
+  .action-bar button.secondary:hover{ background:#333333; }
+
+  /* ---------- Floating story button ---------- */
+  .story-float{
+    position:fixed;
+    right:20px;
+    bottom:78px;
+    background:var(--teal-deep);
+    color:#ffffff;
+    border:none;
+    border-radius:30px;
+    padding:10px 16px;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+    display:none;
+    z-index:60;
+    box-shadow:0 0 0 0 rgba(15,118,110,0.6);
+    animation:glowPulse 2s infinite;
+  }
+  .story-float.visible{ display:block; }
+  @keyframes glowPulse{
+    0%{ box-shadow:0 0 0 0 rgba(15,118,110,0.55); }
+    70%{ box-shadow:0 0 0 12px rgba(15,118,110,0); }
+    100%{ box-shadow:0 0 0 0 rgba(15,118,110,0); }
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    .action-bar, .story-float{ display:none !important; }
+    body{ font-size:12px; }
+    .page{ max-width:100%; padding:0; }
+    .section-bar{ break-inside:avoid; }
+    table, .grammar-lab-item, .story-text, .homework-box{ break-inside:avoid; }
+    input.aline, input.blank{ border-bottom:1px solid #000000; color:#000; }
+    textarea{ border:1px solid #000000; color:#000; }
+    th, td{ border:1px solid #000000; }
+    @page{ size:A4; margin:16mm 14mm; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:600px){
+    .page{ padding:16px 14px 90px 14px; }
+    .main-title{ font-size:24px; }
+    .format-subtitle{ font-size:15px; }
+    .episode-subtitle{ font-size:14px; }
+    .homework-columns{ flex-direction:column; }
+    .mc-options{ gap:8px 12px; }
+    .action-bar{ gap:8px; flex-wrap:wrap; }
+    .action-bar button{ padding:8px 12px; font-size:12.5px; }
+    table, th, td{ font-size:12.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="action-bar top">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <div class="running-header">Perspectives | Episode 4 - The Burnout</div>
+
+  <div class="title-block">
+    <h1 class="main-title">Perspectives</h1>
+    <h2 class="format-subtitle">Character &amp; Grammar Through Stories</h2>
+    <h3 class="episode-subtitle">Episode 4 - The Burnout</h3>
+  </div>
+
+  <div class="info-box">
+    <div class="info-row">
+      <span class="info-label">Student Name:</span>
+      <input type="text" class="aline info-input">
+    </div>
+    <div class="info-row">
+      <span class="info-label">Date:</span>
+      <input type="text" class="aline info-input short">
+      <span class="info-label">Level:</span>
+      <span class="level-value">B2–C1 (IELTS Band 6.5–8.0)</span>
+    </div>
+  </div>
+
+  <div class="goals-box">
+    <p class="goals-label">Learning Goals:</p>
+    <ul class="goals-list">
+      <li>✓ Read and interpret a discursive, opinion-based story</li>
+      <li>✓ Form mixed conditionals (past condition/present result, and vice versa)</li>
+      <li>✓ Use inversion in conditionals: Had..., Were it not for..., Should...</li>
+      <li>✓ Acquire an extended set of Academic Word List vocabulary and collocations</li>
+      <li>✓ Practise IELTS-style sentence transformation and error correction</li>
+      <li>✓ Produce an IELTS Task 2-style discursive paragraph</li>
+      <li>✓ Reflect critically on workload, boundaries, and workplace culture</li>
+    </ul>
+  </div>
+
+  <!-- ===================== SECTION 1 ===================== -->
+  <div class="section-bar" id="section1">SECTION 1 | WARM-UP | Before You Read</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Part A - Prediction &amp; Opinion Questions</h3>
+    <p class="instructions"><strong>Instructions:</strong> These questions require you to take a position, not just guess a plot. Answer before reading.</p>
+    <ol class="q-list">
+      <li>To what extent do you agree that preventing burnout is primarily the individual employee's responsibility, rather than the employer's?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>Some people believe that admitting 'I have too much work' makes an employee look less capable. To what extent do you agree?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Part B - Personal Reflection</h3>
+    <p class="instructions"><strong>Instructions:</strong> Answer honestly from your own experience or context.</p>
+    <ol class="q-list">
+      <li>Have you ever taken on more work or responsibility than you could comfortably manage? What happened?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>What signs, in yourself or in someone close to you, usually show that a workload has become too heavy?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 2 ===================== -->
+  <div class="section-bar" id="section2">SECTION 2 | MAIN STORY | Read the Story</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Read the story carefully. Underline every mixed conditional, and circle every inverted conditional (Had..., Were it not for..., Should...).</p>
+
+    <h3 class="story-title" id="story-title">The Burnout</h3>
+    <div class="story-text">
+      <p>Rakib had been at the agency for eleven months, working at a pace he privately suspected was unsustainable, and for almost all of that time he had operated by a private rule: if the work needed doing, he did it, regardless of what it cost him elsewhere. He told himself this was simply what a first job required — a phase, not a pattern.</p>
+
+      <p>Lately, the pattern had started to show. He forgot deadlines he had noted a week earlier; a client's brand name he had typed correctly a hundred times appeared, one exhausted night, entirely misspelled in a report. If he had raised the issue weeks ago, he probably wouldn't be this exhausted now — a thought that arrived, unhelpfully, close to midnight. The long nights were taking a toll on more than just his sleep, and his workload had quietly tripled since his first month, without anyone officially deciding it should.</p>
+
+      <p>Had he mentioned it to his manager three months earlier, some of it would probably have been redistributed. He hadn't. At the time, saying "I have too much" had felt like admitting he was incapable — an outcome that, to him, seemed worse than exhaustion itself.</p>
+
+      <p>His colleague Nasrin, who had joined the agency two years before him, found him one evening still at his desk long after most of the office had emptied. "You're here late again," she said, not as a question.</p>
+
+      <p>"Just finishing something," Rakib said, not looking up.</p>
+
+      <p>"You said that yesterday. And the day before." She pulled a chair over. "If you keep burning the candle at both ends like this, you're not going to burn out gradually. You'll hit a wall all at once, and it will take you far longer to recover than it took to run yourself into the ground."</p>
+
+      <p>Rakib gave a tired laugh. "I don't really have a choice. If I don't finish this tonight, the client presentation tomorrow won't be ready."</p>
+
+      <p>"Would it really fall apart if you handed over half of it tonight and finished the rest fresh in the morning?" Nasrin asked. "Or does it just feel unmanageable because you're too exhausted to see the difference?"</p>
+
+      <p>He didn't answer immediately.</p>
+
+      <p>"I went through this in my second year," Nasrin said. "Were it not for a friend who physically took my laptop away one Friday night, I probably would have kept going until I made a genuinely serious mistake, not just a typo. If I weren't so stubborn back then, I would have asked for help long before I actually reached breaking point. You do bounce back from one bad week. You don't bounce back as easily from months of this."</p>
+
+      <p>"So what did you do?" Rakib asked.</p>
+
+      <p>"I started speaking up, out loud, when I had too much. Not dramatically — just factually. 'I can take this, but something else will slip.' It felt like weakness the first few times. It wasn't. It was information my manager needed and simply didn't have, because nobody had told him."</p>
+
+      <p>Rakib looked at his screen, then closed the laptop halfway. "If I tell him tomorrow that the projections need another day, what happens?"</p>
+
+      <p>"Honestly? Probably nothing dramatic. Should the situation actually go badly, it would already have happened to someone else on this team by now — and it hasn't." Nasrin stood up. "Go home tonight. Finish it in daylight, rested. See if it's actually different."</p>
+
+      <p>Rakib packed his bag, still uncertain but noticeably lighter than he had felt in weeks. The presentation, finished the next morning, was not obviously better or worse than it would have been the night before — he genuinely couldn't tell. What was different was that he had slept, and that, for the first time in months, he had said a true sentence about his workload out loud, to someone who could actually do something about it.</p>
+
+      <p>He didn't leave the agency any earlier the following week. The deadlines hadn't changed, and neither, really, had the culture that produced them. But he had started keeping a private note of what he said yes to, and had begun, slowly, learning to delegate what he could and decline what he couldn't manage. Whether that would be enough to build any real resilience months from now, he genuinely didn't know. Nasrin didn't pretend to know either. All she had offered, in the end, was proof that someone else had survived the same pattern he was still learning to break.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 3 ===================== -->
+  <div class="section-bar" id="section3">SECTION 3 | VOCABULARY ZONE</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Study the words and collocations below. Take your time with this extended list, and revisit it after reading the story.</p>
+
+    <table>
+      <thead>
+        <tr><th>Word / Phrase</th><th>Part of Speech</th><th>Simple English Meaning</th><th>বাংলা অর্থ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="keyterm">burnout</td><td>noun</td><td>a state of physical or mental exhaustion caused by prolonged stress</td><td>কর্মক্লান্তি</td></tr>
+        <tr><td class="keyterm">exhausted</td><td>adjective</td><td>extremely tired</td><td>চরম ক্লান্ত</td></tr>
+        <tr><td class="keyterm">workload</td><td>noun</td><td>the amount of work someone has to do</td><td>কাজের চাপ</td></tr>
+        <tr><td class="keyterm">redistribute</td><td>verb</td><td>to share something out again in a different way</td><td>পুনর্বণ্টন করা</td></tr>
+        <tr><td class="keyterm">boundaries</td><td>noun (pl.)</td><td>limits that protect a person's time and energy</td><td>সীমারেখা</td></tr>
+        <tr><td class="keyterm">overwhelmed</td><td>adjective</td><td>having too much to deal with at once</td><td>অভিভূত</td></tr>
+        <tr><td class="keyterm">manageable</td><td>adjective</td><td>able to be dealt with reasonably</td><td>সামলানো সম্ভব এমন</td></tr>
+        <tr><td class="keyterm">recover</td><td>verb</td><td>to return to a normal, healthy state</td><td>সেরে ওঠা</td></tr>
+        <tr><td class="keyterm">resilience</td><td>noun</td><td>the ability to recover from difficulty</td><td>সহনশীলতা / ঘুরে দাঁড়ানোর ক্ষমতা</td></tr>
+        <tr><td class="keyterm">capable</td><td>adjective</td><td>able to do something well</td><td>সক্ষম</td></tr>
+        <tr><td class="keyterm">incapable</td><td>adjective</td><td>not able to do something</td><td>অক্ষম</td></tr>
+        <tr><td class="keyterm">delegate</td><td>verb</td><td>to give a task to someone else to complete</td><td>দায়িত্ব অর্পণ করা</td></tr>
+        <tr><td class="keyterm">unsustainable</td><td>adjective</td><td>not able to continue at the same level for long</td><td>অস্থায়ী / টিকিয়ে রাখা যায় না এমন</td></tr>
+        <tr><td class="keyterm">pace</td><td>noun</td><td>the speed at which something happens</td><td>গতি</td></tr>
+        <tr><td class="keyterm">toll</td><td>noun</td><td>a serious harmful effect that builds up over time</td><td>ক্ষতির পরিমাণ</td></tr>
+        <tr><td class="keyterm">take a toll on</td><td>phrase</td><td>to have a harmful effect on someone over time</td><td>ধীরে ধীরে ক্ষতি করা</td></tr>
+        <tr><td class="keyterm">burn the candle at both ends</td><td>phrase</td><td>to work excessively without enough rest</td><td>অতিরিক্ত পরিশ্রম করে বিশ্রামহীন থাকা</td></tr>
+        <tr><td class="keyterm">reach breaking point</td><td>phrase</td><td>to arrive at a point where one can no longer cope</td><td>সহ্যসীমা ছাড়িয়ে যাওয়া</td></tr>
+        <tr><td class="keyterm">bounce back</td><td>phrasal verb</td><td>to recover quickly from a difficulty</td><td>দ্রুত সেরে ওঠা</td></tr>
+        <tr><td class="keyterm">run oneself into the ground</td><td>phrase</td><td>to make oneself ill or exhausted through overwork</td><td>নিজেকে নিঃশেষ করে ফেলা</td></tr>
+        <tr><td class="keyterm">hit a wall</td><td>phrase</td><td>to reach a point where one cannot continue or progress</td><td>আর এগোতে না পারার অবস্থা</td></tr>
+        <tr><td class="keyterm">speak up</td><td>phrasal verb</td><td>to express a concern or opinion openly</td><td>সরবে বলা / প্রকাশ করা</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task A - Matching</h3>
+    <p class="instructions"><strong>Instructions:</strong> Match each word with its correct meaning. Write the letter in the Your Answer column.</p>
+    <table>
+      <thead><tr><th>Word</th><th>Your Answer</th></tr></thead>
+      <tbody>
+        <tr><td>1. burnout</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>2. boundaries</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>3. resilience</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>4. delegate</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>5. unsustainable</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>6. toll</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>7. incapable</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>8. manageable</td><td><input type="text" class="blank sm"></td></tr>
+      </tbody>
+    </table>
+    <p><strong>A.</strong> a state of exhaustion caused by prolonged stress &nbsp; <strong>B.</strong> limits that protect a person's time and energy &nbsp; <strong>C.</strong> the ability to recover from difficulty<br>
+    <strong>D.</strong> to give a task to someone else to complete &nbsp; <strong>E.</strong> not able to continue at the same level for long &nbsp; <strong>F.</strong> a serious harmful effect that builds up over time<br>
+    <strong>G.</strong> not able to do something &nbsp; <strong>H.</strong> able to be dealt with reasonably</p>
+
+    <h3 class="sub-heading">Task B - Fill in the Blanks</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose the best word or phrase from the box and complete the sentences.</p>
+    <div class="word-box">Word Box: workload | redistribute | overwhelmed | recover | pace | take a toll on | hit a wall</div>
+    <ol class="q-list">
+      <li>Rakib's <input type="text" class="blank wide"> had quietly tripled since his first month at the agency.</li>
+      <li>Had he spoken up sooner, some of his tasks might have been <input type="text" class="blank wide"> among the team.</li>
+      <li>By the time Nasrin found him, Rakib looked completely <input type="text" class="blank wide"> by his responsibilities.</li>
+      <li>Sleeping properly gave Rakib at least a small chance to <input type="text" class="blank wide">.</li>
+      <li>Nasrin warned Rakib that his current <input type="text" class="blank wide"> of work was not something he could sustain for long.</li>
+      <li>Months of late nights had begun to <input type="text" class="blank wide"> his concentration.</li>
+      <li>Nasrin explained that ignoring the warning signs eventually makes a person <input type="text" class="blank wide"> completely.</li>
+    </ol>
+
+    <h3 class="sub-heading">Task C - Vocabulary in Context</h3>
+    <p class="instructions"><strong>Instructions:</strong> Read each quotation from the story and guess the meaning of the underlined word or phrase from context.</p>
+    <ol class="q-list">
+      <li>"Rakib had been at the agency for eleven months, working at a pace he privately suspected was unsustainable." What does <em>unsustainable</em> suggest about the pace?
+        <input type="text" class="aline">
+      </li>
+      <li>"The long nights were taking a toll on more than just his sleep." What does <em>taking a toll on</em> mean here?
+        <input type="text" class="aline">
+      </li>
+      <li>"If you keep burning the candle at both ends like this, you're not going to burn out gradually." What does <em>burning the candle at both ends</em> mean?
+        <input type="text" class="aline">
+      </li>
+      <li>"You'll hit a wall all at once." What does <em>hit a wall</em> mean in this context?
+        <input type="text" class="aline">
+      </li>
+      <li>"I would have asked for help long before I actually reached breaking point." What does <em>reached breaking point</em> mean?
+        <input type="text" class="aline">
+      </li>
+      <li>"You do bounce back from one bad week. You don't bounce back as easily from months of this." What does <em>bounce back</em> mean here?
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Task D - Personal Vocabulary Journal</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose 4 new words or phrases from this episode. Write the Bangla meaning and your own English sentence.</p>
+    <table>
+      <thead><tr><th>No.</th><th>New Word/Phrase</th><th>বাংলা অর্থ</th><th>My Own English Sentence</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>2</td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>3</td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>4</td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== SECTION 4 ===================== -->
+  <div class="section-bar" id="section4">SECTION 4 | GRAMMAR DETECTIVE 🔍 | Mixed Conditionals &amp; Inversion</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Task A - Find from the Story</h3>
+    <p class="instructions"><strong>Instructions:</strong> Find and copy the required number of examples for each grammar focus from the story.</p>
+    <table>
+      <thead><tr><th>Grammar Focus</th><th>How many?</th><th>Examples from the Story</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Mixed Conditionals (past condition → present result)</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Mixed Conditionals (general/past trait → past result)</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Inversion with 'Had' (no if)</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Inversion with 'Were it not for'</td><td>1</td>
+          <td>1. <textarea class="sentence-box" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td>Inversion with 'Should'</td><td>1</td>
+          <td>1. <textarea class="sentence-box" rows="2"></textarea></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Grammar Lab</h3>
+    <p class="instructions"><strong>Instructions:</strong> For each sentence, identify the structure, explain why it is used, and write a similar sentence of your own.</p>
+
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">1. "If he had raised the issue weeks ago, he probably wouldn't be this exhausted now."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">2. "If I weren't so stubborn back then, I would have asked for help long before I actually reached breaking point."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">3. "Had he mentioned it to his manager three months earlier, some of it would probably have been redistributed."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">4. "Were it not for a friend who physically took my laptop away one Friday night, I probably would have kept going."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">5. "Should the situation actually go badly, it would already have happened to someone else on this team by now."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">6. "If I don't finish this tonight, the client presentation tomorrow won't be ready." (compare: a real, first-conditional warning)</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 5 ===================== -->
+  <div class="section-bar accent-maroon" id="section5">SECTION 5 | MIXED GRAMMAR CHALLENGE</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">A. Error Correction</h3>
+    <p class="instructions"><strong>Instructions:</strong> Each sentence contains one error in a mixed conditional or an inverted conditional. Rewrite it correctly.</p>
+    <ol class="q-list">
+      <li>If he raised the issue weeks ago, he wouldn't be this exhausted now.<br>Correction: <input type="text" class="aline"></li>
+      <li>If I wasn't so stubborn back then, I would have asked for help sooner.<br>Correction: <input type="text" class="aline"></li>
+      <li>Had he mention it to his manager, some of it would have been redistributed.<br>Correction: <input type="text" class="aline"></li>
+      <li>Were it not for a friend, I would kept going until I made a mistake.<br>Correction: <input type="text" class="aline"></li>
+      <li>Should the situation go badly, it already happen to someone else.<br>Correction: <input type="text" class="aline"></li>
+      <li>If he had asked for help, he isn't this exhausted now.<br>Correction: <input type="text" class="aline"></li>
+    </ol>
+
+    <h3 class="sub-heading">B. Multiple Choice</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose the best answer: A, B, C, or D.</p>
+
+    <div class="mc-question">
+      <p>1. If he ______ the issue weeks ago, he wouldn't be this exhausted now.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc1"> A. raises</label>
+        <label><input type="radio" name="mc1"> B. had raised</label>
+        <label><input type="radio" name="mc1"> C. raised</label>
+        <label><input type="radio" name="mc1"> D. has raised</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>2. If I weren't so stubborn, I ______ for help months ago.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc2"> A. would ask</label>
+        <label><input type="radio" name="mc2"> B. would have asked</label>
+        <label><input type="radio" name="mc2"> C. will ask</label>
+        <label><input type="radio" name="mc2"> D. asked</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>3. ______ he mentioned it earlier, some of it would have been redistributed.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc3"> A. If</label>
+        <label><input type="radio" name="mc3"> B. Had</label>
+        <label><input type="radio" name="mc3"> C. Have</label>
+        <label><input type="radio" name="mc3"> D. Should</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>4. ______ it not for a friend's intervention, I would have kept going.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc4"> A. Was</label>
+        <label><input type="radio" name="mc4"> B. Is</label>
+        <label><input type="radio" name="mc4"> C. Were</label>
+        <label><input type="radio" name="mc4"> D. Been</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>5. ______ the situation go badly, it would already have happened to someone else.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc5"> A. Should</label>
+        <label><input type="radio" name="mc5"> B. Would</label>
+        <label><input type="radio" name="mc5"> C. Could</label>
+        <label><input type="radio" name="mc5"> D. Will</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>6. If he keeps working like this, he ______ eventually.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc6"> A. burns out</label>
+        <label><input type="radio" name="mc6"> B. will burn out</label>
+        <label><input type="radio" name="mc6"> C. burnt out</label>
+        <label><input type="radio" name="mc6"> D. had burnt out</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <h3 class="sub-heading">C. Gap Fill</h3>
+    <p class="instructions"><strong>Instructions:</strong> Complete each sentence with the correct form of the word in brackets.</p>
+    <ol class="q-list">
+      <li>If Rakib <input type="text" class="blank wide"> (raise) the issue sooner, he wouldn't be this exhausted now.</li>
+      <li>If Nasrin <input type="text" class="blank wide"> (not / be) so stubborn back then, she would have asked for help earlier.</li>
+      <li><input type="text" class="blank wide"> (mention) it three months earlier, Rakib's workload would have been redistributed.</li>
+      <li>Were it not for her friend's intervention, Nasrin <input type="text" class="blank wide"> (keep) going until she made a serious mistake.</li>
+      <li>Should the presentation <input type="text" class="blank wide"> (go) badly, Rakib will simply explain what happened.</li>
+      <li>If he <input type="text" class="blank wide"> (delegate) more tasks last month, his evenings would be freer now.</li>
+    </ol>
+
+    <h3 class="sub-heading">D. Sentence Transformation</h3>
+    <p class="instructions"><strong>Instructions:</strong> Combine each pair of sentences as directed, using the required grammar structure.</p>
+
+    <div class="transform-item">
+      <p class="t-original">1. Original: Rakib didn't raise the issue weeks ago. He is exhausted now.</p>
+      <p class="t-instruction">Combine using a mixed conditional (past → present):</p>
+      <p>If Rakib <input type="text" class="aline">, he wouldn't be this exhausted now.</p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">2. Original: Nasrin was stubborn in the past. She didn't ask for help back then.</p>
+      <p class="t-instruction">Combine using a mixed conditional (trait → past result):</p>
+      <p>If Nasrin <input type="text" class="aline">, she would have asked for help sooner.</p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">3. Original: Rakib didn't mention his workload to his manager. It wasn't redistributed.</p>
+      <p class="t-instruction">Combine using inversion with 'Had':</p>
+      <p><input type="text" class="aline">, his workload would have been redistributed.</p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">4. Original: A friend took Nasrin's laptop away. Because of this, she didn't keep working until she made a mistake.</p>
+      <p class="t-instruction">Combine using inversion with 'Were it not for':</p>
+      <p><input type="text" class="aline">, Nasrin would have kept working until she made a mistake.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 6 ===================== -->
+  <div class="section-bar" id="section6">SECTION 6 | SENTENCE BUILDER | Build Your Own Sentences</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Use each word or phrase to write one original sentence, following the required grammar structure exactly. Do not copy from the story.</p>
+
+    <table>
+      <thead><tr><th>Word / Phrase</th><th>Required Grammar Structure</th><th>Your Sentence</th></tr></thead>
+      <tbody>
+        <tr><td>burnout</td><td>Mixed conditional (past condition → present result)</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>workload</td><td>Mixed conditional (general trait → past result)</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>resilience</td><td>Inversion with 'Had'</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>delegate</td><td>Inversion with 'Were it not for'</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>unsustainable</td><td>Inversion with 'Should'</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>toll</td><td>Mixed conditional (past condition → present result)</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>capable</td><td>Inversion with 'Had'</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>reach breaking point</td><td>Mixed conditional (general trait → past result)</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== SECTION 7 ===================== -->
+  <div class="section-bar" id="section7">SECTION 7 | SHORT WRITING TASK | Think &amp; Write</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Write 150-180 words. Use at least one mixed conditional and one inverted conditional structure. Write down the main paragraphs only.</p>
+    <p><strong>Prompt:</strong> Some people believe that employees themselves are mainly responsible for managing their workload and preventing burnout. Others believe that employers and workplace culture bear the greater responsibility. Discuss both views and give your own opinion.</p>
+    <p class="sub-heading" style="margin-top:14px;">Writing Space</p>
+    <textarea class="writing-box" rows="12" placeholder="Write your answer here..."></textarea>
+  </div>
+
+  <!-- ===================== SECTION 8 ===================== -->
+  <div class="section-bar" id="section8">SECTION 8 | CHARACTER REFLECTION | Character Corner</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> These questions have no single correct answer. Discuss with a partner if possible, then write your own considered response.</p>
+
+    <p><strong>1.</strong> Nasrin says the information she withheld was "information my manager needed and simply didn't have." What does this suggest about the difference between suffering silently and communicating a problem clearly?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>2.</strong> The story ends without a clean fix — the deadlines and culture stay the same. Why might a story about overwork be more honest without a tidy resolution at the end?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>3.</strong> To what extent is preventing burnout an individual's responsibility (setting personal boundaries), and to what extent is it an organisation's responsibility (workload culture)?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>4.</strong> Nasrin shares her own past struggle rather than simply giving Rakib advice. What does this suggest about why people are more willing to accept support from someone who has faced something similar?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>5.</strong> Is saying "I have too much work" a sign of weakness, or a sign of self-awareness? What shapes how such statements are perceived in different workplaces or cultures?</p>
+    <textarea rows="3"></textarea>
+  </div>
+
+  <!-- ===================== SECTION 9 ===================== -->
+  <div class="section-bar" id="section9">SECTION 9 | HOMEWORK</div>
+  <div class="section-content">
+    <div class="homework-columns">
+      <div class="homework-box">
+        <h4>Level 1</h4>
+        <p>Write 6 sentences about workload or balance, each using a mixed conditional or an inverted conditional.</p>
+        <textarea rows="7" placeholder="1.&#10;2.&#10;3.&#10;4.&#10;5.&#10;6."></textarea>
+      </div>
+      <div class="homework-box">
+        <h4>Level 2</h4>
+        <p>Write a reflective diary/essay entry (150-180 words) titled "A Time I Should Have Asked for Help Sooner." Use at least 2 mixed conditionals and 1 inversion structure.</p>
+        <textarea rows="9" placeholder="Write your answer here..."></textarea>
+      </div>
+    </div>
+    <p class="final-reminder"><strong>Final Reminder:</strong> Recognising an unsustainable workload early is not a weakness — it is the first honest step toward genuine resilience.</p>
+  </div>
+
+  <div class="footer-divider">© Abidur Rahman Tahmid | English Learning Through Stories | Episode 4 - The Burnout</div>
+
+</div>
+
+<div class="action-bar bottom">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<button id="storyBtn" class="story-float" onclick="scrollToStory()">📖 Story</button>
+
+<script>
+  function clearAll(){
+    if(!confirm("Are you sure you want to clear all your answers? This cannot be undone.")) return;
+    document.querySelectorAll('input[type="text"]').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('textarea').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('input[type="radio"]').forEach(function(el){ el.checked = false; });
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(el){ el.checked = false; });
+  }
+
+  function scrollToStory(){
+    var target = document.getElementById('story-title');
+    if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  }
+
+  (function(){
+    var storyBtn = document.getElementById('storyBtn');
+    var sec4 = document.getElementById('section4');
+    var sec9 = document.getElementById('section9');
+    if(!storyBtn || !sec4 || !sec9) return;
+
+    function updateVisibility(){
+      var sec4Top = sec4.getBoundingClientRect().top;
+      var sec9Top = sec9.getBoundingClientRect().top;
+      var viewportH = window.innerHeight;
+      var passedSection4 = sec4Top < viewportH * 0.6;
+      var passedSection9 = sec9Top < viewportH * 0.6;
+      if(passedSection4 && !passedSection9){
+        storyBtn.classList.add('visible');
+      } else {
+        storyBtn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateVisibility, {passive:true});
+    window.addEventListener('resize', updateVisibility);
+    updateVisibility();
+  })();
+</script>
+
+</body>
+</html>

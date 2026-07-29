@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perspectives | Character &amp; Grammar Through Stories | Episode 5 - The Scholarship Decision</title>
+<style>
+  :root{
+    --navy:#1B3358;
+    --teal-deep:#147D75;
+    --gold-text:#8A5A00;
+    --gold-fill:#FBEFD3;
+    --maroon:#7A2048;
+    --writing-fill:#F4F6F9;
+    --grammar-fill:#EAF6F5;
+    --slate:#5B6B79;
+    --mint:#E6F4F1;
+    --text:#111111;
+    --border:#8FC0BB;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:#ffffff;
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .page{
+    max-width:850px;
+    margin:0 auto;
+    padding:24px 28px 80px 28px;
+  }
+  /* ---------- Running header ---------- */
+  .running-header{
+    text-align:center;
+    color:var(--teal-deep);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.2px;
+    margin-bottom:10px;
+  }
+  /* ---------- Title block ---------- */
+  .title-block{ text-align:center; margin-bottom:16px; }
+  .main-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:var(--navy);
+    font-size:32px;
+    margin:0 0 4px 0;
+  }
+  .format-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:18px;
+    margin:0 0 2px 0;
+  }
+  .episode-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:16px;
+    margin:0;
+  }
+  /* ---------- Info box ---------- */
+  .info-box{
+    background:var(--mint);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0;
+  }
+  .info-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:6px 0;
+    flex-wrap:wrap;
+  }
+  .info-label{ font-weight:bold; color:var(--navy); white-space:nowrap; }
+  .info-input{ flex:1; min-width:160px; }
+  .info-input.short{ flex:0 0 180px; }
+  .level-value{ font-weight:bold; margin-left:2px; }
+
+  /* ---------- Goals box ---------- */
+  .goals-box{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0 26px 0;
+  }
+  .goals-label{ color:var(--teal-deep); font-weight:bold; margin:0 0 4px 0; }
+  .goals-intro{ margin:0 0 8px 0; font-style:italic; }
+  .goals-list{ margin:0; padding-left:0; list-style:none; }
+  .goals-list li{ margin:4px 0; }
+
+  /* ---------- Section bars ---------- */
+  .section-bar{
+    background:var(--navy);
+    color:#ffffff;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:9px 14px;
+    border-radius:5px;
+    margin:30px 0 14px 0;
+    font-size:14.5px;
+    letter-spacing:.2px;
+    scroll-margin-top:20px;
+  }
+  .section-content{ margin-bottom:6px; }
+
+  .sub-heading{
+    color:var(--teal-deep);
+    font-size:15.5px;
+    margin:18px 0 6px 0;
+  }
+  .instructions{ margin:4px 0 12px 0; }
+  .bengali-tag{ color:var(--teal-deep); font-weight:bold; }
+
+  .q-list{ margin:0 0 10px 0; padding-left:20px; }
+  .q-list li{ margin:0 0 14px 0; }
+
+  /* ---------- Inputs ---------- */
+  input.aline{
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:5px 2px;
+    margin:4px 0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+  }
+  input.aline:focus{ outline:none; border-bottom:1px solid var(--teal-deep); }
+
+  input.blank{
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:2px 4px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    width:60px;
+    text-align:center;
+  }
+  input.blank.sm{ width:40px; }
+  input.blank.wide{ width:150px; }
+  input.blank:focus{ outline:none; border-bottom:1px solid var(--teal-deep); }
+
+  textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:10px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+  }
+  textarea:focus{ outline:none; border:1px solid var(--teal-deep); }
+
+  .section-bar.accent-maroon{
+    background:var(--maroon);
+  }
+
+  .writing-box{
+    border:1px solid var(--navy) !important;
+    background:var(--writing-fill) !important;
+  }
+
+  .keyterm{
+    color:var(--gold-text);
+    background:var(--gold-fill);
+    font-weight:bold;
+  }
+
+  /* ---------- Story ---------- */
+  .story-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    font-style:italic;
+    color:var(--navy);
+    font-size:20px;
+    text-align:center;
+    margin:8px 0 14px 0;
+  }
+  .story-text p{ margin:0 0 12px 0; text-align:justify; }
+
+  /* ---------- Tables ---------- */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 18px 0;
+    font-size:14px;
+  }
+  table caption{ text-align:left; font-weight:bold; margin-bottom:6px; }
+  th, td{
+    border:1px solid var(--border);
+    padding:8px 10px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:var(--teal-deep);
+    color:#ffffff;
+    font-weight:bold;
+  }
+
+
+  .sentence-box{
+    width:100%;
+    min-height:36px;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:6px 8px;
+    margin:0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+    line-height:1.4;
+  }
+  .sentence-box:focus{ outline:none; border:1px solid var(--teal-deep); }
+
+  .word-box{
+    border:1px dashed var(--border);
+    border-radius:5px;
+    padding:8px 12px;
+    margin:8px 0 14px 0;
+    font-weight:bold;
+    color:var(--navy);
+  }
+
+  .mc-question{ margin:0 0 16px 0; }
+  .mc-options{ display:flex; flex-wrap:wrap; gap:14px; margin:6px 0; }
+  .mc-options label{ display:flex; align-items:center; gap:5px; }
+  .mc-answer{ margin-top:4px; }
+  .mc-answer input.blank{ margin-left:6px; }
+
+  .checklist{ list-style:none; padding:0; margin:0; }
+  .checklist li{ display:flex; align-items:center; gap:6px; margin:3px 0; }
+  .checklist input[type="checkbox"]{ width:15px; height:15px; }
+
+  .grammar-lab-item{
+    border:1px solid var(--teal-deep);
+    background:var(--grammar-fill);
+    border-radius:6px;
+    padding:12px 14px;
+    margin-bottom:14px;
+  }
+  .grammar-lab-item .gl-sentence{ font-weight:bold; margin:0 0 8px 0; }
+  .grammar-lab-item .gl-q{ margin:6px 0; }
+  .grammar-lab-item .gl-q label{ display:block; margin-bottom:3px; }
+
+  .transform-item{ margin:0 0 16px 0; }
+  .transform-item .t-original{ margin:0 0 6px 0; }
+  .transform-item .t-instruction{ color:var(--teal-deep); font-weight:bold; margin:0 0 4px 0; }
+
+  .homework-columns{
+    display:flex;
+    gap:18px;
+    margin:10px 0 16px 0;
+    flex-wrap:wrap;
+  }
+  .homework-box{
+    flex:1;
+    min-width:240px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 16px;
+  }
+  .homework-box h4{ color:var(--teal-deep); margin:0 0 8px 0; }
+  .homework-box textarea{ margin-top:8px; }
+  .homework-box .q-list{ margin-top:8px; padding-left:18px; }
+  .homework-box .q-list li{ margin:0 0 8px 0; }
+  .final-reminder{ font-style:italic; margin-top:10px; color:var(--slate); }
+
+  .footer-divider{
+    border-top:1px solid var(--border);
+    margin-top:34px;
+    padding-top:10px;
+    text-align:center;
+    font-style:italic;
+    font-size:11.5px;
+    color:var(--slate);
+  }
+
+  /* ---------- Action bars ---------- */
+  .action-bar{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    padding:10px 14px;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .action-bar.bottom{
+    border-bottom:none;
+    border-top:1px solid var(--border);
+    position:sticky;
+    top:auto;
+    bottom:0;
+  }
+  .action-bar button{
+    background:var(--teal-deep);
+    color:#ffffff;
+    border:none;
+    border-radius:20px;
+    padding:9px 18px;
+    font-size:13.5px;
+    font-weight:bold;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .action-bar button:hover{ background:var(--navy); }
+  .action-bar button.secondary{ background:#555555; }
+  .action-bar button.secondary:hover{ background:#333333; }
+
+  /* ---------- Floating story button ---------- */
+  .story-float{
+    position:fixed;
+    right:20px;
+    bottom:78px;
+    background:var(--teal-deep);
+    color:#ffffff;
+    border:none;
+    border-radius:30px;
+    padding:10px 16px;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+    display:none;
+    z-index:60;
+    box-shadow:0 0 0 0 rgba(15,118,110,0.6);
+    animation:glowPulse 2s infinite;
+  }
+  .story-float.visible{ display:block; }
+  @keyframes glowPulse{
+    0%{ box-shadow:0 0 0 0 rgba(15,118,110,0.55); }
+    70%{ box-shadow:0 0 0 12px rgba(15,118,110,0); }
+    100%{ box-shadow:0 0 0 0 rgba(15,118,110,0); }
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    .action-bar, .story-float{ display:none !important; }
+    body{ font-size:12px; }
+    .page{ max-width:100%; padding:0; }
+    .section-bar{ break-inside:avoid; }
+    table, .grammar-lab-item, .story-text, .homework-box{ break-inside:avoid; }
+    input.aline, input.blank{ border-bottom:1px solid #000000; color:#000; }
+    textarea{ border:1px solid #000000; color:#000; }
+    th, td{ border:1px solid #000000; }
+    @page{ size:A4; margin:16mm 14mm; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:600px){
+    .page{ padding:16px 14px 90px 14px; }
+    .main-title{ font-size:24px; }
+    .format-subtitle{ font-size:15px; }
+    .episode-subtitle{ font-size:14px; }
+    .homework-columns{ flex-direction:column; }
+    .mc-options{ gap:8px 12px; }
+    .action-bar{ gap:8px; flex-wrap:wrap; }
+    .action-bar button{ padding:8px 12px; font-size:12.5px; }
+    table, th, td{ font-size:12.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="action-bar top">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <div class="running-header">Perspectives | Episode 5 - The Scholarship Decision</div>
+
+  <div class="title-block">
+    <h1 class="main-title">Perspectives</h1>
+    <h2 class="format-subtitle">Character &amp; Grammar Through Stories</h2>
+    <h3 class="episode-subtitle">Episode 5 - The Scholarship Decision</h3>
+  </div>
+
+  <div class="info-box">
+    <div class="info-row">
+      <span class="info-label">Student Name:</span>
+      <input type="text" class="aline info-input">
+    </div>
+    <div class="info-row">
+      <span class="info-label">Date:</span>
+      <input type="text" class="aline info-input short">
+      <span class="info-label">Level:</span>
+      <span class="level-value">B2–C1 (IELTS Band 7.0–8.0)</span>
+    </div>
+  </div>
+
+  <div class="goals-box">
+    <p class="goals-label">Learning Goals:</p>
+    <ul class="goals-list">
+      <li>✓ Read and interpret a dense, discursive, C1-level narrative</li>
+      <li>✓ Construct it-clefts and wh-clefts (what-clefts) for emphasis</li>
+      <li>✓ Use advanced linking devices: whereas, notwithstanding, provided that, in view of, on the grounds that</li>
+      <li>✓ Use the subjunctive mood in formal contexts (that + base verb / be)</li>
+      <li>✓ Acquire an extensive set of Academic Word List vocabulary and collocations</li>
+      <li>✓ Practise IELTS-style sentence transformation and error correction</li>
+      <li>✓ Produce an IELTS Task 2-style discursive paragraph</li>
+      <li>✓ Reflect critically on personal ambition, filial duty, and cultural expectation</li>
+    </ul>
+  </div>
+
+  <!-- ===================== SECTION 1 ===================== -->
+  <div class="section-bar" id="section1">SECTION 1 | WARM-UP | Before You Read</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Part A - Prediction &amp; Opinion Questions</h3>
+    <p class="instructions"><strong>Instructions:</strong> These questions require you to take a position, not just guess a plot. Answer before reading.</p>
+    <ol class="q-list">
+      <li>To what extent should personal ambition be subordinated to family responsibility, particularly in cultures where filial duty carries significant social and religious weight?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>Some people argue that the expectations placed on daughters and sons within the same family are rarely symmetrical. To what extent do you agree, and what might account for this asymmetry?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Part B - Personal Reflection</h3>
+    <p class="instructions"><strong>Instructions:</strong> Answer honestly from your own experience or context.</p>
+    <ol class="q-list">
+      <li>Have you ever faced a decision in which what you wanted for yourself seemed to conflict with what your family expected of you? How did you navigate it?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>In your own cultural or religious context, how is the balance between individual opportunity and family obligation typically understood?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 2 ===================== -->
+  <div class="section-bar" id="section2">SECTION 2 | MAIN STORY | Read the Story</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Read the story carefully. Underline every cleft sentence (it-cleft or wh-cleft), circle every advanced linking device, and box every subjunctive form.</p>
+
+    <h3 class="story-title" id="story-title">The Scholarship Decision</h3>
+    <div class="story-text">
+      <p>For three days, the email had sat unopened in a folder Nusrat had labelled, half-jokingly, "Later." She knew roughly what it contained; the subject line alone — Chevening Scholarship: Offer of Award — made that much clear. What she could not yet bring herself to face was everything the message would set in motion the moment she opened it.</p>
+
+      <p>It was her mother, not her father, who found her staring at the screen that evening and asked, simply, "Well?"</p>
+
+      <p>Nusrat exhaled. "I got it, Ammu. The scholarship. Full funding, London, starting in September."</p>
+
+      <p>Her mother's face did something complicated — pride, undeniably, but something else beneath it that Nusrat recognised because she felt its mirror in herself. "Then why," her mother asked, "do you look as though you've been handed bad news?"</p>
+
+      <p>"Because, in a sense, I have," Nusrat said, and regretted at once how that sounded. "Not the scholarship itself. It was the thought of what leaving would actually mean — Abbu's knees, your blood pressure, Farhan already abroad, Rafi barely home before ten most nights — that undid me, not the flight or the paperwork."</p>
+
+      <p>Whereas her brothers had left for work and marriage without a second thought ever being demanded of them, Nusrat had never quite escaped the quiet, unspoken assumption that she would be the one who stayed — not because anyone had ever said so outright, but because no one had ever needed to.</p>
+
+      <p>Her mother was silent for a long moment. "I won't pretend I haven't imagined what this house looks like without you in it," she said eventually. "But I did not raise a daughter so that she could sit in this room, refusing a future out of guilt for a decision nobody actually asked her to make on our behalf. It is important that this choice be yours — made for the right reasons, not the easy ones."</p>
+
+      <p>"And what would you call the right reasons?"</p>
+
+      <p>"That's not mine to hand you," her mother said. "But I will say this: on the grounds that a daughter's place is at home — that's an argument I've heard my whole life, and I have never fully believed it. Provided that proper care is arranged for your father and me, and provided that you come back when it truly matters, I see no reason ambition and duty must cancel each other out."</p>
+
+      <p>Nusrat sought a second opinion from Dr. Yasmin Akhtar, her undergraduate mentor, the following week — less for permission, she told herself, than for a kind of clarity she had not yet managed to reach alone. "What struck me most," Nusrat admitted, "wasn't the scholarship at all. It was realising how much of my hesitation had nothing to do with my parents' actual wishes, and everything to do with what I assumed a good daughter was supposed to feel."</p>
+
+      <p>Dr. Akhtar considered this carefully. "In view of everything you've just told me, I'd suggest the real question isn't 'stay or go' at all. It's whether you can hold both presence and distance without treating either as a betrayal of the other." She paused. "Notwithstanding how difficult that sounds in principle, most people who manage it do so imperfectly — which is usually the only way anyone manages anything worth managing. For what it's worth, I would recommend that you not decide this in a single week, under pressure, with a deadline breathing down your neck."</p>
+
+      <p>By the following Friday, Nusrat had accepted the offer, arranged for a cousin to move in for the year, and booked a ticket home for the winter break she had not, until then, been certain she would take. Her father, hearing the news, said only that it was essential the arrangement be reviewed honestly after the first term, rather than treated as settled the moment she boarded the flight.</p>
+
+      <p>It was not resolution, exactly — her mother's blood pressure remained what it was, her father's knees no better for any of this — but it was, Nusrat thought, an honest attempt at holding two true things at once: that she owed her family something real, and that she also owed herself a life she had not yet lived.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 3 ===================== -->
+  <div class="section-bar" id="section3">SECTION 3 | VOCABULARY ZONE</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> This is the most extensive vocabulary list in the series. Study it in stages — perhaps ten words at a time — rather than all at once.</p>
+
+    <table>
+      <thead>
+        <tr><th>Word / Phrase</th><th>Part of Speech</th><th>Simple English Meaning</th><th>বাংলা অর্থ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="keyterm">scholarship</td><td>noun</td><td>a financial award granted to support study</td><td>বৃত্তি</td></tr>
+        <tr><td class="keyterm">funding</td><td>noun</td><td>money provided for a particular purpose</td><td>অর্থায়ন</td></tr>
+        <tr><td class="keyterm">obligation</td><td>noun</td><td>a duty to do something, often moral or social</td><td>কর্তব্য / বাধ্যবাধকতা</td></tr>
+        <tr><td class="keyterm">filial</td><td>adjective</td><td>relating to the duties a child owes to a parent</td><td>সন্তানসুলভ (পিতামাতার প্রতি কর্তব্যসংক্রান্ত)</td></tr>
+        <tr><td class="keyterm">ambivalence</td><td>noun</td><td>the state of having mixed or contradictory feelings</td><td>দ্বিধাগ্রস্ততা</td></tr>
+        <tr><td class="keyterm">reconcile</td><td>verb</td><td>to make two seemingly opposed things compatible</td><td>সমন্বয় সাধন করা</td></tr>
+        <tr><td class="keyterm">autonomy</td><td>noun</td><td>the ability to make one's own independent decisions</td><td>স্বায়ত্তশাসন / আত্মনিয়ন্ত্রণ</td></tr>
+        <tr><td class="keyterm">deference</td><td>noun</td><td>respectful submission to another person's wishes</td><td>সম্মানসূচক বাধ্যতা</td></tr>
+        <tr><td class="keyterm">presumption</td><td>noun</td><td>an assumption taken to be true without proof</td><td>অনুমান</td></tr>
+        <tr><td class="keyterm">unspoken</td><td>adjective</td><td>understood without ever being directly stated</td><td>অনুচ্চারিত</td></tr>
+        <tr><td class="keyterm">resolve</td><td>noun/verb</td><td>firm determination; to settle a matter</td><td>দৃঢ় সংকল্প / সমাধান করা</td></tr>
+        <tr><td class="keyterm">clarity</td><td>noun</td><td>the quality of being clear and easy to understand</td><td>স্বচ্ছতা</td></tr>
+        <tr><td class="keyterm">betrayal</td><td>noun</td><td>the act of being disloyal to someone's trust</td><td>বিশ্বাসঘাতকতা</td></tr>
+        <tr><td class="keyterm">imperfectly</td><td>adverb</td><td>not perfectly; with some flaws remaining</td><td>অসম্পূর্ণভাবে</td></tr>
+        <tr><td class="keyterm">composure</td><td>noun</td><td>calmness and control over one's emotions</td><td>মানসিক স্থিরতা</td></tr>
+        <tr><td class="keyterm">undertaking</td><td>noun</td><td>a task or project that one formally commits to</td><td>গৃহীত দায়িত্ব / কার্যক্রম</td></tr>
+        <tr><td class="keyterm">warranted</td><td>adjective</td><td>justified or deserved under the circumstances</td><td>যুক্তিসঙ্গত / ন্যায্য</td></tr>
+        <tr><td class="keyterm">discretion</td><td>noun</td><td>the freedom to decide what should be done</td><td>বিচক্ষণতা / সিদ্ধান্ত গ্রহণের স্বাধীনতা</td></tr>
+        <tr><td class="keyterm">deliberate</td><td>adjective/verb</td><td>done consciously; to think carefully before deciding</td><td>সুচিন্তিত / চিন্তাভাবনা করা</td></tr>
+        <tr><td class="keyterm">contingent</td><td>adjective</td><td>dependent on something else happening first</td><td>শর্তসাপেক্ষ</td></tr>
+        <tr><td class="keyterm">presume</td><td>verb</td><td>to suppose that something is true without proof</td><td>অনুমান করা</td></tr>
+        <tr><td class="keyterm">subordinate</td><td>verb/adjective</td><td>to treat as less important than something else</td><td>অধস্তন করা / গৌণ করা</td></tr>
+        <tr><td class="keyterm">asymmetry</td><td>noun</td><td>a lack of equality or balance between things</td><td>অসমতা</td></tr>
+        <tr><td class="keyterm">hold something in tension</td><td>phrase</td><td>to accept two competing truths at once, without resolving them</td><td>দুটি বিপরীত সত্যকে একসাথে ধরে রাখা</td></tr>
+        <tr><td class="keyterm">weigh on someone's conscience</td><td>phrase</td><td>to cause someone persistent moral discomfort</td><td>বিবেক ভার সৃষ্টি করা</td></tr>
+        <tr><td class="keyterm">come at a cost</td><td>phrase</td><td>to involve a real disadvantage or sacrifice</td><td>মূল্য দিয়ে অর্জিত হওয়া</td></tr>
+        <tr><td class="keyterm">breathing down someone's neck</td><td>phrase</td><td>putting someone under constant, close pressure</td><td>কারো ওপর ক্রমাগত চাপ প্রয়োগ করা</td></tr>
+        <tr><td class="keyterm">cancel each other out</td><td>phrase</td><td>to have opposite effects that neutralise one another</td><td>পরস্পরকে নিষ্ক্রিয় করে দেওয়া</td></tr>
+        <tr><td class="keyterm">for what it's worth</td><td>phrase</td><td>used to introduce an opinion offered modestly</td><td>যতটুকু মূল্য থাকুক (মতামত প্রকাশে ব্যবহৃত)</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task A - Matching</h3>
+    <p class="instructions"><strong>Instructions:</strong> Match each word with its correct meaning. Write the letter in the Your Answer column.</p>
+    <table>
+      <thead><tr><th>Word</th><th>Your Answer</th></tr></thead>
+      <tbody>
+        <tr><td>1. ambivalence</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>2. deference</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>3. autonomy</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>4. presumption</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>5. discretion</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>6. asymmetry</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>7. reconcile</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>8. warranted</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>9. subordinate</td><td><input type="text" class="blank sm"></td></tr>
+      </tbody>
+    </table>
+    <p><strong>A.</strong> the ability to make one's own independent decisions &nbsp; <strong>B.</strong> having mixed or contradictory feelings &nbsp; <strong>C.</strong> respectful submission to another's wishes<br>
+    <strong>D.</strong> an assumption taken to be true without proof &nbsp; <strong>E.</strong> the freedom to decide what should be done &nbsp; <strong>F.</strong> a lack of equality or balance between things<br>
+    <strong>G.</strong> to make two seemingly opposed things compatible &nbsp; <strong>H.</strong> justified or deserved under the circumstances &nbsp; <strong>I.</strong> to treat as less important than something else</p>
+
+    <h3 class="sub-heading">Task B - Fill in the Blanks</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose the best word from the box and complete the sentences.</p>
+    <div class="word-box">Word Box: obligation | composure | undertaking | contingent | deliberate | clarity | betrayal | resolve</div>
+    <ol class="q-list">
+      <li>Nusrat felt a strong sense of <input type="text" class="blank wide"> toward her ageing parents.</li>
+      <li>Her mother managed to maintain her <input type="text" class="blank wide"> even as she absorbed the news.</li>
+      <li>Studying abroad on a scholarship is, in practice, a considerable <input type="text" class="blank wide">.</li>
+      <li>Her acceptance of the offer was <input type="text" class="blank wide"> upon proper arrangements being made at home.</li>
+      <li>Nusrat made a <input type="text" class="blank wide"> decision to seek advice before committing to either path.</li>
+      <li>Talking to her mentor gave Nusrat a measure of <input type="text" class="blank wide"> she had lacked alone.</li>
+      <li>She worried that leaving might feel, to her parents, like a kind of <input type="text" class="blank wide">.</li>
+      <li>By the end of the week, Nusrat's <input type="text" class="blank wide"> to accept the offer had hardened.</li>
+    </ol>
+
+    <h3 class="sub-heading">Task C - Vocabulary &amp; Structure in Context</h3>
+    <p class="instructions"><strong>Instructions:</strong> Read each quotation from the story and answer the analytical question about meaning or grammar.</p>
+    <ol class="q-list">
+      <li>"What she could not yet bring herself to face was everything the message would set in motion." What does this wh-cleft emphasise?
+        <input type="text" class="aline">
+      </li>
+      <li>"It was the thought of what leaving would actually mean... that undid me, not the flight or the paperwork." What is being emphasised by this it-cleft, and what is being excluded?
+        <input type="text" class="aline">
+      </li>
+      <li>"Nusrat had never quite escaped the quiet, unspoken assumption that she would be the one who stayed." What does <em>unspoken</em> suggest about how this expectation operated?
+        <input type="text" class="aline">
+      </li>
+      <li>"It is important that this choice be yours." Why is the subjunctive 'be' used here instead of 'is'?
+        <input type="text" class="aline">
+      </li>
+      <li>"Provided that proper care is arranged for your father and me..." What relationship does 'provided that' establish between the two clauses?
+        <input type="text" class="aline">
+      </li>
+      <li>"Notwithstanding how difficult that sounds in principle, most people who manage it do so imperfectly." What contrast does 'notwithstanding' introduce?
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Task D - Personal Vocabulary Journal</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose 5 new words or phrases from this episode. Write the Bangla meaning and your own English sentence.</p>
+    <table>
+      <thead><tr><th>No.</th><th>New Word/Phrase</th><th>বাংলা অর্থ</th><th>My Own English Sentence</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>2</td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>3</td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>4</td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>5</td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== SECTION 4 ===================== -->
+  <div class="section-bar" id="section4">SECTION 4 | GRAMMAR DETECTIVE 🔍 | Clefts, Linking Devices &amp; Subjunctive</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Task A - Find from the Story</h3>
+    <p class="instructions"><strong>Instructions:</strong> Find and copy the required number of examples for each grammar focus from the story.</p>
+    <table>
+      <thead><tr><th>Grammar Focus</th><th>How many?</th><th>Examples from the Story</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>It-Clefts</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Wh-Clefts (What-Clefts)</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Advanced Linking Devices (whereas / notwithstanding / provided that / in view of / on the grounds that)</td><td>3</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea><br>
+            3. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Subjunctive Forms (that + base verb / be)</td><td>3</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea><br>
+            3. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Grammar Lab</h3>
+    <p class="instructions"><strong>Instructions:</strong> For each sentence, identify the structure, explain why it is used, and write a similar sentence of your own.</p>
+
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">1. "It was her mother, not her father, who found her staring at the screen."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">2. "What struck me most... wasn't the scholarship at all."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">3. "Whereas her brothers had left for work and marriage without a second thought ever being demanded of them..."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">4. "Provided that proper care is arranged for your father and me... I see no reason ambition and duty must cancel each other out."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">5. "It is important that this choice be yours."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">6. "I would recommend that you not decide this in a single week."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 5 ===================== -->
+  <div class="section-bar accent-maroon" id="section5">SECTION 5 | MIXED GRAMMAR CHALLENGE</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">A. Error Correction</h3>
+    <p class="instructions"><strong>Instructions:</strong> Each sentence contains one error in a cleft sentence, linking device, or subjunctive form. Rewrite it correctly.</p>
+    <ol class="q-list">
+      <li>It was her mother, not her father, that she confided in first — actually, both versions are used, but rewrite using 'who'.<br>Correction: <input type="text" class="aline"></li>
+      <li>What struck her most were how little her hesitation had to do with her parents' wishes.<br>Correction: <input type="text" class="aline"></li>
+      <li>Whereas her brothers left without question, however Nusrat felt a quiet obligation to stay.<br>Correction: <input type="text" class="aline"></li>
+      <li>Provided that care will be arranged, she agreed to accept the offer.<br>Correction: <input type="text" class="aline"></li>
+      <li>It is important that she stays for the right reasons.<br>Correction: <input type="text" class="aline"></li>
+      <li>Her mentor recommended that she doesn't rush the decision.<br>Correction: <input type="text" class="aline"></li>
+    </ol>
+
+    <h3 class="sub-heading">B. Multiple Choice</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose the best answer: A, B, C, or D.</p>
+
+    <div class="mc-question">
+      <p>1. It was her mother, not her father, ______ found her staring at the screen.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc1"> A. that</label>
+        <label><input type="radio" name="mc1"> B. who</label>
+        <label><input type="radio" name="mc1"> C. which</label>
+        <label><input type="radio" name="mc1"> D. whom</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>2. ______ struck her most was realising her hesitation was about expectation, not love.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc2"> A. It</label>
+        <label><input type="radio" name="mc2"> B. That</label>
+        <label><input type="radio" name="mc2"> C. What</label>
+        <label><input type="radio" name="mc2"> D. Which</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>3. ______ her brothers had left without question, Nusrat felt a quiet obligation to stay.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc3"> A. Despite</label>
+        <label><input type="radio" name="mc3"> B. Whereas</label>
+        <label><input type="radio" name="mc3"> C. Because</label>
+        <label><input type="radio" name="mc3"> D. Unless</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>4. ______ proper care is arranged, ambition and duty need not cancel each other out.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc4"> A. Provided that</label>
+        <label><input type="radio" name="mc4"> B. In spite of</label>
+        <label><input type="radio" name="mc4"> C. Even though</label>
+        <label><input type="radio" name="mc4"> D. As if</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>5. It is important that this choice ______ yours.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc5"> A. is</label>
+        <label><input type="radio" name="mc5"> B. was</label>
+        <label><input type="radio" name="mc5"> C. be</label>
+        <label><input type="radio" name="mc5"> D. being</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>6. Her mentor recommended that she ______ rush the decision.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc6"> A. doesn't</label>
+        <label><input type="radio" name="mc6"> B. didn't</label>
+        <label><input type="radio" name="mc6"> C. not</label>
+        <label><input type="radio" name="mc6"> D. won't</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <h3 class="sub-heading">C. Gap Fill</h3>
+    <p class="instructions"><strong>Instructions:</strong> Complete each sentence with the correct form of the word in brackets.</p>
+    <ol class="q-list">
+      <li>It was the thought of leaving her parents <input type="text" class="blank wide"> (undo) her composure, not the journey itself.</li>
+      <li><input type="text" class="blank wide"> (what) worried Nusrat most was her parents' unspoken expectation, not their actual words.</li>
+      <li>Whereas her brothers <input type="text" class="blank wide"> (leave) without a second thought, Nusrat felt a quiet obligation to remain.</li>
+      <li>It is essential that the arrangement <input type="text" class="blank wide"> (be) reviewed honestly after the first term.</li>
+      <li>Her father suggested that she <input type="text" class="blank wide"> (consult) someone whose judgement she trusted.</li>
+      <li>In view of her mother's health, Nusrat <input type="text" class="blank wide"> (decide) to visit every winter break.</li>
+    </ol>
+
+    <h3 class="sub-heading">D. Sentence Transformation</h3>
+    <p class="instructions"><strong>Instructions:</strong> Rewrite each sentence as directed, using the required grammar structure.</p>
+
+    <div class="transform-item">
+      <p class="t-original">1. Original: Her mother, not her father, found her staring at the screen.</p>
+      <p class="t-instruction">Rewrite as an it-cleft:</p>
+      <p>It <input type="text" class="aline"> found her staring at the screen.</p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">2. Original: Her hesitation, not the scholarship, struck her most.</p>
+      <p class="t-instruction">Rewrite as a wh-cleft:</p>
+      <p>What <input type="text" class="aline"> was her hesitation, not the scholarship.</p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">3. Original: Her brothers left without question. Nusrat felt obligated to stay.</p>
+      <p class="t-instruction">Combine using 'whereas':</p>
+      <p><input type="text" class="aline">, Nusrat felt obligated to stay.</p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">4. Original: It's necessary. She should decide this herself.</p>
+      <p class="t-instruction">Rewrite using the subjunctive:</p>
+      <p>It is necessary that <input type="text" class="aline">.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 6 ===================== -->
+  <div class="section-bar" id="section6">SECTION 6 | SENTENCE BUILDER | Build Your Own Sentences</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Use each word or phrase to write one original sentence, following the required grammar structure exactly. Do not copy from the story.</p>
+
+    <table>
+      <thead><tr><th>Word / Phrase</th><th>Required Grammar Structure</th><th>Your Sentence</th></tr></thead>
+      <tbody>
+        <tr><td>ambivalence</td><td>It-cleft</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>autonomy</td><td>Wh-cleft (What...)</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>deference</td><td>Linking device: whereas</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>contingent</td><td>Linking device: provided that</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>reconcile</td><td>Subjunctive (that + be)</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>obligation</td><td>Subjunctive (that + base verb)</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>asymmetry</td><td>Linking device: notwithstanding</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>come at a cost</td><td>It-cleft</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== SECTION 7 ===================== -->
+  <div class="section-bar" id="section7">SECTION 7 | SHORT WRITING TASK | Think &amp; Write</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Write 150-200 words. Use at least one cleft sentence, one advanced linking device, and one subjunctive structure. Write down the main paragraphs only.</p>
+    <p><strong>Prompt:</strong> Some people believe that individuals should prioritise personal ambition and opportunity, even when this means significant distance from family for extended periods. Others believe that family responsibility should always take precedence over personal or professional advancement. Discuss both views and give your own opinion.</p>
+    <p class="sub-heading" style="margin-top:14px;">Writing Space</p>
+    <textarea class="writing-box" rows="13" placeholder="Write your answer here..."></textarea>
+  </div>
+
+  <!-- ===================== SECTION 8 ===================== -->
+  <div class="section-bar" id="section8">SECTION 8 | CHARACTER REFLECTION | Character Corner</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> These questions have no single correct answer. Discuss with a partner if possible, then write your own considered response.</p>
+
+    <p><strong>1.</strong> Nusrat's mother says, "I did not raise a daughter so that she could sit in this room, refusing a future out of guilt." What does this suggest about the difference between genuine filial duty and duty performed out of guilt or fear of judgement?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>2.</strong> To what extent do you agree that family expectations placed on daughters and sons often differ, even within the same household? What might explain this asymmetry?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>3.</strong> Dr. Akhtar suggests holding "presence and distance" together rather than choosing one completely. Is this a realistic way of managing competing obligations, or does it simply postpone a harder choice?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>4.</strong> Nusrat's father asks that the arrangement "be reviewed honestly" rather than treated as permanently settled. What does this suggest about how family agreements might function over time, rather than as one-off decisions?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>5.</strong> In many cultures and faith traditions, honouring one's parents is considered a serious and lifelong obligation. How might someone honour that obligation meaningfully while also pursuing significant opportunities far from home?</p>
+    <textarea rows="3"></textarea>
+  </div>
+
+  <!-- ===================== SECTION 9 ===================== -->
+  <div class="section-bar" id="section9">SECTION 9 | HOMEWORK</div>
+  <div class="section-content">
+    <div class="homework-columns">
+      <div class="homework-box">
+        <h4>Level 1</h4>
+        <p>Write 6 sentences about balancing personal goals and family responsibility, each using a cleft sentence, an advanced linking device, or the subjunctive.</p>
+        <textarea rows="7" placeholder="1.&#10;2.&#10;3.&#10;4.&#10;5.&#10;6."></textarea>
+      </div>
+      <div class="homework-box">
+        <h4>Level 2</h4>
+        <p>Write a reflective diary/essay entry (150-180 words) titled "A Decision Between What I Wanted and What Was Expected of Me." Use at least 1 cleft sentence, 1 advanced linking device, and 1 subjunctive structure.</p>
+        <textarea rows="9" placeholder="Write your answer here..."></textarea>
+      </div>
+    </div>
+    <p class="final-reminder"><strong>Final Reminder:</strong> Across this series, the hardest sentences to write well have rarely been about grammar alone — they have been about holding two true things at once. That, too, is a skill worth practising.</p>
+  </div>
+
+  <div class="footer-divider">© Abidur Rahman Tahmid | English Learning Through Stories | Episode 5 - The Scholarship Decision</div>
+
+</div>
+
+<div class="action-bar bottom">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<button id="storyBtn" class="story-float" onclick="scrollToStory()">📖 Story</button>
+
+<script>
+  function clearAll(){
+    if(!confirm("Are you sure you want to clear all your answers? This cannot be undone.")) return;
+    document.querySelectorAll('input[type="text"]').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('textarea').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('input[type="radio"]').forEach(function(el){ el.checked = false; });
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(el){ el.checked = false; });
+  }
+
+  function scrollToStory(){
+    var target = document.getElementById('story-title');
+    if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  }
+
+  (function(){
+    var storyBtn = document.getElementById('storyBtn');
+    var sec4 = document.getElementById('section4');
+    var sec9 = document.getElementById('section9');
+    if(!storyBtn || !sec4 || !sec9) return;
+
+    function updateVisibility(){
+      var sec4Top = sec4.getBoundingClientRect().top;
+      var sec9Top = sec9.getBoundingClientRect().top;
+      var viewportH = window.innerHeight;
+      var passedSection4 = sec4Top < viewportH * 0.6;
+      var passedSection9 = sec9Top < viewportH * 0.6;
+      if(passedSection4 && !passedSection9){
+        storyBtn.classList.add('visible');
+      } else {
+        storyBtn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateVisibility, {passive:true});
+    window.addEventListener('resize', updateVisibility);
+    updateVisibility();
+  })();
+</script>
+
+</body>
+</html>

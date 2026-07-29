@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perspectives | Character &amp; Grammar Through Stories | Episode 3 - The Commute</title>
+<style>
+  :root{
+    --navy:#1B3358;
+    --teal-deep:#147D75;
+    --gold-text:#8A5A00;
+    --gold-fill:#FBEFD3;
+    --maroon:#7A2048;
+    --writing-fill:#F4F6F9;
+    --grammar-fill:#EAF6F5;
+    --slate:#5B6B79;
+    --mint:#E6F4F1;
+    --text:#111111;
+    --border:#8FC0BB;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:#ffffff;
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .page{
+    max-width:850px;
+    margin:0 auto;
+    padding:24px 28px 80px 28px;
+  }
+  /* ---------- Running header ---------- */
+  .running-header{
+    text-align:center;
+    color:var(--teal-deep);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.2px;
+    margin-bottom:10px;
+  }
+  /* ---------- Title block ---------- */
+  .title-block{ text-align:center; margin-bottom:16px; }
+  .main-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:var(--navy);
+    font-size:32px;
+    margin:0 0 4px 0;
+  }
+  .format-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:18px;
+    margin:0 0 2px 0;
+  }
+  .episode-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:16px;
+    margin:0;
+  }
+  /* ---------- Info box ---------- */
+  .info-box{
+    background:var(--mint);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0;
+  }
+  .info-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:6px 0;
+    flex-wrap:wrap;
+  }
+  .info-label{ font-weight:bold; color:var(--navy); white-space:nowrap; }
+  .info-input{ flex:1; min-width:160px; }
+  .info-input.short{ flex:0 0 180px; }
+  .level-value{ font-weight:bold; margin-left:2px; }
+
+  /* ---------- Goals box ---------- */
+  .goals-box{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0 26px 0;
+  }
+  .goals-label{ color:var(--teal-deep); font-weight:bold; margin:0 0 4px 0; }
+  .goals-intro{ margin:0 0 8px 0; font-style:italic; }
+  .goals-list{ margin:0; padding-left:0; list-style:none; }
+  .goals-list li{ margin:4px 0; }
+
+  /* ---------- Section bars ---------- */
+  .section-bar{
+    background:var(--navy);
+    color:#ffffff;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:9px 14px;
+    border-radius:5px;
+    margin:30px 0 14px 0;
+    font-size:14.5px;
+    letter-spacing:.2px;
+    scroll-margin-top:20px;
+  }
+  .section-content{ margin-bottom:6px; }
+
+  .sub-heading{
+    color:var(--teal-deep);
+    font-size:15.5px;
+    margin:18px 0 6px 0;
+  }
+  .instructions{ margin:4px 0 12px 0; }
+  .bengali-tag{ color:var(--teal-deep); font-weight:bold; }
+
+  .q-list{ margin:0 0 10px 0; padding-left:20px; }
+  .q-list li{ margin:0 0 14px 0; }
+
+  /* ---------- Inputs ---------- */
+  input.aline{
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:5px 2px;
+    margin:4px 0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+  }
+  input.aline:focus{ outline:none; border-bottom:1px solid var(--teal-deep); }
+
+  input.blank{
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:2px 4px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    width:60px;
+    text-align:center;
+  }
+  input.blank.sm{ width:40px; }
+  input.blank.wide{ width:150px; }
+  input.blank:focus{ outline:none; border-bottom:1px solid var(--teal-deep); }
+
+  textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:10px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+  }
+  textarea:focus{ outline:none; border:1px solid var(--teal-deep); }
+
+  .section-bar.accent-maroon{
+    background:var(--maroon);
+  }
+
+  .writing-box{
+    border:1px solid var(--navy) !important;
+    background:var(--writing-fill) !important;
+  }
+
+  .keyterm{
+    color:var(--gold-text);
+    background:var(--gold-fill);
+    font-weight:bold;
+  }
+
+  /* ---------- Story ---------- */
+  .story-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    font-style:italic;
+    color:var(--navy);
+    font-size:20px;
+    text-align:center;
+    margin:8px 0 14px 0;
+  }
+  .story-text p{ margin:0 0 12px 0; text-align:justify; }
+
+  /* ---------- Tables ---------- */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 18px 0;
+    font-size:14px;
+  }
+  table caption{ text-align:left; font-weight:bold; margin-bottom:6px; }
+  th, td{
+    border:1px solid var(--border);
+    padding:8px 10px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:var(--teal-deep);
+    color:#ffffff;
+    font-weight:bold;
+  }
+
+
+  .sentence-box{
+    width:100%;
+    min-height:36px;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:6px 8px;
+    margin:0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+    line-height:1.4;
+  }
+  .sentence-box:focus{ outline:none; border:1px solid var(--teal-deep); }
+
+  .word-box{
+    border:1px dashed var(--border);
+    border-radius:5px;
+    padding:8px 12px;
+    margin:8px 0 14px 0;
+    font-weight:bold;
+    color:var(--navy);
+  }
+
+  .mc-question{ margin:0 0 16px 0; }
+  .mc-options{ display:flex; flex-wrap:wrap; gap:14px; margin:6px 0; }
+  .mc-options label{ display:flex; align-items:center; gap:5px; }
+  .mc-answer{ margin-top:4px; }
+  .mc-answer input.blank{ margin-left:6px; }
+
+  .checklist{ list-style:none; padding:0; margin:0; }
+  .checklist li{ display:flex; align-items:center; gap:6px; margin:3px 0; }
+  .checklist input[type="checkbox"]{ width:15px; height:15px; }
+
+  .grammar-lab-item{
+    border:1px solid var(--teal-deep);
+    background:var(--grammar-fill);
+    border-radius:6px;
+    padding:12px 14px;
+    margin-bottom:14px;
+  }
+  .grammar-lab-item .gl-sentence{ font-weight:bold; margin:0 0 8px 0; }
+  .grammar-lab-item .gl-q{ margin:6px 0; }
+  .grammar-lab-item .gl-q label{ display:block; margin-bottom:3px; }
+
+  .transform-item{ margin:0 0 16px 0; }
+  .transform-item .t-original{ margin:0 0 6px 0; }
+  .transform-item .t-instruction{ color:var(--teal-deep); font-weight:bold; margin:0 0 4px 0; }
+
+  .homework-columns{
+    display:flex;
+    gap:18px;
+    margin:10px 0 16px 0;
+    flex-wrap:wrap;
+  }
+  .homework-box{
+    flex:1;
+    min-width:240px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 16px;
+  }
+  .homework-box h4{ color:var(--teal-deep); margin:0 0 8px 0; }
+  .homework-box textarea{ margin-top:8px; }
+  .homework-box .q-list{ margin-top:8px; padding-left:18px; }
+  .homework-box .q-list li{ margin:0 0 8px 0; }
+  .final-reminder{ font-style:italic; margin-top:10px; color:var(--slate); }
+
+  .footer-divider{
+    border-top:1px solid var(--border);
+    margin-top:34px;
+    padding-top:10px;
+    text-align:center;
+    font-style:italic;
+    font-size:11.5px;
+    color:var(--slate);
+  }
+
+  /* ---------- Action bars ---------- */
+  .action-bar{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    padding:10px 14px;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .action-bar.bottom{
+    border-bottom:none;
+    border-top:1px solid var(--border);
+    position:sticky;
+    top:auto;
+    bottom:0;
+  }
+  .action-bar button{
+    background:var(--teal-deep);
+    color:#ffffff;
+    border:none;
+    border-radius:20px;
+    padding:9px 18px;
+    font-size:13.5px;
+    font-weight:bold;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .action-bar button:hover{ background:var(--navy); }
+  .action-bar button.secondary{ background:#555555; }
+  .action-bar button.secondary:hover{ background:#333333; }
+
+  /* ---------- Floating story button ---------- */
+  .story-float{
+    position:fixed;
+    right:20px;
+    bottom:78px;
+    background:var(--teal-deep);
+    color:#ffffff;
+    border:none;
+    border-radius:30px;
+    padding:10px 16px;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+    display:none;
+    z-index:60;
+    box-shadow:0 0 0 0 rgba(15,118,110,0.6);
+    animation:glowPulse 2s infinite;
+  }
+  .story-float.visible{ display:block; }
+  @keyframes glowPulse{
+    0%{ box-shadow:0 0 0 0 rgba(15,118,110,0.55); }
+    70%{ box-shadow:0 0 0 12px rgba(15,118,110,0); }
+    100%{ box-shadow:0 0 0 0 rgba(15,118,110,0); }
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    .action-bar, .story-float{ display:none !important; }
+    body{ font-size:12px; }
+    .page{ max-width:100%; padding:0; }
+    .section-bar{ break-inside:avoid; }
+    table, .grammar-lab-item, .story-text, .homework-box{ break-inside:avoid; }
+    input.aline, input.blank{ border-bottom:1px solid #000000; color:#000; }
+    textarea{ border:1px solid #000000; color:#000; }
+    th, td{ border:1px solid #000000; }
+    @page{ size:A4; margin:16mm 14mm; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:600px){
+    .page{ padding:16px 14px 90px 14px; }
+    .main-title{ font-size:24px; }
+    .format-subtitle{ font-size:15px; }
+    .episode-subtitle{ font-size:14px; }
+    .homework-columns{ flex-direction:column; }
+    .mc-options{ gap:8px 12px; }
+    .action-bar{ gap:8px; flex-wrap:wrap; }
+    .action-bar button{ padding:8px 12px; font-size:12.5px; }
+    table, th, td{ font-size:12.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="action-bar top">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <div class="running-header">Perspectives | Episode 3 - The Commute</div>
+
+  <div class="title-block">
+    <h1 class="main-title">Perspectives</h1>
+    <h2 class="format-subtitle">Character &amp; Grammar Through Stories</h2>
+    <h3 class="episode-subtitle">Episode 3 - The Commute</h3>
+  </div>
+
+  <div class="info-box">
+    <div class="info-row">
+      <span class="info-label">Student Name:</span>
+      <input type="text" class="aline info-input">
+    </div>
+    <div class="info-row">
+      <span class="info-label">Date:</span>
+      <input type="text" class="aline info-input short">
+      <span class="info-label">Level:</span>
+      <span class="level-value">B2–C1 (IELTS Band 6.5–8.0)</span>
+    </div>
+  </div>
+
+  <div class="goals-box">
+    <p class="goals-label">Learning Goals:</p>
+    <ul class="goals-list">
+      <li>✓ Read and interpret a discursive, opinion-based story</li>
+      <li>✓ Distinguish defining from non-defining relative clauses</li>
+      <li>✓ Use reduced (contact) relative clauses with the pronoun omitted</li>
+      <li>✓ Form and use present, past, and perfect participle clauses</li>
+      <li>✓ Acquire an extended set of Academic Word List vocabulary and collocations</li>
+      <li>✓ Practise IELTS-style sentence transformation and error correction</li>
+      <li>✓ Produce an IELTS Task 2-style discursive paragraph</li>
+      <li>✓ Reflect critically on fairness, trade-offs, and systemic decision-making</li>
+    </ul>
+  </div>
+
+  <!-- ===================== SECTION 1 ===================== -->
+  <div class="section-bar" id="section1">SECTION 1 | WARM-UP | Before You Read</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Part A - Prediction &amp; Opinion Questions</h3>
+    <p class="instructions"><strong>Instructions:</strong> These questions require you to take a position, not just guess a plot. Answer before reading.</p>
+    <ol class="q-list">
+      <li>To what extent do you agree that large infrastructure projects should prioritise the greatest number of people, even if this means some communities wait much longer than others?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>Some people believe that public consultations rarely change real decisions, and exist mainly to make people feel heard. To what extent do you agree?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Part B - Personal Reflection</h3>
+    <p class="instructions"><strong>Instructions:</strong> Answer honestly from your own experience or context.</p>
+    <ol class="q-list">
+      <li>How long is your daily commute, and what is the most frustrating part of it?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>If you could redesign one part of your city's transport system, what would you change first, and why?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 2 ===================== -->
+  <div class="section-bar" id="section2">SECTION 2 | MAIN STORY | Read the Story</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Read the story carefully. Underline every relative clause (defining or non-defining), and circle every participle clause (present, past, or perfect).</p>
+
+    <h3 class="story-title" id="story-title">The Commute</h3>
+    <div class="story-text">
+      <p>Farzana, who has worked at a private bank in Motijheel for the past four years, spends nearly three hours every day travelling to and from her office in Mirpur — a commute that, under normal circumstances, should take no more than forty minutes. The single flyover near her route had long ago become the city's most notorious bottleneck, and some mornings the congestion dissolved into complete gridlock before she had even left her own neighbourhood. Having left home before seven for as long as she can remember, she had grown used to mornings that began in darkness and evenings that ended the same way.</p>
+
+      <p>On a rare free Saturday, she noticed a small notice pinned to the gate of the local ward office, announcing a public consultation on a proposed metro rail corridor — a route that, according to the notice, would eventually connect several densely populated areas to the existing network. Curious, and frankly a little unconvinced, she decided to attend.</p>
+
+      <p>The meeting was led by Architect Kamal Reza, an urban planner who had spent nearly a decade working on Dhaka's transport projects. Having presented the proposed route on a large printed map, he opened the floor to questions.</p>
+
+      <p>Farzana raised her hand. "The map you've shown us doesn't include Mirpur-2, which is where thousands of commuters like me actually live. Why does this corridor skip the area that arguably needs it most?"</p>
+
+      <p>Kamal Reza, who had clearly answered variations of this question many times before, nodded patiently. "That's a fair question, and I won't pretend there's a simple answer. The corridor was prioritised using ridership data collected over three years — data that showed higher potential passenger volume along the route we've chosen. Mirpur-2, unfortunately, didn't score as highly in that particular model."</p>
+
+      <p>"So residents whose daily commute is already unbearable," Farzana replied, "are being asked to wait for a phase that might not exist for another decade — because a model, built from data none of us ever saw, decided we mattered less?"</p>
+
+      <p>A murmur passed through the room; several people nodded, clearly feeling as marginalised by the process as she did. Kamal Reza paused before answering. "I understand why that sounds unfair. A city that tried to fund every route at once would build nothing well. Budgets have to be allocated somewhere first, sometimes at the expense of neighbourhoods like your own. The extension approved for this phase is the one projected to relieve congestion for the largest number of people, not necessarily the people facing the worst individual commutes today."</p>
+
+      <p>"That's a difference that matters enormously if you're one of the people not being helped," Farzana said quietly.</p>
+
+      <p>"It does," he admitted. "I'm not going to stand here and tell you this plan is equitable for everyone, because it isn't, not yet. What I can tell you is that the data used to exclude Mirpur-2 this year is also the data that will justify including it in the next phase — assuming the growth pattern continues, and assuming next year's budget is actually approved. There is, in fact, a second corridor, still only in the pipeline, that would eventually reach your area as well."</p>
+
+      <p>"And if the budget isn't approved?" someone else asked.</p>
+
+      <p>"Then we go back to the drawing board on prioritisation, and areas like Mirpur-2 keep waiting," Kamal Reza said. "I won't pretend that's a satisfying answer. It's simply the honest one."</p>
+
+      <p>After the meeting ended, Farzana remained for a while, looking again at the printed map pinned to the board. A young volunteer, noticing her still standing there, offered to note her comments for the official record. Farzana wrote a short paragraph — measured, unlike the frustration she had walked in with — asking that Mirpur-2's data be weighed up again before the next phase was finalised.</p>
+
+      <p>Walking home, she thought about what Kamal Reza had said. A transport system designed to help the most people possible would, by definition, leave some people waiting, even when a fully equitable plan felt more feasible in theory than viable within an actual limited budget. That didn't make her three-hour commute any shorter. But she found, somewhat unwillingly, that she no longer knew whether to be angry at the planners or simply at the scale of the problem itself.</p>
+
+      <p>She still had no faster way home that evening. But she had, for the first time, a clearer picture of why.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 3 ===================== -->
+  <div class="section-bar" id="section3">SECTION 3 | VOCABULARY ZONE</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Study the words and collocations below. This episode's list is longer than usual — take your time and revisit it after reading the story.</p>
+
+    <table>
+      <thead>
+        <tr><th>Word / Phrase</th><th>Part of Speech</th><th>Simple English Meaning</th><th>বাংলা অর্থ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="keyterm">commute</td><td>noun/verb</td><td>the regular journey between home and work</td><td>নিত্যযাত্রা / যাতায়াত করা</td></tr>
+        <tr><td class="keyterm">congestion</td><td>noun</td><td>overcrowding, especially of traffic</td><td>যানজট / ভিড়</td></tr>
+        <tr><td class="keyterm">gridlock</td><td>noun</td><td>a situation in which traffic is not moving at all</td><td>সম্পূর্ণ যানজট</td></tr>
+        <tr><td class="keyterm">bottleneck</td><td>noun</td><td>a point that slows down or blocks progress</td><td>সংকীর্ণ বাধাস্থল</td></tr>
+        <tr><td class="keyterm">corridor</td><td>noun</td><td>a route or passage, especially for transport</td><td>যাতায়াত করিডোর</td></tr>
+        <tr><td class="keyterm">ridership</td><td>noun</td><td>the number of people who use a transport service</td><td>যাত্রী সংখ্যা</td></tr>
+        <tr><td class="keyterm">consultation</td><td>noun</td><td>a meeting held to gather opinions before a decision</td><td>পরামর্শ সভা</td></tr>
+        <tr><td class="keyterm">prioritise</td><td>verb</td><td>to treat something as more urgent than other things</td><td>অগ্রাধিকার দেওয়া</td></tr>
+        <tr><td class="keyterm">phase</td><td>noun</td><td>a distinct stage in a process</td><td>পর্যায়</td></tr>
+        <tr><td class="keyterm">allocate</td><td>verb</td><td>to give a share of a resource for a particular purpose</td><td>বরাদ্দ করা</td></tr>
+        <tr><td class="keyterm">equitable</td><td>adjective</td><td>fair and impartial, giving everyone a fair share</td><td>ন্যায্য / সমতাপূর্ণ</td></tr>
+        <tr><td class="keyterm">marginalised</td><td>adjective</td><td>pushed to the edge of consideration; treated as unimportant</td><td>প্রান্তিক করা হয়েছে এমন</td></tr>
+        <tr><td class="keyterm">feasible</td><td>adjective</td><td>possible to do in practice</td><td>বাস্তবসম্মত</td></tr>
+        <tr><td class="keyterm">viable</td><td>adjective</td><td>capable of working successfully in real conditions</td><td>কার্যকর হতে সক্ষম</td></tr>
+        <tr><td class="keyterm">unconvinced</td><td>adjective</td><td>not persuaded that something is true or right</td><td>অপ্রত্যয়ী</td></tr>
+        <tr><td class="keyterm">relieve</td><td>verb</td><td>to reduce the severity of a problem</td><td>লাঘব করা</td></tr>
+        <tr><td class="keyterm">data-driven</td><td>adjective</td><td>based on evidence and statistics rather than opinion</td><td>উপাত্তভিত্তিক</td></tr>
+        <tr><td class="keyterm">densely populated</td><td>phrase</td><td>having a very high number of people per area</td><td>ঘনবসতিপূর্ণ</td></tr>
+        <tr><td class="keyterm">in the pipeline</td><td>phrase</td><td>being planned or developed, not yet complete</td><td>পরিকল্পনাধীন</td></tr>
+        <tr><td class="keyterm">at the expense of</td><td>phrase</td><td>causing harm or disadvantage to something else</td><td>কিছুর মূল্যে / ক্ষতির বিনিময়ে</td></tr>
+        <tr><td class="keyterm">back to the drawing board</td><td>phrase</td><td>starting a plan again from the very beginning</td><td>নতুন করে পরিকল্পনা শুরু করা</td></tr>
+        <tr><td class="keyterm">weigh up</td><td>phrasal verb</td><td>to consider the advantages and disadvantages carefully</td><td>ভালোমন্দ বিবেচনা করা</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task A - Matching</h3>
+    <p class="instructions"><strong>Instructions:</strong> Match each word with its correct meaning. Write the letter in the Your Answer column.</p>
+    <table>
+      <thead><tr><th>Word</th><th>Your Answer</th></tr></thead>
+      <tbody>
+        <tr><td>1. bottleneck</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>2. equitable</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>3. marginalised</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>4. prioritise</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>5. ridership</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>6. viable</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>7. feasible</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>8. consultation</td><td><input type="text" class="blank sm"></td></tr>
+      </tbody>
+    </table>
+    <p><strong>A.</strong> a point that slows down or blocks progress &nbsp; <strong>B.</strong> fair and impartial, giving everyone a fair share &nbsp; <strong>C.</strong> pushed to the edge of consideration<br>
+    <strong>D.</strong> to treat something as more urgent than other things &nbsp; <strong>E.</strong> the number of people who use a transport service &nbsp; <strong>F.</strong> capable of working successfully in real conditions<br>
+    <strong>G.</strong> possible to do in practice &nbsp; <strong>H.</strong> a meeting held to gather opinions before a decision</p>
+
+    <h3 class="sub-heading">Task B - Fill in the Blanks</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose the best word or phrase from the box and complete the sentences.</p>
+    <div class="word-box">Word Box: gridlock | allocate | densely populated | unconvinced | in the pipeline | at the expense of | back to the drawing board</div>
+    <ol class="q-list">
+      <li>By eight in the morning, the main road near Farzana's house was in complete <input type="text" class="blank wide">.</li>
+      <li>The city could not <input type="text" class="blank wide"> funds to every neighbourhood at the same time.</li>
+      <li>The proposed corridor was designed to serve some of the most <input type="text" class="blank wide"> parts of the city.</li>
+      <li>Farzana remained <input type="text" class="blank wide"> even after Kamal Reza explained the ridership model.</li>
+      <li>A second corridor is still <input type="text" class="blank wide"> and may not be built for several years.</li>
+      <li>Kamal Reza admitted that some communities were being helped <input type="text" class="blank wide"> others.</li>
+      <li>If the budget fails, planners may have to go <input type="text" class="blank wide"> on the whole project.</li>
+    </ol>
+
+    <h3 class="sub-heading">Task C - Vocabulary in Context</h3>
+    <p class="instructions"><strong>Instructions:</strong> Read each quotation from the story and guess the meaning of the underlined word or phrase from context.</p>
+    <ol class="q-list">
+      <li>"The single flyover near her route had long ago become the city's most notorious bottleneck." What does <em>notorious</em> suggest about the bottleneck?
+        <input type="text" class="aline">
+      </li>
+      <li>"Budgets have to be allocated somewhere first." What does <em>allocated</em> mean here?
+        <input type="text" class="aline">
+      </li>
+      <li>"Several people nodded, clearly feeling as marginalised by the process as she did." What does <em>marginalised</em> mean in this context?
+        <input type="text" class="aline">
+      </li>
+      <li>"I'm not going to stand here and tell you this plan is equitable for everyone." What does <em>equitable</em> mean here?
+        <input type="text" class="aline">
+      </li>
+      <li>"A fully equitable plan felt more feasible in theory than viable within an actual limited budget." What is the difference being suggested between <em>feasible</em> and <em>viable</em>?
+        <input type="text" class="aline">
+      </li>
+      <li>"Then we go back to the drawing board on prioritisation." What does this phrase suggest happens next?
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Task D - Personal Vocabulary Journal</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose 4 new words or phrases from this episode. Write the Bangla meaning and your own English sentence.</p>
+    <table>
+      <thead><tr><th>No.</th><th>New Word/Phrase</th><th>বাংলা অর্থ</th><th>My Own English Sentence</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>2</td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>3</td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>4</td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== SECTION 4 ===================== -->
+  <div class="section-bar" id="section4">SECTION 4 | GRAMMAR DETECTIVE 🔍 | Relative Clauses &amp; Participle Clauses</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Task A - Find from the Story</h3>
+    <p class="instructions"><strong>Instructions:</strong> Find and copy the required number of examples for each grammar focus from the story.</p>
+    <table>
+      <thead><tr><th>Grammar Focus</th><th>How many?</th><th>Examples from the Story</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Defining Relative Clauses</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Non-Defining Relative Clauses</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Reduced Relative Clauses (pronoun omitted)</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Present Participle Clauses (-ing)</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Past / Perfect Participle Clauses (V3 / Having + V3)</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Grammar Lab</h3>
+    <p class="instructions"><strong>Instructions:</strong> For each sentence, identify the structure, explain why it is used, and write a similar sentence of your own.</p>
+
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">1. "Farzana, who has worked at a private bank in Motijheel for the past four years, spends nearly three hours every day travelling."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">2. "A route that, according to the notice, would eventually connect several densely populated areas."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">3. "Data that showed higher potential passenger volume along the route we've chosen."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">4. "Having left home before seven for as long as she can remember, she had grown used to mornings that began in darkness."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">5. "A young volunteer, noticing her still standing there, offered to note her comments."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">6. "The data used to exclude Mirpur-2 this year is also the data that will justify including it in the next phase."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 5 ===================== -->
+  <div class="section-bar accent-maroon" id="section5">SECTION 5 | MIXED GRAMMAR CHALLENGE</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">A. Error Correction</h3>
+    <p class="instructions"><strong>Instructions:</strong> Each sentence contains one error in a relative clause or participle clause. Rewrite it correctly.</p>
+    <ol class="q-list">
+      <li>Farzana, that has worked at the bank for four years, commutes for three hours a day.<br>Correction: <input type="text" class="aline"></li>
+      <li>The corridor that skip Mirpur-2 was chosen using ridership data.<br>Correction: <input type="text" class="aline"></li>
+      <li>Have left home before seven, Farzana felt tired every morning.<br>Correction: <input type="text" class="aline"></li>
+      <li>Kamal Reza, he had answered this question many times, nodded patiently.<br>Correction: <input type="text" class="aline"></li>
+      <li>The data using to exclude Mirpur-2 will justify including it later.<br>Correction: <input type="text" class="aline"></li>
+      <li>A young volunteer, notice her still standing there, offered to help.<br>Correction: <input type="text" class="aline"></li>
+    </ol>
+
+    <h3 class="sub-heading">B. Multiple Choice</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose the best answer: A, B, C, or D.</p>
+
+    <div class="mc-question">
+      <p>1. Farzana, ______ works at a bank in Motijheel, commutes for three hours a day.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc1"> A. that</label>
+        <label><input type="radio" name="mc1"> B. which</label>
+        <label><input type="radio" name="mc1"> C. who</label>
+        <label><input type="radio" name="mc1"> D. whom</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>2. The corridor ______ was chosen used three years of ridership data.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc2"> A. who</label>
+        <label><input type="radio" name="mc2"> B. that</label>
+        <label><input type="radio" name="mc2"> C. whose</label>
+        <label><input type="radio" name="mc2"> D. what</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>3. ______ presented the map, Kamal Reza opened the floor to questions.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc3"> A. Have</label>
+        <label><input type="radio" name="mc3"> B. Having</label>
+        <label><input type="radio" name="mc3"> C. To have</label>
+        <label><input type="radio" name="mc3"> D. Had</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>4. A young volunteer, ______ her still standing there, offered to help.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc4"> A. notice</label>
+        <label><input type="radio" name="mc4"> B. noticed</label>
+        <label><input type="radio" name="mc4"> C. noticing</label>
+        <label><input type="radio" name="mc4"> D. to notice</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>5. The data ______ to exclude Mirpur-2 will also justify including it later.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc5"> A. used</label>
+        <label><input type="radio" name="mc5"> B. using</label>
+        <label><input type="radio" name="mc5"> C. use</label>
+        <label><input type="radio" name="mc5"> D. uses</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>6. Residents ______ daily commute is unbearable are being asked to wait.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc6"> A. who</label>
+        <label><input type="radio" name="mc6"> B. which</label>
+        <label><input type="radio" name="mc6"> C. whose</label>
+        <label><input type="radio" name="mc6"> D. that</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <h3 class="sub-heading">C. Gap Fill</h3>
+    <p class="instructions"><strong>Instructions:</strong> Complete each sentence with the correct participle or relative-clause form of the word in brackets.</p>
+    <ol class="q-list">
+      <li>Farzana, <input type="text" class="blank wide"> (work) at the bank for four years, was tired of her commute.</li>
+      <li>The route <input type="text" class="blank wide"> (choose) using ridership data did not include Mirpur-2.</li>
+      <li><input type="text" class="blank wide"> (leave) home before seven, she had grown used to dark mornings.</li>
+      <li>The volunteer, <input type="text" class="blank wide"> (notice) her still standing there, offered to help.</li>
+      <li>A system <input type="text" class="blank wide"> (design) to help the most people will leave some people waiting.</li>
+      <li>Kamal Reza, <input type="text" class="blank wide"> (answer) similar questions many times, stayed patient.</li>
+    </ol>
+
+    <h3 class="sub-heading">D. Sentence Transformation</h3>
+    <p class="instructions"><strong>Instructions:</strong> Combine each pair of sentences as directed, using the required grammar structure.</p>
+
+    <div class="transform-item">
+      <p class="t-original">1. Original: Farzana works at a bank. She commutes for three hours a day.</p>
+      <p class="t-instruction">Combine using a non-defining relative clause:</p>
+      <p>Farzana, <input type="text" class="aline">, commutes for three hours a day.</p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">2. Original: Kamal Reza presented the map. Then he opened the floor to questions.</p>
+      <p class="t-instruction">Combine using a perfect participle clause (Having...):</p>
+      <p><input type="text" class="aline">, he opened the floor to questions.</p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">3. Original: The volunteer noticed Farzana standing there. He offered to help.</p>
+      <p class="t-instruction">Combine using a present participle clause:</p>
+      <p>The volunteer, <input type="text" class="aline">, offered to help.</p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">4. Original: Planners used the data to exclude Mirpur-2. The same data will justify including it later.</p>
+      <p class="t-instruction">Combine using a reduced (contact) relative clause:</p>
+      <p>The data <input type="text" class="aline"> is the same data that will justify including it later.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 6 ===================== -->
+  <div class="section-bar" id="section6">SECTION 6 | SENTENCE BUILDER | Build Your Own Sentences</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Use each word or phrase to write one original sentence, following the required grammar structure exactly. Do not copy from the story.</p>
+
+    <table>
+      <thead><tr><th>Word / Phrase</th><th>Required Grammar Structure</th><th>Your Sentence</th></tr></thead>
+      <tbody>
+        <tr><td>congestion</td><td>Defining relative clause</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>corridor</td><td>Non-defining relative clause</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>ridership</td><td>Present participle clause</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>consultation</td><td>Past participle clause</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>equitable</td><td>Perfect participle clause (Having...)</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>marginalised</td><td>Reduced (contact) relative clause</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>feasible</td><td>Non-defining relative clause</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>weigh up</td><td>Defining relative clause using 'whose'</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== SECTION 7 ===================== -->
+  <div class="section-bar" id="section7">SECTION 7 | SHORT WRITING TASK | Think &amp; Write</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Write 150-180 words. Use at least two relative clauses (one defining, one non-defining) and one participle clause. Write down the main paragraphs only.</p>
+    <p><strong>Prompt:</strong> Some people believe that transport authorities should prioritise projects that help the greatest number of people overall, even if this means some communities wait much longer for improvements. Others believe that every neighbourhood deserves equal and immediate investment. Discuss both views and give your own opinion.</p>
+    <p class="sub-heading" style="margin-top:14px;">Writing Space</p>
+    <textarea class="writing-box" rows="12" placeholder="Write your answer here..."></textarea>
+  </div>
+
+  <!-- ===================== SECTION 8 ===================== -->
+  <div class="section-bar" id="section8">SECTION 8 | CHARACTER REFLECTION | Character Corner</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> These questions have no single correct answer. Discuss with a partner if possible, then write your own considered response.</p>
+
+    <p><strong>1.</strong> Kamal Reza says, "I'm not going to stand here and tell you this plan is equitable for everyone, because it isn't, not yet." What does his willingness to admit this suggest about honest leadership, compared to leadership that simply reassures people?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>2.</strong> Farzana ends the story with a clearer understanding of the system, but no shorter commute. Is understanding <em>why</em> something is unfair a meaningful outcome on its own, even without a solution?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>3.</strong> To what extent should decisions that affect many people be based purely on data (like ridership numbers), rather than on which communities are struggling the most right now?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>4.</strong> Is it possible to design any system — transport, education, healthcare — that is fair to absolutely everyone at the same time? What does this story suggest about that question?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>5.</strong> Farzana chooses to submit a written comment rather than simply remaining angry. What does this suggest about the difference between venting frustration and engaging constructively with a system you disagree with?</p>
+    <textarea rows="3"></textarea>
+  </div>
+
+  <!-- ===================== SECTION 9 ===================== -->
+  <div class="section-bar" id="section9">SECTION 9 | HOMEWORK</div>
+  <div class="section-content">
+    <div class="homework-columns">
+      <div class="homework-box">
+        <h4>Level 1</h4>
+        <p>Write 6 sentences about your city's transport system, each using a relative clause or a participle clause.</p>
+        <textarea rows="7" placeholder="1.&#10;2.&#10;3.&#10;4.&#10;5.&#10;6."></textarea>
+      </div>
+      <div class="homework-box">
+        <h4>Level 2</h4>
+        <p>Write a reflective diary/essay entry (150-180 words) titled "A Time I Had to Accept an Unsatisfying but Honest Answer." Use at least 2 relative clauses and 1 participle clause.</p>
+        <textarea rows="9" placeholder="Write your answer here..."></textarea>
+      </div>
+    </div>
+    <p class="final-reminder"><strong>Final Reminder:</strong> A well-placed relative clause can carry an entire argument's worth of nuance. Precision in grammar often reflects precision in thought.</p>
+  </div>
+
+  <div class="footer-divider">© Abidur Rahman Tahmid | English Learning Through Stories | Episode 3 - The Commute</div>
+
+</div>
+
+<div class="action-bar bottom">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<button id="storyBtn" class="story-float" onclick="scrollToStory()">📖 Story</button>
+
+<script>
+  function clearAll(){
+    if(!confirm("Are you sure you want to clear all your answers? This cannot be undone.")) return;
+    document.querySelectorAll('input[type="text"]').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('textarea').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('input[type="radio"]').forEach(function(el){ el.checked = false; });
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(el){ el.checked = false; });
+  }
+
+  function scrollToStory(){
+    var target = document.getElementById('story-title');
+    if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  }
+
+  (function(){
+    var storyBtn = document.getElementById('storyBtn');
+    var sec4 = document.getElementById('section4');
+    var sec9 = document.getElementById('section9');
+    if(!storyBtn || !sec4 || !sec9) return;
+
+    function updateVisibility(){
+      var sec4Top = sec4.getBoundingClientRect().top;
+      var sec9Top = sec9.getBoundingClientRect().top;
+      var viewportH = window.innerHeight;
+      var passedSection4 = sec4Top < viewportH * 0.6;
+      var passedSection9 = sec9Top < viewportH * 0.6;
+      if(passedSection4 && !passedSection9){
+        storyBtn.classList.add('visible');
+      } else {
+        storyBtn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateVisibility, {passive:true});
+    window.addEventListener('resize', updateVisibility);
+    updateVisibility();
+  })();
+</script>
+
+</body>
+</html>

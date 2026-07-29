@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perspectives | Character & Grammar Through Stories | Episode 2 - The AI Dilemma</title>
+<style>
+  :root{
+    --navy:#1B3358;
+    --teal-deep:#147D75;
+    --gold-text:#8A5A00;
+    --gold-fill:#FBEFD3;
+    --maroon:#7A2048;
+    --writing-fill:#F4F6F9;
+    --grammar-fill:#EAF6F5;
+    --slate:#5B6B79;
+    --mint:#E6F4F1;
+    --text:#111111;
+    --border:#8FC0BB;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:#ffffff;
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .page{
+    max-width:850px;
+    margin:0 auto;
+    padding:24px 28px 80px 28px;
+  }
+  /* ---------- Running header ---------- */
+  .running-header{
+    text-align:center;
+    color:var(--teal-deep);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.2px;
+    margin-bottom:10px;
+  }
+  /* ---------- Title block ---------- */
+  .title-block{ text-align:center; margin-bottom:16px; }
+  .main-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:var(--navy);
+    font-size:32px;
+    margin:0 0 4px 0;
+  }
+  .format-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:18px;
+    margin:0 0 2px 0;
+  }
+  .episode-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:16px;
+    margin:0;
+  }
+  /* ---------- Info box ---------- */
+  .info-box{
+    background:var(--mint);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0;
+  }
+  .info-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:6px 0;
+    flex-wrap:wrap;
+  }
+  .info-label{ font-weight:bold; color:var(--navy); white-space:nowrap; }
+  .info-input{ flex:1; min-width:160px; }
+  .info-input.short{ flex:0 0 180px; }
+  .level-value{ font-weight:bold; margin-left:2px; }
+
+  /* ---------- Goals box ---------- */
+  .goals-box{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0 26px 0;
+  }
+  .goals-label{ color:var(--teal-deep); font-weight:bold; margin:0 0 4px 0; }
+  .goals-intro{ margin:0 0 8px 0; font-style:italic; }
+  .goals-list{ margin:0; padding-left:0; list-style:none; }
+  .goals-list li{ margin:4px 0; }
+
+  /* ---------- Section bars ---------- */
+  .section-bar{
+    background:var(--navy);
+    color:#ffffff;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:9px 14px;
+    border-radius:5px;
+    margin:30px 0 14px 0;
+    font-size:14.5px;
+    letter-spacing:.2px;
+    scroll-margin-top:20px;
+  }
+  .section-content{ margin-bottom:6px; }
+
+  .sub-heading{
+    color:var(--teal-deep);
+    font-size:15.5px;
+    margin:18px 0 6px 0;
+  }
+  .instructions{ margin:4px 0 12px 0; }
+  .bengali-tag{ color:var(--teal-deep); font-weight:bold; }
+
+  .q-list{ margin:0 0 10px 0; padding-left:20px; }
+  .q-list li{ margin:0 0 14px 0; }
+
+  /* ---------- Inputs ---------- */
+  input.aline{
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:5px 2px;
+    margin:4px 0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+  }
+  input.aline:focus{ outline:none; border-bottom:1px solid var(--teal-deep); }
+
+  input.blank{
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:2px 4px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    width:60px;
+    text-align:center;
+  }
+  input.blank.sm{ width:40px; }
+  input.blank.wide{ width:150px; }
+  input.blank:focus{ outline:none; border-bottom:1px solid var(--teal-deep); }
+
+  textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:10px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+  }
+  textarea:focus{ outline:none; border:1px solid var(--teal-deep); }
+
+  .section-bar.accent-maroon{
+    background:var(--maroon);
+  }
+
+  .writing-box{
+    border:1px solid var(--navy) !important;
+    background:var(--writing-fill) !important;
+  }
+
+  .keyterm{
+    color:var(--gold-text);
+    background:var(--gold-fill);
+    font-weight:bold;
+  }
+
+  /* ---------- Story ---------- */
+  .story-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    font-style:italic;
+    color:var(--navy);
+    font-size:20px;
+    text-align:center;
+    margin:8px 0 14px 0;
+  }
+  .story-text p{ margin:0 0 12px 0; text-align:justify; }
+
+  /* ---------- Tables ---------- */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 18px 0;
+    font-size:14px;
+  }
+  table caption{ text-align:left; font-weight:bold; margin-bottom:6px; }
+  th, td{
+    border:1px solid var(--border);
+    padding:8px 10px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:var(--teal-deep);
+    color:#ffffff;
+    font-weight:bold;
+  }
+
+
+  .sentence-box{
+    width:100%;
+    min-height:36px;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:6px 8px;
+    margin:0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+    line-height:1.4;
+  }
+  .sentence-box:focus{ outline:none; border:1px solid var(--teal-deep); }
+
+  .word-box{
+    border:1px dashed var(--border);
+    border-radius:5px;
+    padding:8px 12px;
+    margin:8px 0 14px 0;
+    font-weight:bold;
+    color:var(--navy);
+  }
+
+  .mc-question{ margin:0 0 16px 0; }
+  .mc-options{ display:flex; flex-wrap:wrap; gap:14px; margin:6px 0; }
+  .mc-options label{ display:flex; align-items:center; gap:5px; }
+  .mc-answer{ margin-top:4px; }
+  .mc-answer input.blank{ margin-left:6px; }
+
+  .checklist{ list-style:none; padding:0; margin:0; }
+  .checklist li{ display:flex; align-items:center; gap:6px; margin:3px 0; }
+  .checklist input[type="checkbox"]{ width:15px; height:15px; }
+
+  .grammar-lab-item{
+    border:1px solid var(--teal-deep);
+    background:var(--grammar-fill);
+    border-radius:6px;
+    padding:12px 14px;
+    margin-bottom:14px;
+  }
+  .grammar-lab-item .gl-sentence{ font-weight:bold; margin:0 0 8px 0; }
+  .grammar-lab-item .gl-q{ margin:6px 0; }
+  .grammar-lab-item .gl-q label{ display:block; margin-bottom:3px; }
+
+  .transform-item{ margin:0 0 16px 0; }
+  .transform-item .t-original{ margin:0 0 6px 0; }
+  .transform-item .t-instruction{ color:var(--teal-deep); font-weight:bold; margin:0 0 4px 0; }
+
+  .homework-columns{
+    display:flex;
+    gap:18px;
+    margin:10px 0 16px 0;
+    flex-wrap:wrap;
+  }
+  .homework-box{
+    flex:1;
+    min-width:240px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 16px;
+  }
+  .homework-box h4{ color:var(--teal-deep); margin:0 0 8px 0; }
+  .homework-box textarea{ margin-top:8px; }
+  .homework-box .q-list{ margin-top:8px; padding-left:18px; }
+  .homework-box .q-list li{ margin:0 0 8px 0; }
+  .final-reminder{ font-style:italic; margin-top:10px; color:var(--slate); }
+
+  .footer-divider{
+    border-top:1px solid var(--border);
+    margin-top:34px;
+    padding-top:10px;
+    text-align:center;
+    font-style:italic;
+    font-size:11.5px;
+    color:var(--slate);
+  }
+
+  /* ---------- Action bars ---------- */
+  .action-bar{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    padding:10px 14px;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .action-bar.bottom{
+    border-bottom:none;
+    border-top:1px solid var(--border);
+    position:sticky;
+    top:auto;
+    bottom:0;
+  }
+  .action-bar button{
+    background:var(--teal-deep);
+    color:#ffffff;
+    border:none;
+    border-radius:20px;
+    padding:9px 18px;
+    font-size:13.5px;
+    font-weight:bold;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .action-bar button:hover{ background:var(--navy); }
+  .action-bar button.secondary{ background:#555555; }
+  .action-bar button.secondary:hover{ background:#333333; }
+
+  /* ---------- Floating story button ---------- */
+  .story-float{
+    position:fixed;
+    right:20px;
+    bottom:78px;
+    background:var(--teal-deep);
+    color:#ffffff;
+    border:none;
+    border-radius:30px;
+    padding:10px 16px;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+    display:none;
+    z-index:60;
+    box-shadow:0 0 0 0 rgba(15,118,110,0.6);
+    animation:glowPulse 2s infinite;
+  }
+  .story-float.visible{ display:block; }
+  @keyframes glowPulse{
+    0%{ box-shadow:0 0 0 0 rgba(15,118,110,0.55); }
+    70%{ box-shadow:0 0 0 12px rgba(15,118,110,0); }
+    100%{ box-shadow:0 0 0 0 rgba(15,118,110,0); }
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    .action-bar, .story-float{ display:none !important; }
+    body{ font-size:12px; }
+    .page{ max-width:100%; padding:0; }
+    .section-bar{ break-inside:avoid; }
+    table, .grammar-lab-item, .story-text, .homework-box{ break-inside:avoid; }
+    input.aline, input.blank{ border-bottom:1px solid #000000; color:#000; }
+    textarea{ border:1px solid #000000; color:#000; }
+    th, td{ border:1px solid #000000; }
+    @page{ size:A4; margin:16mm 14mm; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:600px){
+    .page{ padding:16px 14px 90px 14px; }
+    .main-title{ font-size:24px; }
+    .format-subtitle{ font-size:15px; }
+    .episode-subtitle{ font-size:14px; }
+    .homework-columns{ flex-direction:column; }
+    .mc-options{ gap:8px 12px; }
+    .action-bar{ gap:8px; flex-wrap:wrap; }
+    .action-bar button{ padding:8px 12px; font-size:12.5px; }
+    table, th, td{ font-size:12.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="action-bar top">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <div class="running-header">Perspectives | Episode 2 - The AI Dilemma</div>
+
+  <div class="title-block">
+    <h1 class="main-title">Perspectives</h1>
+    <h2 class="format-subtitle">Character &amp; Grammar Through Stories</h2>
+    <h3 class="episode-subtitle">Episode 2 - The AI Dilemma</h3>
+  </div>
+
+  <div class="info-box">
+    <div class="info-row">
+      <span class="info-label">Student Name:</span>
+      <input type="text" class="aline info-input">
+    </div>
+    <div class="info-row">
+      <span class="info-label">Date:</span>
+      <input type="text" class="aline info-input short">
+      <span class="info-label">Level:</span>
+      <span class="level-value">B2–C1 (IELTS Band 6.5–8.0)</span>
+    </div>
+  </div>
+
+  <div class="goals-box">
+    <p class="goals-label">Learning Goals:</p>
+    <ul class="goals-list">
+      <li>✓ Read and interpret a discursive, opinion-based story</li>
+      <li>✓ Report statements, questions, and advice with correct backshift</li>
+      <li>✓ Use reporting verbs beyond 'said' — suggested, insisted, denied, admitted</li>
+      <li>✓ Use modals of speculation and deduction (must/might/can't/should + have + V3)</li>
+      <li>✓ Acquire Academic Word List vocabulary and topic collocations</li>
+      <li>✓ Practise IELTS-style sentence transformation and error correction</li>
+      <li>✓ Produce an IELTS Task 2-style discursive paragraph</li>
+      <li>✓ Reflect critically on honesty, trust, and institutional policy</li>
+    </ul>
+  </div>
+
+  <!-- ===================== SECTION 1 ===================== -->
+  <div class="section-bar" id="section1">SECTION 1 | WARM-UP | Before You Read</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Part A - Prediction &amp; Opinion Questions</h3>
+    <p class="instructions"><strong>Instructions:</strong> These questions require you to take a position, not just guess a plot. Answer before reading.</p>
+    <ol class="q-list">
+      <li>To what extent do you agree that using an AI tool to help write an assignment is fundamentally different from asking a friend or tutor for help?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>Some people believe that as long as a student understands the final content, the method used to produce it does not matter. To what extent do you agree?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Part B - Personal Reflection</h3>
+    <p class="instructions"><strong>Instructions:</strong> Answer honestly from your own experience or context.</p>
+    <ol class="q-list">
+      <li>Have you ever used an AI tool, translation software, or another shortcut for academic work? Where do you personally draw the line?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>Why might a student choose to hide the use of a tool rather than disclose it honestly, even if the tool itself is not banned?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 2 ===================== -->
+  <div class="section-bar" id="section2">SECTION 2 | MAIN STORY | Read the Story</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Read the story carefully. Underline every example of reported speech, and circle every modal of speculation or deduction (must have, might have, can't have, should have).</p>
+
+    <h3 class="story-title" id="story-title">The AI Dilemma</h3>
+    <div class="story-text">
+      <p>Tanvir had submitted the report three days early — an unusual habit for him — and for two of those days, he felt genuinely proud of it. The assignment, a comparative analysis of network security protocols, was for his favourite course in the CSE department, and he had used an AI writing assistant to help him organise his scattered notes into something that read, he thought, like a proper research paper rather than a rushed submission.</p>
+
+      <p>He had not mentioned this to anyone. Using AI felt less like cheating and more like working with a very capable editor — at least, that was what he told himself when he clicked "submit."</p>
+
+      <p>On Thursday afternoon, an email arrived: Dr. Farzana Elahi wanted to see him before his next class.</p>
+
+      <p>His friend Naeem was unhelpful in the way that only a good friend can be. "She must have noticed something," he said, as they walked toward the department office. "Your last two assignments read completely differently from this one. Did you really think nobody would compare them?"</p>
+
+      <p>"I didn't think about it that carefully," Tanvir admitted.</p>
+
+      <p>"Well, you should have," Naeem said. "You can't have expected a professor who reads forty reports a semester not to notice a sudden jump in vocabulary. She might have let a small change go unnoticed. A jump like this one, though — she must have flagged it immediately."</p>
+
+      <p>Dr. Elahi's office was small and lined with journals. She did not begin with an accusation. "Tanvir," she said, "I'd like you to explain, in your own words, how the ideas in section three came together. Just talk me through your thinking."</p>
+
+      <p>Tanvir hesitated. When she asked directly whether he had understood the encryption method fully before submitting it, he first denied that there was any real gap in his understanding. Then, under her calm, patient silence, he corrected himself. He admitted that he had used an AI tool to help with the report. He insisted, however, that he had used it only to organise ideas he already had and to phrase certain sections more clearly than he could have done on his own.</p>
+
+      <p>Dr. Elahi listened without interrupting. When he finished, she said that intention did not remove the need for honesty. She explained that the problem was not necessarily the tool itself; it was that he had presented assisted work as entirely his own, without giving her — or himself — an accurate picture of what he actually understood.</p>
+
+      <p>"Can you explain the encryption method in section three to me now, without the report in front of you?" she asked.</p>
+
+      <p>Tanvir tried. He got through the first half confidently, then stumbled. He admitted that the tool had explained that part better than he could have explained it himself, and that he had not fully checked whether he understood it before submitting the analysis as his own.</p>
+
+      <p>"That," Dr. Elahi said, "is exactly what I wanted you to notice. Not that you asked for help structuring your ideas — every writer does that in some form. The problem is that a gap in your own understanding was hidden behind confident-sounding sentences that weren't really yours."</p>
+
+      <p>She suggested that he rewrite section three independently, using only his own words, and that in future assignments, he disclose clearly which parts of his work had been shaped by AI tools and how. Tanvir agreed, somewhat relieved that the conversation had not ended more severely.</p>
+
+      <p>Walking out, he told Naeem what had happened. Naeem asked whether Tanvir now thought using AI for coursework was simply wrong. Tanvir considered this for a long moment. "I don't think it's that simple," he said. "If I'd used it and still understood everything, and just said so honestly, I don't think it would have been a problem. The tool isn't really the issue. What I hid was."</p>
+
+      <p>Naeem wasn't fully convinced. "Half the department uses these tools quietly," he said. "If everyone declared it, would professors even have time to check everything properly? Isn't the whole policy sort of built on people not being fully honest about it?"</p>
+
+      <p>Tanvir didn't have an answer to that. He only knew that, for his own report, hiding the gap had cost him more than declaring it honestly would have.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 3 ===================== -->
+  <div class="section-bar" id="section3">SECTION 3 | VOCABULARY ZONE</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Study the words and collocations below. They are drawn from the Academic Word List and the theme of technology and academic ethics.</p>
+
+    <table>
+      <thead>
+        <tr><th>Word / Phrase</th><th>Part of Speech</th><th>Simple English Meaning</th><th>বাংলা অর্থ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="keyterm">plagiarism</td><td>noun</td><td>copying someone's work and presenting it as your own</td><td>চৌর্যবৃত্তি</td></tr>
+        <tr><td class="keyterm">transparency</td><td>noun</td><td>openness and honesty about facts or methods</td><td>স্বচ্ছতা</td></tr>
+        <tr><td class="keyterm">disclose</td><td>verb</td><td>to make known information that was hidden</td><td>প্রকাশ করা</td></tr>
+        <tr><td class="keyterm">integrity</td><td>noun</td><td>honesty and strong moral principles</td><td>সততা ও নৈতিক দৃঢ়তা</td></tr>
+        <tr><td class="keyterm">accountability</td><td>noun</td><td>being responsible and answerable for one's actions</td><td>জবাবদিহিতা</td></tr>
+        <tr><td class="keyterm">plausible</td><td>adjective</td><td>seeming reasonable or probably true</td><td>যুক্তিসঙ্গত মনে হয় এমন</td></tr>
+        <tr><td class="keyterm">undermine</td><td>verb</td><td>to weaken something gradually, often secretly</td><td>দুর্বল করে দেওয়া</td></tr>
+        <tr><td class="keyterm">deceive</td><td>verb</td><td>to intentionally make someone believe something false</td><td>প্রতারণা করা</td></tr>
+        <tr><td class="keyterm">justify</td><td>verb</td><td>to give good reasons for an action or decision</td><td>যুক্তি দিয়ে সমর্থন করা</td></tr>
+        <tr><td class="keyterm">dilemma</td><td>noun</td><td>a difficult choice between two options</td><td>উভয়সংকট</td></tr>
+        <tr><td class="keyterm">inconsistency</td><td>noun</td><td>a lack of agreement between things that should match</td><td>অসঙ্গতি</td></tr>
+        <tr><td class="keyterm">legitimate</td><td>adjective</td><td>genuine and allowed by rules or reason</td><td>বৈধ / যুক্তিসঙ্গত</td></tr>
+        <tr><td class="keyterm">assisted</td><td>adjective</td><td>helped by a person or a tool</td><td>সহায়তাপ্রাপ্ত</td></tr>
+        <tr><td class="keyterm">a grey area</td><td>phrase</td><td>a situation without a clear right or wrong answer</td><td>অস্পষ্ট এলাকা (যেখানে ঠিক-ভুল স্পষ্ট নয়)</td></tr>
+        <tr><td class="keyterm">draw the line</td><td>phrase</td><td>to set a limit on what is acceptable</td><td>সীমা নির্ধারণ করা</td></tr>
+        <tr><td class="keyterm">in good faith</td><td>phrase</td><td>with honest and sincere intentions</td><td>সৎ উদ্দেশ্যে</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task A - Matching</h3>
+    <p class="instructions"><strong>Instructions:</strong> Match each word with its correct meaning. Write the letter in the Your Answer column.</p>
+    <table>
+      <thead><tr><th>Word</th><th>Your Answer</th></tr></thead>
+      <tbody>
+        <tr><td>1. transparency</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>2. undermine</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>3. dilemma</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>4. disclose</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>5. inconsistency</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>6. legitimate</td><td><input type="text" class="blank sm"></td></tr>
+      </tbody>
+    </table>
+    <p><strong>A.</strong> to make known information that was hidden &nbsp; <strong>B.</strong> a difficult choice between two options &nbsp; <strong>C.</strong> genuine and allowed by rules or reason<br>
+    <strong>D.</strong> openness and honesty about facts or methods &nbsp; <strong>E.</strong> a lack of agreement between things that should match &nbsp; <strong>F.</strong> to weaken something gradually, often secretly</p>
+
+    <h3 class="sub-heading">Task B - Fill in the Blanks</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose the best word from the box and complete the sentences.</p>
+    <div class="word-box">Word Box: plagiarism | accountability | plausible | justify | assisted</div>
+    <ol class="q-list">
+      <li>Submitting AI-generated text as entirely your own work can be considered a form of <input type="text" class="blank wide">.</li>
+      <li>Dr. Elahi wanted Tanvir to understand that using a tool does not remove his <input type="text" class="blank wide"> for the final submission.</li>
+      <li>Naeem's explanation of why Dr. Elahi called Tanvir in seemed entirely <input type="text" class="blank wide">.</li>
+      <li>Tanvir tried to <input type="text" class="blank wide"> his choice by explaining that he understood the ideas already.</li>
+      <li>An AI-<input type="text" class="blank wide"> report can still reflect genuine understanding, if the student is honest about the process.</li>
+    </ol>
+
+    <h3 class="sub-heading">Task C - Vocabulary in Context</h3>
+    <p class="instructions"><strong>Instructions:</strong> Read each quotation from the story and guess the meaning of the underlined word from context.</p>
+    <ol class="q-list">
+      <li>"Intention did not remove the need for honesty." What does <em>intention</em> mean here?
+        <input type="text" class="aline">
+      </li>
+      <li>"The problem is that a gap in your own understanding was hidden behind confident-sounding sentences." What does <em>hidden</em> mean in this context?
+        <input type="text" class="aline">
+      </li>
+      <li>"If everyone declared it, would professors even have time to check everything properly?" What does <em>declared</em> mean here?
+        <input type="text" class="aline">
+      </li>
+      <li>"She might have let a small change go unnoticed." What does <em>unnoticed</em> mean here?
+        <input type="text" class="aline">
+      </li>
+      <li>"Half the department uses these tools quietly." What does <em>quietly</em> suggest about how the tools are used?
+        <input type="text" class="aline">
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 4 ===================== -->
+  <div class="section-bar" id="section4">SECTION 4 | GRAMMAR DETECTIVE 🔍 | Reported Speech &amp; Modals of Speculation</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Task A - Find from the Story</h3>
+    <p class="instructions"><strong>Instructions:</strong> Find and copy the required number of examples for each grammar focus from the story.</p>
+    <table>
+      <thead><tr><th>Grammar Focus</th><th>How many?</th><th>Examples from the Story</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Reported Statements (with backshift)</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Reported Question</td><td>1</td>
+          <td>1. <textarea class="sentence-box" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td>Reported Advice / Suggestion (using suggested / insisted / denied / admitted)</td><td>1</td>
+          <td>1. <textarea class="sentence-box" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td>Modals of Speculation (must have / might have)</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Modals of Deduction (can't have / should have)</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Grammar Lab</h3>
+    <p class="instructions"><strong>Instructions:</strong> For each sentence, identify the structure, explain why it is used, and write a similar sentence of your own.</p>
+
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">1. "She must have noticed something," Naeem said.</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">2. "You can't have expected a professor who reads forty reports a semester not to notice a sudden jump in vocabulary."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">3. She explained that the problem was not necessarily the tool itself.</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">4. Naeem asked whether Tanvir now thought using AI for coursework was simply wrong.</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">5. She suggested that he rewrite section three independently, using only his own words.</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 5 ===================== -->
+  <div class="section-bar accent-maroon" id="section5">SECTION 5 | MIXED GRAMMAR CHALLENGE</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">A. Error Correction</h3>
+    <p class="instructions"><strong>Instructions:</strong> Each sentence contains one error in reported speech or a modal of speculation/deduction. Rewrite it correctly.</p>
+    <ol class="q-list">
+      <li>Dr. Elahi said that the problem "is" not necessarily the tool itself.<br>Correction: <input type="text" class="aline"></li>
+      <li>Naeem asked did Tanvir think using AI was wrong.<br>Correction: <input type="text" class="aline"></li>
+      <li>She must has noticed something unusual about the report.<br>Correction: <input type="text" class="aline"></li>
+      <li>He should have tell her from the start.<br>Correction: <input type="text" class="aline"></li>
+      <li>Tanvir denied that he cheat on the assignment.<br>Correction: <input type="text" class="aline"></li>
+    </ol>
+
+    <h3 class="sub-heading">B. Multiple Choice</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose the best answer: A, B, C, or D.</p>
+
+    <div class="mc-question">
+      <p>1. Naeem said that she ______ noticed something odd.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc1"> A. must</label>
+        <label><input type="radio" name="mc1"> B. must have</label>
+        <label><input type="radio" name="mc1"> C. must to have</label>
+        <label><input type="radio" name="mc1"> D. must having</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>2. Dr. Elahi explained that the problem ______ the tool itself.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc2"> A. is not necessarily</label>
+        <label><input type="radio" name="mc2"> B. was not necessarily</label>
+        <label><input type="radio" name="mc2"> C. not necessarily</label>
+        <label><input type="radio" name="mc2"> D. weren't necessarily</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>3. Naeem asked ______ Tanvir thought using AI was wrong.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc3"> A. that</label>
+        <label><input type="radio" name="mc3"> B. if did</label>
+        <label><input type="radio" name="mc3"> C. whether</label>
+        <label><input type="radio" name="mc3"> D. what</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>4. She suggested that he ______ section three independently.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc4"> A. rewrites</label>
+        <label><input type="radio" name="mc4"> B. will rewrite</label>
+        <label><input type="radio" name="mc4"> C. rewrite</label>
+        <label><input type="radio" name="mc4"> D. rewriting</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>5. You ______ expected her not to notice such a big change.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc5"> A. can't have</label>
+        <label><input type="radio" name="mc5"> B. mustn't have</label>
+        <label><input type="radio" name="mc5"> C. shouldn't to have</label>
+        <label><input type="radio" name="mc5"> D. couldn't to have</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <h3 class="sub-heading">C. Gap Fill</h3>
+    <p class="instructions"><strong>Instructions:</strong> Complete each sentence with the correct form of the word in brackets.</p>
+    <ol class="q-list">
+      <li>Tanvir admitted that he <input type="text" class="blank wide"> (use) an AI tool to help with the report.</li>
+      <li>Naeem said that Tanvir <input type="text" class="blank wide"> (should / tell) the professor from the start.</li>
+      <li>Dr. Elahi asked whether Tanvir <input type="text" class="blank wide"> (understand) the material fully.</li>
+      <li>She suggested that he <input type="text" class="blank wide"> (rewrite) the section on his own.</li>
+      <li>Naeem said that professors <input type="text" class="blank wide"> (might / not have) time to check everything if everyone disclosed AI use.</li>
+    </ol>
+
+    <h3 class="sub-heading">D. Sentence Transformation</h3>
+    <p class="instructions"><strong>Instructions:</strong> Rewrite each sentence as directed. Keep the meaning the same.</p>
+
+    <div class="transform-item">
+      <p class="t-original">1. Original: Naeem said, "You must have made a mistake somewhere."</p>
+      <p class="t-instruction">Change to Reported Speech:</p>
+      <p>Naeem said that Tanvir <input type="text" class="aline"></p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">2. Original: Dr. Elahi asked, "Did you write this section yourself?"</p>
+      <p class="t-instruction">Change to Reported Speech:</p>
+      <p>Dr. Elahi asked whether Tanvir <input type="text" class="aline"></p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">3. Original: Dr. Elahi said, "You should disclose your use of AI tools in future."</p>
+      <p class="t-instruction">Change to Reported Advice:</p>
+      <p>Dr. Elahi advised Tanvir <input type="text" class="aline"></p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 6 ===================== -->
+  <div class="section-bar" id="section6">SECTION 6 | SENTENCE BUILDER | Build Your Own Sentences</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Use each word or phrase to write one original sentence, following the required grammar structure exactly. Do not copy from the story.</p>
+
+    <table>
+      <thead><tr><th>Word / Phrase</th><th>Required Grammar Structure</th><th>Your Sentence</th></tr></thead>
+      <tbody>
+        <tr><td>plagiarism</td><td>Reported statement (use 'admitted')</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>disclose</td><td>Reported advice (use 'suggested')</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>inconsistency</td><td>Modal of speculation (must have)</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>legitimate</td><td>Reported question (use 'asked whether')</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>draw the line</td><td>Modal of deduction (should have)</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== SECTION 7 ===================== -->
+  <div class="section-bar" id="section7">SECTION 7 | SHORT WRITING TASK | Think &amp; Write</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Write 150-180 words. Use at least two examples of reported speech and two modals of speculation or deduction. Write down the main paragraphs only.</p>
+    <p><strong>Prompt:</strong> Some people believe that students should be free to use AI tools for assignments as long as they understand the material. Others believe that any undisclosed use of AI undermines the purpose of assessment, regardless of understanding. Discuss both views and give your own opinion.</p>
+    <p class="sub-heading" style="margin-top:14px;">Writing Space</p>
+    <textarea class="writing-box" rows="12" placeholder="Write your answer here..."></textarea>
+  </div>
+
+  <!-- ===================== SECTION 8 ===================== -->
+  <div class="section-bar" id="section8">SECTION 8 | CHARACTER REFLECTION | Character Corner</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> These questions have no single correct answer. Discuss with a partner if possible, then write your own considered response.</p>
+
+    <p><strong>1.</strong> Tanvir concludes, "The tool isn't really the issue. What I hid was." To what extent do you agree that honesty about a process matters more than the process itself?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>2.</strong> Naeem suggests that the whole disclosure policy might only function because most students do not fully comply with it. What does this reveal about rules that depend on individual honesty rather than enforcement?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>3.</strong> Is there a meaningful difference between using a tool to organise understanding you already have, and using a tool to fill a gap in understanding you do not yet have? Where would you personally draw the line?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>4.</strong> Dr. Elahi chose to ask Tanvir to explain the material aloud rather than accuse him directly. What does this approach suggest about how trust can be rebuilt after a mistake, rather than simply punished?</p>
+    <textarea rows="3"></textarea>
+  </div>
+
+  <!-- ===================== SECTION 9 ===================== -->
+  <div class="section-bar" id="section9">SECTION 9 | HOMEWORK</div>
+  <div class="section-content">
+    <div class="homework-columns">
+      <div class="homework-box">
+        <h4>Level 1</h4>
+        <p>Write 6 sentences reporting things said in the story or in your own life, using reported speech or modals of speculation/deduction.</p>
+        <textarea rows="7" placeholder="1.&#10;2.&#10;3.&#10;4.&#10;5.&#10;6."></textarea>
+      </div>
+      <div class="homework-box">
+        <h4>Level 2</h4>
+        <p>Write a reflective diary/essay entry (150-180 words) titled "A Time I Had to Decide Whether to Be Fully Honest." Use at least 2 examples of reported speech and 2 modals of speculation or deduction.</p>
+        <textarea rows="9" placeholder="Write your answer here..."></textarea>
+      </div>
+    </div>
+    <p class="final-reminder"><strong>Final Reminder:</strong> A tool can assist your thinking, but it cannot take responsibility for it. Honesty about your process is what turns assistance into learning.</p>
+  </div>
+
+  <div class="footer-divider">© Abidur Rahman Tahmid | English Learning Through Stories | Episode 2 - The AI Dilemma</div>
+
+</div>
+
+<div class="action-bar bottom">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<button id="storyBtn" class="story-float" onclick="scrollToStory()">📖 Story</button>
+
+<script>
+  function clearAll(){
+    if(!confirm("Are you sure you want to clear all your answers? This cannot be undone.")) return;
+    document.querySelectorAll('input[type="text"]').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('textarea').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('input[type="radio"]').forEach(function(el){ el.checked = false; });
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(el){ el.checked = false; });
+  }
+
+  function scrollToStory(){
+    var target = document.getElementById('story-title');
+    if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  }
+
+  (function(){
+    var storyBtn = document.getElementById('storyBtn');
+    var sec4 = document.getElementById('section4');
+    var sec9 = document.getElementById('section9');
+    if(!storyBtn || !sec4 || !sec9) return;
+
+    function updateVisibility(){
+      var sec4Top = sec4.getBoundingClientRect().top;
+      var sec9Top = sec9.getBoundingClientRect().top;
+      var viewportH = window.innerHeight;
+      var passedSection4 = sec4Top < viewportH * 0.6;
+      var passedSection9 = sec9Top < viewportH * 0.6;
+      if(passedSection4 && !passedSection9){
+        storyBtn.classList.add('visible');
+      } else {
+        storyBtn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateVisibility, {passive:true});
+    window.addEventListener('resize', updateVisibility);
+    updateVisibility();
+  })();
+</script>
+
+</body>
+</html>

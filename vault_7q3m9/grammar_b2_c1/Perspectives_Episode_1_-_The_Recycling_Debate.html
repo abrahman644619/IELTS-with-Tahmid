@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perspectives | Character & Grammar Through Stories | Episode 1 - The Recycling Debate</title>
+<style>
+  :root{
+    --navy:#1B3358;
+    --teal-deep:#147D75;
+    --gold-text:#8A5A00;
+    --gold-fill:#FBEFD3;
+    --maroon:#7A2048;
+    --writing-fill:#F4F6F9;
+    --grammar-fill:#EAF6F5;
+    --slate:#5B6B79;
+    --mint:#E6F4F1;
+    --text:#111111;
+    --border:#8FC0BB;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0;
+    background:#ffffff;
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    line-height:1.5;
+  }
+  .page{
+    max-width:850px;
+    margin:0 auto;
+    padding:24px 28px 80px 28px;
+  }
+  /* ---------- Running header ---------- */
+  .running-header{
+    text-align:center;
+    color:var(--teal-deep);
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.2px;
+    margin-bottom:10px;
+  }
+  /* ---------- Title block ---------- */
+  .title-block{ text-align:center; margin-bottom:16px; }
+  .main-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:var(--navy);
+    font-size:32px;
+    margin:0 0 4px 0;
+  }
+  .format-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:18px;
+    margin:0 0 2px 0;
+  }
+  .episode-subtitle{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    color:#111111;
+    font-size:16px;
+    margin:0;
+  }
+  /* ---------- Info box ---------- */
+  .info-box{
+    background:var(--mint);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0;
+  }
+  .info-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:6px 0;
+    flex-wrap:wrap;
+  }
+  .info-label{ font-weight:bold; color:var(--navy); white-space:nowrap; }
+  .info-input{ flex:1; min-width:160px; }
+  .info-input.short{ flex:0 0 180px; }
+  .level-value{ font-weight:bold; margin-left:2px; }
+
+  /* ---------- Goals box ---------- */
+  .goals-box{
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 18px;
+    margin:18px 0 26px 0;
+  }
+  .goals-label{ color:var(--teal-deep); font-weight:bold; margin:0 0 4px 0; }
+  .goals-intro{ margin:0 0 8px 0; font-style:italic; }
+  .goals-list{ margin:0; padding-left:0; list-style:none; }
+  .goals-list li{ margin:4px 0; }
+
+  /* ---------- Section bars ---------- */
+  .section-bar{
+    background:var(--navy);
+    color:#ffffff;
+    font-weight:bold;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:9px 14px;
+    border-radius:5px;
+    margin:30px 0 14px 0;
+    font-size:14.5px;
+    letter-spacing:.2px;
+    scroll-margin-top:20px;
+  }
+  .section-content{ margin-bottom:6px; }
+
+  .sub-heading{
+    color:var(--teal-deep);
+    font-size:15.5px;
+    margin:18px 0 6px 0;
+  }
+  .instructions{ margin:4px 0 12px 0; }
+  .bengali-tag{ color:var(--teal-deep); font-weight:bold; }
+
+  .q-list{ margin:0 0 10px 0; padding-left:20px; }
+  .q-list li{ margin:0 0 14px 0; }
+
+  /* ---------- Inputs ---------- */
+  input.aline{
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:5px 2px;
+    margin:4px 0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+  }
+  input.aline:focus{ outline:none; border-bottom:1px solid var(--teal-deep); }
+
+  input.blank{
+    border:none;
+    border-bottom:1px solid var(--border);
+    background:transparent;
+    padding:2px 4px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    width:60px;
+    text-align:center;
+  }
+  input.blank.sm{ width:40px; }
+  input.blank.wide{ width:150px; }
+  input.blank:focus{ outline:none; border-bottom:1px solid var(--teal-deep); }
+
+  textarea{
+    width:100%;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:10px;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+  }
+  textarea:focus{ outline:none; border:1px solid var(--teal-deep); }
+
+  .section-bar.accent-maroon{
+    background:var(--maroon);
+  }
+
+  .writing-box{
+    border:1px solid var(--navy) !important;
+    background:var(--writing-fill) !important;
+  }
+
+  .keyterm{
+    color:var(--gold-text);
+    background:var(--gold-fill);
+    font-weight:bold;
+  }
+
+  /* ---------- Story ---------- */
+  .story-title{
+    font-family:'Times New Roman', Times, serif;
+    font-weight:bold;
+    font-style:italic;
+    color:var(--navy);
+    font-size:20px;
+    text-align:center;
+    margin:8px 0 14px 0;
+  }
+  .story-text p{ margin:0 0 12px 0; text-align:justify; }
+
+  /* ---------- Tables ---------- */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:10px 0 18px 0;
+    font-size:14px;
+  }
+  table caption{ text-align:left; font-weight:bold; margin-bottom:6px; }
+  th, td{
+    border:1px solid var(--border);
+    padding:8px 10px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:var(--teal-deep);
+    color:#ffffff;
+    font-weight:bold;
+  }
+
+
+  .sentence-box{
+    width:100%;
+    min-height:36px;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:transparent;
+    padding:6px 8px;
+    margin:0;
+    font-family:inherit;
+    font-size:14px;
+    color:var(--text);
+    resize:vertical;
+    line-height:1.4;
+  }
+  .sentence-box:focus{ outline:none; border:1px solid var(--teal-deep); }
+
+  .word-box{
+    border:1px dashed var(--border);
+    border-radius:5px;
+    padding:8px 12px;
+    margin:8px 0 14px 0;
+    font-weight:bold;
+    color:var(--navy);
+  }
+
+  .mc-question{ margin:0 0 16px 0; }
+  .mc-options{ display:flex; flex-wrap:wrap; gap:14px; margin:6px 0; }
+  .mc-options label{ display:flex; align-items:center; gap:5px; }
+  .mc-answer{ margin-top:4px; }
+  .mc-answer input.blank{ margin-left:6px; }
+
+  .checklist{ list-style:none; padding:0; margin:0; }
+  .checklist li{ display:flex; align-items:center; gap:6px; margin:3px 0; }
+  .checklist input[type="checkbox"]{ width:15px; height:15px; }
+
+  .grammar-lab-item{
+    border:1px solid var(--teal-deep);
+    background:var(--grammar-fill);
+    border-radius:6px;
+    padding:12px 14px;
+    margin-bottom:14px;
+  }
+  .grammar-lab-item .gl-sentence{ font-weight:bold; margin:0 0 8px 0; }
+  .grammar-lab-item .gl-q{ margin:6px 0; }
+  .grammar-lab-item .gl-q label{ display:block; margin-bottom:3px; }
+
+  .transform-item{ margin:0 0 16px 0; }
+  .transform-item .t-original{ margin:0 0 6px 0; }
+  .transform-item .t-instruction{ color:var(--teal-deep); font-weight:bold; margin:0 0 4px 0; }
+
+  .homework-columns{
+    display:flex;
+    gap:18px;
+    margin:10px 0 16px 0;
+    flex-wrap:wrap;
+  }
+  .homework-box{
+    flex:1;
+    min-width:240px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:14px 16px;
+  }
+  .homework-box h4{ color:var(--teal-deep); margin:0 0 8px 0; }
+  .homework-box textarea{ margin-top:8px; }
+  .homework-box .q-list{ margin-top:8px; padding-left:18px; }
+  .homework-box .q-list li{ margin:0 0 8px 0; }
+  .final-reminder{ font-style:italic; margin-top:10px; color:var(--slate); }
+
+  .footer-divider{
+    border-top:1px solid var(--border);
+    margin-top:34px;
+    padding-top:10px;
+    text-align:center;
+    font-style:italic;
+    font-size:11.5px;
+    color:var(--slate);
+  }
+
+  /* ---------- Action bars ---------- */
+  .action-bar{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    padding:10px 14px;
+    background:#ffffff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .action-bar.bottom{
+    border-bottom:none;
+    border-top:1px solid var(--border);
+    position:sticky;
+    top:auto;
+    bottom:0;
+  }
+  .action-bar button{
+    background:var(--teal-deep);
+    color:#ffffff;
+    border:none;
+    border-radius:20px;
+    padding:9px 18px;
+    font-size:13.5px;
+    font-weight:bold;
+    cursor:pointer;
+    font-family:inherit;
+  }
+  .action-bar button:hover{ background:var(--navy); }
+  .action-bar button.secondary{ background:#555555; }
+  .action-bar button.secondary:hover{ background:#333333; }
+
+  /* ---------- Floating story button ---------- */
+  .story-float{
+    position:fixed;
+    right:20px;
+    bottom:78px;
+    background:var(--teal-deep);
+    color:#ffffff;
+    border:none;
+    border-radius:30px;
+    padding:10px 16px;
+    font-size:13px;
+    font-weight:bold;
+    cursor:pointer;
+    display:none;
+    z-index:60;
+    box-shadow:0 0 0 0 rgba(15,118,110,0.6);
+    animation:glowPulse 2s infinite;
+  }
+  .story-float.visible{ display:block; }
+  @keyframes glowPulse{
+    0%{ box-shadow:0 0 0 0 rgba(15,118,110,0.55); }
+    70%{ box-shadow:0 0 0 12px rgba(15,118,110,0); }
+    100%{ box-shadow:0 0 0 0 rgba(15,118,110,0); }
+  }
+
+  /* ---------- Print ---------- */
+  @media print{
+    .action-bar, .story-float{ display:none !important; }
+    body{ font-size:12px; }
+    .page{ max-width:100%; padding:0; }
+    .section-bar{ break-inside:avoid; }
+    table, .grammar-lab-item, .story-text, .homework-box{ break-inside:avoid; }
+    input.aline, input.blank{ border-bottom:1px solid #000000; color:#000; }
+    textarea{ border:1px solid #000000; color:#000; }
+    th, td{ border:1px solid #000000; }
+    @page{ size:A4; margin:16mm 14mm; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:600px){
+    .page{ padding:16px 14px 90px 14px; }
+    .main-title{ font-size:24px; }
+    .format-subtitle{ font-size:15px; }
+    .episode-subtitle{ font-size:14px; }
+    .homework-columns{ flex-direction:column; }
+    .mc-options{ gap:8px 12px; }
+    .action-bar{ gap:8px; flex-wrap:wrap; }
+    .action-bar button{ padding:8px 12px; font-size:12.5px; }
+    table, th, td{ font-size:12.5px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="action-bar top">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<div class="page">
+
+  <div class="running-header">Perspectives | Episode 1 - The Recycling Debate</div>
+
+  <div class="title-block">
+    <h1 class="main-title">Perspectives</h1>
+    <h2 class="format-subtitle">Character &amp; Grammar Through Stories</h2>
+    <h3 class="episode-subtitle">Episode 1 - The Recycling Debate</h3>
+  </div>
+
+  <div class="info-box">
+    <div class="info-row">
+      <span class="info-label">Student Name:</span>
+      <input type="text" class="aline info-input">
+    </div>
+    <div class="info-row">
+      <span class="info-label">Date:</span>
+      <input type="text" class="aline info-input short">
+      <span class="info-label">Level:</span>
+      <span class="level-value">B2–C1 (IELTS Band 6.5–8.0)</span>
+    </div>
+  </div>
+
+  <div class="goals-box">
+    <p class="goals-label">Learning Goals:</p>
+    <ul class="goals-list">
+      <li>✓ Read and interpret a discursive, opinion-based story</li>
+      <li>✓ Recognise and use passive voice across a full range of tenses</li>
+      <li>✓ Use nominalisation to raise the formality of written English</li>
+      <li>✓ Acquire Academic Word List vocabulary and topic collocations</li>
+      <li>✓ Practise IELTS-style sentence transformation and error correction</li>
+      <li>✓ Produce an IELTS Task 2-style discursive paragraph</li>
+      <li>✓ Reflect critically on trade-offs, values, and differing perspectives</li>
+    </ul>
+  </div>
+
+  <!-- ===================== SECTION 1 ===================== -->
+  <div class="section-bar" id="section1">SECTION 1 | WARM-UP | Before You Read</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Part A - Prediction &amp; Opinion Questions</h3>
+    <p class="instructions"><strong>Instructions:</strong> These questions require you to take a position, not just guess a plot. Answer before reading.</p>
+    <ol class="q-list">
+      <li>To what extent do you agree that individuals — rather than governments or companies — bear the greatest responsibility for reducing waste?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>Some people believe that small, local efforts (like one shop recycling) are meaningless without large-scale systems. To what extent do you agree?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+
+    <h3 class="sub-heading">Part B - Personal Reflection</h3>
+    <p class="instructions"><strong>Instructions:</strong> Answer honestly from your own experience or context.</p>
+    <ol class="q-list">
+      <li>Is waste separated or recycled in your household or neighbourhood? What makes this easy or difficult where you live?
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+      <li>Should small business owners be legally required to manage the waste they generate, or is this an unreasonable burden? Give a reason.
+        <input type="text" class="aline">
+        <input type="text" class="aline">
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 2 ===================== -->
+  <div class="section-bar" id="section2">SECTION 2 | MAIN STORY | Read the Story</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Read the story carefully. Underline or highlight every passive-voice construction you notice, and circle any nominalised nouns (e.g. cooperation, contamination, agreement).</p>
+
+    <h3 class="story-title" id="story-title">The Recycling Debate</h3>
+    <div class="story-text">
+      <p>Meherin had spent three years studying environmental science, but it was only during this term break that her research finally felt personal. For her final-year project, a community waste audit had been assigned to her, and she had chosen the market near her family's home in Sylhet as her site — mostly because her uncle, Momtaz Mia, ran a small grocery shop there, and she assumed his cooperation could be taken for granted.</p>
+
+      <p>She was wrong.</p>
+
+      <p>"You want me to keep three separate bins?" Momtaz Mia asked, wiping his hands on his lungi. "One for plastic, one for paper, one for... what did you call it? Organic waste?" He laughed, not unkindly. "Meherin, this shop has been run by our family for twenty years. Customers throw their wrappers wherever there's space. That habit will not be changed by three bins."</p>
+
+      <p>"It won't be changed overnight," Meherin admitted, "but habits are shaped by systems, Uncle. If nothing is provided, nothing will be sorted. If the option is given, at least some customers will use it."</p>
+
+      <p>Momtaz Mia was not convinced. "And who collects it afterwards? The municipal truck comes once a week, and everything — plastic, paper, vegetable peels — is thrown into the same container by the same workers. Your three bins will be emptied into one van. What was the point of the separation?"</p>
+
+      <p>This was, Meherin knew, a fair criticism — one that had already been raised by her supervisor, in fact. The absence of a citywide segregation system was a real limitation, and no amount of enthusiasm on her part could be substituted for infrastructure that did not yet exist. But she had also read enough case studies to know that behavioural change was rarely initiated by governments alone; it was often driven, at least at first, by small, visible, local efforts.</p>
+
+      <p>"You're right that the system isn't ready," she said. "But the data has to come from somewhere. If a pilot isn't tried by someone, the argument for a proper system will never be made convincingly to the city corporation. I'm not asking you to solve waste management in Sylhet. I'm asking for six weeks and three bins."</p>
+
+      <p>Her uncle folded his arms. Behind him, a customer was being handed change, and a plastic packet of biscuits was being dropped, without a second thought, straight onto the floor beside the counter. Meherin gestured toward it. "That's what I mean," she said quietly.</p>
+
+      <p>Momtaz Mia was silent for a moment. Then he said, "Six weeks. And if my sales are affected — if customers are annoyed by being asked to sort their own rubbish — the bins are removed, and we don't discuss it again."</p>
+
+      <p>It was not the enthusiastic agreement Meherin had hoped for, but it was, she reminded herself, still an agreement. Over the following days, three labelled bins were placed near the shop entrance, a small hand-painted sign was put up by her cousin, and a simple log was kept of what was discarded and where.</p>
+
+      <p>The results, when they came, were not dramatic. Most customers ignored the bins entirely. A few, mostly younger ones, made a visible effort to use them correctly. Contamination — plastic wrappers found in the "organic" bin, vegetable peels found in the "paper" bin — was common. Whether this counted as failure or as a modest, realistic beginning was, Meherin realised, a matter of perspective rather than fact.</p>
+
+      <p>On the final evening of her project, she sat with her uncle as he closed the shop. "So," he said, "was I right?"</p>
+
+      <p>"Partly," Meherin said. "The habits weren't changed as fast as I'd hoped. But something was noticed by people who never would have noticed it before. I don't know if that's enough. Maybe it isn't."</p>
+
+      <p>Momtaz Mia considered this for a long moment. "Keep the bins," he said finally. "Not because I believe in your three-bin theory. Because you asked properly, and you didn't pretend it was simple." He shrugged. "That's something, isn't it?"</p>
+
+      <p>Meherin wasn't sure if it was a victory. But she wrote it down anyway.</p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 3 ===================== -->
+  <div class="section-bar" id="section3">SECTION 3 | VOCABULARY ZONE</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Study the words and collocations below. They are drawn from the Academic Word List and the theme of environment and sustainability.</p>
+
+    <table>
+      <thead>
+        <tr><th>Word / Phrase</th><th>Part of Speech</th><th>Simple English Meaning</th><th>বাংলা অর্থ</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="keyterm">audit</td><td>noun</td><td>an official check or examination of something</td><td>নিরীক্ষা</td></tr>
+        <tr><td class="keyterm">segregation</td><td>noun</td><td>the act of separating things into groups</td><td>পৃথকীকরণ</td></tr>
+        <tr><td class="keyterm">cooperation</td><td>noun</td><td>working together with someone</td><td>সহযোগিতা</td></tr>
+        <tr><td class="keyterm">contamination</td><td>noun</td><td>the state of being made impure by mixing with something unwanted</td><td>দূষণ / মিশ্রণজনিত অশুদ্ধতা</td></tr>
+        <tr><td class="keyterm">infrastructure</td><td>noun</td><td>the basic systems and structures a place needs to function</td><td>অবকাঠামো</td></tr>
+        <tr><td class="keyterm">pilot (project)</td><td>noun/adj.</td><td>a small trial version tested before a full launch</td><td>পরীক্ষামূলক (প্রকল্প)</td></tr>
+        <tr><td class="keyterm">initiative</td><td>noun</td><td>a new plan or action taken to solve a problem</td><td>উদ্যোগ</td></tr>
+        <tr><td class="keyterm">skeptical</td><td>adjective</td><td>doubtful; not easily convinced</td><td>সন্দেহপ্রবণ</td></tr>
+        <tr><td class="keyterm">sustainable</td><td>adjective</td><td>able to continue over time without causing long-term harm</td><td>টেকসই</td></tr>
+        <tr><td class="keyterm">municipal</td><td>adjective</td><td>relating to a town or city's local government</td><td>পৌর</td></tr>
+        <tr><td class="keyterm">criticism</td><td>noun</td><td>a comment pointing out faults or problems</td><td>সমালোচনা</td></tr>
+        <tr><td class="keyterm">discard</td><td>verb</td><td>to throw something away because it is not needed</td><td>ফেলে দেওয়া</td></tr>
+        <tr><td class="keyterm">visible</td><td>adjective</td><td>able to be seen or noticed</td><td>দৃশ্যমান</td></tr>
+        <tr><td class="keyterm">contamination-free</td><td>adjective</td><td>not mixed with unwanted or harmful material</td><td>দূষণমুক্ত</td></tr>
+        <tr><td class="keyterm">take (something) for granted</td><td>phrase</td><td>to assume something is certain, without checking</td><td>কিছু স্বতঃসিদ্ধ ধরে নেওয়া</td></tr>
+        <tr><td class="keyterm">a drop in the ocean</td><td>phrase</td><td>an effort too small to make a real difference</td><td>সমুদ্রে এক ফোঁটা (নগণ্য প্রচেষ্টা)</td></tr>
+        <tr><td class="keyterm">in the long run</td><td>phrase</td><td>eventually; over a long period of time</td><td>দীর্ঘমেয়াদে</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task A - Matching</h3>
+    <p class="instructions"><strong>Instructions:</strong> Match each word with its correct meaning. Write the letter in the Your Answer column.</p>
+    <table>
+      <thead><tr><th>Word</th><th>Your Answer</th></tr></thead>
+      <tbody>
+        <tr><td>1. contamination</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>2. infrastructure</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>3. skeptical</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>4. initiative</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>5. segregation</td><td><input type="text" class="blank sm"></td></tr>
+        <tr><td>6. criticism</td><td><input type="text" class="blank sm"></td></tr>
+      </tbody>
+    </table>
+    <p><strong>A.</strong> a new plan or action to solve a problem &nbsp; <strong>B.</strong> doubtful; not easily convinced &nbsp; <strong>C.</strong> the basic systems a place needs to function<br>
+    <strong>D.</strong> a comment pointing out faults &nbsp; <strong>E.</strong> the act of separating into groups &nbsp; <strong>F.</strong> the state of being made impure by mixing</p>
+
+    <h3 class="sub-heading">Task B - Fill in the Blanks</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose the best word from the box and complete the sentences.</p>
+    <div class="word-box">Word Box: audit | municipal | sustainable | discard | pilot</div>
+    <ol class="q-list">
+      <li>Meherin's final-year project required her to conduct a waste <input type="text" class="blank wide"> of a local market.</li>
+      <li>According to Momtaz Mia, the <input type="text" class="blank wide"> truck collects everything in a single container anyway.</li>
+      <li>Meherin argued that small local efforts can eventually support a more <input type="text" class="blank wide"> system of waste management.</li>
+      <li>Customers were used to <input type="text" class="blank wide"> their wrappers wherever there was space.</li>
+      <li>Meherin asked her uncle for six weeks to run a small <input type="text" class="blank wide"> project.</li>
+    </ol>
+
+    <h3 class="sub-heading">Task C - Vocabulary in Context</h3>
+    <p class="instructions"><strong>Instructions:</strong> Read each quotation from the story and guess the meaning of the underlined word from context.</p>
+    <ol class="q-list">
+      <li>"The absence of a citywide segregation system was a real limitation." What does <em>limitation</em> mean here?
+        <input type="text" class="aline">
+      </li>
+      <li>"No amount of enthusiasm could be substituted for infrastructure that did not yet exist." What does <em>substituted</em> mean here?
+        <input type="text" class="aline">
+      </li>
+      <li>"Behavioural change was rarely initiated by governments alone." What does <em>initiated</em> mean here?
+        <input type="text" class="aline">
+      </li>
+      <li>"Contamination... was common." What does <em>contamination</em> mean in this context?
+        <input type="text" class="aline">
+      </li>
+      <li>"It was, she reminded herself, still an agreement." What does <em>agreement</em> mean here?
+        <input type="text" class="aline">
+      </li>
+    </ol>
+  </div>
+
+  <!-- ===================== SECTION 4 ===================== -->
+  <div class="section-bar" id="section4">SECTION 4 | GRAMMAR DETECTIVE 🔍 | Passive Voice &amp; Nominalisation</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">Task A - Find from the Story</h3>
+    <p class="instructions"><strong>Instructions:</strong> Find and copy the required number of examples for each grammar focus from the story.</p>
+    <table>
+      <thead><tr><th>Grammar Focus</th><th>How many?</th><th>Examples from the Story</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Present Simple Passive</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Past Simple Passive</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Past Continuous Passive</td><td>1</td>
+          <td>1. <textarea class="sentence-box" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td>Past Perfect Passive</td><td>1</td>
+          <td>1. <textarea class="sentence-box" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td>Future Passive</td><td>1</td>
+          <td>1. <textarea class="sentence-box" rows="2"></textarea></td>
+        </tr>
+        <tr>
+          <td>Passive of Modals (can/will/could + be + V3)</td><td>2</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Nominalisations (verb/adjective → noun)</td><td>3</td>
+          <td>
+            1. <textarea class="sentence-box" rows="2"></textarea><br>
+            2. <textarea class="sentence-box" rows="2"></textarea><br>
+            3. <textarea class="sentence-box" rows="2"></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="sub-heading">Task B - Grammar Lab</h3>
+    <p class="instructions"><strong>Instructions:</strong> For each sentence, identify the structure, explain why it is used, and write a similar sentence of your own.</p>
+
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">1. "This shop has been run by our family for twenty years."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used (instead of active voice / a verb phrase)?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">2. "Everything is thrown into the same container by the same workers."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used (instead of active voice / a verb phrase)?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">3. "A customer was being handed change."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used (instead of active voice / a verb phrase)?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">4. "The absence of a citywide segregation system was a real limitation."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used (instead of active voice / a verb phrase)?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+    <div class="grammar-lab-item">
+      <p class="gl-sentence">5. "The argument for a proper system will never be made convincingly."</p>
+      <div class="gl-q"><label>Which grammar structure is used?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Why is it used (instead of active voice / a verb phrase)?</label><input type="text" class="aline"></div>
+      <div class="gl-q"><label>Write a similar sentence.</label><input type="text" class="aline"></div>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 5 ===================== -->
+  <div class="section-bar accent-maroon" id="section5">SECTION 5 | MIXED GRAMMAR CHALLENGE</div>
+  <div class="section-content">
+
+    <h3 class="sub-heading">A. Error Correction</h3>
+    <p class="instructions"><strong>Instructions:</strong> Each sentence contains one passive-voice error. Rewrite it correctly.</p>
+    <ol class="q-list">
+      <li>The bins was placed near the shop entrance by her cousin.<br>Correction: <input type="text" class="aline"></li>
+      <li>A community waste audit have been assigned to her.<br>Correction: <input type="text" class="aline"></li>
+      <li>The truck will emptied the bins into one van.<br>Correction: <input type="text" class="aline"></li>
+      <li>Momtaz Mia's shop is run by his family since twenty years.<br>Correction: <input type="text" class="aline"></li>
+      <li>The decision were made after a long discussion.<br>Correction: <input type="text" class="aline"></li>
+    </ol>
+
+    <h3 class="sub-heading">B. Multiple Choice</h3>
+    <p class="instructions"><strong>Instructions:</strong> Choose the best answer: A, B, C, or D.</p>
+
+    <div class="mc-question">
+      <p>1. The shop ______ by Momtaz Mia's family for twenty years.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc1"> A. is run</label>
+        <label><input type="radio" name="mc1"> B. has been run</label>
+        <label><input type="radio" name="mc1"> C. was run</label>
+        <label><input type="radio" name="mc1"> D. runs</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>2. Everything ______ into the same container every week.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc2"> A. throws</label>
+        <label><input type="radio" name="mc2"> B. is thrown</label>
+        <label><input type="radio" name="mc2"> C. was throwing</label>
+        <label><input type="radio" name="mc2"> D. has thrown</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>3. When Meherin arrived, a customer ______ change at the counter.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc3"> A. was being handed</label>
+        <label><input type="radio" name="mc3"> B. is handed</label>
+        <label><input type="radio" name="mc3"> C. handed</label>
+        <label><input type="radio" name="mc3"> D. has handed</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>4. The three bins ______ near the entrance last week.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc4"> A. place</label>
+        <label><input type="radio" name="mc4"> B. were placed</label>
+        <label><input type="radio" name="mc4"> C. are placing</label>
+        <label><input type="radio" name="mc4"> D. has placed</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <div class="mc-question">
+      <p>5. If the pilot succeeds, a full system ______ eventually.</p>
+      <div class="mc-options">
+        <label><input type="radio" name="mc5"> A. will be introduced</label>
+        <label><input type="radio" name="mc5"> B. introduces</label>
+        <label><input type="radio" name="mc5"> C. introduced</label>
+        <label><input type="radio" name="mc5"> D. is introducing</label>
+      </div>
+      <div class="mc-answer">Answer: <input type="text" class="blank sm"></div>
+    </div>
+
+    <h3 class="sub-heading">C. Gap Fill</h3>
+    <p class="instructions"><strong>Instructions:</strong> Complete each sentence with the correct passive form of the verb in brackets.</p>
+    <ol class="q-list">
+      <li>The waste audit <input type="text" class="blank wide"> (assign) to Meherin at the start of the term.</li>
+      <li>Three labelled bins <input type="text" class="blank wide"> (place) near the shop entrance last week.</li>
+      <li>At that moment, a plastic packet <input type="text" class="blank wide"> (drop) onto the floor by a customer.</li>
+      <li>The final decision <input type="text" class="blank wide"> (not / make) until the six weeks were over.</li>
+      <li>If the results are positive, a larger project <input type="text" class="blank wide"> (consider) next year.</li>
+    </ol>
+
+    <h3 class="sub-heading">D. Sentence Transformation</h3>
+    <p class="instructions"><strong>Instructions:</strong> Rewrite each sentence as directed. Keep the meaning the same.</p>
+
+    <div class="transform-item">
+      <p class="t-original">1. Original: Someone had already raised this criticism.</p>
+      <p class="t-instruction">Change to Passive Voice:</p>
+      <p>This criticism <input type="text" class="aline"></p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">2. Original: The city corporation must implement proper recycling systems.</p>
+      <p class="t-instruction">Change to Passive Voice (with modal):</p>
+      <p>Proper recycling systems <input type="text" class="aline"></p>
+    </div>
+    <div class="transform-item">
+      <p class="t-original">3. Original: Meherin's uncle finally agreed to cooperate.</p>
+      <p class="t-instruction">Change the verb 'cooperate' to a noun (nominalisation) and rewrite:</p>
+      <p>Meherin's uncle finally agreed to give his <input type="text" class="aline"></p>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 6 ===================== -->
+  <div class="section-bar" id="section6">SECTION 6 | SENTENCE BUILDER | Build Your Own Sentences</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Use each word or phrase to write one original sentence, following the required grammar structure exactly. Do not copy from the story.</p>
+
+    <table>
+      <thead><tr><th>Word / Phrase</th><th>Required Grammar Structure</th><th>Your Sentence</th></tr></thead>
+      <tbody>
+        <tr><td>segregation</td><td>Passive voice, present simple</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>cooperation</td><td>Nominalisation (turn 'cooperate' into a noun in your sentence)</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>skeptical</td><td>Passive voice, past simple</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>infrastructure</td><td>Passive voice, modal (should be / must be)</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+        <tr><td>in the long run</td><td>Passive voice, future simple</td><td><textarea class="sentence-box" rows="2"></textarea></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===================== SECTION 7 ===================== -->
+  <div class="section-bar" id="section7">SECTION 7 | SHORT WRITING TASK | Think &amp; Write</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> Write 150-180 words. Use at least three examples of passive voice and two nominalised nouns. Write down the main paragraphs only.</p>
+    <p><strong>Prompt:</strong> Some people believe that responsibility for reducing waste lies mainly with individuals and small businesses. Others believe that governments and municipal authorities should be responsible for providing the infrastructure needed for recycling. Discuss both views and give your own opinion.</p>
+    <p class="sub-heading" style="margin-top:14px;">Writing Space</p>
+    <textarea class="writing-box" rows="12" placeholder="Write your answer here..."></textarea>
+  </div>
+
+  <!-- ===================== SECTION 8 ===================== -->
+  <div class="section-bar" id="section8">SECTION 8 | CHARACTER REFLECTION | Character Corner</div>
+  <div class="section-content">
+    <p class="instructions"><strong>Instructions:</strong> These questions have no single correct answer. Discuss with a partner if possible, then write your own considered response.</p>
+
+    <p><strong>1.</strong> Momtaz Mia agreed to the trial not because he was convinced by the argument, but because Meherin "asked properly" and "didn't pretend it was simple." What does this suggest about how change is actually negotiated between generations, as opposed to how it is argued for in theory?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>2.</strong> To what extent should young people push their elders toward new practices (environmental or otherwise), and to what extent should they accept established, existing ways of doing things?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>3.</strong> The story ends without a clear resolution — the bins remain, but neither character is fully proven right. Why might a story without a tidy conclusion be more honest than one with a clear moral lesson?</p>
+    <textarea rows="3"></textarea>
+
+    <p style="margin-top:14px;"><strong>4.</strong> Is a "modest, realistic beginning" enough to justify the effort involved, or is meaningful change only meaningful when it happens at scale?</p>
+    <textarea rows="3"></textarea>
+  </div>
+
+  <!-- ===================== SECTION 9 ===================== -->
+  <div class="section-bar" id="section9">SECTION 9 | HOMEWORK</div>
+  <div class="section-content">
+    <div class="homework-columns">
+      <div class="homework-box">
+        <h4>Level 1</h4>
+        <p>Write 6 sentences about recycling or waste management, each using the passive voice in a different tense (present, past, future, modal, continuous, perfect).</p>
+        <textarea rows="7" placeholder="1.&#10;2.&#10;3.&#10;4.&#10;5.&#10;6."></textarea>
+      </div>
+      <div class="homework-box">
+        <h4>Level 2</h4>
+        <p>Write a reflective diary/essay entry (150-180 words) titled "A Time I Tried to Change Someone's Mind." Use at least 3 passive constructions and 2 nominalised nouns.</p>
+        <textarea rows="9" placeholder="Write your answer here..."></textarea>
+      </div>
+    </div>
+    <p class="final-reminder"><strong>Final Reminder:</strong> Precise grammar is what allows a nuanced argument to be expressed clearly. In the long run, the quality of your reasoning is judged by the clarity of your language.</p>
+  </div>
+
+  <div class="footer-divider">© Abidur Rahman Tahmid | English Learning Through Stories | Episode 1 - The Recycling Debate</div>
+
+</div>
+
+<div class="action-bar bottom">
+  <button class="secondary" onclick="clearAll()">🗑️ Clear my response</button>
+  <button onclick="window.print()">🖨️ Save as PDF</button>
+</div>
+
+<button id="storyBtn" class="story-float" onclick="scrollToStory()">📖 Story</button>
+
+<script>
+  function clearAll(){
+    if(!confirm("Are you sure you want to clear all your answers? This cannot be undone.")) return;
+    document.querySelectorAll('input[type="text"]').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('textarea').forEach(function(el){ el.value = ""; });
+    document.querySelectorAll('input[type="radio"]').forEach(function(el){ el.checked = false; });
+    document.querySelectorAll('input[type="checkbox"]').forEach(function(el){ el.checked = false; });
+  }
+
+  function scrollToStory(){
+    var target = document.getElementById('story-title');
+    if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  }
+
+  (function(){
+    var storyBtn = document.getElementById('storyBtn');
+    var sec4 = document.getElementById('section4');
+    var sec9 = document.getElementById('section9');
+    if(!storyBtn || !sec4 || !sec9) return;
+
+    function updateVisibility(){
+      var sec4Top = sec4.getBoundingClientRect().top;
+      var sec9Top = sec9.getBoundingClientRect().top;
+      var viewportH = window.innerHeight;
+      var passedSection4 = sec4Top < viewportH * 0.6;
+      var passedSection9 = sec9Top < viewportH * 0.6;
+      if(passedSection4 && !passedSection9){
+        storyBtn.classList.add('visible');
+      } else {
+        storyBtn.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateVisibility, {passive:true});
+    window.addEventListener('resize', updateVisibility);
+    updateVisibility();
+  })();
+</script>
+
+</body>
+</html>
