@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IELTS Listening Section Practice</title>
+  <link rel="preload" as="image" href="profile-pic-header.png" />
 
   <style>
     :root {
@@ -89,14 +90,35 @@
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
+      padding: 2px;
+      border-radius: 50%;
+      overflow: hidden;
       background: linear-gradient(135deg, var(--accent), var(--blue));
-      display: grid;
-      place-items: center;
-      box-shadow: 0 12px 30px rgba(255, 159, 28, 0.22);
-      font-size: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow:
+        0 0 0 4px rgba(255, 159, 28, 0.08),
+        0 12px 30px rgba(255, 159, 28, 0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .brand:hover .brand-mark {
+      transform: scale(1.05);
+      box-shadow:
+        0 0 0 5px rgba(56, 189, 248, 0.10),
+        0 14px 34px rgba(56, 189, 248, 0.24);
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      background: #ffffff;
     }
 
     .brand small {
@@ -1261,9 +1283,10 @@
       }
 
       .brand-mark {
-        width: 38px;
-        height: 38px;
-        border-radius: 13px;
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+        border-radius: 50%;
       }
 
       .nav-mini {
@@ -1421,7 +1444,14 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a href="../../index.html" class="brand">
-        <div class="brand-mark">🎧</div>
+        <div class="brand-mark">
+          <img
+            src="profile-pic-header.png"
+            alt="Abidur Rahman Tahmid"
+            width="256"
+            height="256"
+          />
+        </div>
         <div>
           IELTS with Tahmid
           <small>Listening Practice Library</small>
