@@ -3,6 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Keep Free.NF as the preferred public domain -->
+  <script>
+    (() => {
+      const githubHost = "abrahman644619.github.io";
+      const githubRepoPath = "/IELTS-with-Tahmid";
+      const preferredOrigin = "https://ieltswithtahmid.free.nf";
+
+      if (window.location.hostname === githubHost) {
+        let pagePath = window.location.pathname;
+
+        if (pagePath.startsWith(githubRepoPath)) {
+          pagePath = pagePath.slice(githubRepoPath.length);
+        }
+
+        if (!pagePath) {
+          pagePath = "/";
+        }
+
+        window.location.replace(
+          preferredOrigin +
+          pagePath +
+          window.location.search +
+          window.location.hash
+        );
+      }
+    })();
+  </script>
 <meta name="theme-color" content="#06101d" />
     <meta
     name="description"
