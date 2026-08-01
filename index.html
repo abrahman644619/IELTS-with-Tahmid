@@ -501,7 +501,29 @@
     .footer-links { display: flex; flex-wrap: wrap; justify-self: end; gap: 17px; }
     .footer-links a:hover { color: var(--text); }
 
-    /* Secret HTML worksheet hub button */
+    /* Secret worksheet link hidden inside the long dash */
+    .secret-workspace-link {
+      display: inline-block;
+      padding: 0 3px;
+      color: var(--muted);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: color .2s ease, background .2s ease, text-shadow .2s ease;
+    }
+
+    .secret-workspace-link:hover,
+    .secret-workspace-link:focus-visible {
+      color: var(--text);
+      background: rgba(255,255,255,.055);
+      text-shadow: 0 0 12px rgba(215,226,238,.32);
+    }
+
+    .secret-workspace-link:focus-visible {
+      outline: 2px solid rgba(215,226,238,.7);
+      outline-offset: 3px;
+    }
+
+    /* Decorative tiny dot — no hyperlink */
     .secret-workspace-dot {
       width: 10px;
       height: 10px;
@@ -917,14 +939,18 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <span><strong>IELTS with Abidur Rahman Tahmid</strong> — Practice • Improve • Achieve</span>
+      <span>
+        <strong>IELTS with Abidur Rahman Tahmid</strong>
+        <a
+          class="secret-workspace-link"
+          href="https://ieltswithtahmid.free.nf/vault_7q3m9/index.html"
+          aria-label="Open private worksheet workspace"
+          title=""
+        >—</a>
+        Practice • Improve • Achieve
+      </span>
 
-      <a
-        class="secret-workspace-dot"
-        href="vault_7q3m9/index.html"
-        aria-label="Open private worksheet workspace"
-        title=""
-      ></a>
+      <span class="secret-workspace-dot" aria-hidden="true"></span>
 
       <span class="footer-links"><a href="#learn">Learn</a><a href="#library">PDF Library</a><a href="#community">Contact</a></span>
     </div>
