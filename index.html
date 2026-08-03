@@ -736,7 +736,7 @@
         role="status"
         aria-live="polite"
         aria-label="Total website visitors"
-        title="Persistent visitor count"
+        title="All-time tracked visitors"
       >
         <span class="visitor-counter-icon" aria-hidden="true">
           <i data-lucide="users"></i>
@@ -1062,130 +1062,20 @@
   </a>
 
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+
+  <!-- GoatCounter analytics -->
+  <script
+    data-goatcounter="https://ieltswithtahmid.goatcounter.com/count"
+    async
+    src="https://gc.zgo.at/count.js"
+  ></script>
+
+  <!-- Displays GoatCounter all-time TOTAL + 101 -->
+  <script defer src="visitor-counter.js"></script>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       lucide.createIcons();
-
-      /* Live persistent visitor counter
-         - Counts one new browser/device once
-         - Displays stored online count + 101
-         - Keeps the last successful value as an offline fallback
-      */
-      const visitorCountElement = document.getElementById("visitorCount");
-      const visitorCounterElement = document.getElementById("visitorCounter");
-      const visitorOffset = 101;
-      const counterNamespace = "ieltswithtahmid-free-nf-7q3m9";
-      const counterName = "total-visitors";
-      const counterBaseUrl =
-        `https://api.counterapi.dev/v1/${counterNamespace}/${counterName}`;
-      const visitorRegisteredKey = "ielts_tahmid_visitor_registered_v1";
-      const visitorLastCountKey = "ielts_tahmid_visitor_last_count_v1";
-
-      function formatVisitorCount(value) {
-        return new Intl.NumberFormat("en-US").format(value);
-      }
-
-      function extractCounterValue(payload) {
-        const candidates = [
-          payload?.count,
-          payload?.value,
-          payload?.data,
-          payload?.result,
-          payload?.data?.count,
-          payload?.data?.value,
-          payload?.data?.result
-        ];
-
-        for (const candidate of candidates) {
-          const number = Number(candidate);
-          if (Number.isFinite(number)) return number;
-        }
-
-        return null;
-      }
-
-      function showVisitorCount(value) {
-        const safeValue = Math.max(visitorOffset, Math.floor(value));
-        visitorCountElement.textContent = formatVisitorCount(safeValue);
-        visitorCounterElement.setAttribute(
-          "aria-label",
-          `Total website visitors: ${safeValue}`
-        );
-        localStorage.setItem(visitorLastCountKey, String(safeValue));
-      }
-
-      async function fetchVisitorCounter(url) {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 8000);
-
-        try {
-          const response = await fetch(url, {
-            method: "GET",
-            cache: "no-store",
-            signal: controller.signal
-          });
-
-          if (!response.ok) {
-            throw new Error(`Visitor counter request failed: ${response.status}`);
-          }
-
-          return await response.json();
-        } finally {
-          clearTimeout(timeoutId);
-        }
-      }
-
-      async function initialiseVisitorCounter() {
-        const cachedDisplayCount = Number(
-          localStorage.getItem(visitorLastCountKey)
-        );
-
-        if (Number.isFinite(cachedDisplayCount) && cachedDisplayCount >= visitorOffset) {
-          showVisitorCount(cachedDisplayCount);
-        } else {
-          showVisitorCount(visitorOffset);
-        }
-
-        const registrationState =
-          localStorage.getItem(visitorRegisteredKey);
-        const shouldIncrement =
-          registrationState !== "registered" &&
-          registrationState !== "pending";
-
-        if (shouldIncrement) {
-          localStorage.setItem(visitorRegisteredKey, "pending");
-        }
-
-        const endpoint = shouldIncrement
-          ? `${counterBaseUrl}/up`
-          : counterBaseUrl;
-
-        try {
-          const payload = await fetchVisitorCounter(endpoint);
-          const rawCount = extractCounterValue(payload);
-
-          if (rawCount === null) {
-            throw new Error("Visitor counter returned an unexpected response.");
-          }
-
-          if (shouldIncrement) {
-            localStorage.setItem(visitorRegisteredKey, "registered");
-          }
-
-          showVisitorCount(rawCount + visitorOffset);
-        } catch (error) {
-          if (shouldIncrement) {
-            localStorage.removeItem(visitorRegisteredKey);
-          }
-
-          console.warn(
-            "Visitor counter is temporarily unavailable; showing the last saved count.",
-            error
-          );
-        }
-      }
-
-      initialiseVisitorCounter();
 
       const dynamicWord = document.getElementById("dynamicWord");
       const words = ["Succeed.", "Improve.", "Achieve."];
