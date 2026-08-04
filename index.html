@@ -214,77 +214,6 @@
     .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 35px rgba(255,159,28,.26); }
     .nav-cta svg { width: 16px; height: 16px; }
 
-    /* Persistent live visitor counter */
-    .visitor-counter {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      min-height: 42px;
-      padding: 8px 12px;
-      border: 1px solid rgba(68,216,158,.22);
-      border-radius: 13px;
-      color: #dff9ee;
-      background:
-        linear-gradient(135deg, rgba(68,216,158,.11), rgba(54,199,255,.07));
-      box-shadow: 0 10px 28px rgba(0,0,0,.16);
-      white-space: nowrap;
-    }
-
-    .visitor-counter-icon {
-      width: 28px;
-      height: 28px;
-      display: grid;
-      place-items: center;
-      border-radius: 9px;
-      color: var(--green);
-      background: rgba(68,216,158,.1);
-      border: 1px solid rgba(68,216,158,.18);
-    }
-
-    .visitor-counter-icon svg {
-      width: 15px;
-      height: 15px;
-    }
-
-    .visitor-counter-copy {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.05;
-    }
-
-    .visitor-counter-copy strong {
-      font-family: "Manrope", "Inter", sans-serif;
-      font-size: .92rem;
-      letter-spacing: -.02em;
-    }
-
-    .visitor-counter-copy span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: .65rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-    }
-
-    .visitor-counter-copy span::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 4px rgba(68,216,158,.08);
-      animation: visitorPulse 1.8s ease-in-out infinite;
-    }
-
-    @keyframes visitorPulse {
-      0%,100% { transform: scale(1); opacity: .75; }
-      50% { transform: scale(1.3); opacity: 1; }
-    }
-
     .menu-button {
       display: none;
       width: 44px;
@@ -639,8 +568,6 @@
     .stagger.visible > *:nth-child(6) { transition-delay: .4s; }
 
     @media (max-width: 1040px) {
-      .visitor-counter-copy span { display: none; }
-      .visitor-counter { gap: 8px; padding: 7px 10px; }
       .hero-grid { grid-template-columns: 1fr; }
       .learning-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
       .featured-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
@@ -689,12 +616,6 @@
 
     @media (max-width: 430px) {
       .brand-copy span { display: none; }
-      .visitor-counter {
-        min-height: 40px;
-        padding: 6px 8px;
-      }
-      .visitor-counter-icon { display: none; }
-      .visitor-counter-copy strong { font-size: .84rem; }
       .skill-row { grid-template-columns: auto 1fr; }
       .skill-target { display: none; }
     }
@@ -729,23 +650,6 @@
         <a href="#library">PDF Library</a>
         <a href="#community">Contact</a>
       </nav>
-
-      <div
-        class="visitor-counter"
-        id="visitorCounter"
-        role="status"
-        aria-live="polite"
-        aria-label="Total website visitors"
-        title="All-time tracked visitors"
-      >
-        <span class="visitor-counter-icon" aria-hidden="true">
-          <i data-lucide="users"></i>
-        </span>
-        <span class="visitor-counter-copy">
-          <strong id="visitorCount">101</strong>
-          <span>Visitors</span>
-        </span>
-      </div>
 
       <a class="nav-cta" href="#learn">Start Learning <i data-lucide="arrow-right"></i></a>
 
@@ -1069,9 +973,6 @@
     async
     src="https://gc.zgo.at/count.js"
   ></script>
-
-  <!-- Displays GoatCounter all-time TOTAL + 101 -->
-  <script defer src="visitor-counter.js"></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
