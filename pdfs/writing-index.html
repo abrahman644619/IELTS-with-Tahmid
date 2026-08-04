@@ -661,8 +661,9 @@
     }
 
     .footer-inner {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
       gap: 20px;
       padding-top: 24px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -674,14 +675,19 @@
       color: var(--text);
     }
 
-    /* Quiet resource dots — intentionally understated, no visible labels */
+    .footer-tagline {
+      justify-self: end;
+    }
+
+    /* Quiet resource dots — aligned with the footer text */
     .quiet-links {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 22px;
-      margin-top: 26px;
-      padding-top: 4px;
+      margin: 0;
+      padding: 0;
+      align-self: center;
     }
 
     .quiet-dot {
@@ -705,6 +711,7 @@
 
     .quiet-dot.dot-red { --dot-color: #ff4d4d; }
     .quiet-dot.dot-green { --dot-color: var(--green); }
+    .quiet-dot.dot-blue { --dot-color: var(--cyan); }
 
     /* Reveal */
     .reveal {
@@ -795,7 +802,18 @@
       }
 
       .footer-inner {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .quiet-links {
+        order: 3;
+        gap: 20px;
+      }
+
+      .footer-tagline {
+        justify-self: center;
       }
     }
 
@@ -1218,13 +1236,38 @@
   <footer class="footer">
     <div class="container footer-inner">
       <span><strong>IELTS with Tahmid</strong> — Writing Resource Hub</span>
-      <span>Practice • Improve • Achieve</span>
-    </div>
 
-    <nav class="quiet-links" aria-label="Additional practice links">
-      <a class="quiet-dot dot-red" href="Liz's ideas for essay.pdf" target="_blank" rel="noopener noreferrer" aria-label="Essay ideas"></a>
-      <a class="quiet-dot dot-green" href="Harrison_Mim-Smart_Words_Vocabulary_for_the_Erudit.pdf" target="_blank" rel="noopener noreferrer" aria-label="Smart words vocabulary"></a>
-    </nav>
+      <nav class="quiet-links" aria-label="Additional practice links">
+        <a
+          class="quiet-dot dot-red"
+          href="Liz's ideas for essay.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Liz's Ideas for Essay PDF"
+          title=""
+        ></a>
+
+        <a
+          class="quiet-dot dot-green"
+          href="Harrison_Mim-Smart_Words_Vocabulary_for_the_Erudit.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Smart Words Vocabulary PDF"
+          title=""
+        ></a>
+
+        <a
+          class="quiet-dot dot-blue"
+          href="Essays From Examiners 2019.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Essays From Examiners 2019 PDF"
+          title=""
+        ></a>
+      </nav>
+
+      <span class="footer-tagline">Practice • Improve • Achieve</span>
+    </div>
   </footer>
 
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
