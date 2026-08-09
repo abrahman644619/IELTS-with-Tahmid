@@ -32,6 +32,19 @@
     })();
   </script>
 <meta name="theme-color" content="#06101d" />
+
+  <!-- Apply the saved colour theme before the page renders -->
+  <script>
+    (() => {
+      const allowedThemes = ["midnight", "light", "royal"];
+      let savedTheme = "midnight";
+      try {
+        const storedTheme = localStorage.getItem("ielts_tahmid_theme");
+        if (allowedThemes.includes(storedTheme)) savedTheme = storedTheme;
+      } catch (error) {}
+      document.documentElement.dataset.theme = savedTheme;
+    })();
+  </script>
     <meta
     name="description"
     content="Practise IELTS Reading, Listening, Writing, Speaking, Grammar, and Vocabulary with free mock tests, interactive worksheets, and PDF resources. 📚100+ Resources • ⏰Timed Practice • 🖥️HTML Worksheets"
@@ -89,6 +102,244 @@
       --radius-md: 16px;
       --max: 1180px;
     }
+
+    /* ===== Theme system: Midnight / Light / Royal ===== */
+    html[data-theme="midnight"] { color-scheme: dark; }
+
+    html[data-theme="light"] {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --bg2: #eef3f8;
+      --surface: rgba(255,255,255,.88);
+      --surface2: rgba(255,255,255,.98);
+      --border: rgba(20,48,75,.14);
+      --text: #14283b;
+      --muted: #64758a;
+      --orange: #d97706;
+      --orange2: #f4a63a;
+      --cyan: #0b84b3;
+      --blue: #326fd1;
+      --purple: #7552c8;
+      --pink: #c6487f;
+      --green: #168b67;
+      --shadow: 0 24px 60px rgba(28,52,76,.12);
+    }
+
+    html[data-theme="royal"] {
+      color-scheme: dark;
+      --bg: #0d0719;
+      --bg2: #180d2d;
+      --surface: rgba(255,255,255,.065);
+      --surface2: rgba(255,255,255,.10);
+      --border: rgba(230,215,255,.14);
+      --text: #fbf8ff;
+      --muted: #b8adc8;
+      --orange: #f5b942;
+      --orange2: #ffd77b;
+      --cyan: #7dd3fc;
+      --blue: #7d9cff;
+      --purple: #b084ff;
+      --pink: #ff79b7;
+      --green: #5ee0b7;
+      --shadow: 0 24px 72px rgba(0,0,0,.42);
+    }
+
+    html[data-theme="light"] body {
+      background:
+        linear-gradient(rgba(20,48,75,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20,48,75,.035) 1px, transparent 1px),
+        radial-gradient(circle at 8% 8%, rgba(11,132,179,.10), transparent 28%),
+        radial-gradient(circle at 92% 4%, rgba(217,119,6,.11), transparent 25%),
+        linear-gradient(180deg, var(--bg), var(--bg2) 50%, var(--bg));
+    }
+
+    html[data-theme="royal"] body {
+      background:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px),
+        radial-gradient(circle at 8% 8%, rgba(176,132,255,.18), transparent 28%),
+        radial-gradient(circle at 92% 4%, rgba(245,185,66,.14), transparent 25%),
+        linear-gradient(180deg, var(--bg), var(--bg2) 50%, var(--bg));
+    }
+
+    html[data-theme="light"] .topbar { background: rgba(248,250,253,.90); border-bottom-color: rgba(20,48,75,.10); }
+    html[data-theme="royal"] .topbar { background: rgba(13,7,25,.84); border-bottom-color: rgba(230,215,255,.08); }
+
+    html[data-theme="light"] .nav-links a:hover,
+    html[data-theme="light"] .nav-links a.active { background: rgba(20,48,75,.06); }
+
+    html[data-theme="light"] .button-secondary,
+    html[data-theme="light"] .menu-button,
+    html[data-theme="light"] .search-box input { background: rgba(255,255,255,.84); }
+
+    html[data-theme="light"] .hero-copy,
+    html[data-theme="light"] .hero-dashboard,
+    html[data-theme="light"] .learning-card,
+    html[data-theme="light"] .featured-card,
+    html[data-theme="light"] .library-shell,
+    html[data-theme="light"] .community-panel {
+      border-color: var(--border);
+      background: linear-gradient(145deg, rgba(255,255,255,.97), rgba(247,250,253,.91));
+    }
+
+    html[data-theme="light"] .hero-dashboard {
+      background:
+        radial-gradient(circle at 90% 0%, rgba(117,82,200,.10), transparent 34%),
+        linear-gradient(145deg, rgba(255,255,255,.98), rgba(247,250,253,.92));
+    }
+
+    html[data-theme="light"] .skill-row,
+    html[data-theme="light"] .stats,
+    html[data-theme="light"] .journey-shell,
+    html[data-theme="light"] .journey-step,
+    html[data-theme="light"] .library-card,
+    html[data-theme="light"] .community-link {
+      border-color: var(--border);
+      background: rgba(255,255,255,.80);
+    }
+
+    html[data-theme="light"] .learning-card:hover,
+    html[data-theme="light"] .featured-card:hover,
+    html[data-theme="light"] .library-card:hover,
+    html[data-theme="light"] .community-link:hover,
+    html[data-theme="light"] .skill-row:hover {
+      border-color: rgba(20,48,75,.20);
+      background: rgba(255,255,255,.99);
+    }
+
+    html[data-theme="light"] .trainer-strip {
+      border-color: var(--border);
+      background: linear-gradient(135deg, rgba(11,132,179,.08), rgba(217,119,6,.08));
+    }
+
+    html[data-theme="light"] .skill-target,
+    html[data-theme="light"] .featured-meta span {
+      color: #3e5368;
+      background: rgba(20,48,75,.055);
+    }
+
+    html[data-theme="light"] .hero-trust { color: #496074; }
+    html[data-theme="light"] .card-link { color: #173b56; }
+    html[data-theme="light"] .featured-label,
+    html[data-theme="light"] .status-pill { color: #17617e; }
+    html[data-theme="light"] .step-number { color: #10283b; }
+    html[data-theme="light"] .footer-inner { border-top-color: rgba(20,48,75,.11); }
+    html[data-theme="light"] .secret-workspace-dot { background: #8798aa; }
+    html[data-theme="light"] #mouseGlow { background: radial-gradient(circle, rgba(11,132,179,.07), transparent 66%); }
+    html[data-theme="light"] .orb.one { background: radial-gradient(circle, rgba(11,132,179,.18), transparent 68%); }
+    html[data-theme="light"] .orb.two { background: radial-gradient(circle, rgba(217,119,6,.16), transparent 68%); }
+
+    html[data-theme="royal"] .hero-copy,
+    html[data-theme="royal"] .hero-dashboard,
+    html[data-theme="royal"] .learning-card,
+    html[data-theme="royal"] .featured-card,
+    html[data-theme="royal"] .library-shell,
+    html[data-theme="royal"] .community-panel {
+      border-color: var(--border);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(176,132,255,.08), transparent 34%),
+        linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.035));
+    }
+
+    html[data-theme="royal"] .hero-dashboard {
+      background:
+        radial-gradient(circle at 90% 0%, rgba(176,132,255,.22), transparent 34%),
+        linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.035));
+    }
+
+    html[data-theme="royal"] .journey-shell,
+    html[data-theme="royal"] .community-panel {
+      background:
+        radial-gradient(circle at 0 0, rgba(176,132,255,.15), transparent 32%),
+        linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    }
+
+    html[data-theme="royal"] .trainer-strip {
+      background: linear-gradient(135deg, rgba(176,132,255,.11), rgba(245,185,66,.08));
+    }
+
+    .theme-picker { position: relative; flex: 0 0 auto; }
+    .theme-toggle {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 11px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      color: var(--text);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: .8rem;
+      font-weight: 800;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .theme-toggle:hover { transform: translateY(-2px); border-color: rgba(54,199,255,.26); background: var(--surface2); }
+    .theme-toggle svg { width: 17px; height: 17px; }
+    .theme-chevron { width: 14px !important; height: 14px !important; color: var(--muted); transition: transform .2s ease; }
+    .theme-picker.open .theme-chevron { transform: rotate(180deg); }
+
+    .theme-menu {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 10px);
+      z-index: 130;
+      width: 205px;
+      padding: 8px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(9,19,33,.97);
+      box-shadow: 0 22px 55px rgba(0,0,0,.34);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-7px) scale(.98);
+      transform-origin: top right;
+      transition: opacity .18s ease, visibility .18s ease, transform .18s ease;
+    }
+    html[data-theme="light"] .theme-menu { background: rgba(255,255,255,.98); box-shadow: 0 22px 55px rgba(30,52,72,.16); }
+    html[data-theme="royal"] .theme-menu { background: rgba(20,11,38,.98); }
+    .theme-picker.open .theme-menu { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+
+    .theme-option {
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border: 0;
+      border-radius: 11px;
+      color: var(--text);
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+      transition: background .18s ease;
+    }
+    .theme-option:hover,
+    .theme-option.active { background: rgba(255,255,255,.07); }
+    html[data-theme="light"] .theme-option:hover,
+    html[data-theme="light"] .theme-option.active { background: rgba(20,48,75,.06); }
+
+    .theme-swatch {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+    }
+    .theme-swatch.midnight { color: #69d6ff; background: linear-gradient(135deg, #06101d, #173957); }
+    .theme-swatch.light { color: #d97706; background: linear-gradient(135deg, #ffffff, #e8eef5); }
+    .theme-swatch.royal { color: #ffd77b; background: linear-gradient(135deg, #160b2b, #5d3493); }
+    .theme-swatch svg { width: 15px; height: 15px; }
+
+    .theme-option-copy strong { display: block; font-size: .78rem; }
+    .theme-option-copy span { display: block; margin-top: 1px; color: var(--muted); font-size: .66rem; font-weight: 600; }
+    .theme-check { width: 16px; height: 16px; color: var(--green); opacity: 0; }
+    .theme-option.active .theme-check { opacity: 1; }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 96px; }
@@ -567,6 +818,11 @@
     .stagger.visible > *:nth-child(5) { transition-delay: .32s; }
     .stagger.visible > *:nth-child(6) { transition-delay: .4s; }
 
+    @media (max-width: 1120px) {
+      .theme-toggle { width: 44px; padding-inline: 0; }
+      .theme-label, .theme-chevron { display: none; }
+    }
+
     @media (max-width: 1040px) {
       .hero-grid { grid-template-columns: 1fr; }
       .learning-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
@@ -580,6 +836,8 @@
       .nav-links, .nav-cta { display: none; }
       .menu-button { display: grid; }
       .nav-links.mobile-open { position: fixed; left: 16px; right: 16px; top: 88px; display: grid; gap: 6px; padding: 12px; border: 1px solid var(--border); border-radius: 18px; background: rgba(7,17,31,.96); box-shadow: var(--shadow); }
+      html[data-theme="light"] .nav-links.mobile-open { background: rgba(255,255,255,.98); }
+      html[data-theme="royal"] .nav-links.mobile-open { background: rgba(20,11,38,.98); }
       .nav-links.mobile-open a { padding: 13px 14px; }
       .journey-line { display: none; }
       .journey-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
@@ -650,6 +908,32 @@
         <a href="#library">PDF Library</a>
         <a href="#community">Contact</a>
       </nav>
+
+      <div class="theme-picker" id="themePicker">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Choose website theme" aria-expanded="false" aria-controls="themeMenu">
+          <i data-lucide="palette"></i>
+          <span class="theme-label">Theme</span>
+          <i class="theme-chevron" data-lucide="chevron-down"></i>
+        </button>
+
+        <div class="theme-menu" id="themeMenu" role="menu" aria-label="Website themes">
+          <button class="theme-option" type="button" data-theme-value="midnight" role="menuitem">
+            <span class="theme-swatch midnight"><i data-lucide="moon-star"></i></span>
+            <span class="theme-option-copy"><strong>Midnight</strong><span>Original dark theme</span></span>
+            <i class="theme-check" data-lucide="check"></i>
+          </button>
+          <button class="theme-option" type="button" data-theme-value="light" role="menuitem">
+            <span class="theme-swatch light"><i data-lucide="sun"></i></span>
+            <span class="theme-option-copy"><strong>Light</strong><span>Bright study mode</span></span>
+            <i class="theme-check" data-lucide="check"></i>
+          </button>
+          <button class="theme-option" type="button" data-theme-value="royal" role="menuitem">
+            <span class="theme-swatch royal"><i data-lucide="crown"></i></span>
+            <span class="theme-option-copy"><strong>Royal</strong><span>Purple premium mode</span></span>
+            <i class="theme-check" data-lucide="check"></i>
+          </button>
+        </div>
+      </div>
 
       <a class="nav-cta" href="#learn">Start Learning <i data-lucide="arrow-right"></i></a>
 
@@ -977,6 +1261,70 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       lucide.createIcons();
+
+      /* Theme switcher */
+      const themePicker = document.getElementById("themePicker");
+      const themeToggle = document.getElementById("themeToggle");
+      const themeMenu = document.getElementById("themeMenu");
+      const themeOptions = [...document.querySelectorAll(".theme-option")];
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      const allowedThemes = ["midnight", "light", "royal"];
+      const themeMetaColours = {
+        midnight: "#06101d",
+        light: "#f5f7fb",
+        royal: "#0d0719"
+      };
+
+      function getCurrentTheme() {
+        const theme = document.documentElement.dataset.theme;
+        return allowedThemes.includes(theme) ? theme : "midnight";
+      }
+
+      function updateThemeUI(theme) {
+        themeOptions.forEach(option => {
+          const active = option.dataset.themeValue === theme;
+          option.classList.toggle("active", active);
+          option.setAttribute("aria-checked", String(active));
+        });
+        if (themeMeta) themeMeta.setAttribute("content", themeMetaColours[theme]);
+      }
+
+      function setTheme(theme) {
+        if (!allowedThemes.includes(theme)) return;
+        document.documentElement.dataset.theme = theme;
+        try { localStorage.setItem("ielts_tahmid_theme", theme); } catch (error) {}
+        updateThemeUI(theme);
+      }
+
+      function closeThemeMenu() {
+        themePicker.classList.remove("open");
+        themeToggle.setAttribute("aria-expanded", "false");
+      }
+
+      themeToggle.addEventListener("click", event => {
+        event.stopPropagation();
+        const isOpen = themePicker.classList.toggle("open");
+        themeToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      themeMenu.addEventListener("click", event => event.stopPropagation());
+
+      themeOptions.forEach(option => {
+        option.addEventListener("click", () => {
+          setTheme(option.dataset.themeValue);
+          closeThemeMenu();
+        });
+      });
+
+      document.addEventListener("click", closeThemeMenu);
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && themePicker.classList.contains("open")) {
+          closeThemeMenu();
+          themeToggle.focus();
+        }
+      });
+
+      updateThemeUI(getCurrentTheme());
 
       const dynamicWord = document.getElementById("dynamicWord");
       const words = ["Succeed.", "Improve.", "Achieve."];
