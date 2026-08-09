@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>IELTS Writing Task 1 Mastery | Worksheet 1 — Task 1 Foundations</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;700&display=swap');
+
+:root{
+  --ink:#22303C;
+  --copper:#B5651D;
+  --copper-light:#F5E6D8;
+  --idea-fill:#FFF6D8;
+  --idea-border:#D9A400;
+  --idea-text:#6B5200;
+  --trap-fill:#FBE4E4;
+  --trap-border:#C0392B;
+  --trap-text:#7A1F16;
+  --strategy-fill:#E3EEFB;
+  --strategy-border:#2E5FA3;
+  --strategy-text:#1B3A66;
+  --strong-fill:#E7F6EC;
+  --strong-border:#2E8B57;
+  --weak-fill:#FBEAEA;
+  --weak-border:#C0392B;
+  --slate:#5B6B79;
+  --border:#C9CED3;
+  --bg-panel:#F7F8FA;
+  --text:#17202A;
+  --white:#fff;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  padding:0 0 78px;
+  background:#eef1f4;
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  line-height:1.62;
+}
+.bn{
+  font-family:'Noto Sans Bengali','Kalpurush','SolaimanLipi','Siyam Rupali',sans-serif;
+}
+.page{
+  width:min(100%, 980px);
+  margin:0 auto;
+  background:#fff;
+  min-height:100vh;
+  padding:22px 42px 48px;
+  box-shadow:0 8px 30px rgba(34,48,60,.09);
+}
+.running-header{
+  text-align:center;
+  color:var(--copper);
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:.04em;
+  border-bottom:1px solid var(--border);
+  padding:0 0 10px;
+  margin-bottom:22px;
+}
+.title-block{text-align:center;margin:0 0 20px}
+.main-title{
+  margin:0;
+  font-family:'Times New Roman',Times,serif;
+  color:var(--ink);
+  font-size:34px;
+  line-height:1.18;
+}
+.worksheet-subtitle{
+  margin:7px 0 4px;
+  font-family:'Times New Roman',Times,serif;
+  font-size:22px;
+  line-height:1.25;
+  color:#111;
+}
+.source-title{
+  margin-top:7px;
+  color:var(--slate);
+  font-size:11px;
+  letter-spacing:.04em;
+}
+.intro-label{
+  font-family:'Times New Roman',Times,serif;
+  color:var(--copper);
+  font-size:20px;
+  font-weight:700;
+  margin:18px 0 7px;
+}
+p{margin:8px 0}
+.worksheet-section{scroll-margin-top:16px;margin-top:28px}
+.section-bar{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  background:var(--ink);
+  color:#fff;
+  font-weight:700;
+  border-radius:9px;
+  padding:10px 14px;
+  margin:0 0 14px;
+  letter-spacing:.015em;
+  line-height:1.35;
+}
+.section-num{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:28px;
+  height:28px;
+  border-radius:50%;
+  background:#fff;
+  color:var(--ink);
+  font-weight:800;
+}
+.section-slash{opacity:.65;padding:0 5px}
+.table-wrap{width:100%;overflow-x:auto;margin:14px 0 18px}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{
+  border:1px solid var(--border);
+  padding:9px 10px;
+  text-align:left;
+  vertical-align:top;
+  line-height:1.48;
+}
+th{
+  background:var(--copper);
+  color:#fff;
+  font-weight:700;
+}
+td{background:#fff}
+.data-table td:first-child{font-weight:600}
+.cell-line + .cell-line{margin-top:3px}
+.callout{
+  border:1px solid;
+  border-radius:9px;
+  padding:13px 15px;
+  margin:15px 0 18px;
+  break-inside:avoid;
+}
+.callout p{margin:5px 0}
+.callout-title{font-weight:800;margin-bottom:6px}
+.callout.idea{background:var(--idea-fill);border-color:var(--idea-border)}
+.callout.idea .callout-title{color:var(--idea-text)}
+.callout.trap{background:var(--trap-fill);border-color:var(--trap-border)}
+.callout.trap .callout-title{color:var(--trap-text)}
+.callout.strategy{background:var(--strategy-fill);border-color:var(--strategy-border)}
+.callout.strategy .callout-title{color:var(--strategy-text)}
+.worked-label,.reference-label,.practice-title,.answer-subhead,.next-steps{
+  color:var(--copper);
+  font-weight:800;
+}
+.worked-label,.reference-label{margin:18px 0 7px;font-size:18px}
+.practice-title{margin:23px 0 7px;font-size:18px}
+.practice-card{
+  border-left:4px solid var(--copper-light);
+  padding:7px 0 7px 13px;
+  margin:10px 0 16px;
+}
+.practice-card p{margin:4px 0}
+.practice-prompt{font-weight:600}
+.aline{
+  width:100%;
+  border:0;
+  border-bottom:1.5px solid #5b6670;
+  outline:none;
+  padding:6px 4px 5px;
+  font:inherit;
+  color:inherit;
+  background:transparent;
+  margin:4px 0 4px;
+}
+textarea{
+  width:100%;
+  min-height:84px;
+  resize:vertical;
+  border:1px solid var(--border);
+  border-radius:7px;
+  padding:9px 10px;
+  font:inherit;
+  line-height:1.5;
+  outline:none;
+  background:#fff;
+  margin-top:7px;
+}
+.aline:focus,textarea:focus{
+  border-color:var(--copper);
+  box-shadow:0 1px 0 var(--copper);
+}
+textarea:focus{box-shadow:0 0 0 2px rgba(181,101,29,.13)}
+.answer-cue{font-size:13px;color:var(--slate);font-style:italic}
+.strong-weak{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:14px 0 18px;
+}
+.example-box{
+  border:1.5px solid;
+  border-radius:9px;
+  padding:13px 15px;
+  break-inside:avoid;
+}
+.example-box strong{display:block;margin-bottom:7px;font-size:17px}
+.example-box.strong{background:var(--strong-fill);border-color:var(--strong-border)}
+.example-box.weak{background:var(--weak-fill);border-color:var(--weak-border)}
+.keyterm{color:var(--copper);font-weight:800}
+.formula-box code{
+  font-family:Arial,Helvetica,sans-serif;
+  white-space:normal;
+  color:inherit;
+}
+.checklist{
+  display:grid;
+  gap:10px;
+  margin:15px 0;
+}
+.check-item{
+  display:grid;
+  grid-template-columns:24px 1fr;
+  gap:8px;
+  align-items:start;
+  padding:10px 12px;
+  background:var(--bg-panel);
+  border:1px solid var(--border);
+  border-radius:8px;
+}
+.check-item input{margin-top:4px;width:17px;height:17px;accent-color:var(--copper)}
+.check-text .bn{display:block;margin-top:2px}
+.self-assess{margin-top:15px;border:1px solid var(--border);border-radius:9px;overflow:hidden}
+.self-row{
+  display:grid;
+  grid-template-columns:minmax(180px,1.4fr) repeat(3,minmax(92px,.6fr));
+  border-bottom:1px solid var(--border);
+  align-items:center;
+}
+.self-row:last-child{border-bottom:0}
+.self-row > div{padding:10px}
+.self-row .criterion{font-weight:700;background:var(--bg-panel)}
+.radio-label{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.radio-label input{accent-color:var(--copper)}
+.action-bar{
+  display:flex;
+  justify-content:flex-end;
+  gap:9px;
+  flex-wrap:wrap;
+}
+.top-actions{margin:12px 0 18px;padding:10px 0;border-bottom:1px solid var(--border)}
+.bottom-actions{
+  position:fixed;
+  z-index:30;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(34,48,60,.96);
+  padding:10px 16px;
+  box-shadow:0 -3px 18px rgba(0,0,0,.15);
+}
+.bottom-actions .action-bar{width:min(100%,980px);margin:0 auto}
+.btn{
+  appearance:none;
+  border:0;
+  border-radius:7px;
+  padding:9px 13px;
+  cursor:pointer;
+  font:700 14px Arial,Helvetica,sans-serif;
+}
+.btn-clear{background:#fff;color:var(--ink);border:1px solid #d7dde1}
+.btn-print{background:var(--copper);color:#fff}
+.btn:hover{filter:brightness(.97)}
+.answer-key-toggle{
+  display:inline-block;
+  background:var(--copper);
+  color:#fff;
+  border:0;
+  border-radius:8px;
+  padding:11px 16px;
+  font:700 15px Arial,Helvetica,sans-serif;
+  cursor:pointer;
+  margin:2px 0 15px;
+}
+.answer-key-content{
+  border-top:1px dashed var(--border);
+  padding-top:12px;
+}
+.answer-subhead{font-size:17px;margin:18px 0 5px}
+.answer-list{margin:6px 0 12px;padding-left:24px}
+.answer-list li{margin:6px 0}
+.spot-item{margin:10px 0 15px}
+.spot-original{font-weight:700}
+.spot-fix{margin-top:3px}
+.jump-answer{
+  position:fixed;
+  right:24px;
+  bottom:82px;
+  z-index:35;
+  display:none;
+  border:0;
+  border-radius:999px;
+  padding:11px 15px;
+  color:#fff;
+  background:var(--copper);
+  font:700 14px Arial,Helvetica,sans-serif;
+  cursor:pointer;
+  box-shadow:0 0 0 0 rgba(181,101,29,.42);
+  animation:pulse 2.1s infinite;
+}
+.jump-answer.visible{display:block}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(181,101,29,.42)}
+  70%{box-shadow:0 0 0 13px rgba(181,101,29,0)}
+  100%{box-shadow:0 0 0 0 rgba(181,101,29,0)}
+}
+.footer{
+  margin-top:28px;
+  border-top:1px solid var(--border);
+  padding-top:12px;
+  color:var(--slate);
+  font-size:12px;
+  font-style:italic;
+  text-align:center;
+}
+.footer .source-meta{margin-top:4px;font-style:normal;font-size:11px}
+.muted-note{color:var(--slate);font-size:13px}
+.no-break,table,.callout,.example-box{break-inside:avoid}
+@media(max-width:600px){
+  body{font-size:14px;padding-bottom:96px}
+  .page{padding:16px 15px 38px}
+  .main-title{font-size:27px}
+  .worksheet-subtitle{font-size:19px}
+  .running-header{font-size:10px}
+  .section-bar{font-size:13px;padding:9px 10px}
+  .strong-weak{grid-template-columns:1fr}
+  .self-assess{overflow-x:auto}
+  .self-row{min-width:620px}
+  .bottom-actions .action-bar{justify-content:center}
+  .jump-answer{right:14px;bottom:90px}
+}
+@media print{
+  @page{size:A4;margin:16mm 14mm}
+  body{background:#fff;padding:0;font-size:10.5pt;line-height:1.45}
+  .page{width:auto;max-width:none;margin:0;padding:0;box-shadow:none}
+  .top-actions,.bottom-actions,.jump-answer,.answer-key-toggle{display:none !important}
+  #answerKeyContent{display:block !important}
+  
+  textarea{border:1px solid #000 !important;box-shadow:none !important;min-height:55px}
+  input[type="checkbox"],input[type="radio"]{filter:grayscale(1)}
+  th,td,.callout,.example-box,.check-item,.self-assess{border-color:#000 !important}
+  table,.callout,.strong-weak,.example-box,.check-item,.self-row{break-inside:avoid}
+  .section-bar{background:#22303C !important;color:#fff !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  th{background:#B5651D !important;color:#fff !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .callout,.example-box,.check-item{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .worksheet-section{margin-top:18px}
+  .footer{margin-top:20px}
+}
+
+/* Written-response fields: textarea boxes only */
+.response-box{
+  width:100%;
+  min-height:72px;
+  resize:vertical;
+  border:1px solid var(--border);
+  border-radius:7px;
+  padding:9px 10px;
+  font:inherit;
+  line-height:1.5;
+  outline:none;
+  background:#fff;
+  margin-top:7px;
+}
+.response-box:focus{
+  border-color:var(--copper);
+  box-shadow:0 0 0 2px rgba(181,101,29,.13);
+}
+@media print{
+  .response-box{
+    border:1px solid #000 !important;
+    min-height:55px;
+    box-shadow:none !important;
+  }
+}
+</style>
+</head>
+<body>
+<main class="page">
+<div class="running-header">IELTS Writing Task 1 Mastery | Worksheet 1 — Task 1 Foundations</div>
+<header class="title-block">
+<h1 class="main-title">IELTS Writing Task 1 Mastery</h1>
+<h2 class="worksheet-subtitle">Worksheet 1 — Task 1 Foundations</h2>
+<div class="source-title">WORKSHEET 1 — IELTS WRITING TASK 1 FOUNDATIONS</div>
+</header>
+<div class="top-actions">
+<div class="action-bar">
+<button class="btn btn-clear" onclick="clearResponses()" type="button">🗑️ Clear my response</button>
+<button class="btn btn-print" onclick="window.print()" type="button">🖨️ Save as PDF</button>
+</div>
+</div>
+<div class="intro-label">How to use this worksheet  /  এই ওয়ার্কশিটটি যেভাবে ব্যবহার করবেন</div>
+<p>This worksheet introduces the foundations of IELTS Academic Writing Task 1. You will not write a full chart report here — that comes from Worksheet 2 onward. Your job in this worksheet is to master four building blocks: (1) how Task 1 is marked, (2) how to paraphrase the prompt, (3) how to write a strong overview, and (4) the core language of trend and comparison.</p><p class="bn">এই ওয়ার্কশিটটি IELTS Academic Writing Task 1-এর ভিত্তি গড়ে তোলে। এখানে আপনি কোনো পূর্ণাঙ্গ চার্ট-রিপোর্ট লিখবেন না — সেটা ওয়ার্কশিট ২ থেকে শুরু হবে। এই ওয়ার্কশিটে আপনার কাজ চারটি মূল দক্ষতা আয়ত্ত করা: (১) টাস্ক ১-এ কীভাবে নম্বর দেওয়া হয়, (২) প্রম্পট কীভাবে paraphrase করতে হয়, (৩) কীভাবে একটি ভালো overview লিখতে হয়, এবং (৪) trend ও comparison-এর মূল ভাষা।</p>
+<p>Work through the sections in order. Read each strategy box, study the worked example, then complete the practice. Compare your answers with the Answer Key at the end and use the Self-Assessment Rubric to grade yourself honestly.</p><p class="bn">অধ্যায়গুলো ক্রমানুসারে শেষ করুন। প্রতিটি strategy box পড়ুন, worked example ভালোভাবে দেখুন, এরপর practice শেষ করুন। শেষে দেওয়া Answer Key-এর সাথে আপনার উত্তর মিলিয়ে দেখুন এবং Self-Assessment Rubric দিয়ে নিজেকে সৎভাবে মূল্যায়ন করুন।</p>
+<section class="worksheet-section" id="section-1"><div class="section-bar"><span class="section-num">1</span><span>TASK 1 AT A GLANCE <span class="section-slash">/</span> <span class="bn">এক নজরে টাস্ক ১</span></span></div>
+<p>Before learning any technique, you must know the rules of the game. Below is everything you need to remember about the format.</p><p class="bn">যেকোনো কৌশল শেখার আগে আপনাকে এই পরীক্ষার নিয়ম জানতে হবে। নিচে যা যা মনে রাখতে হবে তার সব তথ্য দেওয়া হলো।</p>
+<div class="table-wrap"><table class="data-table"><tr><th><div class="cell-line bn">Element  /  উপাদান</div></th><th><div class="cell-line bn">Detail  /  বিবরণ</div></th></tr><tr><td><div class="cell-line">Time</div><div class="cell-line bn">সময়</div></td><td><div class="cell-line">20 minutes (recommended)</div><div class="cell-line bn">২০ মিনিট (অনুমোদিত সময়)</div></td></tr><tr><td><div class="cell-line">Word count</div><div class="cell-line bn">শব্দসংখ্যা</div></td><td><div class="cell-line">Minimum 150 words; aim for 170–200</div><div class="cell-line bn">কমপক্ষে ১৫০ শব্দ; লক্ষ্য থাকুক ১৭০–২০০ শব্দ</div></td></tr><tr><td><div class="cell-line">Weight in total</div><div class="cell-line bn">মোট নম্বরের অংশ</div></td><td><div class="cell-line">1/3 of your Writing score</div><div class="cell-line bn">Writing-এর মোট স্কোরের এক-তৃতীয়াংশ</div></td></tr><tr><td><div class="cell-line">What you do</div><div class="cell-line bn">কাজ</div></td><td><div class="cell-line">Describe a visual (chart, table, diagram, map, process). DO NOT give opinions or reasons.</div><div class="cell-line bn">একটি ভিজ্যুয়াল (chart, table, diagram, map, process) বর্ণনা করতে হবে। মতামত বা কারণ দেওয়া যাবে না।</div></td></tr><tr><td><div class="cell-line">Style</div><div class="cell-line bn">লেখার ধরন</div></td><td><div class="cell-line">Academic and formal. No contractions, no personal pronouns, no informal phrases.</div><div class="cell-line bn">Academic ও formal। Contraction (don't, can't), ব্যক্তিগত pronoun (I, we), এবং informal শব্দ ব্যবহার করবেন না।</div></td></tr><tr><td><div class="cell-line">Paragraph plan</div><div class="cell-line bn">Paragraph পরিকল্পনা</div></td><td><div class="cell-line">4 paragraphs: Introduction → Overview → Body 1 → Body 2</div><div class="cell-line bn">৪টি paragraph: Introduction → Overview → Body 1 → Body 2</div></td></tr></table></div>
+<div class="callout idea"><div class="callout-title">💡 Key idea  /  মূল কথা</div><p>Task 1 is description, not explanation. The examiner already knows the facts behind the data — they only want to see how clearly you can describe what is on the page.</p><p class="bn">টাস্ক ১ হলো বর্ণনা, ব্যাখ্যা নয়। পরীক্ষক ইতিমধ্যেই ডেটার পেছনের কারণ জানেন — তিনি শুধু দেখতে চান যে আপনি পৃষ্ঠার তথ্য কতটা স্পষ্টভাবে বর্ণনা করতে পারেন।</p></div>
+</section>
+<section class="worksheet-section" id="section-2"><div class="section-bar"><span class="section-num">2</span><span>HOW YOU ARE MARKED <span class="section-slash">/</span> <span class="bn">কীভাবে নম্বর দেওয়া হয়</span></span></div>
+<p>Examiners use four equally weighted criteria, each worth 25% of your Task 1 score. Knowing them is the first step to controlling your band score.</p><p class="bn">পরীক্ষকরা চারটি সমান গুরুত্বের criterion ব্যবহার করেন — প্রতিটির মান টাস্ক ১-এর মোট স্কোরের ২৫%। এগুলো জানা মানেই আপনার band score নিজের নিয়ন্ত্রণে নেওয়ার প্রথম ধাপ।</p>
+<div class="table-wrap"><table class="data-table"><tr><th><div class="cell-line">Criterion</div></th><th><div class="cell-line">Weight</div></th><th><div class="cell-line bn">What it measures  /  কী মূল্যায়ন করা হয়</div></th></tr><tr><td><div class="cell-line">Task Achievement</div><div class="cell-line bn">সব শর্ত মেনে সঠিক উত্তর দেওয়া</div></td><td><div class="cell-line">25%</div></td><td><div class="cell-line">Have you written 150+ words? Did you include an overview? Did you select the right key features and give accurate data?</div><div class="cell-line bn">আপনি কি ১৫০+ শব্দ লিখেছেন? Overview কি দিয়েছেন? সঠিক key feature বেছে নিয়েছেন এবং সঠিক ডেটা উল্লেখ করেছেন?</div></td></tr><tr><td><div class="cell-line">Coherence &amp; Cohesion</div><div class="cell-line bn">ভাবগত ও বাক্যগত সংযোগ</div></td><td><div class="cell-line">25%</div></td><td><div class="cell-line">Are your paragraphs logical? Do your sentences link smoothly using cohesive devices (however, in contrast, by 1990, etc.)?</div><div class="cell-line bn">Paragraph-গুলো কি যুক্তিসংগত ক্রমে সাজানো? Cohesive device (however, in contrast, by 1990 ইত্যাদি) দিয়ে বাক্যগুলো কি মসৃণভাবে সংযুক্ত?</div></td></tr><tr><td><div class="cell-line">Lexical Resource</div><div class="cell-line bn">শব্দভাণ্ডার</div></td><td><div class="cell-line">25%</div></td><td><div class="cell-line">Range and accuracy of vocabulary. Did you paraphrase the prompt? Did you avoid repeating the same word?</div><div class="cell-line bn">শব্দভাণ্ডারের বৈচিত্র্য ও নির্ভুলতা। প্রম্পট কি paraphrase করেছেন? একই শব্দ বারবার ব্যবহার এড়িয়েছেন?</div></td></tr><tr><td><div class="cell-line">Grammatical Range &amp; Accuracy</div><div class="cell-line bn">ব্যাকরণের দখল ও শুদ্ধতা</div></td><td><div class="cell-line">25%</div></td><td><div class="cell-line">Variety of sentence structures and correct grammar. Mixing simple, compound and complex sentences scores higher than only simple ones.</div><div class="cell-line bn">বিভিন্ন বাক্য-গঠনের ব্যবহার ও সঠিক grammar। শুধু simple sentence-এর চেয়ে simple, compound ও complex বাক্যের মিশ্রণ বেশি নম্বর এনে দেয়।</div></td></tr></table></div>
+<div class="callout trap"><div class="callout-title">⚠️ Common trap  /  প্রচলিত ভুল</div><p>Many candidates focus only on vocabulary and ignore the other three. A band 7 is impossible without a clear overview (Task Achievement) and varied sentence structures (Grammar).</p><p class="bn">অনেক শিক্ষার্থী শুধু শব্দভাণ্ডারের দিকে নজর দেন, বাকি তিনটি criterion ভুলে যান। স্পষ্ট overview (Task Achievement) এবং বৈচিত্র্যময় বাক্য-গঠন (Grammar) ছাড়া band 7 পাওয়া অসম্ভব।</p></div>
+</section>
+<section class="worksheet-section" id="section-3"><div class="section-bar"><span class="section-num">3</span><span>PARAPHRASING THE PROMPT <span class="section-slash">/</span> <span class="bn">প্রম্পট প্যারাফ্রেজ করা</span></span></div>
+<p>The first sentence of your report rewrites the prompt in your own words. Copying the prompt directly costs you marks in Lexical Resource. Your goal is to keep the meaning identical but change the words.</p><p class="bn">আপনার রিপোর্টের প্রথম বাক্যটি হলো প্রম্পটের একটি rephrased রূপ। প্রম্পট হুবহু কপি করলে Lexical Resource-এ নম্বর কাটা যায়। লক্ষ্য হলো অর্থ একই রেখে শব্দ বদলে দেওয়া।</p>
+<div class="callout strategy"><div class="callout-title">🎯 The 3-step paraphrase strategy  /  ৩-ধাপ প্যারাফ্রেজ কৌশল</div><p>1. Replace the chart noun (chart → graph, illustration, figure).</p><p class="bn">১. Chart-এর noun বদলান (chart → graph, illustration, figure)।</p><p>2. Replace the verb (shows → illustrates, depicts, presents, compares).</p><p class="bn">২. Verb বদলান (shows → illustrates, depicts, presents, compares)।</p><p>3. Reorder or rephrase the topic (e.g. "the amount of money spent on food" → "household food expenditure").</p><p class="bn">৩. Topic-এর শব্দবিন্যাস বদলান ("the amount of money spent on food" → "household food expenditure")।</p></div>
+<div class="worked-label">Worked example  /  উদাহরণ:</div>
+<div class="table-wrap"><table class="data-table"><tr><th><div class="cell-line">Original prompt</div></th><th><div class="cell-line">Paraphrased opening</div></th></tr><tr><td><div class="cell-line">"The chart below shows the percentage of household income spent on food in three countries between 2010 and 2020."</div></td><td><div class="cell-line">"The bar graph illustrates how much of family income was used for food across three nations over a ten-year period from 2010 to 2020."</div><div class="cell-line">"chart" → "bar graph"; "shows" → "illustrates"; "household income spent on food" → "family income used for food"; "between 2010 and 2020" → "over a ten-year period from 2010 to 2020".</div></td></tr></table></div>
+<div class="reference-label">Paraphrasing reference  /  প্যারাফ্রেজ রেফারেন্স:</div>
+<div class="table-wrap"><table class="data-table"><tr><th><div class="cell-line bn">Original  /  মূল</div></th><th><div class="cell-line bn">Paraphrased alternatives  /  বিকল্প</div></th></tr><tr><td><div class="cell-line bn">The chart shows  /  chart দেখাচ্ছে</div></td><td><div class="cell-line">The graph / figure / table illustrates · depicts · presents · reveals · compares · gives information about</div></td></tr><tr><td><div class="cell-line bn">The number of people  /  মানুষের সংখ্যা</div></td><td><div class="cell-line">The figure for · The proportion of people · The total of</div></td></tr><tr><td><div class="cell-line">Between 1990 and 2000</div></td><td><div class="cell-line">From 1990 to 2000 · Over a ten-year period · During the period 1990–2000</div></td></tr><tr><td><div class="cell-line">In three countries</div></td><td><div class="cell-line">Across three nations · In three different regions</div></td></tr><tr><td><div class="cell-line">Spending / sales / production</div></td><td><div class="cell-line">Expenditure · revenue / income / turnover · output / manufacture</div></td></tr><tr><td><div class="cell-line">Increased / decreased</div></td><td><div class="cell-line">Rose · climbed · grew  //  Fell · declined · dropped</div></td></tr><tr><td><div class="cell-line">The amount of money spent on X</div></td><td><div class="cell-line">Expenditure on X · the figure for spending on X</div></td></tr></table></div>
+<h3 class="practice-title" id="first-practice">Practice 3.1 — Paraphrase the following prompts  /  নিচের প্রম্পটগুলো প্যারাফ্রেজ করুন</h3>
+<p class="bn">প্রতিটি প্রম্পটের জন্য একটি নতুন প্রথম বাক্য লিখুন। অর্থ অপরিবর্তিত রেখে শব্দ পরিবর্তন করুন।</p>
+<div class="practice-card">
+<p class="practice-prompt">1. The line graph shows the number of tourists visiting four European cities from 2000 to 2020.</p>
+<textarea aria-label="Practice 3.1 question 1 answer" class="response-field response-box" rows="2"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">2. The pie charts below show the proportion of energy produced from different sources in two countries in 2015.</p>
+<textarea aria-label="Practice 3.1 question 2 answer" class="response-field response-box" rows="2"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">3. The table compares the average monthly rainfall in five Asian cities during one calendar year.</p>
+<textarea aria-label="Practice 3.1 question 3 answer" class="response-field response-box" rows="2"></textarea>
+</div>
+</section>
+<section class="worksheet-section" id="section-4"><div class="section-bar"><span class="section-num">4</span><span>WRITING THE OVERVIEW <span class="section-slash">/</span> <span class="bn">ওভারভিউ লেখা</span></span></div>
+<p>The overview is the most important paragraph in Task 1. Without it, the maximum Task Achievement band you can score is 5. With a good overview, you immediately qualify for band 7 or above on Task Achievement.</p><p class="bn">Overview হলো টাস্ক ১-এর সবচেয়ে গুরুত্বপূর্ণ paragraph। Overview না থাকলে Task Achievement-এ সর্বোচ্চ band 5 পাবেন। ভালো overview থাকলে Task Achievement-এ সরাসরি band 7 বা তারও বেশি পাওয়ার যোগ্যতা অর্জন করবেন।</p>
+<div class="callout strategy"><div class="callout-title">🎯 What an overview must do  /  Overview-এ যা থাকতেই হবে</div><p>• Summarise the 2–3 most important features of the visual.</p><p class="bn">• ভিজ্যুয়ালের সবচেয়ে গুরুত্বপূর্ণ ২–৩টি বৈশিষ্ট্য সংক্ষেপে তুলে ধরবে।</p><p>• NEVER include specific numbers or percentages.</p><p class="bn">• নির্দিষ্ট সংখ্যা বা শতাংশ কখনোই উল্লেখ করবে না।</p><p>• Use general comparison language (the highest, the most popular, double, more than) and general trend language (overall increased, generally fell).</p><p class="bn">• সাধারণ তুলনার ভাষা (the highest, the most popular, double, more than) এবং সাধারণ trend-এর ভাষা (overall increased, generally fell) ব্যবহার করবে।</p><p>• Begin with: Overall, … / It is clear that … / In general, …</p><p class="bn">• শুরু করবে: Overall, … / It is clear that … / In general, … দিয়ে।</p></div>
+<div class="worked-label">Worked example  /  উদাহরণ:</div>
+<p>Imagine a bar chart showing male and female employment rates in four sectors (education, healthcare, finance, construction) in 2020. Females dominate education and healthcare; males dominate finance and construction; construction has the largest gender gap.</p><p class="bn">ধরা যাক, একটি bar chart দেখাচ্ছে ২০২০ সালে চারটি sector (education, healthcare, finance, construction)-এ পুরুষ ও নারী employment rate। Education ও healthcare-এ নারীরা এগিয়ে; finance ও construction-এ পুরুষরা; construction-এ লিঙ্গ-ব্যবধান সবচেয়ে বেশি।</p>
+<div class="strong-weak">
+<div class="example-box strong">
+<strong>✓ Strong overview</strong>
+<div>Overall, it is clear that men and women were employed in distinctly different sectors, with females dominating the education and healthcare industries, while males made up the majority of workers in finance and construction. The gender gap was widest in the construction sector.</div>
+<div class="muted-note">(Notice: no numbers, two general comparisons, and one stand-out feature.)</div>
+</div>
+<div class="example-box weak">
+<strong>✗ Weak overview</strong>
+<div>Women worked in education at 78% and in healthcare at 65%. Men worked in construction at 92% and finance at 70%. There were big differences.</div>
+<div class="muted-note">(Too many numbers, no general statement, no clear comparison. This belongs in the body paragraphs.)</div>
+</div>
+</div>
+<h3 class="practice-title">Practice 4.1 — Write an overview for each scenario  /  প্রতিটি ক্ষেত্রের জন্য একটি overview লিখুন</h3>
+<p class="bn">চার্ট আঁকতে হবে না। নিচের বিবরণ পড়ুন এবং দুই বাক্যের একটি overview লিখুন (কোনো সংখ্যা নয়)।</p>
+<div class="practice-card">
+<p class="practice-prompt">1. A line graph shows internet users in three countries (Japan, Brazil, Nigeria) from 2000 to 2020. All three rose, but Japan started highest, Brazil grew fastest, and Nigeria remained the lowest throughout.</p>
+<p class="bn">একটি line graph দেখাচ্ছে ২০০০–২০২০ সালে তিনটি দেশে (Japan, Brazil, Nigeria) ইন্টারনেট ব্যবহারকারী। তিনটিই বেড়েছে, কিন্তু Japan সবচেয়ে উঁচু থেকে শুরু, Brazil সবচেয়ে দ্রুত বেড়েছে, Nigeria পুরো সময় সবচেয়ে নিচে।</p>
+<textarea aria-label="Practice 4.1 scenario 1 overview" class="response-field" rows="3"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">2. A pie chart compares household spending categories in one city in 2022. Housing took the largest share (around 40%), followed by food. Transport and savings were small and roughly equal. Entertainment was the smallest.</p>
+<p class="bn">একটি pie chart দেখাচ্ছে ২০২২ সালে এক শহরে household খরচের categories। Housing সর্বোচ্চ (প্রায় ৪০%), এরপর food। Transport ও savings ছোট ও প্রায় সমান। Entertainment সবচেয়ে কম।</p>
+<textarea aria-label="Practice 4.1 scenario 2 overview" class="response-field" rows="3"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">3. A bar chart compares average daily water use per person in five cities. City A used by far the most, City E used the least, and the other three cities were roughly similar in the middle.</p>
+<p class="bn">একটি bar chart দেখাচ্ছে পাঁচটি শহরে প্রতি ব্যক্তির গড় দৈনিক পানি ব্যবহার। City A সবচেয়ে বেশি, City E সবচেয়ে কম, বাকি তিনটি প্রায় সমান এবং মাঝামাঝি।</p>
+<textarea aria-label="Practice 4.1 scenario 3 overview" class="response-field" rows="3"></textarea>
+</div>
+</section>
+<section class="worksheet-section" id="section-5"><div class="section-bar"><span class="section-num">5</span><span>VOCABULARY BANK — TREND LANGUAGE <span class="section-slash">/</span> <span class="bn">শব্দভাণ্ডার — Trend-এর ভাষা</span></span></div>
+<p>Trend language describes movement: things going up, down, or staying the same. You need both verb forms (the figure rose) and noun forms (there was a rise) to score well on Grammatical Range.</p><p class="bn">Trend-এর ভাষা movement বর্ণনা করে: উপরে ওঠা, নামা, বা একই থাকা। Grammatical Range-এ ভালো স্কোর পেতে হলে verb form (the figure rose) এবং noun form (there was a rise) — দুটোই জানতে হবে।</p>
+<div class="table-wrap"><table class="data-table vocab-table"><tr><th><div class="cell-line bn">Category  /  ধরন</div></th><th><div class="cell-line">Verb forms</div></th><th><div class="cell-line">Noun forms</div></th><th><div class="cell-line bn">Bangla meaning  /  বাংলা অর্থ</div></th></tr><tr><td class="keyterm"><div class="cell-line bn">Big upward movement  /  বড় উত্থান</div></td><td><div class="cell-line">rocketed, soared, surged, jumped, climbed sharply</div></td><td><div class="cell-line">a sharp rise, a dramatic increase, a surge</div></td><td><div class="cell-line bn">তীব্র বৃদ্ধি</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">Steady upward movement  /  ধীর বৃদ্ধি</div></td><td><div class="cell-line">rose, increased, climbed, grew</div></td><td><div class="cell-line">a steady rise, a gradual increase, a growth</div></td><td><div class="cell-line bn">ধীরে ধীরে বৃদ্ধি</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">Small upward movement  /  সামান্য বৃদ্ধি</div></td><td><div class="cell-line">rose slightly, edged up, inched up</div></td><td><div class="cell-line">a slight rise, a marginal increase</div></td><td><div class="cell-line bn">অল্প বৃদ্ধি</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">Big downward movement  /  বড় পতন</div></td><td><div class="cell-line">plummeted, plunged, collapsed, dropped sharply</div></td><td><div class="cell-line">a sharp fall, a dramatic decline, a plunge</div></td><td><div class="cell-line bn">তীব্র পতন</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">Steady downward movement  /  ধীর পতন</div></td><td><div class="cell-line">fell, declined, decreased, dropped</div></td><td><div class="cell-line">a steady fall, a gradual decline</div></td><td><div class="cell-line bn">ধীরে ধীরে পতন</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">Small downward movement  /  সামান্য পতন</div></td><td><div class="cell-line">fell slightly, dipped, edged down</div></td><td><div class="cell-line">a slight fall, a marginal decline</div></td><td><div class="cell-line bn">অল্প পতন</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">No change  /  পরিবর্তন নেই</div></td><td><div class="cell-line">remained stable, stayed constant, held steady</div></td><td><div class="cell-line">stability, no change</div></td><td><div class="cell-line bn">অপরিবর্তিত</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">Flattening after movement  /  movement-এর পর সমতল</div></td><td><div class="cell-line">levelled off, stabilised, plateaued</div></td><td><div class="cell-line">a plateau, a levelling off</div></td><td><div class="cell-line bn">নড়াচড়ার পর স্থিতিশীল</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">Up-and-down movement  /  ওঠানামা</div></td><td><div class="cell-line">fluctuated, oscillated, varied</div></td><td><div class="cell-line">a fluctuation, variation</div></td><td><div class="cell-line bn">অস্থির ওঠানামা</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">Highest / lowest point  /  সর্বোচ্চ / সর্বনিম্ন</div></td><td><div class="cell-line">reached a peak (of), peaked at, hit a high (of); reached a low (of), bottomed out at</div></td><td><div class="cell-line">a peak, a high; a low, a trough</div></td><td><div class="cell-line bn">সর্বোচ্চ / সর্বনিম্ন বিন্দু</div></td></tr></table></div>
+<div class="callout strategy formula-box"><div class="callout-title">📐 Sentence formulas  /  বাক্য-কাঠামো</div><p>Verb form:   [subject] + [trend verb] + [adverb] + [from X to Y] + [time].</p><p>Example: Sales rose sharply from $20m to $50m between 2010 and 2015.</p><p>Noun form:   There was a + [adjective] + [trend noun] + in + [subject] + [from X to Y] + [time].</p><p>Example: There was a sharp rise in sales from $20m to $50m between 2010 and 2015.</p><p>Verb form: [subject] + [trend verb] + [adverb] + [from X to Y] + [time].</p><p>Noun form: There was a + [adjective] + [trend noun] + in + [subject] + [from X to Y] + [time].</p><p class="bn">এই দুই কাঠামো alternate করে ব্যবহার করলে Grammatical Range-এ বেশি নম্বর পাবেন।</p></div>
+<h3 class="practice-title">Practice 5.1 — Sentence transformation  /  বাক্য রূপান্তর</h3>
+<p class="bn">প্রতিটি verb-form বাক্যকে noun-form-এ রূপান্তর করুন (অথবা উল্টোটা)।</p>
+<div class="practice-card">
+<p class="practice-prompt">1. The number of tourists fell sharply from 2018 to 2020.</p>
+<p class="answer-cue">(rewrite as noun form: There was…)</p>
+<textarea aria-label="Practice 5.1 question 1 answer" class="response-field response-box" rows="2"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">2. There was a steady rise in coffee consumption between 2005 and 2015.</p>
+<p class="answer-cue">(rewrite as verb form: Coffee consumption…)</p>
+<textarea aria-label="Practice 5.1 question 2 answer" class="response-field response-box" rows="2"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">3. House prices fluctuated wildly during the period.</p>
+<p class="answer-cue">(rewrite as noun form: There were…)</p>
+<textarea aria-label="Practice 5.1 question 3 answer" class="response-field response-box" rows="2"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">4. There was a marginal decline in birth rates after 2010.</p>
+<p class="answer-cue">(rewrite as verb form: Birth rates…)</p>
+<textarea aria-label="Practice 5.1 question 4 answer" class="response-field response-box" rows="2"></textarea>
+</div>
+</section>
+<section class="worksheet-section" id="section-6"><div class="section-bar"><span class="section-num">6</span><span>VOCABULARY BANK — COMPARISON LANGUAGE <span class="section-slash">/</span> <span class="bn">শব্দভাণ্ডার — তুলনার ভাষা</span></span></div>
+<p>Whenever a visual contains more than one item, country, or category, you must compare them. Mastering five comparison patterns will cover almost every Task 1 you ever see.</p><p class="bn">যখনই কোনো ভিজ্যুয়ালে একাধিক item, দেশ বা category থাকে, তখন তাদের মধ্যে তুলনা করতেই হবে। পাঁচটি comparison pattern শিখলেই আপনি প্রায় যেকোনো টাস্ক ১ সামলাতে পারবেন।</p>
+<div class="table-wrap"><table class="data-table vocab-table"><tr><th><div class="cell-line bn">Function  /  কাজ</div></th><th><div class="cell-line bn">Pattern  /  কাঠামো</div></th><th><div class="cell-line">Example</div></th></tr><tr><td class="keyterm"><div class="cell-line bn">Comparatives  /  তুলনামূলক</div></td><td><div class="cell-line">X is higher / lower / greater / smaller than Y</div></td><td><div class="cell-line">France's spending was higher than Germany's.</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">Multiples  /  গুণ</div></td><td><div class="cell-line">X is twice / three times / half as much as Y · X is double / triple Y</div></td><td><div class="cell-line">Sales in Japan were almost double those in Korea.</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">Superlatives  /  সর্বোচ্চ-সর্বনিম্ন</div></td><td><div class="cell-line">X was the highest / largest / most popular …</div></td><td><div class="cell-line">Tea was the most popular drink in 2020.</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">Proportion  /  অনুপাত</div></td><td><div class="cell-line">X accounted for / made up / represented Y% of …</div></td><td><div class="cell-line">Housing accounted for 35% of total expenditure.</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">Contrast  /  বৈপরীত্য</div></td><td><div class="cell-line">While X …, Y …  ·  In contrast, …  ·  Whereas …  ·  However, …</div></td><td><div class="cell-line">While exports rose steadily, imports fell sharply.</div></td></tr><tr><td class="keyterm"><div class="cell-line bn">Similarity  /  সাদৃশ্য</div></td><td><div class="cell-line">X and Y showed a similar pattern  ·  X was roughly the same as Y  ·  Likewise, …</div></td><td><div class="cell-line">France and Spain showed a similar pattern of growth.</div></td></tr></table></div>
+<h3 class="practice-title">Practice 6.1 — Build comparison sentences  /  তুলনার বাক্য তৈরি করুন</h3>
+<p class="bn">নিচের তথ্যজোড়াগুলোর জন্য একটি correct comparison বাক্য লিখুন (প্রতিবার ভিন্ন pattern ব্যবহার করুন)।</p>
+<div class="practice-card">
+<p class="practice-prompt">1. Country A: 60 million tourists. Country B: 20 million tourists.</p>
+<textarea aria-label="Practice 6.1 question 1 answer" class="response-field response-box" rows="2"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">2. Bread: 35% of food spending. Rice: 35% of food spending.</p>
+<textarea aria-label="Practice 6.1 question 2 answer" class="response-field response-box" rows="2"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">3. Online sales: rising. In-store sales: falling.</p>
+<textarea aria-label="Practice 6.1 question 3 answer" class="response-field response-box" rows="2"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">4. Smartphones: most popular device. Tablets: least popular device.</p>
+<textarea aria-label="Practice 6.1 question 4 answer" class="response-field response-box" rows="2"></textarea>
+</div>
+</section>
+<section class="worksheet-section" id="section-7"><div class="section-bar"><span class="section-num">7</span><span>TOP 10 MISTAKES TO AVOID <span class="section-slash">/</span> <span class="bn">১০টি প্রচলিত ভুল</span></span></div>
+<p>Every mistake below has cost a real candidate at least half a band. Memorise the list and check your work against it before you finish writing.</p><p class="bn">নিচের প্রতিটি ভুল কোনো না কোনো শিক্ষার্থীর কমপক্ষে আধা band খুইয়েছে। তালিকাটি মুখস্থ করুন এবং লেখা শেষ হওয়ার আগে নিজেকে এই তালিকার বিরুদ্ধে যাচাই করুন।</p>
+<div class="table-wrap"><table class="mistakes-table"><tr><th><div class="cell-line">#</div></th><th><div class="cell-line bn">Mistake  /  ভুল (English)</div></th><th><div class="cell-line bn">Bangla  /  বাংলা</div></th></tr><tr><td><div class="cell-line">1</div></td><td><div class="cell-line">Copying the prompt word-for-word instead of paraphrasing it.</div></td><td><div class="cell-line bn">প্রম্পট paraphrase না করে হুবহু কপি করা।</div></td></tr><tr><td><div class="cell-line">2</div></td><td><div class="cell-line">Writing no overview, or hiding it inside the body paragraphs.</div></td><td><div class="cell-line bn">Overview না দেওয়া, অথবা body paragraph-এ লুকিয়ে রাখা।</div></td></tr><tr><td><div class="cell-line">3</div></td><td><div class="cell-line">Putting specific numbers (52%, $1.4m) in the overview.</div></td><td><div class="cell-line bn">Overview-এ নির্দিষ্ট সংখ্যা (52%, $1.4m) ব্যবহার করা।</div></td></tr><tr><td><div class="cell-line">4</div></td><td><div class="cell-line">Confusing adjective and adverb: "a slightly increase" (wrong) → "a slight increase" (right).</div></td><td><div class="cell-line bn">Adjective ও adverb গুলিয়ে ফেলা: "a slightly increase" (ভুল) → "a slight increase" (সঠিক)।</div></td></tr><tr><td><div class="cell-line">5</div></td><td><div class="cell-line">Using "levelled off" or "stabilised" at the start of a description — these only happen AFTER another trend.</div></td><td><div class="cell-line bn">বর্ণনার শুরুতে "levelled off" বা "stabilised" ব্যবহার করা — এগুলো শুধু অন্য একটি trend-এর পরেই বসে।</div></td></tr><tr><td><div class="cell-line">6</div></td><td><div class="cell-line">Using "plummeted" or "rocketed" with an adverb: "plummeted sharply" is wrong — the verb already means sharply.</div></td><td><div class="cell-line bn">"plummeted" বা "rocketed"-এর সাথে adverb ব্যবহার করা: "plummeted sharply" ভুল — verb-টি নিজেই "sharply" বোঝায়।</div></td></tr><tr><td><div class="cell-line">7</div></td><td><div class="cell-line">Wrong verb tense: writing in present when the data is from the past, or mixing tenses without reason.</div></td><td><div class="cell-line bn">ভুল tense: অতীতের ডেটা সম্পর্কে present tense, অথবা কারণ ছাড়া tense বদলানো।</div></td></tr><tr><td><div class="cell-line">8</div></td><td><div class="cell-line">Trying to describe every single data point. Select 2–3 key features only.</div></td><td><div class="cell-line bn">প্রতিটি data point বর্ণনা করার চেষ্টা করা। শুধু ২–৩টি key feature বাছুন।</div></td></tr><tr><td><div class="cell-line">9</div></td><td><div class="cell-line">Adding opinions, reasons, or predictions ("This is because…"). Task 1 is description only.</div></td><td><div class="cell-line bn">মতামত, কারণ, বা ভবিষ্যদ্বাণী যোগ করা ("This is because…")। টাস্ক ১ শুধু বর্ণনা।</div></td></tr><tr><td><div class="cell-line">10</div></td><td><div class="cell-line">Writing fewer than 150 words (instant penalty) or more than 220 (loses time for Task 2).</div></td><td><div class="cell-line bn">১৫০-এর কম শব্দ লেখা (সাথে সাথে penalty) অথবা ২২০-এর বেশি (টাস্ক ২-এর সময় নষ্ট)।</div></td></tr></table></div>
+<h3 class="practice-title">Practice 7.1 — Spot the mistake  /  ভুল খুঁজে বের করুন</h3>
+<p class="bn">প্রতিটি বাক্যে একটি ভুল আছে। ভুলটি চিহ্নিত করে সঠিক রূপটি লিখুন।</p>
+<div class="practice-card">
+<p class="practice-prompt">1. The number of users were slightly increased from 2010 to 2015.</p>
+<p class="answer-cue">Correction:</p>
+<textarea aria-label="Practice 7.1 correction 1" class="response-field response-box" rows="2"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">2. Sales rocketed sharply between 2018 and 2019.</p>
+<p class="answer-cue">Correction:</p>
+<textarea aria-label="Practice 7.1 correction 2" class="response-field response-box" rows="2"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">3. The graph shows that prices stabilised before increasing dramatically.</p>
+<p class="answer-cue">Correction:</p>
+<textarea aria-label="Practice 7.1 correction 3" class="response-field response-box" rows="2"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">4. Overall, the figure for tourism rose by 23.7% over the period.</p>
+<p class="answer-cue">Correction:</p>
+<textarea aria-label="Practice 7.1 correction 4" class="response-field response-box" rows="2"></textarea>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">5. I think the reason for the fall is the global recession.</p>
+<p class="answer-cue">Correction:</p>
+<textarea aria-label="Practice 7.1 correction 5" class="response-field response-box" rows="2"></textarea>
+</div>
+</section>
+<section class="worksheet-section" id="section-8"><div class="section-bar"><span class="section-num">8</span><span>THE 10-POINT EDITING CHECKLIST <span class="section-slash">/</span> <span class="bn">১০-দফা editing চেকলিস্ট</span></span></div>
+<p>After you finish writing — and before you move to Task 2 — spend 60 seconds running through this list. Tick each box.</p><p class="bn">লেখা শেষ হওয়ার পর — টাস্ক ২-তে যাওয়ার আগে — ৬০ সেকেন্ড সময় নিয়ে এই তালিকাটি দেখুন। প্রতিটি বক্সে টিক দিন।</p>
+<div class="checklist">
+<label class="check-item"><input class="response-field" type="checkbox"/><span class="check-text">At least 150 words?<span class="bn">কমপক্ষে ১৫০ শব্দ আছে?</span></span></label><label class="check-item"><input class="response-field" type="checkbox"/><span class="check-text">Did I paraphrase the prompt (no copying)?<span class="bn">প্রম্পট paraphrase করেছি (কপি করিনি)?</span></span></label><label class="check-item"><input class="response-field" type="checkbox"/><span class="check-text">Is there a clear overview starting with "Overall, …"?<span class="bn">"Overall, …" দিয়ে শুরু হওয়া একটি স্পষ্ট overview আছে?</span></span></label><label class="check-item"><input class="response-field" type="checkbox"/><span class="check-text">Does the overview avoid all numbers?<span class="bn">Overview-এ কোনো সংখ্যা নেই?</span></span></label><label class="check-item"><input class="response-field" type="checkbox"/><span class="check-text">Are body paragraphs supported with specific data?<span class="bn">Body paragraph-গুলোতে নির্দিষ্ট ডেটা সাপোর্ট হিসেবে দেওয়া আছে?</span></span></label><label class="check-item"><input class="response-field" type="checkbox"/><span class="check-text">Have I used both verb forms AND noun forms of trend language?<span class="bn">Trend-এর verb form ও noun form — দুটোই ব্যবহার করেছি?</span></span></label><label class="check-item"><input class="response-field" type="checkbox"/><span class="check-text">Have I used at least 3 different comparison patterns?<span class="bn">অন্তত ৩টি ভিন্ন comparison pattern ব্যবহার করেছি?</span></span></label><label class="check-item"><input class="response-field" type="checkbox"/><span class="check-text">Is the verb tense consistent throughout?<span class="bn">Verb tense পুরো লেখায় সামঞ্জস্যপূর্ণ?</span></span></label><label class="check-item"><input class="response-field" type="checkbox"/><span class="check-text">Have I checked spelling and articles (a/an/the)?<span class="bn">Spelling এবং article (a/an/the) চেক করেছি?</span></span></label><label class="check-item"><input class="response-field" type="checkbox"/><span class="check-text">No personal opinions, reasons, or predictions?<span class="bn">কোনো ব্যক্তিগত মতামত, কারণ বা ভবিষ্যদ্বাণী নেই?</span></span></label>
+</div>
+</section>
+<section class="worksheet-section" id="section-9"><div class="section-bar"><span class="section-num">9</span><span>SELF-ASSESSMENT RUBRIC <span class="section-slash">/</span> <span class="bn">নিজে মূল্যায়ন rubric</span></span></div>
+<p>After completing the practice tasks above, grade yourself against this simplified band-descriptor rubric. Mark your level for each criterion.</p><p class="bn">উপরের practice গুলো শেষ করার পর, এই সরলীকৃত band-descriptor rubric দিয়ে নিজেকে মূল্যায়ন করুন। প্রতিটি criterion-এর জন্য আপনার level টিক দিন।</p>
+<div class="table-wrap"><table class="rubric-table"><tr><th><div class="cell-line">Criterion</div></th><th><div class="cell-line">Around Band 5</div></th><th><div class="cell-line">Around Band 6</div></th><th><div class="cell-line">Around Band 7–8</div></th></tr><tr><td><div class="cell-line bn">Task Achievement  /  টাস্ক অ্যাচিভমেন্ট</div></td><td><div class="cell-line">No overview, or overview gives details/numbers instead of a general summary.</div></td><td><div class="cell-line">Overview present but limited or partly inaccurate. Some key features missing.</div></td><td><div class="cell-line">Clear overview of 2–3 key features. Key features supported with accurate data in body.</div></td></tr><tr><td><div class="cell-line bn">Coherence &amp; Cohesion  /  কোহারেন্স ও কোহেশন</div></td><td><div class="cell-line">Paragraphs unclear or missing. Few or repetitive linking words.</div></td><td><div class="cell-line">Mostly logical paragraphing. Linking words used but sometimes mechanical.</div></td><td><div class="cell-line">Clear 4-paragraph structure. Range of cohesive devices used naturally.</div></td></tr><tr><td><div class="cell-line bn">Lexical Resource  /  শব্দভাণ্ডার</div></td><td><div class="cell-line">Prompt copied or barely paraphrased. Same trend word repeated.</div></td><td><div class="cell-line">Some paraphrasing. Limited range of trend/comparison vocabulary.</div></td><td><div class="cell-line">Strong paraphrase. Range of trend AND comparison language used accurately.</div></td></tr><tr><td><div class="cell-line bn">Grammatical Range &amp; Accuracy  /  গ্রামার</div></td><td><div class="cell-line">Mostly simple sentences. Frequent errors that affect meaning.</div></td><td><div class="cell-line">Mix of simple and complex but with several errors.</div></td><td><div class="cell-line">Variety of complex sentence structures with few errors.</div></td></tr></table></div>
+<div class="worked-label">My self-assessment  /  আমার মূল্যায়ন:</div>
+<div class="self-assess">
+<div class="self-row">
+<div class="criterion">Task Achievement</div>
+<div><label class="radio-label"><input class="response-field" name="criterion-1" type="radio" value="Band 5"/> Band 5</label></div>
+<div><label class="radio-label"><input class="response-field" name="criterion-1" type="radio" value="Band 6"/> Band 6</label></div>
+<div><label class="radio-label"><input class="response-field" name="criterion-1" type="radio" value="Band 7+"/> Band 7+</label></div>
+</div>
+<div class="self-row">
+<div class="criterion">Coherence &amp; Cohesion</div>
+<div><label class="radio-label"><input class="response-field" name="criterion-2" type="radio" value="Band 5"/> Band 5</label></div>
+<div><label class="radio-label"><input class="response-field" name="criterion-2" type="radio" value="Band 6"/> Band 6</label></div>
+<div><label class="radio-label"><input class="response-field" name="criterion-2" type="radio" value="Band 7+"/> Band 7+</label></div>
+</div>
+<div class="self-row">
+<div class="criterion">Lexical Resource</div>
+<div><label class="radio-label"><input class="response-field" name="criterion-3" type="radio" value="Band 5"/> Band 5</label></div>
+<div><label class="radio-label"><input class="response-field" name="criterion-3" type="radio" value="Band 6"/> Band 6</label></div>
+<div><label class="radio-label"><input class="response-field" name="criterion-3" type="radio" value="Band 7+"/> Band 7+</label></div>
+</div>
+<div class="self-row">
+<div class="criterion">Grammatical Range</div>
+<div><label class="radio-label"><input class="response-field" name="criterion-4" type="radio" value="Band 5"/> Band 5</label></div>
+<div><label class="radio-label"><input class="response-field" name="criterion-4" type="radio" value="Band 6"/> Band 6</label></div>
+<div><label class="radio-label"><input class="response-field" name="criterion-4" type="radio" value="Band 7+"/> Band 7+</label></div>
+</div>
+</div>
+<div class="practice-card">
+<p class="practice-prompt">One thing I will improve before Worksheet 2:</p>
+<p class="bn">ওয়ার্কশিট ২-এ যাওয়ার আগে যে একটি বিষয় উন্নত করব:</p>
+<textarea aria-label="One thing I will improve before Worksheet 2" class="response-field response-box" rows="2"></textarea>
+</div>
+</section>
+<section class="worksheet-section" id="answer-key-section"><div class="section-bar"><span class="section-num">10</span><span>ANSWER KEY <span class="section-slash">/</span> <span class="bn">উত্তরমালা</span></span></div>
+<button class="answer-key-toggle" id="answerKeyToggle" onclick="toggleAnswerKey()" type="button">🔑 Show Answer Key</button>
+<div class="answer-key-content" id="answerKeyContent" style="display:none;">
+<p>For open writing tasks, more than one answer is correct. The model answers below show one strong version; compare yours by checking that the same ideas appear in a similar structure.</p><p class="bn">Open writing task-এর জন্য একাধিক সঠিক উত্তর সম্ভব। নিচের model উত্তরগুলো একটি শক্তিশালী সংস্করণ মাত্র; একই ধারণা একই কাঠামোয় আছে কিনা দেখে আপনারটি মিলিয়ে নিন।</p>
+<div class="answer-subhead">Practice 3.1 — Paraphrasing</div>
+<ol class="answer-list">
+<li>The line graph illustrates the figures for visitors to four European cities over a two-decade period from 2000 to 2020.</li>
+<li>The pie charts depict the proportion of energy generated from various sources in two nations in the year 2015.</li>
+<li>The table compares the average monthly precipitation across five cities in Asia throughout one year.</li>
+</ol>
+<div class="answer-subhead">Practice 4.1 — Overview writing</div>
+<ol class="answer-list">
+<li>Overall, internet use rose in all three countries over the period. Japan remained the leader at the start, while Brazil experienced the fastest growth and Nigeria stayed the lowest throughout.</li>
+<li>Overall, housing represented the largest share of household spending, followed by food. Entertainment took the smallest portion, while transport and savings were small and similar to each other.</li>
+<li>Overall, City A consumed by far the most water per person, whereas City E used the least. The remaining three cities were broadly similar in their water use.</li>
+</ol>
+<div class="answer-subhead">Practice 5.1 — Sentence transformation</div>
+<ol class="answer-list">
+<li>There was a sharp fall in the number of tourists from 2018 to 2020.</li>
+<li>Coffee consumption rose steadily between 2005 and 2015.</li>
+<li>There were wild fluctuations in house prices during the period.</li>
+<li>Birth rates declined marginally after 2010.</li>
+</ol>
+<div class="answer-subhead">Practice 6.1 — Comparisons (sample answers)</div>
+<ol class="answer-list">
+<li>Country A received three times as many tourists as Country B.</li>
+<li>Bread and rice each accounted for 35% of food spending, the same proportion.</li>
+<li>While online sales rose, in-store sales fell over the same period.</li>
+<li>Smartphones were the most popular device, whereas tablets were the least popular.</li>
+</ol>
+<div class="answer-subhead">Practice 7.1 — Spot the mistake</div>
+<div class="spot-item"><div class="spot-original">1. The number of users were slightly increased…</div><div class="spot-fix">→ "The number of users increased slightly…" (subject-verb agreement: "the number" is singular; and "slightly" is the adverb form).</div></div><div class="spot-item"><div class="spot-original">2. Sales rocketed sharply…</div><div class="spot-fix">→ "Sales rocketed…" (the verb "rocketed" already means a sharp rise; no adverb needed).</div></div><div class="spot-item"><div class="spot-original">3. … prices stabilised before increasing dramatically.</div><div class="spot-fix">→ "…prices increased dramatically before stabilising." ("stabilised/levelled off" must follow another trend, not start the description).</div></div><div class="spot-item"><div class="spot-original">4. Overall, the figure for tourism rose by 23.7% over the period.</div><div class="spot-fix">→ Remove the number from the overview. "Overall, tourism rose significantly over the period."</div></div><div class="spot-item"><div class="spot-original">5. I think the reason for the fall is the global recession.</div><div class="spot-fix">→ Remove personal opinions and reasons. Task 1 is description only. Just describe the fall without explaining it.</div></div>
+<div class="next-steps">Next steps  /  পরবর্তী ধাপ</div>
+<p>Once you can write an accurate paraphrase + overview in under 5 minutes, and you can produce at least 3 different trend and 3 different comparison sentences without hesitation, you are ready for Worksheet 2 (Data Visuals: Line, Bar, Pie, Table). Bring this worksheet's vocabulary banks with you — you will need them.</p><p class="bn">যখন আপনি ৫ মিনিটের মধ্যে একটি সঠিক paraphrase + overview লিখতে পারবেন, এবং দ্বিধা ছাড়াই অন্তত ৩টি ভিন্ন trend এবং ৩টি ভিন্ন comparison বাক্য তৈরি করতে পারবেন, তখন ওয়ার্কশিট ২ (Data Visuals: Line, Bar, Pie, Table)-এর জন্য প্রস্তুত। এই ওয়ার্কশিটের শব্দভাণ্ডারগুলো সাথে রাখুন — সেখানে কাজে আসবে।</p>
+</div>
+</section>
+<footer class="footer">
+    © Abidur Rahman Tahmid | IELTS Writing Task 1 Mastery | Worksheet 1 — Task 1 Foundations
+    <div class="source-meta">Rachel Mitchell's Writing - <span class="bn">বাংলা ব্যাখ্যা</span>  •  Prepared by Abidur Rahman Tahmid - IELTS Trainer</div>
+</footer>
+</main>
+<button class="jump-answer" id="jumpAnswer" onclick="jumpToAnswerKey()" type="button">🔑 Answer Key</button>
+<div class="bottom-actions">
+<div class="action-bar">
+<button class="btn btn-clear" onclick="clearResponses()" type="button">🗑️ Clear my response</button>
+<button class="btn btn-print" onclick="window.print()" type="button">🖨️ Save as PDF</button>
+</div>
+</div>
+<script>
+function toggleAnswerKey(forceOpen){
+  const content = document.getElementById('answerKeyContent');
+  const button = document.getElementById('answerKeyToggle');
+  const currentlyOpen = content.style.display !== 'none';
+  const shouldOpen = (typeof forceOpen === 'boolean') ? forceOpen : !currentlyOpen;
+  content.style.display = shouldOpen ? 'block' : 'none';
+  button.textContent = shouldOpen ? '🔒 Hide Answer Key' : '🔑 Show Answer Key';
+}
+
+function clearResponses(){
+  if(!confirm('Clear all of your typed answers and selections?')) return;
+  document.querySelectorAll('.response-field').forEach(el => {
+    if(el.matches('input[type="checkbox"], input[type="radio"]')) {
+      el.checked = false;
+    } else {
+      el.value = '';
+    }
+  });
+}
+
+function jumpToAnswerKey(){
+  toggleAnswerKey(true);
+  document.getElementById('answer-key-section').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function updateJumpButton(){
+  const firstPractice = document.getElementById('first-practice');
+  const answerSection = document.getElementById('answer-key-section');
+  const jump = document.getElementById('jumpAnswer');
+  if(!firstPractice || !answerSection || !jump) return;
+
+  const y = window.scrollY + window.innerHeight * 0.25;
+  const firstY = firstPractice.getBoundingClientRect().top + window.scrollY;
+  const answerY = answerSection.getBoundingClientRect().top + window.scrollY;
+
+  if(y >= firstY && y < answerY) {
+    jump.classList.add('visible');
+  } else {
+    jump.classList.remove('visible');
+  }
+}
+
+window.addEventListener('scroll', updateJumpButton, {passive:true});
+window.addEventListener('resize', updateJumpButton);
+window.addEventListener('DOMContentLoaded', updateJumpButton);
+</script>
+</body>
+</html>
