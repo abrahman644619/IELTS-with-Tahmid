@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="theme-color" content="#06101d" />
+  <title>Rachel Mitchell's Writing Explained – IELTS with Tahmid</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #06101d;
+      --bg2: #0a1727;
+      --surface: rgba(255,255,255,.065);
+      --border: rgba(255,255,255,.12);
+      --text: #f6fbff;
+      --muted: #aab8c8;
+      --cyan: #36c7ff;
+      --orange: #ff9f1c;
+      --shadow: 0 24px 70px rgba(0,0,0,.34);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px),
+        radial-gradient(circle at 8% 8%, rgba(54,199,255,.14), transparent 28%),
+        radial-gradient(circle at 92% 4%, rgba(255,159,28,.13), transparent 25%),
+        linear-gradient(180deg, var(--bg), var(--bg2) 50%, var(--bg));
+      background-size: 44px 44px, 44px 44px, auto, auto, auto;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3 { font-family: "Manrope", "Inter", sans-serif; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      background: rgba(6,16,29,.78);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: .97rem;
+      line-height: 1.15;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: .75rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: rgba(255,255,255,.05);
+      font-size: .84rem;
+      font-weight: 800;
+    }
+
+    .back-link svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .hero {
+      padding: 58px 0 28px;
+    }
+
+    .hero-panel {
+      padding: clamp(28px,5vw,46px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 100% 0, rgba(54,199,255,.18), transparent 34%),
+        radial-gradient(circle at 0 100%, rgba(255,159,28,.08), transparent 30%),
+        linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 14px;
+      color: #c9f3ff;
+      font-size: .79rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--orange));
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.3rem,6vw,4.4rem);
+      line-height: 1.04;
+      letter-spacing: -.05em;
+    }
+
+    .hero-panel p {
+      margin: 15px 0 0;
+      color: var(--muted);
+    }
+
+    .worksheet-section {
+      padding: 30px 0 70px;
+    }
+
+    .section-heading {
+      margin-bottom: 20px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(1.8rem,4vw,2.7rem);
+      letter-spacing: -.04em;
+    }
+
+    .section-heading p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .worksheet-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 16px;
+    }
+
+    .worksheet-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 185px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 100% 0, rgba(54,199,255,.09), transparent 32%),
+        linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      box-shadow: 0 18px 48px rgba(0,0,0,.22);
+      transition: .24s ease;
+    }
+
+    .worksheet-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 3px;
+      background: linear-gradient(90deg, var(--cyan), transparent 76%);
+    }
+
+    .worksheet-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(54,199,255,.3);
+      background: rgba(255,255,255,.075);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(54,199,255,.25);
+      border-radius: 15px;
+      color: var(--cyan);
+      background: rgba(54,199,255,.10);
+    }
+
+    .card-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .html-badge {
+      padding: 6px 9px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      color: #d7e1ea;
+      background: rgba(255,255,255,.05);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+    }
+
+    .worksheet-card h3 {
+      margin: 20px 0 8px;
+      font-size: 1.08rem;
+    }
+
+    .worksheet-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      color: #e8f7ff;
+      font-size: .86rem;
+      font-weight: 800;
+    }
+
+    .card-link svg {
+      width: 17px;
+      height: 17px;
+      transition: .2s ease;
+    }
+
+    .worksheet-card:hover .card-link svg {
+      transform: translateX(4px);
+    }
+
+    .footer {
+      padding: 0 0 34px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .footer-inner strong {
+      color: var(--text);
+    }
+
+    @media (max-width: 650px) {
+      .worksheet-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; }
+      .brand-copy span { display: none; }
+    }
+
+    @media (max-width: 420px) {
+      .back-link span { display: none; }
+      .back-link {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="../index.html">
+        <img src="../../logo.png.png" alt="IELTS with Tahmid logo" />
+        <span class="brand-copy">
+          <strong>IELTS with Tahmid</strong>
+          <span>Rachel Mitchell's Writing Explained</span>
+        </span>
+      </a>
+
+      <a class="back-link" href="../index.html">
+        <i data-lucide="arrow-left"></i>
+        <span>Back to Workspace</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-panel">
+          <span class="eyebrow">Writing Worksheet Collection</span>
+          <h1>Rachel Mitchell's Writing Explained</h1>
+          <p>Formatted by Abidur Rahman Tahmid</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="worksheet-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Choose a Worksheet</h2>
+          <p>Six structured HTML worksheets covering IELTS Writing Task 1 and Task 2.</p>
+        </div>
+
+        <div class="worksheet-grid">
+          <a class="worksheet-card" href="Worksheet_1_Task1_Foundations.html">
+            <span class="card-top">
+              <span class="card-icon"><i data-lucide="blocks"></i></span>
+              <span class="html-badge">HTML</span>
+            </span>
+            <h3>Worksheet 1 — Task 1 Foundations</h3>
+            <p>Core foundations for IELTS Academic Writing Task 1.</p>
+            <span class="card-link">Open Worksheet <i data-lucide="arrow-right"></i></span>
+          </a>
+
+          <a class="worksheet-card" href="Worksheet_2_Task1_DataVisuals.html">
+            <span class="card-top">
+              <span class="card-icon"><i data-lucide="chart-column"></i></span>
+              <span class="html-badge">HTML</span>
+            </span>
+            <h3>Worksheet 2 — Task 1 Data Visuals</h3>
+            <p>Charts, graphs, comparisons, and visual data description.</p>
+            <span class="card-link">Open Worksheet <i data-lucide="arrow-right"></i></span>
+          </a>
+
+          <a class="worksheet-card" href="Worksheet_3_Maps_Processes.html">
+            <span class="card-top">
+              <span class="card-icon"><i data-lucide="map"></i></span>
+              <span class="html-badge">HTML</span>
+            </span>
+            <h3>Worksheet 3 — Maps &amp; Processes</h3>
+            <p>Map descriptions and process-diagram writing practice.</p>
+            <span class="card-link">Open Worksheet <i data-lucide="arrow-right"></i></span>
+          </a>
+
+          <a class="worksheet-card" href="Worksheet_4_Task2_Foundations.html">
+            <span class="card-top">
+              <span class="card-icon"><i data-lucide="pen-tool"></i></span>
+              <span class="html-badge">HTML</span>
+            </span>
+            <h3>Worksheet 4 — Task 2 Foundations</h3>
+            <p>Essay structure, planning, development, and core Task 2 skills.</p>
+            <span class="card-link">Open Worksheet <i data-lucide="arrow-right"></i></span>
+          </a>
+
+          <a class="worksheet-card" href="Worksheet_5_Task2_OpinionEssays.html">
+            <span class="card-top">
+              <span class="card-icon"><i data-lucide="message-square-text"></i></span>
+              <span class="html-badge">HTML</span>
+            </span>
+            <h3>Worksheet 5 — Task 2 Opinion Essays</h3>
+            <p>Planning and developing clear, well-supported opinion essays.</p>
+            <span class="card-link">Open Worksheet <i data-lucide="arrow-right"></i></span>
+          </a>
+
+          <a class="worksheet-card" href="Worksheet_6_Task2_OtherEssayTypes.html">
+            <span class="card-top">
+              <span class="card-icon"><i data-lucide="notebook-pen"></i></span>
+              <span class="html-badge">HTML</span>
+            </span>
+            <h3>Worksheet 6 — Task 2 Other Essay Types</h3>
+            <p>Discussion, problem-solution, advantages/disadvantages, and two-part essays.</p>
+            <span class="card-link">Open Worksheet <i data-lucide="arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span><strong>IELTS with Tahmid</strong> — Rachel Mitchell's Writing Explained</span>
+      <span>Formatted by Abidur Rahman Tahmid</span>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
