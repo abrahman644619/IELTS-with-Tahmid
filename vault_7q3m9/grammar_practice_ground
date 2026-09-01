@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Grammar Practice — Practice Ground</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Kalpurush';
+    src: local('Kalpurush'), local('kalpurush');
+    font-weight: normal; font-style: normal;
+  }
+
+  :root{
+    --forest:#1D4533;
+    --cream:#F7EAE0;
+    --peach:#F9D2BA;
+    --brown:#5E3122;
+
+    --bg: var(--cream);
+    --surface:#FFFFFF;
+    --surface-soft:#FBF3EC;
+    --text: var(--brown);
+    --text-soft:#8a5c47;
+    --heading: var(--forest);
+    --border: #ecd9c9;
+    --accent: var(--peach);
+    --accent-strong: var(--forest);
+    --shadow: 0 2px 14px rgba(94,49,34,0.08);
+    --glow-color: 249,210,186;
+  }
+
+  [data-theme="dark"]{
+    --bg:#0e1e16;
+    --surface:#1a3327;
+    --surface-soft:#20392c;
+    --text:#F3E4D8;
+    --text-soft:#c9ab98;
+    --heading:#F9D2BA;
+    --border:#2c4a3a;
+    --accent:#2c4a3a;
+    --accent-strong:#F9D2BA;
+    --shadow: 0 2px 20px rgba(0,0,0,0.45);
+    --glow-color: 249,210,186;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Kalpurush','Hind Siliguri','Noto Sans Bengali',sans-serif;
+    line-height:1.7;
+    position:relative;
+    overflow-x:hidden;
+    transition:background .4s ease, color .4s ease;
+  }
+  h1,h2,.eyebrow,button{font-family:'Hind Siliguri','Noto Sans Bengali',sans-serif;}
+
+  /* ===== Ambient animated background ===== */
+  .bg-field{
+    position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none;
+  }
+  .blob{
+    position:absolute; border-radius:50%; filter:blur(60px); opacity:.55;
+    will-change:transform;
+  }
+  .blob-1{width:520px;height:520px; background:var(--peach); top:-160px; left:-120px; animation:drift1 26s ease-in-out infinite;}
+  .blob-2{width:420px;height:420px; background:var(--forest); opacity:.18; bottom:-140px; right:-100px; animation:drift2 32s ease-in-out infinite;}
+  .blob-3{width:340px;height:340px; background:var(--brown); opacity:.12; top:40%; left:60%; animation:drift3 22s ease-in-out infinite;}
+  [data-theme="dark"] .blob-1{opacity:.16;}
+  [data-theme="dark"] .blob-2{opacity:.25;}
+  [data-theme="dark"] .blob-3{opacity:.18;}
+
+  @keyframes drift1{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(60px,50px) scale(1.08);}
+  }
+  @keyframes drift2{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(-50px,-40px) scale(1.1);}
+  }
+  @keyframes drift3{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(-40px,30px);}
+  }
+
+  /* Cursor-following spotlight */
+  .spotlight{
+    position:fixed; top:0; left:0; width:600px; height:600px;
+    border-radius:50%; pointer-events:none; z-index:1;
+    background:radial-gradient(circle, rgba(var(--glow-color),0.35) 0%, rgba(var(--glow-color),0) 65%);
+    transform:translate(-300px,-300px);
+    transition:opacity .3s ease;
+    opacity:0;
+  }
+  body.spot-on .spotlight{opacity:1;}
+
+  @media (prefers-reduced-motion: reduce){
+    .blob{animation:none !important;}
+    .spotlight{display:none;}
+  }
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px; position:relative; z-index:2;}
+
+  /* ===== Top bar ===== */
+  .topbar{
+    padding:14px 0;
+    position:sticky; top:0; z-index:50;
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .brand{display:flex;flex-direction:column;}
+  .brand .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);font-weight:700;}
+  [data-theme="dark"] .brand .eyebrow{color:var(--peach);}
+  .brand strong{font-size:16px; color:var(--heading);}
+  .theme-btn{
+    background:var(--surface);
+    border:1px solid var(--border);
+    color:var(--text);
+    border-radius:999px;
+    padding:8px 16px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+    display:flex;align-items:center;gap:6px;
+    box-shadow:var(--shadow);
+    transition:transform .15s ease;
+  }
+  .theme-btn:hover{transform:translateY(-1px);}
+
+  /* ===== Hero ===== */
+  .hero{padding:56px 0 20px; text-align:center;}
+  .hero .eyebrow{
+    display:inline-block; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
+    font-weight:700; color:var(--forest); background:var(--accent);
+    padding:6px 16px; border-radius:999px; margin-bottom:18px;
+  }
+  [data-theme="dark"] .hero .eyebrow{color:var(--accent-strong); background:var(--surface-soft);}
+  .hero h1{
+    font-size:clamp(32px,5.5vw,52px);
+    color:var(--heading);
+    margin:0 0 14px;
+    line-height:1.15;
+    letter-spacing:-0.01em;
+  }
+  .hero p.sub{
+    color:var(--text-soft); margin:0 auto 28px; font-size:17px; max-width:620px;
+  }
+  .stat-row{display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom:8px;}
+  .stat{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:12px 22px; box-shadow:var(--shadow); min-width:120px;
+  }
+  .stat b{display:block; font-size:22px; color:var(--heading);}
+  .stat span{font-size:12.5px; color:var(--text-soft); text-transform:uppercase; letter-spacing:.04em;}
+
+  /* ===== Card grid ===== */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+    gap:22px;
+    padding:36px 0 70px;
+    perspective:1000px;
+  }
+  .card{
+    position:relative;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:24px 22px 22px;
+    box-shadow:var(--shadow);
+    text-decoration:none;
+    color:inherit;
+    display:flex; flex-direction:column; gap:14px;
+    transform-style:preserve-3d;
+    transition:transform .12s ease, box-shadow .25s ease;
+    will-change:transform;
+  }
+  .card:hover{ box-shadow:0 18px 34px rgba(94,49,34,0.16); }
+  [data-theme="dark"] .card:hover{ box-shadow:0 18px 34px rgba(0,0,0,0.55); }
+
+  .card-num{
+    font-size:13px; font-weight:700; color:var(--forest);
+    background:var(--accent); width:30px; height:30px; border-radius:9px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  [data-theme="dark"] .card-num{ color:var(--accent-strong); background:var(--surface-soft); }
+
+  .card h2{
+    font-size:19px; margin:0; color:var(--heading); line-height:1.35;
+  }
+
+  .card-meta{
+    display:flex; gap:8px; flex-wrap:wrap; margin-top:auto;
+  }
+  .pill{
+    font-size:12px; font-weight:600; color:var(--text-soft);
+    background:var(--surface-soft); border:1px solid var(--border);
+    padding:4px 10px; border-radius:999px;
+  }
+
+  .card-open{
+    display:flex; align-items:center; gap:6px;
+    font-size:14px; font-weight:700; color:var(--forest);
+  }
+  [data-theme="dark"] .card-open{ color:var(--accent-strong); }
+  .card-open .arrow{ transition:transform .2s ease; }
+  .card:hover .card-open .arrow{ transform:translateX(4px); }
+
+  footer{text-align:center; color:var(--text-soft); font-size:13px; padding:10px 0 40px; position:relative; z-index:2;}
+  .byline{ text-align:center; color:var(--forest); font-weight:600; font-size:14px; margin:0 0 6px; position:relative; z-index:2; }
+  [data-theme="dark"] .byline{ color:var(--peach); }
+
+  @media (max-width:640px){
+    .hero{padding:40px 0 10px;}
+    .grid{grid-template-columns:1fr;}
+    .stat-row{gap:10px;}
+    .stat{padding:10px 16px; min-width:100px;}
+  }
+</style>
+</head>
+<body data-theme="light">
+
+<div class="bg-field">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+<div class="spotlight" id="spotlight"></div>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <span class="eyebrow">IELTS Grammar Practice</span>
+      <strong>Practice Ground</strong>
+    </div>
+    <button class="theme-btn" id="themeToggle" onclick="toggleTheme()">🌙 <span id="themeLabel">Dark Mode</span></button>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <span class="eyebrow">19 Worksheets · One Ground</span>
+    <h1>IELTS Grammar<br>Practice Ground</h1>
+    <p class="sub">প্রতিটা worksheet-এ MCQ, Error Correction, Sentence Completion আর একটা IELTS-style writing activity আছে — নিচে থেকে বেছে নাও আর শুরু করে দাও।</p>
+    <div class="stat-row">
+      <div class="stat"><b>19</b><span>Worksheets</span></div>
+      <div class="stat"><b>760+</b><span>Practice Questions</span></div>
+      <div class="stat"><b>4–5</b><span>Activities Each</span></div>
+    </div>
+  </div>
+
+  <p class="byline">✍️ Abidur Rahman Tahmid &nbsp;|&nbsp; 🎓 BA (Hons), University of Greenwich (UK) &nbsp;|&nbsp; 🎓 EMBA, Dhaka University</p>
+
+  <div class="grid" id="cardGrid"></div>
+
+  <footer>IELTS Grammar Practice — Practice Ground</footer>
+</div>
+
+<script>
+/* ================= THEME ================= */
+function toggleTheme(){
+  const body = document.body;
+  const isDark = body.getAttribute('data-theme') === 'dark';
+  body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('themeLabel').textContent = isDark ? 'Dark Mode' : 'Light Mode';
+  document.getElementById('themeToggle').firstChild.textContent = isDark ? '🌙 ' : '☀️ ';
+}
+
+/* ================= WORKSHEET DATA ================= */
+const worksheets = [
+  {title:"Articles (a / an / the)", file:"Articles-a-an-the-Worksheet.html", marks:40, activities:4},
+  {title:"Subject–Verb Agreement", file:"Subject-Verb-Agreement-Worksheet.html", marks:40, activities:4},
+  {title:"Prepositions", file:"Prepositions-Worksheet.html", marks:40, activities:4},
+  {title:"Tenses", file:"Tenses-Worksheet.html", marks:55, activities:5},
+  {title:"Complex Sentences", file:"Complex-Sentences-Worksheet.html", marks:40, activities:4},
+  {title:"Relative Clauses", file:"Relative-Clauses-Worksheet.html", marks:40, activities:4},
+  {title:"Passive Voice", file:"Passive-Voice-Worksheet.html", marks:45, activities:5},
+  {title:"Linking Words / Cohesive Devices", file:"Linking-Words-Cohesive-Devices-Worksheet.html", marks:40, activities:4},
+  {title:"Comparatives & Superlatives", file:"Comparatives-Superlatives-Worksheet.html", marks:40, activities:4},
+  {title:"Conditionals", file:"Conditionals-Worksheet.html", marks:40, activities:4},
+  {title:"Modal Verbs", file:"Modal-Verbs-Worksheet.html", marks:40, activities:4},
+  {title:"Gerunds and Infinitives", file:"Gerunds-and-Infinitives-Worksheet.html", marks:40, activities:4},
+  {title:"Suffixes and Prefixes", file:"Suffixes-and-Prefixes-Worksheet.html", marks:40, activities:4},
+  {title:"Complex Noun Phrases", file:"Complex-Noun-Phrases-Worksheet.html", marks:40, activities:4},
+  {title:"Countable/Uncountable Nouns & Quantifiers", file:"Countable-Uncountable-Nouns-Quantifiers-Worksheet.html", marks:40, activities:4},
+  {title:"Punctuation & Sentence Boundaries", file:"Punctuation-Sentence-Boundaries-Worksheet.html", marks:44, activities:4},
+  {title:"Cause & Effect / Contrast Cohesive Devices", file:"Cause-Effect-Contrast-Cohesive-Devices-Worksheet.html", marks:40, activities:4},
+  {title:"Adjective Order", file:"Adjective-Order-Worksheet.html", marks:40, activities:4},
+  {title:"Nominalization", file:"Nominalization-Worksheet.html", marks:40, activities:4}
+];
+
+const grid = document.getElementById('cardGrid');
+grid.innerHTML = worksheets.map((w,i)=>`
+  <a class="card" href="${w.file}" data-index="${i}">
+    <div class="card-num">${(i+1) < 10 ? '0' + (i+1) : (i+1)}</div>
+    <h2>${w.title}</h2>
+    <div class="card-meta">
+      <span class="pill">${w.marks} marks</span>
+      <span class="pill">${w.activities} activities</span>
+    </div>
+    <div class="card-open">Open worksheet <span class="arrow">→</span></div>
+  </a>
+`).join('');
+
+/* ================= EFFECTS ================= */
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Cursor-following spotlight
+const spotlightEl = document.getElementById('spotlight');
+if(!reduceMotion){
+  document.body.classList.add('spot-on');
+  window.addEventListener('mousemove', (e)=>{
+    spotlightEl.style.transform = `translate(${e.clientX - 300}px, ${e.clientY - 300}px)`;
+  });
+}
+
+// 3D tilt on cards
+if(!reduceMotion){
+  document.querySelectorAll('.card').forEach(card=>{
+    card.addEventListener('mousemove', (e)=>{
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const rotateY = ((x - cx) / cx) * 7;
+      const rotateX = -((y - cy) / cy) * 7;
+      card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+    });
+    card.addEventListener('mouseleave', ()=>{
+      card.style.transform = 'perspective(700px) rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+  });
+}
+</script>
+</body>
+</html>
