@@ -242,6 +242,7 @@
     .workspace-card.synonyms { --card-accent: var(--purple); }
     .workspace-card.writing { --card-accent: var(--orange); }
     .workspace-card.rachel { --card-accent: var(--cyan); }
+    .workspace-card.practiceground { --card-accent: var(--orange2); }
 
     .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
     .card-icon {
@@ -301,6 +302,7 @@
     .stagger.visible > *:nth-child(3) { transition-delay: .16s; }
     .stagger.visible > *:nth-child(4) { transition-delay: .24s; }
     .stagger.visible > *:nth-child(5) { transition-delay: .32s; }
+    .stagger.visible > *:nth-child(6) { transition-delay: .4s; }
 
     @media (max-width: 820px) {
       .hero-panel { grid-template-columns: 1fr; }
@@ -368,7 +370,7 @@
           <div class="hero-stats" aria-label="Workspace summary">
             <div class="stat-card">
               <span class="stat-icon"><i data-lucide="layout-grid"></i></span>
-              <strong>5</strong>
+              <strong>6</strong>
               <span>Worksheet Collections</span>
             </div>
 
@@ -449,6 +451,16 @@
             </span>
             <h3>Rachel Mitchell's Writing Explained</h3>
             <p>Formatted by Abidur Rahman Tahmid</p>
+            <span class="card-link">Open Collection <i data-lucide="arrow-right"></i></span>
+          </a>
+
+          <a class="workspace-card practiceground" href="grammar_practice_ground/index.html">
+            <span class="card-top">
+              <span class="card-icon"><i data-lucide="graduation-cap"></i></span>
+              <span class="html-badge">HTML</span>
+            </span>
+            <h3>IELTS Grammar Practice Ground</h3>
+            <p>19 interactive, auto-scored grammar worksheets covering everything from articles to nominalization.</p>
             <span class="card-link">Open Collection <i data-lucide="arrow-right"></i></span>
           </a>
         </div>
