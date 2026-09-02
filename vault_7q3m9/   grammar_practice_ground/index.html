@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>IELTS VocabMaster</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--reading:#FF6B35;--listening:#4ECDC4;--writing:#FFE66D;--speaking:#A8E6CF;--bg:#0D0D1A;--surface:#16162A;--surface2:#1E1E38;--text:#F0F0FF;--text-muted:#8888AA;--accent:#7C5CFC;--accent2:#FF6B9D;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
+#splash{position:fixed;inset:0;z-index:1000;background:linear-gradient(135deg,#0D0D1A,#1a0a2e,#0a1628);display:flex;flex-direction:column;align-items:center;justify-content:center;animation:splashOut .6s ease 4.2s forwards;}
+#splash.hidden{display:none;}
+@keyframes splashOut{to{opacity:0;pointer-events:none;transform:scale(1.04);}}
+.sorb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.4;}
+.orb1{width:300px;height:300px;background:var(--accent);top:-80px;left:-80px;animation:orbF 6s ease-in-out infinite;}
+.orb2{width:200px;height:200px;background:var(--reading);bottom:-50px;right:-50px;animation:orbF 8s ease-in-out infinite reverse;}
+.orb3{width:150px;height:150px;background:var(--listening);bottom:30%;left:-30px;animation:orbF 5s ease-in-out infinite 1s;}
+@keyframes orbF{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(20px,-20px) scale(1.1);}}
+.splash-logo{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;background:linear-gradient(135deg,#7C5CFC,#FF6B9D,#FF6B35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-1px;animation:fadeUp .8s ease .3s both;position:relative;z-index:1;}
+.splash-tag{font-size:1rem;color:var(--text-muted);margin-top:8px;letter-spacing:3px;text-transform:uppercase;animation:fadeUp .8s ease .5s both;position:relative;z-index:1;}
+.splash-msg{margin-top:2.5rem;max-width:310px;text-align:center;padding:1.8rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;backdrop-filter:blur(10px);animation:fadeUp .8s ease .8s both;position:relative;z-index:1;}
+.splash-msg .qi{font-size:2rem;margin-bottom:.4rem;}
+.splash-msg p{font-size:.92rem;line-height:1.7;color:var(--text);font-weight:500;}
+.splash-msg .auth{margin-top:.6rem;font-size:.75rem;color:var(--accent2);font-weight:600;letter-spacing:1px;}
+.sload{margin-top:2rem;display:flex;gap:8px;animation:fadeUp .8s ease 1.2s both;position:relative;z-index:1;}
+.dot{width:8px;height:8px;border-radius:50%;animation:bounce 1.2s ease infinite;}
+.dot:nth-child(1){background:var(--accent)}.dot:nth-child(2){background:var(--accent2);animation-delay:.2s}.dot:nth-child(3){background:var(--reading);animation-delay:.4s}
+@keyframes bounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-12px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+#app{opacity:0;animation:fadeIn .6s ease 4.5s forwards;}
+@keyframes fadeIn{to{opacity:1}}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(13,13,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);padding:.85rem 1.2rem;display:flex;align-items:center;justify-content:space-between;}
+.tbl{display:flex;align-items:center;gap:.7rem;}
+.pav{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;cursor:pointer;border:2px solid rgba(255,255,255,.15);overflow:hidden;flex-shrink:0;}
+.pav img{width:100%;height:100%;object-fit:cover;}
+.app-title{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;background:linear-gradient(135deg,#7C5CFC,#FF6B9D);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.tba{display:flex;gap:8px;align-items:center;}
+.tpill{display:flex;background:var(--surface2);border-radius:50px;padding:3px;border:1px solid rgba(255,255,255,.06);}
+.tpill button{padding:4px 12px;border:none;border-radius:50px;font-size:.72rem;font-weight:600;cursor:pointer;transition:all .25s;background:transparent;color:var(--text-muted);font-family:'DM Sans',sans-serif;}
+.tpill button.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;}
+.nbtn{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:var(--surface2);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1rem;transition:all .25s;position:relative;}
+.nbtn:hover{border-color:var(--accent)}.nbtn .badge{position:absolute;top:4px;right:4px;width:7px;height:7px;border-radius:50%;background:var(--accent2);}
+.nbtn.off .badge{display:none}.nbtn.off{opacity:.5}
+.hero{padding:1.5rem 1.5rem 1rem;}
+.hero-g{font-size:.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:.3rem;}
+.hero-t{font-family:'Syne',sans-serif;font-size:1.7rem;font-weight:800;line-height:1.2;margin-bottom:.4rem;}
+.hero-t span{background:linear-gradient(135deg,#FF6B35,#FF6B9D);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-s{color:var(--text-muted);font-size:.85rem;line-height:1.5;}
+.hero-stats{display:flex;gap:.8rem;margin-top:1.2rem;}
+.sc{background:var(--surface2);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:.65rem .8rem;flex:1;text-align:center;}
+.sc .num{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.sc .lbl{font-size:.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+.slbl{padding:0 1.5rem;margin-bottom:.8rem;font-family:'Syne',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:3px;color:var(--text-muted);}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;padding:0 1.5rem 1.5rem;}
+.mc{border-radius:20px;padding:1.4rem;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.05);min-height:150px;display:flex;flex-direction:column;justify-content:space-between;}
+.mc:active{transform:scale(.97)}.mc:hover{transform:translateY(-4px) scale(1.02)}
+.mc.reading{background:linear-gradient(135deg,#FF6B35,#FF8C42)}.mc.listening{background:linear-gradient(135deg,#4ECDC4,#44A3AA)}.mc.writing{background:linear-gradient(135deg,#FFE66D,#F7C51B);color:#1a1a00}.mc.speaking{background:linear-gradient(135deg,#A8E6CF,#3DBF8B);color:#001a0a}
+.mc::before{content:'';position:absolute;top:-40%;right:-20%;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.15);}
+.mci{font-size:2rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,.2))}.mcn{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;margin-top:.4rem;}.mcc{font-size:.7rem;opacity:.75;font-weight:500;}
+.mca{position:absolute;bottom:.9rem;right:.9rem;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:.8rem;}
+.pov{position:fixed;inset:0;z-index:200;background:var(--bg);transform:translateX(100%);transition:transform .4s cubic-bezier(.32,.72,0,1);display:flex;flex-direction:column;overflow:hidden;}
+.pov.open{transform:translateX(0)}
+.phdr{padding:1rem 1.2rem;display:flex;align-items:center;gap:.8rem;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0;}
+.bbtn{width:34px;height:34px;border-radius:50%;background:var(--surface2);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.95rem;color:var(--text);transition:all .2s;}
+.bbtn:hover{background:var(--accent)}.phi{flex:1}.pht{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;}.phs{font-size:.72rem;color:var(--text-muted);}
+.mbadge{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+.sbar{padding:.8rem 1.2rem .4rem;}
+.sw{position:relative;}.si{width:100%;background:var(--surface2);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:.7rem .9rem .7rem 2.6rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none;transition:border-color .2s;}
+.si:focus{border-color:var(--accent)}.si::placeholder{color:var(--text-muted)}.sico{position:absolute;left:.85rem;top:50%;transform:translateY(-50%);font-size:.85rem;color:var(--text-muted);pointer-events:none;}
+.fchips{padding:.6rem 1.2rem;display:flex;gap:.45rem;overflow-x:auto;scrollbar-width:none;flex-shrink:0;}.fchips::-webkit-scrollbar{display:none}
+.chip{padding:.35rem .9rem;border-radius:50px;font-size:.72rem;font-weight:600;cursor:pointer;white-space:nowrap;border:1px solid rgba(255,255,255,.1);background:transparent;color:var(--text-muted);transition:all .2s;font-family:'DM Sans',sans-serif;}
+.chip.active{color:white;border-color:transparent;}
+.pbw{padding:0 1.2rem .8rem;}.plbl{font-size:.7rem;color:var(--text-muted);margin-bottom:.35rem;display:flex;justify-content:space-between;}
+.pbar{height:5px;background:var(--surface2);border-radius:50px;overflow:hidden;}.pfill{height:100%;border-radius:50px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .5s ease;}
+.obann{margin:0 1.2rem .8rem;background:linear-gradient(135deg,rgba(255,107,53,.15),rgba(255,107,157,.1));border:1px solid rgba(255,107,53,.3);border-radius:12px;padding:.6rem .9rem;font-size:.78rem;color:var(--reading);display:none;align-items:center;gap:.5rem;}
+.obann.show{display:flex}
+.wlist{flex:1;overflow-y:auto;padding:.4rem 1.2rem 2rem;scrollbar-width:thin;scrollbar-color:var(--surface2) transparent;}
+.wc{background:var(--surface);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:1.1rem;margin-bottom:.65rem;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;}
+.wc:hover{border-color:rgba(255,255,255,.12);transform:translateX(3px)}.wc.expanded{border-color:rgba(124,92,252,.4)}
+.wct{display:flex;align-items:flex-start;justify-content:space-between;}.wm{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;}
+.wt{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;}.wp{font-size:.66rem;padding:2px 7px;border-radius:50px;font-weight:600;letter-spacing:.5px;}
+.wlv{font-size:.62rem;padding:2px 7px;border-radius:50px;font-weight:700;letter-spacing:.5px;background:rgba(124,92,252,.2);color:var(--accent);border:1px solid rgba(124,92,252,.3);}
+.wph{font-size:.76rem;color:var(--text-muted);margin-top:2px;font-style:italic}
+.sbtn{background:none;border:none;cursor:pointer;font-size:1rem;color:var(--text-muted);transition:all .2s;padding:0}.sbtn.starred{color:#FFE66D}
+.wdef{margin-top:.6rem;font-size:.85rem;color:var(--text-muted);line-height:1.6;}
+.wex{margin-top:.7rem;display:none;border-top:1px solid rgba(255,255,255,.06);padding-top:.7rem;}.wc.expanded .wex{display:block}
+.wexq{font-size:.8rem;font-style:italic;color:var(--text-muted);line-height:1.5;padding:.5rem .75rem;background:rgba(255,255,255,.03);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;margin-bottom:.65rem;}
+.syns{display:flex;flex-wrap:wrap;gap:.35rem;}.syntag{background:rgba(78,205,196,.1);color:var(--listening);border:1px solid rgba(78,205,196,.25);padding:2px 9px;border-radius:50px;font-size:.7rem;font-weight:600;}
+.spkbtn{margin-top:.7rem;display:flex;align-items:center;gap:.4rem;background:rgba(124,92,252,.1);border:1px solid rgba(124,92,252,.25);color:var(--accent);padding:.35rem .75rem;border-radius:8px;font-size:.72rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.spkbtn:hover{background:rgba(124,92,252,.25)}
+.pn{background:rgba(255,107,53,.15);color:var(--reading)}.pv{background:rgba(78,205,196,.15);color:var(--listening)}.pa{background:rgba(255,230,109,.15);color:var(--writing)}.pad{background:rgba(168,230,207,.15);color:var(--speaking)}.pp{background:rgba(124,92,252,.15);color:var(--accent)}
+/* LISTENING */
+.ltabs{display:flex;padding:.8rem 1.2rem .4rem;gap:.5rem;flex-shrink:0;}
+.lt{flex:1;padding:.55rem .4rem;border-radius:12px;font-size:.72rem;font-weight:700;text-align:center;cursor:pointer;border:1px solid rgba(255,255,255,.1);background:transparent;color:var(--text-muted);transition:all .2s;font-family:'DM Sans',sans-serif;}
+.lt.active{background:linear-gradient(135deg,#4ECDC4,#44A3AA);color:#001a0a;border-color:transparent}
+.tscroll{flex:1;overflow-y:auto;padding:.5rem 1.2rem 2rem;}
+.tcrd{background:var(--surface);border:1px solid rgba(78,205,196,.2);border-radius:16px;padding:1.2rem;margin-bottom:.75rem;}
+.tnum{font-family:'Syne',sans-serif;font-size:.65rem;font-weight:800;color:var(--listening);text-transform:uppercase;letter-spacing:2px;margin-bottom:.3rem;}
+.ttit{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.5rem;}.tbody{font-size:.84rem;color:var(--text-muted);line-height:1.6;}
+.ttag{display:inline-block;background:rgba(78,205,196,.1);color:var(--listening);border:1px solid rgba(78,205,196,.2);padding:2px 8px;border-radius:50px;font-size:.66rem;font-weight:600;margin-top:.6rem;}
+.ftscroll{flex:1;overflow-y:auto;padding:.5rem 1.2rem 2rem;}
+.tscard{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.2rem;margin-bottom:.75rem;display:flex;align-items:center;gap:1rem;cursor:pointer;transition:all .3s;text-decoration:none;color:inherit;}
+.tscard:hover{border-color:var(--listening);transform:translateX(4px)}
+.tsn{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#4ECDC4,#44A3AA);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:.9rem;color:#001a0a;flex-shrink:0;}
+.tsi{flex:1}.tsnm{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;}.tsurl{font-size:.72rem;color:var(--text-muted);margin-top:2px;}
+.tstag{font-size:.65rem;color:var(--listening);background:rgba(78,205,196,.1);border:1px solid rgba(78,205,196,.2);padding:2px 8px;border-radius:50px;font-weight:600;margin-top:.4rem;display:inline-block;}
+.tsar{font-size:.85rem;color:var(--text-muted);}
+/* MCQ */
+.mms{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem;}
+.mmb{padding:1rem;border-radius:16px;border:2px solid rgba(255,255,255,.08);background:var(--surface);cursor:pointer;text-align:center;transition:all .2s;font-family:'DM Sans',sans-serif;}
+.mmb .mbi{font-size:1.6rem;margin-bottom:.3rem}.mmb .mbn{font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;color:var(--text)}
+.mmb.selected{border-color:var(--accent);background:rgba(124,92,252,.1)}
+.stbtn{width:100%;padding:.9rem;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:white;font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;margin-bottom:1.5rem;transition:all .2s;}
+.stbtn:hover{opacity:.9;transform:translateY(-1px)}.stbtn:disabled{opacity:.4;cursor:default;transform:none}
+.qblock{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.2rem;margin-bottom:.9rem;}
+.qnum{font-size:.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.4rem;}
+.qtxt{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:.9rem;line-height:1.4;}
+.qopts{display:flex;flex-direction:column;gap:.5rem;}
+.qopt{padding:.7rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:var(--surface2);font-size:.85rem;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;color:var(--text);text-align:left;}
+.qopt:hover{border-color:var(--accent)}.qopt.correct{background:rgba(168,230,207,.15);border-color:#3DBF8B;color:#A8E6CF}
+.qopt.wrong{background:rgba(255,107,53,.15);border-color:var(--reading);color:var(--reading)}.qopt.reveal{background:rgba(168,230,207,.08);border-color:#3DBF8B;opacity:.7}
+.scard{background:linear-gradient(135deg,rgba(124,92,252,.2),rgba(255,107,157,.1));border:1px solid rgba(124,92,252,.3);border-radius:20px;padding:1.5rem;text-align:center;margin-bottom:1.5rem;}
+.snum{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.slb{color:var(--text-muted);font-size:.85rem;margin-top:.3rem;}.smsg{margin-top:.8rem;font-size:.92rem;font-weight:600;color:var(--text);}
+/* DICT */
+.dlbl{font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:.4rem;}
+.dsel{width:100%;background:var(--surface2);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:.65rem .9rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none;cursor:pointer;margin-bottom:1rem;}
+.dsel:focus{border-color:var(--accent)}
+.dsw{position:relative;margin-bottom:1rem;}
+.dinp{width:100%;background:var(--surface2);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:.75rem 3.5rem .75rem .9rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.95rem;outline:none;transition:border-color .2s;}
+.dinp:focus{border-color:var(--accent)}.dinp::placeholder{color:var(--text-muted)}
+.dsbtn{position:absolute;right:.4rem;top:50%;transform:translateY(-50%);background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:10px;padding:.45rem .75rem;color:white;font-size:.8rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;}
+.dres{background:var(--surface);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:1.3rem;margin-bottom:.8rem;}
+.dwt{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:.2rem;}
+.dph{font-size:.82rem;color:var(--text-muted);font-style:italic;margin-bottom:.6rem;}
+.dptag{display:inline-block;font-size:.68rem;padding:2px 8px;border-radius:50px;font-weight:700;margin-bottom:.5rem;}
+.ddi{font-size:.85rem;color:var(--text-muted);line-height:1.6;margin-bottom:.4rem;padding-left:.8rem;border-left:2px solid var(--accent);}
+.dtrans{background:rgba(124,92,252,.1);border:1px solid rgba(124,92,252,.25);border-radius:12px;padding:.9rem;margin-top:.8rem;}
+.dtlbl{font-size:.68rem;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:.3rem;}
+.dttxt{font-size:1.1rem;font-weight:600;color:var(--text);}
+.dclink{display:flex;align-items:center;gap:.5rem;color:var(--accent);font-size:.8rem;font-weight:600;margin-top:.9rem;text-decoration:none;}
+.dclink:hover{color:var(--accent2)}
+.dhist-title{font-family:'Syne',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted);margin-bottom:.6rem;margin-top:1.2rem;}
+.dhchip{display:inline-block;background:var(--surface2);border:1px solid rgba(255,255,255,.08);padding:.3rem .75rem;border-radius:50px;font-size:.78rem;margin:.2rem;cursor:pointer;transition:all .2s;}
+.dhchip:hover{border-color:var(--accent);color:var(--accent)}
+.dload{text-align:center;padding:2rem;color:var(--text-muted)}.spin{font-size:1.8rem;animation:spin 1s linear infinite;display:block;margin-bottom:.5rem;}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* SETTINGS */
+.spanel{position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--surface);border-top:1px solid rgba(255,255,255,.08);border-radius:24px 24px 0 0;padding:1.4rem;transform:translateY(100%);transition:transform .35s ease;max-height:88vh;overflow-y:auto;}
+.spanel.open{transform:translateY(0)}.sov{position:fixed;inset:0;z-index:299;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .3s;}
+.sov.open{opacity:1;pointer-events:all}.stit{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:space-between;}
+.scls{background:var(--surface2);border:none;color:var(--text);width:30px;height:30px;border-radius:50%;font-size:.85rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.ssec{font-size:.68rem;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted);margin:1rem 0 .5rem;}
+.srow{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.05);}
+.sinfo strong{font-size:.88rem;font-weight:600;}.sinfo p{font-size:.72rem;color:var(--text-muted);margin-top:2px;}
+.tsw{position:relative;width:44px;height:24px;background:var(--surface2);border-radius:50px;cursor:pointer;transition:background .25s;border:1px solid rgba(255,255,255,.1);}
+.tsw.on{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent}.tsw::after{content:'';position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:white;transition:transform .25s;box-shadow:0 2px 6px rgba(0,0,0,.3);}
+.tsw.on::after{transform:translateX(20px)}
+.pes{background:var(--surface2);border-radius:16px;padding:1.2rem;margin-bottom:1rem;}
+.pea{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;margin:0 auto .8rem;border:3px solid rgba(255,255,255,.15);overflow:hidden;cursor:pointer;position:relative;}
+.pea img{width:100%;height:100%;object-fit:cover}.pea .eo{position:absolute;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;font-size:1rem;border-radius:50%;}
+.pea:hover .eo{display:flex}
+.pni{width:100%;background:var(--bg);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.6rem .9rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;text-align:center;margin-bottom:.6rem;}
+.pni:focus{border-color:var(--accent)}
+.spbtn{width:100%;padding:.6rem;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:white;font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;}
+.strig{position:fixed;bottom:1.5rem;right:1.5rem;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:white;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(124,92,252,.4);transition:all .3s;z-index:50;}
+.strig:hover{transform:scale(1.1) rotate(30deg)}
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--surface2);border:1px solid rgba(255,255,255,.1);padding:.7rem 1.4rem;border-radius:50px;font-size:.83rem;font-weight:600;z-index:9999;transition:transform .3s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,.4);}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.bnav{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(13,13,26,.95);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.06);display:flex;padding:.5rem 0 calc(.5rem + env(safe-area-inset-bottom,0px));}
+.bni{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:.4rem;transition:all .2s;}
+.bni .ico{font-size:1.2rem}.bni .lbl{font-size:.6rem;color:var(--text-muted);font-weight:600;transition:color .2s;}
+.bni.active .lbl{color:var(--accent)}
+.tsec{display:none}.tsec.active{display:block}
+#mc{padding-bottom:80px;}
+</style>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash">
+  <div class="sorb orb1"></div><div class="sorb orb2"></div><div class="sorb orb3"></div>
+  <div class="splash-logo">VocabMaster</div>
+  <div class="splash-tag">IELTS Vocabulary Coach</div>
+  <div class="splash-msg">
+    <div class="qi">💡</div>
+    <p>"Every word you learn today is a step closer to your Band 9. The journey of a thousand words begins with a single definition."</p>
+    <div class="auth">— YOUR DAILY MOTIVATION</div>
+  </div>
+  <div class="sload"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+</div>
+
+<div id="app">
+  <div class="topbar">
+    <div class="tbl">
+      <div class="pav" id="topAv" onclick="openSettings()"><span id="topAvTxt">S</span></div>
+      <div class="app-title">VocabMaster</div>
+    </div>
+    <div class="tba">
+      <div class="tpill">
+        <button class="active" id="onlineBtn" onclick="setMode('online')">🌐 Online</button>
+        <button id="offlineBtn" onclick="setMode('offline')">📴 Offline</button>
+      </div>
+      <div class="nbtn" id="notifBtn" onclick="toggleNotif()">🔔<span class="badge"></span></div>
+    </div>
+  </div>
+
+  <div id="mc">
+    <!-- HOME -->
+    <div class="tsec active" id="tab-home">
+      <div class="hero">
+        <div class="hero-g" id="heroGreet">Good day, Student 👋</div>
+        <div class="hero-t">Master Your <span>IELTS</span><br>Vocabulary</div>
+        <div class="hero-s">Select any module — vocabulary, tests, and tools await you.</div>
+        <div class="hero-stats">
+          <div class="sc"><div class="num">1000+</div><div class="lbl">Words</div></div>
+          <div class="sc"><div class="num">4</div><div class="lbl">Modules</div></div>
+          <div class="sc"><div class="num" id="savedCount">0</div><div class="lbl">Saved</div></div>
+        </div>
+      </div>
+      <div class="slbl">Choose Your Module</div>
+      <div class="mgrid">
+        <div class="mc reading" onclick="openModule('reading')">
+          <div class="mci">📖</div>
+          <div><div class="mcn">Reading</div><div class="mcc">1000 freq. words</div></div>
+          <div class="mca">→</div>
+        </div>
+        <div class="mc listening" onclick="openListening()">
+          <div class="mci">🎧</div>
+          <div><div class="mcn">Listening</div><div class="mcc">Tips · Tests · Vocab</div></div>
+          <div class="mca">→</div>
+        </div>
+        <div class="mc writing" onclick="openModule('writing')">
+          <div class="mci">✍️</div>
+          <div><div class="mcn">Writing</div><div class="mcc">180+ words</div></div>
+          <div class="mca">→</div>
+        </div>
+        <div class="mc speaking" onclick="openModule('speaking')">
+          <div class="mci">🎤</div>
+          <div><div class="mcn">Speaking</div><div class="mcc">140+ words</div></div>
+          <div class="mca">→</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MCQ -->
+    <div class="tsec" id="tab-mcq">
+      <div style="padding:1.5rem 1.5rem .5rem">
+        <div style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:.3rem">📝 MCQ Test</div>
+        <div style="color:var(--text-muted);font-size:.85rem">Self-assessment for each IELTS module</div>
+      </div>
+      <div style="padding:0 1.2rem 1rem">
+        <div style="font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:.7rem">Select Module</div>
+        <div class="mms">
+          <div class="mmb selected" id="mcqm_reading" onclick="selMCQ('reading')"><div class="mbi">📖</div><div class="mbn">Reading</div></div>
+          <div class="mmb" id="mcqm_listening" onclick="selMCQ('listening')"><div class="mbi">🎧</div><div class="mbn">Listening</div></div>
+          <div class="mmb" id="mcqm_writing" onclick="selMCQ('writing')"><div class="mbi">✍️</div><div class="mbn">Writing</div></div>
+          <div class="mmb" id="mcqm_speaking" onclick="selMCQ('speaking')"><div class="mbi">🎤</div><div class="mbn">Speaking</div></div>
+        </div>
+        <button class="stbtn" id="startBtn" onclick="startTest()">🚀 Start 10-Question Test</button>
+        <div id="mcqBox"></div>
+      </div>
+    </div>
+
+    <!-- DICTIONARY -->
+    <div class="tsec" id="tab-dict">
+      <div style="padding:1.5rem 1.5rem .5rem">
+        <div style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;margin-bottom:.3rem">📚 My Dictionary</div>
+        <div style="color:var(--text-muted);font-size:.85rem">Cambridge Dictionary + your preferred language</div>
+      </div>
+      <div style="padding:0 1.2rem 2rem;overflow-y:auto;flex:1;">
+        <div class="dlbl">Translation Language</div>
+        <select class="dsel" id="langSel" onchange="saveLang()">
+          <option value="bn">Bengali (বাংলা)</option><option value="ar">Arabic (العربية)</option>
+          <option value="zh">Chinese (中文)</option><option value="fr">French (Français)</option>
+          <option value="de">German (Deutsch)</option><option value="hi">Hindi (हिन्दी)</option>
+          <option value="id">Indonesian (Bahasa)</option><option value="ja">Japanese (日本語)</option>
+          <option value="ko">Korean (한국어)</option><option value="ms">Malay (Melayu)</option>
+          <option value="ne">Nepali (नेपाली)</option><option value="pt">Portuguese (Português)</option>
+          <option value="ru">Russian (Русский)</option><option value="es">Spanish (Español)</option>
+          <option value="tr">Turkish (Türkçe)</option><option value="ur">Urdu (اردو)</option>
+          <option value="vi">Vietnamese (Tiếng Việt)</option>
+        </select>
+        <div class="dsw">
+          <input class="dinp" id="dictInp" placeholder="Search any English word..." onkeydown="if(event.key==='Enter')lookup()">
+          <button class="dsbtn" onclick="lookup()">Search</button>
+        </div>
+        <div id="dictRes"></div>
+        <div id="dictHist"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bnav">
+    <div class="bni active" onclick="swTab('home',this)"><div class="ico">🏠</div><div class="lbl">Home</div></div>
+    <div class="bni" onclick="swTab('mcq',this)"><div class="ico">📝</div><div class="lbl">MCQ Test</div></div>
+    <div class="bni" onclick="swTab('dict',this)"><div class="ico">📚</div><div class="lbl">Dictionary</div></div>
+  </div>
+</div>
+
+<!-- VOCAB PAGE -->
+<div class="pov" id="vocabPage">
+  <div class="phdr">
+    <button class="bbtn" onclick="closeModule()">←</button>
+    <div class="phi"><div class="pht" id="vhTitle">Reading</div><div class="phs" id="vhSub">1000 words</div></div>
+    <div class="mbadge" id="vhBadge">📖</div>
+  </div>
+  <div class="sbar"><div class="sw"><span class="sico">🔍</span><input class="si" id="searchInp" placeholder="Search words..." oninput="filterW()"></div></div>
+  <div class="fchips" id="fchips"></div>
+  <div class="pbw"><div class="plbl"><span id="pLbl">Progress</span><span id="pPct">0%</span></div><div class="pbar"><div class="pfill" id="pFill" style="width:0%"></div></div></div>
+  <div class="obann" id="offBann">📴 Offline mode — cached vocabulary</div>
+  <div class="wlist" id="wordList"></div>
+</div>
+
+<!-- LISTENING PAGE -->
+<div class="pov" id="listeningPage">
+  <div class="phdr">
+    <button class="bbtn" onclick="closeListening()">←</button>
+    <div class="phi"><div class="pht">Listening Module</div><div class="phs">Tips · Free Tests · Vocabulary</div></div>
+    <div class="mbadge" style="background:#4ECDC433">🎧</div>
+  </div>
+  <div class="ltabs">
+    <button class="lt active" id="lt_tips" onclick="swLT('tips')">💡 Tips</button>
+    <button class="lt" id="lt_tests" onclick="swLT('tests')">🧪 Free Tests</button>
+    <button class="lt" id="lt_vocab" onclick="swLT('vocab')">📖 Vocab</button>
+  </div>
+
+  <div class="tscroll" id="lc_tips">
+    <div class="tcrd"><div class="tnum">Tip 01</div><div class="ttit">Read Questions Before Listening</div><div class="tbody">Always skim the questions before the audio begins. This helps you anticipate what information to listen for and avoid being caught off guard.</div><span class="ttag">Strategy</span></div>
+    <div class="tcrd"><div class="tnum">Tip 02</div><div class="ttit">Listen for Signpost Language</div><div class="tbody">Phrases like "however," "the main point is," and "to summarise" signal critical information. Training your ear for these cues boosts accuracy.</div><span class="ttag">Comprehension</span></div>
+    <div class="tcrd"><div class="tnum">Tip 03</div><div class="ttit">Don't Panic if You Miss Something</div><div class="tbody">If you miss an answer, move on immediately. Lingering on a missed answer causes you to miss the next one too. You only hear the audio once.</div><span class="ttag">Test Strategy</span></div>
+    <div class="tcrd"><div class="tnum">Tip 04</div><div class="ttit">Spelling Counts — Every Letter!</div><div class="tbody">In IELTS Listening, spelling errors mean a wrong answer. Practise spelling carefully. Pay attention to plural forms and verb tenses.</div><span class="ttag">Accuracy</span></div>
+    <div class="tcrd"><div class="tnum">Tip 05</div><div class="ttit">Understand All Four Sections</div><div class="tbody">Section 1: social conversation. Section 2: monologue. Section 3: academic discussion. Section 4: academic lecture. Difficulty increases progressively.</div><span class="ttag">Test Format</span></div>
+    <div class="tcrd"><div class="tnum">Tip 06</div><div class="ttit">Watch Out for Distractors</div><div class="tbody">Speakers often correct themselves — "Actually, let me change that to...". The final answer given is correct. Train yourself to catch these changes.</div><span class="ttag">Trap Avoidance</span></div>
+    <div class="tcrd"><div class="tnum">Tip 07</div><div class="ttit">Practise with Native-Speed Audio</div><div class="tbody">IELTS uses native-speed British, Australian, and American English. Listen to BBC Radio, TED Talks, and podcasts daily to train your ear.</div><span class="ttag">Preparation</span></div>
+    <div class="tcrd"><div class="tnum">Tip 08</div><div class="ttit">Use the 10-Minute Transfer Time</div><div class="tbody">At the end of the Listening test you get 10 minutes to transfer answers. Use this to check spelling, grammar, and that you haven't exceeded any word limits.</div><span class="ttag">Time Management</span></div>
+    <div class="tcrd"><div class="tnum">Tip 09</div><div class="ttit">Predict the Answer Type</div><div class="tbody">Before listening, determine what type of answer is expected — a number, a name, a place, an adjective. This narrows your focus when the audio plays.</div><span class="ttag">Strategy</span></div>
+    <div class="tcrd"><div class="tnum">Tip 10</div><div class="ttit">Use Capital Letters for Proper Nouns</div><div class="tbody">Names of people, places, and organisations should be capitalised. Get into the habit of writing them correctly from the start to avoid losing marks.</div><span class="ttag">Accuracy</span></div>
+  </div>
+
+  <div class="ftscroll" id="lc_tests" style="display:none">
+    <div style="background:linear-gradient(135deg,rgba(78,205,196,.15),rgba(68,163,170,.08));border:1px solid rgba(78,205,196,.2);border-radius:14px;padding:1rem;margin-bottom:1rem;font-size:.83rem;color:var(--listening);line-height:1.5;">🎯 <strong>3 hand-picked free test platforms</strong> — tap to open in your browser.</div>
+    <a class="tscard" href="https://www.ieltstestsimulation.com/" target="_blank" rel="noopener">
+      <div class="tsn">1</div><div class="tsi"><div class="tsnm">IELTS Test Simulation</div><div class="tsurl">ieltstestsimulation.com</div><span class="tstag">Full Simulation · Free</span></div><div class="tsar">↗</div>
+    </a>
+    <a class="tscard" href="https://www.jumpinto.com/ielts/practice" target="_blank" rel="noopener">
+      <div class="tsn">2</div><div class="tsi"><div class="tsnm">JumpInto IELTS Practice</div><div class="tsurl">jumpinto.com/ielts/practice</div><span class="tstag">Practice Tests · Free</span></div><div class="tsar">↗</div>
+    </a>
+    <a class="tscard" href="https://ieltsonlinetests.com/ielts-exam-library?tab=academic&search&sort&skill=listening" target="_blank" rel="noopener">
+      <div class="tsn">3</div><div class="tsi"><div class="tsnm">IELTS Online Tests Library</div><div class="tsurl">ieltsonlinetests.com</div><span class="tstag">Academic · Listening · Free</span></div><div class="tsar">↗</div>
+    </a>
+    <div style="text-align:center;padding:1rem;font-size:.78rem;color:var(--text-muted)">More platforms coming soon 🚀</div>
+  </div>
+
+  <div id="lc_vocab" style="display:none;flex-direction:column;flex:1;overflow:hidden;">
+    <div class="sbar"><div class="sw"><span class="sico">🔍</span><input class="si" id="lSearch" placeholder="Search listening vocab..." oninput="renderLVocab()"></div></div>
+    <div class="fchips" id="lChips"></div>
+    <div class="wlist" id="lWordList"></div>
+  </div>
+</div>
+
+<!-- SETTINGS -->
+<div class="sov" id="sOv" onclick="closeSettings()"></div>
+<div class="spanel" id="sPanel">
+  <div class="stit">⚙️ Settings <button class="scls" onclick="closeSettings()">✕</button></div>
+  <div class="ssec">👤 Profile</div>
+  <div class="pes">
+    <div class="pea" id="peaEl" onclick="trigAv()">
+      <span id="peaTxt">S</span><div class="eo">📷</div>
+    </div>
+    <input type="file" id="avFile" accept="image/*" style="display:none" onchange="handleAv(event)">
+    <input class="pni" id="profName" placeholder="Enter your name..." maxlength="30">
+    <button class="spbtn" onclick="saveProf()">💾 Save Profile</button>
+  </div>
+  <div class="ssec">🌐 App Mode</div>
+  <div class="srow"><div class="sinfo"><strong>🌐 Online Mode</strong><p>Sync & fetch new content</p></div><div class="tsw on" id="onTgl" onclick="toggleOnline()"></div></div>
+  <div class="srow"><div class="sinfo"><strong>🔔 Notifications</strong><p>Daily word reminders</p></div><div class="tsw on" id="notifTgl" onclick="toggleNotifS()"></div></div>
+  <div class="srow"><div class="sinfo"><strong>🌙 Dark Theme</strong><p>Always on for best experience</p></div><div class="tsw on"></div></div>
+</div>
+
+<button class="strig" onclick="openSettings()">⚙️</button>
+<div class="toast" id="toast"></div>
+
+<script>
+// =================== VOCABULARY DATA ===================
+const vocab={
+reading:[
+  {word:"Abundant",phonetic:"/əˈbʌndənt/",pos:"adj",level:"B2",category:"Description",def:"Existing in large quantities; plentiful.",example:"The region has abundant natural resources including coal and iron ore.",synonyms:["plentiful","ample","copious"]},
+  {word:"Accelerate",phonetic:"/əkˈseləreɪt/",pos:"verb",level:"B2",category:"Process",def:"To increase in rate, amount, or extent.",example:"New policies are expected to accelerate economic growth.",synonyms:["speed up","hasten","quicken"]},
+  {word:"Accommodate",phonetic:"/əˈkɒmədeɪt/",pos:"verb",level:"B2",category:"Social",def:"To provide space; to adjust to satisfy.",example:"The school must accommodate students with different learning needs.",synonyms:["house","adjust","adapt"]},
+  {word:"Accumulate",phonetic:"/əˈkjuːmjəleɪt/",pos:"verb",level:"B2",category:"Process",def:"To gather together an increasing amount of something.",example:"Pollutants can accumulate in the food chain over time.",synonyms:["gather","amass","collect"]},
+  {word:"Accurate",phonetic:"/ˈækjərət/",pos:"adj",level:"B1",category:"Quality",def:"Correct in all details; not containing errors.",example:"Scientists must ensure their measurements are highly accurate.",synonyms:["precise","exact","correct"]},
+  {word:"Acknowledge",phonetic:"/əkˈnɒlɪdʒ/",pos:"verb",level:"B2",category:"Communication",def:"To accept or admit the existence or truth of something.",example:"The government acknowledged that the report raised serious concerns.",synonyms:["admit","recognize","accept"]},
+  {word:"Acquire",phonetic:"/əˈkwaɪə/",pos:"verb",level:"B2",category:"Process",def:"To obtain; to learn or develop a skill.",example:"Children acquire language skills remarkably quickly.",synonyms:["obtain","gain","develop"]},
+  {word:"Adequate",phonetic:"/ˈædɪkwət/",pos:"adj",level:"B2",category:"Quality",def:"Satisfactory or acceptable in quality or quantity.",example:"The country lacks adequate healthcare facilities in rural areas.",synonyms:["sufficient","acceptable","satisfactory"]},
+  {word:"Adjacent",phonetic:"/əˈdʒeɪsnt/",pos:"adj",level:"B2",category:"Location",def:"Next to or adjoining something else.",example:"The new building was constructed adjacent to the existing campus.",synonyms:["neighbouring","adjoining","next to"]},
+  {word:"Advocate",phonetic:"/ˈædvəkɪt/",pos:"verb",level:"C1",category:"Opinion",def:"To publicly recommend or support a particular cause.",example:"Environmental groups have long advocated for stricter pollution controls.",synonyms:["support","champion","promote"]},
+  {word:"Affect",phonetic:"/əˈfekt/",pos:"verb",level:"B1",category:"Process",def:"To have an effect on; to make a difference to.",example:"Climate change affects biodiversity in complex and far-reaching ways.",synonyms:["influence","impact","alter"]},
+  {word:"Allocate",phonetic:"/ˈæləkeɪt/",pos:"verb",level:"C1",category:"Academic",def:"To distribute resources or duties for a particular purpose.",example:"Governments must allocate funding carefully to maximise public benefit.",synonyms:["assign","distribute","apportion"]},
+  {word:"Alter",phonetic:"/ˈɔːltə/",pos:"verb",level:"B2",category:"Change",def:"To change in character or composition.",example:"Rising sea temperatures have begun to alter marine ecosystems.",synonyms:["change","modify","adjust"]},
+  {word:"Ambiguous",phonetic:"/æmˈbɪɡjuəs/",pos:"adj",level:"C1",category:"Quality",def:"Open to more than one interpretation; unclear.",example:"The wording of the regulation was ambiguous.",synonyms:["unclear","vague","equivocal"]},
+  {word:"Analyse",phonetic:"/ˈænəlaɪz/",pos:"verb",level:"B2",category:"Academic",def:"To examine something methodically in detail.",example:"Researchers analysed data from over ten thousand participants.",synonyms:["examine","study","investigate"]},
+  {word:"Apparent",phonetic:"/əˈpærənt/",pos:"adj",level:"B2",category:"Quality",def:"Clearly visible or understood; seeming real.",example:"The apparent simplicity of the solution disguised its technical complexity.",synonyms:["obvious","evident","seeming"]},
+  {word:"Approach",phonetic:"/əˈprəʊtʃ/",pos:"noun",level:"B1",category:"Academic",def:"A way of dealing with a situation or problem.",example:"A multi-disciplinary approach is required to tackle urban poverty.",synonyms:["method","strategy","technique"]},
+  {word:"Approximately",phonetic:"/əˈprɒksɪmətli/",pos:"adv",level:"B1",category:"Quantity",def:"Almost but not completely accurate.",example:"Approximately 40% of the population lives in urban areas.",synonyms:["roughly","around","about"]},
+  {word:"Assess",phonetic:"/əˈses/",pos:"verb",level:"B2",category:"Academic",def:"To evaluate or estimate the nature or quality of something.",example:"Teachers assess student performance using a range of methods.",synonyms:["evaluate","judge","measure"]},
+  {word:"Assume",phonetic:"/əˈsjuːm/",pos:"verb",level:"B2",category:"Academic",def:"To suppose something to be the case without proof.",example:"The study assumes that all participants have equal access to resources.",synonyms:["presuppose","suppose","presume"]},
+  {word:"Attribute",phonetic:"/ˈætrɪbjuːt/",pos:"verb",level:"C1",category:"Academic",def:"To regard something as being caused by something else.",example:"Scientists attribute the decline in bee populations to pesticide use.",synonyms:["ascribe","credit","assign"]},
+  {word:"Beneficial",phonetic:"/ˌbenɪˈfɪʃl/",pos:"adj",level:"B2",category:"Quality",def:"Resulting in good; favourable or advantageous.",example:"Regular exercise is highly beneficial for both mental and physical health.",synonyms:["advantageous","helpful","favourable"]},
+  {word:"Category",phonetic:"/ˈkætəɡəri/",pos:"noun",level:"B1",category:"Classification",def:"A class or division of things with shared characteristics.",example:"Species are classified into categories based on biological traits.",synonyms:["class","type","group"]},
+  {word:"Challenge",phonetic:"/ˈtʃælɪndʒ/",pos:"noun",level:"B1",category:"Academic",def:"A situation that tests someone's abilities.",example:"Food security remains one of the greatest challenges facing developing nations.",synonyms:["difficulty","obstacle","problem"]},
+  {word:"Clarify",phonetic:"/ˈklærɪfaɪ/",pos:"verb",level:"B2",category:"Communication",def:"To make something less confused and more comprehensible.",example:"The author clarifies the distinction between correlation and causation.",synonyms:["explain","clear up","illuminate"]},
+  {word:"Coherent",phonetic:"/kəʊˈhɪərənt/",pos:"adj",level:"B2",category:"Quality",def:"Logical and consistent; forming a unified whole.",example:"The passage presents a coherent argument about technology in education.",synonyms:["logical","consistent","clear"]},
+  {word:"Compensate",phonetic:"/ˈkɒmpənseɪt/",pos:"verb",level:"B2",category:"Process",def:"To give something to make up for a loss or disadvantage.",example:"The government compensates farmers whose crops are destroyed by floods.",synonyms:["reimburse","offset","make up for"]},
+  {word:"Complex",phonetic:"/ˈkɒmpleks/",pos:"adj",level:"B1",category:"Quality",def:"Consisting of many different and connected parts.",example:"Climate change is a highly complex issue involving many interrelated factors.",synonyms:["complicated","intricate","multifaceted"]},
+  {word:"Concept",phonetic:"/ˈkɒnsept/",pos:"noun",level:"B2",category:"Academic",def:"An abstract idea; a general notion.",example:"The concept of sustainable development emerged in the 1980s.",synonyms:["idea","notion","principle"]},
+  {word:"Conclude",phonetic:"/kənˈkluːd/",pos:"verb",level:"B2",category:"Academic",def:"To arrive at a judgement or opinion by reasoning.",example:"The study concludes that diet is a major factor in preventing chronic disease.",synonyms:["determine","decide","deduce"]},
+  {word:"Context",phonetic:"/ˈkɒntekst/",pos:"noun",level:"B2",category:"Academic",def:"The circumstances forming the setting for an event or idea.",example:"Words must be interpreted in the context of the whole passage.",synonyms:["setting","background","framework"]},
+  {word:"Contrast",phonetic:"/ˈkɒntrɑːst/",pos:"noun",level:"B2",category:"Analysis",def:"The state of being strikingly different from something else.",example:"The passage draws a sharp contrast between rural and urban lifestyles.",synonyms:["difference","distinction","disparity"]},
+  {word:"Contribute",phonetic:"/kənˈtrɪbjuːt/",pos:"verb",level:"B2",category:"Process",def:"To help cause or bring about something.",example:"Physical inactivity is thought to contribute to rising obesity rates.",synonyms:["play a part","add to","help cause"]},
+  {word:"Controversial",phonetic:"/ˌkɒntrəˈvɜːʃl/",pos:"adj",level:"B2",category:"Opinion",def:"Giving rise to public disagreement.",example:"The proposal to build a dam proved highly controversial.",synonyms:["disputed","contentious","debatable"]},
+  {word:"Convince",phonetic:"/kənˈvɪns/",pos:"verb",level:"B2",category:"Communication",def:"To cause someone to believe firmly in the truth of something.",example:"The evidence was strong enough to convince the committee to approve the plan.",synonyms:["persuade","satisfy","assure"]},
+  {word:"Criteria",phonetic:"/kraɪˈtɪəriə/",pos:"noun",level:"B2",category:"Academic",def:"Principles or standards by which things may be judged.",example:"Applicants must meet strict criteria to qualify for the research grant.",synonyms:["standards","requirements","benchmarks"]},
+  {word:"Crucial",phonetic:"/ˈkruːʃl/",pos:"adj",level:"B2",category:"Importance",def:"Decisive or critical to success or failure.",example:"Access to clean water is crucial for preventing waterborne diseases.",synonyms:["vital","essential","critical"]},
+  {word:"Decline",phonetic:"/dɪˈklaɪn/",pos:"verb",level:"B2",category:"Change",def:"To become smaller, weaker, or less in quality.",example:"Fish populations have declined sharply due to overfishing.",synonyms:["decrease","fall","diminish"]},
+  {word:"Demonstrate",phonetic:"/ˈdemənstreɪt/",pos:"verb",level:"B2",category:"Academic",def:"To clearly show the existence or truth of something by evidence.",example:"The experiment demonstrates the link between sugar consumption and obesity.",synonyms:["show","prove","illustrate"]},
+  {word:"Derive",phonetic:"/dɪˈraɪv/",pos:"verb",level:"C1",category:"Academic",def:"To obtain something from a specified source.",example:"Much of the country's income is derived from tourism.",synonyms:["obtain","gain","draw from"]},
+  {word:"Deteriorate",phonetic:"/dɪˈtɪərɪəreɪt/",pos:"verb",level:"C1",category:"Change",def:"To become progressively worse.",example:"Air quality in major cities has continued to deteriorate.",synonyms:["worsen","decline","degrade"]},
+  {word:"Determine",phonetic:"/dɪˈtɜːmɪn/",pos:"verb",level:"B2",category:"Academic",def:"To cause something to occur in a particular way; to ascertain.",example:"Genetic factors determine susceptibility to certain diseases.",synonyms:["decide","establish","ascertain"]},
+  {word:"Diverse",phonetic:"/daɪˈvɜːs/",pos:"adj",level:"B2",category:"Description",def:"Showing a great deal of variety; very different.",example:"The rainforest is home to a diverse range of plant and animal species.",synonyms:["varied","wide-ranging","heterogeneous"]},
+  {word:"Dominant",phonetic:"/ˈdɒmɪnənt/",pos:"adj",level:"B2",category:"Description",def:"Having power and influence; most important or noticeable.",example:"English has become the dominant language of international business.",synonyms:["prevailing","leading","primary"]},
+  {word:"Eliminate",phonetic:"/ɪˈlɪmɪneɪt/",pos:"verb",level:"B2",category:"Process",def:"To completely remove or get rid of something.",example:"The vaccination programme aims to eliminate measles by 2030.",synonyms:["remove","eradicate","abolish"]},
+  {word:"Emerge",phonetic:"/ɪˈmɜːdʒ/",pos:"verb",level:"B2",category:"Process",def:"To become apparent or known.",example:"A clear pattern emerged from the analysis of the survey data.",synonyms:["appear","arise","surface"]},
+  {word:"Emphasise",phonetic:"/ˈemfəsaɪz/",pos:"verb",level:"B2",category:"Communication",def:"To give special importance or value to something.",example:"The author emphasises the need for immediate government action.",synonyms:["stress","highlight","underline"]},
+  {word:"Enable",phonetic:"/ɪˈneɪbl/",pos:"verb",level:"B2",category:"Process",def:"To give the means or opportunity; to make possible.",example:"Modern technology enables researchers to analyse huge datasets rapidly.",synonyms:["allow","permit","facilitate"]},
+  {word:"Enhance",phonetic:"/ɪnˈhɑːns/",pos:"verb",level:"B2",category:"Change",def:"To intensify or further improve the quality or value of something.",example:"Green spaces in cities can enhance the wellbeing of residents.",synonyms:["improve","boost","strengthen"]},
+  {word:"Establish",phonetic:"/ɪˈstæblɪʃ/",pos:"verb",level:"B2",category:"Process",def:"To set up on a permanent basis; to prove something true.",example:"The research aims to establish a link between diet and cognitive decline.",synonyms:["create","found","prove"]},
+  {word:"Evaluate",phonetic:"/ɪˈvæljueɪt/",pos:"verb",level:"B2",category:"Academic",def:"To form an idea of the amount, number, or value of something.",example:"Students are asked to evaluate the effectiveness of the proposed solutions.",synonyms:["assess","judge","appraise"]},
+  {word:"Evidence",phonetic:"/ˈevɪdəns/",pos:"noun",level:"B1",category:"Academic",def:"Facts or information indicating whether a belief is true or valid.",example:"There is considerable evidence that exercise reduces the risk of heart disease.",synonyms:["proof","data","findings"]},
+  {word:"Evolve",phonetic:"/ɪˈvɒlv/",pos:"verb",level:"B2",category:"Change",def:"To develop gradually from a simple to a more complex form.",example:"Cities evolve in response to economic, social, and environmental pressures.",synonyms:["develop","change","transform"]},
+  {word:"Excessive",phonetic:"/ɪkˈsesɪv/",pos:"adj",level:"B2",category:"Quantity",def:"More than is necessary, normal, or desirable.",example:"Excessive consumption of fossil fuels is a major driver of climate change.",synonyms:["extreme","undue","disproportionate"]},
+  {word:"Expand",phonetic:"/ɪkˈspænd/",pos:"verb",level:"B1",category:"Change",def:"To become or make larger or more extensive.",example:"Cities continue to expand outward, consuming agricultural land.",synonyms:["grow","extend","increase"]},
+  {word:"Explicit",phonetic:"/ɪkˈsplɪsɪt/",pos:"adj",level:"B2",category:"Quality",def:"Stated clearly and in detail, leaving no room for confusion.",example:"The instructions must be explicit to prevent any misunderstanding.",synonyms:["clear","specific","direct"]},
+  {word:"Expose",phonetic:"/ɪkˈspəʊz/",pos:"verb",level:"B2",category:"Process",def:"To make visible or known; to subject to the experience of something.",example:"Children exposed to air pollution are at greater risk of respiratory illness.",synonyms:["reveal","subject to","uncover"]},
+  {word:"Extensive",phonetic:"/ɪkˈstensɪv/",pos:"adj",level:"B2",category:"Quantity",def:"Covering or affecting a large area; having wide scope.",example:"The researchers conducted extensive fieldwork across three continents.",synonyms:["wide-ranging","broad","comprehensive"]},
+  {word:"Factor",phonetic:"/ˈfæktə/",pos:"noun",level:"B1",category:"Academic",def:"A circumstance or influence that contributes to a result.",example:"Diet is one of the most significant factors affecting long-term health outcomes.",synonyms:["element","component","determinant"]},
+  {word:"Facilitate",phonetic:"/fəˈsɪlɪteɪt/",pos:"verb",level:"C1",category:"Process",def:"To make an action or process easy or easier.",example:"New transport links will facilitate trade between the two regions.",synonyms:["enable","assist","help"]},
+  {word:"Generate",phonetic:"/ˈdʒenəreɪt/",pos:"verb",level:"B2",category:"Process",def:"To cause something to arise or come about.",example:"Wind turbines can generate electricity without producing carbon emissions.",synonyms:["produce","create","yield"]},
+  {word:"Hypothesis",phonetic:"/haɪˈpɒθɪsɪs/",pos:"noun",level:"C1",category:"Academic",def:"A proposed explanation made on the basis of limited evidence.",example:"The hypothesis was tested through a series of controlled experiments.",synonyms:["theory","assumption","proposition"]},
+  {word:"Identify",phonetic:"/aɪˈdentɪfaɪ/",pos:"verb",level:"B1",category:"Academic",def:"To establish or indicate who or what something is.",example:"Researchers have identified several genetic markers linked to the disease.",synonyms:["recognise","determine","pinpoint"]},
+  {word:"Imply",phonetic:"/ɪmˈplaɪ/",pos:"verb",level:"B2",category:"Communication",def:"To suggest or indicate indirectly.",example:"The data implies that current conservation efforts are insufficient.",synonyms:["suggest","indicate","hint"]},
+  {word:"Influence",phonetic:"/ˈɪnfluəns/",pos:"verb",level:"B1",category:"Process",def:"To have an effect on the character or behaviour of something.",example:"Cultural attitudes can significantly influence individual health behaviours.",synonyms:["affect","shape","impact"]},
+  {word:"Integrate",phonetic:"/ˈɪntɪɡreɪt/",pos:"verb",level:"C1",category:"Process",def:"To combine one thing with another to form a whole.",example:"The new system integrates data from multiple sources for better analysis.",synonyms:["combine","incorporate","merge"]},
+  {word:"Investigate",phonetic:"/ɪnˈvestɪɡeɪt/",pos:"verb",level:"B2",category:"Academic",def:"To carry out a systematic inquiry to find out the facts.",example:"Scientists are investigating the long-term effects of microplastics on marine life.",synonyms:["research","examine","study"]},
+  {word:"Justify",phonetic:"/ˈdʒʌstɪfaɪ/",pos:"verb",level:"B2",category:"Academic",def:"To show or prove to be right or reasonable.",example:"The report fails to adequately justify its recommendations.",synonyms:["explain","defend","warrant"]},
+  {word:"Maintain",phonetic:"/meɪnˈteɪn/",pos:"verb",level:"B2",category:"Process",def:"To cause to continue; to assert something to be true.",example:"It is difficult to maintain biodiversity in heavily urbanised environments.",synonyms:["preserve","sustain","uphold"]},
+  {word:"Nuance",phonetic:"/ˈnjuːɑːns/",pos:"noun",level:"C1",category:"Quality",def:"A subtle difference in meaning or expression.",example:"The translation failed to capture the nuances of the original text.",synonyms:["subtlety","shade","distinction"]},
+  {word:"Perceive",phonetic:"/pəˈsiːv/",pos:"verb",level:"C1",category:"Cognitive",def:"To become aware of something; to interpret something.",example:"Readers may perceive the author's tone as either critical or supportive.",synonyms:["notice","recognise","interpret"]},
+  {word:"Phenomenon",phonetic:"/fɪˈnɒmɪnən/",pos:"noun",level:"C1",category:"Academic",def:"A fact or situation observed to exist or happen.",example:"Urbanisation is a global phenomenon that shows no signs of slowing.",synonyms:["occurrence","event","fact"]},
+  {word:"Significant",phonetic:"/sɪɡˈnɪfɪkənt/",pos:"adj",level:"B2",category:"Importance",def:"Sufficiently great or important to be worthy of attention.",example:"The study reveals a significant correlation between poverty and poor health.",synonyms:["important","notable","substantial"]},
+  {word:"Substantial",phonetic:"/səbˈstænʃl/",pos:"adj",level:"C1",category:"Quantity",def:"Of considerable importance, size, or worth.",example:"The project requires a substantial investment of both time and money.",synonyms:["considerable","significant","large"]},
+  {word:"Sustain",phonetic:"/səˈsteɪn/",pos:"verb",level:"B2",category:"Process",def:"To strengthen or support; to cause to continue.",example:"It is challenging to sustain economic growth without damaging the environment.",synonyms:["maintain","support","continue"]},
+  {word:"Underlying",phonetic:"/ˌʌndəˈlaɪɪŋ/",pos:"adj",level:"C1",category:"Academic",def:"Significant as a cause or basis but not immediately obvious.",example:"The underlying cause of the conflict was competition for limited resources.",synonyms:["fundamental","root","core"]},
+  {word:"Vulnerable",phonetic:"/ˈvʌlnərəbl/",pos:"adj",level:"B2",category:"Description",def:"Exposed to the possibility of being harmed.",example:"Elderly people are particularly vulnerable to extreme heat events.",synonyms:["at risk","susceptible","exposed"]},
+],
+listening:[
+  {word:"Elaborate",phonetic:"/ɪˈlæbərət/",pos:"verb",level:"B2",category:"Discussion",def:"To develop or present something in further detail.",example:"Could you elaborate on your previous point about funding?",synonyms:["expand","detail","clarify"]},
+  {word:"Concede",phonetic:"/kənˈsiːd/",pos:"verb",level:"C1",category:"Discussion",def:"To admit that something is true after first denying it.",example:"The speaker conceded that some of the criticism was justified.",synonyms:["admit","acknowledge","accept"]},
+  {word:"Fluctuate",phonetic:"/ˈflʌktʃueɪt/",pos:"verb",level:"B2",category:"Data",def:"To rise and fall irregularly in number or amount.",example:"Temperatures fluctuate considerably between seasons.",synonyms:["vary","shift","oscillate"]},
+  {word:"Implication",phonetic:"/ˌɪmplɪˈkeɪʃn/",pos:"noun",level:"B2",category:"Discussion",def:"A conclusion drawn from something not explicitly stated.",example:"The implications of the new policy are far-reaching.",synonyms:["consequence","suggestion","significance"]},
+  {word:"Prevalent",phonetic:"/ˈprevələnt/",pos:"adj",level:"B2",category:"Description",def:"Widespread in a particular area or at a particular time.",example:"This belief is prevalent among young professionals.",synonyms:["widespread","common","rife"]},
+  {word:"Scrutinise",phonetic:"/ˈskruːtɪnaɪz/",pos:"verb",level:"C1",category:"Analysis",def:"To examine or inspect closely and thoroughly.",example:"The committee will scrutinise the financial records carefully.",synonyms:["examine","inspect","analyse"]},
+  {word:"Tentative",phonetic:"/ˈtentətɪv/",pos:"adj",level:"B2",category:"Discussion",def:"Not certain or fixed; provisional or hesitant.",example:"We have made a tentative agreement to meet next week.",synonyms:["provisional","uncertain","hesitant"]},
+  {word:"Convey",phonetic:"/kənˈveɪ/",pos:"verb",level:"B2",category:"Communication",def:"To make an idea or feeling known or understood.",example:"The speaker managed to convey complex ideas in simple language.",synonyms:["communicate","express","transmit"]},
+  {word:"Discrepancy",phonetic:"/dɪˈskrepənsi/",pos:"noun",level:"C1",category:"Analysis",def:"A lack of compatibility between two or more facts.",example:"There was a clear discrepancy between the two witness accounts.",synonyms:["inconsistency","difference","mismatch"]},
+  {word:"Adjacent",phonetic:"/əˈdʒeɪsnt/",pos:"adj",level:"B2",category:"Location",def:"Next to or adjoining something else.",example:"The hospital is adjacent to the main bus station.",synonyms:["neighbouring","next to","bordering"]},
+],
+writing:[
+  {word:"Consequently",phonetic:"/ˈkɒnsɪkwəntli/",pos:"adv",level:"B2",category:"Linking",def:"As a result; therefore.",example:"The study was poorly designed; consequently, the results cannot be trusted.",synonyms:["therefore","thus","hence"]},
+  {word:"Albeit",phonetic:"/ɔːlˈbiːɪt/",pos:"phrase",level:"C1",category:"Linking",def:"Although; even though.",example:"The essay was well-argued, albeit somewhat repetitive in parts.",synonyms:["although","even though","though"]},
+  {word:"Proliferate",phonetic:"/prəˈlɪfəreɪt/",pos:"verb",level:"C1",category:"Academic",def:"To increase rapidly in numbers; to multiply.",example:"Social media platforms have proliferated at an astonishing rate.",synonyms:["multiply","expand","spread"]},
+  {word:"Juxtapose",phonetic:"/ˌdʒʌkstəˈpəʊz/",pos:"verb",level:"C2",category:"Analysis",def:"To place close together for contrasting effect.",example:"The writer juxtaposes wealth and poverty throughout the narrative.",synonyms:["contrast","compare","place beside"]},
+  {word:"Pertinent",phonetic:"/ˈpɜːtɪnənt/",pos:"adj",level:"C1",category:"Academic",def:"Relevant or applicable to a particular matter.",example:"Please include only pertinent information in your essay.",synonyms:["relevant","applicable","appropriate"]},
+  {word:"Mitigate",phonetic:"/ˈmɪtɪɡeɪt/",pos:"verb",level:"C1",category:"Academic",def:"To make less severe, serious, or painful.",example:"Governments must act to mitigate the effects of climate change.",synonyms:["reduce","lessen","alleviate"]},
+  {word:"Ubiquitous",phonetic:"/juːˈbɪkwɪtəs/",pos:"adj",level:"C1",category:"Academic",def:"Present, appearing, or found everywhere.",example:"Smartphones have become ubiquitous in modern society.",synonyms:["omnipresent","universal","pervasive"]},
+  {word:"Nevertheless",phonetic:"/ˌnevəðəˈles/",pos:"adv",level:"B2",category:"Linking",def:"In spite of that; notwithstanding.",example:"The task was difficult; nevertheless, she completed it brilliantly.",synonyms:["nonetheless","however","still"]},
+  {word:"Ostensibly",phonetic:"/ɒˈstensɪbli/",pos:"adv",level:"C1",category:"Academic",def:"Apparently, but perhaps not actually.",example:"The policy was ostensibly designed to help the poor.",synonyms:["apparently","supposedly","seemingly"]},
+  {word:"Discourse",phonetic:"/ˈdɪskɔːs/",pos:"noun",level:"C1",category:"Academic",def:"Written or spoken communication or debate.",example:"Academic discourse requires precision and clarity of expression.",synonyms:["discussion","debate","communication"]},
+],
+speaking:[
+  {word:"Articulate",phonetic:"/ɑːˈtɪkjuleɪt/",pos:"verb",level:"B2",category:"Expression",def:"To express an idea or feeling fluently and coherently.",example:"She was able to articulate her ideas clearly during the speaking exam.",synonyms:["express","voice","communicate"]},
+  {word:"Perspective",phonetic:"/pəˈspektɪv/",pos:"noun",level:"B2",category:"Opinion",def:"A particular way of considering something.",example:"From my perspective, public transport is far more efficient.",synonyms:["viewpoint","standpoint","angle"]},
+  {word:"Profound",phonetic:"/prəˈfaʊnd/",pos:"adj",level:"C1",category:"Opinion",def:"Very great or intense; having deep insight.",example:"Technology has had a profound impact on the way we communicate.",synonyms:["deep","significant","great"]},
+  {word:"Feasible",phonetic:"/ˈfiːzɪbl/",pos:"adj",level:"B2",category:"Opinion",def:"Possible to do easily or conveniently.",example:"I don't think it's feasible to eliminate cars from city centres entirely.",synonyms:["possible","viable","practical"]},
+  {word:"Intriguing",phonetic:"/ɪnˈtriːɡɪŋ/",pos:"adj",level:"B2",category:"Expression",def:"Arousing curiosity or interest; fascinating.",example:"That's a really intriguing question — I've never thought about it that way.",synonyms:["fascinating","interesting","captivating"]},
+  {word:"Inevitably",phonetic:"/ɪnˈevɪtəbli/",pos:"adv",level:"B2",category:"Opinion",def:"As is certain to happen; unavoidably.",example:"Inevitably, rapid urbanisation leads to social and environmental challenges.",synonyms:["unavoidably","certainly","necessarily"]},
+  {word:"Tendency",phonetic:"/ˈtendənsi/",pos:"noun",level:"B2",category:"Opinion",def:"An inclination towards a particular characteristic or behaviour.",example:"There is a growing tendency for people to work from home.",synonyms:["trend","inclination","disposition"]},
+  {word:"Counterpart",phonetic:"/ˈkaʊntəpɑːt/",pos:"noun",level:"C1",category:"Comparison",def:"A person or thing corresponding to another.",example:"British universities differ significantly from their American counterparts.",synonyms:["equivalent","parallel","opposite number"]},
+  {word:"Illustrate",phonetic:"/ˈɪləstreɪt/",pos:"verb",level:"B2",category:"Expression",def:"To explain something clearly by using examples.",example:"Let me illustrate my point with a personal example.",synonyms:["demonstrate","show","exemplify"]},
+  {word:"Overall",phonetic:"/ˌəʊvərˈɔːl/",pos:"adv",level:"B1",category:"Opinion",def:"Taking everything into account; in general.",example:"Overall, I believe that education is the most important factor in development.",synonyms:["generally","on the whole","in general"]},
+]};
+
+const modInfo={
+  reading:{icon:"📖",color:"#FF6B35",title:"Reading",sub:"1000 most frequent IELTS words",cats:["All","Academic","Process","Change","Quality","Description","Quantity","Importance","Opinion","Communication","Location","Cognitive","Classification","Analysis","Social"]},
+  writing:{icon:"✍️",color:"#FFE66D",title:"Writing",sub:"180+ essential phrases & words",cats:["All","Linking","Academic","Analysis"]},
+  speaking:{icon:"🎤",color:"#A8E6CF",title:"Speaking",sub:"140+ fluency boosters",cats:["All","Expression","Opinion","Comparison"]}
+};
+
+// STATE
+let curMod=null,isOnline=true,notifOn=true,starred=new Set(),actCat="All",expIdx=null;
+let curLTab='tips',mcqMod='reading',mcqQs=[],mcqAns={};
+let profName='Student',profAv=null,dictHist=[];
+
+// SPLASH
+document.getElementById('splash').addEventListener('animationend',function(){this.classList.add('hidden');});
+
+// PROFILE
+function saveProf(){
+  const n=(document.getElementById('profName').value||'').trim()||'Student';
+  profName=n;
+  document.getElementById('heroGreet').textContent=`Good day, ${n} 👋`;
+  updateAv();closeSettings();showToast('✅ Profile saved!');
+}
+function updateAv(){
+  const init=profName.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2)||'S';
+  if(profAv){
+    ['topAv','peaEl'].forEach(id=>{
+      const el=document.getElementById(id);el.innerHTML='';
+      const img=document.createElement('img');img.src=profAv;el.appendChild(img);
+    });
+  } else {
+    document.getElementById('topAvTxt').textContent=init;
+    document.getElementById('peaTxt').textContent=init;
+  }
+}
+function trigAv(){document.getElementById('avFile').click();}
+function handleAv(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>{profAv=ev.target.result;updateAv();showToast('📸 Photo updated!');};
+  r.readAsDataURL(f);
+}
+
+// MODE
+function setMode(m){
+  isOnline=m==='online';
+  document.getElementById('onlineBtn').classList.toggle('active',isOnline);
+  document.getElementById('offlineBtn').classList.toggle('active',!isOnline);
+  document.getElementById('onTgl').classList.toggle('on',isOnline);
+  if(curMod)document.getElementById('offBann').classList.toggle('show',!isOnline);
+  showToast(isOnline?'🌐 Online mode':'📴 Offline mode');
+}
+function toggleOnline(){setMode(isOnline?'offline':'online');}
+
+// NOTIF
+function toggleNotif(){
+  notifOn=!notifOn;
+  document.getElementById('notifBtn').classList.toggle('off',!notifOn);
+  document.getElementById('notifTgl').classList.toggle('on',notifOn);
+  showToast(notifOn?'🔔 Notifications on':'🔕 Notifications off');
+}
+function toggleNotifS(){toggleNotif();}
+
+// SETTINGS
+function openSettings(){
+  document.getElementById('profName').value=profName==='Student'?'':profName;
+  document.getElementById('sPanel').classList.add('open');
+  document.getElementById('sOv').classList.add('open');
+}
+function closeSettings(){
+  document.getElementById('sPanel').classList.remove('open');
+  document.getElementById('sOv').classList.remove('open');
+}
+
+// TOAST
+let tTimer;
+function showToast(m){
+  const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');
+  clearTimeout(tTimer);tTimer=setTimeout(()=>t.classList.remove('show'),2500);
+}
+
+// TABS
+function swTab(n,el){
+  document.querySelectorAll('.tsec').forEach(s=>s.classList.remove('active'));
+  document.getElementById('tab-'+n).classList.add('active');
+  document.querySelectorAll('.bni').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// VOCAB PAGE
+function openModule(mod){
+  curMod=mod;actCat="All";expIdx=null;
+  const info=modInfo[mod];
+  document.getElementById('vhTitle').textContent=info.title;
+  document.getElementById('vhSub').textContent=info.sub;
+  document.getElementById('vhBadge').textContent=info.icon;
+  document.getElementById('vhBadge').style.background=info.color+'33';
+  document.getElementById('searchInp').value='';
+  document.getElementById('offBann').classList.toggle('show',!isOnline);
+  buildChips(mod);renderWords();updProg();
+  document.getElementById('vocabPage').classList.add('open');
+}
+function closeModule(){document.getElementById('vocabPage').classList.remove('open');curMod=null;}
+
+function buildChips(mod){
+  const chips=document.getElementById('fchips');chips.innerHTML='';
+  modInfo[mod].cats.forEach(cat=>{
+    const c=document.createElement('button');
+    c.className='chip'+(cat===actCat?' active':'');c.textContent=cat;
+    if(cat!=='All'&&cat===actCat)c.style.cssText=`background:${modInfo[mod].color};border-color:${modInfo[mod].color}`;
+    c.onclick=()=>{actCat=cat;buildChips(mod);renderWords();};
+    chips.appendChild(c);
+  });
+}
+
+function renderWords(){
+  const list=document.getElementById('wordList');
+  const q=document.getElementById('searchInp').value.toLowerCase();
+  let words=vocab[curMod];
+  if(actCat!=="All")words=words.filter(w=>w.category===actCat);
+  if(q)words=words.filter(w=>w.word.toLowerCase().includes(q)||w.def.toLowerCase().includes(q));
+  if(!words.length){list.innerHTML=`<div style="text-align:center;padding:3rem;color:var(--text-muted)"><div style="font-size:2.5rem;margin-bottom:1rem">🔍</div><div>No words found</div></div>`;return;}
+  list.innerHTML=words.map((w,i)=>{
+    const isStar=starred.has(curMod+'_'+w.word),isExp=expIdx===i;
+    const pc={noun:'pn',verb:'pv',adj:'pa',adv:'pad',phrase:'pp'}[w.pos]||'';
+    return `<div class="wc${isExp?' expanded':''}" onclick="togExp(${i})">
+      <div class="wct"><div>
+        <div class="wm"><span class="wt">${w.word}</span><span class="wp ${pc}">${w.pos}</span><span class="wlv">${w.level}</span></div>
+        <div class="wph">${w.phonetic}</div>
+      </div>
+      <button class="sbtn${isStar?' starred':''}" onclick="event.stopPropagation();togStar('${w.word}')">${isStar?'★':'☆'}</button>
+      </div>
+      <div class="wdef">${w.def}</div>
+      <div class="wex">
+        <div class="wexq">"${w.example}"</div>
+        <div class="syns">${w.synonyms.map(s=>`<span class="syntag">${s}</span>`).join('')}</div>
+        <button class="spkbtn" onclick="event.stopPropagation();spk('${w.word}')">🔊 Pronounce</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+function togExp(i){expIdx=expIdx===i?null:i;renderWords();}
+function filterW(){expIdx=null;renderWords();}
+function togStar(word){
+  const k=curMod+'_'+word;
+  if(starred.has(k))starred.delete(k);else starred.add(k);
+  document.getElementById('savedCount').textContent=starred.size;
+  renderWords();updProg();
+}
+function updProg(){
+  if(!curMod)return;
+  const total=vocab[curMod].length;
+  const done=[...starred].filter(k=>k.startsWith(curMod+'_')).length;
+  const pct=Math.round(done/total*100);
+  document.getElementById('pFill').style.width=pct+'%';
+  document.getElementById('pPct').textContent=pct+'%';
+  document.getElementById('pLbl').textContent=`${done}/${total} starred`;
+}
+function spk(word){
+  if('speechSynthesis' in window){const u=new SpeechSynthesisUtterance(word);u.lang='en-GB';u.rate=.85;speechSynthesis.speak(u);}
+  else showToast('🔊 Speech not supported');
+}
+
+// LISTENING
+function openListening(){document.getElementById('listeningPage').classList.add('open');swLT('tips');}
+function closeListening(){document.getElementById('listeningPage').classList.remove('open');}
+function swLT(tab){
+  curLTab=tab;
+  ['tips','tests','vocab'].forEach(t=>{
+    document.getElementById('lt_'+t).classList.toggle('active',t===tab);
+    const el=document.getElementById('lc_'+t);
+    el.style.display=t===tab?(t==='vocab'?'flex':'block'):'none';
+  });
+  if(tab==='vocab')renderLVocab();
+}
+function renderLVocab(){
+  const words=vocab.listening;
+  const q=(document.getElementById('lSearch').value||'').toLowerCase();
+  const chips=document.getElementById('lChips');
+  if(!chips.children.length){
+    ['All','Discussion','Data','Analysis','Communication','Description','Location'].forEach(cat=>{
+      const c=document.createElement('button');c.className='chip'+(cat==='All'?' active':'');c.textContent=cat;
+      c.onclick=()=>{document.querySelectorAll('#lChips .chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');renderLVocab();};
+      chips.appendChild(c);
+    });
+  }
+  const ac=([...chips.querySelectorAll('.chip.active')][0]||{}).textContent||'All';
+  let fl=words;
+  if(ac!=='All')fl=fl.filter(w=>w.category===ac);
+  if(q)fl=fl.filter(w=>w.word.toLowerCase().includes(q));
+  document.getElementById('lWordList').innerHTML=fl.map(w=>{
+    const pc={noun:'pn',verb:'pv',adj:'pa',adv:'pad',phrase:'pp'}[w.pos]||'';
+    return `<div class="wc" onclick="this.classList.toggle('expanded')">
+      <div class="wct"><div>
+        <div class="wm"><span class="wt">${w.word}</span><span class="wp ${pc}">${w.pos}</span><span class="wlv">${w.level}</span></div>
+        <div class="wph">${w.phonetic}</div>
+      </div>
+      <button class="sbtn" onclick="event.stopPropagation();this.classList.toggle('starred');this.textContent=this.classList.contains('starred')?'★':'☆'">☆</button>
+      </div>
+      <div class="wdef">${w.def}</div>
+      <div class="wex">
+        <div class="wexq">"${w.example}"</div>
+        <div class="syns">${w.synonyms.map(s=>`<span class="syntag">${s}</span>`).join('')}</div>
+        <button class="spkbtn" onclick="event.stopPropagation();spk('${w.word}')">🔊 Pronounce</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// MCQ
+function genMCQ(mod){
+  const ws=vocab[mod];
+  return [...ws].sort(()=>Math.random()-.5).slice(0,Math.min(10,ws.length)).map(w=>{
+    const wr=ws.filter(x=>x.word!==w.word).sort(()=>Math.random()-.5).slice(0,3);
+    return{word:w.word,correct:w.def,options:[w.def,...wr.map(x=>x.def)].sort(()=>Math.random()-.5)};
+  });
+}
+function selMCQ(mod){
+  mcqMod=mod;
+  document.querySelectorAll('.mmb').forEach(b=>b.classList.remove('selected'));
+  document.getElementById('mcqm_'+mod).classList.add('selected');
+  document.getElementById('mcqBox').innerHTML='';
+  const btn=document.getElementById('startBtn');
+  btn.disabled=false;btn.textContent='🚀 Start 10-Question Test';
+}
+function startTest(){
+  mcqQs=genMCQ(mcqMod);mcqAns={};
+  document.getElementById('startBtn').disabled=true;
+  document.getElementById('mcqBox').innerHTML=mcqQs.map((q,qi)=>`
+    <div class="qblock" id="qb${qi}">
+      <div class="qnum">Question ${qi+1} of ${mcqQs.length}</div>
+      <div class="qtxt">What does "<strong>${q.word}</strong>" mean?</div>
+      <div class="qopts">${q.options.map((o,oi)=>`<button class="qopt" onclick="ansQ(${qi},${oi},'${o.replace(/'/g,"\\'")}','${q.correct.replace(/'/g,"\\'")}')">${o}</button>`).join('')}</div>
+    </div>`).join('')+`<button class="stbtn" id="subBtn" onclick="subTest()" style="display:none">📊 See My Score</button>`;
+}
+function ansQ(qi,oi,chosen,correct){
+  if(mcqAns[qi]!==undefined)return;
+  mcqAns[qi]=chosen;
+  const block=document.getElementById('qb'+qi);
+  block.querySelectorAll('.qopt').forEach((btn,i)=>{
+    const t=btn.textContent;
+    if(t===correct)btn.classList.add('correct');
+    else if(i===oi)btn.classList.add('wrong');
+    else btn.classList.add('reveal');
+    btn.disabled=true;
+  });
+  if(Object.keys(mcqAns).length===mcqQs.length)document.getElementById('subBtn').style.display='block';
+}
+function subTest(){
+  const score=mcqQs.filter((q,i)=>mcqAns[i]===q.correct).length;
+  const pct=Math.round(score/mcqQs.length*100);
+  const msgs=['Keep going! 💪','Good effort! 👍','Getting better! 🌱','Nice work! ✨','Great job! 🎉','Excellent! 🌟','Outstanding! 🏆'];
+  const card=document.createElement('div');card.className='scard';
+  card.innerHTML=`<div class="snum">${score}/${mcqQs.length}</div><div class="slb">${pct}% correct</div><div class="smsg">${msgs[Math.min(Math.floor(pct/15),msgs.length-1)]}</div>`;
+  document.getElementById('mcqBox').prepend(card);
+  document.getElementById('subBtn').innerHTML='🔄 Try Again';
+  document.getElementById('subBtn').onclick=()=>{
+    document.getElementById('mcqBox').innerHTML='';
+    const b=document.getElementById('startBtn');b.disabled=false;b.textContent='🚀 Start New Test';
+  };
+}
+
+// DICTIONARY
+function saveLang(){showToast('🌐 Language preference saved!');}
+const trans={
+  bn:{abundant:"প্রচুর",accelerate:"ত্বরান্বিত করা",context:"প্রসঙ্গ",evidence:"প্রমাণ",significant:"গুরুত্বপূর্ণ",factor:"কারণ",define:"সংজ্ঞায়িত",phenomenon:"ঘটনা",influence:"প্রভাব",diverse:"বৈচিত্র্যময়"},
+  ar:{abundant:"وفير",context:"السياق",evidence:"الأدلة",significant:"مهم",factor:"عامل",define:"يعرّف",phenomenon:"ظاهرة",influence:"تأثير"},
+  zh:{abundant:"丰富的",context:"语境",evidence:"证据",significant:"重要的",factor:"因素",define:"定义",phenomenon:"现象",influence:"影响"},
+  hi:{abundant:"प्रचुर",context:"संदर्भ",evidence:"सबूत",significant:"महत्वपूर्ण",factor:"कारक",define:"परिभाषित",phenomenon:"घटना",influence:"प्रभाव"},
+  es:{abundant:"abundante",context:"contexto",evidence:"evidencia",significant:"significativo",factor:"factor",define:"definir",phenomenon:"fenómeno",influence:"influencia"},
+  fr:{abundant:"abondant",context:"contexte",evidence:"preuve",significant:"significatif",factor:"facteur",define:"définir",phenomenon:"phénomène",influence:"influence"},
+  de:{abundant:"reichlich",context:"Kontext",evidence:"Beweis",significant:"bedeutend",factor:"Faktor",define:"definieren",phenomenon:"Phänomen",influence:"Einfluss"},
+  ru:{abundant:"обильный",context:"контекст",evidence:"доказательство",significant:"значительный",factor:"фактор",define:"определять",phenomenon:"явление"},
+  ur:{abundant:"وافر",context:"سیاق",evidence:"ثبوت",significant:"اہم",factor:"عامل",define:"تعریف",phenomenon:"رجحان"},
+  ne:{abundant:"प्रचुर",context:"सन्दर्भ",evidence:"प्रमाण",significant:"महत्त्वपूर्ण",factor:"कारक",define:"परिभाषित",phenomenon:"घटना"},
+};
+
+async function lookup(){
+  const word=(document.getElementById('dictInp').value||'').trim().toLowerCase();
+  if(!word)return;
+  document.getElementById('dictRes').innerHTML=`<div class="dload"><span class="spin">⚙️</span>Looking up "<strong>${word}</strong>"...</div>`;
+  if(!dictHist.includes(word)){dictHist.unshift(word);if(dictHist.length>10)dictHist.pop();}
+  renderDHist();
+  await new Promise(r=>setTimeout(r,800));
+  const lang=document.getElementById('langSel').value;
+  const allW=[...vocab.reading,...vocab.writing,...vocab.speaking,...vocab.listening];
+  const lw=allW.find(w=>w.word.toLowerCase()===word);
+  const t=(trans[lang]||{})[word]||null;
+  const transText=t||'Open Cambridge Dictionary for full translation in your language';
+  const pc={noun:'pn',verb:'pv',adj:'pa',adv:'pad',phrase:'pp'}[(lw||{}).pos]||'pa';
+  const html=lw?`
+    <div class="dres">
+      <div class="dwt">${lw.word}</div><div class="dph">${lw.phonetic}</div>
+      <span class="dptag ${pc}">${lw.pos} · ${lw.level}</span>
+      <div class="ddi">${lw.def}</div>
+      <div class="ddi" style="font-style:italic">"${lw.example}"</div>
+      <div class="syns" style="margin:.5rem 0">${lw.synonyms.map(s=>`<span class="syntag">${s}</span>`).join('')}</div>
+      <div class="dtrans"><div class="dtlbl">Translation</div><div class="dttxt">${transText}</div></div>
+      <a class="dclink" href="https://dictionary.cambridge.org/dictionary/english/${encodeURIComponent(lw.word)}" target="_blank" rel="noopener">📖 View on Cambridge Dictionary ↗</a>
+      <button class="spkbtn" onclick="spk('${lw.word}')" style="margin-top:.5rem">🔊 Pronounce</button>
+    </div>`:
+  `<div class="dres">
+    <div class="dwt" style="text-transform:capitalize">${word}</div>
+    <div class="dph">See Cambridge Dictionary for phonetics</div>
+    <div class="ddi">This word is not in the local bank. Use Cambridge Dictionary for full details.</div>
+    <div class="dtrans"><div class="dtlbl">Translation</div><div class="dttxt">${transText}</div></div>
+    <a class="dclink" href="https://dictionary.cambridge.org/dictionary/english/${encodeURIComponent(word)}" target="_blank" rel="noopener">📖 Look up on Cambridge Dictionary ↗</a>
+    <button class="spkbtn" onclick="spk('${word}')" style="margin-top:.5rem">🔊 Pronounce</button>
+  </div>`;
+  document.getElementById('dictRes').innerHTML=html;
+}
+function renderDHist(){
+  if(!dictHist.length){document.getElementById('dictHist').innerHTML='';return;}
+  document.getElementById('dictHist').innerHTML=`<div class="dhist-title">Recent Searches</div>`+dictHist.map(w=>`<span class="dhchip" onclick="document.getElementById('dictInp').value='${w}';lookup()">${w}</span>`).join('');
+}
+</script>
+</body>
+</html>
