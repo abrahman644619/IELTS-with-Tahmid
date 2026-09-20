@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vocabulary Workbook — Premium Version</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #EEEAD7;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFFCF0;
+  --bg-input: #F8F5E8;
+  --text: #2D0000;
+  --text-muted: #757D6F;
+  --text-light: #9CA3AF;
+  --accent: #6D0808;
+  --accent-hover: #8B1A1A;
+  --accent-light: rgba(109,8,8,0.08);
+  --accent-border: rgba(109,8,8,0.15);
+  --border: #E5DDC5;
+  --border-hover: #D6CFC0;
+  --shadow-sm: 0 1px 3px rgba(45,0,0,0.05);
+  --shadow: 0 10px 30px rgba(45,0,0,0.08);
+  --shadow-lg: 0 18px 50px rgba(45,0,0,0.10);
+  --ring: 0 0 0 4px rgba(109,8,8,0.08);
+  --success: #166534;
+  --success-bg: #DCFCE7;
+  --error: #991B1B;
+  --error-bg: #FEE2E2;
+  --glass: color-mix(in srgb, var(--bg-card) 88%, transparent);
+  --sidebar-width: 340px;
+}
+
+[data-theme="dark"] {
+  --bg: #1A0A0A;
+  --bg-card: #2D0000;
+  --bg-card-hover: #3D1010;
+  --bg-input: #3A1515;
+  --text: #EEEAD7;
+  --text-muted: #B8AC9F;
+  --text-light: #8B7E6E;
+  --accent: #8B1A1A;
+  --accent-hover: #A82323;
+  --accent-light: rgba(139,26,26,0.16);
+  --accent-border: rgba(139,26,26,0.28);
+  --border: #4A2525;
+  --border-hover: #5A3030;
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.25);
+  --shadow: 0 12px 36px rgba(0,0,0,0.34);
+  --shadow-lg: 0 18px 50px rgba(0,0,0,0.4);
+  --success-bg: rgba(22,101,52,0.18);
+  --error-bg: rgba(153,27,27,0.18);
+  --glass: color-mix(in srgb, var(--bg-card) 88%, transparent);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(circle at top right, rgba(109,8,8,0.05), transparent 22%),
+    radial-gradient(circle at bottom left, rgba(109,8,8,0.05), transparent 24%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+button, input { font-family: inherit; }
+button { border: none; background: none; cursor: pointer; }
+svg { display: block; }
+a { color: inherit; text-decoration: none; }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  backdrop-filter: blur(18px) saturate(160%);
+  background: var(--glass);
+  border-bottom: 1px solid var(--border);
+}
+.topbar-inner {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 16px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+.brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, var(--accent) 0%, #2D0000 100%);
+  color: #EEEAD7;
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 800;
+  box-shadow: 0 12px 24px rgba(109,8,8,0.22), inset 0 1px 0 rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+.brand-copy { min-width: 0; }
+.brand-kicker {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  font-weight: 800;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.brand h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  line-height: 1.15;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.brand p { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-top: 4px; }
+.header-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.pill strong { color: var(--text); }
+.pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px var(--accent-light);
+}
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  display: grid;
+  place-items: center;
+  transition: 0.22s ease;
+  box-shadow: var(--shadow-sm);
+}
+.icon-btn:hover { transform: translateY(-1px); border-color: var(--border-hover); color: var(--text); box-shadow: var(--shadow); }
+
+.layout {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 22px 24px 36px;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  gap: 22px;
+}
+
+.sidebar {
+  position: sticky;
+  top: 86px;
+  height: calc(100vh - 108px);
+  min-height: 640px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg-card) 92%, transparent), var(--bg-card));
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.sidebar::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 96px;
+  background: linear-gradient(180deg, rgba(109,8,8,0.08), transparent);
+  pointer-events: none;
+}
+.sidebar-scroll {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.sidebar-scroll::-webkit-scrollbar,
+.topic-list::-webkit-scrollbar { width: 8px; }
+.sidebar-scroll::-webkit-scrollbar-thumb,
+.topic-list::-webkit-scrollbar-thumb { background: var(--accent-border); border-radius: 999px; }
+
+.panel-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.panel {
+  background: color-mix(in srgb, var(--bg-card) 70%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.search-wrap { position: relative; }
+.search-wrap .search-icon,
+.hero-search .search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+.search-wrap input,
+.hero-search input,
+.input-short {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 15px;
+  padding: 13px 14px 13px 42px;
+  font-size: 13px;
+  font-weight: 600;
+  outline: none;
+  transition: 0.22s ease;
+}
+.search-wrap input:focus,
+.hero-search input:focus,
+.input-short:focus {
+  border-color: var(--accent);
+  box-shadow: var(--ring);
+  background: var(--bg-card);
+}
+.kbd {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text-muted);
+  padding: 2px 7px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.stats-grid-mini { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.stat-tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg-card), var(--bg-input));
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+}
+.stat-tile::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 40%, transparent));
+}
+.stat-tile .num { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 800; color: var(--accent); line-height: 1; }
+.stat-tile .label { margin-top: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--text-muted); }
+
+.topic-list { display: flex; flex-direction: column; gap: 8px; max-height: 430px; overflow-y: auto; padding-right: 4px; }
+.topic-btn {
+  width: 100%;
+  text-align: left;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 18px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text);
+  transition: 0.22s cubic-bezier(.2,.8,.2,1);
+}
+.topic-btn:hover { background: var(--bg-input); border-color: var(--border); transform: translateX(3px); }
+.topic-btn.active {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--text) 96%, transparent), #120707 100%);
+  color: var(--bg);
+  border-color: var(--text);
+  box-shadow: 0 12px 30px rgba(45,0,0,0.16);
+  transform: translateY(-1px);
+}
+.topic-no {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: var(--accent);
+}
+.topic-btn.active .topic-no {
+  background: rgba(238,234,215,0.12);
+  border-color: rgba(238,234,215,0.18);
+  color: var(--bg);
+}
+.topic-meta { min-width: 0; }
+.topic-name { font-size: 13px; font-weight: 700; line-height: 1.3; }
+.topic-sub { font-size: 11px; color: var(--text-muted); margin-top: 3px; font-weight: 600; }
+.topic-btn.active .topic-sub { color: rgba(238,234,215,0.75); }
+.topic-count {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+.topic-btn.active .topic-count { background: rgba(238,234,215,0.12); border-color: rgba(238,234,215,0.18); color: var(--bg); }
+
+.quote-box {
+  border-radius: 24px;
+  padding: 20px 18px 18px;
+  background: linear-gradient(145deg, var(--accent) 0%, #2D0000 100%);
+  color: #EEEAD7;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+.quote-box::before {
+  content: '“';
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-family: 'Fraunces', serif;
+  font-size: 64px;
+  opacity: 0.10;
+  line-height: 1;
+  pointer-events: none;
+}
+.quote-text {
+  position: relative;
+  z-index: 1;
+  display: block;
+  font-size: 14px;
+  line-height: 1.7;
+  font-style: italic;
+  min-height: 84px;
+  padding-top: 16px;
+  padding-right: 4px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  transition: opacity .28s ease, transform .28s ease;
+}
+.quote-author {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  opacity: 0.88;
+  margin-top: 0;
+  text-align: right;
+}
+.quote-dots {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 6px;
+  margin-top: 2px;
+  justify-content: center;
+}
+.quote-dot { width: 6px; height: 6px; border-radius: 999px; background: rgba(238,234,215,0.28); transition: all .25s ease; }
+.quote-dot.active { width: 24px; background: #EEEAD7; }
+
+.callout-card {
+  border-radius: 20px;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, var(--bg-input), color-mix(in srgb, var(--bg-card) 80%, transparent));
+  border: 1px solid var(--border);
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.main { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--bg-card) 94%, transparent), var(--bg-card));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+.hero-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 240px;
+  height: 240px;
+  transform: translate(-35%, -35%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(109,8,8,0.11), transparent 70%);
+  pointer-events: none;
+}
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(270px, .8fr);
+  gap: 18px;
+  align-items: stretch;
+}
+.hero-copy { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: var(--accent); }
+.hero-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+.hero-title { min-width: 0; }
+.hero-title h2 { font-family: 'Fraunces', serif; font-size: clamp(28px, 3vw, 40px); line-height: 1.04; letter-spacing: -0.8px; }
+.hero-title p { margin-top: 8px; font-size: 14px; color: var(--text-muted); font-weight: 600; max-width: 760px; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.info-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.info-chip strong { color: var(--text); }
+.progress-block { display: flex; flex-direction: column; gap: 8px; }
+.progress-meta { display: flex; justify-content: space-between; gap: 12px; align-items: center; flex-wrap: wrap; font-size: 12px; color: var(--text-muted); font-weight: 700; }
+.progress-track { height: 11px; background: color-mix(in srgb, var(--bg-input) 92%, transparent); border-radius: 999px; border: 1px solid var(--border); overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 60%, #2D0000) 100%); border-radius: inherit; transition: width .35s ease; }
+.bilingual-note {
+  border-left: 3px solid var(--accent);
+  border-radius: 0 14px 14px 0;
+  background: color-mix(in srgb, var(--bg-card) 82%, transparent);
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+.bilingual-note strong { color: var(--text); }
+.hero-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, var(--bg-input), color-mix(in srgb, var(--bg-card) 84%, transparent));
+  border: 1px solid var(--border);
+}
+.side-top { display: flex; flex-direction: column; gap: 14px; }
+.hero-side .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; color: var(--text-muted); }
+.side-score { display: flex; gap: 10px; align-items: center; }
+.score-badge {
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, var(--accent) 0%, #2D0000 100%);
+  color: #EEEAD7;
+  font-family: 'Fraunces', serif;
+  font-size: 24px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 24px rgba(109,8,8,0.18);
+}
+.score-copy strong { display: block; font-size: 15px; line-height: 1.3; }
+.score-copy span { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-primary,
+.btn-secondary,
+.btn-soft {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.22s ease;
+}
+.btn-primary { background: var(--text); color: var(--bg); border: 1px solid var(--text); box-shadow: var(--shadow-sm); }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+.btn-secondary { background: var(--bg-card); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover,
+.btn-soft:hover { transform: translateY(-1px); border-color: var(--border-hover); background: var(--bg-card-hover); }
+.btn-soft { background: var(--bg-input); color: var(--text); border: 1px solid var(--border); }
+.hero-search { position: relative; }
+.hero-search input { padding-left: 42px; background: var(--bg-card); }
+
+.tabs-card {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg-card) 92%, transparent);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: .22s cubic-bezier(.2,.8,.2,1);
+}
+.tab-btn:hover { color: var(--text); background: var(--bg-input); }
+.tab-btn.active { background: var(--text); color: var(--bg); box-shadow: var(--shadow-sm); }
+
+.content-panel {
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--bg-card) 96%, transparent), var(--bg-card));
+  box-shadow: var(--shadow);
+  padding: 20px;
+  min-height: 420px;
+}
+.section-head { display: flex; justify-content: space-between; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 18px; }
+.section-head h3 { font-family: 'Fraunces', serif; font-size: 22px; letter-spacing: -0.4px; }
+.section-head p { font-size: 13px; color: var(--text-muted); font-weight: 600; margin-top: 4px; }
+.inline-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.inline-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
+.vocab-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg-card), color-mix(in srgb, var(--bg-card) 72%, var(--bg-input)));
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  transition: 0.25s cubic-bezier(.2,.8,.2,1);
+  cursor: pointer;
+}
+.vocab-card::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: 0;
+  transition: .22s ease;
+}
+.vocab-card:hover { transform: translateY(-4px); border-color: var(--border-hover); box-shadow: var(--shadow); }
+.vocab-card:hover::before,
+.vocab-card.flipped::before { opacity: 1; }
+.card-header { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
+.card-index { font-size: 10px; text-transform: uppercase; letter-spacing: 1.4px; font-weight: 800; color: var(--text-muted); }
+.card-badges { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 800;
+  border: 1px solid var(--border);
+  background: var(--bg-input);
+  color: var(--text-muted);
+}
+.tag.accent { background: var(--accent-light); border-color: var(--accent-border); color: var(--accent); }
+.card-tools { display: flex; gap: 6px; }
+.tool-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  transition: .2s ease;
+}
+.tool-btn:hover { background: var(--bg-input); color: var(--text); transform: translateY(-1px); }
+.word-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; color: var(--accent); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+.word-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.word { font-family: 'Fraunces', serif; font-size: 27px; line-height: 1.08; letter-spacing: -0.5px; }
+.word-sub { margin-top: 8px; font-size: 12px; color: var(--text-muted); font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.reveal-hint { margin-top: 14px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 999px; background: var(--bg-input); border: 1px solid var(--border); font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.7px; }
+.card-meta {
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height .34s ease, opacity .24s ease, margin-top .24s ease, padding-top .24s ease;
+}
+.vocab-card.flipped .card-meta { max-height: 420px; opacity: 1; margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--border); }
+.vocab-card.flipped .reveal-hint { display: none; }
+.meta-block + .meta-block { margin-top: 12px; }
+.meta-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.3px; font-weight: 800; color: var(--text-muted); margin-bottom: 6px; }
+.meta-text { font-size: 13px; line-height: 1.7; }
+.meta-bn { font-family: 'Hind Siliguri', sans-serif; font-size: 15px; font-weight: 600; background: var(--bg-input); border: 1px solid var(--border); border-radius: 14px; padding: 10px 12px; }
+.meta-example { font-size: 12.5px; color: var(--text-muted); background: linear-gradient(180deg, color-mix(in srgb, var(--accent-light) 70%, transparent), transparent); border: 1px solid var(--accent-border); border-radius: 14px; padding: 12px; }
+.empty-state { text-align: center; padding: 50px 20px; color: var(--text-muted); font-weight: 600; }
+.empty-state strong { color: var(--text); display: block; margin-bottom: 6px; }
+
+.quiz-shell { display: flex; flex-direction: column; gap: 16px; }
+.quiz-hero { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+.quiz-hero h3 { font-family: 'Fraunces', serif; font-size: 24px; letter-spacing: -0.5px; }
+.quiz-hero p { margin-top: 4px; color: var(--text-muted); font-size: 13px; font-weight: 600; }
+.progress-bar { height: 10px; border-radius: 999px; overflow: hidden; border: 1px solid var(--border); background: var(--bg-input); }
+.progress-bar .progress-fill { height: 100%; border-radius: inherit; }
+.question-stack { display: flex; flex-direction: column; gap: 12px; }
+.question-block {
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg-input), color-mix(in srgb, var(--bg-card) 85%, transparent));
+  padding: 18px;
+  transition: .2s ease;
+}
+.question-block.correct { border-color: rgba(22,101,52,0.4); background: var(--success-bg); }
+.question-block.wrong { border-color: rgba(153,27,27,0.35); background: var(--error-bg); }
+.q-top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; margin-bottom: 8px; }
+.q-number { font-size: 10px; text-transform: uppercase; letter-spacing: 1.6px; font-weight: 800; color: var(--accent); }
+.q-chip { font-size: 11px; font-weight: 700; padding: 5px 8px; border-radius: 999px; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-muted); }
+.q-title { font-size: 15px; line-height: 1.6; font-weight: 700; }
+.q-bn { margin-top: 10px; padding: 10px 12px; border-radius: 14px; background: var(--bg-card); border: 1px solid var(--border); font-family: 'Hind Siliguri', sans-serif; font-size: 13px; color: var(--text-muted); }
+.options { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+.option-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  transition: .18s ease;
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.option-label:hover { transform: translateX(2px); border-color: var(--accent); background: var(--bg-card-hover); }
+.option-label:has(input:checked) { border-color: var(--accent); background: var(--accent-light); box-shadow: var(--ring); }
+.option-letter {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  background: var(--bg-input);
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.option-label:has(input:checked) .option-letter { background: var(--accent); border-color: var(--accent); color: #EEEAD7; }
+.answer-box { margin-top: 10px; font-size: 12px; font-weight: 700; color: var(--success); background: var(--bg-card); padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); }
+
+.result-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: 30px 24px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg-card), color-mix(in srgb, var(--bg-card) 82%, var(--bg-input)));
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+.result-box::before { content: ''; position: absolute; inset: 0 auto auto 0; height: 4px; width: 100%; background: linear-gradient(90deg, var(--accent), transparent); }
+.result-kicker { font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; color: var(--text-muted); }
+.result-emoji { font-size: 42px; margin: 14px 0 10px; }
+.result-percent { font-family: 'Fraunces', serif; font-size: clamp(58px, 8vw, 84px); line-height: 1; letter-spacing: -2px; color: var(--accent); }
+.result-copy { margin-top: 8px; font-size: 14px; color: var(--text-muted); font-weight: 600; }
+.result-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 24px 0 20px; }
+.result-stat { border-radius: 18px; padding: 16px; background: var(--bg-input); border: 1px solid var(--border); }
+.result-stat .num { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 800; line-height: 1; }
+.result-stat .label { margin-top: 6px; font-size: 10px; text-transform: uppercase; letter-spacing: 1.1px; color: var(--text-muted); font-weight: 800; }
+.result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+
+.footer { max-width: 1520px; margin: 0 auto; padding: 0 24px 28px; color: var(--text-muted); font-size: 11px; font-weight: 600; }
+
+.fade-in { animation: fadeIn .28s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 1180px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: relative; top: 0; height: auto; min-height: 0; }
+  .hero-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .topbar-inner { padding: 14px 16px; }
+  .brand h1 { white-space: normal; }
+  .header-actions { width: 100%; justify-content: flex-start; }
+  .layout { padding: 16px; gap: 16px; }
+  .hero-card, .content-panel { padding: 16px; border-radius: 24px; }
+  .section-head { align-items: flex-start; }
+  .card-grid { grid-template-columns: 1fr; }
+  .result-stats { grid-template-columns: 1fr; }
+  .stats-grid-mini { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .tabs-card { display: flex; width: 100%; }
+  .tab-btn { flex: 1 0 auto; justify-content: center; }
+  .stats-grid-mini { grid-template-columns: 1fr; }
+  .hero-title-row { flex-direction: column; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions > * { width: 100%; }
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">V</div>
+      <div class="brand-copy">
+        <div class="brand-kicker">Premium Vocabulary System</div>
+        <h1>Abidur Rahman Tahmid — Vocabulary Workbook</h1>
+        <p>Premium Version • 570 Words • Learn, Practice, Review</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="pill"><span class="dot"></span><strong id="verbCountPill">570</strong> words</div>
+      <div class="pill"><strong id="topicCountPill">0</strong> topics</div>
+      <button class="icon-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-scroll">
+      <div class="panel search-panel">
+        <div class="panel-label"><span>Navigator</span><span>Quick Find</span></div>
+        <div class="search-wrap">
+          <span class="search-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </span>
+          <input id="topicSearch" type="text" placeholder="Search topics / টপিক খুঁজুন">
+          <span class="kbd">/</span>
+        </div>
+      </div>
+
+      <div class="stats-grid-mini">
+        <div class="stat-tile"><div class="num" id="totalWords">570</div><div class="label">Words</div></div>
+        <div class="stat-tile"><div class="num" id="totalTopics">0</div><div class="label">Topics</div></div>
+        <div class="stat-tile"><div class="num" id="bookmarkedCount">0</div><div class="label">Bookmarked</div></div>
+        <div class="stat-tile"><div class="num" id="masteredCount">0</div><div class="label">Mastered</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-label"><span>Collections</span><span id="topicCountLabel">0</span></div>
+        <div class="topic-list" id="topicList"></div>
+      </div>
+
+      <div class="quote-box">
+        <div class="quote-text" id="quoteText"></div>
+        <div class="quote-author" id="quoteAuthor"></div>
+        <div class="quote-dots" id="quoteDots"></div>
+      </div>
+
+      <div class="callout-card">ফাটাফাটি সিস্টেমে Vocabulary শিখুন — Learn smart, revise fast, and track your progress beautifully.</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section class="hero-card">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Academic Vocabulary Collection</div>
+          <div class="hero-title-row">
+            <div class="hero-title">
+              <h2 id="heroTitle">Academic Sublist 1</h2>
+              <p id="heroSub">Explore the current topic, reveal each card, and build both English and Bangla recall naturally.</p>
+            </div>
+            <div class="hero-badges">
+              <div class="info-chip"><strong id="heroWordCount">0</strong> words</div>
+              <div class="info-chip"><strong id="heroBookmarkCount">0</strong> bookmarked</div>
+              <div class="info-chip"><strong id="heroMasteredCount">0</strong> mastered</div>
+            </div>
+          </div>
+
+          <div class="progress-block">
+            <div class="progress-meta">
+              <span>Topic Mastery</span>
+              <span><strong id="masteryText">0%</strong> completed in this topic</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="topicProgressBar" style="width:0%"></div>
+            </div>
+          </div>
+
+          <div class="bilingual-note"><strong>How to use:</strong> Tap a card to reveal the meaning, Bangla translation, and example. তারপর bookmark / mastered ব্যবহার করে নিজের revision system তৈরি করুন।</div>
+        </div>
+
+        <div class="hero-side">
+          <div class="side-top">
+            <div class="label">Current Focus</div>
+            <div class="side-score">
+              <div class="score-badge" id="topicBadgeNo">01</div>
+              <div class="score-copy">
+                <strong id="topicBadgeTitle">Sublist 01</strong>
+                <span id="topicBadgeSubtitle">Premium revision mode is active</span>
+              </div>
+            </div>
+            <div class="hero-search">
+              <span class="search-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              </span>
+              <input id="vocabSearch" type="text" placeholder="Filter words inside this topic...">
+            </div>
+          </div>
+          <div class="hero-actions">
+            <button class="btn-secondary" id="shuffleBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+              Shuffle
+            </button>
+            <button class="btn-primary" id="startQuizBtn">Start MCQ</button>
+            <button class="btn-soft" id="startShortBtn">Short Answer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="tabs-card">
+      <button class="tab-btn active" data-tab="learn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Learn
+      </button>
+      <button class="tab-btn" data-tab="mcq">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        MCQ
+      </button>
+      <button class="tab-btn" data-tab="short">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        Short
+      </button>
+      <button class="tab-btn" data-tab="result">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        Result
+      </button>
+    </div>
+
+    <section class="content-panel fade-in" id="learnSection"></section>
+    <section class="content-panel" id="mcqSection" style="display:none"></section>
+    <section class="content-panel" id="shortSection" style="display:none"></section>
+    <section class="content-panel" id="resultSection" style="display:none"></section>
+  </main>
+</div>
+
+<div class="footer">Source: 570 Vocabulary Workbook • Premium Version interface prepared for smoother learning, cleaner revision, and a more premium study experience.</div>
+
+<script>
+const vocabData = {"Academic Sublist 1": [{"word": "analysis", "en": "A detailed examination of the elements or structure of something.", "bn": "বিশ্লেষণ", "ex": "The analysis of the survey results revealed three main trends."}, {"word": "approach", "en": "A way of dealing with a situation or problem; a method.", "bn": "পদ্ধতি", "ex": "We need a different approach to reduce plastic waste."}, {"word": "area", "en": "A region, field of study, or part of a place.", "bn": "এলাকা", "ex": "This area of science is developing very quickly."}, {"word": "assessment", "en": "The evaluation or judgment of the nature, quality, or ability of something.", "bn": "মূল্যায়ন", "ex": "Teachers use both exams and projects for student assessment."}, {"word": "assume", "en": "To suppose something to be true without proof.", "bn": "ধরে নেওয়া", "ex": "Don't assume that all students have internet at home."}, {"word": "authority", "en": "The power or right to give orders, make decisions, and enforce obedience.", "bn": "কর্তৃপক্ষ", "ex": "The local authority is responsible for public transport."}, {"word": "available", "en": "Able to be used or obtained; at hand.", "bn": "সহজলভ্য", "ex": "The library book is available online for free."}, {"word": "benefit", "en": "An advantage or profit gained from something.", "bn": "সুবিধা", "ex": "Regular exercise has many health benefits."}, {"word": "concept", "en": "An abstract idea or general notion.", "bn": "ধারণা", "ex": "The concept of sustainable development is important for IELTS."}, {"word": "consistent", "en": "Acting in the same way over time; compatible and not contradictory.", "bn": "সামঞ্জস্যপূর্ণ", "ex": "His work is always consistent and of high quality."}, {"word": "constitutional", "en": "Relating to the constitution of a country or organization.", "bn": "সাংবিধানিক", "ex": "Freedom of speech is a constitutional right in many countries."}, {"word": "context", "en": "The circumstances that form the setting for an event or statement.", "bn": "প্রসঙ্গ", "ex": "You need to understand the context before translating a word."}, {"word": "contract", "en": "A written or spoken agreement intended to be enforceable by law.", "bn": "চুক্তি", "ex": "She signed a two-year employment contract."}, {"word": "create", "en": "To bring something into existence.", "bn": "তৈরি করা", "ex": "Technology can create new job opportunities."}, {"word": "data", "en": "Facts and statistics collected together for reference or analysis.", "bn": "তথ্য", "ex": "The data shows that air pollution is increasing."}, {"word": "definition", "en": "A statement of the exact meaning of a word or concept.", "bn": "সংজ্ঞা", "ex": "The dictionary provides a clear definition of the word."}, {"word": "derived", "en": "Obtained or developed from a source.", "bn": "উদ্ভূত", "ex": "The word 'biology' is derived from Greek."}, {"word": "distribution", "en": "The action of sharing something out among a number of recipients.", "bn": "বিতরণ", "ex": "The distribution of wealth is unequal in many societies."}, {"word": "economic", "en": "Relating to economics or the economy of a country.", "bn": "অর্থনৈতিক", "ex": "The country is facing serious economic problems."}, {"word": "environment", "en": "The surroundings or conditions in which a person, animal, or plant lives.", "bn": "পরিবেশ", "ex": "We must protect the environment for future generations."}, {"word": "established", "en": "Having existed for a long time and recognized as accepted.", "bn": "প্রতিষ্ঠিত", "ex": "Oxford is an established university with a long history."}, {"word": "estimate", "en": "A rough calculation or judgment of value, number, or amount.", "bn": "আনুমানিক হিসাব", "ex": "The government estimates that 2 million people are unemployed."}, {"word": "evidence", "en": "Facts or information indicating whether something is true or valid.", "bn": "প্রমাণ", "ex": "There is strong evidence that smoking causes cancer."}, {"word": "export", "en": "To send goods or services to another country for sale.", "bn": "রপ্তানি", "ex": "Japan exports cars to many countries."}, {"word": "factors", "en": "Circumstances or facts that contribute to a result.", "bn": "কারণসমূহ", "ex": "There are several factors that affect climate change."}, {"word": "financial", "en": "Relating to finance or money matters.", "bn": "আর্থিক", "ex": "Many students face financial difficulties during university."}, {"word": "formula", "en": "A mathematical relationship or rule expressed in symbols.", "bn": "সূত্র", "ex": "The formula for success includes hard work and patience."}, {"word": "function", "en": "The purpose, role, or activity of something.", "bn": "কার্য", "ex": "The main function of a conclusion is to summarize ideas."}, {"word": "identified", "en": "Recognized, named, or distinguished as being a certain person or thing.", "bn": "চিহ্নিত", "ex": "Scientists have identified a new species in the rainforest."}, {"word": "income", "en": "Money received, especially on a regular basis, for work or through investments.", "bn": "আয়", "ex": "Families with low income need government support."}, {"word": "indicate", "en": "To point out or show; to be a sign of.", "bn": "নির্দেশ করা", "ex": "The results indicate that the method is effective."}, {"word": "individual", "en": "Single, separate, or relating to one person.", "bn": "ব্যক্তি", "ex": "Each individual has different learning needs."}, {"word": "interpretation", "en": "The action of explaining the meaning of something.", "bn": "ব্যাখ্যা", "ex": "Your interpretation of the graph is correct."}, {"word": "involved", "en": "Included as a necessary part or participant.", "bn": "জড়িত", "ex": "Parents should be involved in their children's education."}, {"word": "issues", "en": "Important topics, problems, or matters for debate.", "bn": "সমস্যা", "ex": "Environmental issues are discussed in many IELTS essays."}, {"word": "labour", "en": "Work, especially hard physical work; workers collectively.", "bn": "শ্রম", "ex": "The factory needs skilled labour to operate machines."}, {"word": "legal", "en": "Relating to the law; permitted by law.", "bn": "আইনি", "ex": "It is not legal to drive without a license."}, {"word": "legislation", "en": "Laws, considered collectively, enacted by a government.", "bn": "আইন প্রণয়ন", "ex": "New legislation was passed to protect workers' rights."}, {"word": "major", "en": "Important, serious, or significant; main or chief.", "bn": "প্রধান", "ex": "Climate change is a major concern for governments."}, {"word": "method", "en": "A particular procedure for accomplishing or approaching something.", "bn": "পদ্ধতি", "ex": "This teaching method helps students learn faster."}, {"word": "occur", "en": "To happen or take place; to exist or be found.", "bn": "ঘটা", "ex": "Natural disasters can occur without warning."}, {"word": "percent", "en": "One part in every hundred; a proportion.", "bn": "শতাংশ", "ex": "Only 10 percent of students failed the exam."}, {"word": "period", "en": "A length or portion of time; a distinct stage.", "bn": "সময়কাল", "ex": "The trial period for the new employee is three months."}, {"word": "policy", "en": "A course of action adopted by a government, party, or organization.", "bn": "নীতি", "ex": "The company has a strict policy on working from home."}, {"word": "principle", "en": "A fundamental truth or proposition serving as foundation.", "bn": "মূলনীতি", "ex": "The principle of equality is important in education."}, {"word": "procedure", "en": "An established or official way of doing something.", "bn": "প্রক্রিয়া", "ex": "Please follow the correct procedure for applying."}, {"word": "process", "en": "A series of actions or steps taken to achieve a particular end.", "bn": "প্রক্রিয়া", "ex": "Learning a language is a slow process."}, {"word": "required", "en": "Needed, necessary, or officially demanded.", "bn": "প্রয়োজনীয়", "ex": "A passport is required for international travel."}, {"word": "research", "en": "The systematic investigation into and study of materials and sources.", "bn": "গবেষণা", "ex": "Recent research shows that sleep improves memory."}, {"word": "response", "en": "A reaction, answer, or reply to something.", "bn": "প্রতিক্রিয়া", "ex": "The government response to the crisis was quick."}, {"word": "role", "en": "The function or part played by a person or thing in a situation.", "bn": "ভূমিকা", "ex": "Teachers play an important role in society."}, {"word": "section", "en": "A distinct part or subdivision of a book, document, or group.", "bn": "বিভাগ", "ex": "Please read section three of the article."}, {"word": "sector", "en": "An area or part of the economy, society, or field of activity.", "bn": "খাত", "ex": "The tourism sector provides many jobs."}, {"word": "significant", "en": "Sufficiently great or important to be worthy of attention; meaningful.", "bn": "গুরুত্বপূর্ণ", "ex": "There has been a significant increase in online learning."}, {"word": "similar", "en": "Having resemblance in appearance, character, or nature.", "bn": "অনুরূপ", "ex": "My opinion is similar to yours."}, {"word": "source", "en": "A place, person, or thing from which something originates.", "bn": "উৎস", "ex": "The internet is a useful source of information, but not always reliable."}, {"word": "specific", "en": "Clearly defined, particular, or precise; explicit.", "bn": "নির্দিষ্ট", "ex": "Can you give a specific example of renewable energy?"}, {"word": "structure", "en": "The arrangement of and relations between parts of something complex.", "bn": "কাঠামো", "ex": "The essay has a clear structure with introduction, body, and conclusion."}, {"word": "theory", "en": "A system of ideas intended to explain something, based on general principles.", "bn": "তত্ত্ব", "ex": "Darwin's theory of evolution changed science."}, {"word": "vary", "en": "To differ in size, amount, degree, or nature from something else.", "bn": "ভিন্ন হওয়া", "ex": "Study habits vary from student to student."}], "Academic Sublist 2": [{"word": "achieve", "en": "To successfully reach a goal or complete something.", "bn": "অর্জন করা", "ex": "With hard work, you can achieve your IELTS target score."}, {"word": "acquisition", "en": "The act of obtaining or gaining possession of something.", "bn": "অধিগ্রহণ", "ex": "Language acquisition is faster for children than adults."}, {"word": "administration", "en": "The management and organization of an institution or government.", "bn": "প্রশাসন", "ex": "The administration of the university is very efficient."}, {"word": "affect", "en": "To have an influence on or produce a change in something.", "bn": "প্রভাবিত করা", "ex": "Pollution can seriously affect people's health."}, {"word": "appropriate", "en": "Suitable or proper in the circumstances.", "bn": "উপযুক্ত", "ex": "It is not appropriate to use informal language in academic writing."}, {"word": "aspects", "en": "Particular parts or features of something.", "bn": "দিক", "ex": "There are two main aspects of this problem to discuss."}, {"word": "assistance", "en": "Help or support.", "bn": "সহায়তা", "ex": "The government provides financial assistance to low-income families."}, {"word": "categories", "en": "Classes or divisions into which things are grouped.", "bn": "বিভাগ", "ex": "Books are divided into several categories in the library."}, {"word": "chapter", "en": "A main division of a book or document.", "bn": "অধ্যায়", "ex": "I am reading chapter five of the economics textbook."}, {"word": "commission", "en": "A group appointed to carry out specific duties; an instruction to do something.", "bn": "কমিশন", "ex": "The government set up a commission to investigate the issue."}, {"word": "community", "en": "A group of people living together or sharing common interests.", "bn": "সম্প্রদায়", "ex": "The local community organized a clean-up campaign."}, {"word": "complex", "en": "Complicated, consisting of many different and connected parts.", "bn": "জটিল", "ex": "The problem of overpopulation is very complex."}, {"word": "computer", "en": "An electronic device for storing and processing data.", "bn": "কম্পিউটার", "ex": "Most students use a computer for their research."}, {"word": "conclusion", "en": "The end or final part; a judgment reached by reasoning.", "bn": "উপসংহার", "ex": "In conclusion, governments should invest more in education."}, {"word": "conduct", "en": "To organize and carry out; to behave in a certain way.", "bn": "পরিচালনা করা", "ex": "The university will conduct a survey about student satisfaction."}, {"word": "consequences", "en": "Results or effects of an action or condition.", "bn": "পরিণতি", "ex": "There are serious consequences of deforestation."}, {"word": "construction", "en": "The act of building something; the way something is built.", "bn": "নির্মাণ", "ex": "The construction of the new bridge will take two years."}, {"word": "consumer", "en": "A person who buys goods and services for personal use.", "bn": "ভোক্তা", "ex": "Consumers are becoming more aware of environmental issues."}, {"word": "credit", "en": "Recognition, praise, or ability to borrow money.", "bn": "কৃতিত্ব", "ex": "She got full credit for her excellent presentation."}, {"word": "cultural", "en": "Relating to the ideas, customs, and social behavior of a society.", "bn": "সাংস্কৃতিক", "ex": "There are many cultural differences between countries."}, {"word": "design", "en": "A plan or drawing showing how something is to be made; to create a plan.", "bn": "নকশা", "ex": "The building has a modern and attractive design."}, {"word": "distinction", "en": "A difference or contrast; excellence or honor.", "bn": "পার্থক্য", "ex": "There is a clear distinction between formal and informal writing."}, {"word": "elements", "en": "Essential parts, components, or fundamental principles.", "bn": "উপাদান", "ex": "There are four key elements of a good essay."}, {"word": "equation", "en": "A statement that two mathematical expressions are equal.", "bn": "সমীকরণ", "ex": "The equation is too difficult for most students to solve."}, {"word": "evaluation", "en": "The act of judging or assessing value or quality.", "bn": "মূল্যায়ন", "ex": "The evaluation of the project took three months."}, {"word": "features", "en": "Distinctive attributes, qualities, or important parts.", "bn": "বৈশিষ্ট্য", "ex": "One of the main features of this phone is its long battery life."}, {"word": "final", "en": "Coming at the end; last; conclusive.", "bn": "চূড়ান্ত", "ex": "The final paragraph should summarize your main points."}, {"word": "focus", "en": "The center of interest or activity; to concentrate attention.", "bn": "মনোযোগ", "ex": "The main focus of the course is academic writing."}, {"word": "impact", "en": "A strong effect or influence on someone or something.", "bn": "প্রভাব", "ex": "Technology has a huge impact on our daily lives."}, {"word": "injury", "en": "Harm or damage to a person or body.", "bn": "আঘাত", "ex": "He suffered a serious injury in the football match."}, {"word": "institute", "en": "An organization for education or research; to establish.", "bn": "প্রতিষ্ঠান", "ex": "She works at a research institute in Dhaka."}, {"word": "investment", "en": "The act of putting money into something to gain profit.", "bn": "বিনিয়োগ", "ex": "The government increased investment in renewable energy."}, {"word": "items", "en": "Individual articles, objects, or things on a list.", "bn": "বিষয়বস্তু", "ex": "Please check all items on the shopping list."}, {"word": "journal", "en": "A newspaper, magazine, or diary where experiences are recorded.", "bn": "জার্নাল", "ex": "He published his research in a scientific journal."}, {"word": "maintenance", "en": "The act of keeping something in good condition.", "bn": "রক্ষণাবেক্ষণ", "ex": "Regular maintenance of cars reduces pollution."}, {"word": "normal", "en": "Usual, typical, or expected; conforming to a standard.", "bn": "স্বাভাবিক", "ex": "It is normal to feel nervous before the IELTS exam."}, {"word": "obtained", "en": "Got, acquired, or achieved something.", "bn": "প্রাপ্ত", "ex": "She obtained her master's degree from Dhaka University."}, {"word": "participation", "en": "The act of taking part in an activity or event.", "bn": "অংশগ্রহণ", "ex": "Active participation in class helps you learn better."}, {"word": "perceived", "en": "Seen, noticed, or understood in a particular way.", "bn": "অনুভূত", "ex": "The task was perceived as difficult by most students."}, {"word": "positive", "en": "Constructive, optimistic, or confident; greater than zero.", "bn": "ইতিবাচক", "ex": "The teacher gave positive feedback on my essay."}, {"word": "potential", "en": "Having or showing capacity to develop into something in the future.", "bn": "সম্ভাব্য", "ex": "This area has great potential for tourism."}, {"word": "previous", "en": "Existing or occurring before in time or order.", "bn": "পূর্ববর্তী", "ex": "My previous job was more stressful than this one."}, {"word": "primary", "en": "Of chief importance; earliest in time or order.", "bn": "প্রাথমিক", "ex": "The primary cause of air pollution is vehicle emissions."}, {"word": "purchase", "en": "To buy something; something bought.", "bn": "ক্রয়", "ex": "Online purchases have increased sharply this year."}, {"word": "range", "en": "A variety or scope; the limits within which something varies.", "bn": "পরিসর", "ex": "The course offers a wide range of subjects."}, {"word": "region", "en": "An area or part of a country, world, or body.", "bn": "অঞ্চল", "ex": "This region is famous for its natural beauty."}, {"word": "regulations", "en": "Official rules designed to control an activity.", "bn": "বিধিমালা", "ex": "There are strict regulations about food safety."}, {"word": "relevant", "en": "Closely connected or appropriate to the matter at hand.", "bn": "প্রাসঙ্গিক", "ex": "Please include only relevant information in your essay."}, {"word": "resident", "en": "A person who lives somewhere permanently or long-term.", "bn": "বাসিন্দা", "ex": "She is a resident of Sylhet city."}, {"word": "resources", "en": "Materials, money, staff, or assets that can be used.", "bn": "সম্পদ", "ex": "The library has excellent resources for research."}, {"word": "restricted", "en": "Limited or controlled; not free or general.", "bn": "সীমাবদ্ধ", "ex": "Smoking is restricted in public places."}, {"word": "security", "en": "Safety from danger, threat, or harm; measures to ensure safety.", "bn": "নিরাপত্তা", "ex": "Airport security has become much stricter."}, {"word": "sought", "en": "Attempted to find or obtain; looked for.", "bn": "অনুসন্ধানকৃত", "ex": "The company sought advice from environmental experts."}, {"word": "select", "en": "To carefully choose from a group as being most suitable.", "bn": "নির্বাচন করা", "ex": "Students can select subjects according to their interests."}, {"word": "site", "en": "A place where something is located or happens.", "bn": "স্থান", "ex": "The construction site is closed for safety reasons."}, {"word": "strategies", "en": "Plans of action designed to achieve long-term aims.", "bn": "কৌশল", "ex": "Teachers use different strategies to motivate students."}, {"word": "survey", "en": "An examination of opinions, behavior, or a piece of land.", "bn": "জরিপ", "ex": "A recent survey shows that most people support recycling."}, {"word": "text", "en": "A book, piece of writing, or main body of a document.", "bn": "পাঠ্য", "ex": "The text is too difficult for beginners to understand."}, {"word": "traditional", "en": "Following long-established customs or beliefs.", "bn": "ঐতিহ্যগত", "ex": "Traditional music is an important part of culture."}, {"word": "transfer", "en": "To move something from one place to another.", "bn": "স্থানান্তর", "ex": "You can transfer money online within seconds."}], "Academic Sublist 3": [{"word": "alternative", "en": "A choice or option that is different from the usual one.", "bn": "বিকল্প", "ex": "Solar power is a good alternative to fossil fuels."}, {"word": "circumstances", "en": "Facts, conditions, or events that affect a situation.", "bn": "পরিস্থিতি", "ex": "In some circumstances, online learning is more effective."}, {"word": "comments", "en": "Remarks, opinions, or observations.", "bn": "মন্তব্য", "ex": "The teacher wrote helpful comments on my essay."}, {"word": "compensation", "en": "Something, typically money, given to make up for loss or damage.", "bn": "ক্ষতিপূরণ", "ex": "Workers should receive fair compensation for overtime."}, {"word": "components", "en": "Parts or elements that make up a whole system.", "bn": "উপাদান", "ex": "The computer has three main components."}, {"word": "consent", "en": "Permission or agreement to do something.", "bn": "সম্মতি", "ex": "You need parental consent to join the trip."}, {"word": "considerable", "en": "Fairly large in size, amount, or extent; noteworthy.", "bn": "উল্লেখযোগ্য", "ex": "The project required considerable time and effort."}, {"word": "constant", "en": "Occurring continuously; remaining unchanged.", "bn": "ধ্রুব", "ex": "The city faces constant traffic problems."}, {"word": "constraints", "en": "Limitations or restrictions that control what you can do.", "bn": "সীমাবদ্ধতা", "ex": "There are financial constraints on building new schools."}, {"word": "contribution", "en": "Something given or done to help achieve a purpose.", "bn": "অবদান", "ex": "Her contribution to environmental protection is admirable."}, {"word": "convention", "en": "A generally accepted way of behaving; a large formal meeting.", "bn": "প্রথা", "ex": "It is a convention to shake hands when meeting someone."}, {"word": "coordination", "en": "The organization of different elements to enable them to work together effectively.", "bn": "সমন্বয়", "ex": "Good coordination between teams is essential."}, {"word": "core", "en": "The central, most important part of something.", "bn": "মূল", "ex": "Education is a core part of national development."}, {"word": "corporate", "en": "Relating to a large company or corporation.", "bn": "কর্পোরেট", "ex": "Many corporate companies support charity work."}, {"word": "corresponding", "en": "Matching, similar, or related in some way.", "bn": "সংশ্লিষ্ট", "ex": "The diagram shows sales and corresponding profits."}, {"word": "criteria", "en": "Principles or standards by which something is judged.", "bn": "মানদণ্ড", "ex": "The main criteria for the scholarship are grades and character."}, {"word": "deduction", "en": "The process of reaching a decision by reasoning; an amount subtracted.", "bn": "সিদ্ধান্ত", "ex": "You can make a logical deduction from the evidence."}, {"word": "demonstrate", "en": "To clearly show or prove something; to display.", "bn": "প্রদর্শন করা", "ex": "This chart demonstrates the rise in global temperatures."}, {"word": "document", "en": "A written or printed paper providing information or evidence; to record.", "bn": "নথি", "ex": "You must provide a valid identity document."}, {"word": "dominant", "en": "Most important, powerful, or influential.", "bn": "প্রভাবশালী", "ex": "English is the dominant language in international business."}, {"word": "emphasis", "en": "Special importance, value, or prominence given to something.", "bn": "গুরুত্ব", "ex": "The course puts emphasis on practical skills."}, {"word": "ensure", "en": "To make certain that something will happen or be the case.", "bn": "নিশ্চিত করা", "ex": "Governments must ensure equal access to education."}, {"word": "excluded", "en": "Not included; left out or prevented from entering.", "bn": "বাদ দেওয়া", "ex": "Children under 12 are excluded from the competition."}, {"word": "framework", "en": "A basic structure underlying a system or concept.", "bn": "কাঠামো", "ex": "The government created a new legal framework for e-commerce."}, {"word": "funds", "en": "Money saved or available for a particular purpose.", "bn": "তহবিল", "ex": "The university lacks funds for new research labs."}, {"word": "illustrated", "en": "Explained or made clear with examples or pictures.", "bn": "চিত্রিত", "ex": "The point is illustrated with a clear example."}, {"word": "immigration", "en": "The act of coming to live permanently in a foreign country.", "bn": "অভিবাসন", "ex": "Immigration has increased cultural diversity in many cities."}, {"word": "implies", "en": "Suggests or indicates something without stating it directly.", "bn": "বোঝায়", "ex": "The result implies that more research is needed."}, {"word": "initial", "en": "Existing or occurring at the beginning; first.", "bn": "প্রাথমিক", "ex": "The initial cost of solar panels is high, but it saves money later."}, {"word": "instance", "en": "An example or single occurrence of something.", "bn": "উদাহরণ", "ex": "For instance, recycling can reduce waste by 50 percent."}, {"word": "interaction", "en": "Reciprocal action or influence between two or more things.", "bn": "মিথস্ক্রিয়া", "ex": "Interaction between students improves learning."}, {"word": "justification", "en": "A reason or explanation that shows something is right or reasonable.", "bn": "ন্যায্যতা", "ex": "There is no justification for cutting education budgets."}, {"word": "layer", "en": "A sheet, quantity, or thickness of material, typically one of several.", "bn": "স্তর", "ex": "The ozone layer protects us from harmful sunlight."}, {"word": "link", "en": "A connection or relationship between two things; to connect.", "bn": "সংযোগ", "ex": "There is a clear link between smoking and health problems."}, {"word": "location", "en": "A particular place or position where something is.", "bn": "অবস্থান", "ex": "The location of the new school is convenient for students."}, {"word": "maximum", "en": "The greatest amount, value, or degree possible.", "bn": "সর্বোচ্চ", "ex": "The maximum number of students per class is 25."}, {"word": "minorities", "en": "Small groups of people who differ from the majority in race, religion, etc.", "bn": "সংখ্যালঘু", "ex": "The rights of minorities should be protected by law."}, {"word": "negative", "en": "Harmful, pessimistic, or not desirable; less than zero.", "bn": "নেতিবাচক", "ex": "Social media can have negative effects on mental health."}, {"word": "outcomes", "en": "Results or consequences of actions or events.", "bn": "ফলাফল", "ex": "The outcomes of the project were better than expected."}, {"word": "partnership", "en": "A relationship where two or more parties cooperate.", "bn": "অংশীদারিত্ব", "ex": "The university has a partnership with a UK college."}, {"word": "philosophy", "en": "The study of fundamental questions about existence and knowledge.", "bn": "দর্শন", "ex": "Her philosophy of teaching is student-centered."}, {"word": "physical", "en": "Relating to the body; relating to material things.", "bn": "শারীরিক", "ex": "Regular physical activity is good for health."}, {"word": "proportion", "en": "A part, share, or number considered in relation to a whole.", "bn": "অনুপাত", "ex": "A large proportion of students use public transport."}, {"word": "published", "en": "Prepared and issued for public sale or distribution.", "bn": "প্রকাশিত", "ex": "Her article was published in an international journal."}, {"word": "reaction", "en": "A response to an action, event, or stimulus.", "bn": "প্রতিক্রিয়া", "ex": "The public reaction to the new law was mostly positive."}, {"word": "registered", "en": "Officially recorded or listed.", "bn": "নিবন্ধিত", "ex": "All voters must be registered before the election."}, {"word": "reliance", "en": "Dependence on or trust in someone or something.", "bn": "নির্ভরতা", "ex": "We should reduce our reliance on fossil fuels."}, {"word": "removed", "en": "Taken away or eliminated from a place or position.", "bn": "অপসারিত", "ex": "Plastic bags have been removed from many supermarkets."}, {"word": "scheme", "en": "A plan, design, or program of action.", "bn": "পরিকল্পনা", "ex": "The government introduced a new scheme to support farmers."}, {"word": "sequence", "en": "A particular order in which things follow each other.", "bn": "ক্রম", "ex": "Please follow the correct sequence of steps."}, {"word": "sex", "en": "The state of being male or female; sexual activity.", "bn": "লিঙ্গ", "ex": "The survey asked about age, sex, and occupation."}, {"word": "shift", "en": "A change in position, direction, or tendency.", "bn": "পরিবর্তন", "ex": "There has been a shift towards online shopping."}, {"word": "specified", "en": "Clearly identified, stated, or explained.", "bn": "নির্দিষ্ট", "ex": "Please submit the documents at the specified time."}, {"word": "sufficient", "en": "Enough; adequate to meet a need or purpose.", "bn": "পর্যাপ্ত", "ex": "There is not sufficient clean water in some areas."}, {"word": "task", "en": "A piece of work to be done; a duty or job.", "bn": "কাজ", "ex": "The main task of the government is to protect citizens."}, {"word": "technical", "en": "Relating to practical, mechanical, or scientific knowledge.", "bn": "প্রযুক্তিগত", "ex": "She has excellent technical skills in computer programming."}, {"word": "techniques", "en": "Methods or ways of doing something requiring skill.", "bn": "কৌশল", "ex": "Meditation techniques can help reduce stress."}, {"word": "technology", "en": "The application of scientific knowledge for practical purposes.", "bn": "প্রযুক্তি", "ex": "Modern technology has changed the way we communicate."}, {"word": "valid", "en": "Well-founded, just, or legally acceptable; not expired.", "bn": "বৈধ", "ex": "Your argument is valid, but needs more evidence."}, {"word": "volume", "en": "The amount of space occupied; a book; loudness.", "bn": "আয়তন", "ex": "The volume of traffic increases during rush hour."}], "Academic Sublist 4": [{"word": "access", "en": "The means or opportunity to approach, enter, or use something.", "bn": "প্রবেশাধিকার", "ex": "Students can access the online library from anywhere."}, {"word": "adequate", "en": "Satisfactory or acceptable in quality or quantity, though not outstanding.", "bn": "পর্যাপ্ত", "ex": "The salary is not adequate to support a large family."}, {"word": "annual", "en": "Occurring once every year; relating to a period of one year.", "bn": "বার্ষিক", "ex": "The company holds an annual meeting every December."}, {"word": "apparent", "en": "Clearly visible or understood; seemingly true but not necessarily so.", "bn": "স্পষ্ট", "ex": "It is apparent that climate change is a serious problem."}, {"word": "approximated", "en": "Estimated or calculated to be close to the actual value.", "bn": "আনুমানিক", "ex": "The cost was approximated at 10,000 taka."}, {"word": "attitudes", "en": "Settled ways of thinking or feeling about something.", "bn": "মনোভাব", "ex": "Young people's attitudes towards marriage have changed."}, {"word": "attributed", "en": "Regarded as caused by or belonging to someone or something.", "bn": "আরোপিত", "ex": "The success is attributed to hard work and good teaching."}, {"word": "civil", "en": "Relating to ordinary citizens; polite and courteous.", "bn": "নাগরিক", "ex": "We should maintain civil behavior in public discussions."}, {"word": "code", "en": "A system of rules, laws, or symbols for communication.", "bn": "বিধি", "ex": "The building does not meet the safety code."}, {"word": "commitment", "en": "Dedication to a cause or activity; a promise or obligation.", "bn": "অঙ্গীকার", "ex": "Learning English requires strong commitment."}, {"word": "communication", "en": "The exchange of information, ideas, or feelings.", "bn": "যোগাযোগ", "ex": "Good communication between parents and teachers is important."}, {"word": "concentration", "en": "Focused mental attention; a large amount in one place.", "bn": "মনোযোগ", "ex": "Lack of sleep affects your concentration in class."}, {"word": "conference", "en": "A formal meeting for discussion, often over several days.", "bn": "সম্মেলন", "ex": "She is attending an international conference on climate change."}, {"word": "contrast", "en": "To compare to show differences; a noticeable difference.", "bn": "বৈপরীত্য", "ex": "In contrast to cities, villages have less pollution."}, {"word": "cycle", "en": "A series of events that repeat in the same order.", "bn": "চক্র", "ex": "The water cycle is an important topic in geography."}, {"word": "debate", "en": "A formal discussion or argument about a topic.", "bn": "বিতর্ক", "ex": "There is much debate about the use of mobile phones in schools."}, {"word": "despite", "en": "Without being affected by; in spite of.", "bn": "সত্ত্বেও", "ex": "Despite the rain, many people came to the event."}, {"word": "dimensions", "en": "Measurable extents like length, width, height; aspects of a problem.", "bn": "মাত্রা", "ex": "The problem has many different dimensions to consider."}, {"word": "domestic", "en": "Relating to home, family, or one's own country; not foreign.", "bn": "দেশীয়", "ex": "Domestic violence is a serious social issue."}, {"word": "emerged", "en": "Became apparent, important, or prominent; came out or appeared.", "bn": "উদ্ভূত", "ex": "A new problem has emerged in recent years."}, {"word": "error", "en": "A mistake or inaccuracy.", "bn": "ভুল", "ex": "There is a small error in your calculation."}, {"word": "ethnic", "en": "Relating to a group sharing culture, language, or ancestry.", "bn": "নৃগোষ্ঠীয়", "ex": "Bangladesh has several ethnic groups with unique cultures."}, {"word": "goals", "en": "Aims, objectives, or desired results.", "bn": "লক্ষ্য", "ex": "Setting clear goals helps you achieve success."}, {"word": "granted", "en": "Given, allowed, or admitted as true.", "bn": "মঞ্জুরকৃত", "ex": "The university granted him a full scholarship."}, {"word": "hence", "en": "As a consequence; for this reason.", "bn": "সুতরাং", "ex": "It was raining, hence we stayed indoors."}, {"word": "hypothesis", "en": "A proposed explanation made as starting point for investigation.", "bn": "অনুমান", "ex": "The scientist tested his hypothesis with experiments."}, {"word": "implementation", "en": "The process of putting a decision or plan into effect.", "bn": "বাস্তবায়ন", "ex": "The implementation of the new law was delayed."}, {"word": "implication", "en": "A possible future effect or result; something implied.", "bn": "নিহিতার্থ", "ex": "One implication of overpopulation is housing shortage."}, {"word": "imposed", "en": "Forced or introduced as an obligation or restriction.", "bn": "আরোপিত", "ex": "The government imposed a ban on plastic bags."}, {"word": "integration", "en": "The act of combining parts to make a whole; inclusion.", "bn": "একীকরণ", "ex": "The integration of technology in classrooms is helpful."}, {"word": "internal", "en": "Inside, within, or relating to the inside of something.", "bn": "অভ্যন্তরীণ", "ex": "The company is facing internal problems."}, {"word": "investigation", "en": "A formal inquiry or systematic examination.", "bn": "তদন্ত", "ex": "Police started an investigation into the theft."}, {"word": "job", "en": "A paid position of employment; a task or piece of work.", "bn": "চাকরি", "ex": "Finding a good job is difficult for fresh graduates."}, {"word": "label", "en": "A piece of paper attached to something giving information; to categorize.", "bn": "লেবেল", "ex": "The food package has a clear label with ingredients."}, {"word": "mechanism", "en": "A system of parts working together; a process or method.", "bn": "প্রক্রিয়া", "ex": "The mechanism for recycling is not clear to many people."}, {"word": "obvious", "en": "Easily perceived, understood, or seen; clear.", "bn": "স্পষ্ট", "ex": "It is obvious that education is important for development."}, {"word": "occupational", "en": "Relating to a job, profession, or occupation.", "bn": "পেশাগত", "ex": "The disease is related to occupational hazards."}, {"word": "option", "en": "A thing that is or may be chosen; freedom to choose.", "bn": "বিকল্প", "ex": "Studying abroad is a good option for many students."}, {"word": "output", "en": "The amount produced; information produced by a computer.", "bn": "উৎপাদন", "ex": "The factory's output has doubled this year."}, {"word": "overall", "en": "Taking everything into account; general, total.", "bn": "সামগ্রিক", "ex": "Overall, the project was successful."}, {"word": "parallel", "en": "Side by side and having same distance continuously; similar.", "bn": "সমান্তরাল", "ex": "The two roads run parallel to each other."}, {"word": "parameters", "en": "Limits, boundaries, or factors that define a system.", "bn": "পরামিতি", "ex": "We need to set clear parameters for the research."}, {"word": "phase", "en": "A distinct period or stage in a process of change.", "bn": "পর্যায়", "ex": "The project is now in its final phase."}, {"word": "predicted", "en": "Stated or estimated that something will happen in the future.", "bn": "পূর্বাভাসিত", "ex": "Experts predicted a rise in sea levels."}, {"word": "principal", "en": "First in order of importance; a head of a school; main sum of money.", "bn": "প্রধান", "ex": "The principal of the school gave a speech."}, {"word": "prior", "en": "Existing or happening before; earlier.", "bn": "পূর্ববর্তী", "ex": "You need prior experience for this job."}, {"word": "professional", "en": "Relating to a profession; competent and skilled.", "bn": "পেশাদার", "ex": "She has a very professional attitude to work."}, {"word": "project", "en": "A planned piece of work with a specific aim; to estimate.", "bn": "প্রকল্প", "ex": "They are working on a project to clean the river."}, {"word": "promote", "en": "To support, encourage, or advance the growth of something.", "bn": "উন্নীত করা", "ex": "The campaign aims to promote healthy eating."}, {"word": "regime", "en": "A government or system of management; a set of rules.", "bn": "শাসন", "ex": "The new regime introduced many reforms."}, {"word": "resolved", "en": "Firmly decided; solved or settled.", "bn": "সমাধানকৃত", "ex": "The problem was finally resolved after long discussion."}, {"word": "retained", "en": "Kept, maintained, or continued to have.", "bn": "ধরে রাখা", "ex": "She retained her position as team leader."}, {"word": "series", "en": "A number of things, events, or people coming one after another.", "bn": "ধারাবাহিক", "ex": "He watched a series of documentaries about wildlife."}, {"word": "statistics", "en": "Numerical facts or data collected and analyzed.", "bn": "পরিসংখ্যান", "ex": "Statistics show that literacy rates are improving."}, {"word": "status", "en": "Social or professional position; state or condition at a particular time.", "bn": "অবস্থা", "ex": "Education can improve your social status."}, {"word": "stress", "en": "Pressure, tension, or strain; emphasis.", "bn": "চাপ", "ex": "Too much stress can cause health problems."}, {"word": "subsequent", "en": "Coming after something in time; following.", "bn": "পরবর্তী", "ex": "Subsequent studies confirmed the first result."}, {"word": "sum", "en": "A total amount resulting from addition; a summary.", "bn": "যোগফল", "ex": "You need to pay a large sum of money for the course."}, {"word": "summary", "en": "A brief statement of the main points of something.", "bn": "সারাংশ", "ex": "Please write a summary of the article in 100 words."}, {"word": "undertaken", "en": "Started, carried out, or attempted to do something.", "bn": "গৃহীত", "ex": "The research was undertaken by Dhaka University."}], "Academic Sublist 5": [{"word": "academic", "en": "Relating to education, studying, and scholarly activities.", "bn": "একাডেমিক", "ex": "Academic writing requires formal language."}, {"word": "adjustment", "en": "A small change or alteration made to improve or correct something.", "bn": "সমন্বয়", "ex": "Moving to a new country needs some adjustment."}, {"word": "alter", "en": "To change or make something different; to modify.", "bn": "পরিবর্তন করা", "ex": "We should not alter the original meaning of the text."}, {"word": "amendment", "en": "A small change or addition made to improve a law or document.", "bn": "সংশোধনী", "ex": "An amendment was made to the original law."}, {"word": "aware", "en": "Having knowledge, perception, or consciousness of something.", "bn": "সচেতন", "ex": "People are becoming more aware of environmental problems."}, {"word": "capacity", "en": "The maximum amount something can contain or the ability to do something.", "bn": "ক্ষমতা", "ex": "The hall has a seating capacity of 500 people."}, {"word": "challenge", "en": "A difficult task that tests ability; to question or dispute.", "bn": "চ্যালেঞ্জ", "ex": "Climate change is a major challenge for our generation."}, {"word": "clause", "en": "A particular and separate part of a law, contract, or sentence.", "bn": "ধারা", "ex": "The contract includes a clause about working hours."}, {"word": "compounds", "en": "Things composed of two or more parts; chemical combinations.", "bn": "যৌগ", "ex": "Water is made of chemical compounds."}, {"word": "conflict", "en": "A serious disagreement, argument, or clash of interests.", "bn": "দ্বন্দ্ব", "ex": "There is a conflict between economic growth and environment protection."}, {"word": "consultation", "en": "The act of seeking advice or discussing something with experts.", "bn": "পরামর্শ", "ex": "The doctor offers free consultation on Fridays."}, {"word": "contact", "en": "The act of communicating or touching; a person you know.", "bn": "যোগাযোগ", "ex": "Please keep in contact with your supervisor."}, {"word": "decline", "en": "To decrease in amount or quality; to politely refuse.", "bn": "হ্রাস", "ex": "There has been a decline in the number of students studying science."}, {"word": "discretion", "en": "The freedom to decide what should be done; careful and cautious behavior.", "bn": "বিবেচনা", "ex": "You should use your discretion when sharing personal information."}, {"word": "draft", "en": "A preliminary version of a piece of writing; to write a first version.", "bn": "খসড়া", "ex": "Please read the first draft of my essay and give feedback."}, {"word": "enable", "en": "To make something possible or give someone ability to do something.", "bn": "সক্ষম করা", "ex": "Scholarships enable poor students to study at university."}, {"word": "energy", "en": "Power derived from physical or chemical resources to provide light, heat, or work.", "bn": "শক্তি", "ex": "We should use renewable energy instead of fossil fuels."}, {"word": "enforcement", "en": "The act of compelling observance of or compliance with a law or rule.", "bn": "প্রয়োগ", "ex": "Strict enforcement of traffic laws reduces accidents."}, {"word": "entities", "en": "Things that exist as independent units or beings.", "bn": "সত্তা", "ex": "Business entities must pay taxes regularly."}, {"word": "equivalent", "en": "Equal in value, amount, function, or meaning.", "bn": "সমতুল্য", "ex": "A diploma is equivalent to a degree in some countries."}, {"word": "evolution", "en": "The gradual development or change of something over time.", "bn": "বিবর্তন", "ex": "The evolution of mobile phones has been very fast."}, {"word": "expansion", "en": "The act of increasing in size, number, or importance.", "bn": "সম্প্রসারণ", "ex": "The rapid expansion of cities causes pollution."}, {"word": "exposure", "en": "The state of being exposed to something, or made visible.", "bn": "উন্মুক্তকরণ", "ex": "Too much exposure to sunlight can damage your skin."}, {"word": "external", "en": "Belonging to or coming from the outside; outside of something.", "bn": "বাহ্যিক", "ex": "The building has external stairs for emergencies."}, {"word": "facilitate", "en": "To make an action or process easier or more possible.", "bn": "সহজতর করা", "ex": "Good roads facilitate trade between regions."}, {"word": "fundamental", "en": "Forming a necessary base or core; of central importance; basic.", "bn": "মৌলিক", "ex": "Education is a fundamental right for every child."}, {"word": "generated", "en": "Produced, created, or caused to exist.", "bn": "উৎপন্ন", "ex": "The factory generated a lot of waste last year."}, {"word": "generation", "en": "All people born and living at about the same time; the act of producing something.", "bn": "প্রজন্ম", "ex": "The younger generation uses technology more than older people."}, {"word": "image", "en": "A picture or representation; the public impression of a person or organization.", "bn": "চিত্র", "ex": "The company's public image has improved this year."}, {"word": "liberal", "en": "Open to new behavior or opinions; generous; relating to freedom.", "bn": "উদার", "ex": "She has liberal views on education."}, {"word": "licence", "en": "An official document giving permission to do or own something.", "bn": "অনুমতিপত্র", "ex": "You need a licence to drive a car."}, {"word": "logic", "en": "Reasoning conducted according to strict principles of validity; sensible thinking.", "bn": "যুক্তি", "ex": "There is no logic in banning mobile phones completely."}, {"word": "marginal", "en": "Minor, small, or slight; relating to the edge or margin.", "bn": "প্রান্তিক", "ex": "The improvement was only marginal, not significant."}, {"word": "medical", "en": "Relating to the science or practice of medicine; treating illness.", "bn": "চিকিৎসা সংক্রান্ত", "ex": "He needs urgent medical attention."}, {"word": "mental", "en": "Relating to the mind; involving thought processes.", "bn": "মানসিক", "ex": "Mental health is as important as physical health."}, {"word": "modified", "en": "Changed slightly to improve or make more suitable.", "bn": "পরিবর্তিত", "ex": "The course has been modified to include online classes."}, {"word": "monitoring", "en": "Observing and checking the progress or quality of something over time.", "bn": "পর্যবেক্ষণ", "ex": "The government is monitoring air quality in the capital."}, {"word": "network", "en": "An interconnected system of things; a group of people who exchange information.", "bn": "নেটওয়ার্ক", "ex": "She has a large network of professional contacts."}, {"word": "notion", "en": "A conception, belief, or idea about something.", "bn": "ধারণা", "ex": "The notion that money brings happiness is not always true."}, {"word": "objective", "en": "A goal or aim; not influenced by personal feelings; unbiased.", "bn": "উদ্দেশ্য", "ex": "The main objective of the meeting is to discuss exam results."}, {"word": "orientation", "en": "A person's basic attitude; direction or position; introduction program for newcomers.", "bn": "অভিযোজন", "ex": "The university held an orientation for new students."}, {"word": "perspective", "en": "A particular attitude or way of viewing something; viewpoint.", "bn": "দৃষ্টিভঙ্গি", "ex": "From a historical perspective, this change is very recent."}, {"word": "precise", "en": "Exact, accurate, and clear; marked by attention to detail.", "bn": "সুনির্দিষ্ট", "ex": "Please give a precise answer, not a vague one."}, {"word": "prime", "en": "Of first importance; main; of the best quality.", "bn": "প্রধান", "ex": "The prime cause of traffic jam is too many cars."}, {"word": "psychology", "en": "The scientific study of the human mind and its functions and behavior.", "bn": "মনোবিজ্ঞান", "ex": "She is studying psychology at university."}, {"word": "pursue", "en": "To follow, continue, or try to achieve a career, activity, or goal.", "bn": "অনুসরণ করা", "ex": "He wants to pursue a career in teaching."}, {"word": "ratio", "en": "The quantitative relationship between two amounts showing how many times one contains the other.", "bn": "অনুপাত", "ex": "The ratio of teachers to students is 1 to 30."}, {"word": "rejected", "en": "Dismissed as inadequate, inappropriate, or not to one's taste; refused.", "bn": "প্রত্যাখ্যাত", "ex": "His visa application was rejected."}, {"word": "revenue", "en": "Income, especially from business, taxes, or investments.", "bn": "রাজস্ব", "ex": "Tourism generates significant revenue for the country."}, {"word": "stability", "en": "The state of being stable, steady, and not likely to change or fail.", "bn": "স্থিতিশীলতা", "ex": "Political stability is necessary for economic growth."}, {"word": "styles", "en": "Particular manners, methods, or ways of doing, creating, or expressing something.", "bn": "শৈলী", "ex": "Different students have different learning styles."}, {"word": "substitution", "en": "The act of replacing one thing with another.", "bn": "প্রতিস্থাপন", "ex": "There is no substitution for hard work."}, {"word": "sustainable", "en": "Able to be maintained at a certain level without harming environment or depleting resources.", "bn": "টেকসই", "ex": "We need sustainable development for future generations."}, {"word": "symbolic", "en": "Serving as a symbol; representing something else.", "bn": "প্রতীকী", "ex": "The white dove is symbolic of peace."}, {"word": "target", "en": "A person, object, or place selected as aim of an attack or goal to achieve.", "bn": "লক্ষ্য", "ex": "The government set a target to plant 1 million trees."}, {"word": "transition", "en": "The process or period of changing from one state or condition to another.", "bn": "রূপান্তর", "ex": "The transition from school to university is difficult for many."}, {"word": "trend", "en": "A general direction in which something is developing or changing.", "bn": "প্রবণতা", "ex": "There is a growing trend of studying abroad."}, {"word": "version", "en": "A particular form, variant, or edition of something.", "bn": "সংস্করণ", "ex": "This is the latest version of the software."}, {"word": "welfare", "en": "The health, happiness, well-being, and prosperity of a person or group.", "bn": "কল্যাণ", "ex": "The government is responsible for public welfare."}, {"word": "whereas", "en": "In contrast or comparison with the fact that; while on the contrary.", "bn": "যেখানে", "ex": "Some people like cities, whereas others prefer villages."}], "Academic Sublist 6": [{"word": "abstract", "en": "Existing in thought rather than physical form; a summary of a research paper.", "bn": "বিমূর্ত", "ex": "The abstract of the research paper summarizes the main findings."}, {"word": "accurate", "en": "Correct, exact, and without any mistakes; precise.", "bn": "নির্ভুল", "ex": "Please provide accurate information in your application."}, {"word": "acknowledged", "en": "Recognized as true, valid, or as having existence.", "bn": "স্বীকৃত", "ex": "He acknowledged that his essay had some weaknesses."}, {"word": "aggregate", "en": "A whole formed by combining several elements; total or combined.", "bn": "সমষ্টি", "ex": "The aggregate income of the family is quite low."}, {"word": "allocation", "en": "The distribution or assignment of resources for a particular purpose.", "bn": "বরাদ্দ", "ex": "The allocation of funds for education has increased."}, {"word": "assigned", "en": "Allocated or given a particular task, duty, or place.", "bn": "নির্ধারিত", "ex": "The teacher assigned homework for the weekend."}, {"word": "attached", "en": "Joined, fastened, or connected to something; fond of someone.", "bn": "সংযুক্ত", "ex": "Please find the document attached to this email."}, {"word": "author", "en": "A writer of a book, article, or document; creator.", "bn": "লেখক", "ex": "The author of the book is a famous professor."}, {"word": "bond", "en": "A connection between people; a financial certificate; to join together.", "bn": "বন্ধন", "ex": "There is a strong bond between parents and children."}, {"word": "brief", "en": "Short in duration; concise; to give instructions.", "bn": "সংক্ষিপ্ত", "ex": "Please give a brief summary of your presentation."}, {"word": "capable", "en": "Having ability, skill, or power to do something.", "bn": "সক্ষম", "ex": "She is capable of handling difficult situations."}, {"word": "cited", "en": "Quoted, referred to, or mentioned as evidence or example.", "bn": "উদ্ধৃত", "ex": "He cited three examples to support his argument."}, {"word": "cooperative", "en": "Working together willingly for a common purpose; helpful.", "bn": "সহযোগী", "ex": "The children were very cooperative during the activity."}, {"word": "discrimination", "en": "Unjust treatment of different categories of people based on prejudice.", "bn": "বৈষম্য", "ex": "Gender discrimination still exists in some workplaces."}, {"word": "display", "en": "To show, exhibit, or present something for public viewing.", "bn": "প্রদর্শন", "ex": "The museum displays ancient artifacts."}, {"word": "diversity", "en": "A range of different things; variety; inclusion of different types of people.", "bn": "বৈচিত্র্য", "ex": "Cultural diversity makes a city more interesting."}, {"word": "domain", "en": "An area of knowledge, activity, or territory controlled by someone.", "bn": "ক্ষেত্র", "ex": "This question belongs to the domain of psychology."}, {"word": "edition", "en": "A particular form or version of a published text.", "bn": "সংস্করণ", "ex": "This is the second edition of the textbook."}, {"word": "enhanced", "en": "Improved, increased, or made better in quality or value.", "bn": "উন্নত", "ex": "The new method enhanced student participation."}, {"word": "estate", "en": "A large area of land and buildings; property left after death.", "bn": "সম্পত্তি", "ex": "They own a large estate outside the city."}, {"word": "exceed", "en": "To be greater in number or size than; to go beyond a limit.", "bn": "অতিক্রম করা", "ex": "Please do not exceed the word limit in IELTS writing."}, {"word": "expert", "en": "A person with extensive knowledge or skill in a particular field.", "bn": "বিশেষজ্ঞ", "ex": "He is an expert in renewable energy."}, {"word": "explicit", "en": "Stated clearly and in detail, leaving no room for confusion.", "bn": "সুস্পষ্ট", "ex": "The teacher gave explicit instructions for the assignment."}, {"word": "federal", "en": "Relating to a system where power is divided between central and regional governments.", "bn": "ফেডারেল", "ex": "The federal government controls national defense."}, {"word": "fees", "en": "Payments made for professional services, education, or membership.", "bn": "ফি", "ex": "University fees are too high for many families."}, {"word": "flexibility", "en": "The ability to bend, adapt, or be changed easily.", "bn": "নমনীয়তা", "ex": "Working from home offers more flexibility."}, {"word": "furthermore", "en": "In addition; moreover; besides (used to add information).", "bn": "তাছাড়া", "ex": "Furthermore, online learning saves time and money."}, {"word": "gender", "en": "The state of being male or female, typically used for social and cultural differences.", "bn": "লিঙ্গ", "ex": "Gender equality is important for social development."}, {"word": "ignored", "en": "Refused to take notice of, acknowledge, or consider.", "bn": "উপেক্ষিত", "ex": "The warning signs were ignored by the authorities."}, {"word": "incentive", "en": "Something that motivates or encourages someone to do something.", "bn": "প্রণোদনা", "ex": "Good salaries are an incentive for teachers to stay."}, {"word": "incidence", "en": "The occurrence, rate, or frequency of something, especially disease.", "bn": "ঘটনার হার", "ex": "The incidence of diabetes is increasing worldwide."}, {"word": "incorporated", "en": "Included as part of a whole; formed into a corporation.", "bn": "অন্তর্ভুক্ত", "ex": "The new law incorporated suggestions from the public."}, {"word": "index", "en": "An alphabetical list of items; a sign or measure of something.", "bn": "সূচক", "ex": "You can find the topic in the book's index."}, {"word": "inhibition", "en": "A feeling that makes one self-conscious and unable to act naturally.", "bn": "বাধা", "ex": "Shyness can be an inhibition to learning a language."}, {"word": "initiatives", "en": "New plans, strategies, or actions to solve problems.", "bn": "উদ্যোগ", "ex": "The government took initiatives to reduce poverty."}, {"word": "input", "en": "Information, ideas, or resources put into a system; contribution.", "bn": "ইনপুট", "ex": "Teachers should consider student input when planning lessons."}, {"word": "instructions", "en": "Detailed directions or orders about how to do something.", "bn": "নির্দেশাবলী", "ex": "Please follow the instructions on the exam paper."}, {"word": "intelligence", "en": "Ability to acquire and apply knowledge; information of military value.", "bn": "বুদ্ধিমত্তা", "ex": "Artificial intelligence is changing many industries."}, {"word": "interval", "en": "A period or space between two events, actions, or points.", "bn": "বিরতি", "ex": "Take a short interval between study sessions."}, {"word": "lecture", "en": "An educational talk to an audience, especially at university.", "bn": "বক্তৃতা", "ex": "The professor gave an interesting lecture on climate change."}, {"word": "migration", "en": "Movement of people or animals from one region to another.", "bn": "অভিবাসন", "ex": "Rural to urban migration is increasing in Bangladesh."}, {"word": "minimum", "en": "The smallest amount, number, or degree possible; lowest.", "bn": "ন্যূনতম", "ex": "You need a minimum of 6.5 in IELTS for this university."}, {"word": "ministry", "en": "A government department in charge of a particular area.", "bn": "মন্ত্রণালয়", "ex": "The Ministry of Education announced new rules."}, {"word": "motivation", "en": "The reason for acting; enthusiasm and desire to do something.", "bn": "প্রেরণা", "ex": "High motivation helps students learn better."}, {"word": "neutral", "en": "Not supporting either side; impartial; not strongly acidic or alkaline.", "bn": "নিরপেক্ষ", "ex": "Teachers should remain neutral in political debates."}, {"word": "nevertheless", "en": "In spite of that; however; nonetheless.", "bn": "তবুও", "ex": "It was raining; nevertheless, we went for a walk."}, {"word": "overseas", "en": "In or to a foreign country, especially across the sea.", "bn": "বিদেশে", "ex": "Many students go overseas for higher education."}, {"word": "preceding", "en": "Coming before something in time, order, or position.", "bn": "পূর্ববর্তী", "ex": "The preceding chapter explains the theory clearly."}, {"word": "presumption", "en": "An idea taken to be true on basis of probability; arrogant behavior.", "bn": "অনুমান", "ex": "We should not make a presumption without evidence."}, {"word": "rational", "en": "Based on or in accordance with reason or logic; sensible.", "bn": "যৌক্তিক", "ex": "It is rational to invest in education for future benefits."}, {"word": "recovery", "en": "The process of returning to normal health or economic condition after difficulty.", "bn": "পুনরুদ্ধার", "ex": "The country shows signs of economic recovery."}, {"word": "revealed", "en": "Made known, disclosed, or shown something previously secret.", "bn": "প্রকাশিত", "ex": "The study revealed a link between diet and health."}, {"word": "scope", "en": "The extent, range, or opportunity for action or thought.", "bn": "পরিধি", "ex": "There is scope for improving public transport."}, {"word": "subsidiary", "en": "A company controlled by another company; less important but related.", "bn": "অধীনস্থ", "ex": "The company has a subsidiary in Sylhet."}, {"word": "tapes", "en": "Long narrow strips of material used for recording or binding.", "bn": "টেপ", "ex": "The library has audio tapes for language learning."}, {"word": "trace", "en": "A very small amount or mark; to find or follow the path of something.", "bn": "চিহ্ন", "ex": "You can still trace the old road on the map."}, {"word": "transformation", "en": "A marked change in form, nature, or appearance.", "bn": "রূপান্তর", "ex": "The city has undergone a huge transformation in ten years."}, {"word": "transport", "en": "To carry people or goods from one place to another; system of moving.", "bn": "পরিবহন", "ex": "Public transport in Dhaka needs improvement."}, {"word": "underlying", "en": "Real but not immediately obvious; forming basis or foundation.", "bn": "অন্তর্নিহিত", "ex": "The underlying cause of traffic jam is poor planning."}], "Academic Sublist 7": [{"word": "adaptation", "en": "The process of adjusting to new conditions or environment.", "bn": "অভিযোজন", "ex": "Adaptation to a new culture takes time."}, {"word": "adults", "en": "Persons who are fully grown and mature; grown-up people.", "bn": "প্রাপ্তবয়স্ক", "ex": "Adults should set a good example for children."}, {"word": "advocate", "en": "A person who publicly supports a cause; to recommend or support.", "bn": "সমর্থক", "ex": "I advocate for free education for all children."}, {"word": "aid", "en": "Help, assistance, or support, often financial or material.", "bn": "সাহায্য", "ex": "International aid helps developing countries."}, {"word": "channel", "en": "A means of communication or expression; a waterway or passage.", "bn": "চ্যানেল", "ex": "We should use different channels to share information."}, {"word": "chemical", "en": "Relating to chemistry; a substance produced by chemical process.", "bn": "রাসায়নিক", "ex": "Chemical fertilizers can harm the soil."}, {"word": "classical", "en": "Relating to ancient Greek and Roman culture; traditional and long-established.", "bn": "ধ্রুপদী", "ex": "She enjoys classical music in the evening."}, {"word": "comprehensive", "en": "Including everything; thorough and complete in scope.", "bn": "ব্যাপক", "ex": "The book provides a comprehensive guide to IELTS."}, {"word": "comprise", "en": "To consist of or include; to be made up of.", "bn": "গঠিত হওয়া", "ex": "The course comprises six modules."}, {"word": "confirmed", "en": "Verified as true or accurate; made definite or firm.", "bn": "নিশ্চিতকৃত", "ex": "The doctor confirmed that the test was positive."}, {"word": "contrary", "en": "Opposite in nature, direction, or meaning.", "bn": "বিপরীত", "ex": "Contrary to popular belief, money does not always bring happiness."}, {"word": "converted", "en": "Changed in form, function, or character; transformed.", "bn": "রূপান্তরিত", "ex": "The building was converted into a library."}, {"word": "couple", "en": "Two people or things of same kind; a married or romantic pair.", "bn": "দম্পতি", "ex": "The couple has been married for ten years."}, {"word": "decades", "en": "Periods of ten years; long periods of time.", "bn": "দশক", "ex": "For decades, people have been concerned about pollution."}, {"word": "definite", "en": "Clearly stated, decided, or known; certain and clear.", "bn": "নির্দিষ্ট", "ex": "We need a definite plan for reducing waste."}, {"word": "deny", "en": "To state that something is not true; to refuse to give.", "bn": "অস্বীকার করা", "ex": "You cannot deny the importance of education."}, {"word": "differentiation", "en": "The act of distinguishing or making different; specialization.", "bn": "পার্থক্যকরণ", "ex": "Differentiation between formal and informal language is important."}, {"word": "disposal", "en": "The act of getting rid of something; arrangement or use.", "bn": "নিষ্পত্তি", "ex": "Proper disposal of waste is essential for health."}, {"word": "dynamic", "en": "Characterized by constant change, activity, or progress; energetic.", "bn": "গতিশীল", "ex": "Dhaka is a dynamic city with many opportunities."}, {"word": "eliminate", "en": "To completely remove, get rid of, or exclude.", "bn": "অপসারণ করা", "ex": "We should try to eliminate plastic from daily life."}, {"word": "empirical", "en": "Based on observation or experience rather than theory.", "bn": "পরীক্ষামূলক", "ex": "The theory is based on empirical evidence from experiments."}, {"word": "equipment", "en": "Tools, machines, or supplies needed for a purpose.", "bn": "সরঞ্জাম", "ex": "The laboratory has modern equipment for research."}, {"word": "extract", "en": "To remove or take out; to obtain from a substance by chemical means.", "bn": "নিষ্কাশন করা", "ex": "We can extract useful information from the graph."}, {"word": "file", "en": "A folder for documents; to submit; a tool for smoothing.", "bn": "ফাইল", "ex": "Please save the file in PDF format."}, {"word": "finite", "en": "Having limits or bounds; not infinite or endless.", "bn": "সসীম", "ex": "Natural resources are finite and should be used wisely."}, {"word": "foundation", "en": "The base on which something is built; underlying basis or principle.", "bn": "ভিত্তি", "ex": "Primary education is the foundation of all learning."}, {"word": "global", "en": "Relating to the whole world; worldwide; comprehensive.", "bn": "বৈশ্বিক", "ex": "Climate change is a global issue, not just local."}, {"word": "grade", "en": "A level of quality, rank, or standard; to evaluate.", "bn": "গ্রেড", "ex": "He got a good grade in his final exam."}, {"word": "guarantee", "en": "A formal promise that something will happen; to promise.", "bn": "নিশ্চয়তা", "ex": "We cannot guarantee success without hard work."}, {"word": "hierarchical", "en": "Arranged in order of rank or importance; with levels.", "bn": "শ্রেণিবদ্ধ", "ex": "The company has a hierarchical structure with many levels."}, {"word": "identical", "en": "Exactly the same; similar in every detail.", "bn": "অভিন্ন", "ex": "The two essays were almost identical, so it was plagiarism."}, {"word": "ideology", "en": "A system of ideas and ideals forming basis of political or economic theory.", "bn": "মতাদর্শ", "ex": "Political ideology influences education policy."}, {"word": "inferred", "en": "Deduced or concluded from evidence and reasoning.", "bn": "অনুমিত", "ex": "From the data, we inferred that sales will increase."}, {"word": "innovation", "en": "A new method, idea, or product; introduction of something new.", "bn": "উদ্ভাবন", "ex": "Technological innovation has changed our lives."}, {"word": "insert", "en": "To place, put, or add something into something else.", "bn": "সন্নিবেশ করা", "ex": "Please insert your name at the top of the page."}, {"word": "intervention", "en": "The act of interfering to improve or change a situation.", "bn": "হস্তক্ষেপ", "ex": "Government intervention is needed to reduce poverty."}, {"word": "isolated", "en": "Far away from other places; alone; separated.", "bn": "বিচ্ছিন্ন", "ex": "The village is isolated and has no internet connection."}, {"word": "media", "en": "Main means of mass communication like TV, newspapers, internet.", "bn": "গণমাধ্যম", "ex": "Social media affects how people communicate."}, {"word": "mode", "en": "A way or manner of doing something; a fashion or style.", "bn": "ধরন", "ex": "Online learning is a popular mode of education now."}, {"word": "paradigm", "en": "A typical example or pattern of something; a model or framework.", "bn": "দৃষ্টান্ত", "ex": "The study presents a new paradigm for language learning."}, {"word": "phenomenon", "en": "A fact or situation observed to exist; remarkable person or event.", "bn": "প্রপঞ্চ", "ex": "The growth of online shopping is a recent phenomenon."}, {"word": "priority", "en": "Something regarded as more important than others; precedence.", "bn": "অগ্রাধিকার", "ex": "Education should be the top priority for governments."}, {"word": "prohibited", "en": "Forbidden by law, rules, or authority; not allowed.", "bn": "নিষিদ্ধ", "ex": "Smoking is prohibited in the hospital."}, {"word": "publication", "en": "A book, journal, or article made available to public.", "bn": "প্রকাশনা", "ex": "His latest publication is about renewable energy."}, {"word": "quotation", "en": "A group of words taken from a text and repeated by someone else.", "bn": "উদ্ধৃতি", "ex": "She used a famous quotation to start her speech."}, {"word": "release", "en": "To allow to be free, available, or published; to let go.", "bn": "মুক্তি", "ex": "The company will release a new product next month."}, {"word": "reverse", "en": "To go or turn in opposite direction; opposite of usual.", "bn": "বিপরীত", "ex": "We should try to reverse the damage to the environment."}, {"word": "simulation", "en": "Imitation of a situation or process for study or training.", "bn": "অনুকরণ", "ex": "Flight simulation helps pilots train safely."}, {"word": "solely", "en": "Only; not involving anyone or anything else.", "bn": "শুধুমাত্র", "ex": "The decision was based solely on exam results."}, {"word": "somewhat", "en": "To a moderate extent or degree; rather.", "bn": "কিছুটা", "ex": "The task was somewhat difficult, but manageable."}, {"word": "submitted", "en": "Presented, handed in, or proposed for consideration.", "bn": "জমা দেওয়া", "ex": "He submitted his assignment before the deadline."}, {"word": "successive", "en": "Following one after another; consecutive.", "bn": "ধারাবাহিক", "ex": "The team won three successive matches."}, {"word": "survive", "en": "To continue to live or exist despite difficulty or danger.", "bn": "টিকে থাকা", "ex": "Small businesses struggle to survive during a crisis."}, {"word": "thesis", "en": "A long essay presenting research for a university degree; central argument.", "bn": "থিসিস", "ex": "She is writing her thesis on language learning."}, {"word": "topic", "en": "A subject that is discussed, written about, or studied.", "bn": "বিষয়", "ex": "The topic of today's discussion is climate change."}, {"word": "transmission", "en": "The act of passing something from one place or person to another; spread of disease.", "bn": "প্রেরণ", "ex": "The transmission of the virus can be prevented by masks."}, {"word": "ultimately", "en": "Finally; in the end; after everything considered.", "bn": "পরিণামে", "ex": "Ultimately, education is the key to development."}, {"word": "unique", "en": "Being the only one of its kind; unlike anything else; special.", "bn": "অনন্য", "ex": "Every culture has unique traditions worth protecting."}, {"word": "visible", "en": "Able to be seen; obvious or apparent.", "bn": "দৃশ্যমান", "ex": "The results of the new policy are clearly visible."}, {"word": "voluntary", "en": "Done, given, or acting of one's own free will; optional.", "bn": "স্বেচ্ছাসেবী", "ex": "Many students do voluntary work in their free time."}], "Academic Sublist 8": [{"word": "abandon", "en": "To leave completely and finally; to give up or discontinue.", "bn": "পরিত্যাগ করা", "ex": "You should not abandon your studies, even if it is hard."}, {"word": "accompanied", "en": "Went together with; occurred at same time as; with something added.", "bn": "সহগামী", "ex": "The heavy rain was accompanied by strong winds."}, {"word": "accumulation", "en": "The act of gathering or collecting; a mass of things gathered.", "bn": "সঞ্চয়", "ex": "The accumulation of waste causes health problems."}, {"word": "ambiguous", "en": "Open to more than one interpretation; unclear or vague.", "bn": "দ্ব্যর্থক", "ex": "The question is ambiguous and needs to be clarified."}, {"word": "appendix", "en": "A section of extra information at end of a book; a small organ in body.", "bn": "পরিশিষ্ট", "ex": "You can find more data in the appendix of the book."}, {"word": "appreciation", "en": "Recognition and enjoyment of good qualities; gratitude.", "bn": "প্রশংসা", "ex": "She showed appreciation for the teacher's help."}, {"word": "arbitrary", "en": "Based on random choice or personal whim, not reason or system.", "bn": "খামখেয়ালী", "ex": "The choice of topic was arbitrary, not based on research."}, {"word": "automatically", "en": "Without conscious thought or need for manual action; by itself.", "bn": "স্বয়ংক্রিয়ভাবে", "ex": "The computer saves your work automatically."}, {"word": "bias", "en": "Prejudice or inclination for or against someone; to influence unfairly.", "bn": "পক্ষপাত", "ex": "We should avoid gender bias in language."}, {"word": "chart", "en": "A sheet of information in form of table, graph, or diagram.", "bn": "চার্ট", "ex": "The chart shows the increase in population from 2000 to 2020."}, {"word": "clarity", "en": "Clearness in thought or expression; being easy to understand.", "bn": "স্পষ্টতা", "ex": "Please write with clarity so readers can understand you."}, {"word": "commodity", "en": "A raw material or product that can be bought and sold.", "bn": "পণ্য", "ex": "Rice is an important commodity in Bangladesh."}, {"word": "complement", "en": "To add to or enhance something to make it complete; something that completes.", "bn": "পরিপূরক", "ex": "The two courses complement each other very well."}, {"word": "conformity", "en": "Compliance with standards, rules, or laws; similarity in behavior.", "bn": "সামঞ্জস্য", "ex": "Too much conformity can reduce creativity."}, {"word": "contemporary", "en": "Living or occurring at same time; modern or current.", "bn": "সমসাময়িক", "ex": "Contemporary art often reflects social issues."}, {"word": "contradiction", "en": "A statement or idea that opposes another; inconsistency.", "bn": "বৈপরীত্য", "ex": "There is a contradiction between his words and actions."}, {"word": "crucial", "en": "Extremely important or decisive; critical.", "bn": "অত্যন্ত গুরুত্বপূর্ণ", "ex": "It is crucial to manage time well in the IELTS exam."}, {"word": "currency", "en": "Money in current use in a country; being in use or circulation.", "bn": "মুদ্রা", "ex": "The US dollar is a strong international currency."}, {"word": "denote", "en": "To be a sign of; to mean or indicate.", "bn": "বোঝানো", "ex": "In this essay, 'development' will denote economic growth."}, {"word": "detected", "en": "Discovered, noticed, or found, especially something not easily seen.", "bn": "শনাক্তকৃত", "ex": "The problem was detected at an early stage."}, {"word": "deviation", "en": "Departure from an established course, norm, or expected behavior.", "bn": "বিচ্যুতি", "ex": "Any deviation from the rules will be punished."}, {"word": "displacement", "en": "The act of moving something from its usual place; forced removal.", "bn": "স্থানচ্যুতি", "ex": "The construction caused displacement of local families."}, {"word": "dramatic", "en": "Striking, impressive, or sudden; relating to drama.", "bn": "নাটকীয়", "ex": "There has been a dramatic increase in online shopping."}, {"word": "eventually", "en": "In the end, especially after a long delay or series of events.", "bn": "অবশেষে", "ex": "If you practice regularly, you will eventually improve."}, {"word": "exhibit", "en": "To publicly display; to show as sign of feeling or quality.", "bn": "প্রদর্শন করা", "ex": "The museum exhibits ancient coins and tools."}, {"word": "exploitation", "en": "The act of using something or someone unfairly for personal advantage.", "bn": "শোষণ", "ex": "The exploitation of natural resources must be controlled."}, {"word": "fluctuations", "en": "Irregular rises and falls in number, amount, or value.", "bn": "ওঠানামা", "ex": "There are fluctuations in temperature during the year."}, {"word": "guidelines", "en": "General rules, principles, or advice to guide action.", "bn": "নির্দেশিকা", "ex": "Please follow the guidelines for writing the report."}, {"word": "highlighted", "en": "Emphasized, made prominent, or made to stand out.", "bn": "গুরুত্ব দেওয়া", "ex": "The report highlighted the need for more schools."}, {"word": "implicit", "en": "Implied though not directly expressed; inherent or understood.", "bn": "অন্তর্নিহিত", "ex": "There is an implicit message in his speech about unity."}, {"word": "induced", "en": "Brought about, caused, or persuaded to do something.", "bn": "প্ররোচিত", "ex": "Stress-induced illness is becoming more common."}, {"word": "infrastructure", "en": "Basic physical systems and structures needed for society to operate.", "bn": "অবকাঠামো", "ex": "Good infrastructure is necessary for economic growth."}, {"word": "inspection", "en": "Careful examination or official check to ensure standards.", "bn": "পরিদর্শন", "ex": "The factory needs regular inspection for safety."}, {"word": "intensity", "en": "The quality of being intense; extreme degree of strength or force.", "bn": "তীব্রতা", "ex": "The intensity of the storm increased at night."}, {"word": "manipulation", "en": "Skillful handling or control, often unfairly or dishonestly.", "bn": "কারসাজি", "ex": "The manipulation of data is a serious academic offence."}, {"word": "minimised", "en": "Reduced to smallest possible amount or degree; made as small as possible.", "bn": "ন্যূনতম করা", "ex": "The risks were minimised by careful planning."}, {"word": "nuclear", "en": "Relating to nucleus of atom; relating to nuclear energy or weapons.", "bn": "পারমাণবিক", "ex": "Nuclear energy can be dangerous if not managed properly."}, {"word": "offset", "en": "To counterbalance or compensate; a distance by which something is out of line.", "bn": "ভারসাম্য", "ex": "Planting trees can offset carbon emissions."}, {"word": "paragraph", "en": "A distinct section of a piece of writing dealing with one theme.", "bn": "অনুচ্ছেদ", "ex": "Each paragraph should have one main idea."}, {"word": "plus", "en": "With addition of; positive; extra advantage.", "bn": "যোগ", "ex": "The house has four bedrooms plus a small garden."}, {"word": "practitioners", "en": "People actively engaged in a profession, especially medicine or law.", "bn": "অনুশীলনকারী", "ex": "Medical practitioners need regular training."}, {"word": "predominantly", "en": "Mainly; for the most part; chiefly.", "bn": "প্রধানত", "ex": "The area is predominantly agricultural."}, {"word": "prospect", "en": "The possibility or likelihood of future success; to search for.", "bn": "সম্ভাবনা", "ex": "The prospect of studying abroad excites many students."}, {"word": "radical", "en": "Relating to fundamental nature; thorough, extreme, or far-reaching.", "bn": "আমূল", "ex": "The government proposed radical changes to the education system."}, {"word": "random", "en": "Made, done, or chosen without method or conscious decision.", "bn": "এলোমেলো", "ex": "The survey chose random people from different age groups."}, {"word": "reinforced", "en": "Strengthened, supported, or made stronger.", "bn": "শক্তিশালী করা", "ex": "The good results reinforced her confidence."}, {"word": "restore", "en": "To bring back to original state; to repair or renovate.", "bn": "পুনরুদ্ধার করা", "ex": "We must work together to restore the damaged ecosystem."}, {"word": "revision", "en": "The act of revising, changing, or correcting; study of work for exam.", "bn": "সংশোধন", "ex": "Regular revision helps you remember vocabulary."}, {"word": "schedule", "en": "A plan listing times when things will happen; to arrange.", "bn": "সময়সূচী", "ex": "The bus schedule changed due to heavy traffic."}, {"word": "tension", "en": "Mental or emotional strain; strained relations; tightness.", "bn": "উত্তেজনা", "ex": "There is tension between economic growth and environmental protection."}, {"word": "termination", "en": "The act of ending something; a final point.", "bn": "সমাপ্তি", "ex": "The termination of the project was announced yesterday."}, {"word": "theme", "en": "The subject, topic, or central idea of a talk, book, or exhibition.", "bn": "বিষয়", "ex": "The main theme of the book is friendship."}, {"word": "thereby", "en": "By that means; as a result of that action.", "bn": "এর দ্বারা", "ex": "He saved money, thereby enabling him to study abroad."}, {"word": "uniform", "en": "The same in all cases; clothing worn by members of same group.", "bn": "অভিন্ন", "ex": "Students in Bangladesh wear a school uniform."}, {"word": "traditionally", "en": "According to long-established customs, beliefs, or practices.", "bn": "ঐতিহ্যগতভাবে", "ex": "Traditionally, families in villages were very large."}, {"word": "transportation", "en": "The system or means of moving people or goods from place to place.", "bn": "পরিবহন", "ex": "Public transportation is cheaper than private cars."}, {"word": "underlying", "en": "Real but not immediately obvious; forming basis or foundation.", "bn": "অন্তর্নিহিত", "ex": "The underlying cause of traffic jam is poor urban planning."}], "Academic Sublist 9": [{"word": "accommodation", "en": "A place to live, work, or stay; adjustment or compromise.", "bn": "আবাসন", "ex": "Student accommodation near the university is expensive."}, {"word": "analogous", "en": "Similar or comparable in some way; analogous to something else.", "bn": "অনুরূপ", "ex": "The situation is analogous to what happened in 2010."}, {"word": "anticipated", "en": "Expected, predicted, or foreseen.", "bn": "প্রত্যাশিত", "ex": "The result was anticipated by most experts."}, {"word": "assurance", "en": "A positive declaration intended to give confidence; a guarantee.", "bn": "আশ্বাস", "ex": "The manager gave assurance that salaries will increase."}, {"word": "attained", "en": "Succeeded in achieving or reaching something after effort.", "bn": "অর্জিত", "ex": "She attained high scores in all subjects."}, {"word": "behalf", "en": "As representative of or in interest of someone; for someone.", "bn": "পক্ষে", "ex": "I am writing on behalf of all students in my class."}, {"word": "bulk", "en": "The majority or larger part; large size or mass.", "bn": "বেশিরভাগ", "ex": "The bulk of waste comes from households, not factories."}, {"word": "ceases", "en": "Comes or brings to an end; stops.", "bn": "থামে", "ex": "The noise ceases after midnight in this area."}, {"word": "coherence", "en": "Logical connection and consistency; quality of forming a unified whole.", "bn": "সামঞ্জস্য", "ex": "Your essay needs more coherence between paragraphs."}, {"word": "coincide", "en": "To occur at same time; to agree or correspond exactly.", "bn": "মিলে যাওয়া", "ex": "The festival coincides with our final exams this year."}, {"word": "commenced", "en": "Began or started.", "bn": "শুরু হওয়া", "ex": "The construction work commenced last month."}, {"word": "incompatible", "en": "Not able to exist or work together; conflicting or contradictory.", "bn": "বেমানান", "ex": "His lifestyle is incompatible with good health."}, {"word": "concurrent", "en": "Existing, happening, or done at same time.", "bn": "সমবর্তী", "ex": "She is taking two concurrent courses this semester."}, {"word": "confined", "en": "Restricted to certain limits; kept inside or enclosed.", "bn": "সীমাবদ্ধ", "ex": "The discussion was confined to environmental issues."}, {"word": "controversy", "en": "Prolonged public disagreement or heated debate about an issue.", "bn": "বিতর্ক", "ex": "There is controversy about the new education policy."}, {"word": "conversely", "en": "In an opposite way; introducing a contrasting statement.", "bn": "বিপরীতভাবে", "ex": "You can take the bus; conversely, you can walk if you prefer."}, {"word": "device", "en": "A tool, instrument, or piece of equipment designed for a purpose.", "bn": "যন্ত্র", "ex": "Mobile devices are useful for learning languages."}, {"word": "devoted", "en": "Very loving, loyal, or dedicated to someone or something.", "bn": "নিবেদিত", "ex": "She is devoted to helping poor children get education."}, {"word": "diminished", "en": "Made or became smaller, less important, or weaker.", "bn": "হ্রাসপ্রাপ্ত", "ex": "The supply of clean water has diminished in recent years."}, {"word": "distorted", "en": "Pulled or twisted out of shape; misrepresented or falsified.", "bn": "বিকৃত", "ex": "The news report distorted the facts about the event."}, {"word": "duration", "en": "The time during which something continues or exists.", "bn": "সময়কাল", "ex": "The duration of the course is six months."}, {"word": "erosion", "en": "The gradual destruction or wearing away of something by natural forces.", "bn": "ক্ষয়", "ex": "Soil erosion is a major problem in hilly areas."}, {"word": "ethical", "en": "Relating to moral principles; morally right and good.", "bn": "নৈতিক", "ex": "It is not ethical to copy other people's work."}, {"word": "format", "en": "The way something is arranged or presented; structure or layout.", "bn": "বিন্যাস", "ex": "Please follow the correct format for the IELTS essay."}, {"word": "founded", "en": "Established or originated; built on basis of something.", "bn": "প্রতিষ্ঠিত", "ex": "Dhaka University was founded in 1921."}, {"word": "inherent", "en": "Existing as natural or basic part of something; intrinsic.", "bn": "সহজাত", "ex": "There are inherent risks in online banking."}, {"word": "insights", "en": "Deep, accurate understandings of a person or thing.", "bn": "অন্তর্দৃষ্টি", "ex": "The book provides useful insights into human behavior."}, {"word": "integral", "en": "Necessary and essential to make a whole complete.", "bn": "অবিচ্ছেদ্য", "ex": "Technology is now an integral part of education."}, {"word": "intermediate", "en": "Coming between two things in time, place, or order; middle.", "bn": "মধ্যবর্তী", "ex": "This course is for intermediate level students."}, {"word": "manual", "en": "Done or operated by hand; a book giving instructions.", "bn": "ম্যানুয়াল", "ex": "Please read the instruction manual before using the machine."}, {"word": "mature", "en": "Fully developed physically or mentally; grown-up and responsible.", "bn": "পরিপক্ক", "ex": "She is mature enough to make her own decisions."}, {"word": "mediation", "en": "Intervention to resolve conflict between two parties.", "bn": "মধ্যস্থতা", "ex": "Mediation can help resolve conflicts peacefully."}, {"word": "medium", "en": "A means of doing or communicating something; middle state.", "bn": "মাধ্যম", "ex": "English is the medium of instruction in many universities."}, {"word": "military", "en": "Relating to or characteristic of soldiers or armed forces.", "bn": "সামরিক", "ex": "Many young people join the military after school."}, {"word": "minimal", "en": "Very small; the least possible; of minimum amount.", "bn": "ন্যূনতম", "ex": "The cost of recycling is minimal compared to its benefits."}, {"word": "mutual", "en": "Experienced or done by each of two or more parties towards the other.", "bn": "পারস্পরিক", "ex": "Mutual respect between teachers and students is important."}, {"word": "norms", "en": "Standards, expectations, or usual ways of behaving in a group.", "bn": "মানদণ্ড", "ex": "Social norms vary from country to country."}, {"word": "overlap", "en": "To extend over so as to cover partly; common area or shared part.", "bn": "ওভারল্যাপ", "ex": "There is some overlap between the two courses."}, {"word": "passive", "en": "Accepting without active response or resistance; not active.", "bn": "নিষ্ক্রিয়", "ex": "Passive learning is less effective than active participation."}, {"word": "portion", "en": "A part, share, or amount of something larger.", "bn": "অংশ", "ex": "A small portion of the budget is spent on libraries."}, {"word": "preliminary", "en": "Preparatory; coming before main action or event; initial.", "bn": "প্রাথমিক", "ex": "The preliminary results are quite encouraging."}, {"word": "protocol", "en": "Official procedure or system of rules for correct behavior.", "bn": "প্রোটোকল", "ex": "We must follow the health protocol during the pandemic."}, {"word": "qualitative", "en": "Relating to quality or kind, rather than quantity or amount.", "bn": "গুণগত", "ex": "The research used qualitative methods like interviews."}, {"word": "refine", "en": "To improve by making small changes; to purify or make more precise.", "bn": "পরিশোধন করা", "ex": "You should refine your essay by adding more examples."}, {"word": "relaxed", "en": "Free from tension or anxiety; not strict or rigid.", "bn": "শিথিল", "ex": "She felt relaxed after the exam was over."}, {"word": "restraints", "en": "Limitations, restrictions, or controls that prevent freedom.", "bn": "বাধা", "ex": "There are restraints on using mobile phones in class."}, {"word": "revolution", "en": "A forcible overthrow of government; dramatic and wide-reaching change.", "bn": "বিপ্লব", "ex": "The internet caused a revolution in communication."}, {"word": "rigid", "en": "Stiff, not flexible; strict and not changeable.", "bn": "কঠোর", "ex": "The rules are too rigid and need to be more flexible."}, {"word": "route", "en": "A way, course, or path taken to get from one place to another.", "bn": "পথ", "ex": "The new bus route is more convenient for students."}, {"word": "scenario", "en": "A possible sequence of events; imagined situation.", "bn": "পরিস্থিতি", "ex": "In the worst scenario, sea levels will rise by one meter."}, {"word": "sphere", "en": "A round solid figure; an area of activity or interest; globe.", "bn": "ক্ষেত্র", "ex": "Education is important in every sphere of life."}, {"word": "subordinate", "en": "Lower in rank or position; to treat as less important.", "bn": "অধীনস্থ", "ex": "The subordinate staff work under the manager's supervision."}, {"word": "supplementary", "en": "Additional; extra; completing or enhancing something.", "bn": "সম্পূরক", "ex": "The teacher gave supplementary materials for extra practice."}, {"word": "suspended", "en": "Temporarily stopped, prevented, or hung from somewhere.", "bn": "স্থগিত", "ex": "Classes were suspended due to heavy rain."}, {"word": "team", "en": "A group of people working together for a common purpose.", "bn": "দল", "ex": "Teamwork is essential for the success of any project."}, {"word": "temporary", "en": "Lasting for only a limited period of time; not permanent.", "bn": "অস্থায়ী", "ex": "This is only a temporary solution to the problem."}, {"word": "trigger", "en": "To cause something to happen or start; a mechanism that causes action.", "bn": "সূত্রপাত করা", "ex": "Stress can trigger health problems."}, {"word": "unified", "en": "Made or joined into a single unit or whole; united.", "bn": "একীভূত", "ex": "The country has a unified education system."}, {"word": "violation", "en": "An act of breaking or violating a law, rule, or agreement.", "bn": "লঙ্ঘন", "ex": "Parking here is a violation of traffic rules."}, {"word": "vision", "en": "The ability to see; the ability to think about future with imagination; foresight.", "bn": "দৃষ্টি", "ex": "The company has a clear vision for the future."}], "Academic Sublist 10": [{"word": "adjacent", "en": "Next to or adjoining something else; neighboring.", "bn": "সংলগ্ন", "ex": "The library is adjacent to the main building."}, {"word": "albeit", "en": "Although; even though (used to introduce concession).", "bn": "যদিও", "ex": "The task was difficult, albeit interesting."}, {"word": "assembly", "en": "A group of people gathered together; act of assembling parts.", "bn": "সমাবেশ", "ex": "The school holds a morning assembly every day."}, {"word": "collapse", "en": "To suddenly fall down or give way; to fail suddenly.", "bn": "ধস", "ex": "The building might collapse after the earthquake."}, {"word": "colleagues", "en": "People you work with, especially in a profession.", "bn": "সহকর্মী", "ex": "She has good relationships with her colleagues."}, {"word": "compiled", "en": "Collected and assembled from various sources into one document.", "bn": "সংকলিত", "ex": "The teacher compiled a list of useful vocabulary."}, {"word": "conceived", "en": "Formed or developed in mind; imagined; became pregnant.", "bn": "কল্পিত", "ex": "The plan was conceived last year and is now being implemented."}, {"word": "convinced", "en": "Completely certain about something; persuaded to believe.", "bn": "প্রত্যয়ী", "ex": "I am convinced that education can change society."}, {"word": "depression", "en": "Severe despondency; a long period of economic downturn.", "bn": "বিষণ্ণতা", "ex": "Economic depression affects many families."}, {"word": "encountered", "en": "Met or faced unexpectedly; experienced a difficulty.", "bn": "সম্মুখীন হওয়া", "ex": "She encountered many problems while studying abroad."}, {"word": "enormous", "en": "Very large in size, amount, or degree; huge.", "bn": "বিশাল", "ex": "The city faces enormous challenges with traffic and pollution."}, {"word": "forthcoming", "en": "About to happen or appear; willing to give information.", "bn": "আসন্ন", "ex": "The forthcoming exam makes students anxious."}, {"word": "inclination", "en": "A tendency, preference, or natural disposition to behave in a certain way.", "bn": "প্রবণতা", "ex": "She has an inclination towards science subjects."}, {"word": "integrity", "en": "The quality of being honest and having strong moral principles; wholeness.", "bn": "সততা", "ex": "A good leader must have integrity and honesty."}, {"word": "intrinsic", "en": "Belonging naturally; inherent; essential part of something.", "bn": "সহজাত", "ex": "Motivation has intrinsic value for learning."}, {"word": "invoked", "en": "Cited or appealed to as authority; called upon for help.", "bn": "আহ্বান করা", "ex": "The law was invoked to stop illegal construction."}, {"word": "levy", "en": "To impose a tax, fee, or fine; a tax or fine imposed.", "bn": "কর ধার্য করা", "ex": "The government will levy a tax on plastic bags."}, {"word": "likewise", "en": "In the same way; also; similarly.", "bn": "একইভাবে", "ex": "He loves football; likewise, his brother does too."}, {"word": "nonetheless", "en": "In spite of that; however; nevertheless.", "bn": "তবুও", "ex": "It was expensive; nonetheless, I bought it for its quality."}, {"word": "notwithstanding", "en": "In spite of; without being affected by; nevertheless.", "bn": "সত্ত্বেও", "ex": "Notwithstanding the rain, we went for a picnic."}, {"word": "odd", "en": "Different from what is usual or expected; strange; not even.", "bn": "অদ্ভুত", "ex": "It is odd that he didn't come to class today."}, {"word": "ongoing", "en": "Continuing; still in progress or happening now.", "bn": "চলমান", "ex": "There is an ongoing debate about online education."}, {"word": "panel", "en": "A small group of people chosen to give advice or make decisions; flat section.", "bn": "প্যানেল", "ex": "A panel of experts discussed climate change on TV."}, {"word": "persistent", "en": "Continuing firmly despite difficulty; lasting for a long time.", "bn": "অধ্যবসায়ী", "ex": "Persistent effort is needed to learn a language well."}, {"word": "posed", "en": "Presented or created a problem or question; assumed a pose.", "bn": "উপস্থাপিত", "ex": "The new policy posed many challenges for small businesses."}, {"word": "reluctant", "en": "Unwilling and hesitant; not eager to do something.", "bn": "অনিচ্ছুক", "ex": "She was reluctant to speak in front of the large audience."}, {"word": "so-called", "en": "Commonly named or called as such, but perhaps not really so.", "bn": "তথাকথিত", "ex": "The so-called expert had no real qualifications."}, {"word": "straightforward", "en": "Simple, easy to understand, and not complicated.", "bn": "সরল", "ex": "The instructions are straightforward and easy to follow."}, {"word": "undergo", "en": "To experience or be subjected to something, especially change.", "bn": "অতিক্রম করা", "ex": "Students must undergo training before starting the job."}, {"word": "whereby", "en": "By which; through which; by what method.", "bn": "যার দ্বারা", "ex": "The school introduced a system whereby students can give feedback."}], "GOVERNMENT": [{"word": "central government", "en": "The national government of a country that makes decisions for the whole nation.", "bn": "কেন্দ্রীয় সরকার", "ex": "The central government should invest in renewable energy."}, {"word": "local government", "en": "Regional government responsible for local issues and public services.", "bn": "স্থানীয় সরকার", "ex": "Local government needs to provide adequate resources for schools."}, {"word": "legislation", "en": "Laws, considered collectively, enacted by a government.", "bn": "আইন প্রণয়ন", "ex": "New legislation was passed to protect workers' rights in factories."}, {"word": "regulatory bodies", "en": "Organizations that control and monitor specific areas like advertising or finance.", "bn": "নিয়ন্ত্রক সংস্থা", "ex": "Regulatory bodies control advertising standards."}, {"word": "enforcement agencies", "en": "Official bodies that ensure laws are obeyed and enforced.", "bn": "প্রয়োগকারী সংস্থা", "ex": "Enforcement agencies monitor pollution in rivers."}, {"word": "adopt policies", "en": "To start using new policies, rules, or courses of action.", "bn": "নীতি গ্রহণ করা", "ex": "Government should adopt policies encouraging mothers to return to work."}, {"word": "impose fines", "en": "To force payment of money as punishment for breaking rules.", "bn": "জরিমানা আরোপ করা", "ex": "Councils should fine householders who don't recycle."}], "IMMIGRATION": [{"word": "immigrant", "en": "A person who comes to live permanently in a foreign country.", "bn": "অভিবাসী", "ex": "First generation immigrants often face language barriers."}, {"word": "economic migrants", "en": "People who move to another country to earn more money and improve living standards.", "bn": "অর্থনৈতিক অভিবাসী", "ex": "Economic migrants provide dynamism to the economy."}, {"word": "illegal immigrants", "en": "People who enter or live in a country without legal permission.", "bn": "অবৈধ অভিবাসী", "ex": "Some people believe illegal immigrants should be deported."}, {"word": "integration", "en": "The act of combining parts to make a whole; inclusion.", "bn": "একীভূতকরণ", "ex": "The integration of technology in classrooms is helpful for student engagement."}, {"word": "influx of immigrants", "en": "A large number of immigrants arriving at the same time.", "bn": "অভিবাসীদের আগমন", "ex": "There has been an influx of immigrants in recent years."}, {"word": "quota", "en": "A fixed number or share of people or things allowed.", "bn": "কোটা", "ex": "The US has a quota system for green cards."}], "CLIMATE CHANGE": [{"word": "crisis", "en": "A serious, urgent problem that requires immediate action.", "bn": "সংকট", "ex": "Climate change is a crisis that cannot be ignored."}, {"word": "irreversible", "en": "Impossible to change back to a previous condition.", "bn": "অপরিবর্তনীয়", "ex": "Effects of climate change may be irreversible."}, {"word": "greenhouse gas emissions", "en": "Gases that trap heat in the atmosphere and cause global warming.", "bn": "গ্রীনহাউস গ্যাস নির্গমন", "ex": "We need to reduce greenhouse gas emissions."}, {"word": "deforestation", "en": "The action of cutting down forests, causing environmental damage.", "bn": "বন উজাড়", "ex": "Deforestation is a major factor in climate change."}, {"word": "renewable energy", "en": "Energy from natural sources that do not run out, like solar and wind.", "bn": "নবায়নযোগ্য শক্তি", "ex": "Wind and solar are renewable energy sources."}, {"word": "avert", "en": "To prevent something bad from happening.", "bn": "এড়ানো", "ex": "Investment will help avert CO2 impact."}], "CRIME": [{"word": "petty crime", "en": "Less serious crimes such as shoplifting or pickpocketing.", "bn": "ছোটখাটো অপরাধ", "ex": "Petty crime includes pickpocketing."}, {"word": "white-collar crime", "en": "Crimes committed by office workers, such as fraud or embezzlement.", "bn": "সাদা কলার অপরাধ", "ex": "Fraud is a type of white-collar crime."}, {"word": "offence", "en": "An act that breaks the law and is punishable.", "bn": "অপরাধ", "ex": "Drug trafficking is a serious offence."}, {"word": "imprison", "en": "To put someone in prison as punishment for a crime.", "bn": "কারাবন্দী করা", "ex": "He was imprisoned for theft."}], "ENVIRONMENT": [{"word": "biodiversity", "en": "The variety of plant and animal life in a particular habitat.", "bn": "জীববৈচিত্র্য", "ex": "The rainforest has rich biodiversity."}, {"word": "ecosystem", "en": "A biological system where plants, animals, and environment interact.", "bn": "বাস্তুতন্ত্র", "ex": "Coral reef is a fragile ecosystem."}, {"word": "endangered species", "en": "A species of animal or plant at serious risk of extinction.", "bn": "বিপন্ন প্রজাতি", "ex": "Giant Panda is an endangered species."}, {"word": "dump waste", "en": "To illegally throw away waste in an improper place.", "bn": "বর্জ্য ফেলা", "ex": "Factories should not dump waste in rivers."}], "ENERGY": [{"word": "renewable sources", "en": "Sources of energy that do not run out, like wind and solar power.", "bn": "নবায়নযোগ্য উৎস", "ex": "We must invest in renewable sources."}, {"word": "fossil fuels", "en": "Non-renewable energy sources like coal, oil, and gas.", "bn": "জীবাশ্ম জ্বালানি", "ex": "Fossil fuels cause pollution."}, {"word": "solar panels", "en": "Equipment that converts sunlight into electricity.", "bn": "সৌর প্যানেল", "ex": "Solar panels are installed on roofs."}, {"word": "contaminate", "en": "To make something dirty, polluted, or harmful.", "bn": "দূষিত করা", "ex": "Oil spill contaminates water."}], "COMPUTERS AND THE INTERNET": [{"word": "immense", "en": "Extremely large in size, amount, or degree.", "bn": "বিশাল", "ex": "With immense storage capacity, computers can save space."}, {"word": "enable", "en": "To make something possible or give someone ability to do something.", "bn": "সক্ষম করা", "ex": "Scholarships enable poor students to study at university without financial stress."}, {"word": "reliable source", "en": "A trustworthy and dependable source of information.", "bn": "নির্ভরযোগ্য উৎস", "ex": "Internet may not be a reliable source for knowledge."}, {"word": "conflicting information", "en": "Information that disagrees or contradicts other information.", "bn": "পরস্পরবিরোধী তথ্য", "ex": "There is conflicting information available online."}], "LANGUAGES AND CULTURES": [{"word": "unique", "en": "Being the only one of its kind; unlike anything else; special.", "bn": "অনন্য", "ex": "Every culture has unique traditions worth protecting for future generations."}, {"word": "multicultural societies", "en": "Societies that contain people from many different cultures.", "bn": "বহুসাংস্কৃতিক সমাজ", "ex": "USA and Australia are multicultural societies."}, {"word": "a blend of", "en": "A mixture or combination of different things, styles, or cultures.", "bn": "মিশ্রণ", "ex": "The result is a rich blend of cultures."}, {"word": "cultural identity", "en": "A sense of belonging and identification with a particular culture.", "bn": "সাংস্কৃতিক পরিচয়", "ex": "Traditional music forms part of cultural identity."}]};
+const quotes = [
+  {text: "A word a day keeps the vocabulary gaps away.", author: "Abidur Rahman Tahmid"},
+  {text: "Don't translate — internalize. Use it in a sentence today.", author: "Premium Learning"},
+  {text: "Vocabulary is the heart of natural English.", author: "Academic Wisdom"},
+  {text: "Master 570, master academic English.", author: "Workbook"}
+];
+
+const allTopics = Object.keys(vocabData);
+let currentQuote = 0;
+let currentTopic = allTopics[0];
+let filteredTopics = [...allTopics];
+let currentMCQ = [];
+let currentShort = [];
+let mcqAnswers = {};
+let shortAnswers = {};
+let bookmarks = JSON.parse(localStorage.getItem('570_bookmarks') || '[]');
+let mastered = JSON.parse(localStorage.getItem('570_mastered') || '[]');
+let learnFilter = '';
+
+const topicListEl = document.getElementById('topicList');
+const learnEl = document.getElementById('learnSection');
+const mcqEl = document.getElementById('mcqSection');
+const shortEl = document.getElementById('shortSection');
+const resultEl = document.getElementById('resultSection');
+
+function topicNumber(topic) {
+  const idx = allTopics.indexOf(topic) + 1;
+  return String(idx).padStart(2, '0');
+}
+
+function renderQuote() {
+  const qText = document.getElementById('quoteText');
+  const qAuthor = document.getElementById('quoteAuthor');
+  const qDots = document.getElementById('quoteDots');
+  if (!qText) return;
+  qText.style.opacity = 0;
+  qText.style.transform = 'translateY(2px)';
+  setTimeout(() => {
+    qText.textContent = '"' + quotes[currentQuote].text + '"';
+    qAuthor.textContent = '— ' + quotes[currentQuote].author;
+    qDots.innerHTML = quotes.map((_, i) => `<div class="quote-dot${i === currentQuote ? ' active' : ''}"></div>`).join('');
+    qText.style.opacity = 1;
+    qText.style.transform = 'translateY(0)';
+  }, 120);
+}
+
+function updateStats() {
+  const total = Object.values(vocabData).reduce((sum, arr) => sum + arr.length, 0);
+  document.getElementById('totalWords').textContent = total;
+  document.getElementById('totalTopics').textContent = allTopics.length;
+  document.getElementById('topicCountLabel').textContent = allTopics.length;
+  document.getElementById('verbCountPill').textContent = total;
+  document.getElementById('topicCountPill').textContent = allTopics.length;
+  document.getElementById('bookmarkedCount').textContent = bookmarks.length;
+  document.getElementById('masteredCount').textContent = mastered.length;
+}
+
+function updateHeroMeta() {
+  const items = vocabData[currentTopic] || [];
+  const masteredInTopic = items.filter(item => mastered.includes(item.word)).length;
+  const bookmarksInTopic = items.filter(item => bookmarks.includes(item.word)).length;
+  const percent = items.length ? Math.round(masteredInTopic / items.length * 100) : 0;
+
+  document.getElementById('heroTitle').textContent = currentTopic;
+  document.getElementById('heroSub').textContent = `${items.length} words in this topic • Premium tap-to-reveal cards with Bangla support and example usage.`;
+  document.getElementById('heroWordCount').textContent = items.length;
+  document.getElementById('heroBookmarkCount').textContent = bookmarksInTopic;
+  document.getElementById('heroMasteredCount').textContent = masteredInTopic;
+  document.getElementById('masteryText').textContent = `${percent}%`;
+  document.getElementById('topicProgressBar').style.width = percent + '%';
+  document.getElementById('topicBadgeNo').textContent = topicNumber(currentTopic);
+  document.getElementById('topicBadgeTitle').textContent = currentTopic;
+  document.getElementById('topicBadgeSubtitle').textContent = `${masteredInTopic} mastered • ${bookmarksInTopic} bookmarked`;
+}
+
+function renderTopics() {
+  topicListEl.innerHTML = '';
+  filteredTopics.forEach(topic => {
+    const count = vocabData[topic].length;
+    const masteredCount = vocabData[topic].filter(item => mastered.includes(item.word)).length;
+    const btn = document.createElement('button');
+    btn.className = 'topic-btn' + (topic === currentTopic ? ' active' : '');
+    btn.innerHTML = `
+      <span class="topic-no">${topicNumber(topic)}</span>
+      <span class="topic-meta">
+        <span class="topic-name">${topic}</span>
+        <span class="topic-sub">${masteredCount} mastered • ${count} words</span>
+      </span>
+      <span class="topic-count">${count}</span>
+    `;
+    btn.onclick = () => {
+      currentTopic = topic;
+      learnFilter = '';
+      document.getElementById('vocabSearch').value = '';
+      renderTopics();
+      renderLearn();
+      resetQuiz();
+      updateHeroMeta();
+      activateTab('learn');
+      showTab('learn');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    topicListEl.appendChild(btn);
+  });
+}
+
+function speak(text) {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.92;
+  speechSynthesis.speak(utterance);
+}
+
+function toggleBookmark(word) {
+  const i = bookmarks.indexOf(word);
+  if (i > -1) bookmarks.splice(i, 1);
+  else bookmarks.push(word);
+  localStorage.setItem('570_bookmarks', JSON.stringify(bookmarks));
+  updateStats();
+  updateHeroMeta();
+  renderTopics();
+  renderLearn(learnFilter);
+}
+
+function toggleMastered(word) {
+  const i = mastered.indexOf(word);
+  if (i > -1) mastered.splice(i, 1);
+  else mastered.push(word);
+  localStorage.setItem('570_mastered', JSON.stringify(mastered));
+  updateStats();
+  updateHeroMeta();
+  renderTopics();
+  renderLearn(learnFilter);
+}
+
+function renderLearn(filter = '') {
+  learnFilter = filter;
+  const items = vocabData[currentTopic] || [];
+  let display = items;
+  if (filter) {
+    const q = filter.toLowerCase();
+    display = items.filter(it => it.word.toLowerCase().includes(q) || it.en.toLowerCase().includes(q) || it.bn.includes(q));
+  }
+
+  const bookmarksInTopic = items.filter(item => bookmarks.includes(item.word)).length;
+  const masteredInTopic = items.filter(item => mastered.includes(item.word)).length;
+
+  let html = `
+    <div class="section-head">
+      <div>
+        <h3>Learning Cards</h3>
+        <p>${display.length} visible words in <strong>${currentTopic}</strong> • Tap a card to reveal details.</p>
+      </div>
+      <div class="inline-actions">
+        <div class="inline-pill">${bookmarksInTopic} bookmarked</div>
+        <div class="inline-pill">${masteredInTopic} mastered</div>
+        <div class="inline-pill">Topic ${topicNumber(currentTopic)}</div>
+      </div>
+    </div>
+  `;
+
+  if (!display.length) {
+    html += `
+      <div class="empty-state">
+        <strong>No matches found</strong>
+        Try another keyword to filter vocabulary in this topic.
+      </div>`;
+    learnEl.innerHTML = html;
+    return;
+  }
+
+  html += '<div class="card-grid">';
+  display.forEach((it, index) => {
+    const isBookmarked = bookmarks.includes(it.word);
+    const isMastered = mastered.includes(it.word);
+    html += `
+      <article class="vocab-card${isMastered ? ' flipped' : ''}" onclick="this.classList.toggle('flipped')">
+        <div class="card-header">
+          <div>
+            <div class="card-index">${topicNumber(currentTopic)} • ${String(index + 1).padStart(3, '0')}</div>
+            <div class="card-badges">
+              <span class="tag${isMastered ? ' accent' : ''}">${isMastered ? 'Mastered' : 'Vocabulary'}</span>
+              ${isBookmarked ? '<span class="tag">Bookmarked</span>' : ''}
+            </div>
+          </div>
+          <div class="card-tools" onclick="event.stopPropagation()">
+            <button class="tool-btn" title="Speak" onclick='speak(${JSON.stringify(it.word)})'>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            </button>
+            <button class="tool-btn" title="Bookmark" onclick='toggleBookmark(${JSON.stringify(it.word)})'>${isBookmarked ? '★' : '☆'}</button>
+            <button class="tool-btn" title="Mastered" onclick='toggleMastered(${JSON.stringify(it.word)})'>${isMastered ? '✓' : '○'}</button>
+          </div>
+        </div>
+
+        <div class="word-label">Vocabulary</div>
+        <div class="word">${it.word}</div>
+        <div class="word-sub">Tap to open definition, Bangla meaning, and example</div>
+        <div class="reveal-hint">Reveal card</div>
+
+        <div class="card-meta">
+          <div class="meta-block">
+            <div class="meta-label">Definition</div>
+            <div class="meta-text">${it.en}</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Bangla Meaning</div>
+            <div class="meta-bn">${it.bn}</div>
+          </div>
+          <div class="meta-block">
+            <div class="meta-label">Example</div>
+            <div class="meta-example">${it.ex}</div>
+          </div>
+        </div>
+      </article>
+    `;
+  });
+  html += '</div>';
+  learnEl.innerHTML = html;
+}
+
+function shuffleLearn() {
+  const arr = vocabData[currentTopic];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  renderLearn(learnFilter);
+}
+
+function activateTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tab));
+}
+
+function showTab(tab) {
+  learnEl.style.display = tab === 'learn' ? 'block' : 'none';
+  mcqEl.style.display = tab === 'mcq' ? 'block' : 'none';
+  shortEl.style.display = tab === 'short' ? 'block' : 'none';
+  resultEl.style.display = tab === 'result' ? 'block' : 'none';
+}
+
+function resetQuiz() {
+  currentMCQ = [];
+  currentShort = [];
+  mcqAnswers = {};
+  shortAnswers = {};
+  mcqEl.innerHTML = '';
+  shortEl.innerHTML = '';
+}
+
+function generateMCQ() {
+  const pool = [...vocabData[currentTopic]].sort(() => 0.5 - Math.random()).slice(0, 10);
+  currentMCQ = pool;
+  mcqAnswers = {};
+  const allWords = Object.values(vocabData).flat();
+  let html = `
+    <div class="quiz-shell">
+      <div class="quiz-hero">
+        <div>
+          <h3>MCQ Quiz — ${currentTopic}</h3>
+          <p>Select the correct word based on the definition, Bangla meaning, and example.</p>
+        </div>
+        <div class="inline-pill">${pool.length} questions</div>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="mcqProgress" style="width:0%"></div></div>
+      <div class="question-stack">
+  `;
+
+  pool.forEach((it, idx) => {
+    const distractors = allWords.filter(v => v.word !== it.word).sort(() => 0.5 - Math.random()).slice(0, 3).map(v => v.word);
+    const options = [it.word, ...distractors].sort(() => 0.5 - Math.random());
+    html += `
+      <div class="question-block" id="mcq-q-${idx}">
+        <div class="q-top">
+          <div class="q-number">Question ${idx + 1} / ${pool.length}</div>
+          <div class="q-chip">MCQ</div>
+        </div>
+        <div class="q-title">${it.en}</div>
+        <div class="q-bn">🇧🇩 ${it.bn}<br><span style="font-size:11px">💬 ${it.ex}</span></div>
+        <div class="options">
+          ${options.map((opt, optIndex) => `
+            <label class="option-label">
+              <input type="radio" name="mcq-${idx}" value="${opt}" style="display:none" onchange='saveMCQ(${idx}, ${JSON.stringify(opt)}); checkMCQProgress()'>
+              <span class="option-letter">${String.fromCharCode(65 + optIndex)}</span>
+              <span>${opt}</span>
+            </label>`).join('')}
+        </div>
+      </div>
+    `;
+  });
+
+  html += `
+      </div>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="submitMCQ()">Submit</button>
+        <button class="btn-secondary" onclick="generateMCQ()">New Set</button>
+        <button class="btn-soft" onclick="goLearn()">Back to Learn</button>
+      </div>
+    </div>
+  `;
+  mcqEl.innerHTML = html;
+}
+
+function saveMCQ(idx, val) { mcqAnswers[idx] = val; }
+
+function checkMCQProgress() {
+  const answered = Object.keys(mcqAnswers).length;
+  const total = currentMCQ.length || 1;
+  document.getElementById('mcqProgress').style.width = (answered / total * 100) + '%';
+}
+
+function submitMCQ() {
+  let correct = 0;
+  currentMCQ.forEach((it, idx) => {
+    const block = document.getElementById('mcq-q-' + idx);
+    const ans = mcqAnswers[idx];
+    const prev = block.querySelector('.answer-box');
+    if (prev) prev.remove();
+    if (ans === it.word) {
+      correct++;
+      block.classList.add('correct');
+      block.classList.remove('wrong');
+    } else {
+      block.classList.add('wrong');
+      block.classList.remove('correct');
+      const box = document.createElement('div');
+      box.className = 'answer-box';
+      box.textContent = '✓ Correct: ' + it.word + ' — ' + it.bn;
+      block.appendChild(box);
+    }
+  });
+  showResult('MCQ', correct, currentMCQ.length, Math.round(correct / currentMCQ.length * 100), currentTopic);
+}
+
+function generateShort() {
+  const pool = [...vocabData[currentTopic]].sort(() => 0.5 - Math.random()).slice(0, 8);
+  currentShort = pool;
+  shortAnswers = {};
+  let html = `
+    <div class="quiz-shell">
+      <div class="quiz-hero">
+        <div>
+          <h3>Short Answer — ${currentTopic}</h3>
+          <p>Type the correct vocabulary item based on the clue.</p>
+        </div>
+        <div class="inline-pill">${pool.length} questions</div>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="shortProgress" style="width:0%"></div></div>
+      <div class="question-stack">
+  `;
+
+  pool.forEach((it, idx) => {
+    html += `
+      <div class="question-block" id="short-q-${idx}">
+        <div class="q-top">
+          <div class="q-number">Question ${idx + 1} / ${pool.length}</div>
+          <div class="q-chip">Type Answer</div>
+        </div>
+        <div class="q-title">${it.en}</div>
+        <div class="q-bn">🇧🇩 ${it.bn}<br><span style="font-size:11px">💬 ${it.ex}</span></div>
+        <input class="input-short" placeholder="Type the word..." oninput="saveShort(${idx}, this.value); checkShortProgress()">
+      </div>
+    `;
+  });
+
+  html += `
+      </div>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="submitShort()">Submit</button>
+        <button class="btn-secondary" onclick="generateShort()">New Set</button>
+        <button class="btn-soft" onclick="goLearn()">Back to Learn</button>
+      </div>
+    </div>
+  `;
+  shortEl.innerHTML = html;
+}
+
+function saveShort(idx, value) { shortAnswers[idx] = value.trim().toLowerCase(); }
+
+function checkShortProgress() {
+  const answered = Object.values(shortAnswers).filter(v => v.length > 0).length;
+  const total = currentShort.length || 1;
+  document.getElementById('shortProgress').style.width = (answered / total * 100) + '%';
+}
+
+function isClose(a, b) {
+  a = a.toLowerCase().trim();
+  b = b.toLowerCase().trim();
+  if (a === b) return true;
+  if (Math.abs(a.length - b.length) > 2) return false;
+  let mismatch = 0, i = 0, j = 0;
+  while (i < a.length && j < b.length) {
+    if (a[i] !== b[j]) {
+      mismatch++;
+      if (mismatch > 2) return false;
+      if (a.length > b.length) i++;
+      else if (b.length > a.length) j++;
+      else { i++; j++; }
+    } else {
+      i++; j++;
+    }
+  }
+  mismatch += (a.length - i) + (b.length - j);
+  return mismatch <= 2;
+}
+
+function submitShort() {
+  let correct = 0;
+  currentShort.forEach((it, idx) => {
+    const block = document.getElementById('short-q-' + idx);
+    const prev = block.querySelector('.answer-box');
+    if (prev) prev.remove();
+    const ans = (shortAnswers[idx] || '').toLowerCase();
+    const ok = isClose(ans, it.word.toLowerCase());
+    if (ok) {
+      correct++;
+      block.classList.add('correct');
+      block.classList.remove('wrong');
+    } else {
+      block.classList.add('wrong');
+      block.classList.remove('correct');
+      const box = document.createElement('div');
+      box.className = 'answer-box';
+      box.textContent = '✓ Correct: ' + it.word + ' — ' + it.bn;
+      block.appendChild(box);
+    }
+  });
+  showResult('Short Answer', correct, currentShort.length, Math.round(correct / currentShort.length * 100), currentTopic);
+}
+
+function showResult(type, correct, total, percent, topic) {
+  activateTab('result');
+  showTab('result');
+  let msg = '', emoji = '';
+  if (percent >= 90) { msg = 'Outstanding performance.'; emoji = '🏆'; }
+  else if (percent >= 80) { msg = 'Excellent work.'; emoji = '🎉'; }
+  else if (percent >= 60) { msg = 'Good progress. Keep going.'; emoji = '👍'; }
+  else if (percent >= 40) { msg = 'Promising effort. More revision will help.'; emoji = '💪'; }
+  else { msg = 'Needs more study and repetition.'; emoji = '📚'; }
+
+  resultEl.innerHTML = `
+    <div class="result-box">
+      <div class="result-kicker">${type} • ${topic}</div>
+      <div class="result-emoji">${emoji}</div>
+      <div class="result-percent">${percent}%</div>
+      <div class="result-copy">${msg}</div>
+      <div class="result-stats">
+        <div class="result-stat"><div class="num" style="color:#16A34A">${correct}</div><div class="label">Correct</div></div>
+        <div class="result-stat"><div class="num" style="color:#DC2626">${total - correct}</div><div class="label">Incorrect</div></div>
+        <div class="result-stat"><div class="num">${total}</div><div class="label">Total</div></div>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:${percent}%"></div></div>
+      <div class="result-actions">
+        <button class="btn-primary" onclick="startMCQ()">New MCQ</button>
+        <button class="btn-secondary" onclick="startShort()">New Short</button>
+        <button class="btn-soft" onclick="goLearn()">Back to Learn</button>
+      </div>
+    </div>
+  `;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function goLearn() {
+  activateTab('learn');
+  showTab('learn');
+  renderLearn(learnFilter);
+}
+
+function startMCQ() {
+  activateTab('mcq');
+  showTab('mcq');
+  generateMCQ();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function startShort() {
+  activateTab('short');
+  showTab('short');
+  generateShort();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tab = btn.dataset.tab;
+    activateTab(tab);
+    showTab(tab);
+    if (tab === 'learn') renderLearn(learnFilter);
+    if (tab === 'mcq' && currentMCQ.length === 0) generateMCQ();
+    if (tab === 'short' && currentShort.length === 0) generateShort();
+  });
+});
+
+document.getElementById('topicSearch').addEventListener('input', e => {
+  const q = e.target.value.toLowerCase();
+  filteredTopics = allTopics.filter(topic => topic.toLowerCase().includes(q) || vocabData[topic].some(v => v.word.toLowerCase().includes(q)));
+  renderTopics();
+});
+
+document.getElementById('vocabSearch').addEventListener('input', e => { renderLearn(e.target.value); });
+document.getElementById('shuffleBtn').addEventListener('click', shuffleLearn);
+document.getElementById('startQuizBtn').addEventListener('click', startMCQ);
+document.getElementById('startShortBtn').addEventListener('click', startShort);
+
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+    e.preventDefault();
+    document.getElementById('topicSearch').focus();
+  }
+});
+
+const toggle = document.getElementById('themeToggle');
+let dark = localStorage.getItem('theme') === 'dark';
+if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+if (toggle) {
+  toggle.onclick = () => {
+    dark = !dark;
+    if (dark) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    }
+  };
+}
+
+function init() {
+  updateStats();
+  renderTopics();
+  updateHeroMeta();
+  renderLearn();
+  renderQuote();
+  setInterval(() => {
+    currentQuote = (currentQuote + 1) % quotes.length;
+    renderQuote();
+  }, 7000);
+}
+
+init();
+</script>
+</body>
+</html>
